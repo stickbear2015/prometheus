@@ -1,0 +1,6 @@
+#TRIGGER {A loud thud can be heard from the storage compartment as trash is depositted by the collectors.} {#gagline ALL; #Play {Prometheus\General\collecting\TrashThump.wav} @Vol; #If {@PanTrash = 1} {#PC %PlayHandle Pan %random(-4000,4000)}} {}
+#TRIGGER {The floor beneath your feet begins rumbling softly as the refinery is activated.} {#gagline ALL; #Play {Prometheus\Ship\Misc\constructionFacilityPowerUp.wav} @Vol} {}
+#TRIGGER {The rumble beneath your feet eases off as the refinery powers down.} {#gagline ALL; #Play {Prometheus\Ship\Misc\constructionFacilityPowerdown.wav} @Vol} {}
+#TRIGGER {You hear a series of clicks from below as the refinery is emptied into a starship.} {#gagline ALL; #Play {Prometheus\Ship\Misc\TransferStart.wav} @Vol; #If {@PanTrash = 1} {#PC %PlayHandle Pan %random(-4000,4000)}} {}
+#Trigger {The clicks abruptly stop as the transfer finishes.} {#Gagline ALL; #Play {Prometheus\Ship\Misc\TransferEnd.wav} @Vol; #If {@PanTrash = 1} {#PC %PlayHandle pan %random(-4000,4000)}}
+#TRIGGER {*activate*the trash collectors.} {#If {%IfWord(You,%1," ")} {#gagline ALL}; #Play {Prometheus\General\collecting\collecting.wav} @Vol} {}

@@ -1,0 +1,66 @@
+#Trigger {You press a button on * underwater scanner.} {
+#gagline voice;
+#if {@silentmode = 0} {
+#playloop {prometheus\general\pearl diving\scanning.wav} @vol;
+#var PDHandle %playhandle}} {pearls}
+#trigger {The scanner indicates that the current coordinates are empty of valuable items.} {
+#pc @PDHandle stop;
+#if {@silentmode = 0} {
+#play {prometheus\general\archaeology\NothingHere.wav} @vol};
+#sub {No items of value here.}} {pearls}
+#trigger {You begin moving * underwater shovel through the water and deep into the ground.} {
+#gagline ALL;
+#if {@silentmode = 0} {
+#play {prometheus\general\archaeology\shovel*5.wav} 10}
+#sub {You begin to dig.}} {pearls}
+#trigger {You stop digging, nothing as a result.} {
+#gagline ALL;
+#if {@silentmode = 0} {
+#play {prometheus\general\Archaeology\cease.wav} @vol};
+#sub {Nothing so far.}} {pearls}
+#trigger {Valuable material found! Depth *.0 meters.} {
+#if {%1 = 1} {
+#sub {Something valuable has been located %1 meter below you.}};
+#if {%1 > 1} {
+#sub {Something valuable has been located %1 meters below you.}};
+#if {@silentmode = 0} {
+#play {prometheus\general\pearl diving\pearl_located.wav} @vol};
+#pc @PDHandle stop} {pearls}
+#trigger {Current depth[:] *.0 meters.} {
+#if {%1 = 1} {
+#sub {You've dug down %1 meter so far}};
+#if {%1 > 1} {
+#sub {You've dug down %1 meters so far.}}} {pearls}
+#trigger {You remove * from the water!} {
+#if {@silentmode = 0} {
+#play {prometheus\general\pearl diving\pearl_find.wav} @vol};
+#sub {%1.}} {pearls}
+#trigger {You begin diving into the water.} {
+#if {@silentmode = 0} {
+#play {prometheus\general\pearl diving\dive*5.wav} @vol};
+#sub {You dive confidently into the water.};
+#class pearls enable}
+#trigger {You begin swimming toward the surface.} {
+#if {@silentmode = 0} {
+#playloop {prometheus\general\pearl diving\resurface.wav} 70;
+#var SurfacingHandle %playhandle}} {pearls}
+#trigger {You reach the surface, swimming to *} {
+#pc @SurfacingHandle stop;
+#class pearls disable}
+#trigger {You carefully insert * into * oceanography container.} {
+#if {@silentmode = 0} {
+#play {prometheus\general\archaeology\ArchContainer.wav} @vol}} {pearls}
+
+;running out of oxygen
+#trigger {An alert is displayed across your suit's glasses[:] [']* of oxygen remaining![']} {
+#if {@silentmode = 0} {
+#if {%ifword(20 minutes,%1," ")} {
+#play {prometheus\general\pearl diving\RunningOutOfOxygen1.wav} 85};
+#if {%IfWord(10 minutes,%1," ")} {
+#play {prometheus\general\pearl diving\RunningOutOfOxygen2.wav} 85};
+#if {%IfWord(5 minutes,%1," ")} {
+#play {prometheus\general\pearl diving\RunningOutOfOxygen3.wav} 85};
+#if {%IfWord(2 minutes,%1" ")} {
+#play {prometheus\general\pearl diving\RunningOutOfOxygen4.wav} 85};
+#if {%IfWord(1 minute,%1," ")} {
+#play {prometheus\general\pearl diving\RunningOutOfOxygen5.wav} 85}}} {pearls}

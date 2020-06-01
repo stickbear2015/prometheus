@@ -1,0 +1,100 @@
+#Trigger {You hear a barely audible vibration followed by a loud click as the solar-wind receptors snap into place around the ship.} {
+#If {@SilentMode = 0} {#gagline ALL; #Play {Prometheus\Ship\Misc\PanelsOn.wav} @Vol}} {}
+#Trigger {You hear a barely audible vibration followed by a booming click sound as the solar-wind receptors retract back into the ship.} {
+#If {@SilentMode = 0} {#gagline ALL; #Play {Prometheus\Ship\Misc\PanelsOff.wav} @Vol}} {}
+#Trigger {You hear a vibration as the solar recharge completes an the solar receptors retract back into the ship with an audible click.} {
+#if {@SilentMode = 0} {
+#gagline ALL;
+#Play {Prometheus\Ship\Misc\PanelsOff.wav} @Vol}} {}
+#Trigger {* flight control monitor suddenly emits a loud burst of static.} {#gagline ALL;
+#If {@SilentMode = 0} {#Play {Prometheus\General\Comm\Static*5.wav} @Vol}} {}
+#Trigger {You walk out into space.} {#If {@SilentMode = 0} {#Play {Prometheus\Ship\Misc\AirlockExit.wav} @vol}; #If {@RoomSoundPlaying = 1} {#pc @RoomHandle stop; #Var RoomSoundPlaying 0}; #If {@RoomSounds = 1} {#PlayLoop {Prometheus\General\Rooms\SpaceSuit.wav} @roomvol; #Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1}} {}
+#Trigger {You're not in space!} {#gagline ALL;
+#If {@SilentMode = 0} {#Play {Prometheus\Ship\Misc\NotInSpace.wav} @vol}} {}
+#TRIGGER {The ship isn't in space.} {#gagline ALL;
+#If {@SilentMode = 0} {#Play {Prometheus\Ship\Misc\NotInSpace.wav} @vol}} {}
+#TRIGGER {The ship is not in space.} {#gagline ALL;
+#If {@SilentMode = 0} {#Play {Prometheus\Ship\Misc\NotInSpace.wav} @vol}} {}
+#TRIGGER {From a large speaker on *, You hear * say, "*".} {#Sub {%1, %2 says, %3};
+#If {@SilentMode = 0} {#Play {Prometheus\Ship\Comm\PA*9.wav} @vol}} {}
+#TRIGGER {You hear the faint roar of solar winds battering the hull.} {#gagline ALL} {}
+#TRIGGER {You hear a bearly audible vibration followed by a booming click sound as the solar-wind receptors retract back into the ship.} {#gagline ALL;
+#If {@SilentMode = 0} {#Play {Prometheus\Ship\Misc\PanelsOff.wav} @vol}} {}
+#TRIGGER {You hear the faint roar of solar winds hitting the hull.} {#gagline ALL} {}
+#TRIGGER {You try to enter*, but you are turned away by the locked hatch.} {
+#If {@SilentMode = 0} {#Play {Prometheus\General\Misc\CantGo*5.wav} @Vol}} {}
+#TRIGGER {You * out of the ship's hatch.} {
+#If {@RoomSoundPlaying = 1} {#PC @RoomHandle stop; #Var RoomSoundPlaying 0};
+#If {@SilentMode = 0} {#PLAY {Prometheus\Ship\Misc\AirlockExit.wav} @Vol}} {}
+#Trigger {You exit the pod.} {
+#If {@RoomSoundPlaying = 1} {#PC @RoomHandle stop; #Var RoomSoundPlaying 0};
+#If {@SilentMode = 0} {#PLAY {Prometheus\Ship\Misc\AirlockExit.wav} @Vol}} {}
+#TRIGGER {You board *.} {
+#If {@RoomSoundPlaying = 1} {#PC @RoomHandle stop; #Var RoomSoundPlaying 0};
+#If {@SilentMode = 0} {#PLAY {Prometheus\Ship\Misc\AirlockEnter.wav} @Vol}} {}
+#TRIGGER {(PA)*} {
+#If {@SilentMode = 0} {#PLAY {Prometheus\\Ship\Comm\PA*9.wav} @Vol}} {}
+#TRIGGER {A voice comes over the speaker and says, *} {
+#If {@SilentMode = 0} {#Play {Prometheus\general\comm\commchirp2.wav} @Vol};
+#sub {%1}} {}
+#TRIGGER {*tries to enter*, but * is turned away by the locked hatch.} {#If {@SilentMode = 0} {#Play {Prometheus\General\Misc\CantGo*5.wav} 75; #PC %Playhandle Pan %Random(-4000,4000)}} {}
+#TRIGGER {*places * hand against a sensor on * and enters the vessle.} {#If {@SilentMode = 0} {#Play {Prometheus\Ship\Misc\Hatch4.wav} 50; #PC %Playhandle Pan %Random(-4000,4000)}} {}
+#TRIGGER {*out from the hatch of*} {#If {@SilentMode = 0} {#Play {Prometheus\Ship\Misc\Hatch3.wav} @vol; #PC %Playhandle Pan %Random(-4000,4000)}} {}
+#TRIGGER {You place your hand against a sensor on*and enter the vessle.} {
+#If {@SilentMode = 0} {#Play {Prometheus\Ship\Misc\AirlockEnter.wav} @Vol}} {}
+#TRIGGER {A low, almost unnoticeable hum becomes audible in the background as the pressurizing systems are activated.} {#gagline ALL;#if {@silentMode = 0} {#Play {Prometheus\Ship\Misc\AirStart.wav} @Vol}} {}
+#TRIGGER {The hum settles but doesn't stop completely.} {#gagline ALL} {}
+#TRIGGER {The hum in the background builds up a bit as the pressurizing systems prepare for shutdown.} {#gagline ALL;#if {@silentMode = 0} {#Play {Prometheus\Ship\Misc\cyclestart.wav} @Vol}} {}
+#TRIGGER {The hum dies down as the pressurizing system shutdown completes.} {#gagline ALL;#if {@silentMode = 0} {#Play {Prometheus\Ship\Misc\AirEnd.wav} @Vol}} {}
+#trigger {An escape pod lands nearby.} {#If {@SilentMode = 0} {#play {Prometheus\ship\move\OtherLanding*3.wav} @Vol; #PC %Playhandle Pan %Random(-4000,4000)}} {}
+#TRIGGER {You hear a slight hum as the ship becomes visible.} {#If {@SilentMode = 0} {#gagline ALL;
+#Play {Prometheus\Ship\Misc\CloakOff.wav} @Vol}} {}
+#TRIGGER {A voice comes over the speaker, saying, *} {#Sub {%1};#if {@silentmode = 0} {#Play {Prometheus\general\comm\Commchirp2.wav} @Vol}} {}
+#Trigger {You hear a humming noise from the deck beneath you as the starship checks its systems.} {#gagline all} {}
+#TRIGGER {You hear a slight hum as the ship cloaks.} {#If {@SilentMode = 0} {#gagline ALL; #Play {Prometheus\Ship\Misc\CloakOn.wav} @Vol}} {}
+#TRIGGER {(From a large speaker on * You hear * say, "*".)} {#Sub {%1, %2 says, "%3"};
+#If {@SilentMode = 0} {#Play {Prometheus\Ship\Comm\PA*9.wav} @Vol; #PC %Playhandle Pan %Random(-4000,4000)}} {}
+#trigger {The computer reports that silent running mode *} {#if {@silentmode = 0} {#play {Prometheus\ship\misc\switch.wav} @vol};#sub {silent mode %1}}
+#trigger {You hear a humming noise from the deck beneath you as the starship activates its systems.} {#gagline all}
+#trigger {The ship is not in the required conditions to use this function.} {#if {@SilentMode = 0} {#play {Prometheus\ship\misc\NotInSpace.wav} @vol};#gagline all}
+#trigger {The keypad beeps, allowing you to pass.} {#gagline voice;#if {@silentmode = 0} {#play {Prometheus\general\misc\PasswordAccepted.wav} @vol}}
+#trigger {A small panel flashes 'Access denied' when you tap some keys on the keypad.} {#gagline voice;#if {@SilentMode = 0} {#Play {Prometheus\general\misc\AccessDenied.wav} @vol}}
+#trigger {You examine a keypad mounted near the top of the hatch.} {#gagline voice}
+#trigger {Enter security access code*} {#if {@Silentmode = 0} {#Play {Prometheus\ship\computer\enterauthcode.wav} @vol}}
+#trigger {You barely notice a low hum start up as the construction facility is activated.} {#gagline voice;#if {@Silentmode = 0} {#play {Prometheus\ship\misc\ConstructionFacilityPowerUp.wav} @vol}}
+#trigger {The barely noticeable hum of the construction facility dies as it is deactivated.} {#gagline voice;#if {@SilentMode = 0} {#play {Prometheus\ship\misc\ConstructionFacilityPowerDown.wav} @vol}}
+#trigger {A low hum starts in the background as the batteries begin recharging.} {
+#if {@silentmode = 0} {
+#gagline ALL;
+#playloop {Prometheus\ship\misc\rechargeBattery.wav} @vol;#var chargeHandle %playHandle; #var charging 1}} {}
+#trigger {The hum subsides and finally falls silent as the batteries finish recharging.} {
+#if {@charging = 1} {
+#pc @chargeHandle stop;
+#var charging 0};
+#if {@silentmode = 0} {
+#gagline ALL; #play {Prometheus\general\misc\beep*5.wav} @vol}} {}
+#TRIGGER {You hear an odd whoosh as the solar gatherers start their work.} {
+#if {@silentmode = 0} {
+#Gagline ALL;
+#Playloop {Prometheus\Ship\Misc\SpacePowerStartup.wav} @Vol;#var spaceHandle %PlayHandle; #var workers 1}} {}
+#trigger {You hear an odd whoosh as the stored charge is discarded.} {
+#if {@workers = 1} {
+#pc @spaceHandle stop;
+#var workers 0};
+#if {@silentmode = 0} {
+#gagline ALL;
+#play {Prometheus\general\misc\beep*5.wav} @vol}} {}
+#Trigger {You press the '*' button on the radio console.} {
+#If {@SilentMode = 0} {
+#Gagline ALL;
+#If {%IfWord(deactivate,%1," ")} {
+#Play {Prometheus\Ship\Misc\RadioOff.wav} @Vol} {
+#Play  {Prometheus\Ship\Misc\RadioOn.wav} @Vol}}}
+#TRIGGER {You become aware of a thundering rumble very close to your ear.} {#gagline all} {}
+#TRIGGER {The ship shakes as if hit by something!} {#if {@SilentMode = 0};
+#gagline all;
+#Play {Prometheus\Ship\Combat\YouHit*9.wav} @vol} {}
+#TRIGGER {Sector communication works best when the ship is in space.} {#if {@SilentMode =0};
+#gagline all;
+#Play {Prometheus\Ship\Misc\NotInSpace.wav} @vol} {}
+#TRIGGER {[[]SHIPLINK] *} {#if {@SilentMode = 0} {#Play {Prometheus\Ship\Comm\shiplink.wav} @vol}} {}

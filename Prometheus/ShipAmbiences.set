@@ -1,0 +1,418 @@
+;* Starship Room Ambiences
+#Trigger {[[]"&{ShipName}" &{RoomName}] [[]Starship Power: &{PowerStatus}]&{SitStatus}} {
+#If {@FSRV <> "ship"} {
+#Var FSRV "ship"};
+#If {@Mining = 1} {#PC @MineHandle stop; #Var Mining 0};
+#If {@RoomSounds = 1} {
+#If {@PowerStatus = "On"} {
+#If {%IfWord(Bridge,@RoomName," ")} {
+#If {@CurrentRoom <> "control1"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\bridge*4.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "control1"}; #Abort 1};
+#If {%IfWord(Control,@RoomName," ")} {
+#If {@CurrentRoom <> "control2"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\Control*4.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "control2"}; #Abort 1};
+#If {%IfWord(Command,@RoomName," ")} {
+#If {@CurrentRoom <> "control3"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\Control*4.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "control3"}; #Abort 1};
+#If {%IfWord(Cockpit,@RoomName," ")} {
+#If {@CurrentRoom <> "control4"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\Cockpit*4.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "control4"}; #Abort 1};
+#If {%IfWord(Engineering,@RoomName," ")} {
+#If {@CurrentRoom <> "eng"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\Engineering*5.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "eng"}; #Abort 1};
+#If {%IfWord(Repair,@RoomName," ")} {
+#If {@CurrentRoom <> "eng"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\Engineering*5.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "eng"}; #Abort 1};
+#If {%IfWord(Repairing,@RoomName," ")} {
+#If {@CurrentRoom <> "eng"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\Engineering*5.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "eng"}; #Abort 1};
+#If {%IfWord(Missile,@RoomName," ")} {
+#If {@CurrentRoom <> "wr"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\WeaponsRoom.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "wr"}; #Abort 1};
+#If {%IfWord(Torpedo,@RoomName," ")} {
+#If {@CurrentRoom <> "wr"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\WeaponsRoom.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "wr"}; #Abort 1};
+#If {%IfWord(Cannon,@RoomName," ")} {
+#If {@CurrentRoom <> "wr"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\WeaponsRoom.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "wr"}; #Abort 1};
+#If {%IfWord(Laser,@RoomName," ")} {
+#If {@CurrentRoom <> "wr"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\WeaponsRoom.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "wr"}; #Abort 1};
+#If {%IfWord(Weapon,@RoomName," ")} {
+#If {@CurrentRoom <> "wr"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\WeaponsRoom.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "wr"}; #Abort 1};
+#If {%IfWord(Weapons,@RoomName," ")} {
+#If {@CurrentRoom <> "wr"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\WeaponsRoom.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "wr"}; #Abort 1};
+#If {%IfWord(Observation,@RoomName," ")} {
+#If {@CurrentRoom <> "obs"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\ObservationRoom.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "obs"}; #Abort 1};
+#If {%IfWord(Quarters,@RoomName," ")} {
+#If {@CurrentRoom <> "quarters"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\LivingQuarters*3.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "quarters"}; #Abort 1};
+#If {%IfWord(HeadQuarters,@RoomName," ")} {
+#If {@CurrentRoom <> "quarters"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\LivingQuarters*3.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "quarters"}; #Abort 1};
+#If {%IfWord(Entrance,@RoomName," ")} {
+#If {@CurrentRoom <> "airlock"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\Airlock.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "airlock"}; #Abort 1};
+#If {%IfWord(Airlock,@RoomName," ")} {
+#If {@CurrentRoom <> "airlock"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\Airlock.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "airlock"}; #Abort 1};
+#If {%IfWord(Arrival,@RoomName," ")} {
+#If {@CurrentRoom <> "docking"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\DockingBay.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "docking"}; #Abort 1};
+#If {%IfWord(Docking,@RoomName," ")} {
+#If {@CurrentRoom <> "docking"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\DockingBay.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "docking"}; #Abort 1};
+#If {%IfWord(Vehicle,@RoomName," ")} {
+#If {@CurrentRoom <> "vehicle"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\VehicleBay.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "vehicle"}; #Abort 1};
+#If {%IfWord(Corridor,@RoomName," ")} {
+#If {@CurrentRoom <> "coridor"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\Corridors.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "corridor"}; #Abort 1};
+#If {%IfWord(Corridors,@RoomName," ")} {
+#If {@CurrentRoom <> "coridor"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\Corridors.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "corridor"}; #Abort 1};
+#If {%IfWord(Stateroom,@RoomName," ")} {
+#If {@CurrentRoom <> "state"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\Stateroom.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "state"}; #Abort 1};
+#If {%IfWord(Storage,@RoomName," ")} {
+#If {@CurrentRoom <> "storage"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\Storage*2.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "storage"}; #Abort 1};
+#If {%IfWord(Cargo,@RoomName," ")} {
+#If {@CurrentRoom <> "storage"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\Storage*2.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "storage"}; #Abort 1};
+#If {%IfWord(Medical,@RoomName," ")} {
+#If {@CurrentRoom <> "medical"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\Medical*2.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "medical"}; #Abort 1};
+#If {%IfWord(Deck,@RoomName," ")} {
+#If {@CurrentRoom <> "deck"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\Deck.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "deck"}; #Abort 1};
+#If {%IfWord(Bridge,@ShipName," ")} {
+#If {@CurrentRoom <> "control1"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\Bridge*3.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "control1"}; #Abort 1};
+#If {%IfWord(Control,@ShipName," ")} {
+#If {@CurrentRoom <> "control2"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\Control*3.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "control2"}; #Abort 1};
+#If {%IfWord(Command,@ShipName," ")} {
+#If {@CurrentRoom <> "control3"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\Control*3.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "control3"}; #Abort 1};
+#If {%IfWord(Cockpit,@ShipName," ")} {
+#If {@CurrentRoom <> "cockpit"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\Cockpit*3.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "cockpit"}; #Abort 1};
+#If {%IfWord(Engineering,@ShipName," ")} {
+#If {@CurrentRoom <> "eng"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\Engineering*5.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "eng"}; #Abort 1};
+#If {%IfWord(Repair,@ShipName," ")} {
+#If {@CurrentRoom <> "eng"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\Engineering*5.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "eng"}; #Abort 1};
+#If {%IfWord(Repairing,@ShipName," ")} {
+#If {@CurrentRoom <> "eng"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\Engineering*5.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "eng"}; #Abort 1};
+#If {%IfWord(Missile,@ShipName," ")} {
+#If {@CurrentRoom <> "wr"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\WeaponsRoom.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "wr"}; #Abort 1};
+#If {%IfWord(Torpedo,@ShipName," ")} {
+#If {@CurrentRoom <> "wr"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\WeaponsRoom.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "wr"}; #Abort 1};
+#If {%IfWord(Cannon,@ShipName," ")} {
+#If {@CurrentRoom <> "wr"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\WeaponsRoom.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "wr"}; #Abort 1};
+#If {%IfWord(Laser,@ShipName," ")} {
+#If {@CurrentRoom <> "wr"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\WeaponsRoom.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "wr"}; #Abort 1};
+#If {%IfWord(Weapon,@ShipName," ")} {
+#If {@CurrentRoom <> "wr"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\WeaponsRoom.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "wr"}; #Abort 1};
+#If {%IfWord(Weapons,@ShipName," ")} {
+#If {@CurrentRoom <> "wr"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\WeaponsRoom.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "wr"}; #Abort 1};
+#If {%IfWord(Observation,@ShipName," ")} {
+#If {@CurrentRoom <> "obs"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\ObservationRoom.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "obs"}; #Abort 1};
+#If {%IfWord(Quarters,@ShipName," ")} {
+#If {@CurrentRoom <> "quarters"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\LivingQuarters*3.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "quarters"}; #Abort 1};
+#If {%IfWord(HeadQuarters,@ShipName," ")} {
+#If {@CurrentRoom <> "quarters"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\LivingQuarters*3.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "quarters"}; #Abort 1};
+#If {%IfWord(Entrance,@ShipName," ")} {
+#If {@CurrentRoom <> "airlock"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\Airlock.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "airlock"}; #Abort 1};
+#If {%IfWord(Airlock,@ShipName," ")} {
+#If {@CurrentRoom <> "airlock"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\Airlock.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "airlock"}; #Abort 1};
+#If {%IfWord(Arrival,@ShipName," ")} {
+#If {@CurrentRoom <> "docking"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\DockingBay.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "docking"}; #Abort 1};
+#If {%IfWord(Docking,@ShipName," ")} {
+#If {@CurrentRoom <> "docking"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\DockingBay.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "docking"}; #Abort 1};
+#If {%IfWord(Vehicle,@ShipName," ")} {
+#If {@CurrentRoom <> "vehicle"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\VehicleBay.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "vehicle"}; #Abort 1};
+#If {%IfWord(Corridor,@ShipName," ")} {
+#If {@CurrentRoom <> "coridor"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\Corridors.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "corridor"}; #Abort 1};
+#If {%IfWord(Corridors,@ShipName," ")} {
+#If {@CurrentRoom <> "coridor"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\Corridors.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "corridor"}; #Abort 1};
+#If {%IfWord(Stateroom,@ShipName," ")} {
+#If {@CurrentRoom <> "state"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\Stateroom.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "state"}; #Abort 1};
+#If {%IfWord(Storage,@ShipName," ")} {
+#If {@CurrentRoom <> "storage"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\Storage*2.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "storage"}; #Abort 1};
+#If {%IfWord(Cargo,@ShipName," ")} {
+#If {@CurrentRoom <> "storage"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\Storage*2.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "storage"}; #Abort 1};
+#If {%IfWord(Medical,@ShipName," ")} {
+#If {@CurrentRoom <> "medical"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\Medical*2.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "medical"}; #Abort 1};
+#If {%IfWord(Deck,@ShipName," ")} {
+#If {@CurrentRoom <> "deck"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\Deck.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "deck"}; #Abort 1};
+#If {@CurrentRoom <> "misc"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\MiscShipRooms.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "misc"}};
+#If {@PowerStatus = "Off"} {
+#If {@CurrentPower <> "Off"} {
+#If {@CurrentRoom <> "unpowered"} {
+#If {@RoomSoundPlaying = 1} {
+#PC @RoomHandle stop; #Var RoomSoundPlaying 0};
+#If {@RoomSounds = 1} {
+#PlayLoop {Prometheus\Ship\Rooms\NoPower.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "unpowered"}}}}}} {ambiences} AnyCase
+#Trigger {[[]Rescue Pod]} {
+#If {@RoomSounds = 1} {
+#If {@RoomSoundPlaying = 0} {
+#Playloop {Prometheus\Ship\Rooms\EscapePod.wav} @Vol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1}}}

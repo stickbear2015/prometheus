@@ -1,0 +1,31 @@
+;* Debris Salvaging
+#Trigger {*from * cloud of debris...*} {
+#Sub {%2 debris cloud}} {sal}
+#trigger {* activate*the starships salvage scanners, which begin scanning the area for debris.} {
+#If {@SilentMode = 0} {
+#If {%IfWord(You,%1," ")} {
+#If {@GagSal = 1} {
+#Gagline ALL} {
+#Sub {You activate the salvage scanners.}} {
+#Sub {%1 activates the salvage scanners.}}};
+#play Prometheus\general\misc\beep*5.wav @Vol;
+#Play {Prometheus\Ship\Misc\DeploySalvage.wav} @vol; #If {@PanSal = 1} {#PC %PlayHandle Pan %Random(-4000,4000)}}; #class sal enable}
+#trigger {You hear several loud thuds as a salvaging line is deployed into space.} {#Gagline ALL} {sal}
+#TRIGGER {A loud thud can be heard from the storage room as a piece of debris is * by the salvaging line.} {#If {@GagSal = 1} {#Gagline ALL};
+#If {@SilentMode = 0} {#play Prometheus\ship\misc\salvage*3.wav @vol; #If {@PanSal = 1} {#PC %PlayHandle Pan %Random(-4000,4000)}}} {sal}
+#TRIGGER {*, "* has been salvaged."} {
+#sub {%2 salvaged}} {sal}
+#Trigger {*Salvaging aborted.*} {
+#class sal disable}
+#Trigger {*no debris clouds nearby.*} {
+#class sal disable}
+#Trigger {*, "*salvage complete.*} {
+#Sub {%2 salvage complete.};
+#class sal disable}
+#trigger {You hear several loud thuds as automated drones remove cargo from the storage room.} {#If {@GagTrans = 1} {#Gagline All};
+#If {@SilentMode = 0} {#play {Prometheus\ship\misc\TransferStart.wav} @Vol; #If {@PanTrans = 1} {#PC %PlayHandle Pan %Random(-4000,4000)}}} {}
+#Trigger {A drone loads*and carries it away.} {#gagline ALL;
+#If {@SilentMode = 0} {#Play Prometheus\Ship\Misc\Transfer*3.wav @vol; #If {@PanTrans = 1} {#PC %PlayHandle Pan %Random(-4000,4000)}}} {}
+#trigger {The thuds coming from the storage room gradually fade away.} {#If {@GagTrans = 1} {#Gagline All};
+#If {@SilentMode = 0} {#play Prometheus\ship\misc\TransferEnd.wav @Vol; #If {@PanTrans = 1} {#PC %PlayHandle Pan %Random(-4000,4000)}}} {}
+#trigger {The computer reports that there is no nearby debris.} {#if {@silentmode = 0} {#play {Prometheus\ship\computer\report*4.wav} @vol};#sub {No debris in range.}} {sal}

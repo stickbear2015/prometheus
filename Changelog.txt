@@ -1,0 +1,52 @@
+1. Fixed an error with a trigger for hosts.
+ Copy Prometheus\hosts.set.
+2. Updated the triggers for when a starship actovates or deactivates cloak.
+Copy Prometheus\ShipMisc.set and Sounds\Prometheus\Ship\Misc\CloakOff.wav and CloakOn.wav.
+Remove Sounds\Prometheus\Ship\Misc\ShipCloak.wav
+3. Changed the sound for Admin Chat.
+Copy Sounds\Prometheus\General\Comm\AdminChat.wav.
+4. Added a trigger for using rooc.
+Copy Prometheus\communications.set.
+5. Updated the sound for rooc.
+Copy Sounds\Prometheus\General\Comm\rooc.wav.
+6. Added a sound for the suggestions channel for hosts. Also removed the code updates trigger from the communications set file.
+Copy Sounds\Prometheus\General\Comm\suggestions.wav.
+Copy Prometheus\communications.set and hosts.set.
+7. Updated the private comm sound.
+Copy Sounds\Prometheus\General\Comm\Private.wav.
+8. Added a trigger for PM's.
+Copy Prometheus\communications.set.
+Copy Sounds\Prometheus\General\Comm\PM.wav.
+9. Fixed a couple triggers in ship combat.
+Copy Prometheus\ShipCombat.set.
+10. Fixed a trigger with receiving points.
+Copy Prometheus\Misc.set.
+11. Fixed a trigger in the ship computer set file.
+Copy Prometheus\ShipComputer.set.
+12. Updated the bell sound when someone enters the airlock and aship's airlock chime is enabled.
+Copy Sounds\Prometheus\Ship\Misc\bell.wav.
+13. Fixed a small annoyance in the ship combat file.
+Copy Prometheus\ShipCombat.set.
+14. Added a sound for the taunt channel.
+Copy Prometheus\communications.set.
+Copy Sounds\Prometheus\General\Comm\taunt.wav.
+15. Added a sound for talking on shiplinks.
+Copy Prometheus\ShipMisc.set.
+Copy Sounds\Prometheus\Ship\Comm\shiplink.wav.
+16. Upon disconnecting, the pack should stop all playing sounds.
+Copy Prometheus/Prometheus.set.
+17. Updated the admin channel sound.
+Copy Sounds\Prometheus\General\Comm\AdminChat.wav.
+18. Updated the sound for the chatcomm channel.
+Copy Sounds\Prometheus\General\Comm\Chatter.wav.
+19. Added a trigger to play a sound when your character looks up at the console when typing replacements in a starship's engineering room.
+Copy Prometheus\ShipComputer.set
+20. Added a sound for the unsensored channel.
+Copy Prometheus\Communications.set.
+Copy Sounds\Prometheus\General\Comm\Unsensored.wav.
+21. Removed all the unused music files from the pack. Now it's a lot smaller.
+Remove Sounds\Prometheus\Music\Planets folder.
+22. Removed the intro music folder from the music folder.
+Remove Sounds\Prometheus\Music\Intro music folder.
+23, some sound master. almost most of the  other pack sounds have been removed from the pack, fixed doors, added a sound when someone raises their status as well as sp cleanup, the sp size is now 942 mb
+copy sounds and Prometheus folders

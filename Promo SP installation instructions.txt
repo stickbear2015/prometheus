@@ -1,0 +1,19 @@
+Prometheus Soundpack installation instructions
+
+Here are some instructions on how to get set up with the VIP Mud soundpack for Prometheus. Hopefully everything will work if you follow them.
+
+*** Note1: These instructions assume that you are using VIP Mud 2.0. Installation instructions for VIP Mud 1.1.1 are beyond the scope of this document. ***
+*** Note2: Please ensure that you have created the Prometheus character in VIP Mud before attempting to install this pack. ***
+
+1: If you've downloaded the pack from the website, you need only run the executable. The self-extracting archive will put the folders in the propper places once you copy the .exe file to your main VIP Mud directory.
+2: If you're a member of the soundpack's dropbox folder, follow these directions:
+
+2.1: Locate the Prometheus Soundpack folder in your dropbox and enter it.
+2.2: Perform a select all on the contents of the folder and copy them to your clipboard. DO NOT CUT THEM!
+2.3: Locate your VIP mud directory. FOR Windows 10 users, this is usually c:\Users\Username\Documents\VIP Mud.
+2.4: Enter the folder and paste the contents of the clipboard. Answer yes to the prompt to replace files if needed.
+
+A useful hint:
+In ship options on Prometheus itself, ensure that "display power status in ship room titles is set to on if you wish for ambiences to work as they should.
+Another useful hint:
+There's a sounds.ini file included with the pack that should prevent your soundpack from throwing errors at you when in combative situations, or other situations where many sounds are playing. Make sure that this is one of the files that gets selected.

@@ -1,0 +1,62 @@
+#trigger {A small computer screen announces, "*"} {#if {@SilentMode = 0} {#play {Prometheus\general\misc\beep*5.wav} @vol};#sub {"%1"}}
+#TRIGGER {The pitch of the engines increases ever so slightly as the vehicle begins moving.} {#If {@GagVehicleMoves = 1} {#gagline ALL};#if {@silentmode = 0} {#Play {Prometheus\General\mining\CarGo.wav} @Vol}} {}
+#TRIGGER {The pitch of the engines decreases ever so slightly as the vehicle stops.} {#If {@GagVehicleMoves = 1} {#gagline ALL};#if {@silentmode = 0} {#Play {Prometheus\General\mining\CarStop.wav} @Vol}} {}
+#TRIGGER {*enter*vehicle*} {
+#if {@silentmode = 0} {
+#If {%IfWord(You,%1," ")} {
+#If {@GagVehicles = 1} {
+#gagline ALL}};
+#Play {Prometheus\General\Misc\EnterElevator.wav} @Vol}} {}
+#TRIGGER {*exit*vehicle*} {
+#if {@silentmode = 0} {
+#If {%IfWord(You,%1," ")} {
+#If {@GagVehicles = 1} {
+#gagline ALL}};
+#Play {Prometheus\General\Misc\ElevatorDoorClose.wav} @Vol};
+#If {@Mining = 1} {#PC @MineHandle stop; #Var Mining 0}} {}
+#TRIGGER {The floor beneath your feet begins to rumble as the engines begin shutting down.} {#If {@GagVehicles = 1} {#gagline ALL};#if {@silentmode = 0} {#Play {Prometheus\General\mining\EngineStop.wav} @Vol}} {}
+#TRIGGER {You hear a barely audible hum as the engines activate, and the floor beneath your feet begins vibrating slightly.} {#If {@GagVehicles = 1} {#gagline ALL};#if {@silentmode = 0} {#Play {Prometheus\General\mining\EngineStart.wav} @Vol}} {}
+#TRIGGER {The hum decreases but doesn't stop completely, and the vibration eases out as the engine startup completes.} {#If {@GagVehicles = 1} {#gagline ALL};
+#If {@RoomSounds = 1} {
+#If {@CurrentRoom = "transport"} {
+#If {@RoomSoundPlaying = 1} {
+#PC @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\Transport.wav} @roomvol;
+#Var RoomSoundPlaying 1; #Var RoomHandle %PlayHandle};
+#If {@CurrentRoom = "mv"} {
+#If {@RoomSoundPlaying = 1} {
+#PC @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\mv.wav} @roomvol;
+#Var RoomSoundPlaying 1; #Var RoomHandle %PlayHandle};
+#If {@CurrentRoom = "cv"} {
+#If {@RoomSoundPlaying = 1} {
+#PC @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\cv.wav} @roomvol;
+#Var RoomSoundPlaying 1; #Var RoomHandle %PlayHandle};
+#If {@CurrentRoom = "trash"} {
+#If {@RoomSoundPlaying = 1} {
+#PC @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\trash.wav} @roomvol;
+#Var RoomSoundPlaying 1; #Var RoomHandle %PlayHandle}}} {}
+#TRIGGER {The hum decreases and falls silent as the engines shut down, leaving you in complete silence.} {#If {@GagVehicles = 1} {#gagline ALL}; #If {@RoomSoundPlaying = 1} {#PC @RoomHandle stop; #Var RoomSoundPlaying 0}} {}
+#TRIGGER {You input a command into the mining console.} {#If {@GagMining = 1} {#gagline ALL};#if {@silentmode = 0} {#Play {Prometheus\Ship\Computer\MiniKeyboard.wav} @Vol}} {}
+#TRIGGER {You hear some clangs as the excavation equipment is retracted.} {#If {@GagMining = 1} {#gagline ALL};#if {@silentmode = 0} {#Play {Prometheus\Ship\Combat\Reflectors3.wav} @Vol; #If {@Mining = 1} {#PC @MineHandle stop; #Var Mining 0}}} {}
+#TRIGGER {Outside, you notice the vehicle moving out of * and gently settling down.} {#gagline ALL} {}
+#TRIGGER {You hear a loud clang as a chunk of minerals is deposi*ed into the mineral area.} {#If {@GagMining = 1} {#gagline ALL};#if {@silentmode = 0} {#Play {Prometheus\Ship\Harvesting\MineralChunk.wav} @Vol; #If {@PanMining = 1} {#PC %Playhandle Pan %Random(-4000,4000)}; #Alarm 0.15 {#Play {Prometheus\General\collecting\TrashThump.wav} @Vol; #If {@PanMining = 1} {#PC %Playhandle Pan %Random(-4000,4000)}}}} {}
+#TRIGGER {You hear some clangs as the excavation equipment is deployed.} {#If {@GagMining = 1} {#gagline ALL};#if {@silentmode = 0} {#PlayLoop {Prometheus\General\Mining\DigLoop.wav} @Vol; #Var MineHandle %Playhandle; #Var Mining 1}} {}
+#TRIGGER {* tap* a 'MINERAL' icon on a status console.} {#if {@silentmode = 0} {#Play {Prometheus\Ship\Computer\MiniKeyboard.wav} @Vol}} {}
+#TRIGGER {You hear the microdrones working in the background as they repair the damaged equipment.} {#gagline ALL;#if {@silentmode = 0} {#Play {Prometheus\Ship\Misc\Repair*7.wav} @vol}} {}
+#TRIGGER {You hear a loud clang as something under the vehicle snaps.} {#If {@GagMining = 1} {#gagline ALL};#if {@silentmode = 0} {#Play {Prometheus\Ship\Harvesting\Explosion.wav} @Vol; #If {@Mining = 1} {#PC @MineHandle stop; #Var Mining 0}}} {}
+#TRIGGER {The speed of the microdrones decreases and finally falls silent as they abort their work.} {#gagline ALL} {}
+#TRIGGER {*the microdrones to repair the damaged equipment.} {#if {@silentmode = 0} {#Play {Prometheus\Ship\Computer\RepairStart.wav} @Vol}} {}
+#TRIGGER {*the microdrones to abort the repair of*} {#gagline ALL} {}
+#TRIGGER {A small computer screen announces, "Repair complete."} {#if {@silentmode = 0} {#Play {Prometheus\Ship\Computer\RepairComplete.wav} @Vol}} {}
+#TRIGGER {*inputs a command into the mining console.} {#if {@silentmode = 0} {#Play {Prometheus\Ship\Computer\MiniKeyboard.wav} @Vol}} {}
+#TRIGGER {* input* a series of commands into a control console.} {#gagline all;
+#if {@SilentMode = 0} {#Play {Prometheus\Ship\Computer\MiniKeyboard.wav} @Vol}} {}
+#TRIGGER {The vehicle rumbles a bit as it moves towards the vehicle hatch*} {#gagline ALL;#if {@silentmode = 0} {#Play {Prometheus\General\mining\Start.wav} @Vol}} {}
+#trigger {[[]"* Mining Station* Block *"[]]} {#sub {Mining Station block %3}}

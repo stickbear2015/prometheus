@@ -1,0 +1,194 @@
+;* teleporter
+#TRIGGER {A blinding electric blue beam of light appears. After a few seconds, it disappears, leaving nothing in its wake.} {
+#If {@SilentMode = 0} {#Play {Prometheus\General\Misc\PersonTeleportsIn.wav} @Vol}} {}
+#TRIGGER {You signal the technician to begin the transport process.} {
+#If {@SilentMode = 0} {#Play {Prometheus\General\Misc\TeleportActivate.wav} @Vol}} {}
+#TRIGGER {* signals the technician to begin the transport process.} {
+#If {@SilentMode = 0} {#Play {Prometheus\General\Misc\TeleportActivate.wav} @Vol}} {}
+#TRIGGER {You hear the hum from beneath your feet increase markedly.} {
+#If {@SilentMode = 0} {#Play {Prometheus\General\Misc\Teleported.wav} @Vol}} {}
+#TRIGGER {The hum from under the floor increases markedly.} {
+#If {@SilentMode = 0} {#Play {Prometheus\General\Misc\Teleported.wav} @Vol}} {}
+#TRIGGER {Sparks start shooting up from the disc you're standing on. As time passes, the sparks become more and more numerous.} {
+#If {@SilentMode = 0} {#Play {Prometheus\General\Misc\WormholeInt.wav} @Vol}} {}
+#TRIGGER {Sparks start issuing from the disc. As time passes, the sparks become more and more numerous.} {
+#If {@SilentMode = 0} {#Play {Prometheus\General\Misc\WormholeInt.wav} @Vol}} {}
+#TRIGGER {The sparks continue multiplying, until you are encased in an electric blue beam of light.} {
+#If {@SilentMode = 0} {#Play {Prometheus\General\Misc\WormholeInt.wav} @Vol}} {}
+#TRIGGER {The sparks multiply, until * are hidden from sight in an electric blue beam of light.} {
+#If {@SilentMode = 0} {#Play {Prometheus\General\Misc\WormholeInt.wav} @Vol}} {}
+#TRIGGER {The electric blue beam fades, and you notice that your surroundings have changed.} {
+#If {@SilentMode = 0} {#Play {Prometheus\General\Misc\PersonTeleportsIn.wav} @Vol}} {}
+#TRIGGER {The electric blue beam fades, leaving nothing in its wake.} {
+#If {@SilentMode = 0} {#Play {Prometheus\General\Misc\PersonTeleportsOut.wav} @Vol}} {}
+#TRIGGER {*begins to emit a faint humming sound.} {#Gagline All;
+#If {@SilentMode = 0} {#Play {Prometheus\General\Misc\TeleportActivate.wav} @Vol}} {}
+#TRIGGER {You notice a flash of light before you and after a brief second*appears in a slight daze.} {
+#If {@SilentMode = 0} {#Play {Prometheus\General\Misc\PersonTeleportsIn.wav} @Vol}} {}
+#TRIGGER {*is surrounded by an Electric blue light and vanishes.} {
+#If {@SilentMode = 0} {#Play {Prometheus\General\Misc\PersonTeleportsOut.wav} @Vol}} {}
+#TRIGGER {Suddenly, you feel a pulling sensation behind your shoulderblades, and you are thrown into the swirling depths of a wormhole.} {#gagline all;
+#If {@SilentMode = 0} {#Play {Prometheus\General\Misc\Teleported.wav} @Vol}} {}
+#TRIGGER {You become aware of a thumdering rumble very close to your ear.} {#gagline All;
+#If {@SilentMode = 0} {#Play {Prometheus\General\Misc\Teleported.wav} @Vol}} {}
+#TRIGGER {You see a glimpse of darkness ahead, and suddenly, you find yourself hitting the ground.} {#gagline All;
+#If {@SilentMode = 0} {#Play {Prometheus\General\Misc\PersonTeleportsIn.wav} @Vol}} {}
+#TRIGGER {You feel like you are about to go blind. The lights dance in front of your eyes, like a fireworks display.} {#Gagline All;
+#If {@SilentMode = 0} {#Play {Prometheus\General\Misc\WormholeInt.wav} @Vol}} {}
+#TRIGGER {*tap*a series of buttons, *activating the starship's power.} {#If {@SilentMode = 0} {#Play {Prometheus\Ship\Computer\Keyboard*7.wav} @Vol}} {}
+#TRIGGER {You hear a loud klang as robotic arms transport the ship from the landing pad to the garage.} {#Gagline All;
+#If {@SilentMode = 0} {#Play {Prometheus\Ship\Misc\Garage.wav} @Vol}} {}
+#TRIGGER {You hear a loud clang as robotic arms seize the ship and transport it to the garage.} {#Gagline All;
+#If {@SilentMode = 0} {#Play {Prometheus\Ship\Misc\Garage.wav} @Vol}} {}
+#Trigger {You hear a loud klang as robotic arms transport the ship from the garage to the landing pad.} {#gagline ALL;
+#If {@SilentMode = 0} {#Play {Prometheus\Ship\Misc\LandingPad.wav} @vol}} {}
+#Trigger {You hear a loud clang as robotic arms seize the ship and transport it to the landing pad.} {#gagline ALL;
+#If {@SilentMode = 0} {#Play {Prometheus\Ship\Misc\LandingPad.wav} @vol}} {}
+;* Other movement
+#TRIGGER {You notify flight control of your desire to *} {#gagline ALL;
+#If {@SilentMode = 0} {#Play {Prometheus\CommChirp*2.wav} @Vol}} {} anycase
+#TRIGGER {You hear the sound of the ship's engine as you are propelled toward space.} {#Gagline All;
+#If {@SilentMode = 0} {#Play {Prometheus\Ship\Move\YouLaunch*10.wav} @Vol}} {}
+#TRIGGER {The roar of the engine calms as the starship completes its launch.} {#Gagline All;
+#If {@SilentMode = 0} {#Play {Prometheus\General\Misc\Beep*5.wav} @Vol;
+#Play {Prometheus\Ship\Misc\Background*5.wav} @Vol}} {}
+#TRIGGER {You feel the starship accelerate as it moves toward a *} {#If {@GagShipMoves = 1} {#Gagline All};
+#If {@SilentMode = 0} {#Play {Prometheus\Ship\Move\YouLanding*3.wav} @Vol}} {}
+#TRIGGER {That space is occupied.} {#If {@GagShipMoves = 1} {#Gagline ALL};
+#If {@SilentMode = 0} {#Play {Prometheus\Ship\Move\samespace.wav} @Vol}} {}
+#TRIGGER {The starship's engines begin to emit a slight roar as they move the ship through space.} {#Gagline All;#If {@SilentMode = 0} {#play {Prometheus\Ship\Move\FTL.wav} @Vol}} {}
+#TRIGGER {The starship slows rapidly as           it enters*} {#Gagline All;
+#If {@SilentMode = 0} {#Play {Prometheus\Ship\Move\FTLNotification.wav} @Vol; #PLAY {Prometheus\Ship\Misc\Background*5.wav} @Vol}} {}
+#TRIGGER {The computer announces, "The starship is now in the vicinity of a stargate with the destination of the stargate network."} {#Gagline ALL} {}
+#TRIGGER {You hear a faint whirring as the starship cloaks.} {#gagline ALL;
+#If {@SilentMode = 0} {#PLAY {Prometheus\Ship\Misc\ShipCloak.wav} @Vol}} {}
+#TRIGGER {You hear a faint whirring as the starship uncloaks.} {#gagline ALL;
+#If {@SilentMode = 0} {#PLAY {Prometheus\Ship\Misc\ShipCloak.wav} @Vol}} {}
+#TRIGGER {The ship is already moving.} {#If {@SilentMode = 0} {#Play {Prometheus\General\Misc\Cancel.wav} @Vol}} {}
+#TRIGGER {The starship is already moving.} {#If {@SilentMode = 0} {#Play {Prometheus\General\Misc\Cancel.wav} @Vol}} {}
+#TRIGGER {You must switch to autopilot first.} {#If {@SilentMode = 0} {#Play {Prometheus\General\Misc\Cancel.wav} @Vol}} {}
+#TRIGGER {The starship should be switched to manual pilot first.} {#If {@SilentMode = 0} {#Play {Prometheus\General\Misc\Cancel.wav} @Vol}} {}
+#TRIGGER {Invalid coordinates. Range: (1, 1, 1) to (20, 15, 10).} {#If {@SilentMode = 0} {#Play {Prometheus\General\Misc\Cancel.wav} @Vol}} {}
+#trigger {You feel the starship accellerate as it moves toward a planet.} {#If {@GagShipMoves = 1} {#Gagline ALL}} {}
+#trigger {You toggle*} {#If {@SilentMode = 0} {#play {Prometheus\ship\misc\switch.wav} @Vol}} {}
+#TRIGGER {The computer emits a piercing tone, alerting you that a starship has been detected in the sector's boundries.} {#Gagline All;
+#If {@SilentMode = 0} {play {Prometheus\ship\computer\PiercingTone.wav} @Vol}} {}
+#TRIGGER {The starship's engines begin to emit a slight roar as they move the ship through space.} {#Gagline All;
+#If {@SilentMode = 0} {#PLAY {Prometheus\Ship\Move\FTL.wav} @Vol}} {}
+#Trigger {Current coordinates: *} {#sub {%1}} {}
+#Trigger {*cruise control is providing no information about the starships active course.} {#Sub {No course info available.}} {}
+#Trigger {The estimated time of arrival is * until the starship reaches the destination.} {#Sub {e.t.a. %1.}} {}
+#Trigger {*"Navigational beacons indicate that the ship is closest to * which is * away from this sector.*"} {#Sub {Closest to %2, which is %3 away. Beacons in range.};
+#If {@SilentMode = 0} {#Play {Prometheus\Ship\Computer\Announce4.wav} @vol}} {}
+#Trigger {You see several familiar landmarks fading away into the distance as the starship prepares to enter the atmosphere. a group of * visible through the starships windows.} {
+#gagline ALL;} {}
+#Trigger {The ship slows down and you feel the sharp jolt as the ship touches down on the*.} {#gagline ALL;
+#If {@SilentMode = 0} {#Play {Prometheus\General\Misc\Beep*5.wav} @Vol}} {}
+#Trigger {The starship's accelerators ease off as the planets gravity takes hold of the starship.} {#gagline ALL} {}
+#trigger {*has left the sector.} {
+#If {@SilentMode = 0} {#play {Prometheus\ship\move\ExitSector*2.wav} @Vol; #If {@PanOtherShipMoves = 1} {#PC %PlayHandle Pan %Random(-4000,4000)}}} {}
+#trigger {*has jumped into the sector.} {
+#If {@SilentMode = 0} {#play {Prometheus\ship\move\EnterSector*2.wav} @Vol; #If {@PanOtherShipMoves = 1} {#Pc %PlayHandle Pan %Random(-4000,4000)}}} {}
+#TRIGGER {*has begun *ing procedures with*.} {
+#If {@SilentMode = 0} {#play {Prometheus\ship\move\OtherLanding*3.wav} 50; #If {@PanOtherShipMoves = 1} {#PC %Playhandle PAN %Random(-4000,4000)}}} {}
+#TRIGGER {*has launched from*.} {
+#If {@SilentMode = 0} {#play {Prometheus\ship\move\OtherLaunch*3.wav} 60; #If {@PanOtherShipMoves = 1} {#PC %Playhandle Pan %Random(-4000,4000)}}} {}
+#trigger {A chime sounds, indicating that somebody has entered an airlock.} {#Gagline All;
+#If {@SilentMode = 0} {#play {Prometheus\ship\misc\Bell.wav} @Vol}} {}
+#trigger {*You suddenly hear a loud roaring sound and look up just in time to see an asteroid being hauled in.} {
+#If {@SilentMode = 0} {#play {Prometheus\ship\move\Asteroid*3.wav} @Vol}} {}
+;* docking bay
+#TRIGGER {You hear a humming noise as the docking bay door opens.} {#If {@GagDock = 1} {#gagline ALL};
+#If {@SilentMode = 0} {#Play {Prometheus\Ship\Move\DockingBayDoorOpen.wav} @vol; #If {@PanDock = 1} {#PC %PlayHandle Pan %Random(-4000,4000)}}} {}
+#Trigger {You feel a slight jolt as the ship begins to move through the open bay door, and into open space.} {#If {@GagDock = 1} {#gagline ALL};
+#If {@SilentMode = 0} {#Play {Prometheus\Ship\Move\DockingBayDoorOpen.wav} @vol; #If {@PanDock = 1} {#PC %PlayHandle Pan %Random(-4000,4000)}}} {}
+#Trigger {You feel a slight jolt as the other ship begins to move through the open bay door, and into open space.} {#If {@GagDock = 1} {#gagline ALL};
+#If {@SilentMode = 0} {#Play {Prometheus\Ship\Move\DockingBayDoorOpen.wav} @vol; #If {@PanDock = 1} {#PC %PlayHandle Pan %Random(-4000,4000)}}} {}
+#Trigger {You hear a humming noise as the docking bay door closes.} {#If {@GagDock = 1} {#gagline ALL};
+#If {@SilentMode = 0} {#Play {Prometheus\Ship\Move\DockingBayDoorClose.wav} @vol; #If {@PanDock = 1} {#PC %PlayHandle Pan %Random(-4000,4000)}}} {}
+#Trigger {You feel a slight jolt as the ship sets down in a docking bay.} {#If {@GagDock = 1} {#gagline ALL};
+#If {@SilentMode = 0} {#Play {Prometheus\Ship\Move\DockingBayDoorClose.wav} @vol; #If {@PanDock = 1} {#PC %PlayHandle Pan %Random(-4000,4000)}}} {}
+#Trigger {You feel a faint vibration as the ship begins to launch into open space.} {#If {@GagDock = 1} {#gagline ALL};
+#If {@SilentMode = 0} {#Play {Prometheus\Ship\Move\RingRemove.wav} @vol; #If {@PanDock = 1} {#PC %PlayHandle Pan %Random(-4000,4000)}}} {}
+#Trigger {You detect a faint rumbling as the starship begins to orient toward another ship.} {
+#If {@GagDock = 1} {#gagline ALL};
+#If {@SilentMode = 0} {#Play {Prometheus\Ship\Move\RingStart.wav} @vol; #If {@PanDock = 1} {#PC %PlayHandle Pan %Random(-4000,4000)}}} {}
+#Trigger {The starship rocks gently as the docking ring comes into contact with another starship.} {#If {@GagDock = 1} {#gagline ALL};
+#If {@SilentMode = 0} {#Play {Prometheus\Ship\Move\RingEnd.wav} @vol; #If {@PanDock = 1} {#PC %PlayHandle Pan %Random(-4000,4000)}}} {}
+#Trigger {You hear a satisfying click as the ship's docking ring is retracted from the docked ship's hull.} {#If {@GagDock = 1} {#gagline ALL};
+#If {@SilentMode = 0} {#Play {Prometheus\Ship\Move\RingRemove.wav} @vol; #If {@PanDock = 1} {#PC %PlayHandle Pan %Random(-4000,4000)}}} {}
+#Trigger {A slowly rotating black rift appears in front of the ship.} {#If {@GagHyper = 1} {#Gagline All};
+#If {@SilentMode = 0} {#Play {Prometheus\Ship\Move\RiftForms.wav} @vol}} {}
+#Trigger {The ship accelerates, making the blackness around you shiver as it flies through hyperspace.} {#If {@GagHyper = 1} {#Gagline All}} {}
+#Trigger {The ship slows down as it comes closer to the final destination.} {#If {@GagHyper = 1} {#Gagline All}} {}
+#Trigger {The ship suddenly shoots out of the rift and into another sector. The rift rapidly shrinks and disappears.} {
+#If {@GagHyper = 1} {#gagline ALL}; #If {@SilentMode = 0} {#Play {Prometheus\Ship\Misc\Background*5.wav} @Vol}}
+#trigger {*has warped into the sector.} {#Gagline All;
+#If {@SilentMode = 0} {#play {Prometheus\ship\move\EnterSector*2.wav} @Vol}} {}
+#TRIGGER {*has initiated an intrasector sublight jump.} {#If {@SilentMode = 0} {#play {Prometheus\ship\move\SublightExt.wav} 60; #If {@PanOtherShipMoves = 1} {#PC %Playhandle Pan %Random(-4000,4000)}}} {}
+#TRIGGER {The dull roar of the sublight drive fades away as the ship reaches a destination.} {#Gagline All;
+#If {@SilentMode = 0} {
+#PLAY {Prometheus\General\Misc\Beep*5.wav} @Vol;
+#Play {Prometheus\Ship\Misc\Background*5.wav} @Vol}} {}
+#TRIGGER {*has entered hyperspace.} {#if {@silentMode = 0} {#Play {Prometheus\Ship\Move\ExitSector*2.wav} @Vol; #If {@PanOtherShipMoves = 1} {#PC %PlayHandle Pan %Random(-4000,4000)}}} {}
+#TRIGGER {*has exitted hyperspace.} {#if {@silentMode = 0} {#Play {Prometheus\Ship\Move\EnterSector*2.wav} @Vol; #If {@PanOtherShipMoves = 1} {#PC %PlayHandle Pan %Random(-4000,4000)}}} {}
+#TRIGGER {You hear the dull roar as the ship's sublight drive propels the ship toward its destination.} {#If {@GagShipMoves = 1} {#gagline ALL}; #if {@silentMode = 0} {#Play {Prometheus\Ship\Move\SublightExt.wav} @Vol}} {}
+#TRIGGER {You feel a faint vibration coming from the direction of the ships docking bay.} {#If {@GagDock = 1} {#gagline ALL};#if {@silentMode = 0} {#Play {Prometheus\Ship\Move\DockingBayDoorOpen.wav} @Vol; #If {@PanDock = 1} {#PC %PlayHandle Pan %Random(-4000,4000)}}} {}
+#TRIGGER {The engines begin to vibrate mildly as the ship accelerates toward another starship.} {#If {@GagDock = 1} {#gagline ALL};#if {@Silentmode = 0} {#Play {Prometheus\Ship\Move\RingStart.wav} @Vol}} {}
+#TRIGGER {You hear a short hum as hydraulic arms smoothly haul the ship from the garage onto the*} {#gagline ALL;#if {@SilentMode = 0} {#Play {Prometheus\Ship\Misc\LandingPad.wav} @Vol}} {}
+#TRIGGER {You hear a short hum as hydraulic arms smoothly haul the ship from the * into the garage.} {#gagline ALL;#if {@SilentMode = 0} {#Play {Prometheus\Ship\Misc\Garage.wav} @Vol}} {}
+#TRIGGER {*is gently lifted up and smoothly hauled into the garage by a pair of hydraulic arms.} {#if {@SilentMode = 0} {#Play {Prometheus\Ship\Misc\GarageExt.wav} @vol; #PC %Playhandle Pan %Random(-4000,4000)}} {}
+#TRIGGER {*is smoothly hauled into the area and placed on a large, metal platform.} {#if {@SilentMode = 0} {#Play {Prometheus\Ship\Misc\GarageExt.wav} @vol; #PC %Playhandle Pan %Random(-4000,4000)}} {}
+#TRIGGER {*is gently lifted from its platform and smoothly hauled out of the area by a pair of hydraulic arms.} {#if {@SilentMode = 0} {#Play {Prometheus\Ship\Misc\LandingPadExt.wav} @vol; #PC %Playhandle Pan %Random(-4000,4000)}} {}
+#TRIGGER {*is smoothly hauled onto the * and gently set down, ready for launch.} {#if {@silentMode = 0} {#Play {Prometheus\Ship\Misc\LandingPadExt.wav} @vol; #PC %Playhandle Pan %Random(-4000,4000)}} {}
+#TRIGGER {A soft, steady hum starts up somewhere deep inside the bowels of the ship as the power up completes, blended with the smooth sound of the engines kicking in.} {#gagline ALL;#if {@silentmode = 0} {
+#Play {Prometheus\Ship\Misc\PowerOn*3.wav} @Vol;
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop; #Var RoomSoundPlaying 0};
+#If {@RoomSounds = 1} {
+#If {%IfWord(cockpit,@RoomName," ")} {
+#PlayLoop {Prometheus\Ship\Rooms\Cockpit*3.wav} @roomvol;
+#Var RoomSoundPlaying 1; #Var RoomHandle %playhandle; #Abort 1};
+#If {%IfWord(bridge,@RoomName," ")} {
+#PlayLoop {Prometheus\Ship\Rooms\Bridge*3.wav} @roomvol;
+#Var RoomSoundPlaying 1; #Var RoomHandle %playhandle; #Abort 1};
+#PlayLoop {Prometheus\Ship\Rooms\Control*3.wav} @roomvol;
+#Var RoomSoundPlaying 1; #Var RoomHandle %playhandle}}} {}
+#TRIGGER {The smooth hum deep within the bowels of the ship slowly subsides into silence as the starship's systems are powered down.} {#gagline ALL;#if {@silentmode = 0} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop; #Var RoomSoundPlaying 0};
+#If {@RoomSounds = 1} {
+#PlayLoop {Prometheus\Ship\Rooms\NoPower.wav} @roomvol;
+#Var RoomSoundPlaying 1; #Var RoomHandle %playhandle};
+#Play {Prometheus\Ship\Misc\PowerOff*5.wav} @Vol}} {}
+#TRIGGER {You hear the destinctive roar of starship engines, and look up to see a starship quickly approaching from a distance, making careful maneuvers toward * in order to*} {#gagline ALL;#if {@silentmode = 0} {#Play {Prometheus\Ship\Move\OtherLanding*3.wav} @vol; #PC %Playhandle Pan %Random(-4000,4000)}} {}
+#TRIGGER {The thrusters of * begin to glow bright red, and the ship launches toward the sky with a roar, leaving behind a wave of heat and a trail of fire.} {#if {@silentmode = 0} {#Play {Prometheus\Ship\Move\OtherLaunch*3.wav} @vol; #PC %Playhandle Pan %Random(-4000,4000)}} {}
+#TRIGGER {The smooth hum of the engines builds up a bit as the ship begins moving.} {#If {@GagShipMoves = 1} {#gagline ALL};#if {@silentmode = 0} {#Play {Prometheus\Ship\Move\Accelerate.wav} @Vol}} {}
+#TRIGGER {The hum of the engines settles down as the ship stops moving.} {#If {@GagShipMoves = 1} {#gagline ALL};#if {@silentmode = 0} {#Play {Prometheus\Ship\Move\Decelerate.wav} @Vol}} {}
+#TRIGGER {The ship shakes as it ripples the fabric of space, entering a rift of deep, pulsing blackness.} {#gagline ALL; #if {@silentmode = 0} {#Play {Prometheus\Ship\Move\Rift.wav} @Vol}} {}
+#TRIGGER {*taps some buttons on the movement console.} {#if {@silentmode = 0} {#Play {Prometheus\Ship\Computer\Keyboard*7.wav} @Vol}} {}
+#TRIGGER {*"Autopilot engaged."} {#gagline ALL;
+#If {@SilentMode = 0} {#Play {Prometheus\Ship\Move\AutopilotEngaged.wav} @vol}} {}
+#TRIGGER {*"Autopilot disengaged."} {#gagline ALL;
+#If {@SilentMode = 0} {#Play {Prometheus\Ship\Move\AutopilotDisengaged.wav} @vol}} {}
+#TRIGGER {*has entered the sector through an unrecorded field.} {#if {@silentmode = 0} {#Play {Prometheus\Ship\Move\EnterSector*2.wav} @Vol}} {}
+#trigger {*has jumped out of the sector.} {#If {@SilentMode = 0} {#play {Prometheus\ship\move\EnterSector*2.wav} @Vol}} {}
+#Trigger {*"The ship has successfully commenced standard landing procedures*} {#gagline ALL;
+{#if {@silentmode = 0}} {#Play {Prometheus\General\Misc\beep*5.wav} @vol}} {}
+#TRIGGER {*"Initiating asteroid haul to*} {#If {@SilentMode = 0} {
+#Play {Prometheus\Ship\Move\HaulAsteroid*2.wav} @Vol}} {}
+#TRIGGER {With a final jolt, the starship slows as it exits the stargate.} {#If {@SilentMode = 0} {#gagline ALL; #Play {Prometheus\Ship\Move\stargateNotification.wav} @Vol}} {}
+#TRIGGER {The starship shudders as it enters a stargate.} {#If {@SilentMode = 0} {#gagline ALL; #Play {Prometheus\Ship\Move\Stargate*3.wav} @Vol}} {}
+#TRIGGER {You are encased in a fluctuating electric blue light and after a brief moment you disappear into the great unknown.} {#gagline all} {}
+#Key {+NUMPADPLUS} {+;} {}
+#Key {-NUMPADDASH} {-;} {}
+#TRIGGER {The ship accelerates into hyperspace.} {#Gagline ALL;
+#if {@SilentMode = 0};
+#Play {Prometheus\Ship\Move\ExitSector*2.wav} @vol} {}
+#TRIGGER {The ship decelerates into real space.} {#Gagline ALL;
+#if {@SilentMode = 0};
+#Play {Prometheus\Ship\Move\EnterSector*2.wav} @vol} {}
+#TRIGGER {This ship isn't in space.} {#Gagline ALL;
+#if {@SilentMode = 0};
+#Play {Prometheus\Ship\Misc\NotInSpace.wav} @vol} {}
+#TRIGGER {The ship moves carefully in the vastness of hyperspace.} {#gagline all} {}
