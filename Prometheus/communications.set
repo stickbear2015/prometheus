@@ -25,7 +25,7 @@
 #If {@SilentMode = 0} {
 #gagline ALL;
 #Play {Prometheus\General\Comm\Static*5.wav} @Vol}} {}
-#TRIGGER {Your communicator emits a confirmational tone as the private link with * is established.} {#Sub {Link with %1 successfull.}; #If {@SilentMode = 0} {
+#TRIGGER {Your communicator emits a confirmational tone as the private link with * is established.} {#Sub {Link with %1 successful.}; #If {@SilentMode = 0} {
 #Play {Prometheus\General\Comm\CommConf.wav} @Vol}} {}
 #TRIGGER {[[]You to *]*} {#If {@SilentMode = 0} {
 #Play {Prometheus\General\Comm\Private.wav} @Vol};
@@ -51,8 +51,8 @@
 #Play {Prometheus\general\comm\commchirp2.wav} @Vol}} {channels}
 #TRIGGER {[[]PM *} {#if {@SilentMode = 0} {
 #Play {Prometheus\General\Comm\PM.wav} @vol}} {channels}
-#TRIGGER {[[]Unsensored] *} {#if {@silentMode = 0} {
-#Play {Prometheus\General\Comm\unsensored.wav} @vol}} {channels}
+#TRIGGER {[[]Uncensored] *} {#if {@silentMode = 0} {
+#Play {Prometheus\General\Comm\uncensored.wav} @vol}} {channels}
 #TRIGGER {[[]Soundpacks] *} {#if {@SilentMode = 0} { #Play {Prometheus\General\Comm\Soundpacks.wav} @vol}} {Channels}
 #TRIGGER {[[]Alerts] *} {#if {@SilentMode = 0} { #Play {Prometheus\General\Comm\alerts.wav} @vol}} {channels}
 #TRIGGER {ROOC: *} {#if {@SilentMode = 0} { #Play {Prometheus\General\Comm\rooc.wav} @vol}} {Channels}

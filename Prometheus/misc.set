@@ -119,18 +119,6 @@
 #If {@FSRV = "apt"} {
 #Play {Prometheus\General\Footsteps\Station*8.wav} @Vol; #Abort 1};
 #Play {Prometheus\General\Footsteps\Planet*8.wav} @Vol}} {footsteps|global}
-#TRIGGER {The door leading *.} {
-#If {@SilentMode = 0} {
-#If {%IfWord(slides,%1," ")} {
-#If {%IfWord(open,%1," ")} {
-#Play {Prometheus\General\Misc\SlideDoorOpen.wav} @Vol; #Abort 1};
-#If {%IfWord(closed,%1," ")} {
-#Play {Prometheus\General\Misc\SlideDoorClose.wav} @Vol; #Abort 1}}
-#If {%IfWord(revolves,%1," ")} {
-#If {%IfWord(open,%1," ")} {
-#Play {Prometheus\General\Misc\Revdoor.wav} @Vol; #Abort 1};
-#If {%IfWord(closed,%1," ")} {
-#Play {Prometheus\General\Misc\Revdoor.wav} @Vol; #Abort 1}}}} {}
 #TRIGGER {*press*a button on*chair*, turning it 180 degrees.} {#If {@silentmode = 0} {
 #Play {Prometheus\General\Misc\chair1.wav} @Vol}} {}
 #TRIGGER {The vehicle begins shaking in place as it prepares for launching.} {#Gagline All;

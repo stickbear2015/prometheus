@@ -50,3 +50,11 @@ Remove Sounds\Prometheus\Music\Planets folder.
 Remove Sounds\Prometheus\Music\Intro music folder.
 23, some sound master. almost most of the  other pack sounds have been removed from the pack, fixed doors, added a sound when someone raises their status as well as sp cleanup, the sp size is now 942 mb
 copy sounds and Prometheus folders
+24. Updated the Uncensored trigger to reflect channel spelling in game.
+Copy Prometheus\Communications.set, remove Sounds\Prometheus\General\Comm\Unsensored.wav and replace with Sounds\Prometheus\General\Comm\Uncensored.wav.
+25. Renamed the apartment lobby sound so that it would actually play in the pack if you were standing in a lobby.
+Remove Sounds\Prometheus\General\Rooms\apartment lobby.wav and copy Sounds\Prometheus\General\Rooms\lobby.wav.
+26. Removed the trigger for doors. We can re-add door sounds late ron.
+Copy Prometheus\Misc.set.
+27. Disabled the setting that gags othre vehicle texts, such as exiting and entering. This should fix some issues that players were having with messages sent over channels being gagged.
+Copy Prometheus\Settings.set.
