@@ -58,3 +58,11 @@ Remove Sounds\Prometheus\General\Rooms\apartment lobby.wav and copy Sounds\Prome
 Copy Prometheus\Misc.set.
 27. Disabled the setting that gags othre vehicle texts, such as exiting and entering. This should fix some issues that players were having with messages sent over channels being gagged.
 Copy Prometheus\Settings.set.
+28. Credits, George Blue Designation. Updated one of teh bridge osunds.
+Copy Sounds\Prometheus\Ship\Rooms\bridge4.wav.
+29. Fixed the trigger for the uncensored channel.
+Copy Prometheus\Communications.set.
+30. A couple sounds have been added for airspace scooping.
+Copy Prometheus\airscooping.set
+31. Added a sound for th eUncensored Box channel.
+Copy Prometheus\Communications.set and Sounds\Prometheus\General\Comm\UncensoredBox.wav.

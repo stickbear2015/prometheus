@@ -48,9 +48,9 @@
 #load cv.set
 #load derelicts.set
 #load devices.set
+#load FlyMode.set
 #load GroundCombat.set
 #load groups.set
-#load FlyMode.set
 #load HatchCracking.set
 #load hosts.set
 #load Hunting.set
@@ -58,8 +58,8 @@
 #load mining.set
 #load misc.set
 #load options.set
-#load PlanetAmbiences.set
 #Load PearlDiving.set
+#load PlanetAmbiences.set
 #load relics.set
 #load salvage.set
 #load ShipAmbiences.set
@@ -70,8 +70,8 @@
 #Load ShipMove.set
 #load shipwreckHarvesting.set
 #load socials.set
-#load swimming.set
 #Load StarResearching.set
+#load swimming.set
 #load TrashCollecting.set
 #load VehicleAmbiences.set
 
