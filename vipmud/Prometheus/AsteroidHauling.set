@@ -3,12 +3,10 @@
 #TRIGGER {*begins maneuvering the starship onto an asteroid.} {#gagline ALL;#if {@silentMode = 0} {#Play {Prometheus\Ship\Move\LandAsteroid.wav} @Vol}} {}
 #trigger {You notice a faint hum as the starship orients its asteroid anchor into place.} {#Gagline ALL;
 #If {@SilentMode = 0} {#play Prometheus\general\asteroid\AnchorStart.wav @Vol}} {}
-#trigger {You hear a werring coming from beneath you, followed by a loud click as the ship's asteroid anchor is drilled securely into the asteroid.} {#Gagline ALL;
+#trigger {You hear a whirring coming from beneath you, followed by a loud click as the ship's asteroid anchor is drilled securely into the asteroid.} {#Gagline ALL;
 #If {@SilentMode = 0} {#play Prometheus\general\asteroid\AnchorEnd.wav @Vol}} {}
 #trigger {You hear a sharp scraping sound and look out to notice the asteroid anchor being removed from the solid rock.} {#Gagline All;
 #If {@SilentMode = 0} {#play Prometheus\general\asteroid\AnchorRemove.wav @Vol}} {}
 #TRIGGER {You begin maneuvering the starship onto an asteroid.} {#Gagline All;
 #If {@SilentMode = 0} {#Play {Prometheus\Ship\Move\LandAsteroid.wav} @Vol}} {}
 #Trigger {You feel the starship being pulled by the asteroid's gravitational force.} {#Gagline All} {}
-#TRIGGER {You hear a whirring coming from beneath you, followed by a loud click as the ship's asteroid anchor is drilled securely into the asteroid.} {#Gagline ALL;
-#Play {C:\Users\Owner\Documents\VIP Mud\Sounds\Prometheus\General\Asteroid\AnchorEnd.wav} {@vol}} {}

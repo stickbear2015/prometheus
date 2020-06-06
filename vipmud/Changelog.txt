@@ -64,5 +64,15 @@ Copy Sounds\Prometheus\Ship\Rooms\bridge4.wav.
 Copy Prometheus\Communications.set.
 30. A couple sounds have been added for airspace scooping.
 Copy Prometheus\airscooping.set
-31. Added a sound for th eUncensored Box channel.
+31. Added a sound for the Uncensored Box channel.
 Copy Prometheus\Communications.set and Sounds\Prometheus\General\Comm\UncensoredBox.wav.
+32. Corrected a couple errors in the comms set file.
+ Copy Prometheus\Communications.set.
+33. Fixed another error in the comms set file.
+Copy Prometheus\Communications.set.
+34. Added a feature that gaggs what you salvage when gag salvaging is turned on, leaving out the essentials that could be prepared for use.
+Coppy Prometheus\Salvage.set
+35. Corrected the spelling of the asteroid anchor ending trigger in asteroid hauling, and also removed repetitive code that referenced c:\users|owner\blablablabla.
+Coppy Prometheus\AsteroidHauling.set.
+36. Fixed the ooc uncensored trigger in the communications set file, for real this time!
+Copy Prometheus\Communications.set

@@ -13,8 +13,10 @@
 #trigger {You hear several loud thuds as a salvaging line is deployed into space.} {#Gagline ALL} {sal}
 #TRIGGER {A loud thud can be heard from the storage room as a piece of debris is * by the salvaging line.} {#If {@GagSal = 1} {#Gagline ALL};
 #If {@SilentMode = 0} {#play Prometheus\ship\misc\salvage*3.wav @vol; #If {@PanSal = 1} {#PC %PlayHandle Pan %Random(-4000,4000)}}} {sal}
-#TRIGGER {*, "* has been salvaged."} {
-#sub {%2 salvaged}} {sal}
+#TRIGGER {*, "* has been salvaged."} {#If {@GagSal = 1} {
+#Gagline voice} {
+#sub {%2 salvaged}
+}} {sal}
 #Trigger {*Salvaging aborted.*} {
 #class sal disable}
 #Trigger {*no debris clouds nearby.*} {

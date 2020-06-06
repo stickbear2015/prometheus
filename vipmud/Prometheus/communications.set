@@ -51,11 +51,10 @@
 #Play {Prometheus\general\comm\commchirp2.wav} @Vol}} {channels}
 #TRIGGER {[[]PM *} {#if {@SilentMode = 0} {
 #Play {Prometheus\General\Comm\PM.wav} @vol}} {channels}
-#TRIGGER {[[]Uncensored] *} {#if {@silentMode = 0} {
-#Play {Prometheus\General\Comm\Uncensored.wav} @vol}} {channels}
+#TRIGGER {[[]Uncensored] *} {#if {@silentMode = 0} {#Play {Prometheus\General\Comm\Uncensored.wav} @vol}} {Channels}
 #TRIGGER {[[]Alerts] *} {#if {@SilentMode = 0} { #Play {Prometheus\General\Comm\alerts.wav} @vol}} {channels}
 #TRIGGER {ROOC: *} {#if {@SilentMode = 0} { #Play {Prometheus\General\Comm\rooc.wav} @vol}} {Channels}
 #TRIGGER {[[]Taunt] *} {#if {@SilentMode = 0} {#Play {Prometheus\General\Comm\taunt.wav} @vol}} {channels}
 #TRIGGER {[[]Uncensored] *} {#if {@silentMode = 0} {#Play {C:\Users\Owner\Documents\VIP Mud\Sounds\Prometheus\General\Comm\Uncensored.wav} @vol}} {Channels}
-#TRIGGER {[[]Soundpacks] *} {#if {@silentMode = 0} {#Play {C:\Users\Owner\Documents\VIP Mud\Sounds\Prometheus\General\Comm\Soundpacks.wav} @vol}} {Channels}
-#TRIGGER {[[]Uncensored Box] *} {#if {@silentMode = 0} {#Play {C:\Users\Owner\Documents\VIP Mud\Sounds\Prometheus\General\Comm\UncensoredBox.wav}  @vol}} {Channels}
+#TRIGGER {[[]Soundpacks] *} {#if {@silentMode = 0} {#Play {Prometheus\General\Comm\Soundpacks.wav} @vol}} {Channels}
+#TRIGGER {[[]Uncensored Box] *} {#if {@silentMode = 0} {#Play {Prometheus\General\Comm\UncensoredBox.wav}  @vol}} {Channels}
