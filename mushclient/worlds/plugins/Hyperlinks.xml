@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<muclient>
+<plugin 
+   name="Hyperlinks" 
+   author="Nyano" 
+   id="520bc4f29806f7af0017985f" 
+   language="Lua" 
+   purpose="Makes web and email addresses on a line into hyperlinks." 
+   requires="5.00" 
+   version="3.0"
+  >
+</plugin>
+
+<triggers>
+  <trigger
+    enabled="y"
+    match="(.*)((https?|mailto)://(?:[\w\d\.\?\/\%#@!&quot;&amp;_]+[/\w\d#]))(.*)$"
+    omit_from_output="y"
+    ignore_case="y"
+    regexp="y"
+    script="OnHyperlink"
+    sequence="100"
+  >
+  </trigger>
+</triggers>
+
+<script>
+<![CDATA[
+
+function OnHyperlink(name, line, wildcards, styles)
+  local hyperlinks = {}
+  local newstyle = {}
+  local i = 1
+  local hyperlinkcount = 0
+  local doingURL = 0
+  while i <= table.getn(styles) do -- Doesn't use pairs() because of problems with field-injection.
+    if doingURL == 0 then
+      cut = string.find(styles[i].text, "([hHtTpPsSmMaAiIlLoO]+://[%S]*[%w#/])")
+      if cut == nil then
+        table.insert(newstyle, {textcolour = styles[i].textcolour, backcolour = styles[i].backcolour, style = styles[i].style, text = styles[i].text})
+      else
+        table.insert(newstyle, {textcolour = styles[i].textcolour, backcolour = styles[i].backcolour, style = styles[i].style, text = string.sub(styles[i].text, 1, cut - 1)})
+        table.insert(styles, i + 1, {textcolour = styles[i].textcolour, backcolour = styles[i].backcolour, style = styles[i].style, text = string.sub(styles[i].text, cut)})
+        doingURL = 1
+        hyperlinkcount = hyperlinkcount + 1
+      end
+    else
+      cut, length, temp = string.find(styles[i].text, "^([%S]*[%w#/])")
+      if cut ~= nil then
+        if hyperlinks[hyperlinkcount] ~= nil then
+          hyperlinks[hyperlinkcount] = hyperlinks[hyperlinkcount] .. temp
+        else
+          hyperlinks[hyperlinkcount] = temp
+        end
+        table.insert(newstyle, {textcolour = styles[i].textcolour, backcolour = styles[i].backcolour, style = styles[i].style, text = string.sub(styles[i].text, 1, length), hypernumber = hyperlinkcount})
+        styles[i].text = string.sub(styles[i].text, length + 1)
+        if styles[i].text ~= "" then
+          i = i - 1
+          doingURL = 0
+        else
+          doingURL = 1
+        end
+      else 
+        doingURL = 0
+        i = i - 1
+      end
+    end
+    i = i + 1
+  end
+  for x, y in ipairs (newstyle) do
+    NoteStyle(y.style)
+    if y.hypernumber ~= nil then
+      Hyperlink(hyperlinks[y.hypernumber], y.text, "Go to " .. hyperlinks[y.hypernumber], RGBColourToName(y.textcolour), RGBColourToName(y.backcolour), 1)
+    else
+      ColourTell(RGBColourToName(y.textcolour), RGBColourToName(y.backcolour), y.text)
+    end
+  end
+end
+
+]]>
+
+</script>
+
+</muclient>

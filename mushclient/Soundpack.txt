@@ -1,0 +1,112 @@
+Welcome to the Prometheus Soundpack!
+====================================
+
+Thanks for downloading and installing the soundpack. This package is for the awesome MOO called Eternal Wars as known as Prometheus. Please, you should use this soundpack just for this game only. If you run this soundpack in other games, these sounds won't work, of course.
+
+Before you run the 'MUSHclient.exe' file from the main directory, make sure you run it as an administrator by right clicking or press the context menu key on that executable file and choose the entry 'Run as administrator'.
+
+Perhaps, if you play this MOO at the first time, you need to set a few options in the game with the OPTIONS command.
+
+------------------------------------
+
+Options Menu:
+[1]: Ship Options
+[2]: Communicator Options
+[3]: Look Options
+[4]: Mapping options
+[5]: Shop Options
+[6]: WHO Options
+[7]: Miscellaneous Options
+[8]: Exit
+
+If you are using a screen reader, you can enable first the blind mode. This options is in the Look Options.
+
+In the Ship Options enable the Show Power Status in Ship Room Titles. Check the option Starmap Style is set to Coordinate-based.
+
+In the Who Options, I would recommend to disable Who output in proper columns. Output text won't cut off in the WHO list. If not, I would recommend to turn the Who Output to Modern.
+
+In the Miscellaneous Options enable the Announcing self-movement with normal exits, and set the Exit movement style to Soundpack-compatible.
+
+All other options feel free to change like you want it.
+
+------------------------------------
+
+As following the keystrokes that you can use it in the soundpack:
+* F3: Toggles the combat mode on/off. Default is off.
+  If it's turned off, you don't get any messages if a ship is firing to another one. To turn it on, could be interesting, if you're doing a PVP combat.
+* F4: Toggels the ship alarm sound on or off (default is off).
+  This option toggles the red alert sounds on or off while your starship is on that state.
+* F5: Saves the current configuration.
+  Here you can save your configuration. It will take that for the next start up.
+* Ctrl+F5: Reloads the current saved configuration.
+  If you've made changes, you can reload the last saved status of your configuration again.
+* F6: Turns the repeat command on or off (default is off).
+  This nice feature let you execute the last entered command by pressing the enter key. If you have turned it off, so you have to input all commands again and use the arrow keys as usual.
+* F7: Toggles the social sounds on or off (default is on).
+  You can control the social sounds here.
+* F9, F10: Sound volume down or up.
+  You can control the sounds volume here.
+* Ctrl+F9, Ctrl+F10: Room volume down and up.
+  You can control the room sounds volume here.
+* Ctrl+Shift+F9, Ctrl+Shift+F10: Combat volume down and up.
+  You can control the combat sounds volume here.
+* Alt+F9: Toggles the regular sounds on or off.
+  You can control the regular sounds volume here.
+* Alt+F10: Toggles the room sounds on or off.
+  You can control the room sounds volume here.
+* Numpad Decimal: Switches between the navigation and the walk mode.
+  If you have a numpad, you can switch between the modes, the walk mode
+  and the navigation mode. The first one means, you can use the numpad keys
+  go walk around without using all the time to walk input each destination.
+  The navigation mode, it is for pilotting a starship in space.
+* Shift+F3: Toggles the output messages for kicking and punching in hand-to-hand combats.
+* Ctrl+Shift+G: Sets your "virtual" gender to female, male, or neuter. This is for getting sounds in hand-to-hand combats.
+* Alt+X calls the 'goal' command.
+* Alt+G calls the 'cash' command.
+* Alt+H displays your health points.
+* Alt+C gives you with the 'coords' command to see the current coordinates where you are in the sector.
+* Alt+Shift+C displays your current galactic coordinates.
+
+------------------------------------
+
+Other Commands:
+* version
+  Displays the current version information of this soundpack.
+* readme
+  Shows this readme file in a Notepad window.
+* changelog
+  Shows the changelog file in a Notepad window.
+
+------------------------------------
+
+Channel History Buffers:
+You can with this awesome feature to browse quickly through the buffer to read again what was the last message again by pressing Alt plus left or right arrow key for categories, and with Alt plus 1 through 0 you can read the last 10 temporarily recorded message from the certain category. press that keystroke twice quickly, you'll copy that message to the clipboard. If it happens, if you wish you can delete a whole category to clear the buffer by pressing Alt+Delete. Either, you can browse through the message in a category by pressing Alt+Up Arrow, and Alt+Down Arrow key. Now, it's possible to hold 200 messages in a category now. If you are using a screen reader, make sure, you bypass that possibly. These buffers are available for a game session, it keeps as long as you are logged in.
+
+------------------------------------
+
+Repeat Commands:
+You know that maybe. You have several same items in your inventory, and want to sell them back or so. Normally, you would have to type that command several times. Now, you can do it in just one command, for example:
+
+  #10 sell table
+
+Sells all ten tables from your inventory.
+
+NOTE: If I hear someone is messing with this feature up, I'll remove that again. This is just for items, not against other players!
+
+------------------------------------
+
+Logging Into The File:
+Furthermore, in certain cases, you can turn the logging on/off by pressing Ctrl+Shift+J. Then, you see a separate window where you can set up options. Hitting OK button to save, and close the settings. This option is turned off by default.
+
+NOTE: If you turn it on, remember that everything will be logged, and saved periodically to the file, as well as like passwords, and any kind of codes, saved as a clear text.
+
+------------------------------------
+
+If you have any comments, suggestions, new ideas, or whatever, let me know it by sending hypermail in-game! Thank you.
+
+------------------------------------
+
+Happy gaming, and have a lot of fun!
+Nyano
+
+====================================
