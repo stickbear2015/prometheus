@@ -76,3 +76,7 @@ Coppy Prometheus\Salvage.set
 Coppy Prometheus\AsteroidHauling.set.
 36. Fixed the ooc uncensored trigger in the communications set file, for real this time!
 Copy Prometheus\Communications.set
+37. Fixed a couple sound errors with reloading missile and torp banks in ships.
+Copy Prometheus\ShipCombat.set.
+38. Fixed OOC channel trigger.
+Copy Prometheus\communications.set.

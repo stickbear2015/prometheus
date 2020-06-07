@@ -188,11 +188,11 @@
 #Play {Prometheus\ship\combat\armor shells*2.wav} @Vol; #If {@Panning = 1} {#PC %Playhandle Pan %Random(-4000,4000)}}} {sc}
 #TRIGGER {A soft hum starts somewhere within the bowels of the ship as the missile banks are refilled.} {#Gagline ALL;
 #if {@SilentMode = 0};
-#Play {C:\Users\Owner\Documents\VIP Mud\Sounds\Prometheus\Ship\Combat\Reload.wav} @vol} {}
+#Play {Prometheus\Ship\Combat\Reload.wav} @vol} {}
 #TRIGGER {The hum subsides as the missile bank refilling completes.} {#gagline all} {}
 #TRIGGER {A soft hum starts somewhere within the bowels of the ship as the torpedo banks are refilled.} {#Gagline ALL;
 #if {@SilentMode = 0};
-#Play {C:\Users\Owner\Documents\VIP Mud\Sounds\Prometheus\Ship\Combat\Reload.wav} @vol} {}
+#Play {Prometheus\Ship\Combat\Reload.wav} @vol} {}
 #TRIGGER {The hum subsides as the torpedo bank refilling completes.} {#gagline all} {}
 #TRIGGER {A soft hum starts somewhere within the bowels of the ship as the shell banks are refilled.} {#Gagline ALL;
 #if {@SilentMode = 0};
