@@ -16,8 +16,7 @@
 #If {@SilentMode = 0} {
 #Play {Prometheus\General\Comm\Chatter.wav} @Vol}} {channels}
 #TRIGGER {[[]OOC] *} {
-#If {@SilentMode = 0} {
-#Play {Prometheus\General\Comm\Ooc.wav} @Vol}} {channels}
+#If {@SilentMode = 0} {#Play {Prometheus\General\Comm\Ooc.wav} @Vol}} {channels}
 #TRIGGER {[[]Missions] *} {
 #If {@SilentMode = 0} {
 #Play {Prometheus\General\Comm\missions.wav} @Vol}} {channels}

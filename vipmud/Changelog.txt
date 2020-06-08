@@ -80,3 +80,5 @@ Copy Prometheus\Communications.set
 Copy Prometheus\ShipCombat.set.
 38. Fixed OOC channel trigger.
 Copy Prometheus\communications.set.
+39. Corrected the capitalization for the OOC channel so the sound would actually play.
+Copy Prometheus\Communications.set.
