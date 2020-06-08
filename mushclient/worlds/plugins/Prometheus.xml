@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE muclient>
+
 <muclient>
+
 <plugin
    name="Prometheus"
    author="Nyano"
@@ -26,16 +28,6 @@
   <trigger
    enabled="y"
    match="[Input]"
-   send_to="12"
-   sequence="100"
-  >
-  <send>
-    CurrentGlobalSound = PlaySound("General/Misc/Prompt.ogg")
-  </send>
-  </trigger>
-  <trigger
-   enabled="y"
-   match="What is your user group?"
    send_to="12"
    sequence="100"
   >
@@ -198,14 +190,18 @@
   </trigger>
   <trigger
    enabled="y"
-   match="[EVENTS]: *"
+   match="[EVENTS] *"
    omit_from_output="y"
    send_to="14"
    sequence="100"
   >
   <send>
     Execute("history_add Events=%1")
-    CurrentGlobalSound = PlaySound("General/Hosts/Events.ogg")
+    if (string.match("%1", "added")) then
+      CurrentGlobalSound = PlaySound("General/Hosts/EventsAdded.ogg")
+    else
+      CurrentGlobalSound = PlaySound("General/Hosts/EventsRemoved.ogg")
+    end
     Note("[Events] %1")
   </send>
   </trigger>
@@ -398,7 +394,7 @@
   </trigger>
   <trigger
    enabled="y"
-   match="You hear the roar of a * starship from outside."
+   match="You hear the roar of * starship from outside."
    omit_from_output="y"
    send_to="12"
    sequence="100"
@@ -460,7 +456,7 @@
       return
     elseif (string.match(string.lower("%1"), "successfully grabbed")) then
       return
-    elseif (string.match(string.lower("%1"), "has been harvested")) then
+    elseif (string.match(string.lower("%1"), "harvested")) then
       return
     elseif (string.match(string.lower("%1"), "has been salvaged")) then
       return
@@ -565,9 +561,6 @@
       CurrentGlobalSound = PlaySound("Ship/Computer/Keyboard"..math.random(1, 7)..".ogg")
       CurrentGlobalSound = PlaySound("Ship/Move/HaulAsteroid"..math.random(1, 2)..".ogg")
       Note(Capitalize("%1"))
-    elseif (string.match(string.lower("%1"), "beam locked")) then
-      CurrentGlobalSound = PlaySound("General/Shipwrecks/BeamLock.ogg")
-      Note(Capitalize("%1"))
     elseif (string.match(string.lower("%1"), "on shipwreck")) then
       CurrentGlobalSound = PlaySound("General/Shipwrecks/BeamLockedOn.ogg")
       Note(Capitalize("%1"))
@@ -607,7 +600,7 @@
     elseif (string.match(string.lower("%1"), "harvesting aborted") and string.match(string.lower("%1"), "damaged")) then
       CurrentGlobalSound = PlaySound("General/Comets/Explosion.ogg")
       Note(Capitalize("%1"))
-    elseif (string.match(string.lower("%1"), "has been harvested")) then
+    elseif (string.match(string.lower("%1"), "harvested")) then
       CurrentGlobalSound = PlaySound("General/Comets/GasHarvested"..math.random(1, 3)..".ogg")
       Note(Capitalize("%1"))
     elseif (string.match(string.lower("%1"), "spacepowerup mode engaged")) then
@@ -924,7 +917,39 @@
   <send>
     Execute("history_add Computer Reports=%1")
     CurrentGlobalSound = PlaySound("Ship/Computer/Report"..math.random(1, 4)..".ogg")
-    if (string.match("%1", "there is no debris")) then
+    if (string.match("%1", "been detected in the sector")) then
+      if (string.match("%1", "enemy") or string.match("%1", "enemies")) then
+        CurrentGlobalSound = PlaySound("Ship/Computer/EnemyDetected.ogg", ConfigTable.Settings.VolumeCombats / 100 * 180)
+      end
+      if (string.match("%0", "artifact")) then
+        CurrentGlobalSound = PlaySound("Ship/Computer/Artifact.ogg")
+      end
+      if (string.match("%1", "friendly")) then
+        CurrentGlobalSound = PlaySound("Ship/Computer/FriendlyShip.ogg")
+      end
+      if (string.match(string.lower("%1"), "a relic")) then
+        CurrentGlobalSound = PlaySound("Ship/Computer/Relic.ogg")
+      end
+      if (string.match(string.lower("%1"), "a comet")) then
+        CurrentGlobalSound = PlaySound("Ship/Computer/Comet.ogg")
+      end
+      if (string.match(string.lower("%1"), "a shipwreck")) then
+        CurrentGlobalSound = PlaySound("Ship/Computer/Shipwreck.ogg")
+      end
+      if (string.match("%1", "planet")) then
+        CurrentGlobalSound = PlaySound("Ship/Computer/Planet.ogg")
+      end
+      if (string.match("%1", "spacestation")) then
+        CurrentGlobalSound = PlaySound("Ship/Computer/SpaceStation.ogg")
+      end
+      if (string.match(string.lower("%1"), "a star ")) then
+        CurrentGlobalSound = PlaySound("Ship/Computer/Star.ogg")
+      end
+      if (string.match(string.lower("%1"), "a derelict")) then
+        CurrentGlobalSound = PlaySound("Ship/Derelicts/AlienStarship.ogg")
+      end
+      Note(Capitalize("%1"))
+    elseif (string.match("%1", "there is no debris")) then
       CurrentGlobalSound = PlaySound("Ship/Computer/NoDebris.ogg")
       Note(Capitalize("%1"))
     elseif (string.match("%1", "is 1 unit away from this ship")) then
@@ -1017,18 +1042,6 @@
         CurrentCombatSound = PlayCombatSound("Ship/Combat/OtherDestroyed"..math.random(1, 8)..".ogg", ConfigTable.Settings.VolumeCombats / 100 * 180)
       end
       Note(Capitalize("%1"))
-    elseif (string.match("%1", "planet")) then
-      CurrentGlobalSound = PlaySound("Ship/Computer/Planet.ogg")
-      Note(Capitalize("%1"))
-    elseif (string.match("%1", "spacestation")) then
-      CurrentGlobalSound = PlaySound("Ship/Computer/SpaceStation.ogg")
-      Note(Capitalize("%1"))
-    elseif (string.match(string.lower("%1"), "a star ")) then
-      CurrentGlobalSound = PlaySound("Ship/Computer/Star.ogg")
-      Note(Capitalize("%1"))
-    elseif ((string.match(string.lower("%1"), "a derelict")) and (string.match("%1", "detected"))) then
-      CurrentGlobalSound = PlaySound("Ship/Derelicts/AlienStarship.ogg")
-      Note(Capitalize("%1"))
     elseif ((string.match(string.lower("%1"), "alien starship")) and (string.match("%1", "destroyed"))) then
       CurrentGlobalSound = PlaySound("Ship/Derelicts/Destroyed"..math.random(1, 2)..".ogg")
       Note(Capitalize("%1"))
@@ -1037,51 +1050,15 @@
         CurrentCombatSound = PlayCombatSound("Ship/Combat/OtherDestroyed5.ogg", ConfigTable.Settings.VolumeCombats)
       end
       Note(Capitalize("%1"))
-    elseif (string.match("%1", "enemy")) then
-      CurrentGlobalSound = PlaySound("Ship/Computer/EnemyDetected.ogg", ConfigTable.Settings.VolumeCombats / 100 * 180)
-      Note(Capitalize("%1"))
-    elseif (string.match("%0", "artifact")) then
-      CurrentGlobalSound = PlaySound("Ship/Computer/Artifact.ogg")
-      Note(Capitalize("%1"))
-    elseif (string.match("%0", "asteroid")) then
-      CurrentGlobalSound = PlaySound("General/Archaeology/Clang.ogg")
-      Note(Capitalize("%1"))
-    elseif (string.match("%1", "friendly")) then
-      CurrentGlobalSound = PlaySound("Ship/Computer/FriendlyShip.ogg")
-      Note(Capitalize("%1"))
-    elseif (string.match(string.lower("%1"), "a relic")) then
-      CurrentGlobalSound = PlaySound("Ship/Computer/Relic.ogg")
-      Note(Capitalize("%1"))
-    elseif (string.match(string.lower("%1"), "a comet")) then
-      CurrentGlobalSound = PlaySound("Ship/Computer/Comet.ogg")
-      Note(Capitalize("%1"))
-    elseif (string.match(string.lower("%1"), "a shipwreck")) then
-      CurrentGlobalSound = PlaySound("Ship/Computer/Shipwreck.ogg")
-      Note(Capitalize("%1"))
     elseif (string.match("%1", "starship probe") and string.match("%1", "been deployed")) then
       CurrentGlobalSound = PlaySound("Ship/Derelicts/Probe"..math.random(1, 3)..".ogg")
       Note(Capitalize("%1"))
     elseif (string.match("%1", "starship probe") and string.match("%1", "returned to the ship")) then
       CurrentGlobalSound = PlaySound("Ship/Derelicts/ProbeReturn.ogg")
       Note(Capitalize("%1"))
-    elseif (string.match("%1", "has entered a hidden area")) then
-      CurrentGlobalSound = PlaySound("Ship/Misc/HiddenArea.ogg")
-      Note(Capitalize("%1"))
     else
       Note(Capitalize("%1"))
     end
-  </send>
-  </trigger>
-  <trigger
-   enabled="y"
-   match="The computer reports that silent running mode *"
-   omit_from_output="y"
-   send_to="14"
-   sequence="99"
-  >
-  <send>
-    CurrentGlobalSound = PlaySound("General/Misc/Beep"..math.random(1, 5)..".ogg")
-    Note("Silent Commander %1")
   </send>
   </trigger>
   <trigger
@@ -1377,13 +1354,13 @@
   </trigger>
   <trigger
    enabled="y"
-   match="Roundtime off."
-   omit_from_output="y"
-   send_to="12"
+   match="^(\d+) (seconds|second) roundtime\.$"
+   regexp="y"
+   send_to="14"
    sequence="100"
   >
   <send>
-    CurrentGlobalSound = PlaySound("General/Misc/Roundtime.ogg")
+    CurrentGlobalSound = DoAfterSpecial("%1", 'PlaySound("General/Misc/Roundtime.ogg")', sendto.script)
   </send>
   </trigger>
   <trigger
@@ -1612,71 +1589,91 @@
    sequence="99"
   >
   <send>
-    Execute("history_add CommPipe=%1")
     if ((string.match(string.lower("%1"), "harvested")) or (string.match(string.lower("%1"), "grabbed")) or (string.match(string.lower("%1"), "valuable material found"))) then
       return
     elseif (string.match(string.lower("%1"), "powering down due to lack of charge")) then
+      Execute("history_add CommPipe=%1")
       Note("[CommPipe] "..Capitalize("%1"))
       CurrentGlobalSound = PlaySound("Ship/Computer/LowCharge"..math.random(1, 2)..".ogg")
     elseif (string.match(string.lower("%1"), "no minerals detected")) then
       return
+    elseif (string.match(string.lower("%1"), "beam locked")) then
+      Execute("history_add CommPipe=%1")
+      CurrentGlobalSound = PlaySound("Ship/Misc/Warning.ogg")
+      CurrentGlobalSound = PlaySound("General/Channels/CommPipe.ogg")
+      Note(Capitalize("%1"))
     elseif (string.match("%1", "enemy")) then
+      Execute("history_add CommPipe=%1")
       CurrentGlobalSound = PlaySound("Ship/Computer/EnemyDetected.ogg", ConfigTable.Settings.VolumeCombats / 100 * 180)
       CurrentGlobalSound = PlaySound("General/Channels/CommPipe.ogg")
       Note("[CommPipe] "..Capitalize("%1"))
     elseif (string.match("%0", "artifact")) then
+      Execute("history_add CommPipe=%1")
       CurrentGlobalSound = PlaySound("Ship/Computer/Artifact.ogg")
       CurrentGlobalSound = PlaySound("General/Channels/CommPipe.ogg")
       Note("[CommPipe] "..Capitalize("%1"))
     elseif (string.match("%1", "friendly")) then
+      Execute("history_add CommPipe=%1")
       CurrentGlobalSound = PlaySound("Ship/Computer/FriendlyShip.ogg")
       CurrentGlobalSound = PlaySound("General/Channels/CommPipe.ogg")
       Note("[CommPipe] "..Capitalize("%1"))
     elseif (string.match(string.lower("%1"), "a relic")) then
+      Execute("history_add CommPipe=%1")
       CurrentGlobalSound = PlaySound("Ship/Computer/Relic.ogg")
       CurrentGlobalSound = PlaySound("General/Channels/CommPipe.ogg")
       Note("[CommPipe] "..Capitalize("%1"))
     elseif (string.match(string.lower("%1"), "a comet")) then
+      Execute("history_add CommPipe=%1")
       CurrentGlobalSound = PlaySound("Ship/Computer/Comet.ogg")
       CurrentGlobalSound = PlaySound("General/Channels/CommPipe.ogg")
       Note("[CommPipe] "..Capitalize("%1"))
     elseif (string.match(string.lower("%1"), "a shipwreck")) then
+      Execute("history_add CommPipe=%1")
       CurrentGlobalSound = PlaySound("Ship/Computer/Shipwreck.ogg")
       CurrentGlobalSound = PlaySound("General/Channels/CommPipe.ogg")
       Note("[CommPipe] "..Capitalize("%1"))
     elseif (string.match(string.lower("%1"), "the beam stops abruptly")) then
+      Execute("history_add CommPipe=%1")
       CurrentGlobalSound = PlaySound("Ship/Comm/Warning.ogg")
       CurrentGlobalSound = PlaySound("General/Channels/CommPipe.ogg")
       Note("[CommPipe] "..Capitalize("%1"))
     elseif (string.match("%1", "planet")) then
+      Execute("history_add CommPipe=%1")
       CurrentGlobalSound = PlaySound("Ship/Computer/Planet.ogg")
       CurrentGlobalSound = PlaySound("General/Channels/CommPipe.ogg")
       Note("[CommPipe] "..Capitalize("%1"))
     elseif (string.match("%1", "space station")) then
+      Execute("history_add CommPipe=%1")
       CurrentGlobalSound = PlaySound("Ship/Computer/SpaceStation.ogg")
       CurrentGlobalSound = PlaySound("General/Channels/CommPipe.ogg")
       Note("[CommPipe] "..Capitalize("%1"))
     elseif (string.match(string.lower("%1"), "a star ")) then
+      Execute("history_add CommPipe=%1")
       CurrentGlobalSound = PlaySound("Ship/Computer/Star.ogg")
       CurrentGlobalSound = PlaySound("General/Channels/CommPipe.ogg")
       Note("[CommPipe] "..Capitalize("%1"))
     elseif ((string.match(string.lower("%1"), "a derelict")) and (string.match("%1", "detected"))) then
+      Execute("history_add CommPipe=%1")
       CurrentGlobalSound = PlaySound("Ship/Derelicts/AlienStarship.ogg")
       CurrentGlobalSound = PlaySound("General/Channels/CommPipe.ogg")
       Note("[CommPipe] "..Capitalize("%1"))
     elseif (string.match(string.lower("%1"), "asteroid empty")) then
+      Execute("history_add CommPipe=%1")
       CurrentGlobalSound = PlaySound("General/Asteroid/AsteroidDepleted.ogg")
       CurrentGlobalSound = PlaySound("General/Channels/CommPipe.ogg")
       Note("[CommPipe] "..Capitalize("%1"))
     elseif ((string.match(string.lower("%1"), "warning")) or (string.match(string.lower("%1"), "aborting"))) then
+      Execute("history_add CommPipe=%1")
       CurrentGlobalSound = PlaySound("Ship/Comm/Warning.ogg")
       CurrentGlobalSound = PlaySound("General/Channels/CommPipe.ogg")
       Note("[CommPipe] "..Capitalize("%1"))
     elseif (string.match(string.lower("%1"), "excavation cannot continue due to the equipment being damaged")) then
+      Execute("history_add CommPipe=%1")
       CurrentGlobalSound = PlaySound("Ship/Comm/Warning.ogg")
       CurrentGlobalSound = PlaySound("General/Channels/CommPipe.ogg")
       Note("[CommPipe] "..Capitalize("%1"))
     else
+      Execute("history_add CommPipe=%1")
       CurrentGlobalSound = PlaySound("General/Channels/CommPipe.ogg")
       Note("[CommPipe] "..Capitalize("%1"))
     end
@@ -1697,7 +1694,7 @@
       CurrentGlobalSound = PlaySound("General/Comm/Static"..math.random(1, 5)..".ogg")
     elseif (string.match(string.lower("%1"), "ground on")) then
       CurrentCombatSound = PlayCombatSound("General/Combat/GroundTroops.ogg")
-    elseif (string.match(string.lower("%1"), "this is flight control * an x-loritan starship is attempting to land here at")) then
+    elseif (string.match(string.lower("%1"), "enemies are forcing a landing")) then
       CurrentGlobalSound = PlaySound("General/Comm/FlightControlForcedLanding.ogg")
     elseif (string.match("%1", "Forced landing at")) then
       CurrentGlobalSound = PlaySound("General/Comm/FlightControlForcedLanding.ogg")
@@ -1712,25 +1709,16 @@
   </trigger>
   <trigger
    enabled="y"
-   match="^\[(.*?)\] (.*?)$"
+   match="^\[(.*)\] (.*)$"
    regexp="y"
    send_to="12"
    sequence="100"
   >
   <send>
-    if (string.match("%1", "General")) then
-      Execute("history_add General=%2")
-    elseif (string.match("%1", "Missions")) then
-      Execute("history_add Missions=%2")
-    elseif (string.match("%1", "Newbie")) then
-      Execute("history_add Newbie=%2")
-    elseif (string.match("%1", "Administrators")) then
-      Execute("history_add Administrators=%2")
-    else
+    if (string.len("%1") > 2) then
       Execute("history_add %1=%2")
-      CurrentGlobalSound = PlaySound("General/Channels/Default.ogg")
+      CurrentGlobalSound = PlaySound("General/Channels/%1.ogg")
     end
-    CurrentGlobalSound = PlaySound("General/Channels/%1.ogg")
   </send>
   </trigger>
   <trigger
@@ -1949,19 +1937,6 @@
   </trigger>
   <trigger
    enabled="y"
-   match="[Ooc] *"
-   omit_from_output="y"
-   send_to="14"
-   sequence="99"
-  >
-  <send>
-    Execute("history_add OOC=%1")
-    CurrentGlobalSound = PlaySound("General/Channels/OOC.ogg")
-    Note("[OOC] %1")
-  </send>
-  </trigger>
-  <trigger
-   enabled="y"
    match="ROOC: &quot;*&quot;"
    omit_from_output="y"
    send_to="14"
@@ -2088,11 +2063,13 @@
   <trigger
    enabled="y"
    match="&gt;&gt; Command Aborted &lt;&lt;"
-   send_to="12"
+   omit_from_output="y"
+   send_to="14"
    sequence="100"
   >
   <send>
     CurrentGlobalSound = PlaySound("General/Misc/Cancel.ogg")
+    Note("Aborted.")
   </send>
   </trigger>
   <trigger
@@ -4434,7 +4411,7 @@
   </trigger>
   <trigger
    enabled="y"
-   match="* has launched guided missiles at *!"
+   match="* has launched missiles at *!"
    omit_from_output="y"
    send_to="12"
    sequence="100"
@@ -4450,7 +4427,7 @@
   </trigger>
   <trigger
    enabled="y"
-   match="You hear a thud as guided missiles are launched into space."
+   match="You hear a thud as missiles are launched into space."
    omit_from_output="y"
    send_to="12"
    sequence="100"
@@ -4567,7 +4544,8 @@
   </trigger>
   <trigger
    enabled="y"
-   match="You hear the destinctive roar of starship engines, and look up to see a starship quickly approaching from a distance, making careful maneuvers toward * in order to *"
+   match="You hear the distinctive roar of starship engines, and look up to see a starship quickly approaching from a distance, making careful maneuvers toward * in order to *."
+   omit_from_output="y"
    send_to="12"
    sequence="100"
   >
@@ -5586,6 +5564,16 @@
   </trigger>
   <trigger
    enabled="y"
+   match="A bright * beam of light surrounds you. When it fades, you notice that your surroundings have changed."
+   send_to="12"
+   sequence="100"
+  >
+  <send>
+    CurrentGlobalSound = PlaySound("Ship/Misc/Light.ogg")
+  </send>
+  </trigger>
+  <trigger
+   enabled="y"
    match="* encased in a beam of electric blue light!"
    send_to="12"
    sequence="100"
@@ -5813,7 +5801,7 @@
   </trigger>
   <trigger
    enabled="y"
-   match="^(.*) (snaps|snap) (her|his|your) fingers.$"
+   match="^(.*) (snaps|snap) (her|his|your) fingers\.$"
    regexp="y"
    send_to="12"
    sequence="100"
@@ -5824,7 +5812,18 @@
   </trigger>
   <trigger
    enabled="y"
-   match="^(.*) (cheers|cheer) ecstatically.$"
+   match="^(.*) (snorts|snort).\.$"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>
+    CurrentSocialSound = PlaySocialSound("Snort.ogg")
+  </send>
+  </trigger>
+  <trigger
+   enabled="y"
+   match="^(.*) (cheers|cheer) ecstatically\.$"
    regexp="y"
    send_to="12"
    sequence="100"
@@ -5846,7 +5845,7 @@
   </trigger>
   <trigger
    enabled="y"
-   match="^(.*) (chortles|chortle) (.*)$"
+   match="^(.*) (chortles|chortle)(.*?)\.$"
    regexp="y"
    send_to="12"
    sequence="100"
@@ -5857,7 +5856,7 @@
   </trigger>
   <trigger
    enabled="y"
-   match="^(.*) (chuckles|chuckle) (.*)$"
+   match="^(.*) (chuckles|chuckle)(.*?)\.$"
    regexp="y"
    send_to="12"
    sequence="100"
@@ -5879,13 +5878,35 @@
   </trigger>
   <trigger
    enabled="y"
-   match="^(.*) (whistles|whistle) innocently at... the air.$"
+   match="^(.*) (whistles|whistle)(.*?)\.$"
    regexp="y"
    send_to="12"
    sequence="100"
   >
   <send>
     CurrentSocialSound = PlaySocialSound("Whistle"..math.random(1, 6)..".ogg")
+  </send>
+  </trigger>
+  <trigger
+   enabled="y"
+   match="^(.*) (tackles|tackle)(.*?)\.$"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>
+    CurrentSocialSound = PlaySocialSound("Tackle"..math.random(1, 5)..".ogg")
+  </send>
+  </trigger>
+  <trigger
+   enabled="y"
+   match="^(.*) (attempts|attempt) to tackle (.*?)\.$"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>
+    CurrentSocialSound = PlaySocialSound("Tackle"..math.random(1, 5)..".ogg")
   </send>
   </trigger>
   <trigger
@@ -6251,7 +6272,7 @@
   </trigger>
   <trigger
    enabled="y"
-   match="^(.*) (moans|moan)\.$"
+   match="^(.*) (moans|moan)(.*?)\.$"
    regexp="y"
    send_to="12"
    sequence="100"
@@ -6661,6 +6682,18 @@
   </trigger>
   <trigger
    enabled="y"
+   match="* Pyrian translator with * screen and * switches rumbles, &quot;Please stand by.&quot;"
+   omit_from_output="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>
+    CurrentSocialSound = PlaySocialSound("PyrianChitter"..math.random(1, 10)..".ogg")
+    CurrentSocialSound = PlaySocialSound("Say.ogg")
+  </send>
+  </trigger>
+  <trigger
+   enabled="y"
    match="* rumble*something."
    send_to="12"
    sequence="100"
@@ -6688,6 +6721,7 @@
   >
   <send>
     Execute("history_add Conversations=%0")
+    CurrentSocialSound = PlaySocialSound("PyrianChitter"..math.random(1, 10)..".ogg")
     CurrentSocialSound = PlaySocialSound("Say.ogg")
     if (string.match("%1", "Your")) then
       Note("You rumble: %2")
@@ -10087,16 +10121,59 @@
    enabled="y"
    match="Some whooshes and clangs come from below."
    omit_from_output="y"
-   send_to="14"
+   send_to="12"
    sequence="100"
   >
   <send>
     CurrentGlobalSound = PlaySound("General/Archaeology/Clang.ogg")
   </send>
   </trigger>
+  <trigger
+   enabled="y"
+   match="The equipment is non-functional when damaged. Please repair it fully before proceeding."
+   send_to="12"
+   sequence="100"
+  >
+  <send>
+    CurrentGlobalSound = PlaySound("General/Misc/Cancel.ogg")
+  </send>
+  </trigger>
 </triggers>
 
 <aliases>
+  <alias
+   enabled="y"
+   match="^bat$"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>
+    Execute("beaconadd translator")
+  </send>
+  </alias>
+  <alias
+   enabled="y"
+   match="^brt$"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>
+    Execute("beaconremove translator")
+  </send>
+  </alias>
+  <alias
+   enabled="y"
+   match="^btt$"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>
+    Execute("beaconto translator")
+  </send>
+  </alias>
   <alias
    enabled="y"
    match="^q$"
@@ -10214,7 +10291,6 @@ EmergencyWeaponStatus = false
 EmergencyWeaponLoop = 0
 LiftMovingStatus = false
 LiftMovingLoop = 0
-LastCommand = nil
 
 Path = require("pl.path")
 PPI = require("ppi")
@@ -10234,8 +10310,6 @@ Accelerator("Alt+,", "ht", 12)
 AcceleratorTo("Shift+F3", "CombatHands()", 12)
 AcceleratorTo("F4", "ToggleShipAlarm()", 12)
 AcceleratorTo("F5", "SaveConfig()", 12)
-AcceleratorTo("Ctrl+F5", "LoadConfig()", 12)
-AcceleratorTo("F6", "ToggleRepeatCommand()", 12)
 AcceleratorTo("F7", "ToggleSocialSounds()", 12)
 AcceleratorTo("F9", "SetSoundVolume(-5)", 12)
 AcceleratorTo("F10", "SetSoundVolume(5)", 12)
@@ -10254,34 +10328,6 @@ end
 
 function Trim(s)
   return (s:gsub("^%s*(.-)%s*$", "%1"))
-end
-
-function ReloadingSoundpackPluginFile()
-  local PluginID = "f4bea1251bff11404aee0a76"
-  local PluginFile = GetInfo(60).."Prometheus.xml"
-  local Status = ReloadPlugin(PluginID)
-  if (Status == error_code.eBadParameter) then
-    error("Cannot reload ourself.")
-  elseif (Status == error_code.eNoSuchPlugin) then
-    check(LoadPlugin(PluginFile))
-  end
-  if (GetPluginInfo(PluginID, 1)) then
-    Note(GetPluginInfo(PluginID, 1).." reloaded.")
-    CurrentGlobalSound = PlaySound("General/Misc/Roundtime.ogg")
-  end
-end
-
-function ToggleRepeatCommand()
-  if (ConfigTable.Settings.RepeatCommand == 0) then
-    ConfigTable.Settings.RepeatCommand = 1
-    Note("Repeat Last Command with Enter key enabled.")
-  elseif (ConfigTable.Settings.RepeatCommand == 1) then
-    ConfigTable.Settings.RepeatCommand = 0
-    LastCommand = nil
-    Note("Repeat Last Command with Enter key disabled.")
-  end
-  CurrentGlobalSound = PlaySound("General/Misc/Switch.ogg")
-  SaveConfig()
 end
 
 function ToggleSoundVolume()
@@ -10334,22 +10380,6 @@ function ToggleSocialSounds()
   end
   PlaySound("General/Misc/Switch.ogg")
   SaveConfig()
-end
-
-function OnPluginCommandEntered(text)
-  if (ConfigTable.Settings.RepeatCommand == 0) then
-    return text
-  end
-  if (text == "") and (LastCommand ~= nil) then
-    return LastCommand
-  else
-    if (text == " ") then
-      LastCommand = ""
-      return ""
-    end
-    LastCommand = text
-    return text
-  end
 end
 
 function CombatShips()
@@ -10648,7 +10678,6 @@ function OnPluginInstall()
     res = utils.msgbox("Congratulations! The Prometheus Soundpack is now ready. For more information open the readme file. Are you sure you want to read it now?", "Confirmation", "yesno", "?", 1)
     if (res == "yes") then
       os.execute("notepad.exe "..GetInfo(66).."readme_soundpack.txt")
-      LastCommand = ""
     end
   end
   NumpadInit()
@@ -10660,7 +10689,6 @@ function OpenChangeLogFile()
     res = utils.msgbox("Are you sure you want to open the change log file now?", "Confirmation", "yesno", "?", 1)
     if (res == "yes") then
       os.execute("notepad.exe "..changelog)
-      LastCommand = ""
     end
   else
     error("This change log file is currently not available! Please contact the maintainer of the soundpack!")
@@ -10671,7 +10699,7 @@ function ShowVersionInformation()
   Note("Current Soundpack Version Information:")
   Note("  MUSHclient Version "..GetInfo(72))
   Note("  Compiled on "..GetInfo(73))
-  Note("  "..GetInfo(2).." Soundpack Version 3.8.4")
+  Note("  "..GetInfo(2).." Soundpack Version 3.8.5")
   Note("  Coded in "..GetInfo(28).." by Nyano")
 end
 

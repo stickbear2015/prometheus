@@ -38,10 +38,6 @@ As following the keystrokes that you can use it in the soundpack:
   This option toggles the red alert sounds on or off while your starship is on that state.
 * F5: Saves the current configuration.
   Here you can save your configuration. It will take that for the next start up.
-* Ctrl+F5: Reloads the current saved configuration.
-  If you've made changes, you can reload the last saved status of your configuration again.
-* F6: Turns the repeat command on or off (default is off).
-  This nice feature let you execute the last entered command by pressing the enter key. If you have turned it off, so you have to input all commands again and use the arrow keys as usual.
 * F7: Toggles the social sounds on or off (default is on).
   You can control the social sounds here.
 * F9, F10: Sound volume down or up.
@@ -84,18 +80,8 @@ You can with this awesome feature to browse quickly through the buffer to read a
 
 ------------------------------------
 
-Repeat Commands:
-You know that maybe. You have several same items in your inventory, and want to sell them back or so. Normally, you would have to type that command several times. Now, you can do it in just one command, for example:
-
-  #10 sell table
-
-Sells all ten tables from your inventory.
-
-NOTE: If I hear someone is messing with this feature up, I'll remove that again. This is just for items, not against other players!
-
-------------------------------------
-
 Logging Into The File:
+
 Furthermore, in certain cases, you can turn the logging on/off by pressing Ctrl+Shift+J. Then, you see a separate window where you can set up options. Hitting OK button to save, and close the settings. This option is turned off by default.
 
 NOTE: If you turn it on, remember that everything will be logged, and saved periodically to the file, as well as like passwords, and any kind of codes, saved as a clear text.

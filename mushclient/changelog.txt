@@ -1,13 +1,10 @@
 Prometheus Soundpack Changes:
 
-- Updated MUSHclient to version 5.06.
-- Updated some plugins.
-- Updated some triggers.
-- Added/Changed hotkeys for health, hunger/thirsty, current coordinates, cash, and points for your level.
-- Added a sound for the Auction channel
-- Changed Mission channel sound.
-- Added a default sound for channels if ain't specified.
-- Changed combat volume sounds that are now separated instead of relative to the main volume.
-- Shortened the output text of the hypernet browser forum notifications.
-- Added a sound for players who gets awarded by a host for a resolution of a report/suggestion.
-- Added an Alt+Shift+C keystroke for galactic coordinates.
+Version 3.8.5 (June 8, 20):
+- Removed an old keystroke Ctrl+F5, it's no longer necessary.
+- Changed the keystroke for galactic coordinates to Ctrl+Alt+C, to prevent a collision with the keystroke from the output plugin.
+- Fixed the trigger for channel sounds.
+- Removed due to hosts the functionality of Repeat Last Command and Repeat Command plugin.
+- Added a warning sound to the beam locks on CommPipe.
+- Fixed trigger for flight controls where enemies forcing a landing.
+- Added some more social sounds.
