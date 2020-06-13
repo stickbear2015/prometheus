@@ -57,3 +57,5 @@
 #TRIGGER {[[]Uncensored] *} {#if {@silentMode = 0} {#Play {C:\Users\Owner\Documents\VIP Mud\Sounds\Prometheus\General\Comm\Uncensored.wav} @vol}} {Channels}
 #TRIGGER {[[]Soundpacks] *} {#if {@silentMode = 0} {#Play {Prometheus\General\Comm\Soundpacks.wav} @vol}} {Channels}
 #TRIGGER {[[]Uncensored Box] *} {#if {@silentMode = 0} {#Play {Prometheus\General\Comm\UncensoredBox.wav}  @vol}} {Channels}
+#TRIGGER {[[]Organization] *} {#if {@SilentMode = 0} {#Play {Prometheus\General\Comm\org.wav} @vol}} {Channels}
+#TRIGGER {[[]Debate] *} {#if {@SilentMode = 0} {#Play {Prometheus\General\Comm\Debate.wav} @vol}} {Channels}

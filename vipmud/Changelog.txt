@@ -82,3 +82,9 @@ Copy Prometheus\ShipCombat.set.
 Copy Prometheus\communications.set.
 39. Corrected the capitalization for the OOC channel so the sound would actually play.
 Copy Prometheus\Communications.set.
+40. Added a trigger to play the org sound for a private org's channel.
+Copy Prometheus\Communications.set.
+41. Added a trigger to play a sound for the debate channel.
+Copy Prometheus\Communications.set and Sounds\Prometheus\General\Comm\Debate.wav.
+42. Updated the sound for orgs.
+Copy Sounds\Prometheus\General\Comm\Org.wav.
