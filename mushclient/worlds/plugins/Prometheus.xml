@@ -1361,7 +1361,9 @@
    sequence="100"
   >
   <send>
-    CurrentGlobalSound = PlaySound("General/Misc/Roundtime.ogg")
+    if (ConfigTable.Settings.Roundtime == true) then
+      CurrentGlobalSound = PlaySound("General/Misc/Roundtime.ogg")
+    end
   </send>
   </trigger>
   <trigger
@@ -1371,7 +1373,9 @@
    sequence="100"
   >
   <send>
-    CurrentGlobalSound = PlaySound("General/Misc/Roundtime.ogg")
+    if (ConfigTable.Settings.Roundtime == true) then
+      CurrentGlobalSound = PlaySound("General/Misc/Roundtime.ogg")
+    end
   </send>
   </trigger>
   <trigger
@@ -1381,7 +1385,9 @@
    sequence="100"
   >
   <send>
-    CurrentGlobalSound = PlaySound("General/Misc/Roundtime.ogg")
+    if (ConfigTable.Settings.Roundtime == true) then
+      CurrentGlobalSound = PlaySound("General/Misc/Roundtime.ogg")
+    end
   </send>
   </trigger>
   <trigger
@@ -1392,7 +1398,9 @@
    sequence="100"
   >
   <send>
-    CurrentGlobalSound = DoAfterSpecial("%1", 'PlaySound("General/Misc/Roundtime.ogg")', sendto.script)
+    if (ConfigTable.Settings.Roundtime == true) then
+      CurrentGlobalSound = DoAfterSpecial("%1", 'PlaySound("General/Misc/Roundtime.ogg")', sendto.script)
+    end
   </send>
   </trigger>
   <trigger
@@ -10665,6 +10673,7 @@ ConfigTable.Settings.HarvestingMessages = true
 ConfigTable.Settings.TransferMessages = true
 ConfigTable.Settings.AllBufferEnabled = true
 ConfigTable.Settings.Music = true
+ConfigTable.Settings.Roundtime = true
 
 ConfigFile = require("ini")
 
@@ -10723,6 +10732,7 @@ function setConfig(n, l, w)
     Note("  rooms: Toggles the rooms sounds ("..tostring(ConfigTable.Settings.Rooms)..")")
     Note("  allbuffer: Toggles the All buffer in channel history to see all messages in this buffer ("..tostring(ConfigTable.Settings.AllBufferEnabled)..")")
     Note("  music: Toggles playing music when starting the client ("..tostring(ConfigTable.Settings.Music)..")")
+    Note("  roundtime: Toggles the roundtime sound when it goes off ("..tostring(ConfigTable.Settings.Roundtime)..")")
     return
   end
   if (Trim(w[1]) == "gender") then
@@ -10801,7 +10811,7 @@ function setConfig(n, l, w)
       ConfigTable.Settings.Socials = true
       Note("Social sounds enabled.")
     end
-    PlaySound("General/Misc/Switch.ogg")
+    CurrentGlobalSound = PlaySound("General/Misc/Switch.ogg")
   elseif (Trim(w[1]) == "rooms") then
     if (ConfigTable.Settings.Rooms == true) then
       StopSound(CurrentRoomSound)
@@ -10811,7 +10821,7 @@ function setConfig(n, l, w)
       ConfigTable.Settings.Rooms = true
       Note("Room sounds enabled.")
     end
-    PlaySound("General/Misc/Switch.ogg")
+    CurrentGlobalSound = PlaySound("General/Misc/Switch.ogg")
   elseif (Trim(w[1]) == "sounds") then
     if (ConfigTable.Settings.Sounds == true) then
       StopSound(CurrentGlobalSound)
@@ -10821,8 +10831,7 @@ function setConfig(n, l, w)
       ConfigTable.Settings.Sounds = true
       Note("Global sounds enabled.")
     end
-    PlaySound("General/Misc/Switch.ogg")
-
+    CurrentGlobalSound = PlaySound("General/Misc/Switch.ogg")
   elseif (Trim(w[1]) == "combat") then
     if (ConfigTable.Settings.SpaceCombat == true) then
       StopSound(CurrentSpaceCombatSound)
@@ -10832,7 +10841,7 @@ function setConfig(n, l, w)
       ConfigTable.Settings.SpaceCombat = true
       Note("Space combat sounds enabled.")
     end
-    PlaySound("General/Misc/Switch.ogg")
+    CurrentGlobalSound = PlaySound("General/Misc/Switch.ogg")
   elseif (Trim(w[1]) == "allbuffer") then
     if (ConfigTable.Settings.AllBufferEnabled == true) then
       ConfigTable.Settings.AllBufferEnabled = false
@@ -10841,7 +10850,7 @@ function setConfig(n, l, w)
       ConfigTable.Settings.AllBufferEnabled = true
       Note("All buffer in channel history enabled.")
     end
-    PlaySound("General/Misc/Switch.ogg")
+    CurrentGlobalSound = PlaySound("General/Misc/Switch.ogg")
   elseif (Trim(w[1]) == "music") then
     if (ConfigTable.Settings.Music == true) then
       ConfigTable.Settings.Music = false
@@ -10850,7 +10859,16 @@ function setConfig(n, l, w)
       ConfigTable.Settings.Music = true
       Note("Playing music when starting the client enabled.")
     end
-    PlaySound("General/Misc/Switch.ogg")
+    CurrentGlobalSound = PlaySound("General/Misc/Switch.ogg")
+  elseif (Trim(w[1]) == "roundtime") then
+    if (ConfigTable.Settings.Roundtime == true) then
+      ConfigTable.Settings.Roundtime = false
+      Note("Roundtime sound disabled.")
+    elseif (ConfigTable.Settings.Roundtime == false) then
+      ConfigTable.Settings.Roundtime = true
+      Note("Roundtime sound enabled.")
+    end
+    CurrentGlobalSound = PlaySound("General/Misc/Switch.ogg")
   else
     Note("Unrecognized configuration option.")
     return

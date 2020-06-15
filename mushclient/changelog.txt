@@ -1,29 +1,5 @@
 Prometheus Soundpack Changes:
 
-Version 3.9.0 (June 12, 20):
-- Removed an old keystroke Ctrl+F5, it's no longer necessary.
-- Changed the keystroke for galactic coordinates to Ctrl+Alt+C, to prevent a collision with the keystroke from the output plugin.
-- Fixed the trigger for channel sounds.
-- Removed due to hosts the functionality of Repeat Last Command and Repeat Command plugin.
-- Added a warning sound to the beam locks on CommPipe.
-- Fixed trigger for flight controls where enemies forcing a landing.
-- Added some more social sounds.
-- Changed the percent sign into the word percent (for who has the symbol level in NVDA on Some or None).
-- Gagged the text that there is nothing in the cargo/storage hold.
-- Added a 'config' alias for the configuraton menu to toggle variety types of messages.
-- Fixed the trigger for firing guided missiles into the space.
-- Fixed sound triggers for UTF-Issue hatch crackers, and repair drones.
-- There are now messages to toggle for debris salvaging, minerals/gas harvesting, shipwreck grabbing, and debris transfers in the configuration menu.
-- Added more options to the configuration menu.
-- Updated the news trigger.
-- Added a sound trigger for computer piped anouncements from control rooms.
-- Updated the sound trigger for the construction facility in starships.
-- Added a warning sound if the beam is locked while shipwreck grabbing.
-- Fixed the sound trigger for the galactic mapper unit.
-- Fixed some bugs.
-- Added more options to the configuration menu.
-- Removed no longer needed keystrokes from Readme file.
-- Updated some sound triggers for the laser power suppliers.
-- Added sounds for eating and drinking. Enjoy!
-- Refactored a few internal things.
-- Added an option to the configuration men where you can toggle if you want to toggle music when starting the client.
+Version 4.0.1
+- Added an option to toggle the sound of roundtimes.
+- Updated the Soundpack.txt file.

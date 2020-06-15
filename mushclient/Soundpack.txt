@@ -64,8 +64,9 @@ NOTE: If you turn it on, remember that everything will be logged, and saved peri
 
 The Configuration Menu:
 
-To see all options you can toggle in this soundpack, type 'config' in the input window.
-To change an certain option from the configuration menu, type 'config <option>'.
+To see all available options you can configure, just type 'config' in the input window.
+Type 'config <option>' to change an certain option from the configuration menu.
+All changes will be saved automatically.
 
 ------------------------------------
 
