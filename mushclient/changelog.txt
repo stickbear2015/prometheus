@@ -1,5 +1,0 @@
-Prometheus Soundpack Changes:
-
-Version 4.0.1
-- Added an option to toggle the sound of roundtimes.
-- Updated the Soundpack.txt file.
