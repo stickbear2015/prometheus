@@ -1,2 +1,0 @@
-#TRIGGER {You hear the death cry of*!} {#If {@SilentMode = 0} {#If {@GagHunt = 1} {#gagline ALL}; #Play {Prometheus\General\Hunting\AnimalDie*20.wav} 90; #If {@PanHunt = 1} {#PC %Playhandle Pan %random(-4000,4000)}}} {}
-#TRIGGER {You hear a distant rifle shot!} {#If {@SilentMode = 0} {#If {@GagHunt = 1} {#gagline ALL}; #Play {Prometheus\General\Combat\Guns\FireRifle.wav} 40; #If {@PanHunt = 1} {#PC %Playhandle Pan %random(-4000,4000)}}} {}
