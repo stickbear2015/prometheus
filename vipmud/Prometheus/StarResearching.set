@@ -1,0 +1,82 @@
+;stars
+#trigger {*key*a few commands into an infrared laser beam control board.} {
+#If {%IfWord(You,%1," ")} {
+#gagline voice};
+#if {@silentmode = 0} {
+#play {prometheus\ship\computer\keyboard*7.wav} @vol};
+#class stars enable}
+#trigger {*activate*a high-powered infrared laser beam.} {
+#If {%IfWord(You,%1," ")} {
+#gagline voice};
+#if {@silentmode = 0} {
+#play {prometheus\ship\star researching\LActivate.wav} @vol}} {stars}
+#trigger {The room lights up in a beautiful red glow as the starship fires an infrared laser beam into space towards a star.} {
+#gagline voice;
+#if {@Silentmode = 0} {
+#play {prometheus\ship\star researching\LFiring.wav} @vol;
+#if {@panning = 1} {#pc %playhandle pan %random(-4000,4000)}}} {stars}
+#trigger {you notice the star begin to glow a blinding red.} {
+#gagline voice;
+#if {@silentmode = 0} {
+#play {prometheus\ship\star researching\Lblinding.wav} @vol}} {stars}
+#trigger {Rays of light pulsate as the starship continues to fire the infrared laser beam at the star.} {
+#gagline voice;
+#if {@silentmode = 0} {
+#playloop {prometheus\ship\star researching\Lpulsating.wav} @vol; #var LPulsatingHandle %playhandle; #var PulsatingSoundPlaying 1;
+#if {@panning = 1} {
+#pc %playhandle pan %random(-4000,4000)}}} {stars}
+#trigger {The pulsating light radiates as it becomes steady.} {
+#gagline voice;
+#if {@silentmode = 0} {
+#play {prometheus\ship\star researching\LSteady.wav} @vol}} {stars}
+#trigger {Suddenly, the rays of light begin pulsating quickly, and it seems as if the star is disintegrating right before your eyes.} {
+#gagline voice;
+#if {@silentmode = 0} {
+#play {prometheus\ship\star researching\LRapid.wav} @vol;
+#if {@panning = 1} {
+#pc %playhandle pan %random(-4000,4000)}}} {stars}
+#trigger {The rays of light dwindle down to nothing as the starship's infrared laser beam powers down.} {
+#gagline voice;
+#if {@PulsatingSoundPlaying = 1} {
+#pc @LPulsatingHandle stop; #var PulsatingSoundPlaying 0};
+#if {@silentmode = 0} {
+#play {prometheus\ship\star researching\LDeactivate.wav} @vol;
+#if {@panning = 1} {
+#pc %playhandle pan %random(-4000,4000)}}} {stars}
+#trigger {The starship's computer prints a paper containing the star research data.} {
+#gagline voice;
+#if {@silentmode = 0} {
+#play {prometheus\ship\star researching\SSPrinter*2.wav} 80}}
+#trigger {You remove a small piece of paper containing strange symbols from the printer.} {
+#gagline voice;
+#if {@silentmode = 0} {
+#play {prometheus\ship\star researching\SnatchPaper.wav} @vol};
+#class stars disable}
+#trigger {The blinding light gos out, and a red light flashes on the infrared laser beem control board. Warning, research failed.} {
+#sub {Research has failed};
+#pc @LPulsatingHandle stop} {stars}
+#trigger {*"Star research complete."} {
+#gagline voice} {stars}
+#trigger {The star returns to its normal color.} {
+#gagline voice;
+#class stars disable}
+#trigger {You feel the ship shudder slightly as something impacts the hull.} {#gagline all;
+#if {@Silentmode = 0} {
+#play {prometheus\ship\combat\YouHit*9.wav} @vol;
+#if {@panning = 1} {#pc %playhandle pan %random(-4000,4000)}}}
+#trigger {You feel the ship jolt suddenly as something impacts the hull.} {#gagline all;
+#if {@Silentmode = 0} {
+#play {prometheus\ship\combat\YouHit*9.wav} @vol;
+#if {@panning = 1} {#pc %playhandle pan %random(-4000,4000)}}}
+#trigger {The ship rocks violently as something impacts the hull!} {#gagline all;
+#if {@Silentmode = 0} {
+#play {prometheus\ship\combat\YouHit*9.wav} @vol;
+#if {@panning = 1} {#pc %playhandle pan %random(-4000,4000)}}}
+#trigger {The shields strengthen, absorbing most of the impact.} {#gagline all;
+#if {@Silentmode = 0} {
+#play {prometheus\ship\combat\SolarDebris.wav} @vol;
+#if {@panning = 1} {#pc %playhandle pan %random(-4000,4000)}}}
+#trigger {The plates around the hull orient themselves, deflecting the solar mass.} {#gagline all;
+#if {@Silentmode = 0} {
+#play {prometheus\ship\combat\LaserReflected.wav} @vol;
+#if {@panning = 1} {#pc %playhandle pan %random(-4000,4000)}}}

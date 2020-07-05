@@ -1,0 +1,10 @@
+;Grabbing
+#trigger {You tap some buttons * console*} {#if {@SilentMode = 0} {#play {Prometheus\ship\computer\keyboard*5.wav} @vol}}
+#trigger {The ship lurches as a powerful cutting beam is launched into space.} {#if {@SilentMode = 0} {#gagline ALL; #play {Prometheus\ship\shipwrecks\BeamLaunch.wav} @vol}; #class wrecks enable}
+#trigger {The ship rumbles as the beam carefully cuts its way into the wreck.} {#if {@SilentMode = 0} {#gagline ALL; #play {Prometheus\ship\shipwrecks\BeamCutting.wav} @vol}} {wrecks}
+#trigger {The computer announces, "* Beam locked!"} {#if {@SilentMode = 0} {#play {Prometheus\ship\shipwrecks\BeamLock.wav} @vol}} {wrecks}
+#trigger {The ship shakes, pouring more power into the beam.} {#if {@SilentMode = 0} {#gagline ALL; #play {Prometheus\ship\shipwrecks\BeamLockedOn.wav} @vol}} {wrecks}
+#trigger {The computer announces, "* successfully grabbed."} {#sub {%1};#gagline voice;#if {@silentmode = 0} {#play {Prometheus\ship\misc\salvage*3.wav} @vol}} {wrecks}
+#trigger {The beam returns with something in its grasp.} {#gagline ALL}
+#trigger {With a jolt, the beam returns to the ship.} {#if {@SilentMode = 0} {#gagline ALL; #play {Prometheus\ship\shipwrecks\BeamJolt.wav} @vol}} {wrecks}
+#trigger {The ship lurches as the cutting beam destroys the shipwreck into millions of tiny pieces!} {#if {@SilentMode = 0} {#play {Prometheus\general\socials\breakingglass*5.wav} @vol}} {wrecks}

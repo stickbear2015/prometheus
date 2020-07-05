@@ -1,0 +1,22 @@
+;* Host-related
+#TRIGGER {[[]Wizards] *} {
+#If {@SilentMode = 0} {
+#Play {Prometheus\General\Comm\wizard.wav} @Vol}} {channels}
+#TRIGGER {[[]Administrators] *} {
+#If {@SilentMode = 0} {
+#Play {Prometheus\General\Comm\AdminChat.wav} @Vol}} {channels}
+#trigger {[[]Gameplay]*} {#if {@SilentMode = 0} {#play {prometheus\general\comm\gameplay.wav} @vol}} {channels}
+#TRIGGER {*New assist from*} {
+#If {@SilentMode = 0} {
+#Play {Prometheus\General\Comm\Assist.wav} @Vol}}
+#TRIGGER {* suddenly steps from the background.} {
+#If {@SilentMode = 0} {
+#Play {Prometheus\General\Misc\HostIn*3.wav} @Vol}} {}
+#TRIGGER {* suddenly * into the background.} {
+#If {@SilentMode = 0} {
+#Play {Prometheus\General\Misc\HostOut*3.wav} @Vol}} {}
+#TRIGGER {You step into a brilliant beam of light which whisks you back to your home.} {#Gagline ALL;
+#if {@SilentMode = 0};
+#Play {Prometheus\General\Hosts\Host*10.wav} @vol} {}
+#TRIGGER {[[]Suggestions] *} {#if {@SilentMode = 0} { #Play {Prometheus\General\Comm\suggestions.wav} @vol}} {channels}
+#TRIGGER {[[]Code] *} {#if {@SilentMode = 0} { #play {Prometheus\General\Comm\CodeUpdates.wav} @vol}} {channels}

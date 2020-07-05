@@ -1,0 +1,40 @@
+;* Vehicle Ambiences
+#Trigger {[[]Inside*"*"*]&{SitStatus}} {
+#if {@QuotationToggle = 1} {#sub {[Inside%1%2]}};
+#If {@Mining = 1 AND @minecheck = 0} {#PC @MineHandle stop; #Var Mining 0};
+#If {@RoomSounds = 1} {
+#var vname %1;
+#If {%IfWord(POWERED,%3," ")} {VAMBS} {
+#If {@RoomSoundPlaying = 1} {
+#PC @RoomHandle stop; #Var RoomSoundPlaying 0}; #var CurrentRoom "OFF"}}} {ambiences} AnyCase
+#alias VAMBS {
+#If {%IfWord(combat,@vname," ")} {
+#If {@CurrentRoom <> "cv"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\CV.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #var CurrentRoom "cv"}};
+#If {%IfWord(mining,@vname," ")} {
+#If {@CurrentRoom <> "mv"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\MV.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #var CurrentRoom "mv"; #var minecheck 1}};
+#If {%IfWord(transport,@vname," ")} {
+#If {@CurrentRoom <> "transport"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\Transport.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #var CurrentRoom "transport"}};
+#If {%IfWord(airspace,@vname," ")} {
+#If {@CurrentRoom <> "airspace"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\Airspace.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #var CurrentRoom "airspace"}};
+#If {%IfWord(trash,@vname," ")} {
+#If {@CurrentRoom <> "trash"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\trash.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #var CurrentRoom "trash"}}}

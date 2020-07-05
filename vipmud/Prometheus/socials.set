@@ -1,0 +1,77 @@
+#TRIGGER {*say* "*"} {#If {@SilentMode = 0} {#If {%IfWord(Newbie,%1," ")} {#Abort 1}; #PLAY {Prometheus\General\SOCIALS\Say.wav} 40}} {}
+#TRIGGER {* ask* "*"} {#If {@SilentMode = 0} {#PLAY {Prometheus\General\SOCIALS\Say.wav} 40}} {}
+#TRIGGER {* exclaim* "*"} {#If {@SilentMode = 0} {#PLAY {Prometheus\General\Socials\Say.wav} 40}} {}
+#Trigger {* yawns and collapses to the*, asleep.} {#If {@SilentMode = 0} {#Play {Prometheus\General\Socials\yawn*2.wav} @Vol}} {}
+#Trigger {*let*forth an enormous yawn.} {#If {@SilentMode = 0} {#Play {Prometheus\General\Socials\yawn*2.wav} @Vol}} {socials}
+#Trigger {*yawn*at *.} {#If {@SilentMode = 0} {#Play {Prometheus\General\Socials\yawn*2.wav} @Vol}} {socials}
+#Trigger {you sigh.} {#if {@Silentmode = 0} {#Play {Prometheus\General\Socials\sigh*5.wav} @vol}} {socials}
+#Trigger {* sighs.} {#if {@SilentMode = 0} {#Play {Prometheus\General\Socials\sigh*5.wav} @vol}} {socials}
+#TRIGGER {you snicker softly.} {#if {@silentmode = 0} {#Play {Prometheus\General\Socials\laugh*5.wav} @vol}} {socials}
+#TRIGGER {* snickers softly.} {#if {@Silentmode = 0} {#Play {Prometheus\General\Socials\laugh*6.wav} @vol}} {socials}
+#trigger {You cough*} {#if {@SilentMode = 0} {#play {Prometheus\general\socials\cough*5.wav} @vol}} {socials}
+#TRIGGER {* coughs*} {#if {@SilentMode = 0} {#Play {Prometheus\General\Socials\cough*5.wav} @vol}} {socials}
+#TRIGGER {You collapse*} {#if {@SilentMode = 0} {#Play {Prometheus\General\Socials\Collapse*3.wav} @Vol}} {socials}
+#TRIGGER {*collapses*.} {#if {@SilentMode = 0} {#If {%IfWord(asleep,%2," ")} {#Alarm 0.25 {#Play {Prometheus\General\Socials\Collapse*3.wav} @Vol}; #Abort 1}; #Play {Prometheus\General\Socials\Collapse*3.wav} @Vol}} {socials}
+#trigger {You snap*} {#if {@Silentmode = 0} {#play {Prometheus\general\socials\snap*3.wav} @vol}} {socials}
+#TRIGGER {* snaps * fingers*} {#if {@Silentmode = 0} {#Play {Prometheus\General\Socials\snap*3.wav} @Vol}} {socials}
+#trigger {*snorts*} {#if {@SilentMode = 0} {#play {Prometheus\general\socials\snort.wav} @vol}} {socials}
+#trigger {You snort*} {#if {@SilentMode = 0} {#play {Prometheus\general\socials\snort.wav} @vol}} {socials}
+#trigger {You scream*} {#if {@silentmode = 0} {#play {Prometheus\general\socials\scream*4.wav} @vol}} {socials}
+#trigger {*screams*} {#if {@Silentmode = 0} {#play {Prometheus\general\socials\scream*4.wav} @vol}} {socials}
+#TRIGGER {You stand*.} {#Gagline All;#If {@SilentMode = 0} {#PLAY {Prometheus\General\Misc\stand.wav} @Vol}} {socials}
+#TRIGGER {You should stand up first.} {#If {@SilentMode = 0} {#Play {Prometheus\General\Misc\Command*10.wav} @Vol}} {}
+#TRIGGER {You pull * to * feet.} {#If {@SilentMode = 0} {#PLAY {Prometheus\General\Misc\stand.wav} @Vol}} {}
+#TRIGGER {* pulls * to * feet.} {#If {@SilentMode = 0} {#PLAY {Prometheus\General\Misc\stand.wav} @Vol}} {}
+#TRIGGER {*stands up*} {#If {@SilentMode = 0} {#PLAY {Prometheus\General\Misc\stand.wav} @Vol}} {socials}
+#TRIGGER {you punch *} {#If {@SilentMode = 0} {#Play {Prometheus\General\Ground Combat\HandSwing*8.wav} @Vol; #PC %Playhandle Pan %Random(-1500,1500); #Alarm 0.05 {#PLAY {Prometheus\General\Socials\punch*10.wav} @Vol; #PC %Playhandle Pan %Random(-4000,4000)}}} {socials} AnyCase
+#TRIGGER {*punches*} {#If {@SilentMode = 0} {#Play {Prometheus\General\Ground Combat\HandSwing*8.wav} @Vol; #PC %Playhandle Pan %Random(-1500,1500); #Alarm 0.05 {#PLAY  {Prometheus\General\Socials\punch*10.wav} @Vol; #PC %Playhandle Pan %Random(-4000,4000)}}} {socials}
+#TRIGGER {you kick *} {#If {@SilentMode = 0} {#Play {Prometheus\General\Ground Combat\FootSwing*8.wav} @Vol; #PC %Playhandle Pan %Random(-1500,1500); #Alarm 0.05 {#PLAY {Prometheus\General\Socials\Kick*9.wav} @Vol; #PC %Playhandle Pan %Random(-4000,4000)}}} {socials} AnyCase
+#TRIGGER {You poke*} {#If {@SilentMode = 0} {#play {Prometheus\General\Socials\Poke.wav} @Vol}} {socials}
+#TRIGGER {* kicks *} {#If {@SilentMode = 0} {#Play {Prometheus\General\Ground Combat\FootSwing*8.wav} @Vol; #PC %Playhandle Pan %Random(-1500,1500); #Alarm 0.05 {#PLAY {Prometheus\General\Socials\Kick*9.wav} @Vol; #PC %Playhandle Pan %Random(-4000,4000)}}} {socials}
+#TRIGGER {*pokes*} {#If {@SilentMode = 0} {#PLAY {Prometheus\General\Socials\poke.wav} @Vol}} {socials}
+#Trigger {You slap*} {#If {@SilentMode = 0} {#PLAY {Prometheus\General\Socials\Slap*5.wav} @Vol}} {socials} anycase
+#Trigger {*slaps*} {#If {@SilentMode = 0} {#PLAY {Prometheus\General\Socials\Slap*5.wav} @Vol}} {socials}
+#TRIGGER {You whistle*} {#If {@SilentMode = 0} {#PLAY {Prometheus\General\Socials\Whistle*6.wav} @Vol}} {socials}
+#TRIGGER {*whistles*} {#If {@SilentMode = 0} {#PLAY {Prometheus\General\Socials\Whistle*6.wav} @Vol}} {socials}
+#trigger {*farts*} {#If {@SilentMode = 0} {#play {Prometheus\general\socials\fart*5.wav} @Vol}} {socials}
+#trigger {*belches*} {#If {@SilentMode = 0} {#play {Prometheus\general\socials\belch*3.wav} @Vol}} {socials}
+#trigger {You belch*} {#if {@Silentmode = 0} {#play {Prometheus\general\socials\belch*3.wav} @vol}} {socials}
+#Trigger {you burp} {#If {@SilentMode = 0} {#Play {Prometheus\General\Socials\BURP*5.wav} @Vol}} {socials}
+#Trigger {* burps} {#If {@SilentMode = 0} {#Play {Prometheus\General\Socials\BURP*5.wav} @Vol}} {socials}
+#Trigger {*you fart*} {#If {@SilentMode = 0} {#Play {Prometheus\General\Socials\fart*5.wav} @Vol}} {socials}
+#TRIGGER {You tackle*!} {#If {@SilentMode = 0} {#PLAY {Prometheus\General\Socials\Tackle*5.wav} @Vol}} {socials}
+#TRIGGER {* tackles *!} {#If {@SilentMode = 0} {#PLAY {Prometheus\General\Socials\Tackle*5.wav} @Vol}} {socials}
+#TRIGGER {* attempts to tackle *} {#If {@SilentMode = 0} {#PLAY {Prometheus\General\Socials\Tackle*5.wav} @Vol}} {socials}
+#TRIGGER {You attempt to tackle*} {#If {@SilentMode = 0} {#PLAY {Prometheus\General\Socials\Tackle*5.wav} @Vol}} {socials}
+#TRIGGER {You * chitter into *} {#gagline ALL; #If {@SilentMode = 0} {#PLAY {Prometheus\General\Socials\pyrianChitter*10.wav} @Vol}} {}
+#TRIGGER {* sits down *} {#if {@SilentMode = 0} {#play {Prometheus\general\misc\sit.wav} @vol}} {socials}
+#Trigger {You lie *} {#If {@SilentMode = 0} {#Play {Prometheus\General\Socials\Lie.wav} @Vol}} {socials}
+#Trigger {* lies *} {#If {@SilentMode = 0} {#Play {Prometheus\General\Socials\Lie.wav} @Vol}} {socials}
+#TRIGGER {You sit *} {#gagline ALL; {#Play {Prometheus\General\Misc\sit.wav} @Vol}} {socials}
+#TRIGGER {*lean*in close and kiss*tenderly on the lips.} {#Play {Prometheus\General\Socials\Kiss*2.wav} @Vol} {socials}
+#Trigger {You throw back your head and cackle*} {#If {@SilentMode = 0} {#Play {Prometheus\General\Socials\cackle*2.wav} @Vol}} {socials}
+#Trigger {* throws back * head and cackles*} {#If {@SilentMode = 0} {#Play {Prometheus\General\Socials\cackle*2.wav} @Vol}} {socials}
+#Trigger {* roll*around on the floor laughing*} {#If {@SilentMode = 0} {#Play {Prometheus\General\Socials\rofl*3.wav} @Vol}} {socials}
+#trigger {*rofl*} {#if {@SilentMode = 0} {#play {Prometheus\general\socials\rofl*3.wav} @vol}} {socials} anycase
+
+#Trigger {*laughs *.} {#Play {Prometheus\General\Socials\laugh*6.wav} @vol} {socials}
+#trigger {You laugh *.} {#if {@silentmode = 0} {#play {Prometheus\general\socials\laugh*6.wav} @vol}} {socials}
+#TRIGGER {You chuckle*} {#Play {Prometheus\General\Socials\chuckle.wav} @Vol} {socials}
+#TRIGGER {*chuckles*} {#Play {Prometheus\General\Socials\chuckle.wav} @Vol} {socials}
+#trigger {You moan*} {#if {@SilentMode = 0} {#play {Prometheus\general\socials\moan*2.wav} @vol}} {socials}
+#trigger {* moans*} {#if {@silentmode = 0} {#play {Prometheus\general\socials\moan*2.wav} @vol}} {socials}
+#trigger {You spank*} {#if {@SilentMode = 0} {#play {Prometheus\general\socials\spank.wav} @vol}} {socials}
+#trigger {* spanks*} {#if {@SilentMode = 0} {#play {Prometheus\general\socials\spank.wav} @vol}} {socials}
+#trigger {You vomit*} {#if {@SilentMode = 0} {#play {Prometheus\general\socials\vomit.wav} @vol}} {socials}
+#trigger {* vomits*} {#if {@SilentMode = 0} {#play {Prometheus\general\socials\vomit.wav} @vol}} {socials}
+#trigger {You cheer*} {#if {@SilentMode = 0} {#play {Prometheus\general\socials\cheer*5.wav} @vol}} {socials}
+#trigger {* cheers*} {#if {@silentmode = 0} {#play {Prometheus\general\socials\cheer*5.wav} @vol}} {socials}
+#trigger {*lol*} {#if {@SilentMode = 0} {#play {Prometheus\general\socials\lol*2.wav} @vol}} {socials} anycase
+#trigger {* throw* * onto the ground where it shatters into several thousand tiny pieces!} {#if {@silentmode = 0} {#play {Prometheus\general\socials\breakingglass*5.wav} @vol}}
+#trigger {You chortle.} {#if {@SilentMode = 0} {#play {Prometheus\general\socials\chortle.wav} @vol}} {socials}
+#trigger {*chortles*} {#If {@SilentMode = 0} {#play {Prometheus\general\socials\chortle.wav} @vol}} {socials}
+#TRIGGER {*a green substance onto the floor. Gross!} {#If {@SilentMode = 0} {#Play {Prometheus\General\Socials\vomit.wav} @Vol}} {socials}
+#TRIGGER {*laugh*out loud!} {#If {@SilentMode = 0} {#Play {Prometheus\General\Socials\lol*2.wav} @Vol}} {socials}
+#TRIGGER {You kiss *} {#If {@SilentMode = 0} {#Play {Prometheus\General\Socials\kiss*2.wav} @Vol}} {socials}
+#TRIGGER {*burst*into tears!} {#If {@SilentMode = 0} {#Play {Prometheus\General\Socials\cry*4.wav} @Vol}} {socials}
+#TRIGGER {*begin*to cry*} {#If {@SilentMode = 0} {#Play {Prometheus\General\Socials\cry*4.wav} @Vol}} {socials}

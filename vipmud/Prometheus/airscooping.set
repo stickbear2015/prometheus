@@ -1,0 +1,2 @@
+#TRIGGER {A loud thud can be heard as a piece of scoopable material is deposited into the storage area.} {#If {@SilentMode = 0} {#gagline ALL; #Play {Prometheus\Ship\Misc\scoop.wav} @Vol}}
+#TRIGGER {You activate the vehicle's material scoopers.} {#If {@SilentMode = 0} {#gagline ALL; #Play {Prometheus\Ship\Misc\scoopbegin.wav} @Vol}}

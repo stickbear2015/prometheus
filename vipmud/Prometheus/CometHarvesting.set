@@ -1,0 +1,6 @@
+#trigger {The ship shakes softly as the comet harvesting equipment reaches out and begins harvesting the top of Comet * of gases.} {#gagline all}
+#trigger {You hear some odd sounds as the harvesting equipment begins scanning for gas.} {#if {@silentmode = 0} {#play {Prometheus\ship\comets\GasScanning.wav} @vol};#sub {Scanning for gases.}}
+#trigger {A smooth hum builds up in the background, and the unmistakeable sounds of gas being cleaned up fills the area.} {#if {@silentmode = 0} {#play {Prometheus\ship\comets\GasCleanUp.wav} @vol};#sub {Collecting gas.}}
+#TRIGGER {Some whooshes and clangs come from below.} {#if {@SilentMode = 0} {#gagline ALL; #play {Prometheus\ship\comets\GasHarvested*3.wav} @vol}}
+#trigger {A hum builds up for a second, but quickly subsides[;] apparently nothing was found.} {#sub {Nothing was found.}}
+#trigger {The ship suddenly lurches violently as something hits it!} {#if {@SilentMode = 0} {#play {Prometheus\ship\comets\explosion.wav} @vol}}

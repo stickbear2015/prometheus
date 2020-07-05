@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE muclient>
+
+<muclient>
+<plugin
+   name="LocalEdit"
+   author="Nyano"
+   id="62b0a394228e0761a83a529b"
+   language="Lua"
+   purpose="Support for local MOO editor utility via MCP"
+   requires="5.00"
+   version="0.8"
+  >
+</plugin>
+
+<include name="constants.lua"/>
+
+<triggers>
+  <trigger
+   enabled="y"
+   match="#$# edit name: * upload: *"
+   name="BeginEdit"
+   omit_from_output="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>
+    SetVariable("CurrentVerbName", string.gsub("%1", ":", " - "))
+    if GetNotepadList() then
+      for k, v in pairs(GetNotepadList()) do 
+        if v == GetVariable("CurrentVerbName") then
+          ActivateNotepad(GetVariable("CurrentVerbName"))
+          return
+        end  
+      end
+    end
+    AppendToNotepad(GetVariable("CurrentVerbName"), "%2\\r\\n")
+    SetTriggerOption("CodeLine", "enabled", 1)
+  </send>
+  </trigger>
+  <trigger
+   match="*"
+   name="CodeLine"
+   omit_from_output="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>
+    if ("%1" == ".") then
+      AppendToNotepad(GetVariable("CurrentVerbName"), ".\\r\\n")
+      ActivateNotepad(GetVariable("CurrentVerbName"))
+      SetTriggerOption("CodeLine", "Enabled", 0)
+    else
+      AppendToNotepad(GetVariable("CurrentVerbName"), "%1", "\\r\\n")
+    end
+  </send>
+  </trigger>
+</triggers>
+
+<variables>
+  <variable name="CurrentVerbName">Obj - Verb</variable>
+</variables>
+
+</muclient>

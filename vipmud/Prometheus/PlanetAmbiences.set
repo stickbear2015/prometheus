@@ -1,0 +1,361 @@
+;* Planet Room Ambiences
+#Trigger {[[]"&{PlanetName}; &{RoomName}"]&{SitStatus}} {
+#if {@QuotationToggle = 1} {#sub {@PlanetName; @RoomName}};GetRooms} {ambiences} AnyCase
+
+#alias GetRooms {
+#If {@FSRV <> "planet"} {
+#Var FSRV "planet"};
+#If {@Mining = 1} {#PC @MineHandle stop; #Var Mining 0};
+#If {@RoomSounds = 1} {
+#If {%IfWord(Road,@RoomName,"")} {
+#If {@CurrentRoom <> "Road"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\road.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "road"}; #Abort 1};
+#If {%IfWord(Shopping,@RoomName,"")} {
+#If {@CurrentRoom <> "Shopping"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\shopping center.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "Shopping"}; #Abort 1};
+#If {%IfWord(Docking,@RoomName,"")} {
+#If {@CurrentRoom <> "landing"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\LandingPad.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "landing"}; #Abort 1};
+#If {%IfWord(Landing,@RoomName,"")} {
+#If {@CurrentRoom <> "landing"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\LandingPad.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "landing"}; #Abort 1};
+#If {%IfWord(Lake,@RoomName,"")} {
+#If {@CurrentRoom <> "lake"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\Lake.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "lake"}; #Abort 1};
+#If {%IfWord(ocean,@RoomName,"")} {
+#If {@CurrentRoom <> "ocean"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\Ocean.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "ocean"}; #Abort 1};
+#If {%IfWord(sea,@RoomName,"")} {
+#if {NOT %IfWord(research,@RoomName,"")} {
+#If {@CurrentRoom <> "ocean"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\Ocean.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "ocean"}; #Abort 2}};
+#If {%IfWord(garage,@RoomName,"")} {
+#If {@CurrentRoom <> "garage"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\Garage.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "garage"}; #Abort 1};
+#If {%IfWord(asteroid,@RoomName,"")} {
+#If {@CurrentRoom <> "asteroid"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\AsteroidSurface.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "asteroid"}; #Abort 1};
+#If {%IfWord(dig,@RoomName,"")} {
+#If {@CurrentRoom <> "dig"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\DigSite.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "dig"}; #Abort 1};
+#If {%IfWord(digging,@RoomName,"")} {
+#If {@CurrentRoom <> "dig"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\DigSite.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "dig"}; #Abort 1};
+#If {%IfWord(mission,@RoomName,"")} {
+#If {@CurrentRoom <> "mission"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\Mission.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "mission"}; #Abort 1};
+#If {%IfWord(missions,@RoomName,"")} {
+#If {@CurrentRoom <> "mission"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\Mission.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "mission"}; #Abort 1};
+#If {%IfWord(medical,@RoomName,"")} {
+#If {@CurrentRoom <> "healing"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\Medical*2.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "healing"}; #Abort 1};
+#If {%IfWord(river,@RoomName,"")} {
+#If {@CurrentRoom <> "river"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\River*2.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "river"}; #Abort 1};
+#If {%IfWord(lounge,@RoomName,"")} {
+#If {@CurrentRoom <> "bar"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\PilotsLounge.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "bar"}; #Abort 1};
+#If {%IfWord(bar,@RoomName,"")} {
+#If {@CurrentRoom <> "bar"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\PilotsLounge.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "bar"}; #Abort 1};
+#If {%IfWord(cave,@RoomName,"")} {
+#If {@CurrentRoom <> "cave"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\cave.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "cave"}; #Abort 1};
+#If {%IfWord(Shipyard,@RoomName,"")} {
+#If {@CurrentRoom <> "shipyard"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\shipyard.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "shipyard"}; #Abort 1};
+#If {%IfWord(lobby,@RoomName,"")} {
+#If {@CurrentRoom <> "lobby"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\lobby.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "lobby"}; #Abort 1};
+#If {%IfWord(apartments,@RoomName,"")} {
+#If {@CurrentRoom <> "lobby"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\lobby.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "lobby"}; #Abort 1};
+#If {%IfWord(swimming,@RoomName,"")} {
+#If {@CurrentRoom <> "pool"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\pool.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "pool"}; #Abort 1};
+#If {%IfWord(pool,@RoomName,"")} {
+#If {@CurrentRoom <> "pool"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\pool.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "pool"}; #Abort 1};
+#If {%IfWord(Road,@PlanetName,"")} {
+#If {@CurrentRoom <> "Road"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\road.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "road"}; #Abort 1};
+#If {%IfWord(Shopping,@PlanetName,"")} {
+#If {@CurrentRoom <> "Shopping"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\shopping center.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "Shopping"}; #Abort 1};
+#If {%IfWord(Docking,@PlanetName,"")} {
+#If {@CurrentRoom <> "landing"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\LandingPad.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "landing"}; #Abort 1};
+#If {%IfWord(Landing,@PlanetName,"")} {
+#If {@CurrentRoom <> "landing"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\LandingPad.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "landing"}; #Abort 1};
+#If {%IfWord(Lake,@PlanetName,"")} {
+#If {@CurrentRoom <> "lake"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\Lake.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "lake"}; #Abort 1};
+#If {%IfWord(ocean,@PlanetName,"")} {
+#If {@CurrentRoom <> "ocean"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\Ocean.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "ocean"}; #Abort 1};
+#If {%IfWord(sea,@PlanetName,"")} {
+#If {@CurrentRoom <> "ocean"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\Ocean.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "ocean"}; #Abort 1};
+#If {%IfWord(garage,@PlanetName,"")} {
+#If {@CurrentRoom <> "garage"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\Garage.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "garage"}; #Abort 1};
+#If {%IfWord(asteroid,@PlanetName,"")} {
+#If {@CurrentRoom <> "asteroid"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\AsteroidSurface.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "asteroid"}; #Abort 1};
+#If {%IfWord(swimming,@PlanetName,"")} {
+#If {@CurrentRoom <> "pool"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\pool.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "pool"}; #Abort 1};
+#If {%IfWord(pool,@PlanetName,"")} {
+#If {@CurrentRoom <> "pool"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\pool.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "pool"}; #Abort 1};
+#If {%IfWord(dig,@PlanetName,"")} {
+#If {@CurrentRoom <> "dig"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\DigSite.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "dig"}; #Abort 1};
+#If {%IfWord(digging,@PlanetName,"")} {
+#If {@CurrentRoom <> "dig"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\DigSite.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "dig"}; #Abort 1};
+#If {%IfWord(mission,@PlanetName,"")} {
+#If {@CurrentRoom <> "mission"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\Mission.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "mission"}; #Abort 1};
+#If {%IfWord(missions,@PlanetName,"")} {
+#If {@CurrentRoom <> "mission"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\Mission.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "mission"}; #Abort 1};
+#If {%IfWord(medical,@PlanetName,"")} {
+#If {@CurrentRoom <> "healing"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\Medical*2.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "healing"}; #Abort 1};
+#If {%IfWord(river,@PlanetName,"")} {
+#If {@CurrentRoom <> "river"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\River*2.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "river"}; #Abort 1};
+#If {%IfWord(lounge,@PlanetName,"")} {
+#If {@CurrentRoom <> "bar"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\PilotsLounge.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "bar"}; #Abort 1};
+#If {%IfWord(bar,@PlanetName,"")} {
+#If {@CurrentRoom <> "bar"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\PilotsLounge.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "bar"}; #Abort 1};
+#If {%IfWord(apartment,@PlanetName,"")} {
+#If {@FSRV <> "apt"} {
+#Var FSRV "apt"};
+#If {@CurrentRoom <> "apartment"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\Garage.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "apartment"}; #Abort 1};
+#If {%IfWord(cave,@PlanetName,"")} {
+#If {@CurrentRoom <> "cave"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\cave.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "cave"}; #Abort 1};
+#If {%IfWord(Shipyard,@PlanetName,"")} {
+#If {@CurrentRoom <> "shipyard"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\shipyard.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "shipyard"}; #Abort 1};
+#If {%IfWord(lobby,@PlanetName,"")} {
+#If {@CurrentRoom <> "lobby"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\lobby.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "lobby"}; #Abort 1};
+#If {%IfWord(apartments,@PlanetName,"")} {
+#If {@CurrentRoom <> "lobby"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\lobby.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "lobby"}; #Abort 1};
+#If {@CurrentRoom <> "PlanetMisc"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\Lobby.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "PlanetMisc"}}}
+
+#Trigger {[[]Space]} {
+#If {@RoomSounds = 1} {
+#If {@CurrentRoom <> "space"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\General\Rooms\SpaceSuit.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "space"}}} {ambiences}
+
+;* Showers
+#TRIGGER {*press*a button on the touch-activated control panel,*water begins to spray*from the showerheads.} {#If {@RoomSounds = 1} {#If {@CurrentRoom <> "shower"} {#If {@RoomSoundPlaying = 1} {#pc @RoomHandle stop; #Var RoomSoundPlaying 0}; #PlayLoop {Prometheus\General\Rooms\Shower.wav} @roomvol; #Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "shower"}}} {ambiences}
+#TRIGGER {*lightly press*a button on the touch-activated control panel, causing the spray of water to stop.} {#If {@RoomSoundPlaying =  1} {#pc @RoomHandle stop; #Var RoomSoundPlaying 0}; #If {@SilentMode = 0} {#Play {Prometheus\General\Misc\ShowerEnd.wav} @vol}} {ambiences}
+#TRIGGER {*water is spraying*from the showerheads.} {#If {@RoomSounds = 1} {#If {@CurrentRoom <> "shower"} {#If {@RoomSoundPlaying = 1} {#pc @RoomHandle stop; #Var RoomSoundPlaying 0}; #PlayLoop {Prometheus\General\Rooms\Shower.wav} @roomvol; #Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "shower"}}} {ambiences}

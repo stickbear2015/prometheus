@@ -1,0 +1,38 @@
+#TRIGGER {You flick a small switch on a * tuning its frequency.} {
+#If {@SilentMode = 0} {
+#Play {Prometheus\General\Comm\Tune.wav} @Vol}} {devices}
+#TRIGGER {You turn *.} {
+#If {@SilentMode = 0} {
+#If {%IfWord(off,%1," ")} {
+#Play {Prometheus\General\Device\Deactivate.wav} @vol} {
+#Play {Prometheus\General\Device\Activate.wav} @vol}}} {devices}
+#TRIGGER {*a button on the airlock control console.} {#if {@SilentMode = 0} {#Play {Prometheus\Ship\Computer\MiniKeyboard.wav} @Vol}} {}
+#TRIGGER {You flick a * switch on*, enabling the * functionality.} {#if {@SilentMode = 0} {#Gagline ALL;
+#If {%IfWord(channel,%3," ")} {
+#Play {Prometheus\General\Device\ChannelsOn.wav} @Vol};
+#If {%IfWord(Flight,%3," ")} {
+#Play {Prometheus\General\Device\FCOn.wav} @Vol};
+#If {%IfWord(metafrequency,%3," ")} {
+#Play {Prometheus\General\Device\MetaOn.wav} @Vol}}} {devices}
+#TRIGGER {You flick a * switch on*, disabling the * functionality.} {#if {@SilentMode = 0} {#Gagline ALL;
+#If {%IfWord(channel,%3," ")} {
+#Play {Prometheus\General\Device\ChannelsOff.wav} @Vol};
+#If {%IfWord(Flight,%3," ")} {
+#Play {Prometheus\General\Device\FCOff.wav} @Vol};
+#If {%IfWord(metafrequency,%3," ")} {
+#Play {Prometheus\General\Device\MetaOff.wav} @Vol}}} {devices}
+#TRIGGER {*press*a button on top of *} {
+#If {%IfWord(You,%1," ") } {
+#gagline ALL};
+#If {@SilentMode = 0} {#Play {Prometheus\General\Device\ButtonPush.wav} @vol}} {devices}
+#trigger {you flick a switch on* enabling the * channel.} {
+#Sub {%2 enabled.};
+#if {@silentmode = 0} {
+#play {Prometheus\general\device\activate.wav} @vol}} {devices}
+#trigger {you flick a switch on* disabling the * channel.} {
+#Sub {%2 disabled.};
+#if {@silentmode = 0} {
+#play {Prometheus\general\device\deactivate.wav} @vol}} {devices}
+#TRIGGER {The screen of *flashes briefly, indicating that*} {
+#if {@silentmode = 0} {
+#Play {Prometheus\General\Device\New Post*4.wav} @vol}} {devices}

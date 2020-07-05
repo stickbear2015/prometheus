@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE muclient>
+
+<muclient>
+
+<plugin
+   name="Inline_Updater"
+   author="Nyano"
+   id="67c56ec4ebda2fece8d7657a"
+   language="Lua"
+   purpose="Checks with the UPDATE command for updates if available."
+   requires="5.00"
+  >
+</plugin>
+
+<include name="constants.lua"/>
+
+<aliases>
+  <alias
+   name="UpdateCheck"
+   match="update_check"
+   group="updater"
+   send_to="12"
+   sequence="100"
+  >
+  <send>
+    finished = false
+    SetVariable("updateTries", tonumber(GetVariable("updateTries")) + 1)
+    status = io.open(GetInfo(66).."update_status.txt", "r")
+    if not status then
+      Note("No update status available.")
+      return
+    end
+    if status then
+      status:seek("end", -40)
+      info = status:read("*a")
+      status:close()
+      if info:find("Update completed!", 1, true) then
+        finished = true
+      end
+    end
+    if finished == true then
+      Note("Update completed!")
+      ReloadPlugin("f4bea1251bff11404aee0a76")
+    end
+    if tonumber(GetVariable("updateTries")) &lt;= 70 then
+      DoAfterSpecial(3, "update_check", "10")
+    end
+    if not finished and (tonumber(GetVariable("updateTries")) % 8 == 0) then
+      Note("The updater is taking a very long time and is still running.")
+      Note("The last characters of the log are: "..info)
+    end
+    if tonumber(GetVariable("updateTries")) &gt; 70 || finished then
+      DeleteTemporaryTimers()
+      os.remove(GetInfo(66).."update_status.txt")
+      EnableAlias("Update", true)
+      EnableAlias("UpdateCheck", false)
+    end
+  </send>
+  </alias>
+  <alias
+   enabled="y"
+   name="Update"
+   match="update"
+   group="updater"
+   send_to="12"
+   sequence="100"
+  >
+  <send>
+    Note("Updating, please wait...")
+    utils.shellexecute("cmd.exe", "/c "..GetInfo(66).."updater.exe &gt; update_status.txt", GetInfo(66), "open", 0)
+    SetVariable("updateTries", "0")
+    EnableAlias("UpdateCheck", true)
+    DoAfterSpecial(5, "update_check", "10")
+    EnableAlias("Update", false)
+  </send>
+  </alias>
+</aliases>
+
+</muclient>
