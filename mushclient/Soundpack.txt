@@ -7,18 +7,18 @@ This package is for the awesome MOO called Eternal Wars as known as Prometheus. 
 
 If you haven't played this game before, you need to set a few options in the game with the OPTIONS command.
 
-Otherwise, I always recommend to take a look into the change log after updating to see what has been added, updated, changed, or removed in this soundpack.
+Otherwise, I always recommend you read the change log after updating to see what has been added, updated, changed, or removed in this soundpack.
 
-If you are using a screen reader, you can enable first the blind mode.
-You can set it by typing SIGHT if it's already not set yet. 
+If you are using a screen reader, you can enable the blind mode.
+You can set it by typing SIGHT if it's not set yet.
 
-In the Ship Options enable the Show Power Status in Ship Room Titles. Check the option Starmap Style is set to Coordinate-based.
+In the Ship Options enable the Show Power Status in Ship Room Titles. Check that the option Starmap Style is set to Coordinate-based.
 
-In the Who Options, I would recommend to disable Who output in proper columns. Output text won't cut off in the WHO list. If not, I would recommend to turn the Who Output to Modern.
+In the Who Options, disable Who output in proper columns. Output text won't cut off in the WHO list. If not, I would recommend to turn the Who Output to Modern.
 
 In the Miscellaneous Options enable the Announcing self-movement with normal exits, and set the Exit movement style to Soundpack-compatible.
 
-Feel free to change the other options of the game like you want it.
+Feel free to change the other options to suit your personal taste.
 
 ------------------------------------
 
@@ -54,23 +54,27 @@ Other Commands:
 ------------------------------------
 
 Channel History Buffers:
-You can with this awesome feature to browse quickly through the buffers to read again what was the last message again by pressing Alt plus left or right arrow key for categories, and with Alt plus 1 through 0 to read the last 10 temporarily recorded message from the certain category. Press that key twice quickly, you'll copy it into the clipboard. If it happens, if you wish you can delete a whole category to clear the buffer by pressing Alt+Shift+Delete. Either, you can browse through the message in a category by pressing Alt+Up and Alt+Down Arrow key. Now, it's possible to hold 200 messages in a category now. If you are using a screen reader, make sure, you bypass that possibly. These buffers are available for a game session, it keeps as long as you are logged in.
+You can with this feature, browse quickly through the buffers to read what the last message received was, by pressing Alt plus left or right arrow key for categories, and with Alt plus 1 through 0 to read the last 10 temporarily recorded messages in the selected buffer. Pressing alt 1 through zero twice quickly will copy the selected message to the clipboard.
+to clear the current buffer, press Alt+Shift+Delete.
+You can browse through the messages in a category by pressing Alt+Up and Alt+Down Arrow keys. each category can hold 200 messages.
+Some screen readers will require you to bypass them to get these keys to work.
 
 ------------------------------------
 
-Logging Into The File:
+logging output to a file.
 
-Furthermore, in certain cases, you can either turn it on or off by pressing Ctrl+Shift+J. Then, you see a separate window where you can set up options. Hitting OK button to save, and close the settings.
+you can enable or disable this feature by pressing Ctrl+Shift+J. you will see a separate window where you can set up options. Hit OK button to save, and close the settings.
 
-NOTE: If you turn it on, remember that everything will be logged, and saved periodically to the file, as well as like passwords, and any kind of codes, saved as a clear text.
+NOTE: If you turn this feature on, everything will be logged, and saved periodically to the file, including sensative data like passwords.
+
 
 ------------------------------------
 
-If you have any suggestions, comments, or you encountered any bugs, please tune your metafrequency to 140.8.
+If you have any suggestions, comments, or you encounter any bugs, please tune your metafrequency to 140.8.
 
 ------------------------------------
 
 Happy gaming, and have a lot of fun!
-Nyano
+Kendal
 
 ====================================
