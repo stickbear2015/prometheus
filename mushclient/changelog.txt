@@ -1,5 +1,9 @@
 Prometheus Soundpack Changes:
 
+version 4.0.4dev
+This is a development release, things may break.
+1. Fixes broken PM sounds.
+2. Rewrites readme to be easier to read.
 Version 4.0.3
 - Added an option to toggle the sound of roundtimes.
 - Updated the Soundpack.txt file.
@@ -16,3 +20,6 @@ Version 4.0.3
 - Added sounds for the verb code editor if the verb is programmed or failed. Enjoy it, Hosts!
 - Updated the sound trigger for the cash display.
 - Updated the sound for announcements, and added a different sound for sub-announcements.
+
+Version 4.0.1
+- Added an option to toggle the sound of roundtimes.
