@@ -1,3 +1,7 @@
+124. Same thing with newbie.
+copy prometheus\communications.set
+123. Added the ooc channel to my quotation mark toggle.
+copy prometheus\communications.set
 122. Redid ship ambiences into an alias, and updated the powering on and off triggers to respect what room you're in. Enjoy.
 copy prometheus\ShipAmbiences.set and ShipMove.set
 121. Added the soundpacks channel to my quote toggler.

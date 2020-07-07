@@ -1,4 +1,6 @@
-#TRIGGER {[ [ ]Newbie] *} {#if {@SilentMode = 0} {#play {Prometheus\general\comm\newbie.wav} @vol}} {channels}
+#TRIGGER {[[]Newbie]*"*"} {
+#if {@QuotationToggle = 1} {#sub {[Newbie]%1%2}} {#sub {[Newbie]%1"%2"}};
+#if {@SilentMode = 0} {#play {Prometheus\general\comm\newbie.wav} @vol}} {channels}
 #trigger {[[]SECTOR COMMUNICATION]*"*"} {
 #if {@QuotationToggle = 1} {#sub {[SECTOR COMMUNICATION]%1%2}} {#sub {[SECTOR COMMUNICATION]%1"%2"}};
 #If {@SilentMode = 0} {
@@ -19,7 +21,8 @@
 #if {@QuotationToggle = 1} {#sub {[Chatcomm]%1%2}} {#sub {[Chatcomm]%1"%2"}};
 #If {@SilentMode = 0} {
 #Play {Prometheus\General\Comm\Chatter.wav} @Vol}} {channels}
-#TRIGGER {[[]OOC] *} {
+#TRIGGER {[[]OOC]*"*"} {
+#if {@QuotationToggle = 1} {#sub {[OOC]%1%2}} {#sub {[OOC]%1"%2"}};
 #If {@SilentMode = 0} {#Play {Prometheus\General\Comm\Ooc.wav} @Vol}} {channels}
 #TRIGGER {[[]Missions]*"*"} {
 #if {@QuotationToggle = 1} {#sub {[Missions]%1%2}} {#sub {[Missions]%1"%2"}};
