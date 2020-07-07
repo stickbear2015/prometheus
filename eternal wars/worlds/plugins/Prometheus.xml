@@ -460,14 +460,14 @@
   </trigger>
   <trigger
    enabled="y"
-   match="* wormhole recall remote*says in a synthesized voice, "*"
+   match="* wormhole recall remote says in a synthesized voice, &quot;*&quot;"
    omit_from_output="y"
    send_to="14"
    sequence="99"
   >
   <send>
     CurrentSocialSound = PlaySound("Socials/Say.ogg")
-    Note("Your wormhole recall remote*says in a synthesized voice: %2")
+    Note("Your wormhole recall remote says: %2")
   </send>
   </trigger>
   <trigger
