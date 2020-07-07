@@ -6,6 +6,7 @@ This is a development release, things may break.
 2. Rewrites readme to be easier to read.
 3. removes the thesaurus plugin.
 4. removes extraneous files that weren't needed.
+5. fixes wormhole recall remotes.
 ++Version 4.0.3
 - Added an option to toggle the sound of roundtimes.
 - Updated the Soundpack.txt file.

@@ -460,7 +460,7 @@
   </trigger>
   <trigger
    enabled="y"
-   match="* wormhole recall remote*says in a synthesized voice, &quot;*&quot;"
+   match="* wormhole recall remote*says in a synthesized voice, "*"
    omit_from_output="y"
    send_to="14"
    sequence="99"
