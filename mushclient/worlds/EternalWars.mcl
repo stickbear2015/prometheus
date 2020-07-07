@@ -435,6 +435,5 @@
 <include name="Calculator.xml" plugin="y" />
 <include name="ChannelHistory.xml" plugin="y" />
 <include name="OutputFunctions.xml" plugin="y" />
-<include name="Thesaurus.xml" plugin="y" />
 <include name="Prometheus.xml" plugin="y" />
 </muclient>
