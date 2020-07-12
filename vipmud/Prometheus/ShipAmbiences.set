@@ -203,6 +203,13 @@
 #Var RoomSoundPlaying 0};
 #PlayLoop {Prometheus\Ship\Rooms\Deck.wav} @roomvol;
 #Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "deck"}; #Abort 1};
+#If {%IfWord(Pool,@RoomName,"")} {
+#If {@CurrentRoom <> "pool"} {
+#If {@RoomSoundPlaying = 1} {
+#pc @RoomHandle stop;
+#Var RoomSoundPlaying 0};
+#PlayLoop {Prometheus\Ship\Rooms\Pool.wav} @roomvol;
+#Var RoomHandle %Playhandle; #Var RoomSoundPlaying 1; #Var CurrentRoom "pool"}; #Abort 1};
 #If {@CurrentRoom <> "misc"} {
 #If {@RoomSoundPlaying = 1} {
 #pc @RoomHandle stop;

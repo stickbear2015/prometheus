@@ -1,7 +1,7 @@
 ;* Debris Salvaging
 #Trigger {*from * cloud of debris...*} {
 #Sub {%2 debris cloud}} {sal}
-#trigger {* activate*the starships salvage scanners, which begin scanning the area for debris.} {
+#trigger {* activate*the starship* salvage scanners, which begin scanning the area for debris.} {
 #If {@SilentMode = 0} {
 #If {%IfWord(You,%1," ")} {
 #If {@GagSal = 1} {
