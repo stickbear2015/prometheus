@@ -46,7 +46,7 @@
 #TRIGGER {You * chitter into *} {#gagline ALL; #If {@SilentMode = 0} {#PLAY {Prometheus\General\Socials\pyrianChitter*10.wav} @Vol}} {}
 #TRIGGER {* sits down *} {#if {@SilentMode = 0} {#play {Prometheus\general\misc\sit.wav} @vol}} {socials}
 #Trigger {You lie *} {#If {@SilentMode = 0} {#Play {Prometheus\General\Socials\Lie.wav} @Vol}} {socials}
-#Trigger {* lies *} {#If {@SilentMode = 0} {#Play {Prometheus\General\Socials\Lie.wav} @Vol}} {socials}
+#Trigger {* lies down *} {#If {@SilentMode = 0} {#Play {Prometheus\General\Socials\Lie.wav} @Vol}} {socials}
 #TRIGGER {You sit *} {#gagline ALL; {#Play {Prometheus\General\Misc\sit.wav} @Vol}} {socials}
 #TRIGGER {*lean*in close and kiss*tenderly on the lips.} {#Play {Prometheus\General\Socials\Kiss*2.wav} @Vol} {socials}
 #Trigger {You throw back your head and cackle*} {#If {@SilentMode = 0} {#Play {Prometheus\General\Socials\cackle*2.wav} @Vol}} {socials}

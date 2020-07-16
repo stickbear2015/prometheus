@@ -101,3 +101,13 @@
 #trigger {[[]"*" a shiny lift]} {#if {@QuotationToggle = 1} {#sub {[%1, a shiny lift]}}}
 #trigger {[[]*]:*"*"} {#if {@QuotationToggle = 1} {#sub {[%1]:%2%3}}}
 #trigger {[[]*]:*"*"*} {#if {@QuotationToggle = 1} {#if {NOT %IfWord(Commpipe,%1,"")} {#sub {[%1]:%2%3%4}}}}
+#trigger {The forcefield leading * deactivates, allowing * through.} {#if {@SilentMode = 0} {#gagline voice;
+#play {Prometheus\Ship\Misc\ForcefieldDeactivate.wav} @vol}}
+#trigger {You press a button next to the forcefield leading *, deactivating it.} {#if {@SilentMode = 0} {#sub {You press a button.};
+#play {Prometheus\Ship\Misc\ForcefieldDeactivate.wav} @vol}}
+#trigger {The forcefield leading * activates.} {#if {@SilentMode = 0} {#gagline voice;
+#play {Prometheus\Ship\Misc\ForcefieldActivate.wav} @vol}}
+#trigger {You press a button next to the forcefield leading *, activating it.} {#if {@SilentMode = 0} {#sub {You press a button.};
+#play {Prometheus\Ship\Misc\ForcefieldActivate.wav} @vol}}
+#trigger {* presses a button next to the forcefield leading *, activating it.} {#if {@SilentMode = 0} {#sub {%1 presses a button.};
+#play {Prometheus\Ship\Misc\ForcefieldActivate.wav} @vol}}

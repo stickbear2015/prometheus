@@ -1,5 +1,11 @@
-126. Fixed an error with asteroid harvesting.
-copy prometheus\AsteroidHarvesting.set
+129. Added sounds for forcefields curticy of george blue designation.
+copy prometheus\ShipMisc.set, sounds\prometheus\ship\misc\ForcefieldActivate.wav and ForcefieldDeactivate.wav
+128. Updated socials. The sound for lying down will no longer be triggered by room descriptions.
+copy prometheus\socials.set
+127. Tweaked the holsters again, hopefully Chronos's landing pad desc doesn't trigger them again.
+copy prometheus\GroundCombat.set
+126. Made 2 changes to ground combat. First, thank george blue designation for armor sounds, we now have sounds for turning armor on and off. Second, updated the holster trigger so you don't hear the holster sound when looking at your belt.
+copy prometheus\GroundCombat.set, sounds\prometheus\general\combat\ArmorOn.wav and ArmorOff.wav
 125. Made ship pools use the pool ambience.
 copy prometheus\ShipAmbience.set and sounds\prometheus\ships\rooms\pool.wav
 124. Same thing with newbie.
