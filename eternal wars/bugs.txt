@@ -1,3 +1,0 @@
-The following lists the bugs in the pack that I'm aware of.
-These bugs are being worked on, and this is a living document, and will be updated constantly.
-Once a bug is fixed, it will be removed and placed in the changelog as a change.
