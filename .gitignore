@@ -2,3 +2,4 @@
 *.html
 config.txt
 *-state.xml
+prometheus.txt
