@@ -10327,7 +10327,7 @@ function Trim(str)
 end
 
 function DisplayConfigMenu()
-  local title = "Avialable Options"
+  local title = "Available Options"
   local help_text = "To change an option, go to the option from the list, then press the Enter key (or click OK)."
   repeat 
     choices = {}
