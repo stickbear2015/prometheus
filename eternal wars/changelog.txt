@@ -8,6 +8,8 @@ This is a development release, things may break.
 4. removes extraneous files that weren't needed.
 5. fixes wormhole recall remotes.
 6. regags salvaging, and harvesting and grabbing messages by default. you'll have to remove config.txt to see this change.
+7. thanks to Nathan Bartlet, removes conflicting  numpad code so the prometheus pack and mushclient's core  don't attempt to run over each other.
+
 ++Version 4.0.3
 - Added an option to toggle the sound of roundtimes.
 - Updated the Soundpack.txt file.
