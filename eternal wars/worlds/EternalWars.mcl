@@ -57,7 +57,7 @@
    input_font_height="9"
    input_font_weight="400"
    input_text_colour="black"
-   keypad_enable="y"
+   keypad_enable="n"
    log_input="y"
    log_notes="y"
    log_output="y"
