@@ -1,3 +1,4 @@
 *.zip
 *.html
 config.txt
+"eternal wars\worlds\plugins\state\*.xml"
