@@ -9,7 +9,7 @@ This is a development release, things may break.
 5. fixes wormhole recall remotes.
 6. regags salvaging, and harvesting and grabbing messages by default. you'll have to remove config.txt to see this change.
 7. thanks to Nathan Bartlet, removes conflicting  numpad code so the prometheus pack and mushclient's core  don't attempt to run over each other.
-
+8. fixes the kick social firing unnecessarily. This was a regression introduced in 4.0.3.
 ++Version 4.0.3
 - Added an option to toggle the sound of roundtimes.
 - Updated the Soundpack.txt file.
