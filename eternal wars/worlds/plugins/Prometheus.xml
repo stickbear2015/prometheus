@@ -6349,7 +6349,7 @@
   </trigger>
   <trigger
    enabled="y"
-   match="^(.*) (kicks|kick) (.*).$"
+   match="^(.*) (kicks) (.*).$"
    regexp="y"
    send_to="12"
    sequence="100"
@@ -6373,7 +6373,7 @@
   </trigger>
   <trigger
    enabled="y"
-   match="^(.*) (walks|walk) over and (kicks|kick) (.*).$"
+   match="^(.*) (walks|walk) over and (kicks) (.*).$"
    regexp="y"
    send_to="12"
    sequence="100"
