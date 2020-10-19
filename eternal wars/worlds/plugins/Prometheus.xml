@@ -975,7 +975,7 @@
   </trigger>
   <trigger
    enabled="y"
-   match="* the starships salvage scanners, which begin scanning the area for debris."
+   match="* the starship's salvage scanners, which begin scanning the area for debris."
    omit_from_output="y"
    send_to="14"
    sequence="100"
