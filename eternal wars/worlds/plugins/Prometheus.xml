@@ -975,7 +975,7 @@
   </trigger>
   <trigger
    enabled="y"
-   match="* the starship's salvage scanners, which begin scanning the area for debris."
+   match="* the starships salvage scanners, which begin scanning the area for debris."
    omit_from_output="y"
    send_to="14"
    sequence="100"
@@ -1931,7 +1931,7 @@
   </trigger>
   <trigger
    enabled="y"
-   match="The screen of * hypernet browser with * touchscreen flashes briefly, indicating that there is new hypermail waiting for you."
+match="The screen of * flashes briefly, indicating that there is new hypermail waiting for you."
    omit_from_output="y"
    send_to="14"
    sequence="100"
