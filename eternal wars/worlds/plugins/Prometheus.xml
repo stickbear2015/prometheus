@@ -1921,7 +1921,7 @@
   </trigger>
   <trigger
    enabled="y"
-   match="Your hypernet browser flashes briefly, notifying you that you have new mail!"
+   match="The screen of * flashes briefly, indicating that you have received a package."
    send_to="12"
    sequence="100"
   >
