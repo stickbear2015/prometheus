@@ -1921,7 +1921,7 @@
   </trigger>
   <trigger
    enabled="y"
-   match="The screen of * flashes briefly, indicating that you have received a package."
+   match="Your hypernet browser flashes briefly, notifying you that you have new mail!"
    send_to="12"
    sequence="100"
   >
@@ -1931,7 +1931,7 @@
   </trigger>
   <trigger
    enabled="y"
-match="The screen of * flashes briefly, indicating that there is new hypermail waiting for you."
+   match="The screen of * hypernet browser with * touchscreen flashes briefly, indicating that there is new hypermail waiting for you."
    omit_from_output="y"
    send_to="14"
    sequence="100"
@@ -6543,7 +6543,7 @@ match="The screen of * flashes briefly, indicating that there is new hypermail w
   <trigger
    enabled="y"
    match="^(.*) (says|say) in (.*) accent\, &quot;(.*)&quot;$"
-   omit_from_output="y"
+   omit_from_output="n"
    regexp="y"
    send_to="14"
    sequence="100"
@@ -6552,7 +6552,6 @@ match="The screen of * flashes briefly, indicating that there is new hypermail w
     Execute("history_add All="..Capitalize("%1").." %2: "..Capitalize("%4"))
     Execute("history_add Conversations="..Capitalize("%1").." %2: "..Capitalize("%4"))
     CurrentSocialSound = PlaySound("Socials/Say.ogg")
-    Note(Capitalize("%1").." %2: "..Capitalize("%4"))
   </send>
   </trigger>
   <trigger
@@ -6573,7 +6572,7 @@ match="The screen of * flashes briefly, indicating that there is new hypermail w
   <trigger
    enabled="y"
    match="^(.*) (asks|ask) in (.*) accent, &quot;(.*)&quot;$"
-   omit_from_output="y"
+   omit_from_output="n"
    regexp="y"
    send_to="14"
    sequence="100"
@@ -6582,7 +6581,6 @@ match="The screen of * flashes briefly, indicating that there is new hypermail w
     Execute("history_add All="..Capitalize("%1").." %2: "..Capitalize("%4"))
     Execute("history_add Conversations="..Capitalize("%1").." %2: "..Capitalize("%4"))
     CurrentSocialSound = PlaySound("Socials/Say.ogg")
-    Note(Capitalize("%1").." %2: "..Capitalize("%4"))
   </send>
   </trigger>
   <trigger
@@ -6603,7 +6601,7 @@ match="The screen of * flashes briefly, indicating that there is new hypermail w
   <trigger
    enabled="y"
    match="^(.*) (exclaims|exclaim) in (.*) accent\, &quot;(.*)&quot;$"
-   omit_from_output="y"
+   omit_from_output="n"
    regexp="y"
    send_to="14"
    sequence="100"
@@ -6612,7 +6610,6 @@ match="The screen of * flashes briefly, indicating that there is new hypermail w
     Execute("history_add All="..Capitalize("%1").." %2: "..Capitalize("%4"))
     Execute("history_add Conversations="..Capitalize("%1").." %2: "..Capitalize("%4"))
     CurrentSocialSound = PlaySound("Socials/Say.ogg")
-    Note(Capitalize("%1").." %2: "..Capitalize("%4"))
   </send>
   </trigger>
   <trigger
