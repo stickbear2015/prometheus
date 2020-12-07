@@ -1,4 +1,3 @@
-<html>
 <head>
 <title>
 The mush client prometheus sound pack download centre.
@@ -27,12 +26,5 @@ download link<br>
 <a href="promo-mushclient-bundle401.zip">download version 4.0.1</a><br>
 <h1>development release</h1>
 <P>This is a development   release, and may have bugs, and unstable code. You download it at your own risk.<br>
-sha256: 27964163aa7b1755aa87be3fb88d4c15bb935de034fc2f6ea0527e5faf031f32<br>
-last updated: 6:21PM eastern, October 20, 2020.<br>
-The download is based on commit 7020dd
-Please use this commit ID when referencing issues.<br>
-Note: if your unsure if you've got the latest pack, feel free to redownload.<br>
-<a href="prometheus-dev.zip">download the latest development code</a>
-</P>
-</body>
-</html>
+Visit<a href="http://github.com/stickbear2015/releases">the releases page</a>for the latest release code.<br>
+
