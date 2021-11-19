@@ -141,6 +141,11 @@
 <![CDATA[
 
 local ppi = require("ppi")
+if (GetVariable("fsounds") == nil) then
+  SetVariable("fsounds", 0)
+end
+
+Accelerator("Ctrl+F12", "sound_toggle")
 
 function sfreq(freqing)
   freq = split(freqing, "=")
@@ -331,8 +336,6 @@ ppi.Expose("slideVol", slideVol)
 ppi.Expose("fadeout", fadeout)
 ppi.Expose("slidePan", slidePan)
 ppi.Expose("playLooped", playLooped)
-
-Accelerator("Ctrl+F12", "sound_toggle")
 
 ]]>            
 </script> 

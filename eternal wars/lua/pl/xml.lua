@@ -34,7 +34,6 @@ local split         =   utils.split;
 local t_insert      =  table.insert;
 local t_concat      =  table.concat;
 local t_remove      =  table.remove;
-local s_format      = string.format;
 local s_match       =  string.match;
 local tostring      =      tostring;
 local setmetatable  =  setmetatable;
@@ -46,9 +45,7 @@ local next          =          next;
 local print         =         print;
 local unpack        =  utils.unpack;
 local s_gsub        =   string.gsub;
-local s_char        =   string.char;
 local s_find        =   string.find;
-local os            =            os;
 local pcall,require,io     =   pcall,require,io
 
 local _M = {}
@@ -189,7 +186,6 @@ end
 --  doc = parent {child 'one', child 'two'}
 function _M.tags(list)
     local ctors = {}
-    local elem = _M.elem
     if is_text(list) then list = split(list,'%s*,%s*') end
     for _,tag in ipairs(list) do
         local ctor = function(items) return _M.elem(tag,items) end
@@ -411,11 +407,17 @@ end
 --- @param idn an initial indent (indents are all strings)
 --- @param indent an indent for each level
 --- @param attr_indent if given, indent each attribute pair and put on a separate line
---- @param xml force prefacing with <?xml...>
+--- @param xml force prefacing with default or custom <?xml...>
 --- @return a string representation
 function _M.tostring(t,idn,indent, attr_indent, xml)
     local buf = {};
-    if xml then buf[1] = "<?xml version='1.0'?>" end
+    if xml then
+        if type(xml) == "string" then
+            buf[1] = xml
+        else
+            buf[1] = "<?xml version='1.0'?>"
+        end
+    end
     _dostring(t, buf, _dostring, xml_escape, nil,idn,indent, attr_indent);
     return t_concat(buf);
 end
@@ -516,18 +518,18 @@ function _M.walk (doc, depth_first, operation)
 end
 
 local html_empty_elements = { --lists all HTML empty (void) elements
-	br      = true,
-	img     = true,
-	meta    = true,
-	frame   = true,
-	area    = true,
-	hr      = true,
-	base    = true,
-	col     = true,
-	link    = true,
-	input   = true,
-	option  = true,
-	param   = true,
+    br      = true,
+    img     = true,
+    meta    = true,
+    frame   = true,
+    area    = true,
+    hr      = true,
+    base    = true,
+    col     = true,
+    link    = true,
+    input   = true,
+    option  = true,
+    param   = true,
     isindex = true,
     embed = true,
 }
@@ -554,12 +556,12 @@ function _M.basic_parse(s,all_text,html)
 
     local function parseargs(s)
       local arg = {}
-      s:gsub("([%w:]+)%s*=%s*([\"'])(.-)%2", function (w, _, a)
+      s:gsub("([%w:%-_]+)%s*=%s*([\"'])(.-)%2", function (w, _, a)
         if html then w = w:lower() end
         arg[w] = unescape(a)
       end)
       if html then
-        s:gsub("([%w:]+)%s*=%s*([^\"']+)%s*", function (w, a)
+        s:gsub("([%w:%-_]+)%s*=%s*([^\"']+)%s*", function (w, a)
           w = w:lower()
           arg[w] = unescape(a)
         end)
@@ -569,10 +571,11 @@ function _M.basic_parse(s,all_text,html)
 
     t_insert(stack, top)
     local ni,c,label,xarg, empty, _, istart
-    local i, j = 1, 1
-    if not html then -- we're not interested in <?xml version="1.0"?>
-        _,istart = s_find(s,'^%s*<%?[^%?]+%?>%s*')
-    else -- or <!DOCTYPE ...>
+    local i = 1
+    local j
+    -- we're not interested in <?xml version="1.0"?>
+    _,istart = s_find(s,'^%s*<%?[^%?]+%?>%s*')
+    if not istart then -- or <!DOCTYPE ...>
         _,istart = s_find(s,'^%s*<!DOCTYPE.->%s*')
     end
     if istart then i = istart+1 end
@@ -593,8 +596,6 @@ function _M.basic_parse(s,all_text,html)
             if html then
                 label = label:lower()
                 if html_empty_elements[label] then empty = "/" end
-                if label == 'script' then
-                end
             end
             if all_text or not s_find(text, "^%s*$") then
                 t_insert(top, unescape(text))
@@ -616,7 +617,7 @@ function _M.basic_parse(s,all_text,html)
                 t_insert(top, toclose)
             end
         end
-    i = j+1
+        i = j+1
     end
     local text = s_sub(s, i)
     if all_text or  not s_find(text, "^%s*$") then

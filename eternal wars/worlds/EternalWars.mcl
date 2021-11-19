@@ -57,7 +57,6 @@
    input_font_height="9"
    input_font_weight="400"
    input_text_colour="black"
-   keypad_enable="n"
    log_input="y"
    log_notes="y"
    log_output="y"
@@ -429,11 +428,11 @@
 </printing>
 
 <!-- plugins -->
-<include name="OmitBlankLines.xml" plugin="y" />
-<include name="MushReader.xml" plugin="y" />
 <include name="LuaAudio.xml" plugin="y" />
+<include name="Omit_Blank_Lines.xml" plugin="y" />
+<include name="MushReader.xml" plugin="y" />
 <include name="Calculator.xml" plugin="y" />
-<include name="ChannelHistory.xml" plugin="y" />
-<include name="OutputFunctions.xml" plugin="y" />
+<include name="channel_history.xml" plugin="y" />
+<include name="output_functions.xml" plugin="y" />
 <include name="Prometheus.xml" plugin="y" />
 </muclient>

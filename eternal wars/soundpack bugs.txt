@@ -1,6 +1,0 @@
-The following lists the bugs in the pack that I'm aware of.
-These bugs are being worked on, and this is a living document, and will be updated constantly.
-Once a bug is fixed, it will be removed and placed in the changelog as a change.
-1. configuration changes either aren't saving or aren't being read on pack startup. (references github issue #1
-2. pyrion translators present issues, messages aren't being read. (note: further testing, only one reported player issue, references github issue #2)
-3. the fix to the kick trigger firing unnecessarily may have broken it's firing in other contexts, -further testing required.

@@ -17,23 +17,29 @@ local compat
 -- this trickery is necessary to prevent the inheritance of 'super' and
 -- the resulting recursive call problems.
 local function call_ctor (c,obj,...)
-    -- nice alias for the base class ctor
-    local base = rawget(c,'_base')
-    if base then
-        local parent_ctor = rawget(base,'_init')
-        while not parent_ctor do
-            base = rawget(base,'_base')
-            if not base then break end
-            parent_ctor = rawget(base,'_init')
+    local init = rawget(c,'_init')
+    local parent_with_init = rawget(c,'_parent_with_init')
+
+    if parent_with_init then
+        if not init then -- inheriting an init
+            init = rawget(parent_with_init, '_init')
+            parent_with_init = rawget(parent_with_init, '_parent_with_init')
         end
-        if parent_ctor then
+        if parent_with_init then -- super() points to one above whereever _init came from
             rawset(obj,'super',function(obj,...)
-                call_ctor(base,obj,...)
+                call_ctor(parent_with_init,obj,...)
             end)
         end
+    else
+        -- Without this, calling super() where none exists will sometimes loop and stack overflow
+        rawset(obj,'super',nil)
     end
-    local res = c._init(obj,...)
-    rawset(obj,'super',nil)
+
+    local res = init(obj,...)
+    if parent_with_init then -- If this execution of call_ctor set a super, unset it
+        rawset(obj,'super',nil)
+    end
+
     return res
 end
 
@@ -50,15 +56,25 @@ end
 -- print(pussycat.name)  --> pussycat
 
 --- checks whether an __instance__ is derived from some class.
--- Works the other way around as `class_of`.
+-- Works the other way around as `class_of`. It has two ways of using;
+-- 1) call with a class to check against, 2) call without params.
 -- @function instance:is_a
--- @param some_class class to check against
--- @return `true` if `instance` is derived from `some_class`
+-- @param some_class class to check against, or `nil` to return the class
+-- @return `true` if `instance` is derived from `some_class`, or if `some_class == nil` then
+-- it returns the class table of the instance
 -- @usage local pussycat = Lion()  -- assuming Lion derives from Cat
 -- if pussycat:is_a(Cat) then
---   -- it's true
+--   -- it's true, it is a Lion, but also a Cat
+-- end
+--
+-- if pussycat:is_a() == Lion then
+--   -- It's true
 -- end
 local function is_a(self,klass)
+    if klass == nil then
+        -- no class provided, so return the class this instance is derived from
+        return getmetatable(self)
+    end
     local m = getmetatable(self)
     if not m then return false end --*can't be an object!
     while m do
@@ -121,7 +137,7 @@ local function _class(base,c_arg,c)
     else
         c = c or {}
     end
-   
+
     if type(base) == 'table' then
         -- our new class is a shallow copy of the base class!
         -- but be careful not to wipe out any methods we have been given at this point!
@@ -136,6 +152,7 @@ local function _class(base,c_arg,c)
     c.__index = c
     setmetatable(c,mt)
     if not plain then
+        if base and rawget(base,'_init') then c._parent_with_init = base end -- For super and inherited init
         c._init = nil
     end
 
@@ -150,24 +167,18 @@ local function _class(base,c_arg,c)
         if not obj then obj = {} end
         setmetatable(obj,c)
 
-        if rawget(c,'_init') then -- explicit constructor
+        if rawget(c,'_init') or rawget(c,'_parent_with_init') then -- constructor exists
             local res = call_ctor(c,obj,...)
             if res then -- _if_ a ctor returns a value, it becomes the object...
                 obj = res
                 setmetatable(obj,c)
             end
-        elseif base and rawget(base,'_init') then -- default constructor
-            -- make sure that any stuff from the base class is initialized!
-            call_ctor(base,obj,...)
         end
 
         if base and rawget(base,'_post_init') then
             base._post_init(obj)
         end
 
-        if not rawget(c,'__tostring') then
-            c.__tostring = _class_tostring
-        end
         return obj
     end
     -- Call Class.catch to set a handler for methods/properties not found in the class!
@@ -183,6 +194,10 @@ local function _class(base,c_arg,c)
     c.class_of = class_of
     c.cast = cast
     c._class = c
+
+    if not rawget(c,'__tostring') then
+        c.__tostring = _class_tostring
+    end
 
     return c
 end

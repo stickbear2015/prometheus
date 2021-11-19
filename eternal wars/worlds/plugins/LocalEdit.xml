@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE muclient>
 
 <muclient>
 <plugin
    name="LocalEdit"
-   author="Nyano"
+   author="DistantOrigin"
    id="62b0a394228e0761a83a529b"
    language="Lua"
    purpose="Support for local MOO editor utility via MCP"
@@ -12,8 +12,6 @@
    version="0.8"
   >
 </plugin>
-
-<include name="constants.lua"/>
 
 <triggers>
   <trigger

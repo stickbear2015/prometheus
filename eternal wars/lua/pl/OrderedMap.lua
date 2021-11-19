@@ -2,7 +2,7 @@
 --
 -- Derived from `pl.Map`.
 --
--- Dependencies: `pl.utils`, `pl.tablex`, `pl.List`
+-- Dependencies: `pl.utils`, `pl.tablex`, `pl.class`, `pl.List`, `pl.Map`
 -- @classmod pl.OrderedMap
 
 local tablex = require 'pl.tablex'
@@ -32,7 +32,7 @@ end
 local assert_arg,raise = utils.assert_arg,utils.raise
 
 --- update an OrderedMap using a table.
--- If the table is itself an OrderedMap, then its entries will be appended. 
+-- If the table is itself an OrderedMap, then its entries will be appended.
 -- if it s a table of the form `{{key1=val1},{key2=val2},...}` these will be appended.
 --
 -- Otherwise, it is assumed to be a map-like table, and order of extra entries is arbitrary.
@@ -70,9 +70,9 @@ end
 -- @param val the value
 -- @return the map
 function OrderedMap:set (key,val)
-    if self[key] == nil and val ~= nil then -- new key
-       self._keys:append(key) -- we keep in order
-       rawset(self,key,val)  -- don't want to provoke __newindex!
+    if rawget(self, key) == nil and val ~= nil then -- new key
+        self._keys:append(key) -- we keep in order
+        rawset(self,key,val)  -- don't want to provoke __newindex!
     else -- existing key-value pair
         if val == nil then
             self._keys:remove_value(key)
@@ -132,7 +132,7 @@ end
 function OrderedMap:iter ()
     local i = 0
     local keys = self._keys
-    local n,idx = #keys
+    local idx
     return function()
         i = i + 1
         if i > #keys then return nil end

@@ -1,34 +1,46 @@
 Prometheus Soundpack Changes:
-Use the find function of your text editor and search for ++ to find the start of major version sections.
-++version 4.0.4dev
-This is a development release, things may break.
-1. Fixes broken PM sounds.
-2. Rewrites readme to be easier to read.
-3. removes the thesaurus plugin.
-4. removes extraneous files that weren't needed.
-5. fixes wormhole recall remotes.
-6. regags salvaging, and harvesting and grabbing messages by default. you'll have to remove config.txt to see this change.
-7. thanks to Nathan Bartlet, removes conflicting  numpad code so the prometheus pack and mushclient's core  don't attempt to run over each other.
-8. fixes the kick social firing unnecessarily. This was a regression introduced in 4.0.3.
-9. thanks to Kyrina Lightstone, fixed mail sound not playing when you received mail.
-10. Thanks to Kyrina Lightstone, fixed mail sound not playing when packages were received.
 
-++Version 4.0.3
-- Added an option to toggle the sound of roundtimes.
-- Updated the Soundpack.txt file.
-- Fixed the Accelerator keys to control the volumes.
-- Due to reduce spam, in space combats, you'll see no longer any firing messages if your ship or other ships in the sector are firing at X-Loritan ships only.
-- If objects are one unit away from your current location in space when scanning them you will in additonal hear a second small beep sound.
-- The All buffer is now available permanently. It was optionally in a previous version.
-- The ground combat sounds are now totally random. Enjoy the entertainment.
-- Added a Thesaurus lookup feature.
-- Added Alt+F9, Alt+F10, and Alt+F11 to toggle the global sounds, room sounds, and combat sounds. You can mute or unmute them.
-- Added channel sounds for TeamTalk and Stream.
-- Added a warning sound trigger for relics when the self-destruction starts by 1 minute now.
-- Fixed a bug with the computer reports when the single objects has been detected in the sector.
-- Added sounds for the verb code editor if the verb is programmed or failed. Enjoy it, Hosts!
-- Updated the sound trigger for the cash display.
-- Updated the sound for announcements, and added a different sound for sub-announcements.
+++Version 21.7.1
+* Fixed the sound trigger when a starship probe has been destroyed by the derelict's onboard security system.
+* Added Alt+Letter keys, so you can use both either the numpad keys or the alternative letter keys.
+* Removed the old sound trigger for finishing power suppliers recharging.
+* Added the sound trigger for receiving new hypermail.
+* Fixed the sound for powering up if it is complete and if it fails.
+* Fixed the sound trigger for loading/removing cargo from/into the storage room.
 
-++Version 4.0.1
-- Added an option to toggle the sound of roundtimes.
+++Version 21.5.3
+* Renamed the sound file for docking bays, so it can be triggered playing correctly. Thanks to Marcus for pointing it out.
+* Fixed the sound trigger if a prevention field is in the sector. The message was changed in the game.
+* Fixed the sound trigger if X-Loritan or alien creatures in the same room with you and you look around. corpses of them will no longer trigger that sound any more.
+* Fixed the sound triggers when X-Loritan and alien creatures kicks or punches you.
+
+++Version 21.5.2
+* Changed some channel sounds. It's now better, hopefully. Let me know what you think
+* Added a sound when communications and teleporters are not working, due to either out of communications range or it's blocked.
+* Fixed the salvaging message trigger when preparing salvaged things.
+* Added sounds when using the walk command.
+* Added sounds for sanitation droids.
+* Changed the message when a sector has a disruiption field. It's now announced by the starship's computer.
+* Removed the 'rdate' alias, it is now within the version alias.
+
+++Version 21.5.1
+* Updated the sound trigger to hold someone and who's getting be hold.
+* Revamped the sound handling framework to make easier and improved the performance, as well as all made settings should now be saved in the configuration file too, hopefully.
+* Added a sound if a UTF Communications Officer informs on General channel about of failed missions.
+* Added a sound for trying to fire weapons when being cloaked.
+* Changed behaviour of playing fighting sound in rooms only, and no longer on any channels.
+* Added playing a random music when a mission is completed successfully.
+* Fixed a stupid bug where the sound trigger for computer messages if a target missed, was also triggering for all other computer messages where the word "Miss" was in it.
+* Added a social sound for sneeze.
+* Added a toggle for the red alarm sounds in starships.
+* Updated the readme soundpack file.
+* Removed the sound for the 'Uncensored Box' channel due to hosts removed that channel. The Chat channel is already an uncensored one.
+* Removed the ability to toggle into the Autosay mode by the hotkey Ctrl+Shift+A.
+* Removed the abilitity to force the client to repeat last entered commands by Ctrl+R.
+* Fixed the sound trigger for 'hmm' social.
+* Added the 'rdate' command to display the release date of this version.
+* Updated the soundpack readme file respectively.
+* Added the hotkey Ctrl+Shift+L for soundpack reloading if there's something going in a strange way. In some very rare situations it might help, perhaps. If not, let me know.
+* Added a sound for a navigation prevention field in the sector.
+* Fixed a long-standing bug with playing of the salvaging sound twice. Sorry for that, and thanks for pointing it out.
+* Removed self-voicing sounds.

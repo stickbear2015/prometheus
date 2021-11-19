@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE muclient>
+
 <muclient>
 
 <plugin
-   name="MUSH_Reader"
+   name="MushReader"
+  author="Nyano"
    id="925cdd0331023d9f0b8f05a7"
    language="Lua"
-   purpose="Plugin for multiple screen readers"
+   purpose="Plugin for multiple screen readers."
    requires="5.00"
   >
 </plugin>
@@ -49,23 +51,21 @@
   </alias>
   <alias
    enabled="y"
-   script="TTSToggle"
    match="tts"
-   group="TTS"
    omit_from_command_history="y"
    omit_from_log="y"
    omit_from_output="y"
+   script="TTSToggle"
    sequence="100"
   >
   </alias>
   <alias
    enabled="y"
-   script="TTSFocusToggle"
    match="ftts"
-   group="TTS"
    omit_from_command_history="y"
    omit_from_log="y"
    omit_from_output="y"
+   script="TTSFocusToggle"
    sequence="100"
   >
   </alias>
@@ -76,8 +76,6 @@
 <script>
 <![CDATA[
 
-require("serialize")
-
 tts_enabled = true
 etts = true
 
@@ -86,7 +84,7 @@ if (GetVariable("ftts") == nil) then
   focusnote = true
 end
 
-Accelerator("Cctrl+Shift+F12", "tts")
+Accelerator("Ctrl+Shift+F12", "tts")
 
 function OnPluginLoseFocus()
   if (etts == false) then
@@ -150,7 +148,7 @@ function stop()
 end
 
 function OnPluginScreendraw(t, log, line)
-  if not tts_enabled then
+  if (tts_enabled == false) then
     return
   end
   if (((t == 0) or (t == 1)) and not line:find("^%s*$")) then
@@ -169,21 +167,21 @@ function TTSFocusToggle()
 end
 
 function TTSToggle (name, line, wc)
-  if tts_enabled then
+  if (tts_enabled == true) then
     tts_enabled = false
     etts = false
     stop()
     say("Speech off.")
-  else
+  elseif (tts_enabled == false) then
     tts_enabled = true
-    etts=true
+    etts = true
     stop()
     say("Speech on.")
   end
 end
 
 function OnPluginTabComplete(word)
-  if tts_enabled then
+  if (tts_enabled == true) then
     say(word)
   end
 end
