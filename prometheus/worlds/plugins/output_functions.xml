@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE muclient>
+<muclient>
+
+<plugin
+   name="output_functions"
+   author="Weyoun"
+   id="54846c23d8b15594e7eb4b8a"
+   language="Lua"
+   purpose="Provides functions to help TTS users."
+   requires="5.00"
+  >
+</plugin>
+
+<include name="constants.lua"/>
+
+<aliases>
+  <alias
+   enabled="y"
+   match="line_get *"
+   script="LineGet"
+   omit_from_output="y"
+   omit_from_log="y"
+   omit_from_command_history="y"
+   send_to="12"
+   sequence="100"
+  >
+  </alias>
+  <alias
+   enabled="y"
+   match="clearoutputbuffer"
+   script="clearlines"
+   omit_from_output="y"
+   omit_from_log="y"
+   omit_from_command_history="y"
+   send_to="12"
+   sequence="100"
+  >
+  </alias>
+  <alias
+   enabled="y"
+   match="clearoutputwindow"
+   script="clearwindow"
+   omit_from_output="y"
+   omit_from_log="y"
+   omit_from_command_history="y"
+   send_to="12"
+   sequence="100"
+  >
+  </alias>
+  <alias
+   enabled="y"
+   match="prevline"
+   script="prev_line"
+   omit_from_output="y"
+   omit_from_log="y"
+   omit_from_command_history="y"
+   send_to="12"
+   sequence="100"
+  >
+  </alias>
+  <alias
+   enabled="y"
+   match="toggleoutput"
+   script="output_toggle"
+   omit_from_output="y"
+   omit_from_log="y"
+   omit_from_command_history="y"
+   send_to="12"
+   sequence="100"
+  >
+  </alias>
+  <alias
+   enabled="y"
+   match="toggleinterrupt"
+   script="interrupt_toggle"
+   omit_from_output="y"
+   omit_from_log="y"
+   omit_from_command_history="y"
+   send_to="12"
+   sequence="100"
+  >
+  </alias>
+  <alias
+   enabled="y"
+   match="curline"
+   script="cur_line"
+   omit_from_output="y"
+   omit_from_log="y"
+   omit_from_command_history="y"
+   send_to="12"
+   sequence="100"
+  >
+  </alias>
+  <alias
+   enabled="y"
+   match="select *"
+   omit_from_output="y"
+   omit_from_log="y"
+   omit_from_command_history="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>
+    if "%1" == "space" then
+      selectscr(" ")
+    else
+      selectscr("\\r\\n")
+    end
+  </send>
+  </alias>
+  <alias
+   enabled="y"
+   match="nextline"
+   script="next_line"
+   omit_from_output="y"
+   omit_from_log="y"
+   omit_from_command_history="y"
+   send_to="12"
+   sequence="100"
+  >
+  </alias>
+  <alias
+   enabled="y"
+   match="whichline"
+   script="which_line"
+   omit_from_output="y"
+   omit_from_log="y"
+   omit_from_command_history="y"
+   send_to="12"
+   sequence="100"
+  >
+  </alias>
+  <alias
+   enabled="y"
+   match="topline"
+   script="top_line"
+   omit_from_output="y"
+   omit_from_log="y"
+   omit_from_command_history="y"
+   send_to="12"
+   sequence="100"
+  >
+  </alias>
+  <alias
+   enabled="y"
+   match="snap_shot"
+   script="snapshot"
+   omit_from_output="y"
+   omit_from_log="y"
+   omit_from_command_history="y"
+   send_to="12"
+   sequence="100"
+  >
+  </alias>
+  <alias
+   enabled="y"
+   match="endline"
+   script="end_line"
+   omit_from_output="y"
+   omit_from_log="y"
+   omit_from_command_history="y"
+   send_to="12"
+   sequence="100"
+  >
+  </alias>
+</aliases>
+
+<script>
+<![CDATA[
+
+for i = 1, 9 do
+  Accelerator("Ctrl+"..tostring(i), "line_get "..tostring(i))
+end
+Accelerator("Ctrl+0", "line_get 10")
+Accelerator("Ctrl+Shift+C", "clearoutputbuffer")
+Accelerator("Ctrl+Shift+Alt+C", "clearoutputwindow")
+Accelerator("Ctrl+Shift+O", "nextline")
+Accelerator("Ctrl+Alt+Enter", "toggleinterrupt")
+Accelerator("Ctrl+Alt+O", "toggleoutput")
+Accelerator("Ctrl+Shift+I", "curline")
+Accelerator("Ctrl+Shift+Space", "select line")
+Accelerator("Ctrl+Shift+Alt+Space", "select space")
+Accelerator("Ctrl+Shift+U", "prevline")
+Accelerator("Ctrl+Shift+N", "endline")
+Accelerator("Ctrl+Shift+Y", "topline")
+Accelerator("Ctrl+Shift+H", "whichline")
+Accelerator("Ctrl+Shift+Alt+S","snap_shot")
+
+function selectscr(eol)
+  buffer_check()
+  if (selecting ~= 1) then
+    selecting = 1
+    Execute("tts_interrupt Selection start.")
+    tselect = {}
+    sline = cline
+  else
+    if (eol == " ") then
+      Execute("tts_interrupt Selection copied without linebreaks.")
+    else
+      Execute("tts_interrupt Selection copied.")
+    end
+    for i = sline, cline do
+      table.insert(tselect, GetLineInfo(i, 1))
+    end
+    SetClipboard(table.concat(tselect, eol))
+    selecting = 0
+    tselect = {}
+  end
+end
+
+function output_toggle()
+  if (GetVariable("output") ~= "1") then
+    SetVariable("output", "1")
+    Execute("tts_interrupt Output notepad enabled.")
+  else
+    SetVariable("output", "0")
+    Execute("tts_interrupt Output notepad disabled.")
+  end
+end
+
+function interrupt_toggle()
+  if (GetVariable("interrupt") ~= "1") then
+    SetVariable("interrupt", "1")
+    Note("Interrupt on Enter enabled.")
+  else
+    SetVariable("interrupt", "0")
+    Note("Interrupt on Enter disabled.")
+  end
+end
+
+function LineGet(name, line, wc)
+  lines = GetLinesInBufferCount()
+  line = GetLineInfo(lines - wc[1], 1)
+  if (line == nil) then
+    return
+  end
+  wc = wc[1]
+  local timeout = 0.4 -- in seconds
+  if (modes[wc] == nil) then
+    modes[wc] = {os.clock(), 1}
+  elseif (os.clock() - modes[wc][1] >= timeout) then
+    modes[wc][1] = os.clock()
+    modes[wc][2] = 1
+  else
+    modes[wc][1] = os.clock()
+    modes[wc][2] = modes[wc][2] + 1
+  end
+  if modes[wc][2] >= 3 then
+    PasteCommand(line)
+    Execute("tts_interrupt Pasted.")
+  end
+  if modes[wc][2] == 2 then
+    SetClipboard(line)
+    Execute("tts_interrupt Copied.")
+  end
+  if modes[wc][2] == 1 then
+    Execute("tts_interrupt "..line)
+  end
+end
+
+function OnPluginCommandEntered(s)
+  if (GetVariable("interrupt") == "1") then
+    Execute("tts_stop")
+  end
+end
+
+function OnPluginInstall()
+  if (GetVariable("output") == nil) then
+    SetVariable("output", "1")
+  end
+  modes = {}
+  msgbuffer = {}
+  cline = 1
+  lastcount = 0
+  line = 0
+  selecting = 0
+end
+
+function OnPluginScreendraw(t,l,line)
+  buffer_check()
+  if (GetVariable("output") == "0") then
+    return
+  end
+  if GetInfo(113) then
+    AppendToNotepad("Output", line.."\r\n")
+  else
+    table.insert(msgbuffer, line)
+  end
+end
+
+function OnPluginGetFocus()
+  if (GetVariable("output") == "0") then
+    return
+  end
+  if #msgbuffer > 0 then
+    for i, buffered in ipairs(msgbuffer) do
+      AppendToNotepad("Output", buffered.."\r\n")
+    end
+    msgbuffer = {}
+  end
+end
+
+function prev_line()
+  buffer_check()
+  oline = cline
+  cline = skipblanklines(cline - 1, 'b')
+  line = GetLineInfo(cline, 1)
+  Execute("tts_interrupt "..line)
+end
+
+function cur_line()
+  buffer_check()
+  line = GetLineInfo(cline, 1)
+  Execute("tts_interrupt "..line)
+end
+
+function next_line()
+  buffer_check()
+  oline = cline
+  cline = skipblanklines(cline + 1, 'f')
+  line = GetLineInfo(cline, 1)
+  Execute("tts_interrupt "..line)
+end
+
+function end_line()
+  cline = skipblanklines(GetLinesInBufferCount(), 'b')
+  line = GetLineInfo(cline, 1)
+  Execute("tts_interrupt Bottom: "..line)
+end
+
+function which_line()
+  buffer_check()
+  Execute("tts_interrupt Line "..cline.." of "..GetLinesInBufferCount() -1)
+end
+
+function top_line()
+  cline = skipblanklines(0, 'f')
+  line=GetLineInfo(cline, 1)
+  Execute("tts_interrupt Top: "..line)
+end
+
+function snapshot()
+  require "wait"
+  wait.make(function()
+  Execute("tts_interrupt Beginning snapshot, please wait...")
+  wait.time(0.5)
+    for snapline = 1, GetLinesInBufferCount() - 1 do
+      AppendToNotepad("Snapshot", GetLineInfo(snapline, 1).."\r\n")
+    end
+    ActivateNotepad("Snapshot")
+  end)
+end
+
+function clearlines(n, l, w)
+  DeleteOutput()
+  Execute("tts_interrupt Output buffer cleared.")
+  cline = 1
+  lastcount = 0
+  line=GetLineInfo(cline, 1)
+  selecting = 0
+end
+
+function clearwindow()
+  ReplaceNotepad("output")
+  Execute("tts_interrupt Output window cleared.")
+end
+
+function skipblanklines(ln, dir)
+  count = GetLinesInBufferCount()
+  if ln < 1 then
+    return skipblanklines(1, 'f')
+  elseif ln > count - 1 then
+    return skipblanklines(count - 1, 'b')
+  end
+  i = ln
+  while i > 0 and i < count and GetLineInfo(i, 1) == "" do
+    if dir == 'b' then
+      i = i - 1
+    else
+      i = i + 1
+    end
+  end
+  if i == 0 or i == count then
+    if GetLineInfo(ln, 1) ~= "" then
+      return ln
+    elseif i == 0 then
+      return skipblanklines(1, 'f')
+    elseif i == count then
+      return skipblanklines(count - 1, 'b')
+    end
+  else
+    return i
+  end
+end
+
+function buffer_check()
+  curcount = GetLinesInBufferCount()
+  if curcount < lastcount then
+    if cline > 100 then
+      cline = cline - 100
+    else
+      cline = 1
+    end
+    if selecting == 1 then
+      if sline > 100 then
+        sline = sline - 100
+      else
+        sline = 1
+      end
+    end
+  end
+  lastcount = curcount
+end
+
+]]>
+</script>
+
+</muclient>

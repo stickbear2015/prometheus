@@ -1,0 +1,1909 @@
+
+Prometheus - Monday, April 04, 2022, 2:07 AM
+--------------------------------------------
+
+
+Welcome to MUSHclient version 5.06!
+Written by Nick Gammon.
+
+Compiled: Mar 29 2019 at 17:21:07.
+Using: Lua 5.1.4, PCRE 8.39, PNG 1.6.23, SQLite3 3.16.2, Zlib 1.2.8
+
+For information and assistance about MUSHclient visit our forum at:
+   http://www.gammon.com.au/forum/
+Can you trust your plugins?  See: http://www.gammon.com.au/security
+Channel history timestamps are enabled.
+
+Soundpack Version 21.8.4.
+Welcome to...
+Prometheus: the Eternal Wars!
+All content, source code, plots, characters, and so on included in this game belong to Prometheus Enterprises, SM.
+The X-Loritans are attacking our space. Only you, with your skills at combat, have the power to push them back and thus win this war.
+View our website at:
+https://prometheus-enterprises.com/
+Follow us on twitter as:
+@prometheusmoo
+View our Facebook page at:
+www.facebook.com/ThePrometheusMoo
+Contact the admins at any time by sending an email to:
+support@prometheus-enterprises.com
+Note: Please allow us up to 24 hours to get back to you!
+Hesitate not, my friends, for there is no fear here.
+Enjoy your stay at Prometheus!
+Our secure port, 7777, is currently disabled. Appologies for any inconvenience this may cause you!
+Disclaimer: The administrators of Prometheus deny any and all responsibility for text transmitted within this game. While they do their best to make this a safe playing environment, they will not be held liable for any damages caused as a result of logging into this system.
+Last server reboot: Sun Jan 23 18:34:23 2022 EET
+NOTE: One player is to have one account, and one account only. We are very strict about this matter. If we find out you've created another account, you might not just lose both accounts, but also be permanently banned from the game. We usually do not like to ban players, but in the case of multiple accounts the story is different.
+Valid commands are:
+[n] - Create a new character
+[p] - Log in to an existing character
+[a] - Administrator login
+[d] - Delete a character
+For help, type HELP.
+To view announcements, type ANNOUNCEMENTS.
+To see the count of online players, type ONLINE.
+[Input]
+Please enter 1 or more characters.
+[Input]
+Invalid choice, please retry.
+[Input]
+Username:
+Password:
+[Earth; By a Lake]
+Crystal clear blue water laps against the shore of this beautiful lake. Trees surround the shore on three sides, Spanish moss waving in the slight breeze. Lush green grass covers the ground, the occasional branch lying about. A pebbled slope leads down into the lake, the sun shining off of its calm surface.
+You see a wooden bench close to the shore here.
+Alfi Blue Designation is here, sleeping.
+Mani is here.
+You can go north, east, and west.
+You're not hungry.
+You're not thirsty.
+It's early morning.
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+[INFO]: Alana Michaels left the game.
+You pull a blue sifting net out of the water, empty.
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a blue glowing metallic tube with the wiring exposed from the water and slip it into a blue metal large sifting bucket!
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a purple faceplate belonging to a communicator from the water and slip it into a blue metal large sifting bucket!
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a glob of cerium from the water and slip it into a blue metal large sifting bucket!
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a tiny chip of iron from the water and slip it into a blue metal large sifting bucket!
+a blue metal large sifting bucket contains 98 sift items and is worth 1,023,955,887.00 credits and 89,712.00 points.
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a rock covered in potassium from the water and slip it into a blue metal large sifting bucket!
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a capacitor from the water and slip it into a blue metal large sifting bucket!
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a transistor of some sort from the water and slip it into a blue metal large sifting bucket!
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a part of a printing tray from a datapad from the water and slip it into a blue metal large sifting bucket!
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a glob of magnesium from the water and slip it into a blue metal large sifting bucket!
+[INFO]: Alana Michaels entered the game.
+[Movement]: Alana Michaels skates in from Near a Beautiful Lake.
+[Movement]: Alana Michaels skates east.
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a tiny bead of mercury from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a black faceplate belonging to a communicator from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a chip of rubidium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a cracked datachip from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a tiny ball of hardened aluminum from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+[Movement]: Heidi Freeze walks in from By a Lake.
+[Movement]: Heidi Freeze walks north.
+goal
+You are currently status 1,260. You have 107,405.19 points.
+You need 65,351.81 more points before you can raise your status.
+c
+I don't understand that.
+cash
+You have 186,511,567,267.00 credits on hand and 12,371,605,026.00 bank credits.
+ht
+You're not hungry.
+You're not thirsty.
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a chip of rubidium from the water and slip it into a blue metal large sifting bucket!
+Small colourful birds can be seen flitting through the canopy above, filling the air with melodies to match the rhythm of the lapping waters along the lake shore.
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a tiny bead of mercury from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a chip of silver from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a rock covered in potassium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull part of what you presume to be a power supply from the water and slip it into a blue metal large sifting bucket!
+You pull a chip of silver from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a tiny chip of Gallium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a glob of cerium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a glob of lithium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a cracked datachip from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a piece of beryllium from the water and slip it into a blue metal large sifting bucket!
+estimate bucket
+a blue metal large sifting bucket contains 119 sift items and is worth 1,233,212,991.00 credits and 108,612.00 points.
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a tiny chip of iron from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a nonfunctioning laser energy pack from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+Ducks paddle around the crystal clear blue waters of the lake, bobbing their heads under the water looking for food.
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a glob of lithium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a tiny circuit board to an informational computer from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a nonfunctioning laser energy pack from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a glob of magnesium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a chunk of titanium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a capacitor from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a chip of rubidium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a glob of mercury from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a chip of ruthenium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a glob of lithium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a tiny ball of cobalt from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull an old power supply from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a purple faceplate belonging to a communicator from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a part of a printing tray from a datapad from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a chunk of titanium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a glob of silver from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a bent microphone to something from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a tiny bead of mercury from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a capacitor from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a glob of magnesium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a chip of yttrium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a chunk of titanium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a chip of yttrium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a tiny chip of iron from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a bent microphone to something from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a golden faceplate belonging to a communicator from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a glob of silver from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a tiny ball of hardened aluminum from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a part of a printing tray from a datapad from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a golden faceplate belonging to a communicator from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a glob of cerium from the water and slip it into a blue metal large sifting bucket!
+l net
+a blue sifting net
+You see nothing special.
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a chip of ruthenium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a tiny chip of Gallium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a communicator that is missing several of its buttons from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull part of what you presume to be a power supply from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a communicator that is missing several of its buttons from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a nonfunctioning laser energy pack from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+[Alana Michaels to you]: How is your sifting going?
+You pull a blue sifting net out of the water, empty.
+estimate
+I don't understand that.
+estimat bucket
+a blue metal large sifting bucket contains 158 sift items and is worth 1,634,164,519.00 credits and 143,388.00 points.
+reply 158 items and still going, ma'am.
+[You to Alana Michaels]: 158 items and still going, ma'am.
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+Small colourful birds can be seen flitting through the canopy above, filling the air with melodies to match the rhythm of the lapping waters along the lake shore.
+You pull a cracked datachip from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a tiny circuit board to an informational computer from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+[Alana Michaels to you]: Good girl, now isn't this fun?
+You pull a blue sifting net out of the water, empty.
+reply yes, ma'am.
+[You to Alana Michaels]: Yes, ma'am.
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You sigh as a string on a blue sifting net breaks.
+repair net
+You start replacing the broken string on a blue sifting net.
+15 seconds roundtime.
+You finish replacing the broken string on a blue sifting net.
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a glob of silver from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a tiny chip of Gallium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a blue faceplate belonging to a communicator from the water and slip it into a blue metal large sifting bucket!
+estimate bucket
+a blue metal large sifting bucket contains 163 sift items and is worth 1,678,241,170.00 credits and 147,924.00 points.
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a chip of yttrium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+goal
+You are currently status 1,260. You have 107,405.19 points.
+You need 65,351.81 more points before you can raise your status.
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a capacitor from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a cracked datachip from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a tiny circuit board to an informational computer from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull an old power supply from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a chip of strontium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a chip of zirconium from the water and slip it into a blue metal large sifting bucket!
+n
+[Movement]: You walk north.
+[Earth; Near a Beautiful Lake]
+The smell of fresh clean water becomes stronger as you continue along this path. Spanish moss sways from the branches of overhanging trees that border the edges of this well-kept path. Birds can be seen flitting through the canopy above you, the sound of song mixing with the sound of lapping water off in the distance.
+
+You can go north and south.
+n
+[Movement]: You walk north.
+[Earth; A Sideway]
+Lush greenery surrounds you on all sides, the grass under your feet not quite covering the cobblestones marking the path. The sun shines down, casting warm inviting shadows. A slight breeze rustles the branches and leaves of trees overhead. The gentle sound of birdsong lends itself to the crisp clean air, the smell of clean water becoming ever closer.
+
+You can go north and south.
+[OOC] Peter The Parrot shrieks: me to!
+s
+[Movement]: You walk south.
+[Earth; Near a Beautiful Lake]
+The smell of fresh clean water becomes stronger as you continue along this path. Spanish moss sways from the branches of overhanging trees that border the edges of this well-kept path. Birds can be seen flitting through the canopy above you, the sound of song mixing with the sound of lapping water off in the distance.
+
+You can go north and south.
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a glob of cerium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a tiny chip of iron from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a chip of zirconium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+Gentle birdsong plays a soothing melody as you wander down the pathway.
+You pull an old power supply from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a communicator that is missing several of its buttons from the water and slip it into a blue metal large sifting bucket!
+estimate bucket
+a blue metal large sifting bucket contains 175 sift items and is worth 1,795,777,089.00 credits and 158,508.00 points.
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a golden faceplate belonging to a communicator from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a glob of magnesium from the water and slip it into a blue metal large sifting bucket!
+e
+You can't go that way.
+s
+[Movement]: You walk south.
+[Earth; By a Lake]
+Crystal clear blue water laps against the shore of this beautiful lake. Trees surround the shore on three sides, Spanish moss waving in the slight breeze. Lush green grass covers the ground, the occasional branch lying about. A pebbled slope leads down into the lake, the sun shining off of its calm surface.
+You see a wooden bench close to the shore here.
+Alfi Blue Designation is here, sleeping.
+Mani is here.
+You can go north, east, and west.
+w
+[Movement]: You walk west.
+[Earth; By a Lake]
+Crystal clear blue water laps against the shore of this beautiful lake. Trees surround the shore on three sides, Spanish moss waving in the slight breeze. Lush green grass covers the ground, the occasional branch lying about. A pebbled slope leads down into the lake, the sun shining off of its calm surface.
+
+Jakaran Green Designation (lying on the ground) is here, sleeping.
+You can go east and west.
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a tiny circuit board to an informational computer from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a glob of cerium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull part of what you presume to be a power supply from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a chip of gold from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull an old power supply from the water and slip it into a blue metal large sifting bucket!
+goal
+You are currently status 1,260. You have 107,405.19 points.
+You need 65,351.81 more points before you can raise your status.
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a blue glowing metallic tube with the wiring exposed from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a piece of beryllium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a tiny chip of iron from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a golden faceplate belonging to a communicator from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull part of what you presume to be a power supply from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a cracked datachip from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a chip of yttrium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull an old power supply from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a part of a printing tray from a datapad from the water and slip it into a blue metal large sifting bucket!
+w
+[Movement]: You walk west.
+[Earth; By a Lake]
+Crystal clear blue water laps against the shore of this beautiful lake. Trees surround the shore on three sides, Spanish moss waving in the slight breeze. Lush green grass covers the ground, the occasional branch lying about. A pebbled slope leads down into the lake, the sun shining off of its calm surface.
+
+You can go north, east, south, and west.
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a glob of silver from the water and slip it into a blue metal large sifting bucket!
+estiamte bucket
+I don't understand that.
+estimate bucket
+a blue metal large sifting bucket contains 192 sift items and is worth 1,983,491,195.00 credits and 173,880.00 points.
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a transistor of some sort from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a chip of gold from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a chip of ruthenium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull part of what you presume to be a power supply from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a tiny circuit board to an informational computer from the water and slip it into a blue metal large sifting bucket!
+You pull a chip of cadmium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a tiny ball of cobalt from the water and slip it into a blue metal large sifting bucket!
+You pull a piece of beryllium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+use net
+Wait 1 second.
+use net
+Wait 1 second.
+You pull a chip of ruthenium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You pull an old power supply from the water and slip it into a blue metal large sifting bucket!
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a chip of silver from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a part of a printing tray from a datapad from the water and slip it into a blue metal large sifting bucket!
+You pull a glob of magnesium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a glob of molybdenum from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a glob of lithium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a communicator that is missing several of its buttons from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a golden faceplate belonging to a communicator from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a tiny circuit board to an informational computer from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a part of a printing tray from a datapad from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a glob of magnesium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a nonfunctioning laser energy pack from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a golden faceplate belonging to a communicator from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a piece of beryllium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a chip of rubidium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a cracked datachip from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a golden faceplate belonging to a communicator from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a chip of cadmium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a glob of cerium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a glob of molybdenum from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a tiny chip of Gallium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a communicator that is missing several of its buttons from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+use net
+Wait 1 second.
+You pull a tiny circuit board to an informational computer from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a blue glowing metallic tube with the wiring exposed from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a chip of rubidium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a chunk of titanium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You sigh as a string on a blue sifting net breaks.
+repair net
+You start replacing the broken string on a blue sifting net.
+11 seconds roundtime.
+estimate bucket
+a blue metal large sifting bucket contains 227 sift items and is worth 2,321,432,008.00 credits and 205,128.00 points.
+You finish replacing the broken string on a blue sifting net.
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a glob of lithium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a chip of strontium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a glob of silver from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+stimate bucket
+I don't understand that.
+use bucket
+There are no sifting items on your person or in your immediate surroundings.
+empty bucket
+I don't understand that.
+empty bucekt
+I don't understand that.
+l bucket
+a blue metal large sifting bucket
+This large and surprisingly light-weight container sports an adhesive strip that allows it to be worn on nearly any part of the body or fixed to nearly any type of clothing. A lid is fixed to the top to allow it to be closed so that any artifacts held within do not spill out of it.
+a blue metal large sifting bucket seems to have about 230 items inside.
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a glob of mercury from the water and slip it into a blue metal large sifting bucket!
+estimate bucket
+a blue metal large sifting bucket contains 231 sift items and is worth 2,371,781,204.00 credits and 208,404.00 points.
+commands bucket
+   Commands for a blue metal large sifting bucket:
+  drop bucket
+  take/get/remove <anything> from bucket
+  put <anything> in bucket
+  count bucket
+  check/estimate bucket
+  research bucket
+  wield bucket
+  use bucket
+  research/submit bucket
+  estimate bucket
+  remove/get <anything> from bucket
+  empty bucket
+  open bucket
+  close bucket
+  label bucket as <anything>
+  unlabel bucket
+  drop/throw bucket
+  wear bucket
+  remove bucket
+  open <anything> on bucket
+  close <anything> on bucket
+  get/take/remove <anything> from bucket
+  describe bucket
+  get/take bucket
+  give/hand bucket to <anything>
+  bolt bucket
+  unbolt bucket
+  throw bucket to <anything>
+  trash bucket
+  bash <anything> with bucket
+  transfer bucket to <anything>
+empty bucket
+I don't understand that.
+l sift
+a blue metal large sifting bucket
+This large and surprisingly light-weight container sports an adhesive strip that allows it to be worn on nearly any part of the body or fixed to nearly any type of clothing. A lid is fixed to the top to allow it to be closed so that any artifacts held within do not spill out of it.
+a blue metal large sifting bucket seems to have about 231 items inside.
+empty sift
+I don't understand that.
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a transistor of some sort from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a black faceplate belonging to a communicator from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a glob of molybdenum from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a capacitor from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a glob of cerium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a chunk of titanium from the water and slip it into a blue metal large sifting bucket!
+help perl diving
+Sorry, but no help is available on `perl diving'.
+help pearl diving
+What is pearl diving?
+Pearl diving is the process of diving into a deep source of water, such as an ocean, and attempting to find valuable pearls from the bottom of it.
+How does it work?
+Currently, the only pearl diving area is on Earth.
+So get to Earth and map the pearl diving store.
+Once there, buy one of each item listed, you will need all of them eventually.
+Then, wear the diving suit, the scanner, the container and the shovel.
+You should now be ready for pearl diving!
+Head to the room that has the title of 'On the ocean shore'. Then go down. Your character should begin diving and, after a few seconds, reach the bottom of the ocean.
+Now you will have to use the scanner to scan the area. So type 'use scanner', and see if you can find any valuable pearls nearby. The scanner will notify you of the coordinates if it finds any pearls.
+Move to the coordinates told by the scanner, if any, and use the scanner again to determine the pearl's depth.
+Then you should use the shovel and dig as long as it takes for you to reach the depth of the pearl. At that point the pearl should move to your inventory, and you should be able to put it in the oceanography container that you bought.
+You can estimate the container with the estimate' command.
+Note: The oxygen compartment of the diving suit only holds enough oxygen for an hour. The suit will notify you when the oxygen level gets low, at which point you should type 'up' to reach the surface and climb out of the water. 'Up' is also the command used to stop diving at any point, regardless of your suit's oxygen level.
+If the suit's oxygen runs low, you can refill it. Use 'refill diving' when not underwater, and the oxygen compartment will be refilled if you have an oxygen tank with you.
+When you are finished diving for pearls, go to the pearl diving research facility and type 'research' to receive your reward.
+Happy diving!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a tiny bead of mercury from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull part of what you presume to be a power supply from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a glob of cerium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a golden faceplate belonging to a communicator from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a part of a printing tray from a datapad from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a tiny chip of iron from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a black faceplate belonging to a communicator from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull part of what you presume to be a power supply from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a purple faceplate belonging to a communicator from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a rock covered in potassium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a blue glowing metallic tube with the wiring exposed from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull part of what you presume to be a power supply from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a chip of silver from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a golden faceplate belonging to a communicator from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a rock covered in potassium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull part of what you presume to be a power supply from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a golden faceplate belonging to a communicator from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a bent microphone to something from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a tiny circuit board to an informational computer from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a chip of yttrium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a communicator that is missing several of its buttons from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a glob of mercury from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a piece of beryllium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a chip of gold from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a tiny ball of hardened aluminum from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a chip of silver from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a tiny circuit board to an informational computer from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull part of what you presume to be a power supply from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a piece of beryllium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull part of what you presume to be a power supply from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a chip of yttrium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a chip of silver from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a cracked datachip from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a piece of beryllium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a transistor of some sort from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You sigh as a string on a blue sifting net breaks.
+repair net
+You start replacing the broken string on a blue sifting net.
+15 seconds roundtime.
+estimate bucket
+Wait 10 seconds.
+You finish replacing the broken string on a blue sifting net.
+estimate bucket
+a blue metal large sifting bucket contains 272 sift items and is worth 2,784,455,241.00 credits and 241,416.00 points.
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a chunk of titanium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a glob of magnesium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a chip of silver from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a black faceplate belonging to a communicator from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a glob of silver from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a purple faceplate belonging to a communicator from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a chip of ruthenium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a glob of mercury from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a tiny circuit board to an informational computer from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a part of a printing tray from a datapad from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a chip of ruthenium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+use net
+Wait 1 second.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a black faceplate belonging to a communicator from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a chip of zirconium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a tiny bead of mercury from the water and slip it into a blue metal large sifting bucket!
+estimate bucket
+a blue metal large sifting bucket contains 286 sift items and is worth 2,908,026,169.00 credits and 253,764.00 points.
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a glob of molybdenum from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a tiny ball of cobalt from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a piece of beryllium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+[PM] from Alana Michaels, I gotta get back soon. bed.
+You pull a tiny ball of hardened aluminum from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a communicator that is missing several of its buttons from the water and slip it into a blue metal large sifting bucket!
+estimate bucket
+a blue metal large sifting bucket contains 291 sift items and is worth 2,956,438,803.00 credits and 257,040.00 points.
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a part of a printing tray from a datapad from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a chip of strontium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a tiny ball of cobalt from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a cracked datachip from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a chip of rubidium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a chunk of titanium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+2 seconds roundtime.
+You pull a blue faceplate belonging to a communicator from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a glob of lithium from the water and slip it into a blue metal large sifting bucket!
+use net
+You start searching for valuable items with a blue sifting net.
+4 seconds roundtime.
+You pull a blue sifting net out of the water, empty.
+estimate bucket
+a blue metal large sifting bucket contains 299 sift items and is worth 3,043,387,953.00 credits and 264,600.00 points.
+use net
+You start searching for valuable items with a blue sifting net.
+3 seconds roundtime.
+You pull a capacitor from the water and slip it into a blue metal large sifting bucket!
+walk camp
+Those arguments match to more than one room here. Please choose one.
+[1]: Earth; Campsite; Starship Parking
+[2]: Earth; Campsite; Entrance
+[3]: Earth; Nearing a Campsite
+[4]: Earth; Campsite; A Paved Walkway
+[5]: Earth; Campsite; A Paved Walkway
+[6]: Earth; Campsite; A Paved Walkway
+[7]: Earth; Campsite; A Quiet Area East of the Walkway
+[8]: Earth; Campsite; A Quiet Area West of the Walkway
+[Type a line of input, cancel with '@abort' or 'A']
+1
+You begin your journey towards Campsite; Starship Parking.
+[Movement]: You walk east.
+[Movement]: You walk east.
+[Movement]: You walk north.
+[Movement]: You walk north.
+[Movement]: You walk north.
+[Movement]: You walk north.
+[Movement]: You walk north.
+[Movement]: You walk east.
+[Movement]: You walk north.
+[Movement]: You walk north.
+[Movement]: You walk north.
+[Movement]: You walk north.
+You arrive at Campsite; Starship Parking.
+[Earth; Campsite; Starship Parking]
+This large grassy area bordered by spruce trees. The grass is kept relatively short and neat, although closer to the tree line small bushes and clumps of other groundcover begin to encroach upon the area. A very large stone sheet has been carefully laid in the center of the clearing, allowing a safe place for multiple ships to park. To the west a set of steps made from round, natural looking stones leads up into the forest. Next to the steps is a small metal bench and a trashcan bearing the words 'Keep Earth Clean'.
+
+The 2-pilot Rapier "Ruby Flame", the 1-pilot Shuttle "Yeet", and the 1-pilot Debris Collector "Speed" are powered down here.
+The Galactic Spinner "Dizzy Devil" is landed here.
+You can go up.
+enter
+You place your hand against a sensor on The Galactic Spinner "Dizzy Devil" and enter the vessle.
+["Dizzy Devil" Airlock] [Starship Power: On]
+The distant hum of the starship's engines can be heard here, though much less than within the ship. A hatch opens just beyond, allowing you entrance into the main area of the spacecraft, while behind you, another hatch slides open and closed to allow you to enter or exit this part of the ship. White lights gleam overhead, and the floor rumbles ever so gently beneath your feet.
+
+The overhead lights glow brightly, indicating that the ship is powered up. Through the windows, you see that the ship is at Earth; Campsite; Starship Parking. The battle lanterns glow green, indicating that the starship's crew should stand at ease.
+You can go out and in.
+reply I'm on the ship ready to research my container, ma'am.
+[You to Alana Michaels]: I'm on the ship ready to research my container, ma'am.
+enter
+[Movement]: You exit the Airlock and enter the main area of the ship.
+["Dizzy Devil" Control Room] [Starship Power: On]
+As the nerve point of any starship, this large area is circular in nature, providing a window to the world beyond and within to other areas of the starship's interior.  Blinking monitors of blue, green and white hum and beep cheerfully, status reports of engines, weapons and records in clear focus and easily spotted.  Below each of these, small white arrows point to labeled controls, each softly beeping and blinking a gentle sky-blue glow as power reaches them.  At about waist-level, a microphone rests before a hidden speaker, upon which two small readouts spell the words launch and land in deep blue.
+
+The overhead lights glow brightly, indicating that the ship is powered up. Through the windows, you see that the ship is at Earth; Campsite; Starship Parking. The battle lanterns glow green, indicating that the starship's crew should stand at ease.
+You see a twilight lavender wormhole transport console, an aluminum pitcher of Irish cream iced coffee topped with cream, sugar, and cinnamon swirls, an amethyst purple diamond-shaped beanbag chair, an amethyst purple mug, an imperial purple rectangular beanbag chair, an iridescent pink heart-shaped beanbag chair, and an ocean blue in-ship recharging station here.
+Alayna Mayfield and Evelyn Austin are here, sleeping.
+You can go north, northeast, east, southeast, south, southwest, west, northwest, and out.
+estimate bucket
+a blue metal large sifting bucket contains 300 sift items and is worth 3,053,885,188.00 credits and 265,104.00 points.
+[Movement]: Alana Michaels arrives from the Airlock.
+Alana Michaels taps some buttons on the movement console.
+The computer announces, "Calculating launch trajectory..."
+Calculating launch trajectory...
+Alana Michaels says, "Dizzy Devil requesting launch clearance." into a small microphone mounted on the console.
+A voice comes over the speaker and says, "Dizzy Devil, you are clear to launch. We wish you a safe journey.".
+Dizzy Devil, you are clear to launch. We wish you a safe journey.
+The computer announces, "Lifeforms detected. Pressurizing..."
+Lifeforms detected. Pressurizing...
+A low, almost unnoticeable hum becomes audible in the background as the pressurizing systems are activated.
+The hum settles but doesn't stop completely.
+The computer announces, "Vessel pressurized."
+Vessel pressurized.
+You hear the sound of the ship's engine as you are propelled toward space.
+The roar of the engine calms as the starship completes its launch.
+Alana Michaels carefully starts maneuvering the ship.
+The computer announces, "Leaving the orbit of Earth..."
+Leaving the orbit of Earth...
+The smooth hum of the engines builds up a bit as the ship begins moving.
+The hum of the engines settles down as the ship stops moving.
+The computer announces, "The starship has left the orbit of Earth."
+The starship has left the orbit of Earth.
+Alana Michaels taps a series of buttons on the hyperspace drive console.
+The computer announces, "Calculating hyperspace route to Sector 1, Zerethan..."
+Calculating hyperspace route to Sector 1, Zerethan...
+The computer announces, "Route calculations complete. Your journey time is 3 seconds."
+Route calculations complete. Your journey time is 3 seconds.
+The computer announces, "Entering hyperspace route to Zerethan at the Human starsystem."
+Entering hyperspace route to Zerethan at the Human starsystem.
+The ship accelerates into hyperspace.
+The computer announces, "Warning! This starship has lost contact with the communications network."
+Warning! This starship has lost contact with the communications network.
+curtsy alana
+You curtsy at Alana Michaels.
+The ship decelerates into real space.
+The computer announces, "The starship has regained connection to the communications network."
+The starship has regained connection to the communications network.
+The computer announces, "Hyperspace route complete."
+Hyperspace route complete.
+The computer announces, "Sublight drive locking on Malacia..."
+Sublight drive locking on Malacia...
+You hear a dull roar as the ship's sublight drive propels the ship toward its destination.
+The dull roar of the sublight drive fades away as the ship reaches a destination.
+Alana Michaels carefully starts maneuvering the ship.
+The computer announces, "Entering the orbit of Malacia..."
+Entering the orbit of Malacia...
+The smooth hum of the engines builds up a bit as the ship begins moving.
+The hum of the engines settles down as the ship stops moving.
+The computer announces, "The starship is now orbiting Malacia."
+The starship is now orbiting Malacia.
+Alana Michaels taps some buttons on the movement console.
+The computer announces, "Calculating approach vector..."
+Calculating approach vector...
+The computer announces, "Chosen for landing: Docking Platform."
+Chosen for landing: Docking Platform.
+Alana Michaels says, "Dizzy Devil requesting landing clearance with Malacia." into a small microphone mounted on the console.
+A voice comes over the speaker and says, "Dizzy Devil , you are clear to land. We say again, you are clear to land.".
+Dizzy Devil , you are clear to land. We say again, you are clear to land.
+The computer announces, "Depressurizing..."
+Depressurizing...
+The hum in the background builds up a bit as the pressurizing systems prepare for shutdown.
+You feel the starship accelerate as it moves toward a planet.
+join alana
+You start following Alana Michaels.
+The ship slows down and you feel the sharp jolt as the ship touches down on the landing pad.
+The starship's accelerators ease off as the planets gravity takes hold of the starship.
+The hum dies down as the pressurizing system shutdown completes.
+The computer announces, "Vessel depressurized."
+Vessel depressurized.
+[Movement]: Alana Michaels enters the Airlock.
+You follow Alana Michaels.
+["Dizzy Devil" Airlock] [Starship Power: On]
+The distant hum of the starship's engines can be heard here, though much less than within the ship. A hatch opens just beyond, allowing you entrance into the main area of the spacecraft, while behind you, another hatch slides open and closed to allow you to enter or exit this part of the ship. White lights gleam overhead, and the floor rumbles ever so gently beneath your feet.
+
+The overhead lights glow brightly, indicating that the ship is powered up. Through the windows, you see that the ship is at Malacia; Docking Platform. The battle lanterns glow green, indicating that the starship's crew should stand at ease.
+Alana Michaels is here.
+You can go out and in.
+stand
+You're already standing.
+Alana Michaels skates out of the ship's hatch.
+You follow Alana Michaels.
+[Malacia; Docking Platform]
+This is the spaceport center of a huge planet. People can be seen rushing here and there, going about their business and chatting idly. The ceiling is full of different star clusters, which move so realistically that you feel like you're under the sky, instead of inside a structure. Some people are moving toward the big hatch leading out of this spaceport and deep into the planet itself, toward something that looks like a huge, paved road. The traffic of starships launching, landing, and being transported from and into the garage, creates a constant gentle hum in the background. Some pilots look concerned and walk hurriedly towards the northeastern entrance, a sign above it reading 'REPAIR YOUR VESSLES'. There are four wide corridors stretching out of this spaceport center like a cross, each continuing far out of sight. The pilots coming out of the corridors seem excited, maybe there's something to buy there? Below, situated in a hole almost as big as the docking area, is a stack of hovering platforms which people use to descend into the garage and back.
+
+You see a group of unpowered starships here.
+You see a group of landed starships here.
+You see a group of vehicles here.
+Alana Michaels is here.
+You can go north (A pair of automatic doors guarded by statues of UTF officers, closed), northeast, east (closed), south (closed), southwest, west (closed), westup (A frosted glass door, closed), northwest (closed), up (open), down (open), in, and out.
+find sift
+There was not a planet or moon with the name of sift.
+Alana Michaels begins her journey towards a new destination.
+[Movement]: Alana Michaels skates out.
+You follow Alana Michaels.
+[Movement]: Alana Michaels skates east.
+You follow Alana Michaels.
+[Movement]: Alana Michaels skates north.
+You follow Alana Michaels.
+[Movement]: Alana Michaels skates north.
+You follow Alana Michaels.
+[Movement]: Alana Michaels skates north.
+You follow Alana Michaels.
+[Movement]: Alana Michaels skates east.
+You follow Alana Michaels.
+[Movement]: Alana Michaels skates east.
+You follow Alana Michaels.
+[Movement]: Alana Michaels skates east.
+You follow Alana Michaels.
+[Movement]: Alana Michaels skates north.
+You follow Alana Michaels.
+l
+[Malacia; Rare Finds Research Center]
+This somewhat crowded room seems at once to be both hectic and organized. Rows of research stations line the walls, each with a conveyor belt and slot for the submitting of artifact finds. A scanner is mounted near the front of each station, where star papers can be submitted for research. Excited pilots wait patiently as their artifact containers are emptied and analyzed, receiving payouts in the end. A sign mounted on the wall reads, "Submit your artifact containers to see how much they're worth!"
+
+Alana Michaels is here.
+You can go north and south.
+peer n
+Peering north, you see...
+[Malacia; Rare Finds Research Containers]
+Here at the back part of the research center, row after row of shelves have been assembled, containing every color imaginable of various types of research container. Pilots of all ages browse the available selections, making purchases via the menu terminal near the front of the room. A cheery, lighted sign above the doorway reads, "The galaxy is full of unusual things, so don't be shy, order your new artifact container and start exploring!"
+
+You can go south.
+Alana Michaels begins placing items one by one, onto a conveyor belt.
+A hatch at the end of the conveyor belt opens, and the items begin to move towards it, dropping into a padded bin when they pass through the opening.
+The hatch closes, once all the sifting items have finished dropping into the bin.
+The researchers spend a few moments, examining the items, calculating how much they think the items are worth.
+research bucket
+You begin placing items from a blue metal large sifting bucket one by one, onto a conveyor belt.
+2 seconds roundtime.
+A hatch at the end of the conveyor belt opens, and the items begin to move towards it, dropping into a padded bin when they pass through the opening.
+5 seconds roundtime.
+The hatch closes, once all the sifting items have finished dropping into the bin.
+The researchers spend a few moments, examining the items, calculating how much they think the items are worth.
+5 seconds roundtime.
+Finished with their calculations, the researchers give you their results.
+You receive a payment of 3,053,885,188.00 credits.
+You receive 265,104.00 points!
+Alana Michaels opens an ocean blue plastic small sifting bucket.
+goal
+You can raise your status!
+Do you wish to?
+[Enter "yes" or "no"]
+y
+Alana Michaels begins placing items one by one, onto a conveyor belt.
+You raise your status 2 times!
+You raise your status to 1,262!
+A hatch at the end of the conveyor belt opens, and the items begin to move towards it, dropping into a padded bin when they pass through the opening.
+The hatch closes, once all the sifting items have finished dropping into the bin.
+The researchers spend a few moments, examining the items, calculating how much they think the items are worth.
+l
+[Malacia; Rare Finds Research Center]
+This somewhat crowded room seems at once to be both hectic and organized. Rows of research stations line the walls, each with a conveyor belt and slot for the submitting of artifact finds. A scanner is mounted near the front of each station, where star papers can be submitted for research. Excited pilots wait patiently as their artifact containers are emptied and analyzed, receiving payouts in the end. A sign mounted on the wall reads, "Submit your artifact containers to see how much they're worth!"
+
+Alana Michaels is here.
+You can go north and south.
+Alana Michaels begins placing artifacts onto a conveyor belt.
+A hatch at the end of the conveyor belt opens, and it begins to move, sending the artifacts closer and closer to the hatch.
+The artifacts disappear through the hatch, and it closes again.
+Alana Michaels begins her journey towards a new destination.
+[Movement]: Alana Michaels skates south.
+You follow Alana Michaels.
+[Movement]: Alana Michaels skates west.
+You follow Alana Michaels.
+[Movement]: Alana Michaels skates west.
+You follow Alana Michaels.
+[Movement]: Alana Michaels skates west.
+You follow Alana Michaels.
+[Movement]: Alana Michaels skates south.
+You follow Alana Michaels.
+[Movement]: Alana Michaels skates south.
+You follow Alana Michaels.
+[Movement]: Alana Michaels skates south.
+You follow Alana Michaels.
+[Movement]: Alana Michaels skates west.
+You follow Alana Michaels.
+[Movement]: Alana Michaels skates in.
+You follow Alana Michaels.
+Alana Michaels places her hand against a sensor on The Galactic Spinner "Dizzy Devil" and enters the vessle.
+You follow Alana Michaels.
+["Dizzy Devil" Airlock] [Starship Power: On]
+The distant hum of the starship's engines can be heard here, though much less than within the ship. A hatch opens just beyond, allowing you entrance into the main area of the spacecraft, while behind you, another hatch slides open and closed to allow you to enter or exit this part of the ship. White lights gleam overhead, and the floor rumbles ever so gently beneath your feet.
+
+The overhead lights glow brightly, indicating that the ship is powered up. Through the windows, you see that the ship is at Malacia; Docking Platform. The battle lanterns glow green, indicating that the starship's crew should stand at ease.
+Alana Michaels is here.
+You can go out and in.
+Alana Michaels arrives from outside.
+[Movement]: Alana Michaels exits the Airlock and enters the main area of the ship.
+You follow Alana Michaels.
+["Dizzy Devil" Control Room] [Starship Power: On]
+As the nerve point of any starship, this large area is circular in nature, providing a window to the world beyond and within to other areas of the starship's interior.  Blinking monitors of blue, green and white hum and beep cheerfully, status reports of engines, weapons and records in clear focus and easily spotted.  Below each of these, small white arrows point to labeled controls, each softly beeping and blinking a gentle sky-blue glow as power reaches them.  At about waist-level, a microphone rests before a hidden speaker, upon which two small readouts spell the words launch and land in deep blue.
+
+The overhead lights glow brightly, indicating that the ship is powered up. Through the windows, you see that the ship is at Malacia; Docking Platform. The battle lanterns glow green, indicating that the starship's crew should stand at ease.
+You see a twilight lavender wormhole transport console, an aluminum pitcher of Irish cream iced coffee topped with cream, sugar, and cinnamon swirls, an amethyst purple diamond-shaped beanbag chair, an amethyst purple mug, an imperial purple rectangular beanbag chair, an iridescent pink heart-shaped beanbag chair, and an ocean blue in-ship recharging station here.
+Alayna Mayfield and Evelyn Austin are here, sleeping.
+Alana Michaels is here.
+You can go north, northeast, east, southeast, south, southwest, west, northwest, and out.
+[Movement]: Alana Michaels arrives from the Airlock.
+goal
+You are currently status 1,262. You have 26,858.19 points.
+You need 146,172.81 more points before you can raise your status.
+Alana Michaels requests that you no longer follow her.
+Alana Michaels disbands her group.
+[Movement]: Alana Michaels enters the Airlock.
+undress
+[1]: All Clothing
+[2]: Gadgets
+[3]: Containers
+[Type a line of input, cancel with '@abort' or 'A']
+1
+You remove all your clothing.
+i
+You are wearing nothing.
+You are carrying 10 black battery repair kits, a black crafting kit, 10 black hatch crackers, 9 black hatch repair drones, 19 black in-ship camera installation chips, a black laser sniper, a black leather weapon belt with large black clips, 60 black medkits, a black remote starter, 20 black spool of replacement stringss, a black wormhole recall remote, a blue leather star researching container, a blue metal artifact container, a blue metal large sifting bucket, a cream silk scarf embroidered with a design of silver stars, a floor-length light blue silk gown with pearls dotting the sleeves, a floor-length silver silk gown, a gold bracelet with small alien crystals in the band, a long red velvet gown, a maxi dress of light emerald green silk, 42 packs of materials, a pair of emerald green leather high heels with small stones on the tops, a pair of red leather high heels with small stones on the tops, a pair of silver leather high heels with small stones on the tops, a red communicator with a tiny square black pearl screen and red switches, a red gold-plated hypernet browser with a tiny round red touchscreen, and a standard spacesuit.
+You are holding a blue sifting net in your left hand.
+[INFO]: Heidi Freeze left the game.
+ch
+You tuck away everything in your hands
+dress
+I don't understand that.
+wear dress
+You wear a maxi dress of light emerald green silk.
+remove
+I don't understand that.
+look undress
+I see no "undress" here.
+[Movement]: Alana Michaels arrives from the Airlock.
+l alana
+Alana Michaels [Awake]
+Alana Michaels is 24 years old and stands 1.5 meters tall. She is muscular with a toned bust, broad shoulders, well toned abs and well toned hips. She has shoulder length, brown hair. She has clear skin. She has bushy eyebrows above medium, blue eyes, and a button nose above full lips, which part occasionally to reveal white, straight teeth. She has long, slender fingers with short, purple nails. She has long, muscular arms and short, slender legs.
+She looks to be in perfect health.
+For a top, she is wearing a comfortable amethyst purple cotton t-shirt with 'I've got 99 problems, but a lore ain't one!' printed in medium-sized black letters on the front.
+She is wearing a lavender commring with a large round charcoal gray screen and baby blue switches on one of her fingers.
+For a bottom, she is wearing a pair of comfortable sapphire blue jeans with zippered pockets.
+She is wearing a metallic silver slim pair of comfortable roller skates with medium-sized silvery pink wheels on the bottom on her feet.
+She is wearing a lavender leather backpack on her back.
+She is wearing a twilight lavender leather weapon belt with medium gray clips around her waist.
+She is also wearing a twilight lavender diamond-encrusted hypernet browser with a medium-sized round emerald green touchscreen, a twilight lavender reinforced X-Loritan hide artifact container, a twilight lavender reinforced X-Loritan hide archaeology container, a sunshine yellow shovel, a twilight lavender wormhole recall remote, a twilight lavender portable starmap device, an imperial blue plastic large sifting bucket, and an ocean blue plastic small sifting bucket.
+Carried in hands:
+An ocean blue sifting net (left)
+Alana Michaels pulls up an image of the starship's status report on a screen built-into the main control board.
+%%%status
+I don't understand that.
+status
+Status for The Galactic Spinner "Dizzy Devil":
+------------------------------------------------------------------------------
+Starship type: A combat-ready exploration vessel.
+Starship Size: 151.0.
+Hull Plating  Reinforced
+Sensors  Strengthened
+Computer Systems  Strengthened
+Engines  Strengthened
+Sublight Drive  Reinforced
+Gravitational Stabilizers  Reinforced
+Number Of Repair Drones  1
+Repair Rate  Sped-up
+Repair drone efficiency  Standard
+Maximum Hull Units  13000.
+Maximum Sensor Units  13000.
+Maximum Computer System Units  13000.
+Maximum Engine Units  13000.
+Docking Bays:
+Docking Arm  Remaining Mass 135.0 of 150.0
+Vehicle Bays:
+Vehicle Arm  Vehicles 4 of 12
+Maximum amount of miner slots  10
+Salvage lines  Enabled
+Salvage Lines Available  5
+Salvaging speed  Upgraded
+Salvaging range  4 units
+Automatic salvage program  installed
+Current salvage type  automatic
+Storage capacity  Level 9
+Navi speed Enhancement  Installed
+Holographic Avatar  Functional
+Avatar status  disabled.
+Sublight Drive  Available, currently enabled
+Sublight Drive Recharging Time  10 seconds
+NAVI drive  Functional
+NAVI drive autostop upgrade  Installed, currently enabled
+Hyperspace Drive  Functional. 8000 lightyears per second.
+Galactic Navigational Unit  Functional
+Regular lasers  Enabled
+Long-range Lasers  Enabled
+Long-range laser upgrade level  1
+Torpedo Launchers  Enabled
+Missile Launchers  Enabled
+Missile upgrade level  1
+Beam Cannons  Enabled
+LBF plates  Enabled
+LBF level  Strengthened (level 5)
+Defense systems  Enabled, level 1
+Maximum shield units  1800
+Communicator-linked pipeline  Enabled, Unlinked
+Number of available rescue pods  2
+Number of rooms  10
+------------------------------------------------------------------------------
+l
+["Dizzy Devil" Control Room] [Starship Power: On]
+As the nerve point of any starship, this large area is circular in nature, providing a window to the world beyond and within to other areas of the starship's interior.  Blinking monitors of blue, green and white hum and beep cheerfully, status reports of engines, weapons and records in clear focus and easily spotted.  Below each of these, small white arrows point to labeled controls, each softly beeping and blinking a gentle sky-blue glow as power reaches them.  At about waist-level, a microphone rests before a hidden speaker, upon which two small readouts spell the words launch and land in deep blue.
+
+The overhead lights glow brightly, indicating that the ship is powered up. Through the windows, you see that the ship is at Malacia; Docking Platform. The battle lanterns glow green, indicating that the starship's crew should stand at ease.
+You see a twilight lavender wormhole transport console, an aluminum pitcher of Irish cream iced coffee topped with cream, sugar, and cinnamon swirls, an amethyst purple diamond-shaped beanbag chair, an amethyst purple mug, an imperial purple rectangular beanbag chair, an iridescent pink heart-shaped beanbag chair, and an ocean blue in-ship recharging station here.
+Alayna Mayfield and Evelyn Austin are here, sleeping.
+Alana Michaels is here.
+You can go north, northeast, east, southeast, south, southwest, west, northwest, and out.
+peer n
+peering north, you see...
+"Dizzy Devil" Engineering Arm
+This long room has been painted in a dark, almost forbidding shade of battleship grey. The only things of note that can be seen here are a number of consoles installed along the northern wall to allow the starship's engineer to send instructions to the repair drones, along with a massive diagram of the ship that has been projected onto an equally massive screen above the consoles. A small starmap viewing terminal stands beside the repair consoles, its screen flashing with information about the ship's current location.
+
+The overhead lights glow brightly, indicating that the ship is powered up. Through the windows, you see that the ship is at Malacia; Docking Platform. The battle lanterns glow green, indicating that the starship's crew should stand at ease.
+You can go south.
+peer s
+peering south, you see...
+"Dizzy Devil" Docking Arm
+This square room has been completely constructed from ultra-strong vanadium steel plates that have been painted battleship grey. Two massive force field generators have been positioned on either side of a set of two-meter-thick tritanium doors at one end of this room, along with a pair of pneumatic pumps located just behind the generators. When activated, these would both allow a docking starship to pass between the doors and  keep the vacuum of space from entering the area.
+The deck plating underfoot has been specially treated so that starships can enter and land here without melting the metal. Long, narrow lighting strips located near the walls act as guiding beacons for approaching vessels, while large round spotlights hanging from brackets on the ceiling provide illumination for any personnel entering this part of the ship.
+
+The overhead lights glow brightly, indicating that the ship is powered up. Through the windows, you see that the ship is at Malacia; Docking Platform. The battle lanterns glow green, indicating that the starship's crew should stand at ease.
+the 1-pilot Comet Harvester "Nebula" and the 1-pilot Grabber "Wandering Claws" are powered down here.
+the 1-pilot Asteroid Harvester "Picking rocks", the 1-pilot Comet Harvester "Cleaning stuff", and the 1-pilot Grabber "Claw machine" are landed here.
+You can go north.
+peer e
+peering east, you see...
+"Dizzy Devil" Supply Arm
+This is a large rectangular room whose walls and floor have been paneled in mahogany and oak. The ceiling, however, has been constructed from a single domed pane of transparasteel, allowing the room's occupents to gaze out upon the vessel's immediate surroundings. a small menu terminal stands near one wall, its screen flashing a list of items that may be purchased, along with a smaller screen that displays the current inventory count. A stirdy door installed in the opposite wall leads back out into the rest of the vessel.
+
+The overhead lights glow brightly, indicating that the ship is powered up. Through the windows, you see that the ship is at Malacia; Docking Platform. The battle lanterns glow green, indicating that the starship's crew should stand at ease.
+You can go west.
+peer w
+peering west, you see...
+"Dizzy Devil" Storage Arm
+The sides of this long, low ceilinged storage area are lined with downward folding metal racks that are secured to the bulkheads with magnetic strips when not in use, and a climate control unit and ventalation system keep the air dry and the temperature nutral. Tiedowns for crates and cargo containers are spaced evenly across the greated metal deck under your feet, and the rumble of the ships powerful engines can be heard only faintly.
+
+The overhead lights glow brightly, indicating that the ship is powered up. Through the windows, you see that the ship is at Malacia; Docking Platform. The battle lanterns glow green, indicating that the starship's crew should stand at ease.
+You can go east.
+map refreshment
+Refreshments Arm: southwest.
+peer sw
+peering southwest, you see...
+"Dizzy Devil" Refreshments Arm
+This square room is small but tastefully decorated. Polished planks of maple make up the floor, while the walls are of oak and mahogany painted in chestnut brown. The ceiling overhead has been constructed from a single pane of transparasteel, allowing the occupents to gaze out upon the starship's surroundings. A small menu terminal stands near the door that leads back out into the rest of the ship, its screen flashing a list of foods and drinks that may be acquired.
+
+The overhead lights glow brightly, indicating that the ship is powered up. Through the windows, you see that the ship is at Malacia; Docking Platform. The battle lanterns glow green, indicating that the starship's crew should stand at ease.
+You see an ocean blue drink mixer and an ocean blue stainless steel sink here.
+You can go northeast.
+Alana Michaels taps a series of buttons, deactivating the starship's power.
+The computer announces, "Shutting down..."
+Shutting down...
+A row of blinking lights appears.
+The lights disappear one by one, after which all the consoles are lifeless.
+The computer announces, "Shutdown complete."
+Shutdown complete.
+The smooth hum deep within the bowels of the ship slowly subsides into silence as the starship's systems are powered down.
+You hear a short hum as hydraulic arms smoothly haul the ship from the Docking Platform into the garage.
+[INFO]: Alana Michaels left the game.
+Alana Michaels drifts off to sleep.
+teleport
+I don't understand that.
+undress
+[1]: All Clothing
+[Type a line of input, cancel with '@abort' or 'A']
+1
+You remove all your clothing.
+wear velv
+You wear a long red velvet gown.
+wear heels
+You slide your feet into a pair of silver leather high heels with small stones on the tops.
+remove heels
+You slide your feet out of a pair of silver leather high heels with small stones on the tops.
+l heels
+a pair of silver leather high heels with small stones on the tops
+You see nothing special.
+l 2.heels
+a pair of red leather high heels with small stones on the tops
+You see nothing special.
+wear 2.heel
+You slide your feet into a pair of red leather high heels with small stones on the tops.
+o
+[Movement]: You enter the Airlock.
+["Dizzy Devil" Airlock] [Starship Power: Off]
+The distant hum of the starship's engines can be heard here, though much less than within the ship. A hatch opens just beyond, allowing you entrance into the main area of the spacecraft, while behind you, another hatch slides open and closed to allow you to enter or exit this part of the ship. White lights gleam overhead, and the floor rumbles ever so gently beneath your feet.
+
+The overhead lights glow softly, indicating that the ship is powered down. Through the windows, you see that the ship is at Malacia; Starship Garage. The battle lanterns glow green, indicating that the starship's crew should stand at ease.
+You can go out and in.
+o
+You walk out of the ship's hatch.
+[Malacia; Starship Garage]
+The starship garage is a huge place. Longterm docking platforms support hundreds of ships from small shuttles to deadly harpoons. To the side of 1 wall, a pair of robotic arms lifts starships in and out of the garage with a loud hum.
+
+You see a group of unpowered starships here.
+You see a group of powered starships here.
+The spherical transport vehicle "Kyahs transport" is here.
+You can go up (open).
+enter
+You place your hand against a sensor on The 5-Pilot Galactic Rover "Travel we shall go" and enter the vessle.
+["Travel we shall go" airlock] [Starship Power: On]
+Lit by bright overhead lights, and  having thick  armored beige  walls, the main airlock of this ship is designed to keep the outside out, and the inside in.  The floor is not carpetted, but is merely composed of thick grey metal.  The heavy hatch leading further into the ship mirrors the outer door, though both do have small windows for viewing what's beyond.  
+A small control panel is located to one side of the exterior hatch, to control various aspects of this lock.  The deck underfoot vibrates very slightly, but given it and the walls are very thick, the noise from the ship is muffled here.  
+
+
+The overhead lights glow brightly, indicating that the ship is powered up. Through the windows, you see that the ship is at Malacia; Starship Garage. The battle lanterns glow green, indicating that the starship's crew should stand at ease.
+You can go in and out.
+enter
+[Movement]: You exit the airlock and enter the main area of the ship.
+["Travel we shall go" support arm] [Starship Power: On]
+Plush blue carpet covers the deck in this broad corridor, while the highly-polished oak paneled walls glow in the light from the ceiling.  Carved into the wall paneling, ocean waves seem to roll from horizon to horizon, their tops ruffled by a passing breeze.
+Operating silently, polished metal doors allow access to the various support areas aboard this vessel.  
+
+
+
+The overhead lights glow brightly, indicating that the ship is powered up. Through the windows, you see that the ship is at Malacia; Starship Garage. The battle lanterns glow green, indicating that the starship's crew should stand at ease.
+You can go southeast, southwest, northwest, and out.
+teleport
+I don't understand that.
+u
+You can't go that way.
+walk bridge
+You begin your journey towards Main Bridge.
+[Movement]: You walk northwest.
+The computer announces, "Captain Kendal Hamilton on deck."
+Captain Kendal Hamilton on deck.
+You arrive at Main Bridge.
+["Travel we shall go" Main Bridge] [Starship Power: On]
+Like the vesel it is located on, this bridge is round, with control consoles located in a half-circole in the center of the room, with the positions for the captain and co-captain in the middle of this arrangement.  
+Though a viewscreen does occupy the lower half of the  forward wall, those manning this bridge have another way to observe their surroundings outside this ship, as the entire uper half of this room is composed of an armored, but transparent dome, giving a full 360-degree view.
+The lower half of the walls, which are not transparent, are colored a deep beige, while a dark grey carpet covers the deck, and muffles footfalls.  
+A short set of spiral stairs leads down from the rear of this bridge, to the lower section of this vessel.  
+
+
+The overhead lights glow brightly, indicating that the ship is powered up. Through the windows, you see that the ship is at Malacia; Starship Garage. The battle lanterns glow green, indicating that the starship's crew should stand at ease.
+You see a black in-ship recharging station and a black wormhole transport console here.
+You can go down.
+teleport
+You look up at a teleportation console.
+Choose the ship to teleport to:
+[1]: the 1-pilot Asteroid Harvester "Harvesting101"
+[2]: the 1-pilot Grabber "It's time to grab things!"
+[3]: everything is done here
+[Type a line of input, cancel with '@abort' or 'A']
+3
+You tap an icon on the console.
+Teleporting you to everything is done here.
+4 seconds roundtime.
+use remote
+Wait 2 seconds.
+You are encased in a beam of electric blue light!
+["everything is done here" Control Room] [Starship Power: On]
+As the nerve point of any starship, this large area is circular in nature, providing a window to the world beyond and within to other areas of the starship's interior.  Blinking monitors of blue, green and white hum and beep cheerfully, status reports of engines, weapons and records in clear focus and easily spotted.  Below each of these, small white arrows point to labeled controls, each softly beeping and blinking a gentle sky-blue glow as power reaches them.  At about waist-level, a microphone rests before a hidden speaker, upon which two small readouts spell the words launch and land in deep blue.
+A black food storage unit with an icemaker built into it" is here, humming quietly.
+The overhead lights glow brightly, indicating that the ship is powered up. Through the windows, you see that the ship is at Asteroid 35331. The battle lanterns glow green, indicating that the starship's crew should stand at ease.
+You see a black in-ship recharging station, a black starship simulator, and a black wormhole transport console here.
+You can go north (closed), east (closed), south (closed), west (closed), up (an activated forcefield) (closed), down (closed), and out.
+The computer announces, "Captain Kendal Hamilton on deck."
+Captain Kendal Hamilton on deck.
+use 2.remote
+No valid consoles found.
