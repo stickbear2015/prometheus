@@ -1,4 +1,12 @@
 Prometheus Soundpack Changes:
+++Version 21.8.6
+* Added extra music files, in hopes of adding a bit more variety.
+* Added background ambiance for ocean ares.
+* Added sifting sounds.
+* fixed the issues with background ambiance on relics.
+* fixed the issue with corpse decay sounds not playing.
+* Fixed the room ambience for river areas on planets.
+
 ++Version 21.8.5
 * Fixed the sounds for lifting doors.
 * Fixed the sounds for the returning of a mining vehicle into the vehicle bay.
