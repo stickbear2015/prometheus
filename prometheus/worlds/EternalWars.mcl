@@ -438,4 +438,5 @@
 <include name="channel_history.xml" plugin="y" />
 <include name="output_functions.xml" plugin="y" />
 <include name="Prometheus.xml" plugin="y" />
+<include name="aliases.xml" plugin="y" />
 </muclient>
