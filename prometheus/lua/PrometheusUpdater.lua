@@ -1,4 +1,4 @@
-url = "http://www.blazingstarradio.com/prometheus/"
+url = "https://www.blazingstarradio.com/prometheus/"
 async = require("async")
 data = async.doAsyncRemoteRequest(url, dataProcesser, "http", 120)
 

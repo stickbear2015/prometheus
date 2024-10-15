@@ -1,0 +1,8 @@
+aliases
+Keywords: alias, aliases, speedup, shortcuts
+description: Misc aliases to speed up game play.
+These are some additional aliases that we've included for your convenience.
+bat -> beaconadd translator
+bpt or prod -> prod translator
+brt -> beaconremove translator
+btt -> beaconto translator
