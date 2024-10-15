@@ -6,6 +6,7 @@ a quick note from Krinnzenn:
 First of all, my thanks to Nyano Cooper for all of his great work
 as the original creator of this sound pack. Great job!
 Lastly, I will do my verry best to keep it the great quality sound pack it has always been.
+
 ------------------------------------
 
 Thanks for downloading and installing the Prometheus soundpack with MUSHclient bundled!
@@ -36,7 +37,8 @@ The following keys are available in this soundpack:
 * Alt+. Displays your character's hunger and thurst information.
 * Alt+C gives you the current coordinates in the sector.
 * Alt+Shift+C displays your current galactic coordinates.
-
+* Alt+Shift+H Toggles the harvest filter for the Commpipe on or off.
+* Alt+T Toggles the speaking  of a sniper rifle's target information.
 ------------------------------------
 
 Other Commands:
@@ -50,7 +52,8 @@ Other Commands:
 * hotkeys:
   Displays all available keys in the soundpack.
 * spupdate:
-Updates the Soundpack to the latest version, If a new version is available.
+ Updates the Soundpack to the latest version, If a new version is available.
+ Note, restarting MUSHclient after updating is recommended.
 
 ------------------------------------
 Channel History Buffers:
