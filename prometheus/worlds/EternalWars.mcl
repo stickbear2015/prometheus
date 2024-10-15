@@ -22,7 +22,7 @@
    script_editor="C:\Program Files (x86)\NoteTab Pro 6\NotePro.exe"
    script_editor_argument="%file"
    script_language="Lua"
-   script_prefix="/"
+   script_prefix="~"
    site="prometheus-enterprises.com"
    speed_walk_prefix="#"
    terminal_identification="mushclient"
@@ -430,13 +430,12 @@
 </printing>
 
 <!-- plugins -->
-<include name="auto_retyping.xml" plugin="y" />
 <include name="LuaAudio.xml" plugin="y" />
 <include name="Omit_Blank_Lines.xml" plugin="y" />
 <include name="MushReader.xml" plugin="y" />
 <include name="Calculator.xml" plugin="y" />
 <include name="channel_history.xml" plugin="y" />
 <include name="output_functions.xml" plugin="y" />
+<include name="auto_retyping.xml" plugin="y" />
 <include name="Prometheus.xml" plugin="y" />
-<include name="aliases.xml" plugin="y" />
 </muclient>

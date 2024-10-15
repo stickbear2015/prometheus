@@ -88,7 +88,8 @@ sequence="100"
 <send>
 if (string.match("%1", "old_version")) then
 CurrentGlobalSound = PlayGlobalSound("General/Misc/Outdated.ogg")
-Note("There's a new version available for your Mush soundpack. Please update soon!")
+packUpdate()
+-- Note("There's a new version available for your Mush soundpack. Please update soon!")
 end
 </send>
 </trigger>
@@ -104,7 +105,8 @@ sequence="100"
 <send>
 if (string.match("%1", "old_version")) then
 CurrentGlobalSound = PlayGlobalSound("General/Misc/Outdated.ogg")
-Note("There's a new version available for your Mush soundpack. Please update soon!")
+packUpdate()
+-- Note("There's a new version available for your Mush soundpack. Please update soon!")
 end
 </send>
 </trigger>
@@ -338,10 +340,22 @@ Execute("history_add Conversations=%0")
 enabled="y"
 match="^\[([A-Za-z- ]+)\][,:]? [&quot;]?(.*)[&quot;]?$"
 regexp="y"
-send_to="12"
+omit_from_log="y"
+omit_from_output="y"
+send_to="14"
 sequence="100"
 >
 <send>
+if (ConfigTable.Settings.CommpipeHarvestFilter == 1) then
+if (string.match("%1","Commpipe")) then
+if (string.match("%2", "has been salvaged") or string.match("%2", "has been harvested") or string.match("%2", "harvested") or string.match("%2", "successfully grabbed") or string.match("%2", "Valuable material found") or string.match("%2", "No minerals detected")) then
+return
+end
+end
+end
+
+displayMsg("%0")
+
 if not tonumber("%1") then
 if (string.len("%1") > 1) then
 Execute("history_add All=%0")
@@ -377,7 +391,7 @@ elseif (string.match("%2", "destroyed")) then
 if not string.match("%2", "X\-Loritan") then
 CurrentGlobalSound = PlayGlobalSound("Combat/Space/OtherDestroyed"..math.random(1, 8)..".ogg")
 end
-elseif (string.match(string.lower("%1"), "commpipe")) then
+elseif (string.match("%1","Commpipe")) then
 if (string.match("%2", "has been salvaged") or string.match("%2", "has been harvested") or string.match("%2", "successfully grabbed") or string.match("%2", "Valuable material found") or string.match("%2", "No minerals detected")) then
 if (ConfigTable.Settings.SalvagingMessages == 0) then
 if (string.match("%2", "prepared for future use")) then
@@ -980,7 +994,7 @@ CurrentGlobalSound = PlayGlobalSound("Starship/Misc/StorageFull.ogg")
 elseif (string.match("%1", "Mission access code") and string.match(string.lower("%1"), "accepted")) then
 CurrentGlobalSound = PlayGlobalSound("Starship/Computer/PiercingTone.ogg")
 elseif (string.match("%1", "Mission completed")) then
-CurrentGlobalSound = PlayGlobalSound("Music/"..math.random(1, 5)..".ogg")
+CurrentGlobalSound = PlayGlobalSound("Music/"..math.random(1, 63)..".ogg")
 CurrentGlobalSound = PlayGlobalSound("General/Misc/Congratulations.ogg")
 elseif (string.match("%1", "Not enough shells left to fire")) then
 CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Warning.ogg")
@@ -1463,6 +1477,7 @@ send_to="12"
 sequence="100"
 >
 <send>
+-- fix this when possible.
 CurrentGlobalSound = PlayGlobalSound("General/Misc/OvenBeep.ogg")
 </send>
 </trigger>
@@ -2711,6 +2726,7 @@ sequence="100"
 CurrentGlobalSound = PlayGlobalSound("Starship/Misc/SalvageLaunch.ogg")
 </send>
 </trigger>
+
 <trigger
 enabled="y"
 match="A slight hum can be heard as an artifact retrieval tube is deployed into space."
@@ -2891,6 +2907,26 @@ CurrentGlobalSound = PlayGlobalSound("Starship/Misc/RefineryEnd.ogg")
 <trigger
 enabled="y"
 match="Nothing is currently being constructed."
+send_to="12"
+sequence="100"
+>
+<send>
+CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Display.ogg")
+</send>
+</trigger>
+<trigger
+enabled="y"
+match="Battery type: *"
+send_to="12"
+sequence="100"
+>
+<send>
+CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Display.ogg")
+</send>
+</trigger>
+<trigger
+enabled="y"
+match="Current charge: *"
 send_to="12"
 sequence="100"
 >
@@ -5716,17 +5752,17 @@ CurrentGlobalSound = PlayGlobalSound("General/Misc/Teleported.ogg")
     CurrentCombatSound = PlayCombatSound("Ground/Dead.ogg")
   </send>
   </trigger>
-  <trigger
-   enabled="y"
-   match="The corpse of * rapidly decays into dust."
-   omit_from_output="y"
-   send_to="12"
-   sequence="100"
-  >
-  <send>
-    CurrentCombatSound = PlayCombatSound("Ground/DecayingCorpse.ogg")
-  </send>
-  </trigger>
+<trigger
+enabled="y"
+match="A corpse of*rapidly decays into dust."
+omit_from_output="y"
+send_to="12"
+sequence="100"
+>
+<send>
+CurrentCombatSound = PlayCombatSound("Ground/DecayingCorpse.ogg")
+</send>
+</trigger>
   <trigger
    enabled="y"
    match="The corpse of * slowly decays."
@@ -5742,13 +5778,15 @@ CurrentGlobalSound = PlayGlobalSound("General/Misc/Teleported.ogg")
 enabled="y"
 match="* take*aim at * with *!"
 omit_from_output="y"
-send_to="12"
+send_to="14"
 sequence="100"
 >
 <send>
 if (string.match("%1", "You")) then
 CurrentCombatSound = PlayCombatSound("Ground/Aiming.ogg")
--- Note("Targeted %3.")
+if (ConfigTable.Settings.SpeakSniperTarget == 1) then
+Note("Targeted %3.")
+end
 else
 CurrentCombatSound = PlayCombatSound("Ground/Aiming.ogg", math.random(-100, 100))
 end
@@ -6169,7 +6207,30 @@ CurrentCombatSound = PlayCombatSound("Ground/PowerBoost.ogg")
     CurrentGlobalSound = PlayGlobalSound("Vehicle/EngineStart.ogg")
   </send>
   </trigger>
-  <trigger
+<trigger
+enabled="y"
+match="You hear the muted click of a power cable attaching itself to the vehicle and a low hum as power is transferred into the vehicle's battery."
+omit_from_output="y"
+send_to="12"
+sequence="100"
+>
+<send>
+CurrentGlobalSound = PlayGlobalSound("Starship/Misc/BatteryRecharging.ogg")
+</send>
+</trigger>
+<trigger
+enabled="y"
+match="The low hum of the power transfer dies away, followed a split second later by a click as the power cable beneath the vehicle disconnects."
+omit_from_output="y"
+send_to="14"
+sequence="100"
+>
+<send>
+CurrentGlobalSound = PlayGlobalSound("General/Misc/Beep"..math.random(1, 5)..".ogg")
+Note("Recharge complete!")
+</send>
+</trigger>
+<trigger
    enabled="y"
    match="The hum decreases but doesn't stop completely, and the vibration eases out as the engine startup completes."
    omit_from_output="y"
@@ -6185,67 +6246,75 @@ CurrentCombatSound = PlayCombatSound("Ground/PowerBoost.ogg")
   >
   <send>
     CurrentGlobalSound = PlayGlobalSound("Vehicle/EngineStop.ogg")
-  </send>
-  </trigger>
-  <trigger
-   enabled="y"
-   match="The hum suddenly falls silent, leaving you in complete silence."
-   omit_from_output="y"
-   send_to="12"
-   sequence="100"
-  >
-  <send>
-    CurrentGlobalSound = PlayGlobalSound("Vehicle/EngineStop.ogg")
+</send>
+</trigger>
+<trigger
+enabled="y"
+match="The hum decreases and falls silent as the engines shut down, leaving you in complete silence."
+omit_from_output="y"
+send_to="12"
+sequence="100"
+>
+</trigger>
+<trigger
+enabled="y"
+match="The hum suddenly falls silent, leaving you in complete silence."
+omit_from_output="y"
+send_to="12"
+sequence="100"
+>
+<send>
+CurrentGlobalSound = PlayGlobalSound("Vehicle/EngineStop.ogg")
 StopSound(CurrentRoomSound)
-  </send>
-  </trigger>
-  <trigger
-   enabled="y"
-   match="The pitch of the engines * ever so slightly as the vehicle *"
+</send>
+</trigger>
+<trigger
+enabled="y"
+match="The pitch of the engines * ever so slightly as the vehicle *"
    omit_from_output="y"
-   send_to="12"
-   sequence="100"
-  >
-  <send>
-    if (string.match("%1", "decreases") and string.match("%2", "stops")) then
-      CurrentGlobalSound = PlayGlobalSound("Vehicle/CarStop.ogg")
-    elseif (string.match("%1", "increases") and string.match("%2", "begins moving")) then
-      CurrentGlobalSound = PlayGlobalSound("Vehicle/CarGo.ogg")
-    end
-  </send>
-  </trigger>
-  <trigger
-   enabled="y"
-   match="You hear some clangs as the excavation equipment is retracted."
-   omit_from_output="y"
-   send_to="12"
-   sequence="100"
-  >
-  <send>
-    CurrentCombatSound = PlayCombatSound("Space/Reflectors3.ogg")
-  </send>
-  </trigger>
-  <trigger
-   enabled="y"
-   match="Excavation impossible due to damaged equipment."
-   send_to="12"
-   sequence="100"
-  >
-  <send>
-    CurrentGlobalSound = PlayGlobalSound("General/Misc/Cancel.ogg")
-  </send>
-  </trigger>
-  <trigger
-   enabled="y"
-   match="You hear a loud clang as a chunk of minerals is deposited into the mineral area."
-   omit_from_output="y"
-   send_to="12"
-   sequence="100"
-  >
-  <send>
-    CurrentGlobalSound = PlayGlobalSound("Vehicle/Store.ogg")
-  </send>
-  </trigger>
+send_to="12"
+sequence="100"
+>
+<send>
+if (string.match("%1", "decreases") and string.match("%2", "stops")) then
+CurrentGlobalSound = PlayGlobalSound("Vehicle/CarStop.ogg")
+elseif (string.match("%1", "increases") and string.match("%2", "begins moving")) then
+CurrentGlobalSound = PlayGlobalSound("Vehicle/CarGo.ogg")
+end
+</send>
+</trigger>
+<trigger
+enabled="y"
+match="You hear some clangs as the excavation equipment is retracted."
+omit_from_output="y"
+send_to="12"
+sequence="100"
+>
+<send>
+CurrentCombatSound = PlayCombatSound("Space/Reflectors3.ogg")
+</send>
+</trigger>
+<trigger
+enabled="y"
+match="Excavation impossible due to damaged equipment."
+send_to="12"
+sequence="100"
+>
+<send>
+CurrentGlobalSound = PlayGlobalSound("General/Misc/Cancel.ogg")
+</send>
+</trigger>
+<trigger
+enabled="y"
+match="You hear a loud clang as a chunk of minerals is deposited into the mineral area."
+omit_from_output="y"
+send_to="12"
+sequence="100"
+>
+<send>
+CurrentGlobalSound = PlayGlobalSound("Vehicle/Store.ogg")
+</send>
+</trigger>
   <trigger
    enabled="y"
    match="You hear some clangs as the excavation equipment is deployed."
@@ -6278,7 +6347,17 @@ StopSound(CurrentRoomSound)
     CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Keyboard"..math.random(1, 7)..".ogg")
   </send>
   </trigger>
-  <trigger
+<trigger
+enabled="y"
+match="How many artifacts do you wish to retrieve? Maximum is *. Hit enter to retrieve all of them."
+send_to="14"
+sequence="100"
+>
+<send>
+CallPlugin("369e8998ba42093fcc9231a2","OnPluginCommandEntered","%1")
+</send>
+</trigger>
+ <trigger
    enabled="y"
    match="* begin*inputting a sequence of commands into a wormhole transport console."
    send_to="12"
@@ -6482,16 +6561,50 @@ CurrentGlobalSound = PlayGlobalSound("General/PearlDiving/Found"..math.random(1,
 Note("Revealing %1!")
 </send>
 </trigger>
-  <trigger
-   enabled="y"
-   match="* tap*an icon on the console."
-   send_to="12"
-   sequence="100"
-  >
-  <send>
-    CurrentGlobalSound = PlayGlobalSound("General/Devices/ButtonPush.ogg")
-  </send>
-  </trigger>
+<trigger
+enabled="y"
+match="You pull*from the water and slip it into*!"
+omit_from_output="y"
+send_to="14"
+sequence="100"
+>
+<send>
+CurrentGlobalSound = PlayGlobalSound("sift/sift"..math.random(1, 7)..".ogg")
+Note("Safely placed %1 in %2!")
+</send>
+</trigger>
+<trigger
+enabled="y"
+match="You start searching for valuable items with*sifting net."
+omit_from_output="y"
+send_to="14"
+sequence="100"
+>
+<send>
+CurrentGlobalSound = PlayGlobalSound("sift/SiftingNet.ogg")
+</send>
+</trigger>
+<trigger
+enabled="y"
+match="You pull*sifting net out of the water, empty."
+omit_from_output="y"
+send_to="14"
+sequence="100"
+>
+<send>
+Note("Nothing found!")
+</send>
+</trigger>
+<trigger
+enabled="y"
+match="* tap*an icon on the console."
+send_to="12"
+sequence="100"
+>
+<send>
+CurrentGlobalSound = PlayGlobalSound("General/Devices/ButtonPush.ogg")
+</send>
+</trigger>
   <trigger
    enabled="y"
    match="* shift*the throttle into *"
@@ -6502,95 +6615,99 @@ Note("Revealing %1!")
     CurrentGlobalSound = PlayGlobalSound("Starship/Misc/Lever"..math.random(1, 5)..".ogg")
   </send>
   </trigger>
-  <trigger
-   enabled="y"
-   match="* div*into the water."
-   send_to="12"
-   sequence="100"
-  >
-  <send>
-    CurrentGlobalSound = PlayGlobalSound("General/PearlDiving/Dive"..math.random(1, 5)..".ogg")
-  </send>
-  </trigger>
-  <trigger
-   enabled="y"
-   match="* carefully insert* pearl into * oceanography container."
-   send_to="12"
-   sequence="100"
-  >
-  <send>
-    CurrentGlobalSound = PlayGlobalSound("General/Archaeology/Container.ogg")
-  </send>
-  </trigger>
-  <trigger
-   enabled="y"
-   match="The scanner indicates that the current coordinates are empty of valuable items."
-   omit_from_output="y"
-   send_to="12"
-   sequence="100"
-  >
-  <send>
-    CurrentGlobalSound = PlayGlobalSound("General/PearlDiving/NothingHere.ogg")
-  </send>
-  </trigger>
-  <trigger
-   enabled="y"
-   match="* begin*moving * underwater shovel through the water and deep into the ground."
-   omit_from_output="y"
-   send_to="14"
-   sequence="100"
-  >
-  <send>
-    CurrentGlobalSound = PlayGlobalSound("General/Archaeology/Shovel"..math.random(1, 5)..".ogg")
-    if not string.match("%1", "You") then
-      Note(Capitalize("%0"))
-    end
-  </send>
-  </trigger>
-  <trigger
-   enabled="y"
-   match="* stop*digging, nothing as a result."
-   omit_from_output="y"
-   send_to="14"
-   sequence="100"
-  >
-  <send>
-    CurrentGlobalSound = PlayGlobalSound("General/Archaeology/Cease.ogg")
-    if not string.match("%1", "You") then
-      Note(Capitalize("%0"))
-    end
-  </send>
-  </trigger>
-  <trigger
-   enabled="y"
-   match="Valuable material found! Depth *."
-   send_to="12"
-   sequence="100"
-  >
-  <send>
-    CurrentGlobalSound = PlayGlobalSound("General/PearlDiving/PearlLocated.ogg")
-  </send>
-  </trigger>
-  <trigger
-   enabled="y"
-   match="You begin swimming toward the surface."
-   send_to="12"
-   sequence="100"
-  >
-  <send>
-    CurrentGlobalSound = PlayGlobalSound("General/PearlDiving/Resurface.ogg")
-  </send>
-  </trigger>
-  <trigger
-   enabled="y"
-   match="* swims onto the shore."
-   send_to="12"
-   sequence="100"
-  >
-  <send>
-    CurrentGlobalSound = PlayGlobalSound("General/PearlDiving/Resurface.ogg")
-  </send>
-  </trigger>
+<trigger
+enabled="y"
+match="* div*into the water."
+send_to="12"
+sequence="100"
+>
+<send>
+CurrentGlobalSound = PlayGlobalSound("General/PearlDiving/Dive"..math.random(1, 5)..".ogg")
+StopSound(CurrentRoomSound)
+CurrentRoomSound = PlayRoomSound("Misc/PearlDiving.ogg")
+</send>
+</trigger>
+<trigger
+enabled="y"
+match="*put*into*oceanography container."
+send_to="12"
+sequence="100"
+>
+<send>
+CurrentGlobalSound = PlayGlobalSound("General/PearlDiving/OceanographyContainer.ogg")
+</send>
+</trigger>
+<trigger
+enabled="y"
+match="The scanner indicates that the current coordinates are empty of valuable items."
+omit_from_output="y"
+send_to="12"
+sequence="100"
+>
+<send>
+CurrentGlobalSound = PlayGlobalSound("General/PearlDiving/NothingHere.ogg")
+</send>
+</trigger>
+<trigger
+enabled="y"
+match="* begin*moving * underwater shovel through the water and deep into the ground."
+omit_from_output="y"
+send_to="14"
+sequence="100"
+>
+<send>
+CurrentGlobalSound = PlayGlobalSound("General/Archaeology/Shovel"..math.random(1, 5)..".ogg")
+if not string.match("%1", "You") then
+Note(Capitalize("%0"))
+end
+</send>
+</trigger>
+<trigger
+enabled="y"
+match="* stop*digging, nothing as a result."
+omit_from_output="y"
+send_to="14"
+sequence="100"
+>
+<send>
+CurrentGlobalSound = PlayGlobalSound("General/PearlDiving/Cease.ogg")
+if not string.match("%1", "You") then
+Note(Capitalize("%0"))
+end
+</send>
+</trigger>
+<trigger
+enabled="y"
+match="Valuable material found! Depth *."
+send_to="12"
+sequence="100"
+>
+<send>
+CurrentGlobalSound = PlayGlobalSound("General/PearlDiving/PearlLocated.ogg")
+</send>
+</trigger>
+<trigger
+enabled="y"
+match="You begin swimming toward the surface."
+send_to="12"
+sequence="100"
+>
+<send>
+CurrentGlobalSound = PlayGlobalSound("General/PearlDiving/Resurface.ogg")
+StopSound(CurrentRoomSound)
+CurrentRoomSound = PlayRoomSound("Misc/Ocean.ogg")
+</send>
+</trigger>
+<trigger
+enabled="y"
+match="* swims onto the shore."
+send_to="12"
+sequence="100"
+>
+<send>
+CurrentGlobalSound = PlayGlobalSound("General/PearlDiving/Resurface.ogg")
+</send>
+</trigger>
   <trigger
    enabled="y"
    match="An alert is displayed across your suit's glasses: *"
@@ -9309,7 +9426,7 @@ regexp="y"
 omit_from_command_history="y"
 omit_from_log="y"
 omit_from_output="y"
-send_to="12"
+send_to="14"
 sequence="100"
 >
 <send>
@@ -9332,6 +9449,8 @@ Note("Alt+H displays your health points.")
 Note("Alt+. Displays your character's hunger and thurst information.")
 Note("Alt+C gives you the current coordinates in the sector.")
 Note("Alt+Shift+C displays your current galactic coordinates.")
+Note("Alt+Shift+H Toggles the harvest filter for the Commpipe on or off.")
+Note("Alt+T Toggles the speaking  of a sniper rifle's target information on or off.")
 </send>
 </alias>
 <alias
@@ -9384,6 +9503,8 @@ ConfigTable.Settings.SalvagingMessages = 0
 ConfigTable.Settings.GrabbingMessages = 0
 ConfigTable.Settings.HarvestingMessages = 0
 ConfigTable.Settings.Roundtime = 1
+ConfigTable.Settings.CommpipeHarvestFilter = 1
+ConfigTable.Settings.SpeakSniperTarget = 1
 
 guns = {"pistol", "rifle", "shotgun", "sniper"}
 
@@ -9415,6 +9536,8 @@ AcceleratorTo("Alt+F10", "ToggleRoomSounds()", 12)
 AcceleratorTo("Alt+F11", "ToggleCombatSounds()", 12)
 AcceleratorTo("Ctrl+Shift+L", "ReloadSoundpack()", 12)
 AcceleratorTo("Decimal", "NumpadSwitch()", 12)
+AcceleratorTo("Alt+Shift+H", "ToggleCommpipeHarvestFilter()", 12)
+AcceleratorTo("Alt+T", "ToggleSpeakSniperTarget()", 12)
 
 Audio = nil
 
@@ -9476,6 +9599,30 @@ end
 
 function RoundNumber(Number, DecimalPoint)
   return tonumber(string.format("%."..(DecimalPoint or 0).."f", Number))
+end
+
+function ToggleCommpipeHarvestFilter()
+if (ConfigTable.Settings.CommpipeHarvestFilter == 1) then
+ConfigTable.Settings.CommpipeHarvestFilter = 0
+Execute("tts_interrupt Commpipe harvest filter disabled.")
+elseif (ConfigTable.Settings.CommpipeHarvestFilter == 0) then
+ConfigTable.Settings.CommpipeHarvestFilter = 1
+Execute("tts_interrupt Commpipe harvest filter enabled.")
+end
+CurrentGlobalSound = PlayGlobalSound("General/Misc/Switch.ogg")
+SaveConfig()
+end
+
+function ToggleSpeakSniperTarget()
+if (ConfigTable.Settings.SpeakSniperTarget == 1) then
+ConfigTable.Settings.SpeakSniperTarget = 0
+Execute("tts_interrupt Speak sniper target disabled.")
+elseif (ConfigTable.Settings.SpeakSniperTarget == 0) then
+ConfigTable.Settings.SpeakSniperTarget = 1
+Execute("tts_interrupt Speak sniper target enabled.")
+end
+CurrentGlobalSound = PlayGlobalSound("General/Misc/Switch.ogg")
+SaveConfig()
 end
 
 function NumpadSwitch()
@@ -9755,7 +9902,7 @@ end
 function OnPluginConnect()
 LoadConfig()
 if (ConfigTable.Settings.Music == 1) then
-CurrentGlobalSound = PlayGlobalSound("Music/"..math.random(1, 5)..".ogg")
+CurrentGlobalSound = PlayGlobalSound("Music/"..math.random(1, 63)..".ogg")
 end
 Note("Soundpack Version "..GetVariable("version")..".")
 SetOption("send_keep_alives", 1)
@@ -9976,6 +10123,9 @@ CurrentRoomSound = PlayRoomSound("Spacestation/Landing.ogg")
 elseif line == "#$#soundpack ambiance | misc | outside | misc" then
 StopSound(CurrentRoomSound)
 CurrentRoomSound = PlayRoomSound("Misc/Relic.ogg")
+elseif line == "#$#soundpack ambiance | misc | outside | relic" then
+StopSound(CurrentRoomSound)
+CurrentRoomSound = PlayRoomSound("Misc/Relic.ogg")
 elseif line == "#$#soundpack ambiance | planet | outside | medical" then
 StopSound(CurrentRoomSound)
 CurrentRoomSound = PlayRoomSound("Misc/Medical.ogg")
@@ -9991,6 +10141,18 @@ CurrentRoomSound = PlayRoomSound("Misc/RescuePod.ogg")
 elseif line == "#$#soundpack ambiance | planet | outside | lake" then
 StopSound(CurrentRoomSound)
 CurrentRoomSound = PlayRoomSound("Misc/Lake.ogg")
+elseif line == "#$#soundpack ambiance | planet | outside | river" then
+StopSound(CurrentRoomSound)
+CurrentRoomSound = PlayRoomSound("Misc/River.ogg")
+elseif line == "#$#soundpack ambiance | spacestation | outside | medical" then
+StopSound(CurrentRoomSound)
+CurrentRoomSound = PlayRoomSound("Misc/Medical.ogg")
+elseif line == "#$#soundpack ambiance | planet | outside | ocean" then
+StopSound(CurrentRoomSound)
+CurrentRoomSound = PlayRoomSound("Misc/Ocean.ogg")
+elseif line == "#$#soundpack ambiance | spacestation | outside | ocean" then
+StopSound(CurrentRoomSound)
+CurrentRoomSound = PlayRoomSound("Misc/Ocean.ogg")
 
 -- Step sounds.
 elseif line == "#$#soundpack footstep | starship | indoors | none" then
@@ -10039,6 +10201,14 @@ CurrentGlobalSound = PlayGlobalSound("General/Misc/SwingDoorClose.ogg")
 elseif line == "#$#soundpack door | planet | lift | open" then
 CurrentGlobalSound = PlayGlobalSound("General/Misc/SwingDoorOpen.ogg")
 elseif line == "#$#soundpack door | planet | lower | close" then
+CurrentGlobalSound = PlayGlobalSound("General/Misc/SwingDoorClose.ogg")
+elseif line == "#$#soundpack door | planet | flutter | open" then
+CurrentGlobalSound = PlayGlobalSound("General/Misc/SwingDoorOpen.ogg")
+elseif line == "#$#soundpack door | planet | flutter | close" then
+CurrentGlobalSound = PlayGlobalSound("General/Misc/SwingDoorClose.ogg")
+elseif line == "#$#soundpack door | planet | squelch | open" then
+CurrentGlobalSound = PlayGlobalSound("General/Misc/SwingDoorOpen.ogg")
+elseif line == "#$#soundpack door | planet | squelch | close" then
 CurrentGlobalSound = PlayGlobalSound("General/Misc/SwingDoorClose.ogg")
 
 -- Starship misc sounds.
@@ -10130,6 +10300,11 @@ DoAfterSpecial(1, 'ReloadPlugin("ad8f25246eb08f268411d690")', sendto.script)
 else
 Note("Error: This soundpack updater file is not available!")
 end -- OuterIf.
+end -- Function.
+
+function displayMsg(msgtxt)
+Note(msgtxt)
+return
 end -- Function.
 
 ]]>

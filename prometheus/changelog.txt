@@ -1,4 +1,12 @@
 Prometheus Soundpack Changes:
+
+++Version 21.8.7
+* Added a Commpipe filter for harvesting and the like. It is enabled by default, but can be turned off if desired with Alt+Shift+H.
+* Added a feature that speaks the target of the sniper rifle in addition to the click sound.  It is off by default, but can be enabled with, Alt+T.
+* Redesigned some of the sounds for the pearl diving activity in an effort to make it more immersive.
+* Fixed charging and status display related sounds for vehicles.
+* Fixed the issue with the autoRetyping plugin, and pressing enter to pick up all available artifacts. It should work fine now, even with that plugin enabled.
+
 ++Version 21.8.6
 * Added extra music files, in hopes of adding a bit more variety.
 * Added background ambiance for ocean ares.
