@@ -2,9 +2,10 @@
 <!DOCTYPE muclient>
 <muclient>
 <plugin name="Prometheus" author="Krinnzenn" id="ad8f25246eb08f268411d690"
-  language="Lua" purpose="Soundpack for Prometheus: The Eternal Wars."
-  requires="5.00"></plugin>
+language="Lua" purpose="Soundpack for Prometheus: The Eternal Wars."
+requires="5.00"></plugin>
 <include name="constants.lua"/>
+
 <triggers>
 <trigger enabled="y" expand_variables="y" group="OOB" ignore_case="y"
   keep_evaluating="y" match="^\#\$\#soundpack(.*?)$" match_bold="y"
@@ -160,92 +161,93 @@
       Execute("history_add All=%1 %2: %4")
       Execute("history_add Conversations=%1 %2: %4")
     end </send> </trigger>
-<!-- Add also to all buffer for consistency reasons. -->
 <trigger enabled="y"
   match="^(.*) translator announces(.*?)\, &quot;(.*)&quot;$" regexp="y"
   send_to="12" sequence="100">
-  <send>Execute("history_add Conversations=%0")</send> </trigger>
+  <send>Execute("history_add All=%1 %2: %4")
+Execute("history_add Conversations=%0")</send> </trigger>
 <!-- IMPORTANT: needs some serious rework -->
 <trigger enabled="y"
-  match="^\[([A-Za-z- ]+)\][,:]? [&quot;]?(.*)[&quot;]?$" regexp="y"
+match="^\[([A-Za-z- ]+)\][,:]? [&quot;]?(.*)[&quot;]?$" regexp="y"
   omit_from_log="y" omit_from_output="y" send_to="14" sequence="100">
-  <send>if (ConfigTable.Settings.CommpipeHarvestFilter == 1) then
-      if (string.match("%1","Commpipe")) then
-        if (string.match("%2", "has been salvaged") or string.match("%2", "has been harvested") or string.match("%2", "harvested") or string.match("%2", "successfully grabbed") or string.match("%2", "Valuable material found") or string.match("%2", "No minerals detected")) then
-          return
-        end
-      end
-    end
-    Note("%0")
-    if not tonumber("%1") then
-      if (string.len("%1") > 1) then
-        Execute("history_add All=%0")
-        Execute("history_add "..prometheus.util.Explode("%1", "-")[1].."=%2")
-      end
-      CurrentGlobalSound = PlayGlobalSound("General/Channels/%1.ogg")
-      if (string.match("%1", "OOC") and string.match("%2", "A pre\-recorded message")) then
-        CurrentGlobalSound = PlayGlobalSound("General/Hosts/Announcement.ogg")
-      elseif (string.match("%1", "General") and string.match("%2", "UTF Communications Officer")) then
-        CurrentGlobalSound = PlayGlobalSound("General/Misc/Alarm.ogg")
-      elseif (string.match(string.lower("%1"), "info")) then
-        if (string.match("%2", "entered the game")) then
-          CurrentGlobalSound = PlayGlobalSound("General/Misc/LoggedOn.ogg")
-        elseif (string.match("%2", "left the game")) then
-          CurrentGlobalSound = PlayGlobalSound("General/Misc/LoggedOff.ogg")
-        end
-      elseif (string.match(string.lower("%1"), "flight control")) then
-        if (string.match("%2", "static")) then
-          CurrentGlobalSound = PlayGlobalSound("General/Comm/Static"..math.random(1, 5)..".ogg")
-        elseif (string.match(string.lower("%2"), "ground on")) then
-          CurrentCombatSound = PlayCombatSound("Ground/GroundTroops.ogg")
-        elseif (string.match(string.lower("%2"), "enemies are forcing a landing")) then
-          CurrentGlobalSound = PlayGlobalSound("General/Comm/FlightControlForcedLanding.ogg")
-        elseif (string.match("%2", "Forced landing at")) then
-          CurrentGlobalSound = PlayGlobalSound("General/Comm/FlightControlForcedLanding.ogg")
-        elseif (string.match("%2", "Detecting") and string.match("%2", "Repeat")) then
-          CurrentGlobalSound = PlayGlobalSound("General/Comm/FlightControlEnemiesEntering.ogg")
-        elseif (string.match("%2", "inbound enemy")) then
-          CurrentGlobalSound = PlayGlobalSound("General/Comm/FlightControlEnemiesEntering.ogg")
-        elseif (string.match("%2", "retreating")) then
-          CurrentGlobalSound = PlayGlobalSound("General/Comm/FlightControlEnemiesRetreating.ogg")
-        elseif (string.match("%2", "destroyed")) then
-          if not string.match("%2", "X\-Loritan") then
-            CurrentGlobalSound = PlayGlobalSound("Combat/Space/OtherDestroyed"..math.random(1, 8)..".ogg")
-          end
-        elseif (string.match("%1","Commpipe")) then
-          if (string.match("%2", "has been salvaged") or string.match("%2", "has been harvested") or string.match("%2", "successfully grabbed") or string.match("%2", "Valuable material found") or string.match("%2", "No minerals detected")) then
-            if (ConfigTable.Settings.SalvagingMessages == 0) then
-              if (string.match("%2", "prepared for future use")) then
-                CurrentGlobalSound = PlayGlobalSound("Starship/Misc/Prepared.ogg")
-              else
-                return
-              end
-            end
-            if (ConfigTable.Settings.GrabbingMessages == 0) then
-              return
-            end
-            if (ConfigTable.Settings.HarvestingMessages == 0) then
-              return
-            end
-          elseif (string.match("%1", "detected in the sector")) then
-            if (string.match("%1", "enemy starship")) then
-              CurrentGlobalSound = PlayGlobalSound("Starship/Computer/EnemyDetected.ogg")
-            end
-            if (string.match("%1", "artifact")) then
-              CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Artifact.ogg")
-            end
-            if (string.match("%1", "friendly")) then
-              CurrentGlobalSound = PlayGlobalSound("Starship/Computer/FriendlyShip.ogg")
-            end
-            if (string.match("%1", " relic")) then
-              CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Relic.ogg")
-            end
-            if (string.match("%1", "comet")) then
-              CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Comet.ogg")
-            end
-            if (string.match("%1", "shipwreck")) then
-              CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Shipwreck.ogg")
-            end
+<send>
+if (ConfigTable.Settings.CommpipeHarvestFilter == 1) then
+if (string.match("%1","Commpipe")) then
+if (string.match("%2", "has been salvaged") or string.match("%2", "has been harvested") or string.match("%2", "harvested") or string.match("%2", "successfully grabbed") or string.match("%2", "Valuable material found") or string.match("%2", "No minerals detected")) then
+return
+end
+end
+end
+Note("%0")
+if not tonumber("%1") then
+if (string.len("%1") > 1) then
+Execute("history_add All=%0")
+Execute("history_add "..prometheus.util.Explode("%1", "-")[1].."=%2")
+end
+CurrentGlobalSound = PlayGlobalSound("General/Channels/%1.ogg")
+if (string.match("%1", "OOC") and string.match("%2", "A pre\-recorded message")) then
+CurrentGlobalSound = PlayGlobalSound("General/Hosts/Announcement.ogg")
+elseif (string.match("%1", "General") and string.match("%2", "UTF Communications Officer")) then
+CurrentGlobalSound = PlayGlobalSound("General/Misc/Alarm.ogg")
+elseif (string.match(string.lower("%1"), "info")) then
+if (string.match("%2", "entered the game")) then
+CurrentGlobalSound = PlayGlobalSound("General/Misc/LoggedOn.ogg")
+elseif (string.match("%2", "left the game")) then
+CurrentGlobalSound = PlayGlobalSound("General/Misc/LoggedOff.ogg")
+end
+elseif (string.match(string.lower("%1"), "flight control")) then
+if (string.match("%2", "static")) then
+CurrentGlobalSound = PlayGlobalSound("General/Comm/Static"..math.random(1, 5)..".ogg")
+elseif (string.match(string.lower("%2"), "ground on")) then
+CurrentCombatSound = PlayCombatSound("Ground/GroundTroops.ogg")
+elseif (string.match(string.lower("%2"), "enemies are forcing a landing")) then
+CurrentGlobalSound = PlayGlobalSound("General/Comm/FlightControlForcedLanding.ogg")
+elseif (string.match("%2", "Forced landing at")) then
+CurrentGlobalSound = PlayGlobalSound("General/Comm/FlightControlForcedLanding.ogg")
+elseif (string.match("%2", "Detecting") and string.match("%2", "Repeat")) then
+CurrentGlobalSound = PlayGlobalSound("General/Comm/FlightControlEnemiesEntering.ogg")
+elseif (string.match("%2", "inbound enemy")) then
+CurrentGlobalSound = PlayGlobalSound("General/Comm/FlightControlEnemiesEntering.ogg")
+elseif (string.match("%2", "retreating")) then
+CurrentGlobalSound = PlayGlobalSound("General/Comm/FlightControlEnemiesRetreating.ogg")
+elseif (string.match("%2", "destroyed")) then
+if not string.match("%2", "X\-Loritan") then
+CurrentGlobalSound = PlayGlobalSound("Combat/Space/OtherDestroyed"..math.random(1, 8)..".ogg")
+end
+elseif (string.match("%1","Commpipe")) then
+if (string.match("%2", "has been salvaged") or string.match("%2", "has been harvested") or string.match("%2", "successfully grabbed") or string.match("%2", "Valuable material found") or string.match("%2", "No minerals detected")) then
+if (ConfigTable.Settings.SalvagingMessages == 0) then
+if (string.match("%2", "prepared for future use")) then
+CurrentGlobalSound = PlayGlobalSound("Starship/Misc/Prepared.ogg")
+else
+return
+end
+end
+if (ConfigTable.Settings.GrabbingMessages == 0) then
+return
+end
+if (ConfigTable.Settings.HarvestingMessages == 0) then
+return
+end
+elseif (string.match("%1", "detected in the sector")) then
+if (string.match("%1", "enemy starship")) then
+CurrentGlobalSound = PlayGlobalSound("Starship/Computer/EnemyDetected.ogg")
+end
+if (string.match("%1", "artifact")) then
+CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Artifact.ogg")
+end
+if (string.match("%1", "friendly")) then
+CurrentGlobalSound = PlayGlobalSound("Starship/Computer/FriendlyShip.ogg")
+end
+if (string.match("%1", " relic")) then
+CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Relic.ogg")
+end
+if (string.match("%1", "comet")) then
+CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Comet.ogg")
+end
+if (string.match("%1", "shipwreck")) then
+CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Shipwreck.ogg")
+end
             if (string.match("%1", "planet")) then
               CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Planet.ogg")
             end
@@ -3144,7 +3146,7 @@ CurrentGlobalSound = PlayGlobalSound("Starship/Comm/PA"..math.random(1, 9)..".og
 <trigger
 enabled="y"
 match="* float*out into space."
-send_to="12"
+send_to=                                            "12"
 sequence="100"
 >
 <send>
@@ -3825,6 +3827,7 @@ sequence="100"
 CurrentGlobalSound = PlayGlobalSound("General/Misc/Beep"..math.random(1, 5)..".ogg")
 </send>
 </trigger>
+
 <trigger
 enabled="y"
 match="The roar of the engine calms as the starship completes its launch."
@@ -4069,7 +4072,7 @@ CurrentGlobalSound = PlayGlobalSound("Starship/Computer/NothingHere.ogg")
 <trigger
 enabled="y"
 match="You activate the trash collectors."
-send_to="12"
+send_to= "12"
 sequence="100"
 >
 <send>
@@ -4771,7 +4774,7 @@ CurrentCombatSound = PlayCombatSound("Space/LockedOnYou.ogg")
   </trigger>
   <trigger
    enabled="y"
-   match="* appear*in a beam of electric blue light!"
+   match="* appear*in a beam of*light!"
    send_to="12"
    sequence="100"
   >
@@ -4799,29 +4802,32 @@ CurrentCombatSound = PlayCombatSound("Space/LockedOnYou.ogg")
     CurrentGlobalSound = PlayGlobalSound("Starship/Misc/Light.ogg")
   </send>
   </trigger>
-  <trigger
-   enabled="y"
-   match="* is suddenly enveloped in a bright * beam of light. When the light disappears, * is no longer in the room."
+<trigger
+enabled="y"
+match="*suddenly enveloped in a * beam of light.*"
+send_to="12"
+sequence="100">
+<send>
+CurrentGlobalSound = PlayGlobalSound("Starship/Misc/Light.ogg")
+</send>
+</trigger>
+<!-- pbt1 -->
+<trigger
+enabled="y"
+match="*beam of light surrounds you. When it fades, you notice that your surroundings have changed."
    send_to="12"
-   sequence="100"
-  >
+   sequence="100">
   <send>
-    CurrentGlobalSound = PlayGlobalSound("Starship/Misc/Light.ogg")
-  </send>
-  </trigger>
-  <trigger
-   enabled="y"
-   match="A bright * beam of light surrounds you. When it fades, you notice that your surroundings have changed."
-   send_to="12"
-   sequence="100"
-  >
-  <send>
-    CurrentGlobalSound = PlayGlobalSound("Starship/Misc/Light.ogg")
+if (string.match("%1", "A bright red")) then
+CurrentGlobalSound = PlayGlobalSound("Starship/Misc/Light.ogg")
+else
+CurrentGlobalSound = PlayGlobalSound("General/Misc/WormholeInt.ogg")
+end
   </send>
   </trigger>
 <trigger
 enabled="y"
-match="* encased in a fluctuating electric blue light *"
+match="* encased in a beam of electric blue light!"
 send_to="12"
 sequence="100">
 <send>
@@ -5688,6 +5694,7 @@ send_to="14"
 sequence="100"
 >
 <send>
+CurrentGlobalSound = PlayGlobalSound("General/Misc/Prompt.ogg")
 CallPlugin("369e8998ba42093fcc9231a2","OnPluginCommandEntered","%1")
 </send>
 </trigger>
@@ -6249,7 +6256,7 @@ CurrentGlobalSound = PlayGlobalSound("General/PearlDiving/Resurface.ogg")
   >
   <send>
     CurrentGlobalSound = PlayGlobalSound("General/Hosts/ThankYou.ogg")
-    Note("The Prometheus hosts thanks you for playing!")
+    Note("The Prometheus hosts thank you for playing!")
   </send>
   </trigger>
   <trigger
@@ -8539,19 +8546,147 @@ sequence="100"
 CurrentGlobalSound = PlayGlobalSound("General/Misc/Cancel.ogg")
 </send>
 </trigger>
+<trigger
+enabled="y"
+match="* activate* the jetpack of * spacesuit*"
+ignore_case="y" omit_from_output="y"
+send_to="12"
+sequence="100">
+<send>
+CurrentGlobalSound = PlayGlobalSound("General/Devices/JetStart.ogg")
+</send>
+</trigger>
+<trigger
+enabled="y"
+match="* jetpack of * spacesuit deactivates."
+ignore_case="y" omit_from_output="y"
+send_to="12"
+sequence="100">
+<send>
+CurrentGlobalSound = PlayGlobalSound("General/Devices/JetEnd.ogg")
+</send>
+</trigger>
+<trigger
+enabled="y"
+match="*Type a destination name. Leave blank for a full menu, cancel with '@abort' or 'A'*"
+send_to="14"
+sequence="100"
+>
+<send>
+CurrentGlobalSound = PlayGlobalSound("General/Misc/Prompt.ogg")
+CallPlugin("369e8998ba42093fcc9231a2","OnPluginCommandEntered",'btt')
+</send>
+</trigger>
 </triggers>
 
 <aliases>
-<alias enabled="y" match="^bat$" regexp="y" send_to="12" sequence="100">
-  <send>Execute("beaconadd transl")</send></alias>
-<alias enabled="y" match="^(bpt|prod)$" regexp="y" send_to="12" sequence="100">
-  <send>Execute("prod transl")</send></alias>
-<alias enabled="y" match="^brt$" regexp="y" send_to="12" sequence="100">
-  <send>Execute("beaconremove transl")</send></alias>
-<alias enabled="y" match="^btt$" regexp="y" send_to="12" sequence="100">
-  <send>Execute("beaconto transl")</send></alias>
-<alias enabled="y" match="^mkills$" omit_from_log="y" omit_from_output="y"
-  regexp="y" send_to="12" sequence="100">
+<alias match="ble *" enabled="y" ignore_case="y" sequence="100">
+<send>block %1 on ear</send></alias>
+<alias match="cloff" enabled="y" ignore_case="y" sequence="100">
+<send>cloak off</send></alias>
+<alias match="clon" enabled="y" ignore_case="y" sequence="100">
+<send>cloak on</send></alias>
+<alias match="cls" enabled="y" ignore_case="y" sequence="100">
+<send>cloak status</send></alias>
+<alias match="cpc" enabled="y" ignore_case="y" sequence="100">
+<send>commpipe clear</send></alias>
+<alias match="cpl" enabled="y" ignore_case="y" sequence="100">
+<send>commpipe link</send></alias>
+<alias match="cplk" enabled="y" ignore_case="y" sequence="100">
+<send>commpipe linked</send></alias>
+<alias match="cpoff" enabled="y" ignore_case="y" sequence="100">
+<send>commpipe off</send></alias>
+<alias match="cpon" enabled="y" ignore_case="y" sequence="100">
+<send>commpipe on</send></alias>
+<alias match="cpul" enabled="y" ignore_case="y" sequence="100">
+<send>commpipe unlink</send></alias>
+<alias match="mch" enabled="y" ignore_case="y" sequence="100">
+<send>mail check</send></alias>
+<alias match="nvd" enabled="y" ignore_case="y" sequence="100">
+<send>navi dest</send></alias>
+<alias match="pmh" enabled="y" sequence="100">
+<send>pm history</send></alias>
+<alias match="pmr *" enabled="y" ignore_case="y" sequence="100">
+<send>pm reply %1</send></alias>
+<alias match="pmrl *" enabled="y" ignore_case="y" sequence="100">
+<send>pm replylock %1</send></alias>
+<alias match="rpl *" enabled="y" ignore_case="y" sequence="100">
+<send>reply %1</send></alias>
+<alias match="shc" enabled="y" ignore_case="y" sequence="100">
+<send>shi cycle</send></alias>
+<alias match="shch" enabled="y" ignore_case="y" sequence="100">
+<send>shi charge</send></alias>
+<alias match="shoff" enabled="y" ignore_case="y" sequence="100">
+<send>shi off</send></alias>
+<alias match="shon" enabled="y" ignore_case="y" sequence="100">
+<send>shi on</send></alias>
+<alias match="shs" enabled="y" ignore_case="y" sequence="100">
+<send>shi status</send></alias>
+<alias match="sht" enabled="y" sequence="100">
+<send>shi time</send></alias>
+<alias match="slk" enabled="y" sequence="100">
+<send>slink</send></alias>
+<alias match="snl" enabled="y" sequence="100">
+<send>sunlink</send></alias>
+<alias match="tf" enabled="y" ignore_case="y" sequence="100">
+<send>transfer</send></alias>
+<alias match="tlc" enabled="y" ignore_case="y" sequence="100">
+<send>tr linkcount</send></alias>
+<alias match="tpt" enabled="y" ignore_case="y" sequence="100">
+<send>transport</send></alias>
+<alias match="trl" enabled="y" ignore_case="y" sequence="100">
+<send>tr links</send></alias>
+<alias match="trlk *" enabled="y" ignore_case="y" sequence="100">
+<send>tr link %1</send></alias>
+<alias match="trs" enabled="y" ignore_case="y" sequence="100">
+<send>tr sirens</send></alias>
+<alias match="trt" enabled="y" ignore_case="y" sequence="100">
+<send>tr track</send></alias>
+<alias match="trul" enabled="y" ignore_case="y" sequence="100">
+<send>tr unlink</send></alias>
+<alias match="ube *" enabled="y" ignore_case="y" sequence="100">
+<send>unblock %1 on ear</send></alias>
+
+<alias match="aron" enabled="y" ignore_case="y" sequence="100">
+<send>armor on</send></alias>
+<alias match="aroff" enabled="y" ignore_case="y" sequence="100">
+<send>armor off</send></alias>
+<alias match="ars" enabled="y" ignore_case="y" sequence="100">
+<send>armor status</send></alias>
+<alias match="tsr" enabled="y" ignore_case="y" sequence="100">
+<send>tar sni</send></alias>
+<alias match="brc" enabled="y" ignore_case="y" sequence="100">
+<send>breathe cre</send></alias>
+<alias match="rblt" enabled="y" ignore_case="y" sequence="100">
+<send>recharge belt with station</send></alias>
+<alias match="gblt" enabled="y" ignore_case="y" sequence="100">
+<send>get belt from station</send></alias>
+<alias match="cblt" enabled="y" ignore_case="y" sequence="100">
+<send>check belt</send></alias>
+<alias match="rnan" enabled="y" ignore_case="y" sequence="100">
+<send>recharge nan with station</send></alias>
+<alias match="gnan" enabled="y" ignore_case="y" sequence="100">
+<send>get nan from station</send></alias>
+<alias match="rsj" enabled="y" ignore_case="y" sequence="100">
+<send>recharge space with station</send></alias>
+<alias match="gsj" enabled="y" ignore_case="y" sequence="100">
+<send>get space from station</send></alias>
+<alias match="csj" enabled="y" ignore_case="y" sequence="100">
+<send>check space</send></alias>
+<alias match="sts" enabled="y" ignore_case="y" sequence="100">
+<send>check station</send></alias>
+<alias match="stc" enabled="y" ignore_case="y" sequence="100">
+<send>charge station</send></alias>
+
+<alias match="^bat$" enabled="y" regexp="y" ignore_case="y" send_to="12" sequence="100">
+<send>Execute("beaconadd transl")</send></alias>
+<alias match="^(bpt|prod)$" enabled="y" regexp="y" ignore_case="y" send_to="12" sequence="100">
+<send>Execute("prod transl")</send></alias>
+<alias match="^brt$" regexp="y" enabled="y" ignore_case="y" send_to="12" sequence="100">
+<send>Execute("beaconremove transl")</send></alias>
+<alias match="^btt$" regexp="y" enabled="y" ignore_case="y" send_to="12" sequence="100">
+<send>Execute("beaconto transl")</send></alias>
+<alias match="^mkills$" omit_from_log="y" omit_from_output="y" regexp="y" enabled="y" ignore_case="y" send_to="12" sequence="100">
 <send>
 require("tprint")
 if (mobsTable ~= nil) then
@@ -8560,17 +8695,13 @@ Note(tprint(table.sort(mobsTable)))
 else
 Note("No mob kills recorded.")
 end
-</send>
-</alias>
-<alias enabled="y" match="^readme$" omit_from_log="y" omit_from_output="y"
-  regexp="y" send_to="12" sequence="100">
-  <send>Execute("sphelp readme")</send></alias>
-<alias enabled="y" match="^changelog$" omit_from_log="y" omit_from_output="y"
-  regexp="y" send_to="12" sequence="100">
-  <send>Execute("sphelp changelog")</send></alias>
-<alias enabled="y" match="^version$" omit_from_command_history="y"
-  omit_from_log="y" omit_from_output="y" regexp="y" send_to="12" sequence="100">
-  <send>
+</send></alias>
+<alias match="^readme$" omit_from_log="y" omit_from_output="y" regexp="y" enabled="y" ignore_case="y" send_to="12" sequence="100">
+<send>Execute("sphelp readme")</send></alias>
+<alias match="^changelog$" omit_from_log="y" omit_from_output="y" regexp="y" enabled="y" ignore_case="y" send_to="12" sequence="100">
+<send>Execute("sphelp changelog")</send></alias>
+<alias match="^version$" omit_from_command_history="y" omit_from_log="y" omit_from_output="y" regexp="y" enabled="y" ignore_case="y" send_to="12" sequence="100">
+<send>
 -- local origin = Path.getmtime(Workspace.."version.info")
 -- local date = os.date("%B %d, %Y", origin)
 -- local days = RoundNumber((os.time(os.date("!*t")) - origin)) / 86400, 0)
@@ -8579,8 +8710,8 @@ Note("MUSHClient Soundpack Version: "..GetVariable("version")..".")
 -- Note("Released on "..date.." ("..tostring(days).." days ago).")
 -- end
 </send></alias>
-<alias enabled="y" match="^dt$" regexp="y" send_to="12" sequence="100">
-  <send>Execute("deliver-time")</send></alias> -->
+<alias match="^dt$" regexp="y" enabled="y" ignore_case="y" send_to="12" sequence="100">
+<send>Execute("deliver-time")</send></alias>
 <alias name="UpdateSoundPackFiles" script="packUpdate" match="^spupdate$"
   enabled="y" group="updater" omit_from_command_history="y" omit_from_log="y"
   regexp="y" omit_from_output="y" ignore_case="y" sequence="100"> </alias>

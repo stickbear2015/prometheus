@@ -85,6 +85,8 @@ function OnPluginCommandEntered(s)
 if (GetVariable("autort") == "1") then
 if s == ' ' or s == '\t'	 or s == '\r' or s == '\n' or s=='' then
 return c
+elseif s == 'btt' then 
+c=''
 else
 c=s
 end
