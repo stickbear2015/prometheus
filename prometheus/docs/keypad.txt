@@ -1,0 +1,27 @@
+keypad navigation
+keywords: keypad, numpad, navigation, movement, walking, flying
+Description: Navigation via the keypad on ground and in space.
+With your keypad, usually on the right side of a full sized keyboard, you can navigate your character or ship in prometheus.
+For this just enable your keypad on the upper left side of the keypad.
+The directions are as follows:
+North -> 8, northeast -> 9 east -> 6, south -> 2, west -> 4
+The decimal key toggles between walking and navigation mode for you
+Press and hold either ctrl for upward directions or alt for downward directions while walking.
+Example: you want to go northup, then the keystroke would be ctrl+8.
+Or you want to go southwestdown, then the keystroke would be alt+1.
+The add key brings you down, while the subtract key brings you up.
+Other numpad commands are as follows:
+keypad5 -> look.
+devide -> in
+multiply -> out
+alt+devide -> enter (for ships)
+alt+multiply -> exit (for mining vehicles)
+
+For more information on ship navigation and manual pilot please take a look at the very good in game help files.
+Note: ctrl and alt work the same as for walking directions in navigation mode. Patterns that contain these additional directions can be flied easily with those commands.
+Additional commands while in navigation mode:
+numpad5 -> coordinates
+devide -> smc (star map coordinates)
+multiply -> nst (nearest selectable target)
+See also:
+help manual, help ship movement, help ship combat
