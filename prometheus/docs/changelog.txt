@@ -4,6 +4,13 @@ description: Latest changes in the soundpack
 
 Prometheus Soundpack Changes:
 
+++Version 24.10.1
+
+* Hopefully fixed a lot of broken stuff.  Including, but limited to the teleportation and phasing sound mixups.
+  In fact, that is primarily what this release is. a bug fix release. Please let me know if anything is still broken.
+* My thanks to the red breasted robin for helping me out with some new room sounds, and the addition of a bunch of new helpful aliases.
+  I guess I owe him a big bag of bird seed or something. grins.
+
 ++Version 23.5.1
 This update includes a lot of under the hood changes to allow me  to work more effectively on new sounds and features.
 Future releases will also include some changes like these. Maybe you will notice some small performance improvements, or new bugs that come up.
