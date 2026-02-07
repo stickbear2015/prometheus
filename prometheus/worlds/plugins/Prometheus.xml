@@ -129,11 +129,7 @@ requires="5.00"></plugin>
   end </send> </trigger>
 <trigger enabled="y" match="^([\-]+)$" omit_from_output="y" regexp="y"
   sequence="100"> </trigger>
-<trigger enabled="y" match="^(.*?) (breathe|breathes) fire (.*?)$" regexp="y"
-  send_to="12" sequence="100">
-  <send> CurrentCombatSound = PlayCombatSound("Ground/PyrianFireBreath.ogg")
-  </send></trigger>
-<trigger enabled="y" match="[Input]" send_to="12" sequence="100">
+<trigger enabled="y" match="[Input]" ignore_case="n" send_to="12" sequence="100">
   <send> CurrentGlobalSound = PlayGlobalSound("General/Misc/Prompt.ogg")
   </send> </trigger>
 <trigger enabled="y" match="Username:" send_to="12" sequence="100">
@@ -141,6 +137,13 @@ requires="5.00"></plugin>
 </trigger>
 <trigger enabled="y" match="Password:" send_to="12" sequence="100">
   <send>CurrentGlobalSound = PlayGlobalSound("General/Misc/Prompt.ogg")</send>
+</trigger>
+<trigger  enabled="y"
+match="The sharp noise of a piercing arrow cutting through space can be heard before * deposited."
+send_to="12" sequence="100">
+<send>
+CurrentGlobalSound = PlayGlobalSound("General/Misc/arrowImpact.ogg")
+</send>
 </trigger>
 <trigger  enabled="y" match="Report complete." send_to="12" sequence="100">
   <send>CurrentGlobalSound = PlayGlobalSound("General/Misc/Submit.ogg")</send>
@@ -232,6 +235,9 @@ end
 elseif (string.match("%1", "detected in the sector")) then
 if (string.match("%1", "enemy starship")) then
 CurrentGlobalSound = PlayGlobalSound("Starship/Computer/EnemyDetected.ogg")
+end
+if (string.match("%1", "flying cherub")) then
+CurrentGlobalSound = PlayGlobalSound("Starship/Computer/flyingCherub.ogg")
 end
 if (string.match("%1", "artifact")) then
 CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Artifact.ogg")
@@ -386,7 +392,7 @@ end
     Execute("history_add Code Updates=%1")
     CurrentGlobalSound = PlayGlobalSound("General/Channels/CodeUpdates.ogg")
   </send> </trigger>
-<trigger enabled="y" match="[CHANGES] *: *" omit_from_output="y" send_to="12"
+<trigger enabled="y" match="[CHANGES] *: *" omit_from_output="n" send_to="12"
   sequence="100">
   <send>Execute("history_add All=Game Changes: %2 (Category: %1)")
     Execute("history_add GameChanges=%1: %2")
@@ -5140,28 +5146,29 @@ end
    sequence="100"
   >
   <send>
-    if (string.match("%2", "laser")) then
-      for g = 1, #guns do
-        if (string.match(string.lower("%2"), string.lower(guns[g]))) then
-          if (string.match("%1", "You")) then
-            CurrentCombatSound = PlayCombatSound("Ground/Lasers/Laser"..guns[g]..".ogg")
-          else
-            CurrentCombatSound = PlayCombatSound("Ground/Lasers/Laser"..guns[g]..".ogg", math.random(-100, 100))
-          end
-        end
-      end
-      if (string.match("%2", "low-level")) then
-        if (string.match("%1", "You")) then
-          CurrentCombatSound = PlayCombatSound("Ground/Lasers/LaserLowLevel.ogg")
-        else
-          CurrentCombatSound = PlayCombatSound("Ground/Lasers/LaserLowLevel.ogg", math.random(-100, 100))
-        end
-      end
-    else
-      Note("%0")
-    end
-  </send>
-  </trigger>
+for g = 1, #guns do
+if (string.match(string.lower("%2"), string.lower(guns[g]))) then
+if (string.match("%1", "You")) then
+CurrentCombatSound = PlayCombatSound("Ground/Lasers/Laser"..guns[g]..".ogg")
+else
+CurrentCombatSound = PlayCombatSound("Ground/Lasers/Laser"..guns[g]..".ogg", math.random(-100, 100))
+end
+end
+end
+if (string.match("%2", "at")) then
+if (string.match("%1", "breathe") or string.match("%1", "breathes")) then
+CurrentCombatSound = PlayCombatSound("Ground/PyrianFireBreath.ogg")
+end
+end
+if (string.match("%2", "low-level")) then
+if (string.match("%1", "You")) then
+CurrentCombatSound = PlayCombatSound("Ground/Lasers/LaserLowLevel.ogg")
+else
+CurrentCombatSound = PlayCombatSound("Ground/Lasers/LaserLowLevel.ogg", math.random(-100, 100))
+end
+end
+</send>
+</trigger>
   <trigger
    enabled="y"
    match="The beam dissolves into the air!"
@@ -5631,7 +5638,7 @@ send_to="12"
 sequence="100"
 >
 <send>
-CurrentCombatSound = PlayCombatSound("Space/Reflectors3.ogg")
+CurrentGlobalSound = PlayGlobalSound("Space/Reflectors3.ogg")
 </send>
 </trigger>
 <trigger
@@ -5766,8 +5773,8 @@ CallPlugin("369e8998ba42093fcc9231a2","OnPluginCommandEntered","%1")
    sequence="100"
   >
   <send>
+    if string.match("%1", "You") then
     CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Keyboard"..math.random(1, 7)..".ogg")
-    if not string.match("%1", "You") then
       Note("%0")
     end
   </send>
@@ -7872,7 +7879,7 @@ send_to="12"
 sequence="100"
 >
 <send>
-if (string.match("%1", "a pack of materials") or string.match("%1", "Easter egg")) then
+if (string.match("%1", "of materials") or string.match("%1", "Easter egg") or string.match("%1", "pumpkin") or string.match("%1", "Christmas bell") or string.match("%1", "chocolate box")) then
 CurrentGlobalSound = PlayGlobalSound("General/Misc/EggItem.ogg")
 elseif (string.match("%1", "X\-Loritan") or string.match("%1", "alien creature")) then
 if (string.match("%1", "corpse") or string.match("%1", "corpses")) then
@@ -8125,9 +8132,15 @@ end -- OuterIf.
     CurrentGlobalSound = PlayGlobalSound("General/Misc/Cancel.ogg")
   </send>
   </trigger>
-  <trigger
-   enabled="y"
-   match="The ship accelerates, making the blackness around you shiver as it flies through hyperspace."
+<trigger enabled="y"
+match="You already have that!"
+send_to="12" sequence="100">
+<send>
+CurrentGlobalSound = PlayGlobalSound("General/Misc/Cancel.ogg")
+</send>
+</trigger>
+<trigger enabled="y"
+match="The ship accelerates, making the blackness around you shiver as it flies through hyperspace."
    omit_from_output="y"
    send_to="12"
    sequence="100"
@@ -8229,12 +8242,8 @@ end -- OuterIf.
    match="You instruct the microdrones to repair the damaged equipment."
    omit_from_output="y"
    send_to="12"
-   sequence="100"
-  >
-  <send>
-    CurrentGlobalSound = PlayGlobalSound("Starship/Computer/RepairStart.ogg")
-  </send>
-  </trigger>
+   sequence="100">
+</trigger>
   <trigger
    enabled="y"
    match="Coordinates: (*)"
@@ -8575,6 +8584,35 @@ sequence="100"
 <send>
 CurrentGlobalSound = PlayGlobalSound("General/Misc/Prompt.ogg")
 CallPlugin("369e8998ba42093fcc9231a2","OnPluginCommandEntered",'btt')
+</send>
+</trigger>
+<trigger
+enabled="y"
+match="You hear a ghostly moan echoing through the vast reaches of space.*"
+ignore_case="y" send_to="12"
+sequence="100">
+<send>
+CurrentGlobalSound = PlayGlobalSound("General/Misc/ghostSound.ogg")
+</send>
+</trigger>
+<trigger
+enabled="y"
+match="You hear a ghostly moan echoing around you."
+ignore_case="y" omit_from_output="y"
+send_to="12"
+sequence="100">
+<send>
+CurrentGlobalSound = PlayGlobalSound("General/Misc/ghostMoan.ogg")
+</send>
+</trigger>
+<trigger
+enabled="y"
+match="A long wailing cry shatters the silence."
+ignore_case="y" omit_from_output="y"
+send_to="12"
+sequence="100">
+<send>
+CurrentGlobalSound = PlayGlobalSound("General/Misc/ghostMoan.ogg")
 </send>
 </trigger>
 </triggers>
