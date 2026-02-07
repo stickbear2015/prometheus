@@ -4,6 +4,17 @@ description: Latest changes in the soundpack
 
 Prometheus Soundpack Changes:
 
+++Version 25.2.1
+
+* Hopefully fixed more broken stuff.
+  My thanks to Kira Andrews for all her help in tracking down bugs.
+* The repair sound should no longer play twice when you begin repairs on a mining vehicle.
+* The notification sound for material packs should now play even if there are more than one of them present.
+* Game change notifications are no longer omitted from the output window.
+* Also notification sounds have been added for holloween pumpkins, christmas Bells, and chocolate boxes.
+* The word, input should no longer trigger its sound when it shouldn't.
+  I'm still trying to track down why the words wear, and remove play their sounds when they shouldn't.
+
 ++Version 24.10.1
 
 * Hopefully fixed a lot of broken stuff.  Including, but limited to the teleportation and phasing sound mixups.
