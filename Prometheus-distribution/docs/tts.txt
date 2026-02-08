@@ -1,0 +1,27 @@
+TTS settings
+Keywords: tts, text-to-speech, speech, ftts, subst, substitutions, screenreader, sapi
+Description: Settings and shortcuts to control your speech output, either screen reader or SAPI
+general:
+tts - Toggles speech on and off.
+ftts - Toggles speech when MUSHclient is not the active window.
+tts running - Toggles speech while running.
+
+Substitutions: 
+Substitutions will be processed before output for all information the screenreader announces.
+Please note: wildcards aren't supported.
+subst [on|off] - toggles substitutions on and off
+subst add [line]=[substitution] - adds a substitution, only the equals-sign has to be included
+subst remove [substitution] - removes a given substitution.
+subst list - lists all stored substitutions.
+
+Hotkeys:
+Ctrl+space interrupts speech output]]))
+
+SAPI Settings Commands:
+sapi faster: Speeds speech up.
+sapi slower: Slows speech down.
+sapi rate [number]: Check or set speech rate to [number].
+sapi list voices: List the available TTS voices.
+sapi voice [number]: Check or set to the given TTS voice number.
+sapi filtering [number]: Check or set punctuation filtering level to [number].
+You may also be able to control SAPI settings through one of your system control panels.

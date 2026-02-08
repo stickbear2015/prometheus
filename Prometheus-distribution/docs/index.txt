@@ -1,0 +1,14 @@
+Introduction
+Keywords: introduction, index, homepage, main, mainpage
+Description: The main page of the help system
+    Welcome to the prometheus MUSHClient soundpack.
+This help system is not meant to provide you any kind of support for playing the game itself, nor is it meant to provide assistance in situations where you are stuck and can't play yourself out of said situation.
+These help files have been designed to provide a reference for using this soundpack and it's special features.
+If you need any help playing the game prometheus, ask in game for example on the newbie-channel, check the in game help system  or if you are really stuck,
+please submit an assist so that a host can help you. Also reports and suggestions regarding the game, not the soundpack, need to be submitted utilizing the appropriate commands such as @report or @suggest.
+For assistance using the soundpack, please use the \"soundpacks\"-channel.
+If you have any suggestions, constructive comments, or you encounter any bugs, please either tune in your metafrequency to 140.8 or pm me.
+Want to see whats new? type "changelog".
+You'd like to read the old readme? type "readme".
+Want to know which help files are available? Type "sphelp list".
+

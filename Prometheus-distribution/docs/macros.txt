@@ -1,0 +1,12 @@
+general macros
+keywords: macros, general, misc, keystrokes, shortcuts, hotkeys
+description: General hotkeys for playing prometheus.
+These are general macros to make your game play more comfortable. Please also take a look at, sphelp keypad and sphelp configuration to learn about the more complex keypad navigation and shortcuts for volume, filter and so on.
+
+Alt+c - prints the current coordinates.
+Alt+shift+c - prints the current galactic coordinates.
+alt+h - prints your current hp.
+alt+g - prints your current cash.
+alt+x - prints current status and points, if not raisable
+alt+. - prints hunger and thirst information
+alt+e - List the exits available at your character's current location.
