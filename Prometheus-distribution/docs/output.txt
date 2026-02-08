@@ -1,0 +1,24 @@
+output functions
+Keywords: output, reading, accessibility, navigation
+Description: Accessibility features for output reading
+
+This feature lets you read the output either in a seperate window or through shortcuts.
+Press ctrl+tab to jump between the command and output windows.
+Along with this feature, the following shortcuts are available to read the output:
+CTRL+1 to 0 - reads 1st to 10th last received output line.
+ctrl+shift+c - clear output buffers
+ctrl+alt+shift+c - clear output window
+ctrl+shift+o - speak next line
+ctrl+shift+i - speak current line
+ctrl+shift+u - speak previous line
+ctrl+shift+n - jumps to the very last line in output
+ctrl+shift+y - jumps to the very top line in output
+ctrl+shift+h - announces the current line number in the output
+ctrl+alt+shift+s - create a snapshot of the output
+Selection commands:
+press ctlr_shift_space to start selection, select the desired lines with ctrl+shift+o and u.
+Then either copy the content with ctrl+shift+space with line endings, or ctrl+shift+alt+space to copy the selected output without line breaks
+
+Settings:
+ctrl+alt+enter - toggles speech interrupt on enter
+ctrl+alt+o - toggles the output window on or off, does not affect output buffers.

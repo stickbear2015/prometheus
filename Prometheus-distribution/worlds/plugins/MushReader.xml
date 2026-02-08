@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE muclient>
+
+<muclient>
+
+<plugin
+   name="MushReader"
+  author="Nyano"
+   id="925cdd0331023d9f0b8f05a7"
+   language="Lua"
+   purpose="Plugin for multiple screen readers."
+   requires="5.00"
+  >
+</plugin>
+
+<aliases>
+  <alias
+   enabled="y"
+   match="tts_stop"
+   send_to="12"
+   sequence="100"
+  >
+  <send>
+    stop()
+  </send>
+  </alias>
+  <alias
+   enabled="y"
+   match="tts_interrupt *"
+   send_to="12"
+   sequence="100"
+  >
+  <send>
+    if (jfwobject and nvda.jaws_running()) then
+      jfwobject:SayString("%1", 1)
+    else
+      stop()
+      say("%1")
+    end
+  </send>
+  </alias>
+  <alias
+   enabled="y"
+   match="tts_note *"
+   send_to="12"
+   sequence="100"
+  >
+  <send>
+    say("%1")
+  </send>
+  </alias>
+  <alias
+   enabled="y"
+   match="tts"
+   omit_from_command_history="y"
+   omit_from_log="y"
+   omit_from_output="y"
+   script="TTSToggle"
+   sequence="100"
+  >
+  </alias>
+  <alias
+   enabled="y"
+   match="ftts"
+   omit_from_command_history="y"
+   omit_from_log="y"
+   omit_from_output="y"
+   script="TTSFocusToggle"
+   sequence="100"
+  >
+  </alias>
+</aliases>
+
+<include name="constants.lua"/>
+
+<script>
+<![CDATA[
+
+tts_enabled = true
+etts = true
+
+if (GetVariable("ftts") == nil) then
+  SetVariable("ftts",0)
+  focusnote = true
+end
+
+Accelerator("Ctrl+Shift+F12", "tts")
+
+function OnPluginLoseFocus()
+  if (etts == false) then
+    return
+  end
+  if (GetVariable("ftts") == "0") then
+    return
+  end
+  tts_enabled = false
+end
+
+function OnPluginGetFocus()
+  if focusnote then
+    DoAfterSpecial(5, 'Execute("tts_interrupt You can type FTTS to control the speech should be silent when switching windows.")', 12)
+    focusnote = false
+  end
+  if (etts == false) then
+    return
+  end
+  if (GetVariable("ftts") == "0") then
+    return
+  end
+  tts_enabled = true
+end
+
+function tnote(what)
+  Execute("tts_note "..what)
+end
+
+function split(str, pat)
+  local t = {}
+  local fpat = "(.-)" .. pat
+  local last_end = 1
+  local s, e, cap = str:find(fpat, 1)
+  while s do
+    if s ~= 1 or cap ~= "" then
+      table.insert(t,cap)
+    end
+    last_end = e + 1
+    s, e, cap = str:find(fpat, last_end)
+  end
+  if last_end <= #str then
+    cap = str:sub(last_end)
+    table.insert(t, cap)
+  end
+  return t
+end
+
+function OnPluginInstall ()
+  assert(package.loadlib("MushReader.dll", "luaopen_audio"))()
+  stop()
+  say("MushReader initialized")
+end
+
+function say(str)
+  nvda.say(str)
+end
+
+function stop()
+  nvda.stop()
+end
+
+function OnPluginScreendraw(t, log, line)
+  if (tts_enabled == false) then
+    return
+  end
+  if (((t == 0) or (t == 1)) and not line:find("^%s*$")) then
+    say(line)
+  end
+end
+
+function TTSFocusToggle()
+  if (GetVariable("ftts") == "0") then
+    Note("Speech will now be disabled when switching windows.")
+    SetVariable("ftts", 1)
+  elseif GetVariable("ftts")=="1" then
+    Note("Speech will no longer be disabled when switching windows.")
+    SetVariable("ftts",0)
+  end
+end
+
+function TTSToggle (name, line, wc)
+  if (tts_enabled == true) then
+    tts_enabled = false
+    etts = false
+    stop()
+    say("Speech off.")
+  elseif (tts_enabled == false) then
+    tts_enabled = true
+    etts = true
+    stop()
+    say("Speech on.")
+  end
+end
+
+function OnPluginTabComplete(word)
+  if (tts_enabled == true) then
+    say(word)
+  end
+end
+
+]]>            
+</script> 
+
+</muclient>
