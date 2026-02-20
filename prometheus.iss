@@ -8,7 +8,7 @@
   UsePreviousAppDir=yes
 	DefaultDirName={sd}\prometheus
 	OutputDir=.
-	OutputBaseFilename=prometheus_soundpack_setup
+	OutputBaseFilename=prometheus_soundpack_dev
 	Compression=lzma2
 	SolidCompression=yes
 	WizardStyle=modern
@@ -18,12 +18,10 @@
 
 [Files]
 	Source: "prometheus\*"; DestDir: "{app}\mushclient"; Flags: ignoreversion recursesubdirs createallsubdirs
-  Source: "*.html"; DestDir: "{app}"; Flags: ignoreversion
-	
-
-[Tasks]
+  Source: "changelog.html"; DestDir: "{app}"; Flags: ignoreversion
+  [Tasks]
 	Name: "desktopicon"; Description: "Desktop Shortcut"
 	[Run]
-	Filename: "{app}\mushclient\mushclient.exe"; Description: "Launch the prometheus soundpack"; Flags: nowait postinstall skipifsilent
+	Filename: "{app}\mushclient\mushclient.exe"; Description: "Launch the prometheus soundpack"; Flags: nowait postinstall skipifsilent unchecked
 	Filename: "{app}\readme.html"; Description: "View readme"; Flags: shellexec postinstall skipifsilent unchecked
 Filename: "{app}\changelog.html"; Description: "View changelog"; Flags: shellexec postinstall skipifsilent unchecked
