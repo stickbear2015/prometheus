@@ -1,6 +1,6 @@
 [Setup]
 	AppName=prometheus soundpack
-	AppVersion=26.development
+	AppVersion=development
 	AppPublisher=prometheus soundpack development team
 	AppPublisherURL=https://github.com/stickbear2015/prometheus
 	AppSupportURL=https://github.com/stickbear2015/prometheus/issues
