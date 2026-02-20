@@ -9,7 +9,7 @@
 	DefaultDirName={sd}\prometheus
 	OutputDir=.
 	OutputBaseFilename=prometheus_soundpack_dev
-	Compression=lzma2
+	Compression=lzma2/ultra64
 	SolidCompression=yes
 	WizardStyle=modern
 
