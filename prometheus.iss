@@ -17,12 +17,13 @@
 	Name: "english"; MessagesFile: "compiler:Default.isl"
 
 [Files]
-	Source: "prometheus\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+	Source: "prometheus\*"; DestDir: "{app}\mushclient"; Flags: ignoreversion recursesubdirs createallsubdirs
+  Source: "*.html"; DestDir: "{app}"; Flags: ignoreversion
 	
 
 [Tasks]
 	Name: "desktopicon"; Description: "Desktop Shortcut"
 	[Run]
-	Filename: "{app}\mushclient.exe"; Description: "Launch the prometheus soundpack"; Flags: nowait postinstall skipifsilent
+	Filename: "{app}\mushclient\mushclient.exe"; Description: "Launch the prometheus soundpack"; Flags: nowait postinstall skipifsilent
 	Filename: "{app}\readme.html"; Description: "View readme"; Flags: shellexec postinstall skipifsilent unchecked
 Filename: "{app}\changelog.html"; Description: "View changelog"; Flags: shellexec postinstall skipifsilent unchecked
