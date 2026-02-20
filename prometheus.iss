@@ -7,7 +7,6 @@
 	AppUpdatesURL=https://github.com/stickbear2015/prometheus/releases
   UsePreviousAppDir=yes
 	DefaultDirName={sd}\prometheus
-	
 	OutputDir=.
 	OutputBaseFilename=prometheus_soundpack_setup
 	Compression=lzma2
