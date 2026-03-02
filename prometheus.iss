@@ -3,7 +3,6 @@
 ;
 ; Requirements:
 ;   - Inno Setup 6.0 or later (https://jrsoftware.org/isinfo.php)
-;   - PyInstaller build output in dist/PortkeyDrop_dir/
 ;
 ; Build:
 ;   iscc installer/portkeydrop.iss
@@ -11,9 +10,9 @@
 #define MyAppName "Prometheus"
 ; Version is read from dist/version.txt (written by CI from pyproject.toml)
 ; Falls back to hardcoded default for local builds
-#define MyAppVersion "26.2dev"
+#define MyAppVersion "26.3dev"
 #ifexist "version.txt"
-  #define MyAppVersion ReadIni("version.txt", "version", "value", "26.2dev")
+  #define MyAppVersion ReadIni("version.txt", "version", "value", "26.3dev")
 #endif
 #define MyAppPublisher "the prometheus development team"
 #define MyAppURL "https://github.com/stickbear2015/prometheus"
@@ -35,7 +34,7 @@ AppComments={#MyAppDescription}
 DefaultDirName={sd}\{#MyAppName}
 DefaultGroupName={#MyAppName}
 AllowNoIcons=yes
-DisableProgramGroupPage=yes
+DisableProgramGroupPage=no
 
 ; Output settings
 OutputDir=.
