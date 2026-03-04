@@ -1,6 +1,9 @@
 # Prometheus Soundpack Changes:
 ## development version 
-no entries so far
+* modernizes the installer. [#8](https://github.com/stickbear2015/prometheus/issues/8)
+* completely removes auto retyping plugin. [#19](https://github.com/stickbear2015/prometheus/issues/19)
+* updates asteroid sound to the one used in space. [#10](https://github.com/stickbear2015/prometheus/issues/10)
+
 ## Version 25.2.1
 * Hopefully fixed more broken stuff.
   My thanks to Kira Andrews for all her help in tracking down bugs.
