@@ -8,12 +8,8 @@
 ;   iscc installer/portkeydrop.iss
 
 #define MyAppName "Prometheus"
-; Version is read from dist/version.txt (written by CI from pyproject.toml)
-; Falls back to hardcoded default for local builds
 #define MyAppVersion "26.3dev"
-#ifexist "version.txt"
-  #define MyAppVersion ReadIni("version.txt", "version", "value", "26.3dev")
-#endif
+
 #define MyAppPublisher "the prometheus development team"
 #define MyAppURL "https://github.com/stickbear2015/prometheus"
 #define MyAppExeName "mushclient.exe"
@@ -86,7 +82,7 @@ Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\mushclient\{#MyAppExeName}"
 ; Option to launch after installation
 Filename: "{app}\mushclient\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
 Filename: "{app}\changelog.html"; Description: "read the changelog"; Flags: nowait postinstall skipifsilent
-Filename: "{app}\readme.html"; Description: "read the documentation"; Flags: nowait postinstall skipifsilent
+; Filename: "{app}\readme.html"; Description: "read the documentation"; Flags: nowait postinstall skipifsilent
 [Registry]
 ; Register application path
 Root: HKCU; Subkey: "Software\Microsoft\Windows\CurrentVersion\App Paths\{#MyAppExeName}"; ValueType: string; ValueName: ""; ValueData: "{app}\{#MyAppExeName}"; Flags: uninsdeletekey
