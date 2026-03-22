@@ -1,14 +1,5 @@
-; Inno Setup Script for the prometheus soundpack
-; Creates a Windows installer with Start Menu and Desktop shortcuts
-;
-; Requirements:
-;   - Inno Setup 6.0 or later (https://jrsoftware.org/isinfo.php)
-;
-; Build:
-;   iscc installer/portkeydrop.iss
-
 #define MyAppName "Prometheus"
-#define MyAppVersion "26.3dev"
+#define MyAppVersion "dev"
 
 #define MyAppPublisher "the prometheus development team"
 #define MyAppURL "https://github.com/stickbear2015/prometheus"
@@ -34,7 +25,7 @@ DisableProgramGroupPage=no
 
 ; Output settings
 OutputDir=.
-OutputBaseFilename=Prometheus_soundpack_v{#MyAppVersion}
+OutputBaseFilename=Prometheus_soundpack_{#MyAppVersion}
 UninstallDisplayIcon={app}\{#MyAppExeName}
 
 ; Compression
