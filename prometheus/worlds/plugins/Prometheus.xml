@@ -8615,8 +8615,14 @@ sequence="100">
 CurrentGlobalSound = PlayGlobalSound("General/Misc/ghostMoan.ogg")
 </send>
 </trigger>
-</triggers>
-
+  <trigger
+   enabled="y"
+   match="LAG-TEST"
+   sequence="100"
+  >
+  <send>lag_result</send>
+  </trigger>
+  </triggers>
 <aliases>
 <alias match="ble *" enabled="y" ignore_case="y" sequence="100">
 <send>block %1 on ear</send></alias>
