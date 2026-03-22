@@ -1,2 +1,0 @@
-[version]
-value=26.3
