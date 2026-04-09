@@ -96,6 +96,7 @@ end;
 [UninstallDelete]
 ; Clean up any cached files
 Type: files; Name: "{app}\mushclient\worlds\plugins\state\*.xml"
+Type: files; Name: "{app}\mushclient\worlds\plugins\*.xml"
 Type: dirifempty; Name: "{app}\mushclient\worlds\plugins\state"
 Type: dirifempty; Name: "{app}\mushclient\worlds\plugins"
 Type: dirifempty; Name: "{app}\mushclient\worlds"
