@@ -1,7 +1,7 @@
 # Prometheus Soundpack Changes:
 ## development version 
 * modernizes the installer. [#7](https://github.com/stickbear2015/prometheus/issues/7)
-* completely removes auto retyping plugin. [#18](https://github.com/stickbear2015/prometheus/issues/18)
+*   the auto retyping plugin no longer  loads by default, it's still available in the plugins directory, but users will have to load it themselves from the plugins dialog. [#18](https://github.com/stickbear2015/prometheus/issues/18)
 * updates asteroid sound to the one used in space. [#10](https://github.com/stickbear2015/prometheus/issues/10)
 * implements the proper response for the knew server side @lag feature, [#21](https://www.github.com/stickbear2015/prometheus/issues/21)
 * at player request, replaces the engine sound with something hopefully more noticeable during large scale invasions and combat. [#29](https://www.github.com/stickbear2015/prometheus/issues/29)
