@@ -7,6 +7,7 @@
 * at player request, replaces the engine sound with something hopefully more noticeable during large scale invasions and combat. [#29](https://www.github.com/stickbear2015/prometheus/issues/29)
 * adds org ooc sound. [#4](https://github.com/stickbear2015/prometheus/issues/4)
 * adds house  ooc sound. [#32](https://github.com/stickbear2015/prometheus/issues/32)
+* drastically reduces the sounds directory size by killing all unnecessary silence in files. [#36](https://github.com/stickbear2015/prometheus/issues/36)
 
 ## Version 25.2.1
 * Hopefully fixed more broken stuff.
