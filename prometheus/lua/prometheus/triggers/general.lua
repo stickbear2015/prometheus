@@ -771,11 +771,6 @@ function General_TheShipSuddenlyShootsOutOf(name, line, wildcards)
   CurrentGlobalSound = PlayGlobalSound("Starship/Misc/Background"..math.random(1, 5)..".ogg")
 end
 
--- With a final jolt, the starship slows as it exits the Worldway.
-function General_WithAFinalJoltTheStarship(name, line, wildcards)
-  CurrentGlobalSound = PlayGlobalSound("General/Misc/Beep"..math.random(1, 5)..".ogg")
-end
-
 -- Would you like to drive out of the ship's vehicle hatch*
 function General_WouldYouLikeToDriveOut(name, line, wildcards)
   CurrentGlobalSound = PlayGlobalSound("General/Misc/Prompt.ogg")
