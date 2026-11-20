@@ -1674,7 +1674,7 @@
 
 <trigger
   enabled="y"
-  match="^(.*?) (don|dons|strap|straps|wear|wears) (.*?)\.$"
+  match="^([^\[].*?) (don|dons|strap|straps|wear|wears) (.*?)\.$"
   regexp="y"
   sequence="100"
   script="General_DonDonsStrapStrapsWearWears"
@@ -1682,7 +1682,7 @@
 
 <trigger
   enabled="y"
-  match="^(.*) (remove|removes|unstrap|unstraps) (.*?)\.$"
+  match="^([^\[].*) (remove|removes|unstrap|unstraps) (.*?)\.$"
   regexp="y"
   sequence="100"
   script="General_RemoveRemovesUnstrapUnstraps"
