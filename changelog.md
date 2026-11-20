@@ -31,6 +31,7 @@
 * the wear and unwear sounds now only play when you or someone else actually puts something on or takes it off, not for room and item descriptions, inventories, help text, speech, or messages such as you can't wear any more on your feet. [#44](https://github.com/stickbear2015/prometheus/issues/44)
 * translator announcements now put the whole message in the all buffer, not just who said it. [#44](https://github.com/stickbear2015/prometheus/issues/44)
 * channel messages that mention saying something no longer lose their channel sound and channel history. [#44](https://github.com/stickbear2015/prometheus/issues/44)
+* fixes an error when first opening, connecting or disconnecting on a new copy of the soundpack, before it had saved your settings. [#44](https://github.com/stickbear2015/prometheus/issues/44)
 
 ## Version 25.2.1
 * Hopefully fixed more broken stuff.
