@@ -5,23 +5,20 @@
 
 -- [Frequency *] *
 function Comms_Frequency(name, line, wildcards)
-  Execute("history_add All=[" .. wildcards[1] .. "] " .. wildcards[2])
-  Execute("history_add Frequency=[" .. wildcards[1] .. "] " .. wildcards[2])
+  AddToHistory("Frequency", "[" .. wildcards[1] .. "] " .. wildcards[2])
   CurrentGlobalSound = PlayGlobalSound("General/Channels/Frequency.ogg")
   Note("[" .. wildcards[1] .. "] " .. wildcards[2])
 end
 
 -- [* to you]*
 function Comms_ToYou(name, line, wildcards)
-  Execute("history_add All=[" .. wildcards[1] .. " to you]" .. wildcards[2])
-  Execute("history_add Private Communication=[" .. wildcards[1] .. " to you]" .. wildcards[2])
+  AddToHistory("Private Communication", "[" .. wildcards[1] .. " to you]" .. wildcards[2])
   CurrentGlobalSound = PlayGlobalSound("General/Channels/Private.ogg")
 end
 
 -- [You to *]*
 function Comms_YouTo(name, line, wildcards)
-  Execute("history_add All=[You to " .. wildcards[1] .. "]" .. wildcards[2])
-  Execute("history_add Private Communication=[You to " .. wildcards[1] .. "]" .. wildcards[2])
+  AddToHistory("Private Communication", "[You to " .. wildcards[1] .. "]" .. wildcards[2])
   CurrentGlobalSound = PlayGlobalSound("General/Channels/Private.ogg")
 end
 
@@ -32,23 +29,20 @@ end
 
 -- [Code updates] *
 function Comms_CodeUpdates(name, line, wildcards)
-  Execute("history_add All=Code Updates: " .. wildcards[1])
-  Execute("history_add Code Updates=" .. wildcards[1])
+  AddToHistory("Code Updates", wildcards[1], "Code Updates: " .. wildcards[1])
   CurrentGlobalSound = PlayGlobalSound("General/Channels/CodeUpdates.ogg")
 end
 
 -- [SECTOR COMMUNICATION] *
 function Comms_SectorCommunication(name, line, wildcards)
-  Execute("history_add All=[Sector] " .. wildcards[1])
-  Execute("history_add Sector=" .. wildcards[1])
+  AddToHistory("Sector", wildcards[1], "[Sector] " .. wildcards[1])
   CurrentGlobalSound = PlayGlobalSound("General/Channels/Sector.ogg")
   Note("[Sector] " .. wildcards[1])
 end
 
 -- A speaker on the communication console crackles to life, and you hear * transmitting from *, *
 function Comms_ASpeakerOnTheCommunicationConsole(name, line, wildcards)
-  Execute("history_add All=[Sector] " .. wildcards[2] .. ", " .. wildcards[1] .. " transmits, " .. wildcards[3])
-  Execute("history_add Sector=" .. wildcards[2] .. ", " .. wildcards[1] .. " transmits, " .. wildcards[3])
+  AddToHistory("Sector", wildcards[2] .. ", " .. wildcards[1] .. " transmits, " .. wildcards[3], "[Sector] " .. wildcards[2] .. ", " .. wildcards[1] .. " transmits, " .. wildcards[3])
   CurrentGlobalSound = PlayGlobalSound("General/Channels/Sector.ogg")
   Note("[Sector] " .. wildcards[2] .. ", " .. wildcards[1] .. " transmits, " .. wildcards[3])
 end
@@ -60,36 +54,31 @@ end
 
 -- Your * emits a confirmational tone as the private link with * is established.
 function Comms_YourEmitsAConfirmationalToneAs(name, line, wildcards)
-  Execute("history_add All=" .. line)
-  Execute("history_add Private Communication=" .. line)
+  AddToHistory("Private Communication", line)
   CurrentGlobalSound = PlayGlobalSound("General/Comm/LinkConfirmed.ogg")
 end
 
 -- You deny * request for a communications link.
 function Comms_YouDenyRequestForACommunications(name, line, wildcards)
-  Execute("history_add All=" .. line)
-  Execute("history_add Private Communication=" .. line)
+  AddToHistory("Private Communication", line)
   CurrentGlobalSound = PlayGlobalSound("General/Comm/LinkDenied.ogg")
 end
 
 -- * denies your request.
 function Comms_DeniesYourRequest(name, line, wildcards)
-  Execute("history_add All=" .. line)
-  Execute("history_add Private Communication=" .. line)
+  AddToHistory("Private Communication", line)
   CurrentGlobalSound = PlayGlobalSound("General/Comm/LinkDenied.ogg")
 end
 
 -- * has deleted * communications link with you.
 function Comms_HasDeletedCommunicationsLinkWithYou(name, line, wildcards)
-  Execute("history_add All=" .. line)
-  Execute("history_add Private Communication=" .. line)
+  AddToHistory("Private Communication", line)
   CurrentGlobalSound = PlayGlobalSound("General/Comm/LinkConfirmed.ogg")
 end
 
 -- You delete your communications link with *.
 function Comms_YouDeleteYourCommunicationsLinkWith(name, line, wildcards)
-  Execute("history_add All=" .. line)
-  Execute("history_add Private Communication=" .. line)
+  AddToHistory("Private Communication", line)
   CurrentGlobalSound = PlayGlobalSound("General/Comm/LinkConfirmed.ogg")
 end
 
@@ -125,15 +114,13 @@ end
 
 -- From a large speaker on *, You hear * say, "*".
 function Comms_FromALargeSpeakerOnYou(name, line, wildcards)
-  Execute("history_add All=[EXT] " .. wildcards[2] .. " on " .. wildcards[1] .. " says: " .. wildcards[3])
-  Execute("history_add PA=[EXT] " .. wildcards[2] .. " on " .. wildcards[1] .. " says: " .. wildcards[3])
+  AddToHistory("PA", "[EXT] " .. wildcards[2] .. " on " .. wildcards[1] .. " says: " .. wildcards[3])
   CurrentGlobalSound = PlayGlobalSound("Starship/Comm/PA"..math.random(1, 9)..".ogg")
 end
 
 -- You say "*" into an external PA microphone.
 function Comms_YouSayIntoAnExternalPa(name, line, wildcards)
-  Execute("history_add All=[EXT] You say: " .. wildcards[1])
-  Execute("history_add PA=[EXT] You say: " .. wildcards[1])
+  AddToHistory("PA", "[EXT] You say: " .. wildcards[1])
   CurrentGlobalSound = PlayGlobalSound("Starship/Comm/PA"..math.random(1, 9)..".ogg")
 end
 

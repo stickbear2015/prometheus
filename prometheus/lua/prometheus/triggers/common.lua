@@ -1,4 +1,17 @@
--- Shared helpers for the trigger functions' sound lists.
+-- Shared helpers for the trigger functions.
+
+-- Add a message to the All buffer and to one other buffer. The buffers belong to the
+-- channel history plugin; this sends it the same two history_add commands the triggers
+-- always have, All first.
+--   buffer    the other buffer's name, for example "Private Communication"
+--   text      what goes in that buffer
+--   all_text  what goes in All, if it's different (often text with a label in front)
+function AddToHistory(buffer, text, all_text)
+  Execute("history_add All=" .. (all_text or text))
+  Execute("history_add " .. buffer .. "=" .. text)
+end
+
+-- Sound lists:
 --
 -- A sound list is a table of entries, checked from top to bottom. An entry says what
 -- text to look for and what to play. Text is looked for with string.match, as the
