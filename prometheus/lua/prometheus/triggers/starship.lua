@@ -1708,6 +1708,11 @@ function Starship_TheShipShakesPouringMorePower(name, line, wildcards)
   CurrentGlobalSound = PlayGlobalSound("Starship/Misc/Background5.ogg")
 end
 
+-- The viewscreen is filled with brilliant white light as Relic * explodes!
+function Starship_TheViewscreenIsFilledWithBrilliant(name, line, wildcards)
+  CurrentGlobalSound = PlayGlobalSound("Starship/Misc/RelicExplosion.ogg")
+end
+
 -- Coordinates: (*)
 function Starship_Coordinates(name, line, wildcards)
   CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Scan"..math.random(1, 4)..".ogg")
