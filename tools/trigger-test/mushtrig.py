@@ -63,8 +63,15 @@ def load_triggers(path):
 
 
 def ordered(triggers):
-    """Evaluation order: by sequence, then file order (an assumption, used for old and new alike)."""
-    return sorted((t for t in triggers if t.enabled and t.regex), key=lambda t: (t.sequence, t.index))
+    """Evaluation order, as MUSHclient does it: by sequence, then by match text.
+
+    From MUSHclient's doc.cpp, CompareTrigger: "identical sequence, sort into match order",
+    comparing the match strings (case-sensitive, character by character). File order and
+    trigger names play no part. Triggers with the same sequence AND the same match text
+    have no defined order; file order is used for those here.
+    """
+    return sorted((t for t in triggers if t.enabled and t.regex),
+                  key=lambda t: (t.sequence, t.match.encode("latin-1", "replace"), t.index))
 
 
 def substitute(send, m):

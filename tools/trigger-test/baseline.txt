@@ -39,12 +39,12 @@ case	13
 fire	#18 ^(.*) translator announces(.*?)\, "(.*)"$
 compileerror	#18 ^(.*) translator announces(.*?)\, "(.*)"$:2: ')' expected near 'Someone'
 case	14
-fire	#19 ^\[([A-Za-z- ]+)\][,:]? ["]?(.*)["]?$
+fire	#20 [Frequency *] *
 omit
-note	[Frequency Someone] Someone
-execute	history_add All=[Frequency Someone] Someone
-execute	history_add Frequency Someone=Someone
-play	sounds/General/Channels/Frequency Someone.ogg	0	0	20
+execute	history_add All=[Someone] Someone
+execute	history_add Frequency=[Someone] Someone
+play	sounds/General/Channels/Frequency.ogg	0	0	20
+note	[Someone] Someone
 case	15
 fire	#21 [* to you]*
 execute	history_add All=[Someone to you]Someone
@@ -138,19 +138,16 @@ execute	history_add All=Game Sub-Announcement from Someone: Someone
 execute	history_add GameAnnouncements=Game Sub-Announcement from Someone: Someone
 play	sounds/General/Hosts/SubAnnouncement.ogg	0	0	20
 case	33
-fire	#19 ^\[([A-Za-z- ]+)\][,:]? ["]?(.*)["]?$
-omit
-note	[Code updates] Someone
-execute	history_add All=[Code updates] Someone
-execute	history_add Code updates=Someone
-play	sounds/General/Channels/Code updates.ogg	0	0	20
+fire	#36 [Code updates] *
+execute	history_add All=Code Updates: Someone
+execute	history_add Code Updates=Someone
+play	sounds/General/Channels/CodeUpdates.ogg	0	0	20
 case	34
-fire	#19 ^\[([A-Za-z- ]+)\][,:]? ["]?(.*)["]?$
-omit
-note	[CHANGES] Someone: Someone
-execute	history_add All=[CHANGES] Someone: Someone
-execute	history_add CHANGES=Someone: Someone
-play	sounds/General/Channels/CHANGES.ogg	0	0	20
+fire	#37 [CHANGES] *: *
+execute	history_add All=Game Changes: Someone (Category: Someone)
+execute	history_add GameChanges=Someone: Someone
+random	1	2
+play	sounds/General/Hosts/GameChange1.ogg	0	0	20
 case	35
 fire	#38 * crumple*up into a ball and throw*it away.
 random	1	3
@@ -3999,12 +3996,12 @@ fire	#105 * suddenly seem*to disappear into the background.
 random	1	3
 play	sounds/General/Hosts/HostOut1.ogg	0	0	20
 case	520
-fire	#19 ^\[([A-Za-z- ]+)\][,:]? ["]?(.*)["]?$
+fire	#106 [SECTOR COMMUNICATION] *
 omit
-note	[SECTOR COMMUNICATION] Someone
-execute	history_add All=[SECTOR COMMUNICATION] Someone
-execute	history_add SECTOR COMMUNICATION=Someone
-play	sounds/General/Channels/SECTOR COMMUNICATION.ogg	0	0	20
+execute	history_add All=[Sector] Someone
+execute	history_add Sector=Someone
+play	sounds/General/Channels/Sector.ogg	0	0	20
+note	[Sector] Someone
 case	521
 fire	#107 A speaker on the communication console crackles to life, and you hear * transmitting from *, *
 omit
@@ -4126,8 +4123,8 @@ case	554
 fire	#138 * private communications are disabled.
 play	sounds/General/Comm/Disabled.ogg	0	0	20
 case	555
-fire	#139 ^Sorry\, but your command input has been blocked\. We apologize for any inconvenience this may cause you\.$
-play	sounds/General/Comm/Disabled.ogg	0	0	20
+fire	#530 * input*.
+omit
 case	556
 fire	#140 A new poll has been opened. Use vote to answer it.
 play	sounds/General/Misc/Poll.ogg	0	0	20
@@ -4150,9 +4147,9 @@ fire	#145 A small speaker on * suddenly emits a loud burst of static.
 random	1	5
 play	sounds/General/Comm/Static1.ogg	0	0	20
 case	562
-fire	#17 ^(.*) (says|say)(.*?)\: (.*)$
-execute	history_add All=Someone with Someone suddenly emits a painfully loud burst of static. After a few moments, it subsides a bit, and a synthesized voice breaks through the static, saying: Someone
-execute	history_add Conversations=Someone with Someone suddenly emits a painfully loud burst of static. After a few moments, it subsides a bit, and a synthesized voice breaks through the static, saying: Someone
+fire	#146 * with * suddenly emits a painfully loud burst of static. After a few moments, it subsides a bit, and a synthesized voice breaks through the static, saying: *
+random	1	5
+play	sounds/General/Comm/Static1.ogg	0	0	20
 case	563
 fire	#147 * quickly doubletap*a button on top of *
 play	sounds/Starship/Computer/MiniKeyboard.ogg	0	0	20
@@ -4372,7 +4369,7 @@ case	627
 fire	#205 You put * into * container*.
 play	sounds/General/Archaeology/Container.ogg	0	0	20
 case	628
-fire	#206 You place * in * sifting bucket*.
+fire	#711 You place * in *
 play	sounds/General/Archaeology/Container.ogg	0	0	20
 case	629
 fire	#207 Through the window, you watch a starship probe remove a section of hull with its industrial-strength drill and saw attachments, just large enough for it to enter the ship.
@@ -4633,7 +4630,7 @@ case	694
 fire	#263 * to manual pilot first.
 play	sounds/General/Misc/Cancel.ogg	0	0	20
 case	695
-fire	#264 The starship is already moving.
+fire	#268 The * is already moving.
 play	sounds/General/Misc/Cancel.ogg	0	0	20
 case	696
 fire	#265 Hyperspace jumps cannot be aborted.
@@ -4660,7 +4657,7 @@ case	703
 fire	#272 There are still * left in the banks.
 play	sounds/General/Misc/Cancel.ogg	0	0	20
 case	704
-fire	#150 Invalid*
+fire	#273 Invalid coordinates. Range: * to *
 play	sounds/General/Misc/Cancel.ogg	0	0	20
 case	705
 fire	#274 * has * the sector.
@@ -5484,10 +5481,11 @@ play	sounds/General/Computer/Beep1.ogg	0	0	20
 random	1	5
 play	sounds/Starship/Misc/Background1.ogg	0	0	20
 case	902
-fire	#423 With a final jolt, the starship slows as it exits the Worldway.
+fire	#425 With a final jolt, the starship slows as it exits the *
 omit
+play	sounds/Starship/Move/StargateNotification.ogg	0	0	20
 random	1	5
-play	sounds/General/Misc/Beep1.ogg	0	0	20
+play	sounds/General/Computer/Beep1.ogg	0	0	20
 case	903
 fire	#424 The starship shudders as it enters a *
 omit
@@ -5800,8 +5798,9 @@ case	989
 fire	#492 * portable oven indicates that the recharging process is complete.
 play	sounds/General/Misc/OvenBeep.ogg	0	0	20
 case	990
-fire	#493 * examine*the menu of available items.
-play	sounds/General/Misc/Menu.ogg	0	0	20
+fire	#529 * examine*the *
+random	1	7
+play	sounds/Starship/Computer/Keyboard1.ogg	0	0	20
 case	991
 fire	#494 The ship slows down and you feel the sharp jolt as the ship touches down on the landing pad.
 omit
@@ -6806,7 +6805,9 @@ case	1206
 fire	#634 Please power up your weapons first.
 play	sounds/Starship/Misc/NotInSpace.ogg	0	0	20
 case	1207
-fire	#580 You*open *
+fire	#635 You reach under the control board, and open a small metal panel before installing * override chip.
+random	1	4
+play	sounds/Starship/Computer/Report1.ogg	0	0	20
 case	1208
 fire	#636 You plug * Armor Piercing Weapon Chip into the weapons board, uploading its firmware to the computers.
 play	sounds/Combat/Space/ArmorPiercingChipBegin.ogg	0	0	20
@@ -7017,7 +7018,8 @@ fire	#689 The scanning console emits a series of beeps before depositing *.
 play	sounds/Starship/Misc/Scanning.ogg	0	0	20
 play	sounds/General/Misc/EggHunt.ogg	0	0	20
 case	1271
-fire	#580 You*open *
+fire	#690 You open * Easter egg... And find * inside!
+play	sounds/General/Misc/EggItem.ogg	0	0	20
 case	1272
 fire	#691 * Portable Military Computer with * touch screen flashes a message on its screen, telling you that a new report has been added to the network.
 play	sounds/General/Devices/NewMilitaryReport.ogg	0	0	20
@@ -7142,7 +7144,9 @@ fire	#719 You slide a panel aside, and proceed to fit * partial vehicle replacem
 random	1	4
 play	sounds/Starship/Computer/Report1.ogg	0	0	20
 case	1304
-fire	#581 You*close *
+fire	#720 You close the panel, as * partial vehicle replacement battery locks into place with a *CLICK*.
+random	1	4
+play	sounds/Starship/Computer/Report1.ogg	0	0	20
 case	1305
 fire	#721 You are zapped by a forcefield as you try to move *.
 play	sounds/Starship/Computer/Electricity.ogg	0	0	20
