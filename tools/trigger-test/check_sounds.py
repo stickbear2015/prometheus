@@ -147,6 +147,25 @@ def main():
                         missing.append((where, BASES[m.group(1)] + p))
                 elif full not in existing:
                     missing.append((where, BASES[m.group(1)] + p))
+    # Sound lists (lookup tables) such as SOCIAL_SOUNDS: one entry per line, like
+    #   { word = "cheer", sound = "Socials/Cheer_", gendered = true, versions = 3 },
+    for src in sources:
+        if not src.endswith(".lua"):
+            continue
+        for n, ln in enumerate(open(src, encoding="latin-1"), start=1):
+            m = re.search(r'\bsound\s*=\s*"([^"]+)"', ln)
+            if not m or ln.lstrip().startswith("--"):
+                continue
+            names = [m.group(1)]
+            if re.search(r"\bgendered\s*=\s*true", ln):
+                names = [x + g for x in names for g in ("female", "male")]
+            v = re.search(r"\bversions\s*=\s*(\d+)", ln)
+            if v:
+                names = [x + str(i) for x in names for i in range(1, int(v.group(1)) + 1)]
+            for nm in names:
+                checked += 1
+                if (nm + ".ogg").lower() not in existing:
+                    missing.append(("%s:%d" % (os.path.relpath(src, pack), n), nm + ".ogg"))
     print("checked %d sound names; %d missing" % (checked, len(missing)))
     for where, p in missing:
         print("  MISSING %-45s played from %s" % (p, where))
