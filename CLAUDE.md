@@ -40,4 +40,9 @@ MUSHclient soundpack for Prometheus: The Eternal Wars. Shane's repo (`stickbear2
 
 ## Current work
 
-- **Cleanup** (issue #44, branch `cleanup/tidy-pack`, started 2026-11-20): build a test tool that compares old and new triggers on sample lines; move trigger logic from `Prometheus.xml` into Lua modules by area; pass wildcards as values instead of pasting `%1` into code; replace if/elseif chains with lookup tables; fix small bugs and list them. Shane is guiding.
+- **Cleanup** (issue #44, branch `cleanup/tidy-pack`, started 2026-11-20; never merge into `dev` without Shane's say-so). Shane is guiding.
+  - Done: the test tool (`tools/trigger-test`, made-up and real-log baselines, `check_sounds.py`); step 2 part 1, splitting `Prometheus.xml` into area files with Lua functions and wildcards passed as values (fixes the quote-mark crashes); `spdebug` command; small bug fixes (see issue #44 comments); changelog lines for all of it.
+  - Next: step 3, replacing long if/elseif chains with lookup tables, area by area, starting with the social sounds function in `lua/prometheus/triggers/system.lua`. Possibly split the large "general" area. Then global plugins (see decisions).
+  - Still silent, no recordings exist: hatch-cracking odd noise, vehicle beginning to explode, host food and drink, tradesman certificate, event mode and events added, equipment damaged, self-destruct at sixty, no debris, radio microphone on and off, hatch light flashing once and twice.
+- **Issue #26** (cheering over the PA or IC comms plays the kiss sound): a game-side bug. The game sends `cheekkiss` instead of cheer. Reported to the game's staff on 2026-11-20. No pack change unless the game's fix needs one.
+- Testing in game: build a tester zip with `tools/test-build/make-test-zip.ps1`. Real game logs for testing go in `temp-logs/` (git-ignored).
