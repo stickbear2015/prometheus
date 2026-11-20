@@ -1234,12 +1234,14 @@ function General_YouUnclipAAndRemoveIt(name, line, wildcards)
   CurrentGlobalSound = PlayGlobalSound("General/Misc/ItemUnwear.ogg")
 end
 
--- ^(.*?) (don|dons|strap|straps|wear|wears) (.*?)\.$
+-- ^([^\[].*?) (don|dons|strap|straps|wear|wears) (.*?)\.$
+-- (Lines starting with "[" are channel messages; they're left to the channel trigger.)
 function General_DonDonsStrapStrapsWearWears(name, line, wildcards)
   CurrentGlobalSound = PlayGlobalSound("General/Misc/ItemWear.ogg")
 end
 
--- ^(.*) (remove|removes|unstrap|unstraps) (.*?)\.$
+-- ^([^\[].*) (remove|removes|unstrap|unstraps) (.*?)\.$
+-- (Lines starting with "[" are channel messages; they're left to the channel trigger.)
 function General_RemoveRemovesUnstrapUnstraps(name, line, wildcards)
   if (string.match(wildcards[3], "your electronic gadgets first") or string.match(wildcards[3], "before")) then
     CurrentGlobalSound = PlayGlobalSound("General/Misc/Cancel.ogg")
