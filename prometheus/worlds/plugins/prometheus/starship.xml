@@ -1780,6 +1780,13 @@
 
 <trigger
   enabled="y"
+  match="The viewscreen is filled with brilliant white light as Relic * explodes!"
+  sequence="90"
+  script="Starship_TheViewscreenIsFilledWithBrilliant"
+></trigger>
+
+<trigger
+  enabled="y"
   match="Coordinates: (*)"
   sequence="100"
   script="Starship_Coordinates"
