@@ -14,6 +14,7 @@ It never touches MUSHclient or plays a sound. Python matches lines against trigg
 - `baseline.txt`: what the original plugin did with those lines. This is what the cleaned-up pack is compared against.
 - `check_sounds.py`: checks that every sound the code can play exists, reading the code itself (so `"Beep" .. math.random(1, 5)` checks all five files). Run `python -I check_sounds.py ../../prometheus`.
 - `check_patterns.py`: finds text checks that can never match: a capital letter looked for in a lowercased line, or a plain "-" in a Lua pattern (which isn't a hyphen there; write "%-"). Run `python -I check_patterns.py ../../prometheus`.
+- `check_channel_steals.py`: runs every channel message in game logs through MUSHclient's trigger order and lists any other trigger that takes them from the channel trigger (losing the channel sound and buffers). Run `python -I check_channel_steals.py ../../prometheus/worlds/plugins/Prometheus.xml ../../temp-logs/<log>...`.
 - `real_corpus.py`: picks real example lines for each trigger from a game log (a few distinct lines per trigger, plus lines containing each text a trigger's code checks for). **Its output contains other players' names and chat, so it goes in `temp-logs/` (git-ignored) and is never committed**, along with its recordings.
 
 ## Use
