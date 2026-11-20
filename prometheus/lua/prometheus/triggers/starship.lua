@@ -307,8 +307,9 @@ COMPUTER_ANNOUNCEMENTS = {
 -- The computer announces, "*"
 -- Every announcement is shown, added to the All and Computer Announcements buffers, and
 -- plays the announcement chime; then COMPUTER_ANNOUNCEMENTS may add its own sound.
--- KNOWN BUG, kept for now: the grabbing, salvaging and harvesting message filters don't
--- hide these announcements, because the message is shown before anything checks them.
+-- These announcements are always shown. The old GrabbingMessages, SalvagingMessages and
+-- HarvestingMessages settings (config.lua) have no command or key to switch them, so they
+-- always stay 0; don't make them hide announcements, or every player would lose them.
 function Starship_TheComputerAnnounces(name, line, wildcards)
   local text = wildcards[1]
   Note(text)
