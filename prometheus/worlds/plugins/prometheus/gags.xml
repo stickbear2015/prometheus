@@ -30,7 +30,7 @@
 
 <trigger
   enabled="y"
-  match="^(.*) (says|say)(.*?)\: (.*)$"
+  match="^([^\[].*) (says|say|asks|ask|exclaims|exclaim)(.*?)\: (.*)$"
   regexp="y"
   sequence="100"
   script="Gags_SaysSay"
