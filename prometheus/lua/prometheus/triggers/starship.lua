@@ -269,8 +269,8 @@ COMPUTER_ANNOUNCEMENTS = {
   { has_lower = "initiating asteroid haul to", sound = "Starship/Computer/Keyboard", versions = 7,
     also = { sound = "Starship/Move/HaulAsteroid", versions = 2 } },
   { has_lower = "on shipwreck", sound = "General/Shipwrecks/BeamLockedOn" },
-  -- KNOWN BUG, kept for now: "-" is special in Lua patterns, so this never matches.
-  { has_lower = "self-destruct sequence initiated", sound = "Starship/Misc/SelfDestructStart" },
+  -- "%-" is a plain hyphen ("-" on its own is special in Lua patterns).
+  { has_lower = "self%-destruct sequence initiated", sound = "Starship/Misc/SelfDestructStart" },
   { has = "^Sixty.$", sound = "Starship/Misc/SelfDestructSixty" },  -- no such file yet
   { has = "^Thirty.$", sound = "Starship/Misc/SelfDestructThirty" },
   { has = "^Ten.$", sound = "Starship/Misc/SelfDestructTen" },
