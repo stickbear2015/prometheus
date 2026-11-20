@@ -29,3 +29,7 @@ Splits the large "general" area (268 triggers) into areas by subject: refusals, 
 ## edit_triggers.py
 
 Helpers for small hand-made edits to the trigger files: remove a trigger and its function, set an attribute such as the sequence, or replace text inside a function. Each edit finds triggers by their exact match text and stops if it doesn't find exactly one.
+
+## use_history_helper.py
+
+Replaces the pairs of history_add lines (All, then one other buffer) with AddToHistory(buffer, text, all_text) from lua/prometheus/triggers/common.lua. The commands sent to the channel history plugin are exactly the same. The channel trigger's pair, whose buffer name is worked out from the channel, is left as it was. Checked with tools/trigger-test on 2026-11-20: no difference on any test line.

@@ -6,18 +6,15 @@
 -- ^(.*) (says|say)(.*?)\: (.*)$
 function Gags_SaysSay(name, line, wildcards)
   if (ConfigTable.Settings.Accents == 1) then
-    Execute("history_add All=" .. line)
-    Execute("history_add Conversations=" .. line)
+    AddToHistory("Conversations", line)
   else
-    Execute("history_add All=" .. wildcards[1] .. " " .. wildcards[2] .. ": " .. wildcards[4])
-    Execute("history_add Conversations=" .. wildcards[1] .. " " .. wildcards[2] .. ": " .. wildcards[4])
+    AddToHistory("Conversations", wildcards[1] .. " " .. wildcards[2] .. ": " .. wildcards[4])
   end
 end
 
 -- ^(.*) translator announces(.*?)\, "(.*)"$
 function Gags_TranslatorAnnounces(name, line, wildcards)
-  Execute("history_add All=" .. wildcards[1] .. " " .. wildcards[2] .. ": ")
-  Execute("history_add Conversations=" .. line)
+  AddToHistory("Conversations", line, wildcards[1] .. " " .. wildcards[2] .. ": ")
 end
 
 -- You pull*sifting net out of the water, empty.
