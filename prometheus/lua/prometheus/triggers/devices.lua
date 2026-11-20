@@ -177,7 +177,7 @@ end
 
 -- A light blinks on next to the PA.
 function Devices_ALightBlinksOnNextTo(name, line, wildcards)
-  CurrentGlobalSound = PlayGlobalSound("General/Devices/Aactivate.ogg")
+  CurrentGlobalSound = PlayGlobalSound("General/Devices/Activate.ogg")
 end
 
 -- * turn* UTF-Issue radio with * high-definition speaker *.

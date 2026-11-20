@@ -358,7 +358,7 @@ function Starship_TheComputerAnnounces(name, line, wildcards)
       return
     end
   elseif (string.match(string.lower(wildcards[1]), "spacepowerup mode engaged")) then
-    CurrentGlobalSound = PlayGlobalSound("Ship/Misc/SpacePowerStartup.ogg")
+    CurrentGlobalSound = PlayGlobalSound("Starship/Misc/SpacePowerStartUp.ogg")
   elseif (string.match(string.lower(wildcards[1]), "powering down due to lack of charge")) then
     CurrentGlobalSound = PlayGlobalSound("Starship/Computer/LowCharge"..math.random(1, 2)..".ogg")
   elseif (string.match(string.lower(wildcards[1]), "charge running critical")) then
@@ -1635,7 +1635,7 @@ end
 -- A smooth hum starts in the background and the lift begins moving.
 function Starship_ASmoothHumStartsInThe(name, line, wildcards)
   CurrentGlobalSound = PlayGlobalSound("Starship/Misc/LiftGo.ogg")
-  CurrentGlobalSound = PlayGlobalSound("Ship/Misc/LiftMoving.ogg")
+  CurrentGlobalSound = PlayGlobalSound("Starship/Misc/LiftMoving.ogg")
 end
 
 -- The hum slowly stops as the lift arrives at its destination.
