@@ -521,14 +521,6 @@
 
 <trigger
   enabled="y"
-  match="^([^\[].*) (remove|removes|unstrap|unstraps) (.*?)\.$"
-  regexp="y"
-  sequence="100"
-  script="Refusals_RemoveRemovesUnstrapUnstraps"
-></trigger>
-
-<trigger
-  enabled="y"
   match="The * banks are already full."
   sequence="100"
   script="Refusals_TheBanksAreAlreadyFull"

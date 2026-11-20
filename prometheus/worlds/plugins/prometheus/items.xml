@@ -55,5 +55,13 @@
   script="Items_YouSeeHere"
 ></trigger>
 
+<trigger
+  enabled="y"
+  match="^([^\[].*) (remove|removes|unstrap|unstraps) (.*?)\.$"
+  regexp="y"
+  sequence="100"
+  script="Items_RemoveRemovesUnstrapUnstraps"
+></trigger>
+
 </triggers>
 </muclient>
