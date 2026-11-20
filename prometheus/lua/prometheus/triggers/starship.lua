@@ -56,8 +56,7 @@ end
 
 -- A message is displayed in bright red on the screen, "*"
 function Starship_AMessageIsDisplayedInBright(name, line, wildcards)
-  Execute("history_add All=" .. wildcards[1])
-  Execute("history_add Vehicles=" .. wildcards[1])
+  AddToHistory("Vehicles", wildcards[1])
   CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Announce"..math.random(1, 7)..".ogg")
   CurrentCombatSound = PlayCombatSound("Space/OtherDestroyed"..math.random(1, 8)..".ogg")
   Note(wildcards[1])
@@ -185,8 +184,7 @@ COMPUTER_ANNOUNCEMENTS = {
 function Starship_TheComputerAnnounces(name, line, wildcards)
   local text = wildcards[1]
   Note(text)
-  Execute("history_add All=Computer Announcement: " .. text)
-  Execute("history_add Computer Announcements=" .. text)
+  AddToHistory("Computer Announcements", text, "Computer Announcement: " .. text)
   CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Announce" .. math.random(1, 7) .. ".ogg")
   local entry = FindSoundEntry(COMPUTER_ANNOUNCEMENTS, text)
   if entry then
@@ -196,8 +194,7 @@ end
 
 -- ^Computer in (.*)\, "(.*)"$
 function Starship_ComputerIn(name, line, wildcards)
-  Execute("history_add All=" .. wildcards[2] .. " (" .. wildcards[1] .. ")")
-  Execute("history_add Computer Announcements=" .. wildcards[2] .. " (" .. wildcards[1] .. ")")
+  AddToHistory("Computer Announcements", wildcards[2] .. " (" .. wildcards[1] .. ")")
   CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Announce"..math.random(1, 7)..".ogg")
   Note(wildcards[2] .. " (" .. wildcards[1] .. ")")
 end
@@ -266,8 +263,7 @@ COMPUTER_REPORTS = {
 -- chime; COMPUTER_REPORTS may add its own sound. Then it's shown.
 function Starship_TheComputerReportsThat(name, line, wildcards)
   local text = wildcards[1]
-  Execute("history_add All=Computer Reports: " .. text)
-  Execute("history_add Computer Reports=" .. text)
+  AddToHistory("Computer Reports", text, "Computer Reports: " .. text)
   CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Report" .. math.random(1, 4) .. ".ogg")
   local entry = FindSoundEntry(COMPUTER_REPORTS, text)
   if entry then
@@ -1132,8 +1128,7 @@ VEHICLE_SCREEN_SOUNDS = {
 -- plays the announcement chime; VEHICLE_SCREEN_SOUNDS may add its own sound. Then it's shown.
 function Starship_ASmallComputerScreenAnnounces(name, line, wildcards)
   local text = wildcards[1]
-  Execute("history_add All=Vehicle Computer Announcement: " .. text)
-  Execute("history_add Vehicle Computer Announcements=" .. text)
+  AddToHistory("Vehicle Computer Announcements", text, "Vehicle Computer Announcement: " .. text)
   CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Announce" .. math.random(1, 7) .. ".ogg")
   local entry = FindSoundEntry(VEHICLE_SCREEN_SOUNDS, text)
   if entry then

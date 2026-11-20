@@ -5,8 +5,7 @@
 
 -- The screen of * hypernet browser with * touchscreen flashes briefly, indicating that *
 function Devices_TheScreenOfHypernetBrowserWith(name, line, wildcards)
-  Execute("history_add All=" .. wildcards[3])
-  Execute("history_add HyperNetNotifications=" .. wildcards[3])
+  AddToHistory("HyperNetNotifications", wildcards[3])
   CurrentGlobalSound = PlayGlobalSound("General/Devices/NewsFlash.ogg")
   if (string.match(wildcards[3], "new hypermail waiting for you")) then
     CurrentGlobalSound = PlayGlobalSound("General/Misc/NewMail.ogg")

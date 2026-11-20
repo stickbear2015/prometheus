@@ -45,29 +45,25 @@ end
 
 -- Announcement from *: *
 function Game_AnnouncementFrom(name, line, wildcards)
-  Execute("history_add All=Game Announcement from " .. wildcards[1] .. ": " .. wildcards[2])
-  Execute("history_add GameAnnouncements=Announcement from " .. wildcards[1] .. ": " .. wildcards[2])
+  AddToHistory("GameAnnouncements", "Announcement from " .. wildcards[1] .. ": " .. wildcards[2], "Game Announcement from " .. wildcards[1] .. ": " .. wildcards[2])
   CurrentGlobalSound = PlayGlobalSound("General/Hosts/Announcement.ogg")
 end
 
 -- [SUB-ANNOUNCEMENT | *]: "*"
 function Game_SubAnnouncement(name, line, wildcards)
-  Execute("history_add All=Game Sub-Announcement from " .. wildcards[1] .. ": " .. wildcards[2])
-  Execute("history_add GameAnnouncements=Game Sub-Announcement from " .. wildcards[1] .. ": " .. wildcards[2])
+  AddToHistory("GameAnnouncements", "Game Sub-Announcement from " .. wildcards[1] .. ": " .. wildcards[2])
   CurrentGlobalSound = PlayGlobalSound("General/Hosts/SubAnnouncement.ogg")
 end
 
 -- [CHANGES] *: *
 function Game_Changes(name, line, wildcards)
-  Execute("history_add All=Game Changes: " .. wildcards[2] .. " (Category: " .. wildcards[1] .. ")")
-  Execute("history_add GameChanges=" .. wildcards[1] .. ": " .. wildcards[2])
+  AddToHistory("GameChanges", wildcards[1] .. ": " .. wildcards[2], "Game Changes: " .. wildcards[2] .. " (Category: " .. wildcards[1] .. ")")
   CurrentGlobalSound = PlayGlobalSound("General/Hosts/GameChange"..math.random(1, 2)..".ogg")
 end
 
 -- ^Attention\! (.*)$
 function Game_Attention(name, line, wildcards)
-  Execute("history_add All=" .. wildcards[1])
-  Execute("history_add NewsFlash=" .. wildcards[1])
+  AddToHistory("NewsFlash", wildcards[1])
   CurrentGlobalSound = PlayGlobalSound("General/Misc/News.ogg")
 end
 
@@ -108,8 +104,7 @@ end
 
 -- You ask * if * would like to establish a private communications link.
 function Game_YouAskIfWouldLikeTo(name, line, wildcards)
-  Execute("history_add All=" .. line)
-  Execute("history_add Private Communication=" .. line)
+  AddToHistory("Private Communication", line)
   CurrentGlobalSound = PlayGlobalSound("General/Misc/Prompt.ogg")
 end
 
@@ -151,8 +146,7 @@ end
 
 -- * shout*, "*"
 function Game_Shout(name, line, wildcards)
-  Execute("history_add All=" .. wildcards[1] .. " shout" .. wildcards[2] .. ": " .. wildcards[3])
-  Execute("history_add Shouts=" .. wildcards[1] .. " shout" .. wildcards[2] .. ": " .. wildcards[3])
+  AddToHistory("Shouts", wildcards[1] .. " shout" .. wildcards[2] .. ": " .. wildcards[3])
   CurrentGlobalSound = PlayGlobalSound("General/Hosts/Shouts.ogg")
   Note(wildcards[1] .. " shout" .. wildcards[2] .. ": " .. wildcards[3])
 end
