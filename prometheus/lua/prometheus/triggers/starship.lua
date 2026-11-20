@@ -48,75 +48,75 @@ function Starship_AZa(name, line, wildcards)
         if not string.match(wildcards[2], "X-Loritan") then
           CurrentGlobalSound = PlayGlobalSound("Combat/Space/OtherDestroyed"..math.random(1, 8)..".ogg")
         end
-      elseif (string.match(wildcards[1],"Commpipe")) then
-        if (string.match(wildcards[2], "has been salvaged") or string.match(wildcards[2], "has been harvested") or string.match(wildcards[2], "successfully grabbed") or string.match(wildcards[2], "Valuable material found") or string.match(wildcards[2], "No minerals detected")) then
-          if (ConfigTable.Settings.SalvagingMessages == 0) then
-            if (string.match(wildcards[2], "prepared for future use")) then
-              CurrentGlobalSound = PlayGlobalSound("Starship/Misc/Prepared.ogg")
-            else
-              return
-            end
-          end
-          if (ConfigTable.Settings.GrabbingMessages == 0) then
+      end
+    elseif (string.match(wildcards[1],"Commpipe")) then
+      if (string.match(wildcards[2], "has been salvaged") or string.match(wildcards[2], "has been harvested") or string.match(wildcards[2], "successfully grabbed") or string.match(wildcards[2], "Valuable material found") or string.match(wildcards[2], "No minerals detected")) then
+        if (ConfigTable.Settings.SalvagingMessages == 0) then
+          if (string.match(wildcards[2], "prepared for future use")) then
+            CurrentGlobalSound = PlayGlobalSound("Starship/Misc/Prepared.ogg")
+          else
             return
           end
-          if (ConfigTable.Settings.HarvestingMessages == 0) then
-            return
-          end
-        elseif (string.match(wildcards[1], "detected in the sector")) then
-          if (string.match(wildcards[1], "enemy starship")) then
-            CurrentGlobalSound = PlayGlobalSound("Starship/Computer/EnemyDetected.ogg")
-          end
-          if (string.match(wildcards[1], "flying cherub")) then
-            CurrentGlobalSound = PlayGlobalSound("Starship/Computer/flyingCherub.ogg")
-          end
-          if (string.match(wildcards[1], "artifact")) then
-            CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Artifact.ogg")
-          end
-          if (string.match(wildcards[1], "friendly")) then
-            CurrentGlobalSound = PlayGlobalSound("Starship/Computer/FriendlyShip.ogg")
-          end
-          if (string.match(wildcards[1], " relic")) then
-            CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Relic.ogg")
-          end
-          if (string.match(wildcards[1], "comet")) then
-            CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Comet.ogg")
-          end
-          if (string.match(wildcards[1], "shipwreck")) then
-            CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Shipwreck.ogg")
-          end
-          if (string.match(wildcards[1], "planet")) then
-            CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Planet.ogg")
-          end
-          if (string.match(wildcards[1], "spacestation")) then
-            CurrentGlobalSound = PlayGlobalSound("Starship/Computer/SpaceStation.ogg")
-          end
-          if (string.match(string.lower(wildcards[1]), " star ")) then
-            CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Star.ogg")
-          end
-          if (string.match(wildcards[1], "derelict starship")) then
-            CurrentGlobalSound = PlayGlobalSound("Starship/Derelicts/AlienStarship.ogg")
-          end
-          if (string.match(wildcards[1], "asteroid")) then
-            CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Asteroid.ogg")
-          end
-          if (string.match(wildcards[1], "debris")) then
-            CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Debris.ogg")
-          end
-          if (string.match(wildcards[1], "spacebear")) then
-            CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Spacebear.ogg")
-          end
-        elseif (string.match(wildcards[2], "Powering down due to lack of charge")) then
-          CurrentGlobalSound = PlayGlobalSound("Starship/Computer/LowCharge"..math.random(1, 2)..".ogg")
-        elseif (string.match(wildcards[2], "Shutting down due to low power conditions")) then
-          CurrentGlobalSound = PlayGlobalSound("Starship/Computer/LowCharge"..math.random(1, 2)..".ogg")
-        elseif (string.match(wildcards[2], "Beam locked")) then
-          CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Warning.ogg")
-        elseif (string.match(wildcards[2], "The beam stops abruptly")) then
-          CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Warning.ogg")
-        elseif (string.match(wildcards[2], "Excavation cannot continue due to the equipment being damaged")) then
-          CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Warning.ogg")
         end
+        if (ConfigTable.Settings.GrabbingMessages == 0) then
+          return
+        end
+        if (ConfigTable.Settings.HarvestingMessages == 0) then
+          return
+        end
+      elseif (string.match(wildcards[2], "detected in the sector")) then
+        if (string.match(wildcards[2], "enemy starship")) then
+          CurrentGlobalSound = PlayGlobalSound("Starship/Computer/EnemyDetected.ogg")
+        end
+        if (string.match(wildcards[2], "flying cherub")) then
+          CurrentGlobalSound = PlayGlobalSound("Starship/Computer/flyingCherub.ogg")
+        end
+        if (string.match(wildcards[2], "artifact")) then
+          CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Artifact.ogg")
+        end
+        if (string.match(wildcards[2], "friendly")) then
+          CurrentGlobalSound = PlayGlobalSound("Starship/Computer/FriendlyShip.ogg")
+        end
+        if (string.match(wildcards[2], " relic")) then
+          CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Relic.ogg")
+        end
+        if (string.match(wildcards[2], "comet")) then
+          CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Comet.ogg")
+        end
+        if (string.match(wildcards[2], "shipwreck")) then
+          CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Shipwreck.ogg")
+        end
+        if (string.match(wildcards[2], "planet")) then
+          CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Planet.ogg")
+        end
+        if (string.match(wildcards[2], "spacestation")) then
+          CurrentGlobalSound = PlayGlobalSound("Starship/Computer/SpaceStation.ogg")
+        end
+        if (string.match(string.lower(wildcards[2]), " star ")) then
+          CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Star.ogg")
+        end
+        if (string.match(wildcards[2], "derelict starship")) then
+          CurrentGlobalSound = PlayGlobalSound("Starship/Derelicts/AlienStarship.ogg")
+        end
+        if (string.match(wildcards[2], "asteroid")) then
+          CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Asteroid.ogg")
+        end
+        if (string.match(wildcards[2], "debris")) then
+          CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Debris.ogg")
+        end
+        if (string.match(wildcards[2], "spacebear")) then
+          CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Spacebear.ogg")
+        end
+      elseif (string.match(wildcards[2], "Powering down due to lack of charge")) then
+        CurrentGlobalSound = PlayGlobalSound("Starship/Computer/LowCharge"..math.random(1, 2)..".ogg")
+      elseif (string.match(wildcards[2], "Shutting down due to low power conditions")) then
+        CurrentGlobalSound = PlayGlobalSound("Starship/Computer/LowCharge"..math.random(1, 2)..".ogg")
+      elseif (string.match(wildcards[2], "Beam locked")) then
+        CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Warning.ogg")
+      elseif (string.match(wildcards[2], "The beam stops abruptly")) then
+        CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Warning.ogg")
+      elseif (string.match(wildcards[2], "Excavation cannot continue due to the equipment being damaged")) then
+        CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Warning.ogg")
       end
     elseif (string.match(string.lower(wildcards[1]), "ship construction")) then
       CurrentGlobalSound = PlayGlobalSound("General/Comm/Notify.ogg")
