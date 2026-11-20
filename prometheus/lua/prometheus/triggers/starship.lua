@@ -1160,7 +1160,7 @@ end
 -- With a final jolt, the starship slows as it exits the *
 function Starship_WithAFinalJoltTheStarship(name, line, wildcards)
   CurrentGlobalSound = PlayGlobalSound("Starship/Move/StargateNotification.ogg")
-  CurrentGlobalSound = PlayGlobalSound("General/Computer/Beep"..math.random(1, 5)..".ogg")
+  CurrentGlobalSound = PlayGlobalSound("General/Misc/Beep"..math.random(1, 5)..".ogg")
 end
 
 -- You detect a faint rumbling as the starship begins to orient toward another ship.
