@@ -25,6 +25,7 @@ MUSHclient soundpack for Prometheus: The Eternal Wars. Kendal's repo (`stickbear
 - Commit, and push straight after every commit (Kendal's own repo).
 - Every change that players notice gets a line in `changelog.md` under the development version, with its issue link.
 - Players' existing settings must keep working after an update.
+- **Every message that goes into a buffer must also go into the All buffer** (Kendal, 2026-11-20). Use `AddToHistory(buffer, text, all_text)` from `lua/prometheus/triggers/common.lua`, which sends All first, then the other buffer. Checked 2026-11-20: every buffer message in both test recordings has its All entry.
 - Testing: LuaJIT (Lua 5.1 compatible) is installed at `C:\Users\spopp\AppData\Local\Programs\LuaJIT\bin\luajit.exe` (installed 2026-11-20 for the cleanup's test tool).
 
 ## Cleanup branch rule (Kendal, 2026-11-20)
