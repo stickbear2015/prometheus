@@ -124,7 +124,7 @@
   enabled="y"
   match="^Sorry\, but your command input has been blocked\. We apologize for any inconvenience this may cause you\.$"
   regexp="y"
-  sequence="100"
+  sequence="90"
   script="Comms_SorryButYourCommandInputHas"
 ></trigger>
 

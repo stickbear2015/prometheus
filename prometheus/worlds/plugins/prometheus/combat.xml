@@ -390,7 +390,7 @@
   enabled="y"
   match="You hear distant weapon fire!"
   omit_from_output="y"
-  sequence="100"
+  sequence="90"
   script="Combat_YouHearDistantWeaponFire"
 ></trigger>
 
@@ -435,7 +435,7 @@
 <trigger
   enabled="y"
   match="You insert a laser energy pack into a laser supplier, pressing a button."
-  sequence="100"
+  sequence="90"
   script="Combat_YouInsertALaserEnergyPack"
 ></trigger>
 
