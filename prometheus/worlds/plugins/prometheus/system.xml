@@ -5,6 +5,19 @@
 <muclient>
 <triggers>
 
+<!-- Debug display (spdebug command): shows each hidden soundpack message before the
+     other triggers handle it. Sequence 1 and keep_evaluating, so it never stops them. -->
+<trigger
+  name="ShowSoundpackMessages"
+  group="OOB"
+  enabled="y"
+  match="^\#\$\#soundpack(.*)$"
+  regexp="y"
+  keep_evaluating="y"
+  sequence="1"
+  script="System_ShowSoundpackMessage"
+></trigger>
+
 <trigger
   name="ParseOOBMessages"
   group="OOB"

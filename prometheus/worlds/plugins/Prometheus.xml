@@ -155,6 +155,10 @@ Note("MUSHClient Soundpack Version: "..GetVariable("version")..".")
 <alias name="UpdateSoundPackFiles" script="packUpdate" match="^spupdate$"
   enabled="y" group="updater" omit_from_command_history="y" omit_from_log="y"
   regexp="y" omit_from_output="y" ignore_case="y" sequence="100"> </alias>
+<alias name="ToggleSoundpackDebug" match="^spdebug$" enabled="y" group="debug"
+  omit_from_command_history="y" omit_from_log="y" regexp="y" omit_from_output="y"
+  ignore_case="y" send_to="12" sequence="100">
+  <send>ToggleSoundpackDebug()</send></alias>
 </aliases>
 <script><![CDATA[
 require("prometheus.main")
