@@ -22,47 +22,47 @@ function Devices_YouPressALargeButtonOn(name, line, wildcards)
   CurrentGlobalSound = PlayGlobalSound("General/Devices/ButtonPush.ogg")
 end
 
+-- Pressing buttons: what comes after "a button" in the line decides the sound. Checked
+-- from top to bottom; the first entry that fits is played. Anything not listed plays the
+-- plain button push. (See common.lua for what each field means.)
+BUTTON_SOUNDS = {
+  { any = { "to stop ongoing harvest", "on top of" }, sound = "General/Devices/ButtonPush" },
+  { has = "chair with", sounds = {
+      { has = "leaning it back", sound = "General/Misc/Chair1" },
+      { has = "leaning it forward", sound = "General/Misc/Chair2" },
+      { has = "ing it", sound = "General/Misc/Chair3" },
+    } },
+  { has = "laser power supplier", sound = "Ground/PowerSupplierButton", combat = true },
+  { has = "underwater scanner", sound = "General/PearlDiving/Scanning" },
+  { has = "capacity weapon safe", sounds = {
+      { has = "open", sound = "General/Misc/SafeOpen" },
+      { has = "close", sound = "General/Misc/SafeClose" },
+    } },
+  { has = "on a nearby console and study the data displayed on its screen", sound = "Starship/Computer/Display" },
+  { has = "viewscreen", sounds = {
+      { has = "enabling", sound = "General/Devices/Activate" },
+      { has = "disabling", sound = "General/Devices/Deactivate" },
+    } },
+  -- The shower: its running sound replaces whatever room sound is playing.
+  { has = "water begins to spray", play = function(text)
+      CurrentGlobalSound = PlayGlobalSound("General/Devices/ButtonPush.ogg")
+      StopSound(CurrentRoomSound)
+      CurrentRoomSound = PlayRoomSound("Misc/Shower.ogg")
+    end },
+  { has = "causing the spray of water to stop", play = function(text)
+      CurrentGlobalSound = PlayGlobalSound("General/Devices/ButtonPush.ogg")
+      StopSound(CurrentRoomSound)
+      CurrentGlobalSound = PlayGlobalSound("General/Misc/ShowerEnd.ogg")
+    end },
+  { has = "pouring from a spout", sound = "General/Devices/ButtonPush", also = { sound = "General/Misc/Pour" } },
+}
+
 -- * press*a button*.
+-- wildcards: 3 = what comes after "a button"
 function Devices_PressAButton(name, line, wildcards)
-  if (string.match(wildcards[3], "to stop ongoing harvest") or string.match(wildcards[3], "on top of")) then
-    CurrentGlobalSound = PlayGlobalSound("General/Devices/ButtonPush.ogg")
-  elseif (string.match(wildcards[3], "chair with")) then
-    if (string.match(wildcards[3], "leaning it back")) then
-      CurrentGlobalSound = PlayGlobalSound("General/Misc/Chair1.ogg")
-    elseif (string.match(wildcards[3], "leaning it forward")) then
-      CurrentGlobalSound = PlayGlobalSound("General/Misc/Chair2.ogg")
-    elseif (string.match(wildcards[3], "ing it")) then
-      CurrentGlobalSound = PlayGlobalSound("General/Misc/Chair3.ogg")
-    end
-  elseif (string.match(wildcards[3], "laser power supplier")) then
-    CurrentCombatSound = PlayCombatSound("Ground/PowerSupplierButton.ogg")
-  elseif (string.match(wildcards[3], "underwater scanner")) then
-    CurrentGlobalSound = PlayGlobalSound("General/PearlDiving/Scanning.ogg")
-  elseif (string.match(wildcards[3], "capacity weapon safe")) then
-    if (string.match(wildcards[3], "open")) then
-      CurrentGlobalSound = PlayGlobalSound("General/Misc/SafeOpen.ogg")
-    elseif (string.match(wildcards[3], "close")) then
-      CurrentGlobalSound = PlayGlobalSound("General/Misc/SafeClose.ogg")
-    end
-  elseif (string.match(wildcards[3], "on a nearby console and study the data displayed on its screen")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Display.ogg")
-  elseif (string.match(wildcards[3], "viewscreen")) then
-    if (string.match(wildcards[3], "enabling")) then
-      CurrentGlobalSound = PlayGlobalSound("General/Devices/Activate.ogg")
-    elseif (string.match(wildcards[3], "disabling")) then
-      CurrentGlobalSound = PlayGlobalSound("General/Devices/Deactivate.ogg")
-    end
-  elseif (string.match(wildcards[3], "water begins to spray")) then
-    CurrentGlobalSound = PlayGlobalSound("General/Devices/ButtonPush.ogg")
-    StopSound(CurrentRoomSound)
-    CurrentRoomSound = PlayRoomSound("Misc/Shower.ogg")
-  elseif (string.match(wildcards[3], "causing the spray of water to stop")) then
-    CurrentGlobalSound = PlayGlobalSound("General/Devices/ButtonPush.ogg")
-    StopSound(CurrentRoomSound)
-    CurrentGlobalSound = PlayGlobalSound("General/Misc/ShowerEnd.ogg")
-  elseif (string.match(wildcards[3], "pouring from a spout")) then
-    CurrentGlobalSound = PlayGlobalSound("General/Devices/ButtonPush.ogg")
-    CurrentGlobalSound = PlayGlobalSound("General/Misc/Pour.ogg")
+  local entry = FindSoundEntry(BUTTON_SOUNDS, wildcards[3])
+  if entry then
+    PlaySoundEntry(entry, wildcards[3])
   else
     CurrentGlobalSound = PlayGlobalSound("General/Devices/ButtonPush.ogg")
   end

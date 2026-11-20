@@ -16,6 +16,8 @@
 --   combat     play it as a combat sound (combat volume and on/off setting)
 --   also       a second sound to play straight after, written the same way
 --   play       instead of sound: a function(text) that decides what to play
+--   sounds     instead of sound: a smaller list to look the same text up in; the first
+--              entry there that fits is played (nothing, if none fits)
 
 local function as_list(v)
   if type(v) == "table" then
@@ -80,6 +82,13 @@ end
 function PlaySoundEntry(entry, text)
   if entry.play then
     entry.play(text)
+    return
+  end
+  if entry.sounds then
+    local found = FindSoundEntry(entry.sounds, text)
+    if found then
+      PlaySoundEntry(found, text)
+    end
     return
   end
   PlaySoundSpec(entry)
