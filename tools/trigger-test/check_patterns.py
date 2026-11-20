@@ -19,7 +19,7 @@ import sys
 def hyphen_works_by_luck(pat):
     """True if the pattern with its "x-" removed finds the same words anyway, roughly:
     the character before the hyphen can be skipped (X-Loritan -> Loritan)."""
-    return bool(re.fullmatch(r"[A-Z]-\w+", pat))
+    return bool(re.fullmatch(r"[A-Za-z]-[^-]+", pat))
 
 
 def main():

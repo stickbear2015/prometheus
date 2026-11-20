@@ -325,7 +325,7 @@ function Combat_Fire(name, line, wildcards)
       CurrentCombatSound = PlayCombatSound("Ground/PyrianFireBreath.ogg")
     end
   end
-  if (string.match(wildcards[2], "low-level")) then
+  if (string.match(wildcards[2], "low%-level")) then  -- "%-" is a plain hyphen
     if (string.match(wildcards[1], "You")) then
       CurrentCombatSound = PlayCombatSound("Ground/Lasers/LaserLowLevel.ogg")
     else
