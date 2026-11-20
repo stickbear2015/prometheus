@@ -21,8 +21,8 @@ FILL = "Someone"
 
 def lua_literal_to_text(s):
     """Turn a Lua pattern literal into plain text (drop % escapes and anchors)."""
-    s = s.replace("\\-", "-")
-    s = re.sub(r"%(.)", r"\1", s)
+    s = re.sub(r"\\(.)", r"\1", s)   # Lua string escapes such as \- or \.
+    s = re.sub(r"%(.)", r"\1", s)    # Lua pattern escapes such as %-
     return s.strip("^$")
 
 
