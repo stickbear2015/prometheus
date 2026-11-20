@@ -932,11 +932,6 @@ function General_YouCanGoThatWay(name, line, wildcards)
   CurrentGlobalSound = PlayGlobalSound("General/Misc/CantGo"..math.random(1, 5)..".ogg")
 end
 
--- You hear somebody trying to enter the ship.
-function General_YouHearSomebodyTryingToEnter2(name, line, wildcards)
-  CurrentGlobalSound = PlayGlobalSound("General/Misc/CantGo"..math.random(1, 5)..".ogg")
-end
-
 -- You clip * to * weapon belt with * clips.
 function General_YouClipToWeaponBeltWith(name, line, wildcards)
   CurrentGlobalSound = PlayGlobalSound("General/Misc/Belt1.ogg")

@@ -61,7 +61,7 @@ end
 -- The ship rocks slightly as planetary lasers impact the hull from *
 function Combat_TheShipRocksSlightlyAsPlanetary(name, line, wildcards)
   CurrentCombatSound = PlayCombatSound("Space/YouHit"..math.random(1, 9)..".ogg", math.random(-100, 100))
-  CurrentCombatSound = PlayCombatSound("Space/YouHit"..math.random(1, 9)..".ogg", math-random(-100, 100))
+  CurrentCombatSound = PlayCombatSound("Space/YouHit"..math.random(1, 9)..".ogg", math.random(-100, 100))
   CurrentCombatSound = PlayCombatSound("Space/Reflectors"..math.random(1, 3)..".ogg", math.random(-100, 100))
 end
 
