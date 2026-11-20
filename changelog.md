@@ -28,6 +28,9 @@
 * adds the spdebug command, which shows the hidden soundpack messages the game sends, to help track down sound problems. type it again to hide them. [#44](https://github.com/stickbear2015/prometheus/issues/44)
 * channel messages that mention wearing, donning, strapping or removing something no longer play the clothing sound, and now play their channel sound and go into the channel history as they should. [#44](https://github.com/stickbear2015/prometheus/issues/44)
 * asks and exclaims said in a room, by you or anyone else, now go into the conversations buffer like says do. [#44](https://github.com/stickbear2015/prometheus/issues/44)
+* the wear and unwear sounds now only play when you or someone else actually puts something on or takes it off, not for room and item descriptions, inventories, help text, speech, or messages such as you can't wear any more on your feet. [#44](https://github.com/stickbear2015/prometheus/issues/44)
+* translator announcements now put the whole message in the all buffer, not just who said it. [#44](https://github.com/stickbear2015/prometheus/issues/44)
+* channel messages that mention saying something no longer lose their channel sound and channel history. [#44](https://github.com/stickbear2015/prometheus/issues/44)
 
 ## Version 25.2.1
 * Hopefully fixed more broken stuff.
