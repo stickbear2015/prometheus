@@ -3,7 +3,10 @@
 -- Each one receives the trigger's name, the whole line, and the wildcards
 -- (the parts of the line the trigger's * or (...) matched).
 
--- ^(.*) (says|say)(.*?)\: (.*)$
+-- ^([^\[].*) (says|say|asks|ask|exclaims|exclaim)(.*?)\: (.*)$
+-- (Lines starting with "[" are channel messages; they're left to the channel trigger.)
+-- Speech (say, ask, exclaim) goes into the Conversations buffer: the whole line with
+-- accents on, or just "<name> <verb>: <message>" with them off.
 function Gags_SaysSay(name, line, wildcards)
   if (ConfigTable.Settings.Accents == 1) then
     AddToHistory("Conversations", line)
