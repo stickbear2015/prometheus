@@ -12,6 +12,7 @@ It never touches MUSHclient or plays a sound. Python matches lines against trigg
 - `run.py`: records a run, or compares two runs.
 - `corpus.txt`: the test lines, made from the original plugin (1,516 lines). Keep it fixed during the cleanup, so old and new are tested on the same lines.
 - `baseline.txt`: what the original plugin did with those lines. This is what the cleaned-up pack is compared against.
+- `real_corpus.py`: picks real example lines for each trigger from a game log (a few distinct lines per trigger, plus lines containing each text a trigger's code checks for). **Its output contains other players' names and chat, so it goes in `temp-logs/` (git-ignored) and is never committed**, along with its recordings.
 
 ## Use
 
@@ -21,6 +22,15 @@ From this folder:
 python -I run.py record ../../prometheus/worlds/plugins/Prometheus.xml ../../prometheus corpus.txt new.txt
 python -I run.py compare baseline.txt new.txt
 ```
+
+With the real-log corpus (local only):
+
+```
+python -I real_corpus.py ../../prometheus/worlds/plugins/Prometheus.xml ../../temp-logs/Prometheus.txt ../../temp-logs/real-corpus.txt
+python -I run.py record ../../prometheus/worlds/plugins/Prometheus.xml ../../prometheus ../../temp-logs/real-corpus.txt ../../temp-logs/real-baseline.txt
+```
+
+Make `real-corpus.txt` and `real-baseline.txt` once, from the original plugin, then compare later recordings against `real-baseline.txt`.
 
 `compare` lists every test line whose results differ, and the count. Differences that are deliberate bug fixes must be listed in the pull request.
 
@@ -32,7 +42,7 @@ LuaJIT is expected at `C:\Users\spopp\AppData\Local\Programs\LuaJIT\bin\luajit.e
 - Settings start at their defaults from `core/config.lua` for every line, plus any setting the line flips.
 - Unknown string escapes such as `\.` are treated as real Lua 5.1 does (the backslash is dropped). LuaJIT on its own would refuse them.
 - Trigger order: by sequence, then file order. **To check**: whether MUSHclient orders triggers with the same sequence differently. It doesn't affect old-versus-new comparisons as long as both use the same rule, but it does affect which triggers can never fire.
-- Test lines are made up from the trigger patterns, so they're not real game text. Real game logs would make a better corpus later.
+- `corpus.txt` is made up from the trigger patterns. The real-log corpus (`temp-logs/real-corpus.txt`, local only) adds real game text from Kendal's log (9 million lines, 2022 onwards). Run both before and after each change. Lines hidden by the pack (omitted from output) aren't in a log, so the made-up corpus still matters.
 
 ## Findings from the original plugin (2026-11-20)
 
