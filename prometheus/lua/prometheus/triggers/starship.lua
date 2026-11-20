@@ -106,7 +106,7 @@ function Starship_AZa(name, line, wildcards)
           if (string.match(wildcards[1], "spacebear")) then
             CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Spacebear.ogg")
           end
-        elseif (string.match(wildcards[2], "Ppowering down due to lack of charge")) then
+        elseif (string.match(wildcards[2], "Powering down due to lack of charge")) then
           CurrentGlobalSound = PlayGlobalSound("Starship/Computer/LowCharge"..math.random(1, 2)..".ogg")
         elseif (string.match(wildcards[2], "Shutting down due to low power conditions")) then
           CurrentGlobalSound = PlayGlobalSound("Starship/Computer/LowCharge"..math.random(1, 2)..".ogg")

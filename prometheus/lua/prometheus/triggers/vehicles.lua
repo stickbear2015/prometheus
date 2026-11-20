@@ -21,21 +21,11 @@ end
 
 -- * unlock*the door leading *.
 function Vehicles_UnlockTheDoorLeading(name, line, wildcards)
-  CurrentGlobalSound = PlayGlobalSound("Vehicle/Lock.ogg")
-end
-
--- * unlock*the door leading *.
-function Vehicles_UnlockTheDoorLeading2(name, line, wildcards)
   CurrentGlobalSound = PlayGlobalSound("Vehicle/Unlock.ogg")
 end
 
 -- * unlock*the vehicle.
 function Vehicles_UnlockTheVehicle(name, line, wildcards)
-  CurrentGlobalSound = PlayGlobalSound("Vehicle/Unlock.ogg")
-end
-
--- * lock*the door leading *.
-function Vehicles_LockTheDoorLeading2(name, line, wildcards)
   CurrentGlobalSound = PlayGlobalSound("Vehicle/Unlock.ogg")
 end
 
