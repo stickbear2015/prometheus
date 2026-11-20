@@ -160,7 +160,7 @@ end
 function Combat_TheShipVibratesMildlyAsTorpedoes(name, line, wildcards)
   panning = math.random(-100, 100)
   CurrentCombatSound = PlayCombatSound("Space/TorpedoFire.ogg", panning)
-  CurrentCombatSound = PlayCombatSound("Space/Torpedo"..math.random(1, 3)..".ogg", panning)
+  CurrentCombatSound = PlayCombatSound("Space/Torpedoes"..math.random(1, 3)..".ogg", panning)
 end
 
 -- * has launched * at *!
