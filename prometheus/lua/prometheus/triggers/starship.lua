@@ -1405,11 +1405,6 @@ function Starship_BeginTappingCommandsIntoConsole(name, line, wildcards)
   CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Keyboard"..math.random(1, 7)..".ogg")
 end
 
--- * examine*a * console.
-function Starship_ExamineAConsole(name, line, wildcards)
-  CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Keyboard"..math.random(1, 7)..".ogg")
-end
-
 -- You tap a 'MINERAL' icon on a status console.
 function Starship_YouTapAMineralIconOn(name, line, wildcards)
   CurrentGlobalSound = PlayGlobalSound("Starship/Computer/MiniKeyboard.ogg")
@@ -1711,11 +1706,6 @@ end
 -- The ship shakes, pouring more power into *.
 function Starship_TheShipShakesPouringMorePower(name, line, wildcards)
   CurrentGlobalSound = PlayGlobalSound("Starship/Misc/Background5.ogg")
-end
-
--- The viewscreen is filled with brilliant white light as Relic * explodes!
-function Starship_TheViewscreenIsFilledWithBrilliant(name, line, wildcards)
-  CurrentGlobalSound = PlayGlobalSound("Starship/Misc/RelicExploding"..math.random(1, 2)..".ogg")
 end
 
 -- Coordinates: (*)

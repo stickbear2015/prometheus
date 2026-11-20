@@ -33,11 +33,6 @@ function Activities_YouPutIntoContainer(name, line, wildcards)
   CurrentGlobalSound = PlayGlobalSound("General/Archaeology/Container.ogg")
 end
 
--- You place * in * sifting bucket*.
-function Activities_YouPlaceInSiftingBucket(name, line, wildcards)
-  CurrentGlobalSound = PlayGlobalSound("General/Archaeology/Container.ogg")
-end
-
 -- Through the window, you watch a starship probe remove a section of hull with its industrial-strength drill and saw attachments, just large enough for it to enter the ship.
 function Activities_ThroughTheWindowYouWatchA(name, line, wildcards)
   CurrentGlobalSound = PlayGlobalSound("Starship/Derelicts/ProbeDrill.ogg")

@@ -51,13 +51,6 @@
 
 <trigger
   enabled="y"
-  match="You place * in * sifting bucket*."
-  sequence="100"
-  script="Activities_YouPlaceInSiftingBucket"
-></trigger>
-
-<trigger
-  enabled="y"
   match="Through the window, you watch a starship probe remove a section of hull with its industrial-strength drill and saw attachments, just large enough for it to enter the ship."
   omit_from_output="y"
   sequence="100"
