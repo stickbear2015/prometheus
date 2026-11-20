@@ -14,7 +14,7 @@ end
 
 -- ^(.*) translator announces(.*?)\, "(.*)"$
 function Gags_TranslatorAnnounces(name, line, wildcards)
-  AddToHistory("Conversations", line, wildcards[1] .. " " .. wildcards[2] .. ": ")
+  AddToHistory("Conversations", line, wildcards[1] .. " " .. wildcards[2] .. ": " .. wildcards[3])
 end
 
 -- You pull*sifting net out of the water, empty.
