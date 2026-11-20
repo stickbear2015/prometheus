@@ -286,7 +286,7 @@ INFO_SOUNDS = {
 -- bottom; the first entry whose channel (and message, if given) fits is used.
 --   channel / channel_lower   text to look for in the channel's name (lower: lowercased)
 --   message                   text that must also be in the message
---   sounds                    a list to look the message up in (see above)
+--   sounds                    a list to look the message up in (see above and common.lua)
 --   sound, versions, also     a sound to play, as in common.lua
 CHANNEL_SOUNDS = {
   -- "%-" is a plain hyphen ("-" on its own is special in Lua patterns).
@@ -330,14 +330,7 @@ function Comms_ChannelMessage(name, line, wildcards)
       and (not entry.channel_lower or string.match(lower_channel, entry.channel_lower))
       and (not entry.message or string.match(message, entry.message))
     if fits then
-      if entry.sounds then
-        local found = FindSoundEntry(entry.sounds, message)
-        if found then
-          PlaySoundEntry(found, message)
-        end
-      else
-        PlaySoundEntry(entry, message)
-      end
+      PlaySoundEntry(entry, message)
       return
     end
   end
