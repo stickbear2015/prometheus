@@ -10,6 +10,7 @@
 * drastically reduces the sounds directory size by killing all unnecessary silence at the beginning  and end of files. note: this may have caused other undesirable issues with sounds, these edge cases will be fixed in a future version. [#36](https://github.com/stickbear2015/prometheus/issues/36)
 * replaces locked on you sound, for those that have announcement of enemy locks enabled. [#40](https://github.com/stickbear2015/prometheus/issues/40)
 * modernizes the pack, so things are easier to find, and update. [#44](https://github.com/stickbear2015/prometheus/issues/44)
+* fixes some sounds not playing, especially when quote marks were present. [#44](https://github.com/stickbear2015/prometheus/issues/44)
 
 ## Version 25.2.1
 * Hopefully fixed more broken stuff.
