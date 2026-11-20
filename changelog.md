@@ -11,6 +11,13 @@
 * replaces locked on you sound, for those that have announcement of enemy locks enabled. [#40](https://github.com/stickbear2015/prometheus/issues/40)
 * modernizes the pack, so things are easier to find, and update. [#44](https://github.com/stickbear2015/prometheus/issues/44)
 * fixes some sounds not playing, especially when quote marks were present. [#44](https://github.com/stickbear2015/prometheus/issues/44)
+* fixes the lock and unlock sounds for vehicle doors being mixed up. [#44](https://github.com/stickbear2015/prometheus/issues/44)
+* fixes the low charge sound not playing when a mining vehicle powers down. [#44](https://github.com/stickbear2015/prometheus/issues/44)
+* fixes the planetary laser impact sounds stopping after the first sound. [#44](https://github.com/stickbear2015/prometheus/issues/44)
+* the command input blocked message is no longer hidden, and now plays a sound. [#44](https://github.com/stickbear2015/prometheus/issues/44)
+* distant weapon fire now has a sound. [#44](https://github.com/stickbear2015/prometheus/issues/44)
+* the garage, sector scan, laser supplier, and relic explosion messages now play their own sounds instead of a more general one. [#44](https://github.com/stickbear2015/prometheus/issues/44)
+* fixes several sounds that never played because the pack looked for them in the wrong place, including torpedo hits, the stargate exit beep, pyrian chitter, device activation, reflector hits, space power startup, and the lift. [#44](https://github.com/stickbear2015/prometheus/issues/44)
 
 ## Version 25.2.1
 * Hopefully fixed more broken stuff.
