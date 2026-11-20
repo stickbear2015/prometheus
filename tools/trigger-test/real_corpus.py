@@ -1,6 +1,6 @@
 """Pick real example lines from a MUSHclient game log, for realistic tests.
 
-    python -I real_corpus.py <plugin.xml> <game log> <out corpus>
+    python -I real_corpus.py <plugin.xml> <out corpus> <game log> [more game logs...]
 
 For each trigger it keeps a handful of distinct real lines that fire it, plus
 lines containing each text the trigger's code checks for, so the many branches
@@ -23,8 +23,16 @@ PER_TRIGGER = 8      # distinct lines kept for each trigger
 PER_LITERAL = 3      # lines kept for each text a trigger's code checks for
 
 
+def open_all(paths):
+    """Open each log in turn, closing it before the next."""
+    for path in paths:
+        with open(path, encoding="latin-1", errors="replace") as fh:
+            yield fh
+
+
 def main():
-    plugin, log_path, out_path = sys.argv[1:4]
+    plugin, out_path = sys.argv[1:3]
+    log_paths = sys.argv[3:]
     triggers = mushtrig.load_triggers(plugin)
     order = mushtrig.ordered(triggers)
     lits = {t.index: [(n, l.lower()) for n, ls in literals_for_wildcards(t.send).items() for l in ls if l.strip()]
@@ -47,7 +55,7 @@ def main():
     kept_lit = {}    # (trigger index, wildcard, literal) -> list of lines
     rows = []
     n = 0
-    with open(log_path, encoding="latin-1", errors="replace") as fh:
+    for fh in open_all(log_paths):
         for raw in fh:
             n += 1
             line = raw.rstrip("\r\n")
