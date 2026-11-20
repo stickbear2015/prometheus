@@ -286,8 +286,7 @@ COMPUTER_ANNOUNCEMENTS = {
   { has_lower = "powering down due to lack of charge", sound = "Starship/Computer/LowCharge", versions = 2 },
   { has_lower = "charge running critical", sound = "Starship/Computer/LowCharge", versions = 2 },
   { has_lower = "hit on", sound = "Space/OtherHit", versions = 4, combat = true },
-  -- KNOWN BUG, kept for now: this looks in the lowercased line for a capital W, so it never matches.
-  { has_lower = "Weapon fire blocked by shields", sound = "Space/FireReflected", combat = true },
+  { has_lower = "weapon fire blocked by shields", sound = "Space/FireReflected", combat = true },
   { has_lower = "grenade firing complete", sound = "Ground/GrenadeExplode", combat = true },
   { has_lower = "computer piping", play = function(text)
       if string.match(text, "enabled") then
