@@ -26,6 +26,10 @@ MUSHclient soundpack for Prometheus: The Eternal Wars. Shane's repo (`stickbear2
 - Players' existing settings must keep working after an update.
 - Testing: LuaJIT (Lua 5.1 compatible) is installed at `C:\Users\spopp\AppData\Local\Programs\LuaJIT\bin\luajit.exe` (installed 2026-11-20 for the cleanup's test tool).
 
+## Cleanup branch rule (Shane, 2026-11-20)
+
+**Nothing from the cleanup goes into `dev` (no merge, no pull request merge, no commits on `dev`) unless Shane explicitly says so.** All cleanup work stays on `cleanup/tidy-pack`. Opening a draft pull request for review is fine only if Shane asks for one.
+
 ## Current work
 
 - **Cleanup** (issue #44, branch `cleanup/tidy-pack`, started 2026-11-20): build a test tool that compares old and new triggers on sample lines; move trigger logic from `Prometheus.xml` into Lua modules by area; pass wildcards as values instead of pasting `%1` into code; replace if/elseif chains with lookup tables; fix small bugs and list them. Shane is guiding.
