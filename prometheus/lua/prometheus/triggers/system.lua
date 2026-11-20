@@ -45,78 +45,93 @@ function System_RegisterSoundpackOldVersion(name, line, wildcards)
   end
 end
 
--- ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
-function System_SoundpackSocialChannelRoomFemaleMale(name, line, wildcards)
-  if (ConfigTable.Settings.SocialSounds == 1) then
-    if (string.match(wildcards[3], "pyrianSay")) then
-      if (string.match(wildcards[1], "room")) then
-        CurrentGlobalSound = PlayGlobalSound("Socials/PyrianChitter"..math.random(1, 10)..".ogg")
-      end
-    elseif (string.match(wildcards[3], "belch")) then
-      CurrentGlobalSound = PlayGlobalSound("Socials/Belch"..math.random(1, 3)..".ogg")
-    elseif (string.match(wildcards[3], "burp")) then
-      CurrentGlobalSound = PlayGlobalSound("Socials/Burp"..math.random(1, 5)..".ogg")
-    elseif (string.match(wildcards[3], "cackle")) then
-      CurrentGlobalSound = PlayGlobalSound("Socials/Cackle_" .. wildcards[2] .. ".ogg")
-    elseif (string.match(wildcards[3], "cheer")) then
-      CurrentGlobalSound = PlayGlobalSound(("Socials/Cheer_" .. wildcards[2])..math.random(1, 3)..".ogg")
-    elseif (string.match(wildcards[3], "collapse")) then
-      CurrentGlobalSound = PlayGlobalSound("General/Socials/Collapse"..math.random(1, 3)..".ogg")
-    elseif (string.match(wildcards[3], "cough")) then
-      CurrentGlobalSound = PlayGlobalSound("Socials/Cough_" .. wildcards[2] .. ".ogg")
-    elseif (string.match(wildcards[3], "cry")) then
-      CurrentGlobalSound = PlayGlobalSound("Socials/Cry"..math.random(1, 4)..".ogg")
-    elseif (string.match(wildcards[3], "fart")) then
-      CurrentGlobalSound = PlayGlobalSound("Socials/Fart"..math.random(1, 5)..".ogg")
-    elseif (string.match(wildcards[3], "gag")) then
-      CurrentGlobalSound = PlayGlobalSound("Socials/Gag"..math.random(1, 2)..".ogg")
-    elseif (string.match(wildcards[2], "female") and string.match(wildcards[3], "giggle")) then
-      CurrentGlobalSound = PlayGlobalSound("Socials/Giggle"..math.random(1, 7)..".ogg")
-    elseif (string.match(wildcards[1], "room") and string.match(wildcards[3], "hmm")) then
-      CurrentGlobalSound = PlayGlobalSound("Socials/Say.ogg")
-    elseif (string.match(wildcards[3], "kick")) then
-      if (string.match(wildcards[1], "room")) then
-        CurrentCombatSound = PlayCombatSound(("Ground/Fight/" .. wildcards[2] .. "/")..math.random(1, 20)..".ogg")
-      end
-      CurrentGlobalSound = PlayGlobalSound("Socials/Kick"..math.random(1, 9)..".ogg")
-    elseif (string.match(wildcards[3], "kiss")) then
-      CurrentGlobalSound = PlayGlobalSound("Socials/Kiss"..math.random(1, 2)..".ogg")
-    elseif (string.match(wildcards[3], "laugh")) then
-      CurrentGlobalSound = PlayGlobalSound(("Socials/Laugh_" .. wildcards[2])..math.random(1, 2)..".ogg")
-    elseif (string.match(wildcards[3], "lol")) then
-      CurrentGlobalSound = PlayGlobalSound(("Socials/Lol_" .. wildcards[2])..math.random(1, 2)..".ogg")
-    elseif (string.match(wildcards[3], "moan")) then
-      CurrentGlobalSound = PlayGlobalSound(("Socials/Moan_" .. wildcards[2])..math.random(1, 2)..".ogg")
-    elseif (string.match(wildcards[3], "punch")) then
-      if (string.match(wildcards[1], "room")) then
-        CurrentCombatSound = PlayCombatSound(("Ground/Fight/" .. wildcards[2] .. "/")..math.random(1, 20)..".ogg")
-      end
-      CurrentGlobalSound = PlayGlobalSound("Socials/Punch"..math.random(1, 10)..".ogg")
-    elseif (string.match(wildcards[3], "rofl")) then
-      CurrentGlobalSound = PlayGlobalSound(("Socials/Rofl_" .. wildcards[2])..math.random(1, 2)..".ogg")
-    elseif (string.match(wildcards[3], "scream")) then
-      CurrentGlobalSound = PlayGlobalSound("Socials/Scream_" .. wildcards[2] .. ".ogg")
-    elseif (string.match(wildcards[3], "sigh")) then
-      CurrentGlobalSound = PlayGlobalSound(("Socials/Sigh_" .. wildcards[2])..math.random(1, 2)..".ogg")
-    elseif (string.match(wildcards[3], "slap")) then
-      CurrentGlobalSound = PlayGlobalSound("Socials/Slap"..math.random(1, 5)..".ogg")
-    elseif (string.match(wildcards[3], "snap")) then
-      CurrentGlobalSound = PlayGlobalSound("Socials/Snap"..math.random(1, 3)..".ogg")
-    elseif (string.match(wildcards[3], "tackle")) then
-      CurrentGlobalSound = PlayGlobalSound("Socials/Tackle"..math.random(1, 5)..".ogg")
-    elseif (string.match(wildcards[3], "whistle")) then
-      CurrentGlobalSound = PlayGlobalSound("Socials/Whistle"..math.random(1, 6)..".ogg")
-    elseif (string.match(wildcards[3], "yawn")) then
-      CurrentGlobalSound = PlayGlobalSound("Socials/Yawn_" .. wildcards[2] .. ".ogg")
-    else
-      CurrentGlobalSound = PlayGlobalSound("Socials/" .. wildcards[3] .. ".ogg")
+-- Social sounds, checked from top to bottom; the first entry whose word appears in the
+-- social's name is played. (So "cheer" is found before "kiss", and "cheekkiss" plays the
+-- kiss sound.) Each entry:
+--   word      a word to look for in the social's name
+--   sound     the sound file, without the number and .ogg
+--   versions  how many numbered versions there are (one is picked at random);
+--             leave it out when there's just one file
+-- and optionally:
+--   gendered     the character's gender goes on the end of the name (Cheer_female1.ogg)
+--   fight        in the room, also play a random fight sound (Combat/Ground/Fight/<gender>/1-20)
+--   female_only  only counts for female characters; otherwise keep looking
+--   room_only    only counts in the room; otherwise keep looking
+--   room_sound   counts everywhere, but only makes a sound in the room
+-- A social with no entry plays Socials/<social name>.ogg, if that file exists.
+SOCIAL_SOUNDS = {
+  { word = "pyrianSay", sound = "Socials/PyrianChitter", versions = 10, room_sound = true },
+  { word = "belch", sound = "Socials/Belch", versions = 3 },
+  { word = "burp", sound = "Socials/Burp", versions = 5 },
+  { word = "cackle", sound = "Socials/Cackle_", gendered = true },
+  { word = "cheer", sound = "Socials/Cheer_", gendered = true, versions = 3 },
+  { word = "collapse", sound = "General/Socials/Collapse", versions = 3 },
+  { word = "cough", sound = "Socials/Cough_", gendered = true },
+  { word = "cry", sound = "Socials/Cry", versions = 4 },
+  { word = "fart", sound = "Socials/Fart", versions = 5 },
+  { word = "gag", sound = "Socials/Gag", versions = 2 },
+  { word = "giggle", sound = "Socials/Giggle", versions = 7, female_only = true },
+  { word = "hmm", sound = "Socials/Say", room_only = true },
+  { word = "kick", sound = "Socials/Kick", versions = 9, fight = true },
+  { word = "kiss", sound = "Socials/Kiss", versions = 2 },
+  { word = "laugh", sound = "Socials/Laugh_", gendered = true, versions = 2 },
+  { word = "lol", sound = "Socials/Lol_", gendered = true, versions = 2 },
+  { word = "moan", sound = "Socials/Moan_", gendered = true, versions = 2 },
+  { word = "punch", sound = "Socials/Punch", versions = 10, fight = true },
+  { word = "rofl", sound = "Socials/Rofl_", gendered = true, versions = 2 },
+  { word = "scream", sound = "Socials/Scream_", gendered = true },
+  { word = "sigh", sound = "Socials/Sigh_", gendered = true, versions = 2 },
+  { word = "slap", sound = "Socials/Slap", versions = 5 },
+  { word = "snap", sound = "Socials/Snap", versions = 3 },
+  { word = "tackle", sound = "Socials/Tackle", versions = 5 },
+  { word = "whistle", sound = "Socials/Whistle", versions = 6 },
+  { word = "yawn", sound = "Socials/Yawn_", gendered = true },
+}
+
+-- The first entry in SOCIAL_SOUNDS that fits this social, or nil.
+local function find_social_sound(social, where, gender)
+  for _, entry in ipairs(SOCIAL_SOUNDS) do
+    if string.match(social, entry.word)
+        and not (entry.female_only and not string.match(gender, "female"))
+        and not (entry.room_only and not string.match(where, "room")) then
+      return entry
     end
-    if (string.match(wildcards[1], "room")) then
-      if (string.match(wildcards[3], "stand")) then
-        CurrentGlobalSound = PlayGlobalSound("Socials/Stand.ogg")
-      elseif (string.match(wildcards[3], "sit")) then
-        CurrentGlobalSound = PlayGlobalSound("Socials/Sit.ogg")
-      end
+  end
+  return nil
+end
+
+-- ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+-- wildcards: 1 = where (channel or room), 2 = gender, 3 = the social's name
+function System_SoundpackSocialChannelRoomFemaleMale(name, line, wildcards)
+  if ConfigTable.Settings.SocialSounds ~= 1 then
+    return
+  end
+  local where, gender, social = wildcards[1], wildcards[2], wildcards[3]
+  local in_room = string.match(where, "room")
+  local entry = find_social_sound(social, where, gender)
+
+  if entry == nil then
+    CurrentGlobalSound = PlayGlobalSound("Socials/" .. social .. ".ogg")
+  elseif not entry.room_sound or in_room then
+    if entry.fight and in_room then
+      CurrentCombatSound = PlayCombatSound("Ground/Fight/" .. gender .. "/" .. math.random(1, 20) .. ".ogg")
+    end
+    local file = entry.sound
+    if entry.gendered then
+      file = file .. gender
+    end
+    if entry.versions then
+      file = file .. math.random(1, entry.versions)
+    end
+    CurrentGlobalSound = PlayGlobalSound(file .. ".ogg")
+  end
+
+  -- Standing up and sitting down in the room also get a sound.
+  if in_room then
+    if string.match(social, "stand") then
+      CurrentGlobalSound = PlayGlobalSound("Socials/Stand.ogg")
+    elseif string.match(social, "sit") then
+      CurrentGlobalSound = PlayGlobalSound("Socials/Sit.ogg")
     end
   end
 end
