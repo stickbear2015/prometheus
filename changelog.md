@@ -27,6 +27,7 @@
 * firing a low-level laser now plays its own sound as well as the pistol sound. [#44](https://github.com/stickbear2015/prometheus/issues/44)
 * adds the spdebug command, which shows the hidden soundpack messages the game sends, to help track down sound problems. type it again to hide them. [#44](https://github.com/stickbear2015/prometheus/issues/44)
 * channel messages that mention wearing, donning, strapping or removing something no longer play the clothing sound, and now play their channel sound and go into the channel history as they should. [#44](https://github.com/stickbear2015/prometheus/issues/44)
+* asks and exclaims said in a room, by you or anyone else, now go into the conversations buffer like says do. [#44](https://github.com/stickbear2015/prometheus/issues/44)
 
 ## Version 25.2.1
 * Hopefully fixed more broken stuff.
