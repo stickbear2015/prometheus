@@ -102,7 +102,7 @@
 <trigger
   enabled="y"
   match="You press a button."
-  sequence="100"
+  sequence="90"
   script="Devices_YouPressAButton"
 ></trigger>
 
