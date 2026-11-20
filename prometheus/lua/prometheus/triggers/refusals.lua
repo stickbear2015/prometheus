@@ -371,14 +371,17 @@ end
 
 -- ^([^\[].*) (remove|removes|unstrap|unstraps) (.*?)\.$
 -- (Lines starting with "[" are channel messages; they're left to the channel trigger.)
+-- "You will have to remove ... first" plays the cancel sound; taking something out of
+-- somewhere ("... from ...") plays nothing; otherwise the unwear sound plays, but only when
+-- it's you or a character doing it, not a description or help text mentioning "remove".
 function Refusals_RemoveRemovesUnstrapUnstraps(name, line, wildcards)
   if (string.match(wildcards[3], "your electronic gadgets first") or string.match(wildcards[3], "before")) then
     CurrentGlobalSound = PlayGlobalSound("General/Misc/Cancel.ogg")
   elseif (string.match(wildcards[3], "from")) then
     -- Do nothing as this should be ignored.
-  else
+  elseif IsYouOrCharacter(wildcards[1]) then
     CurrentGlobalSound = PlayGlobalSound("General/Misc/ItemUnwear.ogg")
-  end -- If.
+  end
 end
 
 -- The * banks are already full.

@@ -11,6 +11,33 @@ function AddToHistory(buffer, text, all_text)
   Execute("history_add " .. buffer .. "=" .. text)
 end
 
+-- Is this "You" or a character's name? A name is one to four capitalised words (O'Connell
+-- and hyphens are fine), optionally followed by "<colour> Designation", as in
+-- "Alex Smith blue Designation". Used where a trigger should only react to someone doing
+-- something, not to descriptions or speech that happen to contain the same word.
+function IsYouOrCharacter(text)
+  if text == "You" then
+    return true
+  end
+  local words = {}
+  for word in string.gmatch(text, "[^ ]+") do
+    words[#words + 1] = word
+  end
+  if #words >= 3 and words[#words] == "Designation" and string.match(words[#words - 1], "^%l+$") then
+    words[#words] = nil
+    words[#words] = nil
+  end
+  if #words < 1 or #words > 4 then
+    return false
+  end
+  for _, word in ipairs(words) do
+    if not string.match(word, "^%u[%a'%-]+$") then
+      return false
+    end
+  end
+  return true
+end
+
 -- Sound lists:
 --
 -- A sound list is a table of entries, checked from top to bottom. An entry says what
