@@ -152,20 +152,35 @@ def main():
     for src in sources:
         if not src.endswith(".lua"):
             continue
-        for n, ln in enumerate(open(src, encoding="latin-1"), start=1):
-            m = re.search(r'\bsound\s*=\s*"([^"]+)"', ln)
-            if not m or ln.lstrip().startswith("--"):
+        text = open(src, encoding="latin-1").read()
+        for n, ln in enumerate(text.split("\n"), start=1):
+            if ln.lstrip().startswith("--") or not re.search(r'\bsound\s*=\s*"', ln):
                 continue
-            names = [m.group(1)]
-            if re.search(r"\bgendered\s*=\s*true", ln):
-                names = [x + g for x in names for g in ("female", "male")]
-            v = re.search(r"\bversions\s*=\s*(\d+)", ln)
-            if v:
-                names = [x + str(i) for x in names for i in range(1, int(v.group(1)) + 1)]
-            for nm in names:
-                checked += 1
-                if (nm + ".ogg").lower() not in existing:
-                    missing.append(("%s:%d" % (os.path.relpath(src, pack), n), nm + ".ogg"))
+            # Each { ... } holding a sound is one sound spec; handle inner braces (also = { ... }) first.
+            groups, rest = [], ln
+            while True:
+                inner = re.search(r"\{([^{}]*)\}", rest)
+                if not inner:
+                    break
+                groups.append(inner.group(1))
+                rest = rest[:inner.start()] + "\0" + rest[inner.end():]
+            if not groups:
+                groups = [ln]  # an entry spread over several lines: use this line alone
+            for g in groups:
+                m = re.search(r'\bsound\s*=\s*"([^"]+)"', g)
+                if not m:
+                    continue
+                names = [m.group(1)]
+                if re.search(r"\bgendered\s*=\s*true", g):
+                    names = [x + gd for x in names for gd in ("female", "male")]
+                v = re.search(r"\bversions\s*=\s*(\d+)", g)
+                if v:
+                    names = [x + str(i) for x in names for i in range(1, int(v.group(1)) + 1)]
+                base = "Combat/" if re.search(r"\bcombat\s*=\s*true", g) else ""
+                for nm in names:
+                    checked += 1
+                    if (base + nm + ".ogg").lower() not in existing:
+                        missing.append(("%s:%d" % (os.path.relpath(src, pack), n), base + nm + ".ogg"))
     print("checked %d sound names; %d missing" % (checked, len(missing)))
     for where, p in missing:
         print("  MISSING %-45s played from %s" % (p, where))
