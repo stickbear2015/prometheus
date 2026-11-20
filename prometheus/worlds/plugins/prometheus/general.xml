@@ -1284,13 +1284,6 @@
 
 <trigger
   enabled="y"
-  match="You hear somebody trying to enter the ship."
-  sequence="100"
-  script="General_YouHearSomebodyTryingToEnter2"
-></trigger>
-
-<trigger
-  enabled="y"
   match="You clip * to * weapon belt with * clips."
   sequence="100"
   script="General_YouClipToWeaponBeltWith"
