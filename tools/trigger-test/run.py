@@ -59,6 +59,8 @@ def record(plugin, pack, corpus, results):
     includes = []
     for inc in re.findall(r'<include\s+name="([^"]+)"', plugin_text):
         path = os.path.join(os.path.dirname(plugin), inc)
+        if inc.lower().endswith(".xml"):
+            continue  # trigger files; read by mushtrig.load_triggers
         if os.path.exists(path):
             body = open(path, encoding="latin-1").read()
             m = re.search(r"<!\[CDATA\[(.*?)\]\]>", body, re.S)
@@ -113,6 +115,10 @@ def load_results(path):
             head.append(raw)
         elif raw.startswith("fire\t"):
             continue  # which trigger fired may change in the cleanup; what it does must not
+        elif raw.startswith(("runerror\t", "compileerror\t")):
+            # keep the error message, not where it happened (code moves during the cleanup)
+            kind, rest = raw.split("\t", 1)
+            cases[current].append(kind + "\t" + re.sub(r"^.*?:\d+: ", "", rest))
         else:
             cases[current].append(raw)
     return head, cases

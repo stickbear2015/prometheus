@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<!-- Space and ground combat. -->
+<!-- The Lua for these triggers is in lua/prometheus/triggers/combat.lua -->
+<muclient>
+<triggers>
+
+<trigger
+  enabled="y"
+  match="^An (X\-Loritan .+|alien creature) (kicks|punches) (you|.+) in (.+)\.$"
+  regexp="y"
+  ignore_case="y"
+  sequence="100"
+  script="Combat_AnLoritanAlienCreatureKicksPunches"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="X-Loritan * has begun to generate a field of unrecorded type."
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_LoritanHasBegunToGenerateA"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* has begun a power buildup of some kind."
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_HasBegunAPowerBuildupOf"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You take * in your * hand."
+  sequence="100"
+  script="Combat_YouTakeInYourHand"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You feel a slight vibration from the ship as it strengthens the shields around the ship."
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_YouFeelASlightVibrationFrom"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The ship lurches abruptly as super-heated shrapnel penetrates the hull."
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_TheShipLurchesAbruptlyAsSuper"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="A low whine emanates from the shields as they successfully repel incoming shrapnel."
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_ALowWhineEmanatesFromThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The plates around the hull orient themselves, deflecting the solar mass."
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_ThePlatesAroundTheHullOrient"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The starship shakes slightly as rebounded weapons fire impacts the hull."
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_TheStarshipShakesSlightlyAsRebounded"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The ship rocks slightly as planetary lasers impact the hull from *"
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_TheShipRocksSlightlyAsPlanetary"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The defense shields strengthen for a moment to block weapon fire."
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_TheDefenseShieldsStrengthenForA"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The ship shakes violently as a powerful laser beam is reflected back at it!"
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_TheShipShakesViolentlyAsA"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="This starship has been hit by *."
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_ThisStarshipHasBeenHitBy"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The ship shakes as if hit by something!"
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_TheShipShakesAsIfHit"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The ship shakes violently as a projectile comes in contact with it and explodes!"
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_TheShipShakesViolentlyAsA2"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The starship is hit by a massive energy beam!"
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_TheStarshipIsHitByA"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The ship shudders as it begins to explode. You are thrown into the wall with force you could never believe possible, and then you find yourself somewhere else."
+  sequence="100"
+  script="Combat_TheShipShuddersAsItBegins"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The reflection plates around the ship orient themselves, successfully throwing the beam away."
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_TheReflectionPlatesAroundTheShip"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear a gentle hum as the weapons power up."
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_YouHearAGentleHumAs"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="A loud klaxon sounds as red lights continue to flash overhead."
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_ALoudKlaxonSoundsAsRed"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The walls and ceiling continue to pulse a crimson color as loud klaxons scream their warnings."
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_TheWallsAndCeilingContinueTo"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Red alert lights come to life as the starship is attacked by an opponent."
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_RedAlertLightsComeToLife"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The walls and ceiling suddenly start glowing *"
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_TheWallsAndCeilingSuddenlyStart"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The interior lighting turns to pulsating yellow."
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_TheInteriorLightingTurnsToPulsating"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The overhead lights change to solid green."
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_TheOverheadLightsChangeToSolid"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The ship vibrates mildly as torpedoes are launched."
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_TheShipVibratesMildlyAsTorpedoes"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* has launched * at *!"
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_HasLaunchedAt"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The starship shakes and rattles as armor piercing shells are launched."
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_TheStarshipShakesAndRattlesAs"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear a thud as guided missiles are launched into space."
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_YouHearAThudAsGuided"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The ship shudders as the lasers are fired."
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_TheShipShuddersAsTheLasers"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The ship starts to vibrate as the long-range laser begins to draw energy."
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_TheShipStartsToVibrateAs"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* has fired at *."
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_HasFiredAt"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The vehicle shudders as *"
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_TheVehicleShuddersAs"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* has fired * at *"
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_HasFiredAt2"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* has a lock on this starship."
+  sequence="100"
+  script="Combat_HasALockOnThisStarship"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The ship lurches as the cutting beam destroys the shipwreck into millions of tiny pieces!"
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_TheShipLurchesAsTheCutting"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The ship suddenly lurches violently as something hits it!"
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_TheShipSuddenlyLurchesViolentlyAs"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="A compacted mass of energy slams into *"
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_ACompactedMassOfEnergySlams"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The viewscreen*switches to a pictograph of *."
+  sequence="100"
+  script="Combat_TheViewscreenSwitchesToAPictograph"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* has harmlessly discharged a massive energy beam into space."
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_HasHarmlesslyDischargedAMassiveEnergy"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear the death cry of *!"
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_YouHearTheDeathCryOf"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The corpse of * falls onto * with a thud."
+  sequence="100"
+  script="Combat_TheCorpseOfFallsOntoWith"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="A corpse of*rapidly decays into dust."
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_ACorpseOfRapidlyDecaysInto"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The corpse of * slowly decays."
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_TheCorpseOfSlowlyDecays"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* take*aim at * with *!"
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_TakeAimAtWith"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* fire*!"
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_Fire"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The beam dissolves into the air!"
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_TheBeamDissolvesIntoTheAir"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="^(Your|.*\'s) shield turns the beam away\!$"
+  regexp="y"
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_YourShieldTurnsTheBeamAway"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear distant weapon fire!"
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_YouHearDistantWeaponFire"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The beam hits *!"
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_TheBeamHits"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* walks in from *."
+  sequence="100"
+  script="Combat_WalksInFrom"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* falls to * with a sickening thud!"
+  sequence="100"
+  script="Combat_FallsToWithASickeningThud"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The laser beam flies around, hitting everyone in its path!"
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_TheLaserBeamFliesAroundHitting"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The beam flies *!"
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_TheBeamFlies"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You insert a laser energy pack into a laser supplier, pressing a button."
+  sequence="100"
+  script="Combat_YouInsertALaserEnergyPack"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The energy discharges with a whoosh, and * discard* laser energy pack."
+  sequence="100"
+  script="Combat_TheEnergyDischargesWithAWhoosh"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* exits * dropship."
+  sequence="100"
+  script="Combat_ExitsDropship"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The viewscreen is filled with brilliant white light as * explodes!"
+  sequence="100"
+  script="Combat_TheViewscreenIsFilledWithBrilliant"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You plug * Armor Piercing Weapon Chip into the weapons board, uploading its firmware to the computers."
+  sequence="100"
+  script="Combat_YouPlugArmorPiercingWeaponChip"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The ship rocks slightly as its hull is impacted by parts of an exploding starship!"
+  sequence="100"
+  script="Combat_TheShipRocksSlightlyAsIts"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The ship shakes slightly when something impacts the hull."
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_TheShipShakesSlightlyWhenSomething"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You feel a jolt as the ship crashes into a small, previously unseen asteroid."
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_YouFeelAJoltAsThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The engines roar for a short moment, something blocking the ship's movement."
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_TheEnginesRoarForAShort"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The ship clips a derelict as it moves through the sector."
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_TheShipClipsADerelictAs"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear the screaming of metal as the ship flies straight into an unseen shipwreck."
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_YouHearTheScreamingOfMetal"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The defense shields strengthen for a moment to mitigate damage."
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_TheDefenseShieldsStrengthenForA2"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* clutch*in * hand."
+  sequence="100"
+  script="Combat_ClutchInHand"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* tuck*away *"
+  sequence="100"
+  script="Combat_TuckAway"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* yank*from *."
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_YankFrom"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* attempt*to disarm * but fail*"
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_AttemptToDisarmButFail"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* attempt*to disarm * but * hold*onto * weapon with a titan grip!"
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_AttemptToDisarmButHoldOnto"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="^(.*?) (is|are) here\.$"
+  regexp="y"
+  sequence="100"
+  script="Combat_IsAreHere"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You feel the ship shudder slightly as something impacts the hull."
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_YouFeelTheShipShudderSlightly"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The shields strengthen, absorbing most of the impact."
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_TheShieldsStrengthenAbsorbingMostOf"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The ship rocks violently as something impacts the hull!"
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_TheShipRocksViolentlyAsSomething"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You feel the ship jolt suddenly as something impacts the hull."
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_YouFeelTheShipJoltSuddenly"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The starship jolts to the side as armor piercing shells smack into it by *."
+  omit_from_output="y"
+  sequence="100"
+  script="Combat_TheStarshipJoltsToTheSide"
+></trigger>
+
+</triggers>
+</muclient>

@@ -3,6 +3,7 @@
 Used by the trigger test tool (see README.md in this folder). Nothing here
 changes the pack; it only reads plugin files.
 """
+import os
 import re
 import xml.etree.ElementTree as ET
 
@@ -45,20 +46,30 @@ def wildcard_to_regex(match):
     return "^" + "(.*?)".join(parts) + "$"
 
 
-def load_triggers(path):
-    """Return the plugin's triggers in file order."""
+def trigger_files(path):
+    """The plugin file, then any .xml files it pulls in with <include> (MUSHclient looks
+    for those relative to the plugin's folder)."""
+    files = [path]
     text = open(path, encoding="latin-1").read()
-    # MUSHclient files are XML; parse just the <triggers> section.
-    m = re.search(r"<triggers>.*?</triggers>", text, re.S)
-    section = m.group(0) if m else "<triggers/>"
-    # MUSHclient tolerates a missing space between attributes (attr="x"next="y"); XML doesn't.
-    section = re.sub(r'"(?=[A-Za-z_]+=")', '" ', section)
-    root = ET.fromstring(section)
+    for inc in re.findall(r'<include\s+name="([^"]+\.xml)"', text):
+        files.append(os.path.join(os.path.dirname(path), inc))
+    return files
+
+
+def load_triggers(path):
+    """Return the plugin's triggers, including those in included .xml files."""
     triggers = []
-    for i, el in enumerate(root.findall("trigger")):
-        send_el = el.find("send")
-        send = send_el.text if send_el is not None and send_el.text else ""
-        triggers.append(Trigger(i, dict(el.attrib), send))
+    for f in trigger_files(path):
+        text = open(f, encoding="latin-1").read()
+        # MUSHclient files are XML; parse just the <triggers> sections.
+        for section in re.findall(r"<triggers>.*?</triggers>", text, re.S):
+            # MUSHclient tolerates a missing space between attributes (attr="x"next="y"); XML doesn't.
+            section = re.sub(r'"(?=[A-Za-z_]+=")', '" ', section)
+            root = ET.fromstring(section)
+            for el in root.findall("trigger"):
+                send_el = el.find("send")
+                send = send_el.text if send_el is not None and send_el.text else ""
+                triggers.append(Trigger(len(triggers), dict(el.attrib), send))
     return triggers
 
 
