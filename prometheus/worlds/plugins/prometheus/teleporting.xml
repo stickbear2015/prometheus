@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<!-- Teleporters, wormholes, and people beaming in and out. -->
+<!-- The Lua for these triggers is in lua/prometheus/triggers/teleporting.lua -->
+<muclient>
+<triggers>
+
+<trigger
+  enabled="y"
+  match="Suddenly, you feel a pulling sensation behind your shoulderblades, and you are thrown into the swirling depths of a wormhole."
+  omit_from_output="y"
+  sequence="100"
+  script="Teleporting_SuddenlyYouFeelAPullingSensation"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="A blinding electric blue beam of light appears. After a few seconds, it disappears, leaving nothing in its wake."
+  sequence="100"
+  script="Teleporting_ABlindingElectricBlueBeamOf"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* is surrounded by an electric blue light and vanishes."
+  sequence="100"
+  script="Teleporting_IsSurroundedByAnElectricBlue"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You feel like you are about to go blind. The lights dance in front of your eyes, like a fireworks display."
+  omit_from_log="y"
+  sequence="100"
+  script="Teleporting_YouFeelLikeYouAreAbout"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You become aware of a thundering rumble very close to your ear."
+  omit_from_output="y"
+  sequence="100"
+  script="Teleporting_YouBecomeAwareOfAThundering"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The hum from under the floor increases markedly."
+  sequence="100"
+  script="Teleporting_TheHumFromUnderTheFloor"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear the hum from beneath your feet increase markedly."
+  sequence="100"
+  script="Teleporting_YouHearTheHumFromBeneath"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* signal*the technician to begin the transport process."
+  sequence="100"
+  script="Teleporting_SignalTheTechnicianToBeginThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* encased in a fluctuating electric blue light and after a brief moment * disappear*into the great unknown."
+  sequence="100"
+  script="Teleporting_EncasedInAFluctuatingElectricBlue"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* notice*a flash of light before * and after a brief second * appear*in a slight daze."
+  sequence="100"
+  script="Teleporting_NoticeAFlashOfLightBefore"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The electric blue beam fades, and you notice that your surroundings have changed."
+  sequence="100"
+  script="Teleporting_TheElectricBlueBeamFadesAnd"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The electric blue beam fades, leaving nothing in its wake."
+  sequence="100"
+  script="Teleporting_TheElectricBlueBeamFadesLeaving"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The sparks multiply, until * are hidden from sight in an electric blue beam of light."
+  omit_from_output="y"
+  sequence="100"
+  script="Teleporting_TheSparksMultiplyUntilAreHidden"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The sparks continue multiplying, until you are encased in an electric blue beam of light."
+  omit_from_output="y"
+  sequence="100"
+  script="Teleporting_TheSparksContinueMultiplyingUntilYou"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Sparks start issuing from the disc. As time passes, the sparks become more and more numerous."
+  omit_from_output="y"
+  sequence="100"
+  script="Teleporting_SparksStartIssuingFromTheDisc"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Sparks start shooting up from the disc you're standing on. As time passes, the sparks become more and more numerous."
+  omit_from_output="y"
+  sequence="100"
+  script="Teleporting_SparksStartShootingUpFromThe"
+></trigger>
+
+</triggers>
+</muclient>

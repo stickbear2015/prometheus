@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<!-- Games: winning, losing and extra points. -->
+<!-- The Lua for these triggers is in lua/prometheus/triggers/games.lua -->
+<muclient>
+<triggers>
+
+<trigger
+  enabled="y"
+  match="You win!"
+  sequence="100"
+  script="Games_YouWin"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You lose!"
+  sequence="100"
+  script="Games_YouLose"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="It seems that your guess was right!"
+  sequence="100"
+  script="Games_ItSeemsThatYourGuessWas"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Sorry, but your guess was wrong. *"
+  omit_from_output="y"
+  sequence="100"
+  script="Games_SorryButYourGuessWasWrong"
+></trigger>
+
+</triggers>
+</muclient>
