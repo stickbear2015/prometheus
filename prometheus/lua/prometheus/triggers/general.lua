@@ -577,11 +577,6 @@ function General_ToManualPilotFirst(name, line, wildcards)
   CurrentGlobalSound = PlayGlobalSound("General/Misc/Cancel.ogg")
 end
 
--- The starship is already moving.
-function General_TheStarshipIsAlreadyMoving(name, line, wildcards)
-  CurrentGlobalSound = PlayGlobalSound("General/Misc/Cancel.ogg")
-end
-
 -- Hyperspace jumps cannot be aborted.
 function General_HyperspaceJumpsCannotBeAborted(name, line, wildcards)
   CurrentGlobalSound = PlayGlobalSound("General/Misc/Cancel.ogg")
@@ -888,11 +883,6 @@ end
 -- * portable oven indicates that the recharging process is complete.
 function General_PortableOvenIndicatesThatTheRecharging(name, line, wildcards)
   CurrentGlobalSound = PlayGlobalSound("General/Misc/OvenBeep.ogg")
-end
-
--- * examine*the menu of available items.
-function General_ExamineTheMenuOfAvailableItems(name, line, wildcards)
-  CurrentGlobalSound = PlayGlobalSound("General/Misc/Menu.ogg")
 end
 
 -- The ship slows down and you feel the sharp jolt as the ship touches down on the landing pad.

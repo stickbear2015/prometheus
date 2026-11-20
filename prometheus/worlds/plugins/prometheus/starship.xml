@@ -1372,13 +1372,6 @@
 
 <trigger
   enabled="y"
-  match="* examine*a * console."
-  sequence="100"
-  script="Starship_ExamineAConsole"
-></trigger>
-
-<trigger
-  enabled="y"
   match="You tap a 'MINERAL' icon on a status console."
   omit_from_output="y"
   sequence="100"
@@ -1783,13 +1776,6 @@
   omit_from_output="y"
   sequence="100"
   script="Starship_TheShipShakesPouringMorePower"
-></trigger>
-
-<trigger
-  enabled="y"
-  match="The viewscreen is filled with brilliant white light as Relic * explodes!"
-  sequence="100"
-  script="Starship_TheViewscreenIsFilledWithBrilliant"
 ></trigger>
 
 <trigger
