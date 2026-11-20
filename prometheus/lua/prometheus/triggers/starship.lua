@@ -1117,8 +1117,7 @@ VEHICLE_SCREEN_SOUNDS = {
   { has_lower = "recharging", sound = "Starship/Misc/BatteryRecharging" },
   { has = "recharged", sound = "General/Misc/Beep", versions = 5 },
   { has_lower = "charge running low", sound = "Starship/Computer/LowCharge", versions = 2 },
-  -- KNOWN BUG, kept for now: this looks in the lowercased line for a capital E, so it never matches.
-  { has_lower = "Excavation cannot be started due to the vehicle running low on charge", sound = "Starship/Computer/LowCharge", versions = 2 },
+  { has_lower = "excavation cannot be started due to the vehicle running low on charge", sound = "Starship/Computer/LowCharge", versions = 2 },
   { has_lower = "stored minerals", sound = "Starship/computer/Display" },
   { has_lower = "storage full", sound = "Starship/Misc/StorageFull" },
   { has_lower = "storage capacity full", sound = "Starship/Misc/StorageFull" },
