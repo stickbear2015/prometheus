@@ -1198,7 +1198,7 @@
 <trigger
   enabled="y"
   match="You hear a loud clang as robotic arms seize the ship and transport it to the garage."
-  sequence="100"
+  sequence="90"
   script="Starship_YouHearALoudClangAs2"
 ></trigger>
 
@@ -1489,7 +1489,7 @@
 <trigger
   enabled="y"
   match="* examine*a sector scan."
-  sequence="100"
+  sequence="90"
   script="Starship_ExamineASectorScan"
 ></trigger>
 
