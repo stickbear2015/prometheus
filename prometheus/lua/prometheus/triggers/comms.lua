@@ -289,8 +289,8 @@ INFO_SOUNDS = {
 --   sounds                    a list to look the message up in (see above)
 --   sound, versions, also     a sound to play, as in common.lua
 CHANNEL_SOUNDS = {
-  -- KNOWN BUG, kept for now: "-" is special in Lua patterns, so "pre-recorded" never matches.
-  { channel = "OOC", message = "A pre-recorded message", sound = "General/Hosts/Announcement" },
+  -- "%-" is a plain hyphen ("-" on its own is special in Lua patterns).
+  { channel = "OOC", message = "A pre%-recorded message", sound = "General/Hosts/Announcement" },
   { channel = "General", message = "UTF Communications Officer", sound = "General/Misc/Alarm" },
   { channel_lower = "info", sounds = INFO_SOUNDS },
   { channel_lower = "flight control", sounds = FLIGHT_CONTROL_SOUNDS },
