@@ -3,6 +3,27 @@
 -- Each one receives the trigger's name, the whole line, and the wildcards
 -- (the parts of the line the trigger's * or (...) matched).
 
+-- Debug display of the hidden soundpack messages the game sends (#$#soundpack ...).
+-- Switched on and off with the spdebug command. Off at every start, never saved.
+SoundpackDebug = false
+
+function ToggleSoundpackDebug()
+  SoundpackDebug = not SoundpackDebug
+  CurrentGlobalSound = PlayGlobalSound("General/Misc/Switch.ogg")
+  if SoundpackDebug then
+    Execute("tts_interrupt Showing soundpack messages.")
+  else
+    Execute("tts_interrupt Hiding soundpack messages.")
+  end
+end
+
+-- ^\#\$\#soundpack(.*)$  (runs before every other trigger, and lets them run too)
+function System_ShowSoundpackMessage(name, line, wildcards)
+  if SoundpackDebug then
+    Note("[soundpack message] " .. line)
+  end
+end
+
 -- ^\#\$\#mcp version\: 2\.1 to\: 2\.1$
 function System_McpVersionTo(name, line, wildcards)
   Execute("#$#register_soundpack Mush Soundpack | "..GetVariable("version"))
