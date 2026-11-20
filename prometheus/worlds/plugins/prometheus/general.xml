@@ -1057,14 +1057,6 @@
 
 <trigger
   enabled="y"
-  match="With a final jolt, the starship slows as it exits the Worldway."
-  omit_from_output="y"
-  sequence="100"
-  script="General_WithAFinalJoltTheStarship"
-></trigger>
-
-<trigger
-  enabled="y"
   match="Would you like to drive out of the ship's vehicle hatch*"
   sequence="100"
   script="General_WouldYouLikeToDriveOut"
