@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<!-- Messages from the game itself: prompts, reports, announcements, news, hosts and logging in. -->
+<!-- The Lua for these triggers is in lua/prometheus/triggers/game.lua -->
+<muclient>
+<triggers>
+
+<trigger
+  enabled="y"
+  match="[Input]"
+  ignore_case="n"
+  sequence="100"
+  script="Game_Input"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Username:"
+  sequence="100"
+  script="Game_Username"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Password:"
+  sequence="100"
+  script="Game_Password"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Report complete."
+  sequence="100"
+  script="Game_ReportComplete"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Suggestion sent."
+  sequence="100"
+  script="Game_SuggestionSent"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Your application has been submitted."
+  sequence="100"
+  script="Game_YourApplicationHasBeenSubmitted"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Thank you for your answer!"
+  sequence="100"
+  script="Game_ThankYouForYourAnswer"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Application submitted. Randomly check your hypermail to see your application status."
+  sequence="100"
+  script="Game_ApplicationSubmittedRandomlyCheckYourHypermail"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Announcement from *: *"
+  sequence="100"
+  script="Game_AnnouncementFrom"
+></trigger>
+
+<trigger
+  enabled="y"
+  match='[SUB-ANNOUNCEMENT | *]: "*"'
+  sequence="100"
+  script="Game_SubAnnouncement"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="[CHANGES] *: *"
+  omit_from_output="n"
+  sequence="100"
+  script="Game_Changes"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="^Attention\! (.*)$"
+  regexp="y"
+  sequence="100"
+  script="Game_Attention"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="^\*\*\* Notice from (.*) \*\*\*$"
+  regexp="y"
+  sequence="100"
+  script="Game_NoticeFrom"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* suddenly step*from the background."
+  sequence="100"
+  script="Game_SuddenlyStepFromTheBackground"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* suddenly seem*to disappear into the background."
+  sequence="100"
+  script="Game_SuddenlySeemToDisappearIntoThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="^\*\*\* The server will be shut down by .* in .*$"
+  regexp="y"
+  sequence="100"
+  script="Game_TheServerWillBeShutDown"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Number of new announcements since last visit: *"
+  sequence="100"
+  script="Game_NumberOfNewAnnouncementsSinceLast"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* WELCOME BACK TO PROMETHEUS! *"
+  omit_from_output="y"
+  sequence="100"
+  script="Game_WelcomeBackToPrometheus"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* Redirecting connection to this port... *"
+  omit_from_output="y"
+  sequence="100"
+  script="Game_RedirectingConnectionToThisPort"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You ask * if * would like to establish a private communications link."
+  sequence="100"
+  script="Game_YouAskIfWouldLikeTo"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Your vote has been recorded. Thank you for voting!"
+  sequence="100"
+  script="Game_YourVoteHasBeenRecordedThank"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The polls are now closed."
+  sequence="100"
+  script="Game_ThePollsAreNowClosed"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="*[Enter *yes* or *no*]"
+  sequence="100"
+  script="Game_EnterYesOrNo"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="[Type *, *]"
+  sequence="100"
+  script="Game_Type"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="There are more than one matches to that argument in your links. Please be more specific."
+  sequence="100"
+  script="Game_ThereAreMoreThanOneMatches"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Would you like to drive out of the ship's vehicle hatch*"
+  sequence="100"
+  script="Game_WouldYouLikeToDriveOut"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="How many artifacts do you wish to retrieve? Maximum is *. Hit enter to retrieve all of them."
+  sequence="100"
+  script="Game_HowManyArtifactsDoYouWish"
+></trigger>
+
+<trigger
+  enabled="y"
+  match='* shout*, "*"'
+  omit_from_output="y"
+  sequence="100"
+  script="Game_Shout"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Thanks for playing!"
+  sequence="100"
+  script="Game_ThanksForPlaying"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Oooooooo, look! You get some extra points! Yaaaayy!"
+  omit_from_output="y"
+  sequence="100"
+  script="Game_OoooooooLookYouGetSomeExtra"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Thank you for assisting!"
+  sequence="100"
+  script="Game_ThankYouForAssisting"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Enter new security access code:"
+  sequence="100"
+  script="Game_EnterNewSecurityAccessCode"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Confirm new security access code:"
+  sequence="100"
+  script="Game_ConfirmNewSecurityAccessCode"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Enter old security access code for removal confirmation:"
+  sequence="100"
+  script="Game_EnterOldSecurityAccessCodeFor"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Enter the new username:"
+  sequence="100"
+  script="Game_EnterTheNewUsername"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Enter your current password:"
+  sequence="100"
+  script="Game_EnterYourCurrentPassword"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Enter your new password:"
+  sequence="100"
+  script="Game_EnterYourNewPassword"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Re-enter your new password:"
+  sequence="100"
+  script="Game_ReEnterYourNewPassword"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Username changed from * to *"
+  sequence="100"
+  script="Game_UsernameChangedFromTo"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Password changed successfully."
+  sequence="100"
+  script="Game_PasswordChangedSuccessfully"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* floats into the room and comes to a stop in your hand."
+  sequence="100"
+  script="Game_FloatsIntoTheRoomAndComes"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* flies into the room and lands in your arms."
+  sequence="100"
+  script="Game_FliesIntoTheRoomAndLands"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Letter successfully sent to *"
+  sequence="100"
+  script="Game_LetterSuccessfullySentTo"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* depart*to modify the game."
+  sequence="100"
+  script="Game_DepartToModifyTheGame"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* finish*modifying the game."
+  sequence="100"
+  script="Game_FinishModifyingTheGame"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="A tradesman certificate has been created for you and can be found in your inventory."
+  sequence="100"
+  script="Game_ATradesmanCertificateHasBeenCreated"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Only * until Christmas!"
+  sequence="100"
+  script="Game_OnlyUntilChristmas"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="*You were awarded * points for the resolution of report *"
+  omit_from_output="y"
+  sequence="100"
+  script="Game_YouWereAwardedPointsForThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="*You have unread personal announcements, displaying them now.*"
+  omit_from_output="y"
+  sequence="100"
+  script="Game_YouHaveUnreadPersonalAnnouncementsDisplaying"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* personally wants to thank you for playing Prometheus! As a token of appreciation, have this!"
+  sequence="100"
+  script="Game_PersonallyWantsToThankYouFor"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You step into a brilliant beam of light which whisks you back to your home."
+  sequence="100"
+  script="Game_YouStepIntoABrilliantBeam"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="^Verb programmed\.$"
+  regexp="y"
+  sequence="100"
+  script="Game_VerbProgrammed"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="^Verb not programmed\.$"
+  regexp="y"
+  sequence="100"
+  script="Game_VerbNotProgrammed"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Event mode is now enabled, which means that OOC channel access is unavailable. We hope you enjoy the event!"
+  sequence="100"
+  script="Game_EventModeIsNowEnabledWhich"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="*Type a destination name. Leave blank for a full menu, cancel with '@abort' or 'A'*"
+  sequence="100"
+  script="Game_TypeADestinationNameLeaveBlank"
+></trigger>
+
+</triggers>
+</muclient>

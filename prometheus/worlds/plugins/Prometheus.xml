@@ -17,6 +17,15 @@ requires="5.00"></plugin>
 <include name="prometheus/vehicles.xml"/>
 <include name="prometheus/socials.xml"/>
 <include name="prometheus/general.xml"/>
+<include name="prometheus/games.xml"/>
+<include name="prometheus/items.xml"/>
+<include name="prometheus/health.xml"/>
+<include name="prometheus/groups.xml"/>
+<include name="prometheus/money.xml"/>
+<include name="prometheus/teleporting.xml"/>
+<include name="prometheus/household.xml"/>
+<include name="prometheus/game.xml"/>
+<include name="prometheus/refusals.xml"/>
 <include name="prometheus/gags.xml"/>
 
 <aliases>
@@ -176,6 +185,15 @@ require("prometheus.triggers.devices")
 require("prometheus.triggers.vehicles")
 require("prometheus.triggers.socials")
 require("prometheus.triggers.general")
+require("prometheus.triggers.games")
+require("prometheus.triggers.items")
+require("prometheus.triggers.health")
+require("prometheus.triggers.groups")
+require("prometheus.triggers.money")
+require("prometheus.triggers.teleporting")
+require("prometheus.triggers.household")
+require("prometheus.triggers.game")
+require("prometheus.triggers.refusals")
 require("prometheus.triggers.gags")
 
 guns = {"pistol", "rifle", "shotgun", "sniper"}

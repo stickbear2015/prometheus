@@ -21,3 +21,11 @@ python -I split_plugin.py original-Prometheus.xml ../../prometheus
 ```
 
 Checked with `tools/trigger-test` on 2026-11-20: on the made-up lines, the only differences are the translator trigger now working (it used to crash on quote marks) and one made-up line full of backslashes that no real game line contains. On the real game lines, all 99 differences are lines that used to crash on quote marks and now play their sounds.
+
+## split_general.py (step 3)
+
+Splits the large "general" area (268 triggers) into areas by subject: refusals, game, household, teleporting, money, groups, health, items and games, leaving 56 in general. Each trigger is sorted by the first sound its function plays, moved with its function, and its function renamed to match (General_Wait... becomes Refusals_Wait...). Nothing inside any function changes. Checked with tools/trigger-test on 2026-11-20: no difference on any made-up or real game line.
+
+## edit_triggers.py
+
+Helpers for small hand-made edits to the trigger files: remove a trigger and its function, set an attribute such as the sequence, or replace text inside a function. Each edit finds triggers by their exact match text and stops if it doesn't find exactly one.
