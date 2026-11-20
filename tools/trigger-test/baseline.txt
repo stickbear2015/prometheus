@@ -8029,3 +8029,684 @@ omit
 case	1516
 fire	ParseOOBMessages
 omit
+case	1517
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	10
+play	sounds/Socials/PyrianChitter1.ogg	0	0	20
+case	1518
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	10
+play	sounds/Socials/PyrianChitter1.ogg	0	0	20
+case	1519
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+case	1520
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+case	1521
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	3
+play	sounds/Socials/Belch1.ogg	0	0	20
+case	1522
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	3
+play	sounds/Socials/Belch1.ogg	0	0	20
+case	1523
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	3
+play	sounds/Socials/Belch1.ogg	0	0	20
+case	1524
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	3
+play	sounds/Socials/Belch1.ogg	0	0	20
+case	1525
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	5
+play	sounds/Socials/Burp1.ogg	0	0	20
+case	1526
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	5
+play	sounds/Socials/Burp1.ogg	0	0	20
+case	1527
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	5
+play	sounds/Socials/Burp1.ogg	0	0	20
+case	1528
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	5
+play	sounds/Socials/Burp1.ogg	0	0	20
+case	1529
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/Cackle_female.ogg	0	0	20
+case	1530
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/Cackle_male.ogg	0	0	20
+case	1531
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/Cackle_female.ogg	0	0	20
+case	1532
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/Cackle_male.ogg	0	0	20
+case	1533
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	3
+play	sounds/Socials/Cheer_female1.ogg	0	0	20
+case	1534
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	3
+play	sounds/Socials/Cheer_male1.ogg	0	0	20
+case	1535
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	3
+play	sounds/Socials/Cheer_female1.ogg	0	0	20
+case	1536
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	3
+play	sounds/Socials/Cheer_male1.ogg	0	0	20
+case	1537
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	3
+play	sounds/General/Socials/Collapse1.ogg	0	0	20
+case	1538
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	3
+play	sounds/General/Socials/Collapse1.ogg	0	0	20
+case	1539
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	3
+play	sounds/General/Socials/Collapse1.ogg	0	0	20
+case	1540
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	3
+play	sounds/General/Socials/Collapse1.ogg	0	0	20
+case	1541
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/Cough_female.ogg	0	0	20
+case	1542
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/Cough_male.ogg	0	0	20
+case	1543
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/Cough_female.ogg	0	0	20
+case	1544
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/Cough_male.ogg	0	0	20
+case	1545
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	4
+play	sounds/Socials/Cry1.ogg	0	0	20
+case	1546
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	4
+play	sounds/Socials/Cry1.ogg	0	0	20
+case	1547
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	4
+play	sounds/Socials/Cry1.ogg	0	0	20
+case	1548
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	4
+play	sounds/Socials/Cry1.ogg	0	0	20
+case	1549
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	5
+play	sounds/Socials/Fart1.ogg	0	0	20
+case	1550
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	5
+play	sounds/Socials/Fart1.ogg	0	0	20
+case	1551
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	5
+play	sounds/Socials/Fart1.ogg	0	0	20
+case	1552
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	5
+play	sounds/Socials/Fart1.ogg	0	0	20
+case	1553
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	2
+play	sounds/Socials/Gag1.ogg	0	0	20
+case	1554
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	2
+play	sounds/Socials/Gag1.ogg	0	0	20
+case	1555
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	2
+play	sounds/Socials/Gag1.ogg	0	0	20
+case	1556
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	2
+play	sounds/Socials/Gag1.ogg	0	0	20
+case	1557
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	7
+play	sounds/Socials/Giggle1.ogg	0	0	20
+case	1558
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/giggle.ogg	0	0	20
+case	1559
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	7
+play	sounds/Socials/Giggle1.ogg	0	0	20
+case	1560
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/giggle.ogg	0	0	20
+case	1561
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/Say.ogg	0	0	20
+case	1562
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/Say.ogg	0	0	20
+case	1563
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/hmm.ogg	0	0	20
+case	1564
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/hmm.ogg	0	0	20
+case	1565
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	20
+play	sounds/Combat/Ground/Fight/female/1.ogg	0	0	15
+random	1	9
+play	sounds/Socials/Kick1.ogg	0	0	20
+case	1566
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	20
+play	sounds/Combat/Ground/Fight/male/1.ogg	0	0	15
+random	1	9
+play	sounds/Socials/Kick1.ogg	0	0	20
+case	1567
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	9
+play	sounds/Socials/Kick1.ogg	0	0	20
+case	1568
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	9
+play	sounds/Socials/Kick1.ogg	0	0	20
+case	1569
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	2
+play	sounds/Socials/Kiss1.ogg	0	0	20
+case	1570
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	2
+play	sounds/Socials/Kiss1.ogg	0	0	20
+case	1571
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	2
+play	sounds/Socials/Kiss1.ogg	0	0	20
+case	1572
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	2
+play	sounds/Socials/Kiss1.ogg	0	0	20
+case	1573
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	2
+play	sounds/Socials/Laugh_female1.ogg	0	0	20
+case	1574
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	2
+play	sounds/Socials/Laugh_male1.ogg	0	0	20
+case	1575
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	2
+play	sounds/Socials/Laugh_female1.ogg	0	0	20
+case	1576
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	2
+play	sounds/Socials/Laugh_male1.ogg	0	0	20
+case	1577
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	2
+play	sounds/Socials/Lol_female1.ogg	0	0	20
+case	1578
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	2
+play	sounds/Socials/Lol_male1.ogg	0	0	20
+case	1579
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	2
+play	sounds/Socials/Lol_female1.ogg	0	0	20
+case	1580
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	2
+play	sounds/Socials/Lol_male1.ogg	0	0	20
+case	1581
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	2
+play	sounds/Socials/Moan_female1.ogg	0	0	20
+case	1582
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	2
+play	sounds/Socials/Moan_male1.ogg	0	0	20
+case	1583
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	2
+play	sounds/Socials/Moan_female1.ogg	0	0	20
+case	1584
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	2
+play	sounds/Socials/Moan_male1.ogg	0	0	20
+case	1585
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	20
+play	sounds/Combat/Ground/Fight/female/1.ogg	0	0	15
+random	1	10
+play	sounds/Socials/Punch1.ogg	0	0	20
+case	1586
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	20
+play	sounds/Combat/Ground/Fight/male/1.ogg	0	0	15
+random	1	10
+play	sounds/Socials/Punch1.ogg	0	0	20
+case	1587
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	10
+play	sounds/Socials/Punch1.ogg	0	0	20
+case	1588
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	10
+play	sounds/Socials/Punch1.ogg	0	0	20
+case	1589
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	2
+play	sounds/Socials/Rofl_female1.ogg	0	0	20
+case	1590
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	2
+play	sounds/Socials/Rofl_male1.ogg	0	0	20
+case	1591
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	2
+play	sounds/Socials/Rofl_female1.ogg	0	0	20
+case	1592
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	2
+play	sounds/Socials/Rofl_male1.ogg	0	0	20
+case	1593
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/Scream_female.ogg	0	0	20
+case	1594
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/Scream_male.ogg	0	0	20
+case	1595
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/Scream_female.ogg	0	0	20
+case	1596
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/Scream_male.ogg	0	0	20
+case	1597
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	2
+play	sounds/Socials/Sigh_female1.ogg	0	0	20
+case	1598
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	2
+play	sounds/Socials/Sigh_male1.ogg	0	0	20
+case	1599
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	2
+play	sounds/Socials/Sigh_female1.ogg	0	0	20
+case	1600
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	2
+play	sounds/Socials/Sigh_male1.ogg	0	0	20
+case	1601
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	5
+play	sounds/Socials/Slap1.ogg	0	0	20
+case	1602
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	5
+play	sounds/Socials/Slap1.ogg	0	0	20
+case	1603
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	5
+play	sounds/Socials/Slap1.ogg	0	0	20
+case	1604
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	5
+play	sounds/Socials/Slap1.ogg	0	0	20
+case	1605
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	3
+play	sounds/Socials/Snap1.ogg	0	0	20
+case	1606
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	3
+play	sounds/Socials/Snap1.ogg	0	0	20
+case	1607
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	3
+play	sounds/Socials/Snap1.ogg	0	0	20
+case	1608
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	3
+play	sounds/Socials/Snap1.ogg	0	0	20
+case	1609
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	5
+play	sounds/Socials/Tackle1.ogg	0	0	20
+case	1610
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	5
+play	sounds/Socials/Tackle1.ogg	0	0	20
+case	1611
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	5
+play	sounds/Socials/Tackle1.ogg	0	0	20
+case	1612
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	5
+play	sounds/Socials/Tackle1.ogg	0	0	20
+case	1613
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	6
+play	sounds/Socials/Whistle1.ogg	0	0	20
+case	1614
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	6
+play	sounds/Socials/Whistle1.ogg	0	0	20
+case	1615
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	6
+play	sounds/Socials/Whistle1.ogg	0	0	20
+case	1616
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	6
+play	sounds/Socials/Whistle1.ogg	0	0	20
+case	1617
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/Yawn_female.ogg	0	0	20
+case	1618
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/Yawn_male.ogg	0	0	20
+case	1619
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/Yawn_female.ogg	0	0	20
+case	1620
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/Yawn_male.ogg	0	0	20
+case	1621
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/wave.ogg	0	0	20
+case	1622
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/wave.ogg	0	0	20
+case	1623
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/wave.ogg	0	0	20
+case	1624
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/wave.ogg	0	0	20
+case	1625
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/nod.ogg	0	0	20
+case	1626
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/nod.ogg	0	0	20
+case	1627
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/nod.ogg	0	0	20
+case	1628
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/nod.ogg	0	0	20
+case	1629
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	2
+play	sounds/Socials/Kiss1.ogg	0	0	20
+case	1630
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	2
+play	sounds/Socials/Kiss1.ogg	0	0	20
+case	1631
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	2
+play	sounds/Socials/Kiss1.ogg	0	0	20
+case	1632
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	2
+play	sounds/Socials/Kiss1.ogg	0	0	20
+case	1633
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	4
+play	sounds/Socials/Cry1.ogg	0	0	20
+case	1634
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	4
+play	sounds/Socials/Cry1.ogg	0	0	20
+case	1635
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	4
+play	sounds/Socials/Cry1.ogg	0	0	20
+case	1636
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+random	1	4
+play	sounds/Socials/Cry1.ogg	0	0	20
+case	1637
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/stand.ogg	0	0	20
+play	sounds/Socials/Stand.ogg	0	0	20
+case	1638
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/stand.ogg	0	0	20
+play	sounds/Socials/Stand.ogg	0	0	20
+case	1639
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/stand.ogg	0	0	20
+case	1640
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/stand.ogg	0	0	20
+case	1641
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/sit.ogg	0	0	20
+play	sounds/Socials/Sit.ogg	0	0	20
+case	1642
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/sit.ogg	0	0	20
+play	sounds/Socials/Sit.ogg	0	0	20
+case	1643
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/sit.ogg	0	0	20
+case	1644
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/sit.ogg	0	0	20
+case	1645
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/standup.ogg	0	0	20
+play	sounds/Socials/Stand.ogg	0	0	20
+case	1646
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/standup.ogg	0	0	20
+play	sounds/Socials/Stand.ogg	0	0	20
+case	1647
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/standup.ogg	0	0	20
+case	1648
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/standup.ogg	0	0	20
+case	1649
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/situp.ogg	0	0	20
+play	sounds/Socials/Sit.ogg	0	0	20
+case	1650
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/situp.ogg	0	0	20
+play	sounds/Socials/Sit.ogg	0	0	20
+case	1651
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/situp.ogg	0	0	20
+case	1652
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/situp.ogg	0	0	20
+case	1653
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/chuckle.ogg	0	0	20
+case	1654
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/chuckle.ogg	0	0	20
+case	1655
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/chuckle.ogg	0	0	20
+case	1656
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/chuckle.ogg	0	0	20
+case	1657
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/hug.ogg	0	0	20
+case	1658
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/hug.ogg	0	0	20
+case	1659
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/hug.ogg	0	0	20
+case	1660
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
+play	sounds/Socials/hug.ogg	0	0	20
+case	1661
+fire	#6 ^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$
+omit
