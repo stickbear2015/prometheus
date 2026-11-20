@@ -1,0 +1,94 @@
+"""Read MUSHclient plugin triggers and match game lines the way MUSHclient does.
+
+Used by the trigger test tool (see README.md in this folder). Nothing here
+changes the pack; it only reads plugin files.
+"""
+import re
+import xml.etree.ElementTree as ET
+
+# MUSHclient's "send to" values that run the send text as script.
+SCRIPT_SEND_TO = {"12", "14"}
+
+
+class Trigger:
+    def __init__(self, index, attrs, send):
+        self.index = index  # position in the file
+        self.attrs = attrs
+        self.send = send
+        self.name = attrs.get("name", "")
+        self.match = attrs.get("match", "")
+        self.enabled = attrs.get("enabled", "n") == "y"
+        self.is_regexp = attrs.get("regexp", "n") == "y"
+        self.ignore_case = attrs.get("ignore_case", "n") == "y"
+        self.keep_evaluating = attrs.get("keep_evaluating", "n") == "y"
+        self.omit = attrs.get("omit_from_output", "n") == "y"
+        self.sequence = int(attrs.get("sequence", "100"))
+        self.send_to = attrs.get("send_to", "0")
+        self.script = attrs.get("script", "")
+        self.group = attrs.get("group", "")
+        flags = re.IGNORECASE if self.ignore_case else 0
+        pattern = self.match if self.is_regexp else wildcard_to_regex(self.match)
+        try:
+            self.regex = re.compile(pattern, flags)
+            self.error = None
+        except re.error as e:
+            self.regex = None
+            self.error = str(e)
+
+    def label(self):
+        return self.name or "#%d %s" % (self.index, self.match)
+
+
+def wildcard_to_regex(match):
+    """MUSHclient: '*' is a wildcard, everything else is literal, the whole line must match."""
+    parts = [re.escape(p) for p in match.split("*")]
+    return "^" + "(.*?)".join(parts) + "$"
+
+
+def load_triggers(path):
+    """Return the plugin's triggers in file order."""
+    text = open(path, encoding="latin-1").read()
+    # MUSHclient files are XML; parse just the <triggers> section.
+    m = re.search(r"<triggers>.*?</triggers>", text, re.S)
+    section = m.group(0) if m else "<triggers/>"
+    # MUSHclient tolerates a missing space between attributes (attr="x"next="y"); XML doesn't.
+    section = re.sub(r'"(?=[A-Za-z_]+=")', '" ', section)
+    root = ET.fromstring(section)
+    triggers = []
+    for i, el in enumerate(root.findall("trigger")):
+        send_el = el.find("send")
+        send = send_el.text if send_el is not None and send_el.text else ""
+        triggers.append(Trigger(i, dict(el.attrib), send))
+    return triggers
+
+
+def ordered(triggers):
+    """Evaluation order: by sequence, then file order (an assumption, used for old and new alike)."""
+    return sorted((t for t in triggers if t.enabled and t.regex), key=lambda t: (t.sequence, t.index))
+
+
+def substitute(send, m):
+    """Expand %0-%9 and %% in send text, exactly as MUSHclient does (no escaping)."""
+    def repl(x):
+        ch = x.group(1)
+        if ch == "%":
+            return "%"
+        n = int(ch)
+        try:
+            return m.group(n) or ""
+        except IndexError:
+            return ""
+    return re.sub(r"%([0-9%])", repl, send)
+
+
+def fire(triggers_in_order, line):
+    """Return the list of (trigger, match) that fire for one line, stopping like MUSHclient."""
+    fired = []
+    for t in triggers_in_order:
+        m = t.regex.search(line)
+        if not m:
+            continue
+        fired.append((t, m))
+        if not t.keep_evaluating:
+            break
+    return fired
