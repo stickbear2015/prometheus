@@ -71,7 +71,14 @@ world = setmetatable({}, { __index = function(_, k) return _G[k] end })
 -- Fake Audio plugin (normally LuaAudio, loaded through PPI).
 local next_id = 10
 Audio = {
-  play = function(file, loop, pan, vol) next_id = next_id + 1 emit("play", file, loop, pan, vol) return next_id end,
+  play = function(file, loop, pan, vol)
+    next_id = next_id + 1
+    -- record paths relative to the pack, so recordings don't depend on where the repo lives
+    local prefix = (pack:gsub("\\", "/")) .. "/"
+    if file:sub(1, #prefix):lower() == prefix:lower() then file = file:sub(#prefix + 1) end
+    emit("play", file, loop, pan, vol)
+    return next_id
+  end,
   stop = function(id) emit("stop") return 0 end,
   isPlaying = function() return 1 end,
   setVol = function(vol) emit("setvol", vol) return 0 end,
