@@ -17,7 +17,7 @@
 * the command input blocked message is no longer hidden, and now plays a sound. [#44](https://github.com/stickbear2015/prometheus/issues/44)
 * distant weapon fire now has a sound. [#44](https://github.com/stickbear2015/prometheus/issues/44)
 * the garage, sector scan, laser supplier, and relic explosion messages now play their own sounds instead of a more general one. [#44](https://github.com/stickbear2015/prometheus/issues/44)
-* fixes several sounds that never played because the pack looked for them in the wrong place, including torpedo hits, the stargate exit beep, pyrian chitter, device activation, reflector hits, space power startup, and the lift. [#44](https://github.com/stickbear2015/prometheus/issues/44)
+* fixes several sounds that never played because the pack looked for them in the wrong place, including the second torpedo sound when your ship launches torpedoes, the stargate exit beep, the chitter when someone types code into a translator, device activation, reflector hits, space power startup, and the lift. [#44](https://github.com/stickbear2015/prometheus/issues/44)
 
 ## Version 25.2.1
 * Hopefully fixed more broken stuff.
