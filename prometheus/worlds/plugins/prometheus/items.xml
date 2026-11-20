@@ -42,7 +42,7 @@
 
 <trigger
   enabled="y"
-  match="^([^\[].*?) (don|dons|strap|straps|wear|wears) (.*?)\.$"
+  match="^(You|[A-Z][A-Za-z'-]+(?: [A-Z][A-Za-z'-]+){0,3}(?: [a-z]+ Designation)?) (don|dons|strap|straps|wear|wears) (.*?)\.$"
   regexp="y"
   sequence="100"
   script="Items_DonDonsStrapStrapsWearWears"
