@@ -35,23 +35,9 @@
 
 <trigger
   enabled="y"
-  match="* unlock*the door leading *."
-  sequence="100"
-  script="Vehicles_UnlockTheDoorLeading2"
-></trigger>
-
-<trigger
-  enabled="y"
   match="* unlock*the vehicle."
   sequence="100"
   script="Vehicles_UnlockTheVehicle"
-></trigger>
-
-<trigger
-  enabled="y"
-  match="* lock*the door leading *."
-  sequence="100"
-  script="Vehicles_LockTheDoorLeading2"
 ></trigger>
 
 <trigger
