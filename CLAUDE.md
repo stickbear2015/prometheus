@@ -30,6 +30,12 @@ MUSHclient soundpack for Prometheus: The Eternal Wars. Shane's repo (`stickbear2
 
 **Nothing from the cleanup goes into `dev` (no merge, no pull request merge, no commits on `dev`) unless Shane explicitly says so.** All cleanup work stays on `cleanup/tidy-pack`. Opening a draft pull request for review is fine only if Shane asks for one.
 
+## Cleanup decisions
+
+- **2026-11-20: one Prometheus plugin, split into several files.** `Prometheus.xml` pulls in area files with `<include>` (comms, starship, combat, socials and so on), each with its Lua beside it. It stays one plugin, so the first matching trigger still stops the rest, and settings and sounds stay shared. Not separate plugins, which would each see every line (double sounds) and need their settings passed between them. Decided by Shane after discussing it with another pack developer.
+- **Global plugins (Shane wants this, to stop players breaking the pack by removing plugins):** the pack's plugins go in MUSHclient's global plugin list (`PluginList` in `mushclient_prefs.sqlite`, currently empty) instead of the world file. The upgrade must remove them from players' world files at the same time (or they load twice), add to the preferences file rather than replace it (it holds players' own preferences), and keep LuaAudio loading before Prometheus. Details to settle before doing it.
+- Where things are stored: the world file (`.mcl`) holds world settings and its plugin list; `worlds/plugins/state/*-state.xml` holds each plugin's saved variables per world (git-ignored, player-specific); `mushclient_prefs.sqlite` holds global MUSHclient preferences; `Config.txt` holds the pack's own settings (volumes, sound switches, message filters).
+
 ## Current work
 
 - **Cleanup** (issue #44, branch `cleanup/tidy-pack`, started 2026-11-20): build a test tool that compares old and new triggers on sample lines; move trigger logic from `Prometheus.xml` into Lua modules by area; pass wildcards as values instead of pasting `%1` into code; replace if/elseif chains with lookup tables; fix small bugs and list them. Shane is guiding.
