@@ -30,8 +30,9 @@ function Items_YouUnclipAAndRemoveIt(name, line, wildcards)
   CurrentGlobalSound = PlayGlobalSound("General/Misc/ItemUnwear.ogg")
 end
 
--- ^([^\[].*?) (don|dons|strap|straps|wear|wears) (.*?)\.$
--- (Lines starting with "[" are channel messages; they're left to the channel trigger.)
+-- ^(You|[A-Z][A-Za-z'-]+(?: [A-Z][A-Za-z'-]+){0,3}(?: [a-z]+ Designation)?) (don|dons|strap|straps|wear|wears) (.*?)\.$
+-- Only lines starting with "You" or a character's name, then the verb: so channel
+-- messages, descriptions, inventories, refusals and speech don't play the wear sound.
 function Items_DonDonsStrapStrapsWearWears(name, line, wildcards)
   CurrentGlobalSound = PlayGlobalSound("General/Misc/ItemWear.ogg")
 end
