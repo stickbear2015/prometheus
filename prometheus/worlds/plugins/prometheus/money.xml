@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<!-- Credits: exchanging, paying and checking your balance. -->
+<!-- The Lua for these triggers is in lua/prometheus/triggers/money.lua -->
+<muclient>
+<triggers>
+
+<trigger
+  enabled="y"
+  match="You exchange * credits for *"
+  sequence="100"
+  script="Money_YouExchangeCreditsFor"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You contribute * credits to the owner of this starship."
+  sequence="100"
+  script="Money_YouContributeCreditsToTheOwner"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You sell * for * credits."
+  sequence="100"
+  script="Money_YouSellForCredits"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You deposit * credits into *"
+  sequence="100"
+  script="Money_YouDepositCreditsInto"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You withdraw * credits from *"
+  sequence="100"
+  script="Money_YouWithdrawCreditsFrom"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="CONGRATULATIONS! You won * credits!"
+  sequence="100"
+  script="Money_CongratulationsYouWonCredits"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You receive a * of * credits."
+  sequence="100"
+  script="Money_YouReceiveAOfCredits"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You have * credits on hand and * bank credits."
+  sequence="100"
+  script="Money_YouHaveCreditsOnHandAnd"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You need * more points before you can raise your status."
+  sequence="100"
+  script="Money_YouNeedMorePointsBeforeYou"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You are * credits in debt."
+  sequence="100"
+  script="Money_YouAreCreditsInDebt"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You are given a loan of * credits. You are now * credits in debt. The loan increased your cash on hand by *"
+  sequence="100"
+  script="Money_YouAreGivenALoanOf"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You pay * credits * of your debt."
+  sequence="100"
+  script="Money_YouPayCreditsOfYourDebt"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Transaction complete."
+  sequence="100"
+  script="Money_TransactionComplete"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Your * informs you that * credits has been transfered to your account by *."
+  sequence="100"
+  script="Money_YourInformsYouThatCreditsHas"
+></trigger>
+
+</triggers>
+</muclient>

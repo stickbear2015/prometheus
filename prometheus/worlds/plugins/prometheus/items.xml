@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<!-- Belts, clips, wearing and removing things, Easter eggs. -->
+<!-- The Lua for these triggers is in lua/prometheus/triggers/items.lua -->
+<muclient>
+<triggers>
+
+<trigger
+  enabled="y"
+  match="You clip * to * weapon belt with * clips."
+  sequence="100"
+  script="Items_YouClipToWeaponBeltWith"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You unclip * from * weapon belt with * clips."
+  sequence="100"
+  script="Items_YouUnclipFromWeaponBeltWith"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You open * Easter egg... And find * inside!"
+  sequence="100"
+  script="Items_YouOpenEasterEggAndFind"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You wrap a*around your waist and clip the ends together."
+  sequence="100"
+  script="Items_YouWrapAAroundYourWaist"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You unclip a*and remove it from around your waist."
+  sequence="100"
+  script="Items_YouUnclipAAndRemoveIt"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="^([^\[].*?) (don|dons|strap|straps|wear|wears) (.*?)\.$"
+  regexp="y"
+  sequence="100"
+  script="Items_DonDonsStrapStrapsWearWears"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You see * here."
+  sequence="100"
+  script="Items_YouSeeHere"
+></trigger>
+
+</triggers>
+</muclient>
