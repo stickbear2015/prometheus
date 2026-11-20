@@ -12,6 +12,7 @@ It never touches MUSHclient or plays a sound. Python matches lines against trigg
 - `run.py`: records a run, or compares two runs.
 - `corpus.txt`: the test lines, made from the original plugin (1,516 lines). Keep it fixed during the cleanup, so old and new are tested on the same lines.
 - `baseline.txt`: what the original plugin did with those lines. This is what the cleaned-up pack is compared against.
+- `check_sounds.py`: checks that every sound the code can play exists, reading the code itself (so `"Beep" .. math.random(1, 5)` checks all five files). Run `python -I check_sounds.py ../../prometheus`.
 - `real_corpus.py`: picks real example lines for each trigger from a game log (a few distinct lines per trigger, plus lines containing each text a trigger's code checks for). **Its output contains other players' names and chat, so it goes in `temp-logs/` (git-ignored) and is never committed**, along with its recordings.
 
 ## Use
