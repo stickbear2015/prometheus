@@ -257,5 +257,15 @@
   script="Comms_OutOfCharacterChannelsAreCurrently"
 ></trigger>
 
+<trigger
+  enabled="y"
+  match='^\[([A-Za-z- ]+)\][,:]? ["]?(.*)["]?$'
+  regexp="y"
+  omit_from_output="y"
+  omit_from_log="y"
+  sequence="100"
+  script="Comms_ChannelMessage"
+></trigger>
+
 </triggers>
 </muclient>
