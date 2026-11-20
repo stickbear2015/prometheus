@@ -781,13 +781,6 @@
 
 <trigger
   enabled="y"
-  match="The starship is already moving."
-  sequence="100"
-  script="General_TheStarshipIsAlreadyMoving"
-></trigger>
-
-<trigger
-  enabled="y"
   match="Hyperspace jumps cannot be aborted."
   sequence="100"
   script="General_HyperspaceJumpsCannotBeAborted"
@@ -1221,13 +1214,6 @@
   match="* portable oven indicates that the recharging process is complete."
   sequence="100"
   script="General_PortableOvenIndicatesThatTheRecharging"
-></trigger>
-
-<trigger
-  enabled="y"
-  match="* examine*the menu of available items."
-  sequence="100"
-  script="General_ExamineTheMenuOfAvailableItems"
 ></trigger>
 
 <trigger
