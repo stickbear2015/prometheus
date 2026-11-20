@@ -165,7 +165,8 @@ require("prometheus.main")
 Path = require("pl.path")
 require("prometheus.util")
 
--- Trigger functions, one file per area.
+-- Trigger functions, one file per area (common.lua holds shared helpers).
+require("prometheus.triggers.common")
 require("prometheus.triggers.system")
 require("prometheus.triggers.comms")
 require("prometheus.triggers.starship")

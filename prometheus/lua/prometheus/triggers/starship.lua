@@ -191,204 +191,134 @@ function Starship_AMessageIsDisplayedInBright(name, line, wildcards)
   Note(wildcards[1])
 end
 
--- The computer announces, "*"
-function Starship_TheComputerAnnounces(name, line, wildcards)
-  Note(wildcards[1])
-  Execute("history_add All=Computer Announcement: " .. wildcards[1])
-  Execute("history_add Computer Announcements=" .. wildcards[1])
-  CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Announce"..math.random(1, 7)..".ogg")
-  if (string.match(wildcards[1], "detected in the sector")) then
-    if (string.match(wildcards[1], "enemy starship")) then
-      CurrentGlobalSound = PlayGlobalSound("Starship/Computer/EnemyDetected.ogg")
-    end
-    if (string.match(wildcards[1], "artifact")) then
-      CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Artifact.ogg")
-    end
-    if (string.match(wildcards[1], "friendly")) then
-      CurrentGlobalSound = PlayGlobalSound("Starship/Computer/FriendlyShip.ogg")
-    end
-    if (string.match(wildcards[1], " relic")) then
-      CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Relic.ogg")
-    end
-    if (string.match(wildcards[1], "comet")) then
-      CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Comet.ogg")
-    end
-    if (string.match(wildcards[1], "shipwreck")) then
-      CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Shipwreck.ogg")
-    end
-    if (string.match(wildcards[1], "planet")) then
-      CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Planet.ogg")
-    end
-    if (string.match(wildcards[1], "spacestation")) then
-      CurrentGlobalSound = PlayGlobalSound("Starship/Computer/SpaceStation.ogg")
-    end
-    if (string.match(string.lower(wildcards[1]), " star ")) then
-      CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Star.ogg")
-    end
-    if (string.match(wildcards[1], "derelict starship")) then
-      CurrentGlobalSound = PlayGlobalSound("Starship/Derelicts/AlienStarship.ogg")
-    end
-    if (string.match(wildcards[1], "asteroid")) then
-      CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Asteroid.ogg")
-    end
-    if (string.match(wildcards[1], "debris")) then
-      CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Debris.ogg")
-    end
-    if (string.match(wildcards[1], "spacebear")) then
-      CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Spacebear.ogg")
-    end
-  elseif (string.match(wildcards[1], "generators have completed their charging cycle")) then
-    CurrentGlobalSound = PlayGlobalSound("General/Misc/Beep"..math.random(1, 5)..".ogg")
-  elseif (string.match(wildcards[1], "Valuable material found")) then
-    if (ConfigTable.Settings.GrabbingMessages == 0) then
-      return
-    end
-  elseif (string.match(wildcards[1], "successfully grabbed")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Misc/Salvage"..math.random(1, 3)..".ogg")
-    if (ConfigTable.Settings.GrabbingMessages == 0) then
-      return
-    end
-  elseif (string.match(wildcards[1], "Beam locked")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Warning.ogg")
-  elseif (string.match(wildcards[1], "debris cloud")) then
-    if (string.match(wildcards[1], "partially salvaged") or string.match(wildcards[1], "completely salvaged")) then
-      CurrentGlobalSound = PlayGlobalSound("Vehicle/Store.ogg")
-    end
-  elseif (string.match(wildcards[1], "has been salvaged")) then
-    if (ConfigTable.Settings.SalvagingMessages == 0) then
-      if (string.match(wildcards[1], "and prepared for future use")) then
-        CurrentGlobalSound = PlayGlobalSound("Starship/Misc/Prepared.ogg")
-      else
-        return
+-- What the ship's computer can detect in the sector. Unlike the list below, every
+-- entry that fits is played, one after another.
+SECTOR_DETECTIONS = {
+  { has = "enemy starship", sound = "Starship/Computer/EnemyDetected" },
+  { has = "artifact", sound = "Starship/Computer/Artifact" },
+  { has = "friendly", sound = "Starship/Computer/FriendlyShip" },
+  { has = " relic", sound = "Starship/Computer/Relic" },
+  { has = "comet", sound = "Starship/Computer/Comet" },
+  { has = "shipwreck", sound = "Starship/Computer/Shipwreck" },
+  { has = "planet", sound = "Starship/Computer/Planet" },
+  { has = "spacestation", sound = "Starship/Computer/SpaceStation" },
+  { has_lower = " star ", sound = "Starship/Computer/Star" },
+  { has = "derelict starship", sound = "Starship/Derelicts/AlienStarship" },
+  { has = "asteroid", sound = "Starship/Computer/Asteroid" },
+  { has = "debris", sound = "Starship/Computer/Debris" },
+  { has = "spacebear", sound = "Starship/Computer/Spacebear" },
+}
+
+-- Computer announcements, checked from top to bottom; only the first entry that fits
+-- is played. (See common.lua for what each field means.)
+COMPUTER_ANNOUNCEMENTS = {
+  { has = "detected in the sector", play = function(text)
+      for _, entry in ipairs(SECTOR_DETECTIONS) do
+        if FindSoundEntry({ entry }, text) then PlaySoundEntry(entry, text) end
       end
-    end
-  elseif (string.match(wildcards[1], "A present disruption field prevents safe travel out of the sector")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Move/NAVI_Interrupted.ogg")
-  elseif (string.match(wildcards[1], "This weapon system is disabled")) then
-    CurrentGlobalSound = PlayGlobalSound("General/Misc/Cancel.ogg")
-  elseif (string.match(wildcards[1], "Artifacts retrieved")) then
-    if not string.match(wildcards[1], "nothing") then
-      CurrentGlobalSound = PlayGlobalSound("Starship/Misc/Salvage"..math.random(1, 3)..".ogg")
-    end
-  elseif (string.match(wildcards[1], "Target has moved from the locked coordinates") or string.match(wildcards[1], "^Miss.$") or string.match(wildcards[1], "Target moved") or string.match(wildcards[1], "Firing incomplete due to target moving")) then
-    CurrentCombatSound = PlayCombatSound("Space/LostLock.ogg")
-  elseif (string.match(wildcards[1], "There is no target at the locked coordinates") or string.match(wildcards[1], "Firing aborted")) then
-    CurrentGlobalSound = PlayGlobalSound("General/Misc/Cancel.ogg")
-  elseif (string.match(wildcards[1], "This ship transmits")) then
-    CurrentGlobalSound = PlayGlobalSound("General/Channels/Sector.ogg")
-  elseif (string.match(wildcards[1], "This starship is not equipped with the landing equipment needed to land on asteroids")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Move/LandingImpossible.ogg")
-  elseif (string.match(string.lower(wildcards[1]), "that component is damaged beyond repair")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Warning.ogg")
-  elseif (string.match(string.lower(wildcards[1]), "recharging")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Misc/BatteryRecharging.ogg")
-  elseif (string.match(string.lower(wildcards[1]), "recharge complete")) then
-    CurrentGlobalSound = PlayGlobalSound("General/Misc/Beep"..math.random(1, 5)..".ogg")
-  elseif (string.match(wildcards[1], "deployed for repair of")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Computer/RepairStart.ogg")
-  elseif (string.match(wildcards[1], "completed repair of")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Computer/RepairComplete.ogg")
-  elseif (string.match(wildcards[1], "Current repair aborted")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Computer/RepairAborted.ogg")
-  elseif (string.match(wildcards[1], "banks empty")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Warning.ogg")
-  elseif (string.match(wildcards[1], "WARNING")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Warning.ogg")
-  elseif (string.match(wildcards[1], "cleared the solar storm")) then
-    CurrentGlobalSound = PlayGlobalSound("General/Misc/Beep"..math.random(1, 5)..".ogg")
-  elseif (string.match(wildcards[1], "recharged")) then
-    CurrentGlobalSound = PlayGlobalSound("General/Misc/Beep"..math.random(1, 5)..".ogg")
-  elseif (string.match(wildcards[1], "Autopilot engaged")) then
-    CurrentGlobalSound = PlayGlobalSound("General/Devices/Activate.ogg")
-  elseif (string.match(wildcards[1], "Autopilot disengaged")) then
-    CurrentGlobalSound = PlayGlobalSound("General/Devices/Deactivate.ogg")
-  elseif (string.match(string.lower(wildcards[1]), "deploying asteroid anchor complete")) then
-    CurrentGlobalSound = PlayGlobalSound("General/Misc/Beep"..math.random(1, 5)..".ogg")
-  elseif (string.match(string.lower(wildcards[1]), "damage taken from an explosion on the surface")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Harvesting/EquipmentDamaged.ogg")
-  elseif (string.match(string.lower(wildcards[1]), "no minerals detected")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Harvesting/NoMinerals.ogg")
-  elseif (string.match(string.lower(wildcards[1]), "is not equipped for asteroid landing")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Move/LandingImpossible.ogg")
-  elseif (string.match(string.lower(wildcards[1]), "landing impossible when")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Move/LandingImpossible.ogg")
-  elseif (string.match(string.lower(wildcards[1]), "charge levels reaching critical")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Computer/LowCharge"..math.random(1, 2)..".ogg")
-  elseif (string.match(string.lower(wildcards[1]), "storage full") or string.match(string.lower(wildcards[1]), "lack of storage space")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Misc/StorageFull.ogg")
-  elseif (string.match(wildcards[1], "Mission access code") and string.match(string.lower(wildcards[1]), "accepted")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Computer/PiercingTone.ogg")
-  elseif (string.match(wildcards[1], "Mission completed")) then
-    CurrentGlobalSound = PlayGlobalSound("Music/"..math.random(1, 63)..".ogg")
-    CurrentGlobalSound = PlayGlobalSound("General/Misc/Congratulations.ogg")
-  elseif (string.match(wildcards[1], "Not enough shells left to fire")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Warning.ogg")
-  elseif (string.match(string.lower(wildcards[1]), "cannot refine all the material in the storage compartment")) then
-    CurrentGlobalSound = PlayGlobalSound("Vehicle/RefineryFull.ogg")
-  elseif (string.match(string.lower(wildcards[1]), "initiating asteroid haul to")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Keyboard"..math.random(1, 7)..".ogg")
-    CurrentGlobalSound = PlayGlobalSound("Starship/Move/HaulAsteroid"..math.random(1, 2)..".ogg")
-  elseif (string.match(string.lower(wildcards[1]), "on shipwreck")) then
-    CurrentGlobalSound = PlayGlobalSound("General/Shipwrecks/BeamLockedOn.ogg")
-  elseif (string.match(string.lower(wildcards[1]), "self-destruct sequence initiated")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Misc/SelfDestructStart.ogg")
-  elseif (string.match(wildcards[1], "^Sixty.$")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Misc/SelfDestructSixty.ogg")
-  elseif (string.match(wildcards[1], "^Thirty.$")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Misc/SelfDestructThirty.ogg")
-  elseif (string.match(wildcards[1], "^Ten.$")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Misc/SelfDestructTen.ogg")
-  elseif (string.match(wildcards[1], "^Five.$")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Misc/SelfDestructFive.ogg")
-  elseif (string.match(wildcards[1], "^Four.$")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Misc/SelfDestructFour.ogg")
-  elseif (string.match(wildcards[1], "^Three.$")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Misc/SelfDestructThree.ogg")
-  elseif (string.match(wildcards[1], "^Two.$")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Misc/SelfDestructTwo.ogg")
-  elseif (string.match(wildcards[1], "^One.$")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Misc/SelfDestructOne.ogg")
-  elseif (string.match(string.lower(wildcards[1]), "beginning ground dock")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Move/DockingBayDoorOpen.ogg")
-  elseif (string.match(string.lower(wildcards[1]), "harvesting aborted") and string.match(string.lower(wildcards[1]), "damaged")) then
-    CurrentGlobalSound = PlayGlobalSound("General/Comets/Explosion.ogg")
-  elseif (string.match(string.lower(wildcards[1]), "harvested")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Misc/Salvage"..math.random(1, 3)..".ogg")
-    if (ConfigTable.Settings.HarvestingMessages == 0) then
-      return
-    end
-  elseif (string.match(string.lower(wildcards[1]), "spacepowerup mode engaged")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Misc/SpacePowerStartUp.ogg")
-  elseif (string.match(string.lower(wildcards[1]), "powering down due to lack of charge")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Computer/LowCharge"..math.random(1, 2)..".ogg")
-  elseif (string.match(string.lower(wildcards[1]), "charge running critical")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Computer/LowCharge"..math.random(1, 2)..".ogg")
-  elseif (string.match(string.lower(wildcards[1]), "hit on")) then
-    CurrentCombatSound = PlayCombatSound("Space/OtherHit"..math.random(1, 4)..".ogg")
-  elseif (string.match(string.lower(wildcards[1]), "Weapon fire blocked by shields")) then
-    CurrentCombatSound = PlayCombatSound("Space/FireReflected.ogg")
-  elseif (string.match(string.lower(wildcards[1]), "grenade firing complete")) then
-    CurrentCombatSound = PlayCombatSound("Ground/GrenadeExplode.ogg")
-  elseif (string.match(string.lower(wildcards[1]), "computer piping")) then
-    if (string.match(wildcards[1], "enabled")) then
-      CurrentGlobalSound = PlayGlobalSound("Starship/Computer/PipeOn.ogg")
-    elseif (string.match(wildcards[1], "disabled")) then
-      CurrentGlobalSound = PlayGlobalSound("Starship/Computer/PipeOff.ogg")
-    end
-  elseif (string.match(wildcards[1], "Locked onto")) then
-    CurrentCombatSound = PlayCombatSound("Space/LockedOnOther.ogg")
-  elseif (string.match(wildcards[1], "Target out of") and string.match(wildcards[1], "range")) then
-    CurrentGlobalSound = PlayGlobalSound("General/Misc/Cancel.ogg")
-  elseif (string.match(wildcards[1], "Detected an attempt to launch the ship while drunk")) then
-    CurrentGlobalSound = PlayGlobalSound("General/Misc/Cancel.ogg")
-  elseif (string.match(wildcards[1], "Firmware upgrade complete")) then
-    CurrentGlobalSound = PlayGlobalSound("Combat/Space/ArmorPiercingChipDone.ogg")
-  elseif (string.match(wildcards[1], "Scanning")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Misc/Scanning.ogg")
-  elseif (string.match(wildcards[1], "collided with")) then
-    CurrentCombatSound = PlayCombatSound("Space/YouHit"..math.random(1, 9)..".ogg")
-  elseif (string.match(wildcards[1], "Gathering data")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Misc/Scanning.ogg")
+    end },
+  { has = "generators have completed their charging cycle", sound = "General/Misc/Beep", versions = 5 },
+  { has = "Valuable material found" },  -- no sound
+  { has = "successfully grabbed", sound = "Starship/Misc/Salvage", versions = 3 },
+  { has = "Beam locked", sound = "Starship/Computer/Warning" },
+  { has = "debris cloud", play = function(text)
+      if string.match(text, "partially salvaged") or string.match(text, "completely salvaged") then
+        CurrentGlobalSound = PlayGlobalSound("Vehicle/Store.ogg")
+      end
+    end },
+  { has = "has been salvaged", play = function(text)
+      if ConfigTable.Settings.SalvagingMessages == 0 and string.match(text, "and prepared for future use") then
+        CurrentGlobalSound = PlayGlobalSound("Starship/Misc/Prepared.ogg")
+      end
+    end },
+  { has = "A present disruption field prevents safe travel out of the sector", sound = "Starship/Move/NAVI_Interrupted" },
+  { has = "This weapon system is disabled", sound = "General/Misc/Cancel" },
+  { has = "Artifacts retrieved", play = function(text)
+      if not string.match(text, "nothing") then
+        CurrentGlobalSound = PlayGlobalSound("Starship/Misc/Salvage" .. math.random(1, 3) .. ".ogg")
+      end
+    end },
+  { any = { "Target has moved from the locked coordinates", "^Miss.$", "Target moved", "Firing incomplete due to target moving" },
+    sound = "Space/LostLock", combat = true },
+  { any = { "There is no target at the locked coordinates", "Firing aborted" }, sound = "General/Misc/Cancel" },
+  { has = "This ship transmits", sound = "General/Channels/Sector" },
+  { has = "This starship is not equipped with the landing equipment needed to land on asteroids", sound = "Starship/Move/LandingImpossible" },
+  { has_lower = "that component is damaged beyond repair", sound = "Starship/Computer/Warning" },
+  { has_lower = "recharging", sound = "Starship/Misc/BatteryRecharging" },
+  { has_lower = "recharge complete", sound = "General/Misc/Beep", versions = 5 },
+  { has = "deployed for repair of", sound = "Starship/Computer/RepairStart" },
+  { has = "completed repair of", sound = "Starship/Computer/RepairComplete" },
+  { has = "Current repair aborted", sound = "Starship/Computer/RepairAborted" },
+  { has = "banks empty", sound = "Starship/Computer/Warning" },
+  { has = "WARNING", sound = "Starship/Computer/Warning" },
+  { has = "cleared the solar storm", sound = "General/Misc/Beep", versions = 5 },
+  { has = "recharged", sound = "General/Misc/Beep", versions = 5 },
+  { has = "Autopilot engaged", sound = "General/Devices/Activate" },
+  { has = "Autopilot disengaged", sound = "General/Devices/Deactivate" },
+  { has_lower = "deploying asteroid anchor complete", sound = "General/Misc/Beep", versions = 5 },
+  { has_lower = "damage taken from an explosion on the surface", sound = "Starship/Harvesting/EquipmentDamaged" },  -- no such file yet
+  { has_lower = "no minerals detected", sound = "Starship/Harvesting/NoMinerals" },
+  { has_lower = "is not equipped for asteroid landing", sound = "Starship/Move/LandingImpossible" },
+  { has_lower = "landing impossible when", sound = "Starship/Move/LandingImpossible" },
+  { has_lower = "charge levels reaching critical", sound = "Starship/Computer/LowCharge", versions = 2 },
+  { any_lower = { "storage full", "lack of storage space" }, sound = "Starship/Misc/StorageFull" },
+  { has = "Mission access code", has_lower = "accepted", sound = "Starship/Computer/PiercingTone" },
+  { has = "Mission completed", sound = "Music/", versions = 63, also = { sound = "General/Misc/Congratulations" } },
+  { has = "Not enough shells left to fire", sound = "Starship/Computer/Warning" },
+  { has_lower = "cannot refine all the material in the storage compartment", sound = "Vehicle/RefineryFull" },
+  { has_lower = "initiating asteroid haul to", sound = "Starship/Computer/Keyboard", versions = 7,
+    also = { sound = "Starship/Move/HaulAsteroid", versions = 2 } },
+  { has_lower = "on shipwreck", sound = "General/Shipwrecks/BeamLockedOn" },
+  -- KNOWN BUG, kept for now: "-" is special in Lua patterns, so this never matches.
+  { has_lower = "self-destruct sequence initiated", sound = "Starship/Misc/SelfDestructStart" },
+  { has = "^Sixty.$", sound = "Starship/Misc/SelfDestructSixty" },  -- no such file yet
+  { has = "^Thirty.$", sound = "Starship/Misc/SelfDestructThirty" },
+  { has = "^Ten.$", sound = "Starship/Misc/SelfDestructTen" },
+  { has = "^Five.$", sound = "Starship/Misc/SelfDestructFive" },
+  { has = "^Four.$", sound = "Starship/Misc/SelfDestructFour" },
+  { has = "^Three.$", sound = "Starship/Misc/SelfDestructThree" },
+  { has = "^Two.$", sound = "Starship/Misc/SelfDestructTwo" },
+  { has = "^One.$", sound = "Starship/Misc/SelfDestructOne" },
+  { has_lower = "beginning ground dock", sound = "Starship/Move/DockingBayDoorOpen" },
+  { has_lower = { "harvesting aborted", "damaged" }, sound = "General/Comets/Explosion" },
+  { has_lower = "harvested", sound = "Starship/Misc/Salvage", versions = 3 },
+  { has_lower = "spacepowerup mode engaged", sound = "Starship/Misc/SpacePowerStartUp" },
+  { has_lower = "powering down due to lack of charge", sound = "Starship/Computer/LowCharge", versions = 2 },
+  { has_lower = "charge running critical", sound = "Starship/Computer/LowCharge", versions = 2 },
+  { has_lower = "hit on", sound = "Space/OtherHit", versions = 4, combat = true },
+  -- KNOWN BUG, kept for now: this looks in the lowercased line for a capital W, so it never matches.
+  { has_lower = "Weapon fire blocked by shields", sound = "Space/FireReflected", combat = true },
+  { has_lower = "grenade firing complete", sound = "Ground/GrenadeExplode", combat = true },
+  { has_lower = "computer piping", play = function(text)
+      if string.match(text, "enabled") then
+        CurrentGlobalSound = PlayGlobalSound("Starship/Computer/PipeOn.ogg")
+      elseif string.match(text, "disabled") then
+        CurrentGlobalSound = PlayGlobalSound("Starship/Computer/PipeOff.ogg")
+      end
+    end },
+  { has = "Locked onto", sound = "Space/LockedOnOther", combat = true },
+  { has = { "Target out of", "range" }, sound = "General/Misc/Cancel" },
+  { has = "Detected an attempt to launch the ship while drunk", sound = "General/Misc/Cancel" },
+  { has = "Firmware upgrade complete", sound = "Combat/Space/ArmorPiercingChipDone" },
+  { has = "Scanning", sound = "Starship/Misc/Scanning" },
+  { has = "collided with", sound = "Space/YouHit", versions = 9, combat = true },
+  { has = "Gathering data", sound = "Starship/Misc/Scanning" },
+}
+
+-- The computer announces, "*"
+-- Every announcement is shown, added to the All and Computer Announcements buffers, and
+-- plays the announcement chime; then COMPUTER_ANNOUNCEMENTS may add its own sound.
+-- KNOWN BUG, kept for now: the grabbing, salvaging and harvesting message filters don't
+-- hide these announcements, because the message is shown before anything checks them.
+function Starship_TheComputerAnnounces(name, line, wildcards)
+  local text = wildcards[1]
+  Note(text)
+  Execute("history_add All=Computer Announcement: " .. text)
+  Execute("history_add Computer Announcements=" .. text)
+  CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Announce" .. math.random(1, 7) .. ".ogg")
+  local entry = FindSoundEntry(COMPUTER_ANNOUNCEMENTS, text)
+  if entry then
+    PlaySoundEntry(entry, text)
   end
 end
 
