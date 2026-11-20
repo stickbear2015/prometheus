@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<!-- Hand-held devices and equipment. -->
+<!-- The Lua for these triggers is in lua/prometheus/triggers/devices.lua -->
+<muclient>
+<triggers>
+
+<trigger
+  enabled="y"
+  match="The screen of * hypernet browser with * touchscreen flashes briefly, indicating that *"
+  omit_from_output="y"
+  sequence="100"
+  script="Devices_TheScreenOfHypernetBrowserWith"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You press a large button on * wormhole recall remote."
+  sequence="100"
+  script="Devices_YouPressALargeButtonOn"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* press*a button*."
+  sequence="100"
+  script="Devices_PressAButton"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* push*a button*."
+  sequence="100"
+  script="Devices_PushAButton"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You connect to the * channel."
+  sequence="100"
+  script="Devices_YouConnectToTheChannel"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You disconnect from the * channel."
+  sequence="100"
+  script="Devices_YouDisconnectFromTheChannel"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="AFK notifications *"
+  sequence="100"
+  script="Devices_AfkNotifications"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* press*a few keys on a console, * the * alert."
+  sequence="100"
+  script="Devices_PressAFewKeysOnA"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* pass*in front of * and look*at the display."
+  sequence="100"
+  script="Devices_PassInFrontOfAndLook"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The scans indicate that there might be an artifact at *"
+  omit_from_output="y"
+  sequence="100"
+  script="Devices_TheScansIndicateThatThereMight"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You press * button labeled *"
+  omit_from_output="y"
+  sequence="100"
+  script="Devices_YouPressButtonLabeled"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You pour some berries into*and start making*."
+  sequence="100"
+  script="Devices_YouPourSomeBerriesIntoAnd"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* tap*an icon on the console."
+  sequence="100"
+  script="Devices_TapAnIconOnTheConsole"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You press a button."
+  sequence="100"
+  script="Devices_YouPressAButton"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You press the 'RELOAD' button."
+  omit_from_output="y"
+  sequence="100"
+  script="Devices_YouPressTheReloadButton"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="This communication device is *"
+  sequence="100"
+  script="Devices_ThisCommunicationDeviceIs"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Scans of * unfiltered."
+  sequence="100"
+  script="Devices_ScansOfUnfiltered"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Scans of * filtered."
+  sequence="100"
+  script="Devices_ScansOfFiltered"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* tap*a button, *."
+  sequence="100"
+  script="Devices_TapAButton"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="A light next to the PA blinks off."
+  sequence="100"
+  script="Devices_ALightNextToThePa"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="A light blinks on next to the PA."
+  sequence="100"
+  script="Devices_ALightBlinksOnNextTo"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* turn* UTF-Issue radio with * high-definition speaker *."
+  sequence="100"
+  script="Devices_TurnUtfIssueRadioWithHigh"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* Portable Military Computer with * touch screen flashes a message on its screen, telling you that a new report has been added to the network."
+  sequence="100"
+  script="Devices_PortableMilitaryComputerWithTouchScreen"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Condensing of multiple debris clouds *."
+  sequence="100"
+  script="Devices_CondensingOfMultipleDebrisClouds"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* activate* the jetpack of * spacesuit*"
+  ignore_case="y"
+  omit_from_output="y"
+  sequence="100"
+  script="Devices_ActivateTheJetpackOfSpacesuit"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* jetpack of * spacesuit deactivates."
+  ignore_case="y"
+  omit_from_output="y"
+  sequence="100"
+  script="Devices_JetpackOfSpacesuitDeactivates"
+></trigger>
+
+</triggers>
+</muclient>

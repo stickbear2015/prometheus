@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<!-- Channels, communicators, the ship's computer announcements and radio traffic. -->
+<!-- The Lua for these triggers is in lua/prometheus/triggers/comms.lua -->
+<muclient>
+<triggers>
+
+<trigger
+  enabled="y"
+  match="[Frequency *] *"
+  omit_from_output="y"
+  sequence="100"
+  script="Comms_Frequency"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="[* to you]*"
+  sequence="100"
+  script="Comms_ToYou"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="[You to *]*"
+  sequence="100"
+  script="Comms_YouTo"
+></trigger>
+
+<trigger
+  enabled="y"
+  match='* "* requesting * clearance*" into a small microphone mounted on the console.'
+  sequence="100"
+  script="Comms_RequestingClearanceIntoASmallMicrophone"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="[Code updates] *"
+  sequence="100"
+  script="Comms_CodeUpdates"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="[SECTOR COMMUNICATION] *"
+  omit_from_output="y"
+  sequence="100"
+  script="Comms_SectorCommunication"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="A speaker on the communication console crackles to life, and you hear * transmitting from *, *"
+  omit_from_output="y"
+  sequence="100"
+  script="Comms_ASpeakerOnTheCommunicationConsole"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* say*into a small microphone mounted on the console."
+  sequence="100"
+  script="Comms_SayIntoASmallMicrophoneMounted"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Your * emits a confirmational tone as the private link with * is established."
+  sequence="100"
+  script="Comms_YourEmitsAConfirmationalToneAs"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You deny * request for a communications link."
+  sequence="100"
+  script="Comms_YouDenyRequestForACommunications"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* denies your request."
+  sequence="100"
+  script="Comms_DeniesYourRequest"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* has deleted * communications link with you."
+  sequence="100"
+  script="Comms_HasDeletedCommunicationsLinkWithYou"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You delete your communications link with *."
+  sequence="100"
+  script="Comms_YouDeleteYourCommunicationsLinkWith"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Your * flashes a message, indicating that the remote link with its starship has been lost due to *."
+  sequence="100"
+  script="Comms_YourFlashesAMessageIndicatingThat"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The screen of * with * screen and * switches flashes briefly, indicating that a new link to a starship has been established."
+  sequence="100"
+  script="Comms_TheScreenOfWithScreenAnd"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* private communications are disabled."
+  sequence="100"
+  script="Comms_PrivateCommunicationsAreDisabled"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="^Sorry\, but your command input has been blocked\. We apologize for any inconvenience this may cause you\.$"
+  regexp="y"
+  sequence="100"
+  script="Comms_SorryButYourCommandInputHas"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="A small speaker on * suddenly emits a loud burst of static."
+  sequence="100"
+  script="Comms_ASmallSpeakerOnSuddenlyEmits"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* with * suddenly emits a painfully loud burst of static. After a few moments, it subsides a bit, and a synthesized voice breaks through the static, saying: *"
+  sequence="100"
+  script="Comms_WithSuddenlyEmitsAPainfullyLoud"
+></trigger>
+
+<trigger
+  enabled="y"
+  match='From a large speaker on *, You hear * say, "*".'
+  sequence="100"
+  script="Comms_FromALargeSpeakerOnYou"
+></trigger>
+
+<trigger
+  enabled="y"
+  match='You say "*" into an external PA microphone.'
+  sequence="100"
+  script="Comms_YouSayIntoAnExternalPa"
+></trigger>
+
+<trigger
+  enabled="y"
+  match='A voice comes over the speaker and says, "*".'
+  omit_from_output="y"
+  sequence="100"
+  script="Comms_AVoiceComesOverTheSpeaker"
+></trigger>
+
+<trigger
+  enabled="y"
+  match='A voice announces, "*"'
+  omit_from_output="y"
+  sequence="100"
+  script="Comms_AVoiceAnnounces"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Primary frequency set to *."
+  sequence="100"
+  script="Comms_PrimaryFrequencySetTo"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You notify flight control of your desire to *"
+  sequence="100"
+  script="Comms_YouNotifyFlightControlOfYour"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You have been added to the owners list of *."
+  sequence="100"
+  script="Comms_YouHaveBeenAddedToThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You have been added to the recognized fingerprints to the exit * of *."
+  sequence="100"
+  script="Comms_YouHaveBeenAddedToThe2"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You have been authorized to *."
+  sequence="100"
+  script="Comms_YouHaveBeenAuthorizedTo"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You have been added to the recognized fingerprints of *."
+  sequence="100"
+  script="Comms_YouHaveBeenAddedToThe3"
+></trigger>
+
+<trigger
+  enabled="y"
+  match='A voice comes from the speaker of *, "*"'
+  omit_from_output="y"
+  sequence="100"
+  script="Comms_AVoiceComesFromTheSpeaker"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Event mode has been disabled, the hosts hope you enjoyed. OOC channels will be restored."
+  sequence="100"
+  script="Comms_EventModeHasBeenDisabledThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The communication beacons are currently unreachable. Unable to start teleportation process..."
+  sequence="100"
+  script="Comms_TheCommunicationBeaconsAreCurrentlyUnreachable"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Teleporting is not possible while the starship is unable to connect to the communication beacons."
+  sequence="100"
+  script="Comms_TeleportingIsNotPossibleWhileThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="That doesn't seem to be working."
+  sequence="100"
+  script="Comms_ThatDoesnSeemToBeWorking"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Out of character channels are currently disabled. They will be back soon!"
+  sequence="100"
+  script="Comms_OutOfCharacterChannelsAreCurrently"
+></trigger>
+
+</triggers>
+</muclient>

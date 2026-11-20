@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<!-- Activities: archaeology, pearl diving, shipwrecks, comets and asteroids, harvesting, star research, hatch cracking, derelicts and sifting. -->
+<!-- The Lua for these triggers is in lua/prometheus/triggers/activities.lua -->
+<muclient>
+<triggers>
+
+<trigger
+  enabled="y"
+  match="* securely bolt* so it cannot be moved."
+  sequence="100"
+  script="Activities_SecurelyBoltSoItCannotBe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* remove*the bolts from * and pick*it up."
+  sequence="100"
+  script="Activities_RemoveTheBoltsFromAndPick"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear a whirring coming from beneath you, followed by a loud click as the ship's asteroid anchor is drilled securely into the asteroid."
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_YouHearAWhirringComingFrom"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear a sharp scraping sound and look out to notice the asteroid anchor being removed from the solid rock."
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_YouHearASharpScrapingSound"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* carefully slide*into *"
+  sequence="100"
+  script="Activities_CarefullySlideInto"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You put * into * container*."
+  sequence="100"
+  script="Activities_YouPutIntoContainer"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You place * in * sifting bucket*."
+  sequence="100"
+  script="Activities_YouPlaceInSiftingBucket"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Through the window, you watch a starship probe remove a section of hull with its industrial-strength drill and saw attachments, just large enough for it to enter the ship."
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_ThroughTheWindowYouWatchA"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* place* UTF-Issue hatch cracker against *, and press a few buttons. The device's AI immediately begins to hack  into the vehicle's security systems."
+  sequence="100"
+  script="Activities_PlaceUtfIssueHatchCrackerAgainst"
+></trigger>
+
+<trigger
+  enabled="y"
+  match='* UTF-Issue hatch cracker displays, "Warning, a virus has been transmitted to this device!"'
+  sequence="100"
+  script="Activities_UtfIssueHatchCrackerDisplaysWarning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* UTF-Issue hatch cracker begins to spray sparks and glow omenously, then explodes in your hand!"
+  sequence="100"
+  script="Activities_UtfIssueHatchCrackerBeginsTo"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="In no time at all, * UTF-Issue hatch cracker's AI has totally overpowered * security system and unlocked the airlock."
+  sequence="100"
+  script="Activities_InNoTimeAtAllUtf"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You put your hands around * hatch repair drone and squeeze."
+  sequence="100"
+  script="Activities_YouPutYourHandsAroundHatch"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* hatch repair drone unfolds slowly, revealing a wide aray of tools. It begins its work with a loud racket."
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_HatchRepairDroneUnfoldsSlowlyRevealing"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* hatch repair drone replaces a broken hatch component with a spare."
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_HatchRepairDroneReplacesABroken"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* hatch repair drone connects to the computer and rewrites some infected code."
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_HatchRepairDroneConnectsToThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* hatch repair drone welds some metal together."
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_HatchRepairDroneWeldsSomeMetal"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* hatch repair drone hammers some metal bits back into place."
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_HatchRepairDroneHammersSomeMetal"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* hatch repair drone, its work complete, folds back up into a small ball."
+  sequence="100"
+  script="Activities_HatchRepairDroneItsWorkComplete"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The equipment returns to the ship with a clang."
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_TheEquipmentReturnsToTheShip"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The harvesting equipment begins drilling deep into the asteroid's surface."
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_TheHarvestingEquipmentBeginsDrillingDeep"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The ship shakes softly as the comet harvesting equipment reaches out and begins harvesting the top of * of gases."
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_TheShipShakesSoftlyAsThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You watch the harvesting equipment unfold from underneath the vessel and begin moving toward the asteroid on your ship's viewscreen."
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_YouWatchTheHarvestingEquipmentUnfold"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear some clangs and whooshes as the harvesting equipment retracts back into the ship's bowels."
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_YouHearSomeClangsAndWhooshes"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="From where the equipment drilled in, a shower of rocks suddenly bursts out!"
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_FromWhereTheEquipmentDrilledIn"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The ship lurches as a powerful cutting beam is launched to space."
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_TheShipLurchesAsAPowerful"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The ship rumbles as the beam carefully cuts its way into the wreck."
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_TheShipRumblesAsTheBeam"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="With a jolt, the beam returns to the ship."
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_WithAJoltTheBeamReturns"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="A smooth hum builds up in the background, and the unmistakeable sounds of gas being cleaned up fills the area."
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_ASmoothHumBuildsUpIn"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* thrust*shovel deep into the ground."
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_ThrustShovelDeepIntoTheGround"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* shovel*aside some freshly dug dirt, but all you find is a strange insect."
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_ShovelAsideSomeFreshlyDugDirt"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* sigh*as the digging reveals nothing but insects."
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_SighAsTheDiggingRevealsNothing"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* shovel*aside the dug dirt, but find nothing underneath."
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_ShovelAsideTheDugDirtBut"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You shovel the dug dirt aside, revealing *!"
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_YouShovelTheDugDirtAside"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The shovel produces a clear clang sound as it hits something underground."
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_TheShovelProducesAClearClang"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* shovel indicates that the area is empty of artifacts."
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_ShovelIndicatesThatTheAreaIs"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You think you might have found something... But when you shovel the dug dirt aside, nothing reveals."
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_YouThinkYouMightHaveFound"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear some clangs as the excavation equipment is deployed."
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_YouHearSomeClangsAsThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear a loud clang as something under the vehicle snaps."
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_YouHearALoudClangAs"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You remove*from the water!"
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_YouRemoveFromTheWater"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You pull*from the water and slip it into*!"
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_YouPullFromTheWaterAnd"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You start searching for valuable items with*sifting net."
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_YouStartSearchingForValuableItems"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* div*into the water."
+  sequence="100"
+  script="Activities_DivIntoTheWater"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="*put*into*oceanography container."
+  sequence="100"
+  script="Activities_PutIntoOceanographyContainer"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The scanner indicates that the current coordinates are empty of valuable items."
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_TheScannerIndicatesThatTheCurrent"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* begin*moving * underwater shovel through the water and deep into the ground."
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_BeginMovingUnderwaterShovelThroughThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* stop*digging, nothing as a result."
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_StopDiggingNothingAsAResult"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Valuable material found! Depth *."
+  sequence="100"
+  script="Activities_ValuableMaterialFoundDepth"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You begin swimming toward the surface."
+  sequence="100"
+  script="Activities_YouBeginSwimmingTowardTheSurface"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* swims onto the shore."
+  sequence="100"
+  script="Activities_SwimsOntoTheShore"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="An alert is displayed across your suit's glasses: *"
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_AnAlertIsDisplayedAcrossYour"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You activate a high-powered infrared laser beam."
+  sequence="100"
+  script="Activities_YouActivateAHighPoweredInfrared"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* deftly hits a button on an infrared laser beam control board, activating the high-powered beam."
+  sequence="100"
+  script="Activities_DeftlyHitsAButtonOnAn"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The room lights up with a beautiful red glow as the starship fires an infrared laser beam into space towards a star."
+  sequence="100"
+  script="Activities_TheRoomLightsUpWithA"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You notice the star begin to glow a blinding red."
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_YouNoticeTheStarBeginTo"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The pulsating light radiates as it becomes steady."
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_ThePulsatingLightRadiatesAsIt"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The pulsating of the lights grows steady."
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_ThePulsatingOfTheLightsGrows"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Rays of light pulsate as the starship continues to fire the infrared laser beam at the star."
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_RaysOfLightPulsateAsThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Suddenly, the rays of light begin pulsating quickly, and it seems as if the star is disintegrating right before your eyes."
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_SuddenlyTheRaysOfLightBegin"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The rays of light dwindle down to nothing as the starship's infrared laser beam powers down."
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_TheRaysOfLightDwindleDown"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The starship's computer prints * of the star research data."
+  sequence="100"
+  script="Activities_TheStarshipComputerPrintsOfThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The scanning console emits a series of beeps before printing *."
+  sequence="100"
+  script="Activities_TheScanningConsoleEmitsASeries"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The computer beeps and prints out a *"
+  sequence="100"
+  script="Activities_TheComputerBeepsAndPrintsOut"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* remove*a small piece of paper containing strange symbols from the printer."
+  sequence="100"
+  script="Activities_RemoveASmallPieceOfPaper"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* datapad prints a peace of paper titled *"
+  sequence="100"
+  script="Activities_DatapadPrintsAPeaceOfPaper"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear an odd noise coming from the direction of the ship's hatch."
+  sequence="100"
+  script="Activities_YouHearAnOddNoiseComing"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You place * in *"
+  sequence="100"
+  script="Activities_YouPlaceIn"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="A hum builds up for a second, but quickly subsides; apparently nothing was found."
+  omit_from_output="y"
+  sequence="100"
+  script="Activities_AHumBuildsUpForA"
+></trigger>
+
+</triggers>
+</muclient>
