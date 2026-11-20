@@ -26,7 +26,7 @@ python -I run.py compare baseline.txt new.txt
 With the real-log corpus (local only):
 
 ```
-python -I real_corpus.py ../../prometheus/worlds/plugins/Prometheus.xml ../../temp-logs/Prometheus.txt ../../temp-logs/real-corpus.txt
+python -I real_corpus.py ../../prometheus/worlds/plugins/Prometheus.xml ../../temp-logs/real-corpus.txt ../../temp-logs/Prometheus.txt [more logs...]
 python -I run.py record ../../prometheus/worlds/plugins/Prometheus.xml ../../prometheus ../../temp-logs/real-corpus.txt ../../temp-logs/real-baseline.txt
 ```
 
