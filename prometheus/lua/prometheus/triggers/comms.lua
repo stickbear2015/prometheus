@@ -209,3 +209,136 @@ end
 function Comms_OutOfCharacterChannelsAreCurrently(name, line, wildcards)
   CurrentGlobalSound = PlayGlobalSound("General/Comm/Disabled.ogg")
 end
+
+-- Channel messages: [Channel] message, [Channel], "message" and so on.
+-- (See common.lua for what each field in these lists means.)
+
+-- Commpipe messages that the Commpipe harvest filter hides completely (no sound, not shown,
+-- not added to the buffers) while the filter is on.
+COMMPIPE_HARVEST_FILTER = {
+  "has been salvaged", "has been harvested", "harvested", "successfully grabbed",
+  "Valuable material found", "No minerals detected",
+}
+
+-- Flight control messages; the first entry that fits is played.
+FLIGHT_CONTROL_SOUNDS = {
+  { has = "static", sound = "General/Comm/Static", versions = 5 },
+  { has_lower = "ground on", sound = "Ground/GroundTroops", combat = true },
+  { has_lower = "enemies are forcing a landing", sound = "General/Comm/FlightControlForcedLanding" },
+  { has = "Forced landing at", sound = "General/Comm/FlightControlForcedLanding" },
+  { has = { "Detecting", "Repeat" }, sound = "General/Comm/FlightControlEnemiesEntering" },
+  { has = "inbound enemy", sound = "General/Comm/FlightControlEnemiesEntering" },
+  { has = "retreating", sound = "General/Comm/FlightControlEnemiesRetreating" },
+  -- Another ship destroyed (but not an X-Loritan one).
+  { has = "destroyed", play = function(text)
+      if not string.match(text, "X-Loritan") then
+        CurrentGlobalSound = PlayGlobalSound("Combat/Space/OtherDestroyed" .. math.random(1, 8) .. ".ogg")
+      end
+    end },
+}
+
+-- What a vehicle on Commpipe can report detecting in the sector. Every entry that fits is
+-- played. (The same as SECTOR_DETECTIONS in starship.lua, plus the flying cherub.)
+COMMPIPE_DETECTIONS = {
+  { has = "enemy starship", sound = "Starship/Computer/EnemyDetected" },
+  { has = "flying cherub", sound = "Starship/Computer/flyingCherub" },
+  { has = "artifact", sound = "Starship/Computer/Artifact" },
+  { has = "friendly", sound = "Starship/Computer/FriendlyShip" },
+  { has = " relic", sound = "Starship/Computer/Relic" },
+  { has = "comet", sound = "Starship/Computer/Comet" },
+  { has = "shipwreck", sound = "Starship/Computer/Shipwreck" },
+  { has = "planet", sound = "Starship/Computer/Planet" },
+  { has = "spacestation", sound = "Starship/Computer/SpaceStation" },
+  { has_lower = " star ", sound = "Starship/Computer/Star" },
+  { has = "derelict starship", sound = "Starship/Derelicts/AlienStarship" },
+  { has = "asteroid", sound = "Starship/Computer/Asteroid" },
+  { has = "debris", sound = "Starship/Computer/Debris" },
+  { has = "spacebear", sound = "Starship/Computer/Spacebear" },
+}
+
+-- Commpipe messages (from your vehicles and ships); the first entry that fits is played.
+COMMPIPE_SOUNDS = {
+  { any = { "has been salvaged", "has been harvested", "successfully grabbed", "Valuable material found", "No minerals detected" },
+    play = function(text)
+      if ConfigTable.Settings.SalvagingMessages == 0 and string.match(text, "prepared for future use") then
+        CurrentGlobalSound = PlayGlobalSound("Starship/Misc/Prepared.ogg")
+      end
+    end },
+  { has = "detected in the sector", play = function(text)
+      for _, entry in ipairs(COMMPIPE_DETECTIONS) do
+        if FindSoundEntry({ entry }, text) then PlaySoundEntry(entry, text) end
+      end
+    end },
+  { has = "Powering down due to lack of charge", sound = "Starship/Computer/LowCharge", versions = 2 },
+  { has = "Shutting down due to low power conditions", sound = "Starship/Computer/LowCharge", versions = 2 },
+  { has = "Beam locked", sound = "Starship/Computer/Warning" },
+  { has = "The beam stops abruptly", sound = "Starship/Computer/Warning" },
+  { has = "Excavation cannot continue due to the equipment being damaged", sound = "Starship/Computer/Warning" },
+}
+
+-- Who logs in and out, on the Info channel.
+INFO_SOUNDS = {
+  { has = "entered the game", sound = "General/Misc/LoggedOn" },
+  { has = "left the game", sound = "General/Misc/LoggedOff" },
+}
+
+-- Extra sounds for particular channels, after the channel's own sound. Checked from top to
+-- bottom; the first entry whose channel (and message, if given) fits is used.
+--   channel / channel_lower   text to look for in the channel's name (lower: lowercased)
+--   message                   text that must also be in the message
+--   sounds                    a list to look the message up in (see above)
+--   sound, versions, also     a sound to play, as in common.lua
+CHANNEL_SOUNDS = {
+  -- KNOWN BUG, kept for now: "-" is special in Lua patterns, so "pre-recorded" never matches.
+  { channel = "OOC", message = "A pre-recorded message", sound = "General/Hosts/Announcement" },
+  { channel = "General", message = "UTF Communications Officer", sound = "General/Misc/Alarm" },
+  { channel_lower = "info", sounds = INFO_SOUNDS },
+  { channel_lower = "flight control", sounds = FLIGHT_CONTROL_SOUNDS },
+  { channel = "Commpipe", sounds = COMMPIPE_SOUNDS },
+  { channel_lower = "ship construction", sound = "General/Comm/Notify", also = { sound = "General/Misc/NewsFlash" } },
+  { channel_lower = "events", sounds = { { has = "added", sound = "General/Hosts/EventsAdded" } } },  -- no such file yet
+  { channel = "PA", sound = "Starship/Comm/PA", versions = 9 },
+}
+
+-- ^\[([A-Za-z- ]+)\][,:]? ["]?(.*)["]?$
+-- wildcards: 1 = the channel's name, 2 = the message
+function Comms_ChannelMessage(name, line, wildcards)
+  local channel, message = wildcards[1], wildcards[2]
+
+  -- The Commpipe harvest filter hides harvesting and salvaging reports completely.
+  if ConfigTable.Settings.CommpipeHarvestFilter == 1 and string.match(channel, "Commpipe") then
+    for _, text in ipairs(COMMPIPE_HARVEST_FILTER) do
+      if string.match(message, text) then
+        return
+      end
+    end
+  end
+
+  Note(line)
+  if tonumber(channel) then
+    return  -- a number in brackets, not a channel
+  end
+  if string.len(channel) > 1 then
+    Execute("history_add All=" .. line)
+    Execute("history_add " .. prometheus.util.Explode(channel, "-")[1] .. "=" .. message)
+  end
+  CurrentGlobalSound = PlayGlobalSound("General/Channels/" .. channel .. ".ogg")
+
+  local lower_channel = string.lower(channel)
+  for _, entry in ipairs(CHANNEL_SOUNDS) do
+    local fits = (not entry.channel or string.match(channel, entry.channel))
+      and (not entry.channel_lower or string.match(lower_channel, entry.channel_lower))
+      and (not entry.message or string.match(message, entry.message))
+    if fits then
+      if entry.sounds then
+        local found = FindSoundEntry(entry.sounds, message)
+        if found then
+          PlaySoundEntry(found, message)
+        end
+      else
+        PlaySoundEntry(entry, message)
+      end
+      return
+    end
+  end
+end

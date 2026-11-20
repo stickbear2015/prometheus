@@ -7,16 +7,6 @@
 
 <trigger
   enabled="y"
-  match='^\[([A-Za-z- ]+)\][,:]? ["]?(.*)["]?$'
-  regexp="y"
-  omit_from_output="y"
-  omit_from_log="y"
-  sequence="100"
-  script="Starship_AZa"
-></trigger>
-
-<trigger
-  enabled="y"
   match="The application console beeps as * complete*submitting an application."
   sequence="100"
   script="Starship_TheApplicationConsoleBeepsAsComplete"
