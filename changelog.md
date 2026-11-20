@@ -19,6 +19,14 @@
 * the garage, sector scan, laser supplier, and relic explosion messages now play their own sounds instead of a more general one. [#44](https://github.com/stickbear2015/prometheus/issues/44)
 * fixes several sounds that never played because the pack looked for them in the wrong place, including the second torpedo sound when your ship launches torpedoes, the stargate exit beep, the chitter when someone types code into a translator, device activation, reflector hits, space power startup, and the lift. [#44](https://github.com/stickbear2015/prometheus/issues/44)
 * fixes male sigh sounds and the second male lol sound never playing, because their sound files were misnamed. [#44](https://github.com/stickbear2015/prometheus/issues/44)
+* commpipe messages from your vehicles now play their sounds, which never played before: a warning when excavation stops because the equipment is damaged or a beam is locked, the low charge sound when a vehicle powers down or shuts down, and the detection sounds when a vehicle reports finding asteroids, shipwrecks, derelicts, debris and so on. [#44](https://github.com/stickbear2015/prometheus/issues/44)
+* the computer now plays the shield sound when your weapon fire is blocked by shields. [#44](https://github.com/stickbear2015/prometheus/issues/44)
+* the self destruct start sound now plays when the self destruct sequence is initiated. [#44](https://github.com/stickbear2015/prometheus/issues/44)
+* pre-recorded host messages on the ooc channel now play the announcement sound. [#44](https://github.com/stickbear2015/prometheus/issues/44)
+* the low charge sound now plays when a vehicle's computer screen says excavation can't start because the vehicle is low on charge. [#44](https://github.com/stickbear2015/prometheus/issues/44)
+* firing a low-level laser now plays its own sound as well as the pistol sound. [#44](https://github.com/stickbear2015/prometheus/issues/44)
+* adds the spdebug command, which shows the hidden soundpack messages the game sends, to help track down sound problems. type it again to hide them. [#44](https://github.com/stickbear2015/prometheus/issues/44)
+* channel messages that mention wearing, donning, strapping or removing something no longer play the clothing sound, and now play their channel sound and go into the channel history as they should. [#44](https://github.com/stickbear2015/prometheus/issues/44)
 
 ## Version 25.2.1
 * Hopefully fixed more broken stuff.
