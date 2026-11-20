@@ -540,7 +540,7 @@ end
 
 -- * type*a complicated series of code*into * translator.
 function General_TypeAComplicatedSeriesOfCode(name, line, wildcards)
-  CurrentGlobalSound = PlayGlobalSound("PyrianChitter"..math.random(1, 10)..".ogg")
+  CurrentGlobalSound = PlayGlobalSound("Socials/PyrianChitter"..math.random(1, 10)..".ogg")
 end
 
 -- The door leading to The foyer swings *.
@@ -762,12 +762,12 @@ end
 
 -- The ship slows down as it comes closer to the final destination.
 function General_TheShipSlowsDownAsIt(name, line, wildcards)
-  CurrentGlobalSound = PlayGlobalSound("General/Computer/Beep"..math.random(1, 5)..".ogg")
+  CurrentGlobalSound = PlayGlobalSound("General/Misc/Beep"..math.random(1, 5)..".ogg")
 end
 
 -- The ship suddenly shoots out of the rift and into another sector. The rift rapidly shrinks and disappears.
 function General_TheShipSuddenlyShootsOutOf(name, line, wildcards)
-  CurrentGlobalSound = PlayGlobalSound("General/Computer/Beep"..math.random(1, 5)..".ogg")
+  CurrentGlobalSound = PlayGlobalSound("General/Misc/Beep"..math.random(1, 5)..".ogg")
   CurrentGlobalSound = PlayGlobalSound("Starship/Misc/Background"..math.random(1, 5)..".ogg")
 end
 
@@ -893,7 +893,7 @@ end
 
 -- You hear some clangs as the excavation equipment is retracted.
 function General_YouHearSomeClangsAsThe(name, line, wildcards)
-  CurrentGlobalSound = PlayGlobalSound("Space/Reflectors3.ogg")
+  CurrentGlobalSound = PlayGlobalSound("Combat/Space/Reflectors3.ogg")
 end
 
 -- Excavation impossible due to damaged equipment.
