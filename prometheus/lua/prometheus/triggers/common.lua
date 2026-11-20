@@ -14,6 +14,7 @@
 --   sound      the sound file, without the number and .ogg (leave it out to play nothing)
 --   versions   how many numbered versions there are (one is picked at random)
 --   combat     play it as a combat sound (combat volume and on/off setting)
+--   pan        play it at a random position between left and right
 --   also       a second sound to play straight after, written the same way
 --   play       instead of sound: a function(text) that decides what to play
 --   sounds     instead of sound: a smaller list to look the same text up in; the first
@@ -71,10 +72,14 @@ function PlaySoundSpec(spec)
   if spec.versions then
     file = file .. math.random(1, spec.versions)
   end
+  local pan = nil
+  if spec.pan then
+    pan = math.random(-100, 100)
+  end
   if spec.combat then
-    CurrentCombatSound = PlayCombatSound(file .. ".ogg")
+    CurrentCombatSound = PlayCombatSound(file .. ".ogg", pan)
   else
-    CurrentGlobalSound = PlayGlobalSound(file .. ".ogg")
+    CurrentGlobalSound = PlayGlobalSound(file .. ".ogg", pan)
   end
 end
 

@@ -239,43 +239,41 @@ function Starship_FinishInstalling(name, line, wildcards)
   CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Report"..math.random(1, 4)..".ogg")
 end
 
+-- What the computer reports. Checked from top to bottom; the first entry that fits is
+-- played. (See common.lua for what each field means.)
+COMPUTER_REPORTS = {
+  { has = "completed repair of", sound = "Starship/Computer/RepairComplete" },
+  { has = "there is no debris", sound = "Starship/Computer/NoDebris" },  -- no such file yet
+  { has = "starship probe", sounds = {
+      { has = "destroyed by", sound = "Combat/Space/OtherDestroyed", versions = 8 },
+      { has = "hacked into", sound = "Starship/Derelicts/Hacked", pan = true },
+      { has = "Attempting to retreat", sound = "Starship/Derelicts/DestructionTriggered" },
+      { has = "deployed", sound = "Starship/Derelicts/Probe", versions = 3 },
+      { has = "discovered an artifact", sound = "Starship/Computer/Artifact", pan = true },
+      { has = "returned to the ship", sound = "Starship/Derelicts/ProbeReturn" },
+    } },
+  { has = "is 1 unit away", sound = "Starship/Computer/OneUnitAway" },
+  { has = "destroyed", sounds = {
+      { has = "X-Loritan", sound = "Space/OtherDestroyed", versions = 8, combat = true },
+      { sound = "Combat/Space/OtherDestroyed", versions = 8 },  -- any other ship
+    } },
+  { has = "no space for the debris", sound = "Starship/Misc/StorageFull" },
+  { has = "Easter egg", sound = "General/Misc/EggItem" },
+}
+
 -- The computer reports that *
+-- Every report is added to the All and Computer Reports buffers and plays the report
+-- chime; COMPUTER_REPORTS may add its own sound. Then it's shown.
 function Starship_TheComputerReportsThat(name, line, wildcards)
-  Execute("history_add All=Computer Reports: " .. wildcards[1])
-  Execute("history_add Computer Reports=" .. wildcards[1])
-  CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Report"..math.random(1, 4)..".ogg")
-  if (string.match(wildcards[1], "completed repair of")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Computer/RepairComplete.ogg")
-  elseif (string.match(wildcards[1], "there is no debris")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Computer/NoDebris.ogg")
-  elseif (string.match(wildcards[1], "starship probe")) then
-    if (string.match(wildcards[1], "destroyed by")) then
-      CurrentGlobalSound = PlayGlobalSound("Combat/Space/OtherDestroyed"..math.random(1, 8)..".ogg")
-    elseif (string.match(wildcards[1], "hacked into")) then
-      CurrentGlobalSound = PlayGlobalSound("Starship/Derelicts/Hacked.ogg", math.random(-100, 100))
-    elseif (string.match(wildcards[1], "Attempting to retreat")) then
-      CurrentGlobalSound = PlayGlobalSound("Starship/Derelicts/DestructionTriggered.ogg")
-    elseif (string.match(wildcards[1], "deployed")) then
-      CurrentGlobalSound = PlayGlobalSound("Starship/Derelicts/Probe"..math.random(1, 3)..".ogg")
-    elseif (string.match(wildcards[1], "discovered an artifact")) then
-      CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Artifact.ogg", math.random(-100, 100))
-    elseif (string.match(wildcards[1], "returned to the ship")) then
-      CurrentGlobalSound = PlayGlobalSound("Starship/Derelicts/ProbeReturn.ogg")
-    end
-  elseif (string.match(wildcards[1], "is 1 unit away")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Computer/OneUnitAway.ogg")
-  elseif (string.match(wildcards[1], "destroyed")) then
-    if (string.match(wildcards[1], "X-Loritan")) then
-      CurrentCombatSound = PlayCombatSound("Space/OtherDestroyed"..math.random(1, 8)..".ogg")
-    else
-      CurrentGlobalSound = PlayGlobalSound("Combat/Space/OtherDestroyed"..math.random(1, 8)..".ogg")
-    end
-  elseif (string.match(wildcards[1], "no space for the debris")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Misc/StorageFull.ogg")
-  elseif (string.match(wildcards[1], "Easter egg")) then
-    CurrentGlobalSound = PlayGlobalSound("General/Misc/EggItem.ogg")
+  local text = wildcards[1]
+  Execute("history_add All=Computer Reports: " .. text)
+  Execute("history_add Computer Reports=" .. text)
+  CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Report" .. math.random(1, 4) .. ".ogg")
+  local entry = FindSoundEntry(COMPUTER_REPORTS, text)
+  if entry then
+    PlaySoundEntry(entry, text)
   end
-  Note(wildcards[1])
+  Note(text)
 end
 
 -- The computer emits a piercing tone, alerting you that a starship has been detected in the sector's boundries.
@@ -1104,49 +1102,48 @@ function Starship_WithASharpJoltThePod(name, line, wildcards)
   CurrentGlobalSound = PlayGlobalSound("Starship/Move/EscapePodLands.ogg")
 end
 
+-- A vehicle's small computer screen. Checked from top to bottom; the first entry that fits
+-- is played. (See common.lua for what each field means.)
+--   hide_unless   the name of a setting: while it's 0, the message isn't shown (it's still
+--                 added to the buffers). CollectingMessages has no command to switch it, so
+--                 "collected" messages are always hidden.
+VEHICLE_SCREEN_SOUNDS = {
+  { has = "collected", hide_unless = "CollectingMessages" },  -- no sound
+  { has_lower = "confirmed hit on", sound = "Ground/GrenadeExplode", combat = true },
+  { has_lower = "weapons locked on", sound = "Space/LockedOnOther", combat = true },
+  { has_lower = { "beginning", "repair" }, sound = "Starship/Computer/RepairStart" },
+  { has_lower = "repair complete", sound = "Starship/Computer/RepairComplete" },
+  { has_lower = "aborting repair", sound = "Starship/Computer/RepairAborted" },
+  { has_lower = "recharging", sound = "Starship/Misc/BatteryRecharging" },
+  { has = "recharged", sound = "General/Misc/Beep", versions = 5 },
+  { has_lower = "charge running low", sound = "Starship/Computer/LowCharge", versions = 2 },
+  -- KNOWN BUG, kept for now: this looks in the lowercased line for a capital E, so it never matches.
+  { has_lower = "Excavation cannot be started due to the vehicle running low on charge", sound = "Starship/Computer/LowCharge", versions = 2 },
+  { has_lower = "stored minerals", sound = "Starship/computer/Display" },
+  { has_lower = "storage full", sound = "Starship/Misc/StorageFull" },
+  { has_lower = "storage capacity full", sound = "Starship/Misc/StorageFull" },
+  { has_lower = "current charge", sound = "Starship/Computer/Display" },
+  { has_lower = "items in the storage compartment", sound = "Starship/Computer/Display" },
+  { has = "destroyed", sound = "Space/OtherDestroyed", versions = 8, combat = true },
+  { has = "Scanning", sound = "Vehicle/Scanning" },
+}
+
 -- A small computer screen announces, "*"
+-- Every announcement is added to the All and Vehicle Computer Announcements buffers and
+-- plays the announcement chime; VEHICLE_SCREEN_SOUNDS may add its own sound. Then it's shown.
 function Starship_ASmallComputerScreenAnnounces(name, line, wildcards)
-  Execute("history_add All=Vehicle Computer Announcement: " .. wildcards[1])
-  Execute("history_add Vehicle Computer Announcements=" .. wildcards[1])
-  CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Announce"..math.random(1, 7)..".ogg")
-  if (string.match(wildcards[1], "collected")) then
-    if (ConfigTable.Settings.CollectingMessages == 0) then
+  local text = wildcards[1]
+  Execute("history_add All=Vehicle Computer Announcement: " .. text)
+  Execute("history_add Vehicle Computer Announcements=" .. text)
+  CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Announce" .. math.random(1, 7) .. ".ogg")
+  local entry = FindSoundEntry(VEHICLE_SCREEN_SOUNDS, text)
+  if entry then
+    if entry.hide_unless and ConfigTable.Settings[entry.hide_unless] == 0 then
       return
     end
-  elseif (string.match(string.lower(wildcards[1]), "confirmed hit on")) then
-    CurrentCombatSound = PlayCombatSound("Ground/GrenadeExplode.ogg")
-  elseif (string.match(string.lower(wildcards[1]), "weapons locked on")) then
-    CurrentCombatSound = PlayCombatSound("Space/LockedOnOther.ogg")
-  elseif (string.match(string.lower(wildcards[1]), "beginning") and string.match(string.lower(wildcards[1]), "repair")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Computer/RepairStart.ogg")
-  elseif (string.match(string.lower(wildcards[1]), "repair complete")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Computer/RepairComplete.ogg")
-  elseif (string.match(string.lower(wildcards[1]), "aborting repair")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Computer/RepairAborted.ogg")
-  elseif (string.match(string.lower(wildcards[1]), "recharging")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Misc/BatteryRecharging.ogg")
-  elseif (string.match(wildcards[1], "recharged")) then
-    CurrentGlobalSound = PlayGlobalSound("General/Misc/Beep"..math.random(1, 5)..".ogg")
-  elseif (string.match(string.lower(wildcards[1]), "charge running low")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Computer/LowCharge"..math.random(1, 2)..".ogg")
-  elseif (string.match(string.lower(wildcards[1]), "Excavation cannot be started due to the vehicle running low on charge")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Computer/LowCharge"..math.random(1, 2)..".ogg")
-  elseif (string.match(string.lower(wildcards[1]), "stored minerals")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/computer/Display.ogg")
-  elseif (string.match(string.lower(wildcards[1]), "storage full")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Misc/StorageFull.ogg")
-  elseif (string.match(string.lower(wildcards[1]), "storage capacity full")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Misc/StorageFull.ogg")
-  elseif (string.match(string.lower(wildcards[1]), "current charge")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Display.ogg")
-  elseif (string.match(string.lower(wildcards[1]), "items in the storage compartment")) then
-    CurrentGlobalSound = PlayGlobalSound("Starship/Computer/Display.ogg")
-  elseif (string.match(wildcards[1], "destroyed")) then
-    CurrentCombatSound = PlayCombatSound("Space/OtherDestroyed"..math.random(1, 8)..".ogg")
-  elseif (string.match(wildcards[1], "Scanning")) then
-    CurrentGlobalSound = PlayGlobalSound("Vehicle/Scanning.ogg")
+    PlaySoundEntry(entry, text)
   end
-  Note(wildcards[1])
+  Note(text)
 end
 
 -- Equipment Damage: *%.
