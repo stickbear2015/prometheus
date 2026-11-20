@@ -46,6 +46,8 @@ LuaJIT is expected at `C:\Users\spopp\AppData\Local\Programs\LuaJIT\bin\luajit.e
 
 ## Findings from the original plugin (2026-11-20)
 
+- **From Kendal's real game log** (9,043,953 lines, 1,295,334 unique; 2,311 real lines kept, covering 550 triggers): **79 of the 2,311 real lines (about 3.4%) crash their trigger's code before any sound plays.** Every one is the quote-mark problem: the game's text contains a quote mark, usually a ship name or channel message in quotes, and pasting it into the code breaks it. The worst affected are the general channel trigger, "* has fired * at *", "The computer announces", "The computer reports that", "You see several lights blink...", "* is here." and the door open and close triggers.
+
 - 758 of 795 triggers fire on the test lines. Most of the other 37 are caught first by an earlier, broader trigger (for example `[Frequency *] *` is caught by the general `[channel]` trigger). If MUSHclient orders them the same way, they never fire in the game either.
 - Trigger "The ship rocks slightly as planetary lasers impact the" calls `random()`, which doesn't exist, so it errors after playing its first sound (should be `math.random`).
 - Trigger "^(.*) translator announces(.*?)\, "(.*)"$" puts the game's text straight into its code, which breaks on the test line. This is the quote-mark problem described in issue #44.
