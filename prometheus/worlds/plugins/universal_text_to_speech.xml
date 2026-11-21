@@ -105,6 +105,14 @@ You may also be able to control SAPI settings through one of your system control
     end </send> </alias>
 </aliases>
 <script><![CDATA[
+-- Look for Lua modules in this copy of MUSHclient first, even if a separately
+-- installed Lua has set LUA_PATH or LUA_CPATH (issue #51).
+do
+  local dir = GetInfo(66)
+  package.path = dir .. "lua/?.lua;" .. dir .. "lua/?/init.lua;" .. package.path
+  package.cpath = dir .. "?.dll;" .. dir .. "lua/?.dll;" .. package.cpath
+end
+
 AcceleratorTo("Ctrl+Space", "CallPlugin('"..GetPluginID().."', 'silence_if_can')", sendto.script)
 substitutions={}
 substitutions.status=1
