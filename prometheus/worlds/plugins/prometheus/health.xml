@@ -40,12 +40,5 @@
   script="Health_YouAreDead"
 ></trigger>
 
-<trigger
-  enabled="y"
-  match="* is dead!"
-  sequence="100"
-  script="Health_IsDead"
-></trigger>
-
 </triggers>
 </muclient>
