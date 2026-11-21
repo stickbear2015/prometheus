@@ -27,7 +27,7 @@ MUSHclient soundpack for Prometheus: The Eternal Wars. Shane's repo (`stickbear2
 - **Never edit `changelog.md` or `changelog.html`.** They're Shane's to write (Shane, 2026-11-20). Instead, write the player-facing changes (with issue links) to a notes file in `C:\code\git-src\text-files` for him, and tell him it's there. Committing and pushing his own changelog edits is fine.
 - Players' existing settings must keep working after an update.
 - **Every message that goes into a buffer must also go into the All buffer** (Shane, 2026-11-20). Use `AddToHistory(buffer, text, all_text)` from `lua/prometheus/triggers/common.lua`, which sends All first, then the other buffer. Checked 2026-11-20: every buffer message in both test recordings has its All entry.
-- Testing: LuaJIT (Lua 5.1 compatible) is installed at `C:\Users\spopp\AppData\Local\Programs\LuaJIT\bin\luajit.exe` (installed 2026-11-20 for the cleanup's test tool).
+- Testing: LuaJIT (Lua 5.1 compatible) is installed at `C:\Users\spopp\AppData\Local\Programs\LuaJIT\bin\luajit.exe` (installed 2026-11-20 for the cleanup's test tool). **Its winget install also set the user environment variables `LUA_PATH` and `LUA_CPATH` to LuaJIT's folders, which MUSHclient's Lua obeys: every plugin's `require` (ppi, serialize, prometheus.main) then failed on Shane's PC with "module not found". Both were deleted on 2026-11-21. Never set them; the test tool doesn't need them.** A player with another Lua installed could hit the same thing.
 
 ## Cleanup decisions
 
