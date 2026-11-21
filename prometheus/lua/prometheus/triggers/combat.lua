@@ -298,7 +298,27 @@ function Combat_TheCorpseOfSlowlyDecays(name, line, wildcards)
 end
 
 -- * take*aim at * with *!
+-- True when the weapon is just "a rifle", "a shotgun", "a sniper" or "a pistol" (an
+-- optional "s " in front, from "fires a rifle"). A real weapon always has a description
+-- ("an alien laser sniper", "a sleak sniper weapon"), so a bare one is a player's emote.
+local function is_bare_gun(text)
+  local bare = string.match(string.lower(text), "^s?%s*an? (%a+)$")
+  if bare then
+    for g = 1, #guns do
+      if bare == guns[g] then
+        return true
+      end
+    end
+  end
+  return false
+end
+
+-- wildcards: 1 = who, 2 = the end of "take", 3 = the target, 4 = the weapon
 function Combat_TakeAimAtWith(name, line, wildcards)
+  if is_bare_gun(wildcards[4]) then
+    Note(line)  -- an emote such as "takes aim at you with a sniper!": shown, no sound
+    return
+  end
   if (string.match(wildcards[1], "You")) then
     CurrentCombatSound = PlayCombatSound("Ground/Aiming.ogg")
     if (ConfigTable.Settings.SpeakSniperTarget == 1) then
@@ -312,16 +332,11 @@ end
 -- * fire*!
 -- wildcards: 1 = who, 2 = what follows "fire" (for example "s a black laser sniper")
 function Combat_Fire(name, line, wildcards)
-  -- A real weapon always has a description ("a black laser sniper"). A bare "fires a
-  -- rifle!", "fires a shotgun!" and so on is a player's emote: show it, with no sound.
-  local bare = string.match(string.lower(wildcards[2]), "^s? an? (%a+)$")
-  if bare then
-    for g = 1, #guns do
-      if bare == guns[g] then
-        Note(line)
-        return
-      end
-    end
+  -- A bare "fires a rifle!", "fires a shotgun!" and so on is a player's emote: show it,
+  -- with no sound.
+  if is_bare_gun(wildcards[2]) then
+    Note(line)
+    return
   end
   for g = 1, #guns do
     if (string.match(string.lower(wildcards[2]), string.lower(guns[g]))) then
