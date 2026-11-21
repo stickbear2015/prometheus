@@ -23,6 +23,7 @@ MUSHclient soundpack for Prometheus: The Eternal Wars. Shane's repo (`stickbear2
 
 - Branches: `master` is released, and `dev` is development. Feature work happens on a branch, then a pull request into `dev`. Delete merged branches.
 - Commit, and push straight after every commit (Shane's own repo).
+- **Never edit `prometheus/version.info` or `prometheus.iss`'s version line either** (Shane, 2026-11-21): like the changelog, Shane manages the version by hand. Committing his changes to them is fine; changing them only when he says so for that specific change.
 - **Never edit `changelog.md` or `changelog.html`.** They're Shane's to write (Shane, 2026-11-20). Instead, write the player-facing changes (with issue links) to a notes file in `C:\code\git-src\text-files` for him, and tell him it's there. Committing and pushing his own changelog edits is fine.
 - Players' existing settings must keep working after an update.
 - **Every message that goes into a buffer must also go into the All buffer** (Shane, 2026-11-20). Use `AddToHistory(buffer, text, all_text)` from `lua/prometheus/triggers/common.lua`, which sends All first, then the other buffer. Checked 2026-11-20: every buffer message in both test recordings has its All entry.
