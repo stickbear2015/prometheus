@@ -238,6 +238,14 @@ Note("History save limit set to " .. tostring(limit) .. " messages")</send>
 </aliases>
 
 <script><![CDATA[
+-- Look for Lua modules in this copy of MUSHclient first, even if a separately
+-- installed Lua has set LUA_PATH or LUA_CPATH (issue #51).
+do
+  local dir = GetInfo(66)
+  package.path = dir .. "lua/?.lua;" .. dir .. "lua/?/init.lua;" .. package.path
+  package.cpath = dir .. "?.dll;" .. dir .. "lua/?.dll;" .. package.cpath
+end
+
 buffer_capacity = 100000 -- How many messages can buffers hold before deleting the oldest every time a new one is added.
 default_save_limit = "100" -- If enabled, save this many of the latest messages and reload them when the plugin is reinstalled or the client is reopened.
 default_save_messages = "false" -- Do we save n of the last messages in each buffer by default?
