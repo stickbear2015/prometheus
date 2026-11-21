@@ -12,7 +12,7 @@ MUSHclient soundpack for Prometheus: The Eternal Wars. Kendal's repo (`stickbear
   - `sounds/`: about 1,900 .ogg files (Combat, Footsteps, General, Music, Rooms, Socials, Starship, Vehicle).
 - `original sounds/`: a temporary copy of the sounds from before they were trimmed (issue #36). To be removed once the edge cases are fixed.
 - `changelog.md`: the player-facing changelog; the "development version" section lists unreleased changes with issue links.
-- `prometheus.iss`: the installer. Note that it copies `prometheus\*` from the folder on disk, so local files (Config.txt, logs written while playing from the repo) go into it too.
+- `prometheus.iss`: the installer (Kendal's file: change it only when she asks). It copies `prometheus\*` from the folder on disk, so local files such as logs written while playing from the repo go into it too. Since ec16ef6 (2026-11-21) it excludes `Config.txt`, so upgrades keep players' settings and the builder's own settings aren't shipped; the pack creates `Config.txt` with defaults on first start.
 - `tools/test-build/make-test-zip.ps1`: makes a tester zip from the last commit (never from disk), named `Prometheus-<label>-test-<yyyyMMdd>-<commit>.zip`, with the installer's layout (`mushclient\` plus `changelog.html`) and `TESTING-README.txt`. It stops if the pack has uncommitted changes. Run it from PowerShell: `.	ools	est-build\make-test-zip.ps1` (optional `-Label word`).
 
 ## Sound functions
