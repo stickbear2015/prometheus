@@ -143,6 +143,8 @@ end
 for _, case in ipairs(spec.cases) do
   for k, v in pairs(defaults) do ConfigTable.Settings[k] = v end
   for k, v in pairs(case.settings or {}) do ConfigTable.Settings[k] = v end
+  -- SoundpackDebug=1 in a test line's settings runs it as if spdebug were on.
+  SoundpackDebug = (case.settings or {}).SoundpackDebug == 1
   emit("case", case.id)
   for _, f in ipairs(case.fires) do
     emit("fire", f.label)
