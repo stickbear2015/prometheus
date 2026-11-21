@@ -1,0 +1,1844 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<!-- Starship sounds: movement, docking, systems, sensors, mining and repairs. -->
+<!-- The Lua for these triggers is in lua/prometheus/triggers/starship.lua -->
+<muclient>
+<triggers>
+
+<trigger
+  enabled="y"
+  match="The application console beeps as * complete*submitting an application."
+  sequence="100"
+  script="Starship_TheApplicationConsoleBeepsAsComplete"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Beeps can be heard as the starship surveys the planet."
+  sequence="100"
+  script="Starship_BeepsCanBeHeardAsThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Beeps and clicks can be heard as the starships surveyor activates."
+  sequence="100"
+  script="Starship_BeepsAndClicksCanBeHeard"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="^\(From outside\: (.*)\)$"
+  regexp="y"
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_FromOutside"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="^\(In (.*)\: (.*)\)$"
+  regexp="y"
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_In"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear a humming noise *."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_YouHearAHummingNoise"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The humm dies down as the starship's powerup fails."
+  sequence="100"
+  script="Starship_TheHummDiesDownAsThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear the roar of * starship from outside."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_YouHearTheRoarOfStarship"
+></trigger>
+
+<trigger
+  enabled="y"
+  match='A message is displayed in bright red on the screen, "*"'
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_AMessageIsDisplayedInBright"
+></trigger>
+
+<trigger
+  enabled="y"
+  match='The computer announces, "*"'
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_TheComputerAnnounces"
+></trigger>
+
+<trigger
+  enabled="y"
+  match='^Computer in (.*)\, "(.*)"$'
+  regexp="y"
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_ComputerIn"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The low hum of the shields recharging abruptly ends."
+  sequence="100"
+  script="Starship_TheLowHumOfTheShields"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="There are no * left in the launchers."
+  sequence="100"
+  script="Starship_ThereAreNoLeftInThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* damaged beyond repair."
+  sequence="100"
+  script="Starship_DamagedBeyondRepair"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="There is inadequate amount of ammunition left in the starship for a reload."
+  sequence="100"
+  script="Starship_ThereIsInadequateAmountOfAmmunition"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* the starship's salvage scanners, which begin scanning the area for debris."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_TheStarshipSalvageScannersWhichBegin"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* begin*to install * into the ships systems."
+  sequence="100"
+  script="Starship_BeginToInstallIntoTheShips"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* finish*installing *"
+  sequence="100"
+  script="Starship_FinishInstalling"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The computer reports that *"
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_TheComputerReportsThat"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The computer emits a piercing tone, alerting you that a starship has been detected in the sector's boundries."
+  sequence="100"
+  script="Starship_TheComputerEmitsAPiercingTone"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear several loud thuds as a salvaging line is deployed into space."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_YouHearSeveralLoudThudsAs"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Please do not command stack."
+  sequence="100"
+  script="Starship_PleaseDoNotCommandStack"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Checking to see if your * is broken..."
+  sequence="100"
+  script="Starship_CheckingToSeeIfYourIs"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Checking movement..."
+  sequence="100"
+  script="Starship_CheckingMovement"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Can't find *."
+  sequence="100"
+  script="Starship_CanFind"
+></trigger>
+
+<trigger
+  enabled="y"
+  match='No matching objects to "*".'
+  sequence="100"
+  script="Starship_NoMatchingObjectsTo"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* pull*a series of straps around * and securely buckle* into * seat."
+  sequence="100"
+  script="Starship_PullASeriesOfStrapsAround"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* release*the buckle of * seatbelt, causing it to retract back into * seat."
+  sequence="100"
+  script="Starship_ReleaseTheBuckleOfSeatbeltCausing"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* quickly doubletap*a button on top of *"
+  sequence="100"
+  script="Starship_QuicklyDoubletapAButtonOnTop"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* flick*a*switch on *."
+  sequence="100"
+  script="Starship_FlickASwitchOn"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You notice a faint hum as the starship orients its asteroid anchor into place."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_YouNoticeAFaintHumAs"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* begin*maneuvering the starship onto an asteroid."
+  sequence="100"
+  script="Starship_BeginManeuveringTheStarshipOntoAn"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* tap*a series of buttons, * the starship's power."
+  sequence="100"
+  script="Starship_TapASeriesOfButtonsThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* tap*the unlock button on the grabbing console, causing the locked cutting beam to begin moving again."
+  sequence="100"
+  script="Starship_TapTheUnlockButtonOnThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The ship lurches as a powerful cutting beam is launched into space."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_TheShipLurchesAsAPowerful"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="A slight hum can be heard as an artifact retrieval tube is deployed into space."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_ASlightHumCanBeHeard"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* press*some buttons on * with *."
+  sequence="100"
+  script="Starship_PressSomeButtonsOnWith"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You tap some buttons on * hypernet browser with * touchscreen and the screen flashes, '*'"
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_YouTapSomeButtonsOnHypernet"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Displaying docked starships:"
+  sequence="100"
+  script="Starship_DisplayingDockedStarships"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Debris scanner report for the current sector:"
+  sequence="100"
+  script="Starship_DebrisScannerReportForTheCurrent"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Items in the storage compartment:"
+  sequence="100"
+  script="Starship_ItemsInTheStorageCompartment"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="There is no trash in the storage compartment. The size of the storage compartment is * units."
+  sequence="100"
+  script="Starship_ThereIsNoTrashInThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Combat mission"
+  sequence="100"
+  script="Starship_CombatMission"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Record for *"
+  sequence="100"
+  script="Starship_RecordFor"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Available starship probes: *"
+  sequence="100"
+  script="Starship_AvailableStarshipProbes"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="There is no debris to refine."
+  sequence="100"
+  script="Starship_ThereIsNoDebrisToRefine"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="A barely audible hum starts as the refiner begins its work."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_ABarelyAudibleHumStartsAs"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The hum stops as the refiner completes its work."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_TheHumStopsAsTheRefiner"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Nothing is currently being constructed."
+  sequence="100"
+  script="Starship_NothingIsCurrentlyBeingConstructed"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Battery type: *"
+  sequence="100"
+  script="Starship_BatteryType"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Current charge: *"
+  sequence="100"
+  script="Starship_CurrentCharge"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Defense system information for *:"
+  sequence="100"
+  script="Starship_DefenseSystemInformationFor"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The following items are in the cargo hold:"
+  sequence="100"
+  script="Starship_TheFollowingItemsAreInThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="There is nothing in the * hold. *"
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_ThereIsNothingInTheHold"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Available units of refined material: * out of *"
+  sequence="100"
+  script="Starship_AvailableUnitsOfRefinedMaterialOut"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The refinery tanks are * full *"
+  sequence="100"
+  script="Starship_TheRefineryTanksAreFull"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="^You hear several loud thuds as automated drones (load|remove) cargo (from|into) the storage room\.$"
+  regexp="y"
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_YouHearSeveralLoudThudsAs2"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="A drone loads * onto its platform and carries it away."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_ADroneLoadsOntoItsPlatform"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The thuds coming from *."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_TheThudsComingFrom"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The clicks abruptly stop as the transfer finishes."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_TheClicksAbruptlyStopAsThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="A loud thud can be heard from the storage room as a piece of debris is deposited by the salvaging line."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_ALoudThudCanBeHeard"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You retrieve a weapons status readout."
+  sequence="100"
+  script="Starship_YouRetrieveAWeaponsStatusReadout"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Status for *"
+  sequence="100"
+  script="Starship_StatusFor"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Charge readout:"
+  sequence="100"
+  script="Starship_ChargeReadout"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Security status for *:"
+  sequence="100"
+  script="Starship_SecurityStatusFor"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Engine Speed: *"
+  ignore_case="y"
+  sequence="100"
+  script="Starship_EngineSpeed"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Starship component Damage:"
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_StarshipComponentDamage"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Weapon Damage:"
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_WeaponDamage"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* pull*up an image of the starship's status report on a screen built-into the main control board."
+  sequence="100"
+  script="Starship_PullUpAnImageOfThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* furiously input*into a weapon locking console."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_FuriouslyInputIntoAWeaponLocking"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear several sliding noises as the reflector plates *"
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_YouHearSeveralSlidingNoisesAs"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear a barely audible vibration followed by a * the ship."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_YouHearABarelyAudibleVibration"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear a vibration as the solar recharge completes and the solar receptors retract back into the ship with an audible click."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_YouHearAVibrationAsThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear some clangs and drilling sounds as the replacement * is installed."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_YouHearSomeClangsAndDrilling"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You're not in space!"
+  sequence="100"
+  script="Starship_YouReNotInSpace"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You should be in space."
+  sequence="100"
+  script="Starship_YouShouldBeInSpace"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The * isn't in space."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_TheIsnInSpace"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The * is not in space."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_TheIsNotInSpace"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You can only do that in space."
+  sequence="100"
+  script="Starship_YouCanOnlyDoThatIn"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The * is not in the required conditions to use this function."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_TheIsNotInTheRequired"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The * should be in space before * wormhole transport console may be activated."
+  sequence="100"
+  script="Starship_TheShouldBeInSpaceBefore"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* has * the sector."
+  sequence="100"
+  script="Starship_HasTheSector"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* has * the sector through an unrecorded field."
+  sequence="100"
+  script="Starship_HasTheSectorThroughAnUnrecorded"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* has * hyperspace."
+  sequence="100"
+  script="Starship_HasHyperspace"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* has * stargate."
+  sequence="100"
+  script="Starship_HasStargate"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="A chime sounds, indicating that somebody has entered an airlock."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_AChimeSoundsIndicatingThatSomebody"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You feel a slight jolt as the ship begins to move through the open bay door, and into open space."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_YouFeelASlightJoltAs"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You feel a slight jolt as the other ship begins to move through the open bay door, and into open space."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_YouFeelASlightJoltAs2"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You feel a faint vibration coming from the direction of the ships docking bay."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_YouFeelAFaintVibrationComing"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You feel a slight pull as the ship is expeled from the docking bay."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_YouFeelASlightPullAs"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You feel a slight jolt as the ship sets down in a docking bay."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_YouFeelASlightJoltAs3"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* make*some selections on the docking console. The red light turns to yellow."
+  sequence="100"
+  script="Starship_MakeSomeSelectionsOnTheDocking"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Choosing * (Status: powered *)."
+  sequence="100"
+  script="Starship_ChoosingStatusPowered"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The smooth hum of the engines builds up a bit as the ship begins moving."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_TheSmoothHumOfTheEngines"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The hum of the engines settles down as the ship stops moving."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_TheHumOfTheEnginesSettles"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear the sound of the ship's engine as you are propelled toward space."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_YouHearTheSoundOfThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You feel the starship accelerate as it moves toward a *"
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_YouFeelTheStarshipAccelerateAs"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="That space is occupied."
+  sequence="100"
+  script="Starship_ThatSpaceIsOccupied"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Those coordinates are occupied by this ship."
+  sequence="100"
+  script="Starship_ThoseCoordinatesAreOccupiedByThis"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear a dull roar as the ship's sublight drive propels the ship toward its destination."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_YouHearADullRoarAs"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* has initiated an intrasector sublight jump."
+  sequence="100"
+  script="Starship_HasInitiatedAnIntrasectorSublightJump"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The dull roar of the sublight drive fades away as the ship reaches a destination."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_TheDullRoarOfTheSublight"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* float*out into space."
+  sequence="100"
+  script="Starship_FloatOutIntoSpace"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* out of the ship's hatch."
+  sequence="100"
+  script="Starship_OutOfTheShipHatch"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* place*hand against a sensor on * and *."
+  sequence="100"
+  script="Starship_PlaceHandAgainstASensorOn"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* out from the hatch of *."
+  sequence="100"
+  script="Starship_OutFromTheHatchOf"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* board*through the unlocked hatch."
+  sequence="100"
+  script="Starship_BoardThroughTheUnlockedHatch"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* walk*out into space."
+  sequence="100"
+  script="Starship_WalkOutIntoSpace"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The hum in the background builds up a bit as the pressurizing systems prepare for shutdown."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_TheHumInTheBackgroundBuilds"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The hum dies down as the pressurizing system shutdown completes."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_TheHumDiesDownAsThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="A low, almost unnoticeable hum becomes audible in the background as the pressurizing systems are activated."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_ALowAlmostUnnoticeableHumBecomes"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The ship shudders and the lights dim briefly as beam cannons are fired."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_TheShipShuddersAndTheLights"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear the sound of the engines as the ship begins to move."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_YouHearTheSoundOfThe2"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The engine stops as the ship arrives at a destination."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_TheEngineStopsAsTheShip"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The thrusters of * begin to glow bright red, and the ship launches toward the sky with a roar, leaving behind a wave of heat and a trail of fire."
+  sequence="100"
+  script="Starship_TheThrustersOfBeginToGlow"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear the distinctive roar of starship engines, and look up to see a starship quickly approaching from a distance, making careful maneuvers toward * in order to *."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_YouHearTheDistinctiveRoarOf"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear the microdrones working in the background as they repair the damage."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_YouHearTheMicrodronesWorkingIn"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear a buzzing sound from the * as repairs continue."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_YouHearABuzzingSoundFrom"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear a shrill screeching sound as repair drones drag replacement components across the *"
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_YouHearAShrillScreechingSound"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear a deafening booming sound as repairs to the ship proceed."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_YouHearADeafeningBoomingSound"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear an electrical zapping sound as repairs to the ship continue."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_YouHearAnElectricalZappingSound"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear several clinking sounds as the ship is repaired."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_YouHearSeveralClinkingSoundsAs"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Suddenly, you hear a massive crashing and booming sound as the repair drones go to super power! They're repairing * now!"
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_SuddenlyYouHearAMassiveCrashing"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="There is no more room for trash in the storage compartment. *"
+  sequence="100"
+  script="Starship_ThereIsNoMoreRoomFor"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Charge is too low for harvesting."
+  sequence="100"
+  script="Starship_ChargeIsTooLowForHarvesting"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="There is nothing here to scan."
+  sequence="100"
+  script="Starship_ThereIsNothingHereToScan"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear a series of clicks from below as items are removed from the storage compartment."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_YouHearASeriesOfClicks"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The clicks coming from below abruptly stop."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_TheClicksComingFromBelowAbruptly"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear a series of clicks from below as the refinery is emptied into a starship."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_YouHearASeriesOfClicks2"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="There are no * to fire."
+  sequence="100"
+  script="Starship_ThereAreNoToFire"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Self-destruct sequence initiated! Destruction in sixty seconds."
+  sequence="100"
+  script="Starship_SelfDestructSequenceInitiatedDestructionIn"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The relic... EXPLODES!"
+  sequence="100"
+  script="Starship_TheRelicExplodes"
+></trigger>
+
+<trigger
+  enabled="y"
+  match='An alert flashes on a nearby power management console for your immediate attention: "*"'
+  sequence="100"
+  script="Starship_AnAlertFlashesOnANearby"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="A low hum comes to life as the shields begin recharging."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_ALowHumComesToLife"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The construction facility is powering up."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_TheConstructionFacilityIsPoweringUp"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="A low hum starts up as the construction facility is activated."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_ALowHumStartsUpAs"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The barely noticeable hum of the construction facility dies as it is deactivated."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_TheBarelyNoticeableHumOfThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The construction facility is shutting down."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_TheConstructionFacilityIsShuttingDown"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The hum stops as the refinery completes its work."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_TheHumStopsAsTheRefinery"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="A slowly rotating black rift appears in front of the ship."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_ASlowlyRotatingBlackRiftAppears"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The ship shakes as it ripples the fabric of space, entering a rift of deep, pulsing blackness."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_TheShipShakesAsItRipples"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The starship shudders as it enters a *"
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_TheStarshipShuddersAsItEnters"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="With a final jolt, the starship slows as it exits the *"
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_WithAFinalJoltTheStarship"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You detect a faint rumbling as the starship begins to orient toward another ship."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_YouDetectAFaintRumblingAs"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The engines begin to vibrate mildly as the ship accelerates toward another starship."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_TheEnginesBeginToVibrateMildly"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The starship rocks gently as the docking ring comes into contact with another starship."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_TheStarshipRocksGentlyAsThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear a satisfying click as the ship's docking ring is retracted from the docked ship's hull."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_YouHearASatisfyingClickAs"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You feel a faint vibration as the ship begins to launch into open space."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_YouFeelAFaintVibrationAs"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear a loud klang as robotic arms transport the ship from the garage to the *"
+  sequence="100"
+  script="Starship_YouHearALoudKlangAs"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear a loud clang as robotic arms seize the ship and transport it to the *"
+  sequence="100"
+  script="Starship_YouHearALoudClangAs"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear a short hum as hydraulic arms smoothly haul the ship from the garage *"
+  sequence="100"
+  script="Starship_YouHearAShortHumAs"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear a short hum as hydraulic arms smoothly haul the ship from * into the garage."
+  sequence="100"
+  script="Starship_YouHearAShortHumAs2"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* is gently lifted up and smoothly hauled into the garage by a pair of hydraulic arms."
+  sequence="100"
+  script="Starship_IsGentlyLiftedUpAndSmoothly"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* is transported into *."
+  sequence="100"
+  script="Starship_IsTransportedInto"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* is smoothly hauled into the area and placed on a large, metal platform."
+  sequence="100"
+  script="Starship_IsSmoothlyHauledIntoTheArea"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* is gently lifted from its platform and smoothly hauled out of the area by a pair of hydraulic arms."
+  sequence="100"
+  script="Starship_IsGentlyLiftedFromItsPlatform"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* is smoothly hauled onto the (.*) and gently set down, ready for launch."
+  sequence="100"
+  script="Starship_IsSmoothlyHauledOntoTheAnd"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear a loud clang as robotic arms seize the ship and transport it to the garage."
+  sequence="90"
+  script="Starship_YouHearALoudClangAs2"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear a loud klang as robotic arms transport the ship from the * to the garage."
+  sequence="100"
+  script="Starship_YouHearALoudKlangAs2"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* appear*in a beam of*light!"
+  sequence="100"
+  script="Starship_AppearInABeamOfLight"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* appears in the room from a bright beam of light."
+  sequence="100"
+  script="Starship_AppearsInTheRoomFromA"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="A bright beam surrounds *. When it fades, * is no longer in the room."
+  sequence="100"
+  script="Starship_ABrightBeamSurroundsWhenIt"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="*suddenly enveloped in a * beam of light.*"
+  sequence="100"
+  script="Starship_SuddenlyEnvelopedInABeamOf"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="*beam of light surrounds you. When it fades, you notice that your surroundings have changed."
+  sequence="100"
+  script="Starship_BeamOfLightSurroundsYouWhen"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* encased in a beam of electric blue light!"
+  sequence="100"
+  script="Starship_EncasedInABeamOfElectric"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="*wormhole transport console*humming*."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_WormholeTransportConsoleHumming"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The pod begins to vibrate mildly as it activates its jump drive."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_ThePodBeginsToVibrateMildly"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The vibration calms as the pod completes its jump, and begins to accelerate through space."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_TheVibrationCalmsAsThePod"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="With a sharp jolt, the pod touches down on the planet's surface. It then begins breaking apart, and you wearily climb out."
+  sequence="100"
+  script="Starship_WithASharpJoltThePod"
+></trigger>
+
+<trigger
+  enabled="y"
+  match='A small computer screen announces, "*"'
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_ASmallComputerScreenAnnounces"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Equipment Damage: *%."
+  sequence="100"
+  script="Starship_EquipmentDamage"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear the muted click of a power cable attaching itself to the vehicle and a low hum as power is transferred into the vehicle's battery."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_YouHearTheMutedClickOf"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear the microdrones working in the background as they repair the damaged equipment."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_YouHearTheMicrodronesWorkingIn2"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* tap*some buttons on the * console."
+  sequence="100"
+  script="Starship_TapSomeButtonsOnTheConsole"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* begin*inputting a sequence of commands into a wormhole transport console."
+  sequence="100"
+  script="Starship_BeginInputtingASequenceOfCommands"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* check*the starship's record console."
+  sequence="100"
+  script="Starship_CheckTheStarshipRecordConsole"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* check*a damage console."
+  sequence="100"
+  script="Starship_CheckADamageConsole"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* examine*a *"
+  sequence="100"
+  script="Starship_ExamineA"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* examine*the *"
+  sequence="100"
+  script="Starship_ExamineThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* input*."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_Input"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* begin*tapping commands into * console."
+  sequence="100"
+  script="Starship_BeginTappingCommandsIntoConsole"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You tap a 'MINERAL' icon on a status console."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_YouTapAMineralIconOn"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* shift*the throttle into *"
+  sequence="100"
+  script="Starship_ShiftTheThrottleInto"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* press* finger on the scanner next to the *."
+  sequence="100"
+  script="Starship_PressFingerOnTheScannerNext"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The scanner flashes a * light."
+  sequence="100"
+  script="Starship_TheScannerFlashesALight"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Sorry, that area is restricted to * only."
+  sequence="100"
+  script="Starship_SorryThatAreaIsRestrictedTo"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You are denied access to that information."
+  sequence="100"
+  script="Starship_YouAreDeniedAccessToThat"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="There * to transfer."
+  sequence="100"
+  script="Starship_ThereToTransfer"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="A small light near the hatch of * flashes *"
+  sequence="100"
+  script="Starship_ASmallLightNearTheHatch"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You see several lights blink in rapid succession on the navigation console, informing you that the ship is being * by *."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_YouSeeSeveralLightsBlinkIn"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The planetary damage of this planet is * units out of 100.0 units."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_ThePlanetaryDamageOfThisPlanet"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear a soft knocking from the starship's hull."
+  sequence="100"
+  script="Starship_YouHearASoftKnockingFrom"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You calmly knock on the hull of *"
+  sequence="100"
+  script="Starship_YouCalmlyKnockOnTheHull"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="An escape pod lands nearby."
+  sequence="100"
+  script="Starship_AnEscapePodLandsNearby"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="A soft hum starts in the background as the launchers begin reloading."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_ASoftHumStartsInThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* key*a few commands into *."
+  sequence="100"
+  script="Starship_KeyAFewCommandsInto"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* begin*inputting commands into * console."
+  sequence="100"
+  script="Starship_BeginInputtingCommandsIntoConsole"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* examine*a sector scan."
+  sequence="90"
+  script="Starship_ExamineASectorScan"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The military has shut down the application process for the time being. We appologize for the inconvenience!"
+  sequence="100"
+  script="Starship_TheMilitaryHasShutDownThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You tap a few buttons, making a small screen flash with lights."
+  sequence="100"
+  script="Starship_YouTapAFewButtonsMaking"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You can not use this drive for *"
+  sequence="100"
+  script="Starship_YouCanNotUseThisDrive"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The ship was last moving *"
+  sequence="100"
+  script="Starship_TheShipWasLastMoving"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Please power up your weapons first."
+  sequence="100"
+  script="Starship_PleasePowerUpYourWeaponsFirst"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You reach under the control board, and open a small metal panel before installing * override chip."
+  sequence="100"
+  script="Starship_YouReachUnderTheControlBoard"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* place*in-ship camera installation chip against a console."
+  sequence="100"
+  script="Starship_PlaceInShipCameraInstallationChip"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* in-ship camera installation chip slides into the console and eventually out of view."
+  sequence="100"
+  script="Starship_InShipCameraInstallationChipSlides"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Something deep within the ship's bowels explodes!"
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_SomethingDeepWithinTheShipBowels"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="There are no damages."
+  sequence="100"
+  script="Starship_ThereAreNoDamages"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Damage: *%."
+  sequence="100"
+  script="Starship_Damage"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The storage area contains:"
+  sequence="100"
+  script="Starship_TheStorageAreaContains"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The storage hold contains:"
+  sequence="100"
+  script="Starship_TheStorageHoldContains"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="A series of clicks is heard as a transfer process begins."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_ASeriesOfClicksIsHeard"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The clicks finally vanish as the transfer process completes."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_TheClicksFinallyVanishAsThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="No mined minerals could be found."
+  sequence="100"
+  script="Starship_NoMinedMineralsCouldBeFound"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* hit*a few keys on a weapons board."
+  sequence="100"
+  script="Starship_HitAFewKeysOnA"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The ship accelerates into hyperspace."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_TheShipAcceleratesIntoHyperspace"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The ship decelerates into real space."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_TheShipDeceleratesIntoRealSpace"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The ship suddenly shoots into realspace."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_TheShipSuddenlyShootsIntoRealspace"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="There are no artifacts in the storage area."
+  sequence="100"
+  script="Starship_ThereAreNoArtifactsInThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The following artifacts are in the storage area:"
+  sequence="100"
+  script="Starship_TheFollowingArtifactsAreInThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Vehicle Bay Status:"
+  sequence="100"
+  script="Starship_VehicleBayStatus"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The * should be in space before you attempt this."
+  sequence="100"
+  script="Starship_TheShouldBeInSpaceBefore2"
+></trigger>
+
+<trigger
+  group="gift"
+  enabled="y"
+  match="The scanning console emits a series of beeps before depositing *."
+  sequence="100"
+  script="Starship_TheScanningConsoleEmitsASeries"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="A smooth hum starts in the background and the lift begins moving."
+  sequence="100"
+  script="Starship_ASmoothHumStartsInThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The hum slowly stops as the lift arrives at its destination."
+  sequence="100"
+  script="Starship_TheHumSlowlyStopsAsThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="A computer screen flickers to life, displaying a pictograph transmission from *"
+  sequence="100"
+  script="Starship_AComputerScreenFlickersToLife"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The ship moves carefully in the vastness of hyperspace."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_TheShipMovesCarefullyInThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The smell of * wafts into the room."
+  sequence="100"
+  script="Starship_TheSmellOfWaftsIntoThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You slide a panel aside, and proceed to fit * partial vehicle replacement battery into a slot."
+  sequence="100"
+  script="Starship_YouSlideAPanelAsideAnd"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You close the panel, as * partial vehicle replacement battery locks into place with a *CLICK*."
+  sequence="100"
+  script="Starship_YouCloseThePanelAsPartial"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You are zapped by a forcefield as you try to move *."
+  sequence="100"
+  script="Starship_YouAreZappedByAForcefield"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* pull*the lever on * slot machine."
+  sequence="100"
+  script="Starship_PullTheLeverOnSlotMachine"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The displays flicker and the ship's lights dim briefly as more power is diverted to the shields."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_TheDisplaysFlickerAndTheShip"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* the main owner of this starship. *"
+  sequence="100"
+  script="Starship_TheMainOwnerOfThisStarship"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You glance at the repair status panel."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_YouGlanceAtTheRepairStatus"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear a slight hum as the ship *."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_YouHearASlightHumAs"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The ship shakes, pouring more power into *."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_TheShipShakesPouringMorePower"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The viewscreen is filled with brilliant white light as Relic * explodes!"
+  sequence="90"
+  script="Starship_TheViewscreenIsFilledWithBrilliant"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Coordinates: (*)"
+  sequence="100"
+  script="Starship_Coordinates"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* tap*a few commands into *."
+  sequence="100"
+  script="Starship_TapAFewCommandsInto"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* tap*a few buttons on *."
+  sequence="100"
+  script="Starship_TapAFewButtonsOn"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Enter security access code:"
+  sequence="100"
+  script="Starship_EnterSecurityAccessCode"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The keypad beeps, allowing you to pass."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_TheKeypadBeepsAllowingYouTo"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="A small panel flashes 'Access denied' when you tap some keys on the keypad."
+  omit_from_output="y"
+  sequence="100"
+  script="Starship_ASmallPanelFlashesAccessDenied"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="A nearby console beeps twice in rapid succession, indicating the occurrence of a naturally occuring spacial anomaly. A spacebear has just disappeared from sensors."
+  sequence="100"
+  script="Starship_ANearbyConsoleBeepsTwiceIn"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Hyperscan results:"
+  sequence="100"
+  script="Starship_HyperscanResults"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Invaded report:"
+  sequence="100"
+  script="Starship_InvadedReport"
+></trigger>
+
+</triggers>
+</muclient>
