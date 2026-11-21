@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<!-- Socials and emotes. -->
+<!-- The Lua for these triggers is in lua/prometheus/triggers/socials.lua -->
+<muclient>
+<triggers>
+
+<trigger
+  enabled="y"
+  match='^(An? .*) wormhole recall remote says in a synthesized voice \, "(.*)"$'
+  regexp="y"
+  sequence="100"
+  script="Socials_AnWormholeRecallRemoteSaysIn"
+></trigger>
+
+<trigger
+  enabled="y"
+  match='^A robotic voice from (.*) wormhole transport console says\, "(.*)"\.$'
+  regexp="y"
+  sequence="100"
+  script="Socials_ARoboticVoiceFromWormholeTransport"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The monitor on * wormhole transport console flashes the words: *"
+  sequence="100"
+  script="Socials_TheMonitorOnWormholeTransportConsole"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="^(.*) (takes?) a sip (of|from) (.*)\.$"
+  regexp="y"
+  sequence="100"
+  script="Socials_TakesASipOfFrom"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="^(.*) obscenely (slurps?) up  (.*)\.$"
+  regexp="y"
+  sequence="100"
+  script="Socials_ObscenelySlurpsUp"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="^(.*) (drains?) (.*) in one gulp, then (throws?) (.*) away\.$"
+  regexp="y"
+  sequence="100"
+  script="Socials_DrainsInOneGulpThenThrows"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="^(.*) (takes?) a bite of (.*)\.$"
+  regexp="y"
+  sequence="100"
+  script="Socials_TakesABiteOf"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="^(.*) (finishes|finish) the last of (.*)\!$"
+  regexp="y"
+  sequence="100"
+  script="Socials_FinishesFinishTheLastOf"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You see a glimpse of darkness ahead, and suddenly, you find yourself hitting the ground."
+  sequence="100"
+  script="Socials_YouSeeAGlimpseOfDarkness"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* throw*onto * where it shatters into several thousand tiny pieces!"
+  sequence="100"
+  script="Socials_ThrowOntoWhereItShattersInto"
+></trigger>
+
+</triggers>
+</muclient>

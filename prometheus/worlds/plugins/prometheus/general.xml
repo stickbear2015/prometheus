@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<!-- Everything else: devices, items, doors, misc messages. -->
+<!-- The Lua for these triggers is in lua/prometheus/triggers/general.lua -->
+<muclient>
+<triggers>
+
+<trigger
+  enabled="y"
+  match="The sharp noise of a piercing arrow cutting through space can be heard before * deposited."
+  sequence="100"
+  script="General_TheSharpNoiseOfAPiercing"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The starship completes surveying the planet."
+  omit_from_output="y"
+  sequence="100"
+  script="General_TheStarshipCompletesSurveyingThePlanet"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The hum of the recharge falls silent as the batteries of the vehicle become full."
+  sequence="100"
+  script="General_TheHumOfTheRechargeFalls"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear an odd whoosh as the stored charge is discarded."
+  omit_from_output="y"
+  sequence="100"
+  script="General_YouHearAnOddWhooshAs"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The hum subsides and finally falls silent as the batteries finish recharging."
+  omit_from_output="y"
+  sequence="100"
+  script="General_TheHumSubsidesAndFinallyFalls"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="^(.*?)turn(.*?)sink(.*?)on(.*?)wash(.*?)hands\.$"
+  regexp="y"
+  sequence="100"
+  script="General_TurnSinkOnWashHands"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* is carried into the room in the center of a flaming circle."
+  sequence="100"
+  script="General_IsCarriedIntoTheRoomIn"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* reforms into the legendary human wizard... And disappears in a circle of flames!"
+  sequence="100"
+  script="General_ReformsIntoTheLegendaryHumanWizard"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* has restored you to full health!"
+  sequence="100"
+  script="General_HasRestoredYouToFullHealth"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Movement fixed."
+  sequence="100"
+  script="General_MovementFixed"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Fixed."
+  sequence="100"
+  script="General_Fixed"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Roundtime fixed."
+  sequence="100"
+  script="General_RoundtimeFixed"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="^(\d+) (second|minute) (stun|round)time\.$"
+  regexp="y"
+  sequence="100"
+  script="General_SecondMinuteStunRoundTime"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You raise your status to *!"
+  sequence="100"
+  script="General_YouRaiseYourStatusTo"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="A new poll has been opened. Use vote to answer it."
+  sequence="100"
+  script="General_ANewPollHasBeenOpened"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="I don't understand that."
+  sequence="100"
+  script="General_DonUnderstandThat"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* type*a complicated series of code*into * translator."
+  sequence="100"
+  script="General_TypeAComplicatedSeriesOfCode"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="A red light on the docking console turns on."
+  sequence="100"
+  script="General_ARedLightOnTheDocking"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The yellow light turns to green."
+  sequence="100"
+  script="General_TheYellowLightTurnsToGreen"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* snatch*from the cold, cruel hands of space."
+  sequence="100"
+  script="General_SnatchFromTheColdCruelHands"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* toggle*the starships alert status to a * state."
+  sequence="100"
+  script="General_ToggleTheStarshipsAlertStatusTo"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear the hum fade as the weapons power down."
+  omit_from_output="y"
+  sequence="100"
+  script="General_YouHearTheHumFadeAs"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The vibration ceases as the long-range laser powers down."
+  omit_from_output="y"
+  sequence="100"
+  script="General_TheVibrationCeasesAsTheLong"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The roar of the engine calms as the starship completes its launch."
+  omit_from_output="y"
+  sequence="100"
+  script="General_TheRoarOfTheEngineCalms"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="A low hum starts in the background as the batteries begin recharging."
+  omit_from_output="y"
+  sequence="100"
+  script="General_ALowHumStartsInThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="A soft hum starts somewhere within the bowels of the ship as the * banks are refilled."
+  omit_from_output="y"
+  sequence="100"
+  script="General_ASoftHumStartsSomewhereWithin"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The hum subsides as the * bank refilling completes."
+  omit_from_output="y"
+  sequence="100"
+  script="General_TheHumSubsidesAsTheBank"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The low hum fades away as the shields finish recharging."
+  omit_from_output="y"
+  sequence="100"
+  script="General_TheLowHumFadesAwayAs"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The rumble beneath your feet eases off as the refinery powers down."
+  omit_from_output="y"
+  sequence="100"
+  script="General_TheRumbleBeneathYourFeetEases"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The ship slows down as it comes closer to the final destination."
+  omit_from_output="y"
+  sequence="100"
+  script="General_TheShipSlowsDownAsIt"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The ship suddenly shoots out of the rift and into another sector. The rift rapidly shrinks and disappears."
+  omit_from_output="y"
+  sequence="100"
+  script="General_TheShipSuddenlyShootsOutOf"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* appears in a puff of smoke!"
+  sequence="100"
+  script="General_AppearsInAPuffOfSmoke"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The ship slows down and you feel the sharp jolt as the ship touches down on the landing pad."
+  omit_from_output="y"
+  sequence="100"
+  script="General_TheShipSlowsDownAndYou"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The low hum of the power transfer dies away, followed a split second later by a click as the power cable beneath the vehicle disconnects."
+  omit_from_output="y"
+  sequence="100"
+  script="General_TheLowHumOfThePower"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear some clangs as the excavation equipment is retracted."
+  omit_from_output="y"
+  sequence="100"
+  script="General_YouHearSomeClangsAsThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Now viewing monitoring satellite *. This satellite is monitoring *."
+  omit_from_output="y"
+  sequence="100"
+  script="General_NowViewingMonitoringSatelliteThisSatellite"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You receive * points!"
+  sequence="100"
+  script="General_YouReceivePoints"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You*open *"
+  sequence="100"
+  script="General_YouOpen"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You*close *"
+  sequence="100"
+  script="General_YouClose"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The hum subsides as * finish reloading."
+  omit_from_output="y"
+  sequence="100"
+  script="General_TheHumSubsidesAsFinishReloading"
+></trigger>
+
+<trigger
+  group="gift"
+  enabled="y"
+  match="You have just received * Easter eggs as a gift! Found in your inventory!"
+  sequence="100"
+  script="General_YouHaveJustReceivedEasterEggs"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* enter*a shiny lift."
+  sequence="100"
+  script="General_EnterAShinyLift"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* step*out of the lift."
+  sequence="100"
+  script="General_StepOutOfTheLift"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* begin*scribbling something on a PBS. Inc. lottery ticket..."
+  sequence="100"
+  script="General_BeginScribblingSomethingOnAPbs"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Your command could not be executed at this time. *"
+  sequence="100"
+  script="General_YourCommandCouldNotBeExecuted"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Distance: *."
+  sequence="100"
+  script="General_Distance"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Red lights on warning signs begin to flash, indicating that the ship is in the midst of a solar storm."
+  omit_from_output="y"
+  sequence="100"
+  script="General_RedLightsOnWarningSignsBegin"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The red lights on the solar storm warning signs stop flashing."
+  omit_from_output="y"
+  sequence="100"
+  script="General_TheRedLightsOnTheSolar"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You begin your journey towards *."
+  sequence="100"
+  script="General_YouBeginYourJourneyTowards"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You arrive at *."
+  sequence="100"
+  script="General_YouArriveAt"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* sanitation droid arrives."
+  sequence="100"
+  script="General_SanitationDroidArrives"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* sanitation droid trundles around the area, collecting dropped items."
+  sequence="100"
+  script="General_SanitationDroidTrundlesAroundTheArea"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* sanitation droid heads *."
+  sequence="100"
+  script="General_SanitationDroidHeads"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear a ghostly moan echoing through the vast reaches of space.*"
+  ignore_case="y"
+  sequence="100"
+  script="General_YouHearAGhostlyMoanEchoing"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear a ghostly moan echoing around you."
+  ignore_case="y"
+  omit_from_output="y"
+  sequence="100"
+  script="General_YouHearAGhostlyMoanEchoing2"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="A long wailing cry shatters the silence."
+  ignore_case="y"
+  omit_from_output="y"
+  sequence="100"
+  script="General_ALongWailingCryShattersThe"
+></trigger>
+
+</triggers>
+</muclient>

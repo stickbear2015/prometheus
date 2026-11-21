@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<!-- Soundpack messages from the game (#$# lines), registration and keep-alives. -->
+<!-- The Lua for these triggers is in lua/prometheus/triggers/system.lua -->
+<muclient>
+<triggers>
+
+<!-- Debug display (spdebug command): shows each hidden soundpack message before the
+     other triggers handle it. Sequence 1 and keep_evaluating, so it never stops them. -->
+<trigger
+  name="ShowSoundpackMessages"
+  group="OOB"
+  enabled="y"
+  match="^\#\$\#soundpack(.*)$"
+  regexp="y"
+  keep_evaluating="y"
+  sequence="1"
+  script="System_ShowSoundpackMessage"
+></trigger>
+
+<trigger
+  name="ParseOOBMessages"
+  group="OOB"
+  enabled="y"
+  match="^\#\$\#soundpack(.*?)$"
+  regexp="y"
+  ignore_case="y"
+  keep_evaluating="y"
+  match_bold="y"
+  match_inverse="y"
+  match_italic="y"
+  omit_from_output="y"
+  omit_from_log="y"
+  expand_variables="y"
+  lowercase_wildcard="y"
+  sequence="100"
+  script="OnOOBmsg"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="^\#\$\#mcp version\: 2\.1 to\: 2\.1$"
+  regexp="y"
+  omit_from_output="y"
+  omit_from_log="y"
+  sequence="100"
+  script="System_McpVersionTo"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="^\#\$\#register_soundpack Mush Soundpack \| (.*?)$"
+  regexp="y"
+  ignore_case="y"
+  omit_from_output="y"
+  omit_from_log="y"
+  sequence="100"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="^\#\$\#register_soundpack (registered|old_version \| (.+))$"
+  regexp="y"
+  omit_from_output="y"
+  omit_from_log="y"
+  sequence="100"
+  script="System_RegisterSoundpackRegisteredOldVersion"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="^\#\$\#register_soundpack old_version$"
+  regexp="y"
+  omit_from_output="y"
+  omit_from_log="y"
+  sequence="100"
+  script="System_RegisterSoundpackOldVersion"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="^\#\$\#soundpack social \| (channel|room) \| (female|male|neuter) \| (.+)$"
+  regexp="y"
+  omit_from_output="y"
+  omit_from_log="y"
+  sequence="100"
+  script="System_SoundpackSocialChannelRoomFemaleMale"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="^\#\$\#PrometheusKeepAlive$"
+  regexp="y"
+  omit_from_output="y"
+  omit_from_log="y"
+  sequence="100"
+  send_to="12"
+></trigger>
+
+</triggers>
+</muclient>

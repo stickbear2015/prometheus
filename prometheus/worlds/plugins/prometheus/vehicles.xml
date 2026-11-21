@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<!-- Vehicles. -->
+<!-- The Lua for these triggers is in lua/prometheus/triggers/vehicles.lua -->
+<muclient>
+<triggers>
+
+<trigger
+  enabled="y"
+  match="* lock*the door leading *."
+  sequence="100"
+  script="Vehicles_LockTheDoorLeading"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* lock*the vehicle."
+  sequence="100"
+  script="Vehicles_LockTheVehicle"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="*unlock*the door to Apartment * and head*inside."
+  sequence="100"
+  script="Vehicles_UnlockTheDoorToApartmentAnd"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* unlock*the door leading *."
+  sequence="100"
+  script="Vehicles_UnlockTheDoorLeading"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* unlock*the vehicle."
+  sequence="100"
+  script="Vehicles_UnlockTheVehicle"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You activate the trash collectors."
+  sequence="100"
+  script="Vehicles_YouActivateTheTrashCollectors"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="A loud thud can be heard from the storage compartment as trash is deposited by the collectors."
+  omit_from_output="y"
+  sequence="100"
+  script="Vehicles_ALoudThudCanBeHeard"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The floor beneath your feet begins rumbling softly as the refinery is activated."
+  omit_from_output="y"
+  sequence="100"
+  script="Vehicles_TheFloorBeneathYourFeetBegins"
+></trigger>
+
+<trigger
+  enabled="y"
+  match='* board*the * "*".'
+  sequence="100"
+  script="Vehicles_BoardThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match='* exit*the * "*".'
+  sequence="100"
+  script="Vehicles_ExitThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear a barely audible hum as the engines activate, and the floor beneath your feet begins vibrating slightly."
+  omit_from_output="y"
+  sequence="100"
+  script="Vehicles_YouHearABarelyAudibleHum"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The floor beneath your feet begins to rumble as the engines begin shutting down."
+  omit_from_output="y"
+  sequence="100"
+  script="Vehicles_TheFloorBeneathYourFeetBegins2"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The hum suddenly falls silent, leaving you in complete silence."
+  omit_from_output="y"
+  sequence="100"
+  script="Vehicles_TheHumSuddenlyFallsSilentLeaving"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The pitch of the engines * ever so slightly as the vehicle *"
+  omit_from_output="y"
+  sequence="100"
+  script="Vehicles_ThePitchOfTheEnginesEver"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear a loud clang as a chunk of minerals is deposited into the mineral area."
+  omit_from_output="y"
+  sequence="100"
+  script="Vehicles_YouHearALoudClangAs"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The vehicle rumbles a bit as it moves towards the vehicle hatch of *"
+  omit_from_output="y"
+  sequence="100"
+  script="Vehicles_TheVehicleRumblesABitAs"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The vehicle comes to a stop inside the vehicle bay and the engines pitch down to an idle level. You hear several muted clangs as a set of clamps secure themselves to the body of the vehicle."
+  omit_from_output="y"
+  sequence="100"
+  script="Vehicles_TheVehicleComesToAStop"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The vehicle rumbles a bit as it moves towards the vehicle hatch."
+  omit_from_output="y"
+  sequence="100"
+  script="Vehicles_TheVehicleRumblesABitAs2"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The vehicle begins shaking in place as it prepares for launching."
+  omit_from_output="y"
+  sequence="100"
+  script="Vehicles_TheVehicleBeginsShakingInPlace"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The engines kick in and the vehicle ascends sharply as it accelerates into the atmosphere."
+  omit_from_output="y"
+  sequence="100"
+  script="Vehicles_TheEnginesKickInAndThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The engines begin rumbling slightly as the vehicle begins descending through the atmosphere."
+  omit_from_output="y"
+  sequence="100"
+  script="Vehicles_TheEnginesBeginRumblingSlightlyAs"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The engines calm slightly and gravity returns to normal as the vehicle steadies itself."
+  omit_from_output="y"
+  sequence="100"
+  script="Vehicles_TheEnginesCalmSlightlyAndGravity"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Black lightning rips through the sky in front of the vehicle as the quantum shift matrix is activated."
+  omit_from_output="y"
+  sequence="100"
+  script="Vehicles_BlackLightningRipsThroughTheSky"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="A black hole opens in front of the vehicle. *"
+  omit_from_output="y"
+  sequence="100"
+  script="Vehicles_ABlackHoleOpensInFront"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* activate*the vehicle's material scoopers."
+  sequence="100"
+  script="Vehicles_ActivateTheVehicleMaterialScoopers"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="A loud thud can be heard as a piece of scoopable material is deposited into the storage area."
+  omit_from_output="y"
+  sequence="100"
+  script="Vehicles_ALoudThudCanBeHeard2"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="A sudden wind pummels the vehicle, making it spin out of control!"
+  omit_from_output="y"
+  sequence="100"
+  script="Vehicles_ASuddenWindPummelsTheVehicle"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Finally, the wind releases the vehicle from it's grasp."
+  omit_from_output="y"
+  sequence="100"
+  script="Vehicles_FinallyTheWindReleasesTheVehicle"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Your scooper just took * percent damage."
+  sequence="100"
+  script="Vehicles_YourScooperJustTookPercentDamage"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The ship shakes, pouring more power to the beam."
+  omit_from_output="y"
+  sequence="100"
+  script="Vehicles_TheShipShakesPouringMorePower"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The beam returns with something in its grasp."
+  omit_from_output="y"
+  sequence="100"
+  script="Vehicles_TheBeamReturnsWithSomethingIn"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Some whooshes and clangs come from below."
+  omit_from_output="y"
+  sequence="100"
+  script="Vehicles_SomeWhooshesAndClangsComeFrom"
+></trigger>
+
+</triggers>
+</muclient>
