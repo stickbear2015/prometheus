@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<!-- Medical drones, healing and death. -->
+<!-- The Lua for these triggers is in lua/prometheus/triggers/health.lua -->
+<muclient>
+<triggers>
+
+<trigger
+  enabled="y"
+  match="The medical drones begin healing your wounds."
+  sequence="100"
+  script="Health_TheMedicalDronesBeginHealingYour"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* instruct*the medical drones to heal *"
+  sequence="100"
+  script="Health_InstructTheMedicalDronesToHeal"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* feel*refreshed and full of energy as the healing finishes."
+  sequence="100"
+  script="Health_FeelRefreshedAndFullOfEnergy"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The drones stop healing *"
+  sequence="100"
+  script="Health_TheDronesStopHealing"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You are dead!"
+  sequence="100"
+  script="Health_YouAreDead"
+></trigger>
+
+</triggers>
+</muclient>

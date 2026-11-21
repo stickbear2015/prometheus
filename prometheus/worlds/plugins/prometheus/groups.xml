@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<!-- Following, joining and leaving groups. -->
+<!-- The Lua for these triggers is in lua/prometheus/triggers/groups.lua -->
+<muclient>
+<triggers>
+
+<trigger
+  enabled="y"
+  match="* indicate*to * that * wish*for * to follow *."
+  sequence="100"
+  script="Groups_IndicateToThatWishForTo"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You follow *."
+  sequence="100"
+  script="Groups_YouFollow"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* follow*you into the area."
+  sequence="100"
+  script="Groups_FollowYouIntoTheArea"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* request*that * no longer follow *."
+  sequence="100"
+  script="Groups_RequestThatNoLongerFollow"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* ha* away from * group."
+  sequence="100"
+  script="Groups_HaAwayFromGroup"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* left you behind."
+  sequence="100"
+  script="Groups_LeftYouBehind"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* start*following *."
+  sequence="100"
+  script="Groups_StartFollowing"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* stop*following *."
+  sequence="100"
+  script="Groups_StopFollowing"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* disband*group."
+  sequence="100"
+  script="Groups_DisbandGroup"
+></trigger>
+
+</triggers>
+</muclient>
