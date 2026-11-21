@@ -224,7 +224,7 @@ FLIGHT_CONTROL_SOUNDS = {
     end },
 }
 
--- What a vehicle on Commpipe can report detecting in the sector. Every entry that fits is
+-- What a ship on Commpipe can report detecting in the sector. Every entry that fits is
 -- played. (The same as SECTOR_DETECTIONS in starship.lua, plus the flying cherub.)
 COMMPIPE_DETECTIONS = {
   { has = "enemy starship", sound = "Starship/Computer/EnemyDetected" },
