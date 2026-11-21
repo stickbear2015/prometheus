@@ -405,7 +405,15 @@ function Combat_WalksInFrom(name, line, wildcards)
 end
 
 -- * falls to * with a sickening thud!
+-- Only creatures really fall like this, and the game always names them with "A" or "An"
+-- ("An alien creature", "A Quagmire Gator"). A line starting with a player's name is an
+-- emote ("emote falls to the floor with a sickening thud!"): it's shown, with no sound.
 function Combat_FallsToWithASickeningThud(name, line, wildcards)
+  local who = string.gsub(wildcards[1], "^%(From outside: ", "")
+  who = string.gsub(who, "^%[Camera%] ", "")
+  if not (string.match(who, "^An? ") or string.match(who, "^You")) then
+    return
+  end
   if (string.match(wildcards[1], "X-Loritan") or string.match(wildcards[1], "alien creature")) then
     CurrentCombatSound = PlayCombatSound("Ground/LoreDeath.ogg")
     CurrentCombatSound = PlayCombatSound("Ground/DeathMob"..math.random(1, 5)..".ogg")
