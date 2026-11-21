@@ -195,6 +195,7 @@ require("prometheus.triggers.household")
 require("prometheus.triggers.game")
 require("prometheus.triggers.refusals")
 require("prometheus.triggers.gags")
+require("prometheus.triggers.debug")  -- last: it wraps the functions above for spdebug
 
 guns = {"pistol", "rifle", "shotgun", "sniper"}
 

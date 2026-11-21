@@ -54,6 +54,14 @@ def read_corpus(path):
 def record(plugin, pack, corpus, results):
     triggers = mushtrig.load_triggers(plugin)
     order = mushtrig.ordered(triggers)
+    # A test line with the setting SoundpackDebug=1 runs as if spdebug were on: the
+    # debug-only triggers (group "debug"), which spdebug switches on, are checked too.
+    debug_triggers = [t for t in triggers if t.group == "debug" and not t.enabled]
+    for t in debug_triggers:
+        t.enabled = True
+    debug_order = mushtrig.ordered(triggers)
+    for t in debug_triggers:
+        t.enabled = False
     bad = [t for t in triggers if t.error]
     plugin_text = open(plugin, encoding="latin-1").read()
     includes = []
@@ -70,7 +78,7 @@ def record(plugin, pack, corpus, results):
              "script = " + lua_str("\n".join(scripts)) + ",", "cases = {"]
     for cid, sets, line in read_corpus(corpus):
         fires = []
-        for t, m in mushtrig.fire(order, line):
+        for t, m in mushtrig.fire(debug_order if sets.get("SoundpackDebug") else order, line):
             label = t.label()
             omit = "true" if t.omit else "false"
             if t.script:
