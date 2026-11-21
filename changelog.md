@@ -34,6 +34,7 @@
 * fixes an error when first opening, connecting or disconnecting on a new copy of the soundpack, before it had saved your settings. [#44](https://github.com/stickbear2015/prometheus/issues/44)
  * Talking on a chat channel (OOC, Chatcomm, Newbie, Soundpacks, PM, ROOC, your organization and so on) no longer sets off game sounds when someone uses words like fire, is dead, input, push a button or tuck away. The message now plays its channel sound and goes into its channel history. [#44](https://github.com/stickbear2015/prometheus/issues/44)
  * Saying, asking or exclaiming something in a room no longer sets off game sounds when it contains words like push a button, open, close or fire. It goes into the Conversations buffer instead. [#44](https://github.com/stickbear2015/prometheus/issues/44)
+* emotes can no longer fake a death. a room line such as name is dead! no longer plays the death sound, since it was always a player's emote. real deaths still play the death channel sound, and your own death still plays its sound. [#44](https://github.com/stickbear2015/prometheus/issues/44)
 
 ## Version 25.2.1
 * Hopefully fixed more broken stuff.
