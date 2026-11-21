@@ -42,6 +42,7 @@
 * emoting that you fall to the floor with a sickening thud no longer plays the death sound. creatures really falling still play it as before. [#31](https://github.com/stickbear2015/prometheus/issues/31)
 * speech said to someone, such as name (to you): "hey what's up?", now goes into the conversations and all buffers like says do. [#39](https://github.com/stickbear2015/prometheus/issues/39)
 * spdebug now also shows what the soundpack does with each line: which trigger caught it (with the line, even if it's normally hidden), each sound it played and whether the file is missing or that kind of sound is switched off, each history buffer it went into, or no trigger if nothing caught it. [#49](https://github.com/stickbear2015/prometheus/issues/49)
+* fixes the soundpack failing to load with module not found errors on computers that have another copy of lua installed. [#51](https://github.com/stickbear2015/prometheus/issues/51)
 
 ## Version 25.2.1
 * Hopefully fixed more broken stuff.
