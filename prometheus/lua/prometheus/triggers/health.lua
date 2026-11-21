@@ -24,11 +24,10 @@ function Health_TheDronesStopHealing(name, line, wildcards)
 end
 
 -- You are dead!
+-- (An emote can't fake this one: an emote always starts with the player's name.)
+-- There's no trigger for "* is dead!" any more (removed 2026-11-20, #44). In real logs
+-- every such room line was a player's emote ("emote is dead!"), not a real death. Real
+-- deaths come over the [Death] channel as "<name> has died.", which plays its own sound.
 function Health_YouAreDead(name, line, wildcards)
-  CurrentGlobalSound = PlayGlobalSound("General/Misc/Death.ogg")
-end
-
--- * is dead!
-function Health_IsDead(name, line, wildcards)
   CurrentGlobalSound = PlayGlobalSound("General/Misc/Death.ogg")
 end
