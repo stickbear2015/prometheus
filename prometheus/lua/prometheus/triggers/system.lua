@@ -59,17 +59,19 @@ end
 --   room_only    only counts in the room; otherwise keep looking
 --   room_sound   counts everywhere, but only makes a sound in the room
 -- A social with no entry plays Socials/<social name>.ogg, if that file exists.
+-- Bodily noises (belch, burp, cough, fart, gag, sneeze, vomit, yawn) are room_sound:
+-- they make no sound when done over a channel or comms, only in the room (Shane, #44).
 SOCIAL_SOUNDS = {
   { word = "pyrianSay", sound = "Socials/PyrianChitter", versions = 10, room_sound = true },
-  { word = "belch", sound = "Socials/Belch", versions = 3 },
-  { word = "burp", sound = "Socials/Burp", versions = 5 },
+  { word = "belch", sound = "Socials/Belch", versions = 3, room_sound = true },
+  { word = "burp", sound = "Socials/Burp", versions = 5, room_sound = true },
   { word = "cackle", sound = "Socials/Cackle_", gendered = true },
   { word = "cheer", sound = "Socials/Cheer_", gendered = true, versions = 3 },
   { word = "collapse", sound = "General/Socials/Collapse", versions = 3 },
-  { word = "cough", sound = "Socials/Cough_", gendered = true },
+  { word = "cough", sound = "Socials/Cough_", gendered = true, room_sound = true },
   { word = "cry", sound = "Socials/Cry", versions = 4 },
-  { word = "fart", sound = "Socials/Fart", versions = 5 },
-  { word = "gag", sound = "Socials/Gag", versions = 2 },
+  { word = "fart", sound = "Socials/Fart", versions = 5, room_sound = true },
+  { word = "gag", sound = "Socials/Gag", versions = 2, room_sound = true },
   { word = "giggle", sound = "Socials/Giggle", versions = 7, female_only = true },
   { word = "hmm", sound = "Socials/Say", room_only = true },
   { word = "kick", sound = "Socials/Kick", versions = 9, fight = true },
@@ -83,9 +85,11 @@ SOCIAL_SOUNDS = {
   { word = "sigh", sound = "Socials/Sigh_", gendered = true, versions = 2 },
   { word = "slap", sound = "Socials/Slap", versions = 5 },
   { word = "snap", sound = "Socials/Snap", versions = 3 },
+  { word = "sneeze", sound = "Socials/Sneeze", room_sound = true },
   { word = "tackle", sound = "Socials/Tackle", versions = 5 },
+  { word = "vomit", sound = "Socials/Vomit", room_sound = true },
   { word = "whistle", sound = "Socials/Whistle", versions = 6 },
-  { word = "yawn", sound = "Socials/Yawn_", gendered = true },
+  { word = "yawn", sound = "Socials/Yawn_", gendered = true, room_sound = true },
 }
 
 -- The first entry in SOCIAL_SOUNDS that fits this social, or nil.
