@@ -57,9 +57,10 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 
 
 [Files]
-	Source: "prometheus\*"; DestDir: "{app}\mushclient"; Flags: ignoreversion recursesubdirs createallsubdirs
+	Source: "prometheus\*"; DestDir: "{app}\mushclient"; Excludes: "Config.txt"; Flags: ignoreversion recursesubdirs createallsubdirs
   Source: "prometheus\logs\*"; DestDir: "{app}\mushclient\logs"; Flags: onlyifdoesntexist ignoreversion recursesubdirs createallsubdirs
   Source: "changelog.html"; DestDir: "{app}"; Flags: ignoreversion
+
 
 [Icons]
 ; Start Menu shortcuts
