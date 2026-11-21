@@ -42,7 +42,8 @@ def main():
             for m in re.finditer(r'\b(has|has_lower|any|any_lower|channel|channel_lower|message)\s*=\s*(\{[^}]*\}|"[^"]*")', code):
                 pats += re.findall(r'"([^"]*)"', m.group(2))
             for pat in pats:
-                if re.search(r"(?<!%)-", pat) and not re.search(r"\[[^\]]*-[^\]]*\]", pat):
+                # ".-" is a deliberate shortest match ("anything, as little as possible"), not a hyphen.
+                if re.search(r"(?<![%.])-", pat) and not re.search(r"\[[^\]]*-[^\]]*\]", pat):
                     luck = " (works by luck)" if hyphen_works_by_luck(pat) else ""
                     print("%s:%d  plain hyphen%s: %r" % (rel, n, luck, pat)); found += 1
     print("%d found" % found)
