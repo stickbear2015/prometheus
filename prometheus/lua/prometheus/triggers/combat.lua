@@ -310,7 +310,19 @@ function Combat_TakeAimAtWith(name, line, wildcards)
 end
 
 -- * fire*!
+-- wildcards: 1 = who, 2 = what follows "fire" (for example "s a black laser sniper")
 function Combat_Fire(name, line, wildcards)
+  -- A real weapon always has a description ("a black laser sniper"). A bare "fires a
+  -- rifle!", "fires a shotgun!" and so on is a player's emote: show it, with no sound.
+  local bare = string.match(string.lower(wildcards[2]), "^s? an? (%a+)$")
+  if bare then
+    for g = 1, #guns do
+      if bare == guns[g] then
+        Note(line)
+        return
+      end
+    end
+  end
   for g = 1, #guns do
     if (string.match(string.lower(wildcards[2]), string.lower(guns[g]))) then
       if (string.match(wildcards[1], "You")) then
