@@ -338,8 +338,17 @@ function Combat_Fire(name, line, wildcards)
     Note(line)
     return
   end
+  -- A ship's attack such as '... has fired a massive energy beam at X-Loritan ship 97!'
+  -- ends in "!", so it lands here rather than on "* has fired * at *". Hand it over.
+  local ship, weapon, target = string.match(line, "^(.-) has fired (.-) at (.*)$")
+  if ship then
+    Combat_HasFiredAt2(name, line, { ship, weapon, target })
+    return
+  end
+  local played = false
   for g = 1, #guns do
     if (string.match(string.lower(wildcards[2]), string.lower(guns[g]))) then
+      played = true
       if (string.match(wildcards[1], "You")) then
         CurrentCombatSound = PlayCombatSound("Ground/Lasers/Laser"..guns[g]..".ogg")
       else
@@ -349,15 +358,22 @@ function Combat_Fire(name, line, wildcards)
   end
   if (string.match(wildcards[2], "at")) then
     if (string.match(wildcards[1], "breathe") or string.match(wildcards[1], "breathes")) then
+      played = true
       CurrentCombatSound = PlayCombatSound("Ground/PyrianFireBreath.ogg")
     end
   end
   if (string.match(wildcards[2], "low%-level")) then  -- "%-" is a plain hyphen
+    played = true
     if (string.match(wildcards[1], "You")) then
       CurrentCombatSound = PlayCombatSound("Ground/Lasers/LaserLowLevel.ogg")
     else
       CurrentCombatSound = PlayCombatSound("Ground/Lasers/LaserLowLevel.ogg", math.random(-100, 100))
     end
+  end
+  -- Anything else that only happens to contain "fire" and end in "!" (a ship named
+  -- "Four alarm fire", a news item about fireballs) isn't weapon fire: show it as it is.
+  if not played then
+    Note(line)
   end
 end
 
