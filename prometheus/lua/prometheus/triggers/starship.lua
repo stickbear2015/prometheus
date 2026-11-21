@@ -251,7 +251,7 @@ COMPUTER_REPORTS = {
     } },
   { has = "is 1 unit away", sound = "Starship/Computer/OneUnitAway" },
   { has = "destroyed", sounds = {
-      { has = "X-Loritan", sound = "Space/OtherDestroyed", versions = 8, combat = true },
+      { has = "X%-Loritan", sound = "Space/OtherDestroyed", versions = 8, combat = true },
       { sound = "Combat/Space/OtherDestroyed", versions = 8 },  -- any other ship
     } },
   { has = "no space for the debris", sound = "Starship/Misc/StorageFull" },
@@ -625,7 +625,7 @@ end
 
 -- * has * the sector through an unrecorded field.
 function Starship_HasTheSectorThroughAnUnrecorded(name, line, wildcards)
-  if (string.match(wildcards[1], "X-Loritan") and string.match(wildcards[2], "entered")) then
+  if (string.match(wildcards[1], "X%-Loritan") and string.match(wildcards[2], "entered")) then
     CurrentGlobalSound = PlayGlobalSound("Starship/Move/EnterSector"..math.random(1, 2)..".ogg")
     CurrentGlobalSound = PlayGlobalSound("Starship/Computer/EnemyDetected.ogg")
   elseif (string.match(wildcards[2], "jumped into")) then
@@ -633,7 +633,7 @@ function Starship_HasTheSectorThroughAnUnrecorded(name, line, wildcards)
     CurrentGlobalSound = PlayGlobalSound("Starship/Computer/EnemyDetected.ogg")
   elseif (string.match(wildcards[2], "left")) then
     CurrentGlobalSound = PlayGlobalSound("Starship/Move/ExitSector"..math.random(1, 2)..".ogg")
-  elseif (string.match(wildcards[1], "X-Loritan") and string.match(wildcards[2], "jumped out of")) then
+  elseif (string.match(wildcards[1], "X%-Loritan") and string.match(wildcards[2], "jumped out of")) then
     CurrentGlobalSound = PlayGlobalSound("Starship/Move/ExitSector"..math.random(1, 2)..".ogg")
   end
 end
