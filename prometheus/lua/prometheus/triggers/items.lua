@@ -41,7 +41,7 @@ end
 function Items_YouSeeHere(name, line, wildcards)
   if (string.match(wildcards[1], "of materials") or string.match(wildcards[1], "Easter egg") or string.match(wildcards[1], "pumpkin") or string.match(wildcards[1], "Christmas bell") or string.match(wildcards[1], "chocolate box")) then
     CurrentGlobalSound = PlayGlobalSound("General/Misc/EggItem.ogg")
-  elseif (string.match(wildcards[1], "X-Loritan") or string.match(wildcards[1], "alien creature")) then
+  elseif (string.match(wildcards[1], "X%-Loritan") or string.match(wildcards[1], "alien creature")) then
     if (string.match(wildcards[1], "corpse") or string.match(wildcards[1], "corpses")) then
       -- Play no sound, as corpses don't growl.
     end -- InnerIf.
