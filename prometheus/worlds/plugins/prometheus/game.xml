@@ -9,7 +9,7 @@
   enabled="y"
   match="[Input]"
   ignore_case="n"
-  sequence="100"
+  sequence="50"
   script="Game_Input"
 ></trigger>
 
@@ -72,7 +72,7 @@
 <trigger
   enabled="y"
   match='[SUB-ANNOUNCEMENT | *]: "*"'
-  sequence="100"
+  sequence="50"
   script="Game_SubAnnouncement"
 ></trigger>
 
@@ -80,7 +80,7 @@
   enabled="y"
   match="[CHANGES] *: *"
   omit_from_output="n"
-  sequence="100"
+  sequence="50"
   script="Game_Changes"
 ></trigger>
 
@@ -176,7 +176,7 @@
 <trigger
   enabled="y"
   match="[Type *, *]"
-  sequence="100"
+  sequence="50"
   script="Game_Type"
 ></trigger>
 
