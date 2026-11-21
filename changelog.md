@@ -36,6 +36,10 @@
  * Saying, asking or exclaiming something in a room no longer sets off game sounds when it contains words like push a button, open, close or fire. It goes into the Conversations buffer instead. [#45](https://github.com/stickbear2015/prometheus/issues/45)
 * emotes can no longer fake a death. a room line such as name is dead! no longer plays the death sound, since it was always a player's emote. real deaths still play the death channel sound, and your own death still plays its sound. [#45](https://github.com/stickbear2015/prometheus/issues/45)
 * bodily noise socials (belch, burp, cough, fart, gag, sneeze, vomit and yawn) now only play their sound in the room, not when done over a channel or comms. other socials, such as laughs, giggles and screams, still play on channels as before. [#45](https://github.com/stickbear2015/prometheus/issues/45)
+* emoting that you fire a rifle, shotgun, sniper or pistol no longer plays a weapon sound, and the emote is shown as normal. real weapon fire still plays its sound as before. [#45](https://github.com/stickbear2015/prometheus/issues/45)
+* emoting that you take aim at someone with a sniper, rifle, shotgun or pistol no longer plays the aiming sound, and the emote is shown as normal. real aiming still plays its sound as before. [#45](https://github.com/stickbear2015/prometheus/issues/45)
+* ship attacks such as a massive energy beam fired at an X-Loritan ship play their sound again, and other messages that mention fire, such as promotions on ships with fire in their name, are no longer hidden. [#44](https://github.com/stickbear2015/prometheus/issues/44)
+* emoting that you fall to the floor with a sickening thud no longer plays the death sound. creatures really falling still play it as before. [#45](https://github.com/stickbear2015/prometheus/issues/45)
 
 ## Version 25.2.1
 * Hopefully fixed more broken stuff.
