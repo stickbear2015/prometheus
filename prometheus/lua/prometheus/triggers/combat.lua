@@ -167,7 +167,7 @@ end
 function Combat_HasLaunchedAt(name, line, wildcards)
   if (string.match(wildcards[2], "missile")) then
     CurrentCombatSound = PlayCombatSound("Space/OtherMissiles.ogg")
-    if (string.match(wildcards[1], "X-Loritan Assassin")) then
+    if (string.match(wildcards[1], "X%-Loritan Assassin")) then
       CurrentCombatSound = PlayCombatSound("Space/GrapeShot.ogg")
     end
     Note(line)
@@ -199,7 +199,7 @@ end
 
 -- * has fired at *.
 function Combat_HasFiredAt(name, line, wildcards)
-  if (string.match(wildcards[1], "X-Loritan")) then
+  if (string.match(wildcards[1], "X%-Loritan")) then
     CurrentCombatSound = PlayCombatSound("Space/OtherFired"..math.random(1, 5)..".ogg")
   else
     CurrentCombatSound = PlayCombatSound("Space/OtherFired"..math.random(1, 5)..".ogg")
@@ -231,7 +231,7 @@ function Combat_HasFiredAt2(name, line, wildcards)
   elseif (string.match(wildcards[2], "a greenade")) then
     CurrentCombatSound = PlayCombatSound("Ground/GrenadeFire.ogg")
   elseif (string.match(wildcards[2], "a massive energy beam")) then
-    if (string.match(wildcards[1], "X-Loritan") or string.match(wildcards[3], "X-Loritan")) then
+    if (string.match(wildcards[1], "X%-Loritan") or string.match(wildcards[3], "X%-Loritan")) then
       CurrentCombatSound = PlayCombatSound("Space/OtherFired"..math.random(1, 5)..".ogg")
     else
       CurrentCombatSound = PlayCombatSound("Space/OtherFired"..math.random(1, 5)..".ogg")
@@ -399,7 +399,7 @@ end
 
 -- * walks in from *.
 function Combat_WalksInFrom(name, line, wildcards)
-  if (string.match(wildcards[1], "X-Loritan") or string.match(wildcards[1], "alien creature")) then
+  if (string.match(wildcards[1], "X%-Loritan") or string.match(wildcards[1], "alien creature")) then
     CurrentCombatSound = PlayCombatSound("Ground/Lores"..math.random(1, 2)..".ogg")
   end
 end
@@ -414,7 +414,7 @@ function Combat_FallsToWithASickeningThud(name, line, wildcards)
   if not (string.match(who, "^An? ") or string.match(who, "^You")) then
     return
   end
-  if (string.match(wildcards[1], "X-Loritan") or string.match(wildcards[1], "alien creature")) then
+  if (string.match(wildcards[1], "X%-Loritan") or string.match(wildcards[1], "alien creature")) then
     CurrentCombatSound = PlayCombatSound("Ground/LoreDeath.ogg")
     CurrentCombatSound = PlayCombatSound("Ground/DeathMob"..math.random(1, 5)..".ogg")
   else
@@ -530,7 +530,7 @@ end
 
 -- ^(.*?) (is|are) here\.$
 function Combat_IsAreHere(name, line, wildcards)
-  if (string.match(wildcards[1], "X-Loritan") or string.match(wildcards[1], "alien creature")) then
+  if (string.match(wildcards[1], "X%-Loritan") or string.match(wildcards[1], "alien creature")) then
     CurrentGlobalSound = PlayGlobalSound("Combat/Ground/Lores"..math.random(1, 2)..".ogg")
   end -- If.
 end

@@ -218,7 +218,7 @@ FLIGHT_CONTROL_SOUNDS = {
   { has = "retreating", sound = "General/Comm/FlightControlEnemiesRetreating" },
   -- Another ship destroyed (but not an X-Loritan one).
   { has = "destroyed", play = function(text)
-      if not string.match(text, "X-Loritan") then
+      if not string.match(text, "X%-Loritan") then
         CurrentGlobalSound = PlayGlobalSound("Combat/Space/OtherDestroyed" .. math.random(1, 8) .. ".ogg")
       end
     end },
