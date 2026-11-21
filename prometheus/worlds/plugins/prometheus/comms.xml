@@ -9,21 +9,21 @@
   enabled="y"
   match="[Frequency *] *"
   omit_from_output="y"
-  sequence="100"
+  sequence="50"
   script="Comms_Frequency"
 ></trigger>
 
 <trigger
   enabled="y"
   match="[* to you]*"
-  sequence="100"
+  sequence="50"
   script="Comms_ToYou"
 ></trigger>
 
 <trigger
   enabled="y"
   match="[You to *]*"
-  sequence="100"
+  sequence="50"
   script="Comms_YouTo"
 ></trigger>
 
@@ -37,7 +37,7 @@
 <trigger
   enabled="y"
   match="[Code updates] *"
-  sequence="100"
+  sequence="50"
   script="Comms_CodeUpdates"
 ></trigger>
 
@@ -45,7 +45,7 @@
   enabled="y"
   match="[SECTOR COMMUNICATION] *"
   omit_from_output="y"
-  sequence="100"
+  sequence="50"
   script="Comms_SectorCommunication"
 ></trigger>
 
@@ -255,6 +255,16 @@
   match="Out of character channels are currently disabled. They will be back soon!"
   sequence="100"
   script="Comms_OutOfCharacterChannelsAreCurrently"
+></trigger>
+
+<trigger
+  enabled="y"
+  match='^\[(?!Camera\])([A-Za-z- ]+)\] ["]?(.*)["]?$'
+  regexp="y"
+  omit_from_output="y"
+  omit_from_log="y"
+  sequence="50"
+  script="Comms_ChannelMessage"
 ></trigger>
 
 <trigger
