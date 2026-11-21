@@ -19,6 +19,20 @@ function Gags_SaysSay(name, line, wildcards)
   end
 end
 
+-- ^((?:\(From outside: )?[^\[:(][^:(]*) \(to ([^)]+)\)([^:]*): "(.*)"\)?$
+-- Speech aimed at someone: Kethriel Laithen (to You): "Hey what's up?"
+-- wildcards: 1 = who, 2 = who it's to, 3 = any accent, 4 = the message
+-- At sequence 50 like says, so words in it can't set off game sounds. Goes into the
+-- Conversations buffer (and All): the whole line with accents on, or without the
+-- accent with them off.
+function Gags_SaysTo(name, line, wildcards)
+  if (ConfigTable.Settings.Accents == 1) or wildcards[3] == "" then
+    AddToHistory("Conversations", line)
+  else
+    AddToHistory("Conversations", wildcards[1] .. " (to " .. wildcards[2] .. "): \"" .. wildcards[4] .. "\"")
+  end
+end
+
 -- ^(.*) translator announces(.*?)\, "(.*)"$
 function Gags_TranslatorAnnounces(name, line, wildcards)
   AddToHistory("Conversations", line, wildcards[1] .. " " .. wildcards[2] .. ": " .. wildcards[3])

@@ -38,6 +38,14 @@
 
 <trigger
   enabled="y"
+  match='^((?:\(From outside: )?[^\[:(][^:(]*) \(to ([^)]+)\)([^:]*): "(.*)"\)?$'
+  regexp="y"
+  sequence="50"
+  script="Gags_SaysTo"
+></trigger>
+
+<trigger
+  enabled="y"
   match='^(.*) translator announces(.*?)\, "(.*)"$'
   regexp="y"
   sequence="100"
