@@ -3,8 +3,12 @@
 -- Each one receives the trigger's name, the whole line, and the wildcards
 -- (the parts of the line the trigger's * or (...) matched).
 
--- ^([^\[].*) (says|say|asks|ask|exclaims|exclaim)(.*?)\: (.*)$
+-- ^((?:\(From outside: )?[^\[:][^:]*) (says|say|asks|ask|exclaims|exclaim)\b([^:]*)\: (.*)$
 -- (Lines starting with "[" are channel messages; they're left to the channel trigger.)
+-- It's at sequence 50, before the game-event triggers, so someone saying words like
+-- "push a button" or "firecracker" doesn't set off that game sound. No colon is allowed
+-- before "says", so game text that only happens to contain "say" and a colon later on
+-- isn't taken for speech, and "say" must be a whole word (not "saying").
 -- Speech (say, ask, exclaim) goes into the Conversations buffer: the whole line with
 -- accents on, or just "<name> <verb>: <message>" with them off.
 function Gags_SaysSay(name, line, wildcards)

@@ -287,7 +287,17 @@ CHANNEL_SOUNDS = {
   { channel = "PA", sound = "Starship/Comm/PA", versions = 9 },
 }
 
--- ^\[([A-Za-z- ]+)\][,:]? ["]?(.*)["]?$
+-- Two triggers use this function.
+-- ^\[(?!Camera\])([A-Za-z- ]+)\] ["]?(.*)["]?$ (sequence 50): chat channels such as
+--   [OOC], [Chatcomm] and [Newbie]. It's checked before the game-event triggers
+--   (sequence 100), so a player typing words like "fires" or "is dead!" on a channel
+--   gets the channel sound and history, not the game's sound. [Camera] is left out, and
+--   so are game feeds written "[Name]:" (Movement, INFO, LEVELS, a planet's combat
+--   reports), so their event sounds still play as before. Triggers for particular
+--   bracketed messages ([Frequency *], tells and so on) are at sequence 50 too, and sort
+--   before this one, so they still come first.
+-- ^\[([A-Za-z- ]+)\][,:]? ["]?(.*)["]?$ (sequence 100): every other channel line that
+--   no game-event trigger took.
 -- wildcards: 1 = the channel's name, 2 = the message
 function Comms_ChannelMessage(name, line, wildcards)
   local channel, message = wildcards[1], wildcards[2]
