@@ -1,5 +1,5 @@
 # Prometheus Soundpack Changes:
-## development version 
+## development version
 * modernizes the installer. [#7](https://github.com/stickbear2015/prometheus/issues/7)
 *   the auto retyping plugin no longer  loads by default, it's still available in the plugins directory, but users will have to load it themselves from the plugins dialog. [#18](https://github.com/stickbear2015/prometheus/issues/18)
 * updates asteroid sound to the one used in space. [#10](https://github.com/stickbear2015/prometheus/issues/10)
@@ -41,6 +41,7 @@
 * ship attacks such as a massive energy beam fired at an X-Loritan ship play their sound again, and other messages that mention fire, such as promotions on ships with fire in their name, are no longer hidden. [#44](https://github.com/stickbear2015/prometheus/issues/44)
 * emoting that you fall to the floor with a sickening thud no longer plays the death sound. creatures really falling still play it as before. [#31](https://github.com/stickbear2015/prometheus/issues/31)
 * speech said to someone, such as name (to you): "hey what's up?", now goes into the conversations and all buffers like says do. [#39](https://github.com/stickbear2015/prometheus/issues/39)
+* spdebug now also shows what the soundpack does with each line: which trigger caught it (with the line, even if it's normally hidden), each sound it played and whether the file is missing or that kind of sound is switched off, each history buffer it went into, or no trigger if nothing caught it. [#49](https://github.com/stickbear2015/prometheus/issues/49)
 
 ## Version 25.2.1
 * Hopefully fixed more broken stuff.

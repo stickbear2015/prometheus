@@ -18,6 +18,18 @@
   script="System_ShowSoundpackMessage"
 ></trigger>
 
+<!-- Debug display (spdebug command): says "no trigger" for a line nothing else caught.
+     Checked after every other trigger, and only switched on while spdebug is on. -->
+<trigger
+  name="DebugNoTrigger"
+  group="debug"
+  enabled="n"
+  match="^.+$"
+  regexp="y"
+  sequence="10000"
+  script="System_DebugNoTrigger"
+></trigger>
+
 <trigger
   name="ParseOOBMessages"
   group="OOB"

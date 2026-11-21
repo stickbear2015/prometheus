@@ -3,17 +3,19 @@
 -- Each one receives the trigger's name, the whole line, and the wildcards
 -- (the parts of the line the trigger's * or (...) matched).
 
--- Debug display of the hidden soundpack messages the game sends (#$#soundpack ...).
--- Switched on and off with the spdebug command. Off at every start, never saved.
+-- Debug display, switched on and off with the spdebug command. Off at every start, never
+-- saved. It shows the hidden soundpack messages the game sends (#$#soundpack ...), and
+-- what the pack does with each line: see debug.lua.
 SoundpackDebug = false
 
 function ToggleSoundpackDebug()
   SoundpackDebug = not SoundpackDebug
+  EnableTrigger("DebugNoTrigger", SoundpackDebug)
   CurrentGlobalSound = PlayGlobalSound("General/Misc/Switch.ogg")
   if SoundpackDebug then
-    Execute("tts_interrupt Showing soundpack messages.")
+    Execute("tts_interrupt Debug on: showing what the soundpack does with each line.")
   else
-    Execute("tts_interrupt Hiding soundpack messages.")
+    Execute("tts_interrupt Debug off.")
   end
 end
 
