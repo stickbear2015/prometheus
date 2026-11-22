@@ -3,6 +3,8 @@
 -- Each one receives the trigger's name, the whole line, and the wildcards
 -- (the parts of the line the trigger's * or (...) matched).
 
+local Path = require("pl.path")
+
 -- [Frequency *] *
 function Comms_Frequency(name, line, wildcards)
   AddToHistory("Frequency", "[" .. wildcards[1] .. "] " .. wildcards[2])
@@ -319,7 +321,17 @@ function Comms_ChannelMessage(name, line, wildcards)
     Execute("history_add All=" .. line)
     Execute("history_add " .. prometheus.util.Explode(channel, "-")[1] .. "=" .. message)
   end
-  CurrentGlobalSound = PlayGlobalSound("General/Channels/" .. channel .. ".ogg")
+  -- The channel's own sound, if it has one (OOC.ogg, Newbie.ogg and so on). Some
+  -- channels, such as PA, have none in General/Channels and get theirs from
+  -- CHANNEL_SOUNDS below, so only try a file that exists: otherwise spdebug reports
+  -- it as missing every time. A missing file never played anyway, so players hear
+  -- the same as before.
+  local channel_sound = "General/Channels/" .. channel .. ".ogg"
+  if Path.isfile(SoundFolder .. channel_sound) then
+    CurrentGlobalSound = PlayGlobalSound(channel_sound)
+  else
+    CurrentGlobalSound = nil  -- as before: nothing playing to stop later
+  end
 
   local lower_channel = string.lower(channel)
   for _, entry in ipairs(CHANNEL_SOUNDS) do
