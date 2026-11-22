@@ -44,6 +44,7 @@
 * spdebug now also shows what the soundpack does with each line: which trigger caught it (with the line, even if it's normally hidden), each sound it played and whether the file is missing or that kind of sound is switched off, each history buffer it went into, or no trigger if nothing caught it. [#49](https://github.com/stickbear2015/prometheus/issues/49)
 * fixes the soundpack failing to load with module not found errors on computers that have another copy of lua installed. [#51](https://github.com/stickbear2015/prometheus/issues/51)
 * upgrading the soundpack no longer replaces your settings (config.txt); they're kept, and a new install starts with the default settings. [#7](https://github.com/stickbear2015/prometheus/issues/7)
+* spdebug no longer reports a missing sound for channels that don't have their own channel sound, such as pa. nothing you hear changes. [#54](https://github.com/stickbear2015/prometheus/issues/54)
 
 ## Version 25.2.1
 * Hopefully fixed more broken stuff.
