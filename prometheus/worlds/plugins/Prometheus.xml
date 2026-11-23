@@ -161,9 +161,6 @@ Note("MUSHClient Soundpack Version: "..GetVariable("version")..".")
 </send></alias>
 <alias match="^dt$" regexp="y" enabled="y" ignore_case="y" send_to="12" sequence="100">
 <send>Execute("deliver-time")</send></alias>
-<alias name="UpdateSoundPackFiles" script="packUpdate" match="^spupdate$"
-  enabled="y" group="updater" omit_from_command_history="y" omit_from_log="y"
-  regexp="y" omit_from_output="y" ignore_case="y" sequence="100"> </alias>
 <alias name="ToggleSoundpackDebug" match="^spdebug$" enabled="y" group="debug"
   omit_from_command_history="y" omit_from_log="y" regexp="y" omit_from_output="y"
   ignore_case="y" send_to="12" sequence="100">
@@ -206,17 +203,5 @@ require("prometheus.triggers.gags")
 require("prometheus.triggers.debug")  -- last: it wraps the functions above for spdebug
 
 guns = {"pistol", "rifle", "shotgun", "sniper"}
-
-function packUpdate()
-  local updater = Workspace.."updater/update.exe"
-
- if not (Path.exists(updater)) then
-    Note("Error: This soundpack updater file is not available!")
-return
-  end
-
-    utils.shellexecute(updater, nil, Path.currentdir(), "open", 3)
-    DoAfterSpecial(1, 'ReloadPlugin("ad8f25246eb08f268411d690")', sendto.script)
-end
 ]]></script>
 </muclient>
