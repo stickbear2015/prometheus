@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<!-- Lines that are only hidden, with no sound. -->
+<!-- The Lua for these triggers is in lua/prometheus/triggers/gags.lua -->
+<muclient>
+<triggers>
+
+<trigger
+  name="SilenceTheKeepAliveString"
+  group="Gags"
+  enabled="y"
+  match="^KeepAlive1737$"
+  regexp="y"
+  ignore_case="y"
+  match_bold="y"
+  match_inverse="y"
+  match_italic="y"
+  omit_from_output="y"
+  omit_from_log="y"
+  sequence="100"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="^([\-]+)$"
+  regexp="y"
+  omit_from_output="y"
+  sequence="100"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="^((?:\(From outside: )?[^\[:][^:]*) (says|say|asks|ask|exclaims|exclaim)\b([^:]*)\: (.*)$"
+  regexp="y"
+  sequence="50"
+  script="Gags_SaysSay"
+></trigger>
+
+<trigger
+  enabled="y"
+  match='^((?:\(From outside: )?[^\[:(][^:(]*) \(to ([^)]+)\)([^:]*): "(.*)"\)?$'
+  regexp="y"
+  sequence="50"
+  script="Gags_SaysTo"
+></trigger>
+
+<trigger
+  enabled="y"
+  match='^(.*) translator announces(.*?)\, "(.*)"$'
+  regexp="y"
+  sequence="100"
+  script="Gags_TranslatorAnnounces"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The hum coming from a*drink mixer intensifies as it prepares a drink."
+  omit_from_output="y"
+  sequence="100"
+  send_to="12"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You feel a thrumming pulse through the deck beneath you as the shields activate."
+  omit_from_output="y"
+  sequence="100"
+  send_to="12"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The pulsing slowly fades away as the shields around the ship deactivate."
+  omit_from_output="y"
+  sequence="100"
+  send_to="12"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear some odd sounds as the harvesting equipment begins scanning for gas."
+  omit_from_output="y"
+  sequence="100"
+  send_to="12"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The hum decreases but doesn't stop completely, and the vibration eases out as the engine startup completes."
+  omit_from_output="y"
+  sequence="100"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The hum decreases and falls silent as the engines shut down, leaving you in complete silence."
+  omit_from_output="y"
+  sequence="100"
+  send_to="12"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You pull*sifting net out of the water, empty."
+  omit_from_output="y"
+  sequence="100"
+  script="Gags_YouPullSiftingNetOutOf"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The ship accelerates, making the blackness around you shiver as it flies through hyperspace."
+  omit_from_output="y"
+  sequence="100"
+  send_to="12"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The beam stops abruptly, seemingly unable to move."
+  omit_from_output="y"
+  sequence="100"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You instruct the microdrones to repair the damaged equipment."
+  omit_from_output="y"
+  sequence="100"
+  send_to="12"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="^\*\*\*(.*) has (arrived to answer (.*)\'s assist|resolved an assist from (.*))\.([\*\*\*]?)$"
+  omit_from_output="y"
+  sequence="100"
+  script="Gags_HasArrivedToAnswerAssistResolved"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="^Being (hauled|harvested|mined|cleaned)\, no\.$"
+  regexp="y"
+  omit_from_output="y"
+  sequence="100"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="LAG-TEST"
+  sequence="100"
+>
+  <send>lag_result</send>
+</trigger>
+
+</triggers>
+</muclient>

@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<!-- Things you can't do (yet): wait timers, locked hatches, not enough of something. -->
+<!-- The Lua for these triggers is in lua/prometheus/triggers/refusals.lua -->
+<muclient>
+<triggers>
+
+<trigger
+  enabled="y"
+  match="^Wait (\d+) (seconds?|minutes?)\.$"
+  regexp="y"
+  sequence="100"
+  script="Refusals_WaitSecondsMinutes"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="No repair drones available."
+  sequence="100"
+  script="Refusals_NoRepairDronesAvailable"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Only owners can do this."
+  sequence="100"
+  script="Refusals_OnlyOwnersCanDoThis"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You can't * while *."
+  sequence="100"
+  script="Refusals_YouCanWhile"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You must wait another * while the * generator recharges."
+  sequence="100"
+  script="Refusals_YouMustWaitAnotherWhileThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Repair the * first."
+  sequence="100"
+  script="Refusals_RepairTheFirst"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The ship is already in the process of harvesting *."
+  sequence="100"
+  script="Refusals_TheShipIsAlreadyInThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You cannot teleport * a ship with active shields."
+  sequence="100"
+  script="Refusals_YouCannotTeleportAShipWith"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You cannot salvage while the ship is in motion."
+  sequence="100"
+  script="Refusals_YouCannotSalvageWhileTheShip"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The ship is currently unable to move."
+  sequence="100"
+  script="Refusals_TheShipIsCurrentlyUnableTo"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You should stop the ship before attempting this."
+  sequence="100"
+  script="Refusals_YouShouldStopTheShipBefore"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Unlock the beam first."
+  sequence="100"
+  script="Refusals_UnlockTheBeamFirst"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The starship's NAVI drive is already engaged."
+  sequence="100"
+  script="Refusals_TheStarshipNaviDriveIsAlready"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Please do not attempt to salvage while your ship is in the midst of probing a derelict starship."
+  sequence="100"
+  script="Refusals_PleaseDoNotAttemptToSalvage"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Wait for the acceleration to hyperspace first."
+  sequence="100"
+  script="Refusals_WaitForTheAccelerationToHyperspace"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Please deactivate * first."
+  sequence="100"
+  script="Refusals_PleaseDeactivateFirst"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The power controls of this ship are locked due to it being under construction."
+  sequence="100"
+  script="Refusals_ThePowerControlsOfThisShip"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The weapons are not powered up."
+  sequence="100"
+  script="Refusals_TheWeaponsAreNotPoweredUp"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You cannot deploy probes while the starship is moving."
+  sequence="100"
+  script="Refusals_YouCannotDeployProbesWhileThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You cannot salvage while landing."
+  sequence="100"
+  script="Refusals_YouCannotSalvageWhileLanding"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="No shipwrecks found. Cannot continue grabbing process."
+  sequence="100"
+  script="Refusals_NoShipwrecksFoundCannotContinueGrabbing"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Hyperspace drive could not be activated due to the vessle being in motion."
+  sequence="100"
+  script="Refusals_HyperspaceDriveCouldNotBeActivated"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The sublight drive is still recharging: * remaining."
+  sequence="100"
+  script="Refusals_TheSublightDriveIsStillRecharging"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="That target is no longer here."
+  sequence="100"
+  script="Refusals_ThatTargetIsNoLongerHere"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The ship is already salvaging."
+  sequence="100"
+  script="Refusals_TheShipIsAlreadySalvaging"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The * is already firing."
+  sequence="100"
+  script="Refusals_TheIsAlreadyFiring"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="&gt;&gt; Command Aborted &lt;&lt;"
+  omit_from_output="y"
+  sequence="100"
+  script="Refusals_CommandAborted"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Buying less than one? Nice try!"
+  sequence="100"
+  script="Refusals_BuyingLessThanOneNiceTry"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Invalid*"
+  sequence="100"
+  script="Refusals_Invalid"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Oops, wrong amount!"
+  sequence="100"
+  script="Refusals_OopsWrongAmount"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* tr*to enter *, but * turned away by the locked hatch."
+  sequence="100"
+  script="Refusals_TrToEnterButTurnedAway"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You hear somebody trying to enter the ship."
+  sequence="100"
+  script="Refusals_YouHearSomebodyTryingToEnter"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="A weapon is already being repaired."
+  sequence="100"
+  script="Refusals_AWeaponIsAlreadyBeingRepaired"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You can't teleport for *."
+  sequence="100"
+  script="Refusals_YouCanTeleportFor"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* to autopilot first."
+  sequence="100"
+  script="Refusals_ToAutopilotFirst"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* to manual pilot first."
+  sequence="100"
+  script="Refusals_ToManualPilotFirst"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Hyperspace jumps cannot be aborted."
+  sequence="100"
+  script="Refusals_HyperspaceJumpsCannotBeAborted"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The * is already in that sector."
+  sequence="100"
+  script="Refusals_TheIsAlreadyInThatSector"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The * is not moving."
+  sequence="100"
+  script="Refusals_TheIsNotMoving"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The * is already moving."
+  sequence="100"
+  script="Refusals_TheIsAlreadyMoving"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You're already there."
+  sequence="100"
+  script="Refusals_YouReAlreadyThere"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Hyperspace jump not possible while shielded."
+  sequence="100"
+  script="Refusals_HyperspaceJumpNotPossibleWhileShielded"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The launchers do not need reloading."
+  sequence="100"
+  script="Refusals_TheLaunchersDoNotNeedReloading"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="There are still * left in the banks."
+  sequence="100"
+  script="Refusals_ThereAreStillLeftInThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Invalid coordinates. Range: * to *"
+  sequence="100"
+  script="Refusals_InvalidCoordinatesRangeTo"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The starship is already on * alert."
+  sequence="100"
+  script="Refusals_TheStarshipIsAlreadyOnAlert"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Those coordinates are too far away to establish a lock."
+  sequence="100"
+  script="Refusals_ThoseCoordinatesAreTooFarAway"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Those controls are already in use."
+  sequence="100"
+  script="Refusals_ThoseControlsAreAlreadyInUse"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Either the launchers do not need reloading, or the ship lacks the required ammunition."
+  sequence="100"
+  script="Refusals_EitherTheLaunchersDoNotNeed"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Grabbing is already in progress."
+  sequence="100"
+  script="Refusals_GrabbingIsAlreadyInProgress"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You cannot grab any more."
+  sequence="100"
+  script="Refusals_YouCannotGrabAnyMore"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Excavation impossible due to damaged equipment."
+  sequence="100"
+  script="Refusals_ExcavationImpossibleDueToDamagedEquipment"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="There are no destinations to which you can teleport at present."
+  sequence="100"
+  script="Refusals_ThereAreNoDestinationsToWhich"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You can't go that way."
+  sequence="100"
+  script="Refusals_YouCanGoThatWay"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="*bump*into the locked door leading *."
+  sequence="100"
+  script="Refusals_BumpIntoTheLockedDoorLeading"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The * launchers are cooling down."
+  omit_from_output="y"
+  sequence="100"
+  script="Refusals_TheLaunchersAreCoolingDown"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* are already being fired."
+  sequence="100"
+  script="Refusals_AreAlreadyBeingFired"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The LRL is recharging: * remaining."
+  sequence="100"
+  script="Refusals_TheLrlIsRechargingRemaining"
+></trigger>
+
+<trigger
+  enabled="y"
+  match='I see no "*" here.'
+  sequence="100"
+  script="Refusals_SeeNoHere"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="There are no salvage lines available."
+  sequence="100"
+  script="Refusals_ThereAreNoSalvageLinesAvailable"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Things can only be transferred at a landing pad or when docked to another ship via the docking ring."
+  sequence="100"
+  script="Refusals_ThingsCanOnlyBeTransferredAt"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You'll need to land at a properly equipped landing pad to transfer."
+  sequence="100"
+  script="Refusals_YouLlNeedToLandAt"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Drive could not be activated due to the vessel being in motion."
+  sequence="100"
+  script="Refusals_DriveCouldNotBeActivatedDue"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Please drop your shields first."
+  sequence="100"
+  script="Refusals_PleaseDropYourShieldsFirst"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You can not scoop while the vehicle is moving."
+  sequence="100"
+  script="Refusals_YouCanNotScoopWhileThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You can not move while attempting to scoop."
+  sequence="100"
+  script="Refusals_YouCanNotMoveWhileAttempting"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="There is not a star in the sector."
+  sequence="100"
+  script="Refusals_ThereIsNotAStarIn"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* should not be moving."
+  sequence="100"
+  script="Refusals_ShouldNotBeMoving"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You cannot use that in hyperspace."
+  sequence="100"
+  script="Refusals_YouCannotUseThatInHyperspace"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Finish your hyper jump first."
+  sequence="100"
+  script="Refusals_FinishYourHyperJumpFirst"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Hyperspace drive could not be activated due to the vessel being in motion."
+  sequence="100"
+  script="Refusals_HyperspaceDriveCouldNotBeActivated2"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You're no longer in that sector."
+  sequence="100"
+  script="Refusals_YouReNoLongerInThat"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You are having a hard time using the controls do to your uncoordinated state."
+  sequence="100"
+  script="Refusals_YouAreHavingAHardTime"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The * banks are already full."
+  sequence="100"
+  script="Refusals_TheBanksAreAlreadyFull"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Due to the amount of energy drawn by the cloaking generator, you can not fire weapons while cloaked."
+  sequence="100"
+  script="Refusals_DueToTheAmountOfEnergy"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You already have that!"
+  sequence="100"
+  script="Refusals_YouAlreadyHaveThat"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The equipment is non-functional when damaged. Please repair it fully before proceeding."
+  sequence="100"
+  script="Refusals_TheEquipmentIsNonFunctionalWhen"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="There is nothing to be transfered."
+  sequence="100"
+  script="Refusals_ThereIsNothingToBeTransfered"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="All drones are busy repairing."
+  sequence="100"
+  script="Refusals_AllDronesAreBusyRepairing"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You can't lock on this ship!"
+  sequence="100"
+  script="Refusals_YouCanLockOnThisShip"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You are having a hard time using the controls due to your uncoordinated state."
+  sequence="100"
+  script="Refusals_YouAreHavingAHardTime2"
+></trigger>
+
+</triggers>
+</muclient>
