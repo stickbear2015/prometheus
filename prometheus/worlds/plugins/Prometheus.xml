@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE muclient>
 <muclient>
-<plugin name="Prometheus" author="Krinnzenn" id="ad8f25246eb08f268411d690"
+<plugin name="Prometheus" author="Kendal Hamilton" id="ad8f25246eb08f268411d690"
 language="Lua" purpose="Soundpack for Prometheus: The Eternal Wars."
-requires="5.00"></plugin>
+requires="5.00">
+<description trim="y">
+<![CDATA[
+Soundpack for Prometheus: The Eternal Wars. Developed by Kendal Hamilton. Originally created by Nyano Cooper, and kept going for years by Krinnzenn.
+]]>
+</description>
+</plugin>
 <include name="constants.lua"/>
 
 <!-- The triggers are split into one file per area, in worlds/plugins/prometheus/.
