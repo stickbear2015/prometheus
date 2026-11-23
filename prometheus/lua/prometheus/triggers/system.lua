@@ -31,20 +31,16 @@ function System_McpVersionTo(name, line, wildcards)
   Execute("#$#register_soundpack Mush Soundpack | "..GetVariable("version"))
 end
 
+-- The game's reply to the pack registering: "registered", or "old_version" when a
+-- newer pack exists. These used to play the outdated sound and start the old updater
+-- (spupdate). The updater has been removed until it's redesigned (issue #14), so for
+-- now they do nothing: the triggers stay only so the game's line stays hidden.
 -- ^\#\$\#register_soundpack (registered|old_version \| (.+))$
 function System_RegisterSoundpackRegisteredOldVersion(name, line, wildcards)
-  if (string.match(wildcards[1], "old_version")) then
-    CurrentGlobalSound = PlayGlobalSound("General/Misc/Outdated.ogg")
-    packUpdate()
-  end
 end
 
 -- ^\#\$\#register_soundpack old_version$
 function System_RegisterSoundpackOldVersion(name, line, wildcards)
-  if (string.match("", "old_version")) then
-    CurrentGlobalSound = PlayGlobalSound("General/Misc/Outdated.ogg")
-    packUpdate()
-  end
 end
 
 -- Social sounds, checked from top to bottom; the first entry whose word appears in the
