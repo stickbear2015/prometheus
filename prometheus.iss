@@ -1,5 +1,5 @@
 #define MyAppName "Prometheus"
-#define MyAppVersion "26.0.1"
+#define MyAppVersion "dev-26.0.2"
 
 #define MyAppPublisher "the prometheus development team"
 #define MyAppURL "https://www.stickbear.me/prometheus"
