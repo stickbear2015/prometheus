@@ -4,6 +4,10 @@ description: The old readme of the soundpack.
 Welcome to the Prometheus Soundpack!
 ====================================
 
+The Prometheus soundpack is now developed by Kendal Hamilton.
+
+Credit and thanks to Krinnzenn, who looked after this soundpack before me, and to Nyano Cooper, who created it.
+
 a quick note from Krinnzenn:
 ------------------------------------
 First of all, my thanks to Nyano Cooper for all of his great work
