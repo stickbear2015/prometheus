@@ -1,5 +1,8 @@
 # Prometheus Soundpack Changes:
-## development version
+
+## Version 26.0.1
+This release brings almost 50 changes since the last release in february of 2025, and is now maintained by Kendal Hamilton.
+
 * modernizes the installer. [#7](https://github.com/stickbear2015/prometheus/issues/7)
 *   the auto retyping plugin no longer  loads by default, it's still available in the plugins directory, but users will have to load it themselves from the plugins dialog. [#18](https://github.com/stickbear2015/prometheus/issues/18)
 * updates asteroid sound to the one used in space. [#10](https://github.com/stickbear2015/prometheus/issues/10)
