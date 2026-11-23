@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<!-- The ship's furnishings: shower, toilet, drink mixer, canteen, chairs, doors, paper and beeping appliances. -->
+<!-- The Lua for these triggers is in lua/prometheus/triggers/household.lua -->
+<muclient>
+<triggers>
+
+<trigger
+  enabled="y"
+  match="* crumple*up into a ball and throw*it away."
+  sequence="100"
+  script="Household_CrumpleUpIntoABallAnd"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* bullet-proof statue crumples like paper!"
+  sequence="100"
+  script="Household_BulletProofStatueCrumplesLikePaper"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="In a sudden burst of anger at * bad luck, * tear*a PBS. Inc. lottery ticket up and throw*the pieces away!"
+  sequence="100"
+  script="Household_InASuddenBurstOfAnger"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* in-ship recharging station beeps, indicating that it's low on charge."
+  sequence="100"
+  script="Household_InShipRechargingStationBeepsIndicating"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="*climb*into*shower."
+  sequence="100"
+  script="Household_ClimbIntoShower"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="*leave*the shower."
+  sequence="100"
+  script="Household_LeaveTheShower"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="^(.*?)use(.*?)toilet(.*?)flush(.*?)\.$"
+  regexp="y"
+  sequence="100"
+  script="Household_UseToiletFlush"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The*on*drink mixer starts to fill with liquid."
+  omit_from_output="y"
+  sequence="100"
+  script="Household_TheOnDrinkMixerStartsTo"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="*drink mixer starts humming quietly."
+  omit_from_output="y"
+  sequence="100"
+  script="Household_DrinkMixerStartsHummingQuietly"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="*drink mixer beeps, indicating that the drink is ready."
+  sequence="100"
+  script="Household_DrinkMixerBeepsIndicatingThatThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="*carefully insert*drink disk into a slot on*drink mixer."
+  sequence="100"
+  script="Household_CarefullyInsertDrinkDiskIntoA"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You fill*canteen*sink*."
+  sequence="100"
+  script="Household_YouFillCanteenSink"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="*pour*some*from*into*."
+  sequence="100"
+  script="Household_PourSomeFromInto"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The door leading to The foyer swings *."
+  sequence="100"
+  script="Household_TheDoorLeadingToTheFoyer"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="*open*the door leading out and exit*the apartment."
+  sequence="100"
+  script="Household_OpenTheDoorLeadingOutAnd"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* turn*oven on."
+  sequence="100"
+  script="Household_TurnOvenOn"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* portable oven beeps, indicating that the food inside is ready."
+  sequence="100"
+  script="Household_PortableOvenBeepsIndicatingThatThe"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The display of * portable oven indicates, 'Recharging...'"
+  sequence="100"
+  script="Household_TheDisplayOfPortableOvenIndicates"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="* portable oven indicates that the recharging process is complete."
+  sequence="100"
+  script="Household_PortableOvenIndicatesThatTheRecharging"
+></trigger>
+
+</triggers>
+</muclient>

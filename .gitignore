@@ -1,5 +1,7 @@
 *.zip
-*.html
 config.txt
 *-state.xml
+*.exe
 
+# Game logs used for local testing only (contain other players' names and chat). Never commit.
+temp-logs/
