@@ -74,7 +74,7 @@ Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\mushclient\{#MyAppExeName}"
 [Run]
 ; Option to launch after installation
 Filename: "{app}\mushclient\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
-Filename: "{app}\changelog.html"; Description: "read the changelog"; Flags: nowait postinstall skipifsilent
+Filename: "{app}\changelog.html"; Description: "read the changelog"; Flags: nowait shellexec postinstall skipifsilent
 ; Filename: "{app}\readme.html"; Description: "read the documentation"; Flags: nowait postinstall skipifsilent
 [Registry]
 ; Register application path
