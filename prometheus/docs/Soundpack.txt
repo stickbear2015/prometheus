@@ -4,6 +4,10 @@ description: The old readme of the soundpack.
 Welcome to the Prometheus Soundpack!
 ====================================
 
+The Prometheus soundpack is now developed by Kendal Hamilton.
+
+Credit and thanks to Krinnzenn, who looked after this soundpack before me, and to Nyano Cooper, who created it.
+
 a quick note from Krinnzenn:
 ------------------------------------
 First of all, my thanks to Nyano Cooper for all of his great work
@@ -54,9 +58,8 @@ Other Commands:
   Shows the changelog file in a Notepad window.
 * hotkeys:
   Displays all available keys in the soundpack.
-* spupdate:
- Updates the Soundpack to the latest version, If a new version is available.
- Note, restarting MUSHclient after updating is recommended.
+* spdebug:
+ Turns debug mode on or off, to help track down sound problems. While it's on, each line from the game gets notes starting with [debug] saying which trigger caught it (with the line itself, even if it's normally hidden), each sound played (and whether the sound file is missing or that kind of sound is switched off), each history buffer the line went into, or "no trigger" if nothing in the soundpack caught it. It also shows the hidden soundpack messages the game sends. Copy these notes into a bug report. Debug mode is always off when you start MUSHclient.
 
 ------------------------------------
 Channel History Buffers:

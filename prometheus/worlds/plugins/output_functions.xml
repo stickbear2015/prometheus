@@ -168,6 +168,14 @@
 
 <script>
 <![CDATA[
+-- Look for Lua modules in this copy of MUSHclient first, even if a separately
+-- installed Lua has set LUA_PATH or LUA_CPATH (issue #51).
+do
+  local dir = GetInfo(66)
+  package.path = dir .. "lua/?.lua;" .. dir .. "lua/?/init.lua;" .. package.path
+  package.cpath = dir .. "?.dll;" .. dir .. "lua/?.dll;" .. package.cpath
+end
+
 
 for i = 1, 9 do
   Accelerator("Ctrl+"..tostring(i), "line_get "..tostring(i))

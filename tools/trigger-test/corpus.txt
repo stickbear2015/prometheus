@@ -1,0 +1,1661 @@
+1	-	#$#soundpackSomeone
+2	-	KeepAlive1737
+3	-	#$#mcp version: 2.1 to: 2.1
+4	-	#$#register_soundpack Mush Soundpack | Someone
+5	-	#$#register_soundpack old_version
+6	-	#$#PrometheusKeepAlive
+7	-	[Input]
+8	-	Username:
+9	-	Password:
+10	-	The sharp noise of a piercing arrow cutting through space can be heard before Someone deposited.
+11	-	Report complete.
+12	-	Suggestion sent.
+13	-	Someone translator announcesSomeone, "Someone"
+14	-	[Frequency Someone] Someone
+15	-	[Someone to you]Someone
+16	-	[You to Someone]Someone
+17	-	Your application has been submitted.
+18	-	The application console beeps as Someone completeSomeonesubmitting an application.
+19	-	Thank you for your answer!
+20	-	Application submitted. Randomly check your hypermail to see your application status.
+21	-	Beeps can be heard as the starship surveys the planet.
+22	-	Beeps and clicks can be heard as the starships surveyor activates.
+23	-	The starship completes surveying the planet.
+24	-	The screen of Someone hypernet browser with Someone touchscreen flashes briefly, indicating that Someone
+25	-	The screen of Someone hypernet browser with Someone touchscreen flashes briefly, indicating that new hypermail waiting for you
+26	-	The screen of Someone hypernet browser with Someone touchscreen flashes briefly, indicating that There is a new message in the forums
+27	-	The screen of Someone hypernet browser with Someone touchscreen flashes briefly, indicating that new hypermail waiting for you There is a new message in the forums
+28	-	(From outside: Someone)
+29	-	(In Someone: Someone)
+30	-	Someone "Someone requesting Someone clearanceSomeone" into a small microphone mounted on the console.
+31	-	Announcement from Someone: Someone
+32	-	[SUB-ANNOUNCEMENT | Someone]: "Someone"
+33	-	[Code updates] Someone
+34	-	[CHANGES] Someone: Someone
+35	-	Someone crumpleSomeoneup into a ball and throwSomeoneit away.
+36	-	Someone bullet-proof statue crumples like paper!
+37	-	In a sudden burst of anger at Someone bad luck, Someone tearSomeonea PBS. Inc. lottery ticket up and throwSomeonethe pieces away!
+38	-	Attention! Someone
+39	-	*** Notice from Someone ***
+40	-	You hear a humming noise Someone.
+41	-	You hear a humming noise as the docking bay door opens.
+42	-	You hear a humming noise as the docking bay door closes.
+43	-	You hear a humming noise as the docking bay door opens as the docking bay door closes.
+44	-	The humm dies down as the starship's powerup fails.
+45	-	You press a large button on Someone wormhole recall remote.
+46	-	Suddenly, you feel a pulling sensation behind your shoulderblades, and you are thrown into the swirling depths of a wormhole.
+47	-	A robotic voice from Someone wormhole transport console says, "Someone".
+48	-	The monitor on Someone wormhole transport console flashes the words: Someone
+49	-	You hear the roar of Someone starship from outside.
+50	-	You hear the roar of launching starship from outside.
+51	-	You hear the roar of undocking starship from outside.
+52	-	You hear the roar of landing starship from outside.
+53	-	You hear the roar of docking starship from outside.
+54	-	You hear the roar of launching undocking landing docking starship from outside.
+55	-	A message is displayed in bright red on the screen, "Someone"
+56	-	The computer announces, "Someone"
+57	GrabbingMessages=1	The computer announces, "Someone"
+58	HarvestingMessages=1	The computer announces, "Someone"
+59	SalvagingMessages=1	The computer announces, "Someone"
+60	-	The computer announces, "detected in the sector"
+61	GrabbingMessages=1	The computer announces, "detected in the sector"
+62	HarvestingMessages=1	The computer announces, "detected in the sector"
+63	SalvagingMessages=1	The computer announces, "detected in the sector"
+64	-	The computer announces, "enemy starship"
+65	GrabbingMessages=1	The computer announces, "enemy starship"
+66	HarvestingMessages=1	The computer announces, "enemy starship"
+67	SalvagingMessages=1	The computer announces, "enemy starship"
+68	-	The computer announces, "artifact"
+69	GrabbingMessages=1	The computer announces, "artifact"
+70	HarvestingMessages=1	The computer announces, "artifact"
+71	SalvagingMessages=1	The computer announces, "artifact"
+72	-	The computer announces, "friendly"
+73	GrabbingMessages=1	The computer announces, "friendly"
+74	HarvestingMessages=1	The computer announces, "friendly"
+75	SalvagingMessages=1	The computer announces, "friendly"
+76	-	The computer announces, " relic"
+77	GrabbingMessages=1	The computer announces, " relic"
+78	HarvestingMessages=1	The computer announces, " relic"
+79	SalvagingMessages=1	The computer announces, " relic"
+80	-	The computer announces, "comet"
+81	GrabbingMessages=1	The computer announces, "comet"
+82	HarvestingMessages=1	The computer announces, "comet"
+83	SalvagingMessages=1	The computer announces, "comet"
+84	-	The computer announces, "shipwreck"
+85	GrabbingMessages=1	The computer announces, "shipwreck"
+86	HarvestingMessages=1	The computer announces, "shipwreck"
+87	SalvagingMessages=1	The computer announces, "shipwreck"
+88	-	The computer announces, "planet"
+89	GrabbingMessages=1	The computer announces, "planet"
+90	HarvestingMessages=1	The computer announces, "planet"
+91	SalvagingMessages=1	The computer announces, "planet"
+92	-	The computer announces, "spacestation"
+93	GrabbingMessages=1	The computer announces, "spacestation"
+94	HarvestingMessages=1	The computer announces, "spacestation"
+95	SalvagingMessages=1	The computer announces, "spacestation"
+96	-	The computer announces, " star "
+97	GrabbingMessages=1	The computer announces, " star "
+98	HarvestingMessages=1	The computer announces, " star "
+99	SalvagingMessages=1	The computer announces, " star "
+100	-	The computer announces, "derelict starship"
+101	GrabbingMessages=1	The computer announces, "derelict starship"
+102	HarvestingMessages=1	The computer announces, "derelict starship"
+103	SalvagingMessages=1	The computer announces, "derelict starship"
+104	-	The computer announces, "asteroid"
+105	GrabbingMessages=1	The computer announces, "asteroid"
+106	HarvestingMessages=1	The computer announces, "asteroid"
+107	SalvagingMessages=1	The computer announces, "asteroid"
+108	-	The computer announces, "debris"
+109	GrabbingMessages=1	The computer announces, "debris"
+110	HarvestingMessages=1	The computer announces, "debris"
+111	SalvagingMessages=1	The computer announces, "debris"
+112	-	The computer announces, "spacebear"
+113	GrabbingMessages=1	The computer announces, "spacebear"
+114	HarvestingMessages=1	The computer announces, "spacebear"
+115	SalvagingMessages=1	The computer announces, "spacebear"
+116	-	The computer announces, "generators have completed their charging cycle"
+117	GrabbingMessages=1	The computer announces, "generators have completed their charging cycle"
+118	HarvestingMessages=1	The computer announces, "generators have completed their charging cycle"
+119	SalvagingMessages=1	The computer announces, "generators have completed their charging cycle"
+120	-	The computer announces, "Valuable material found"
+121	GrabbingMessages=1	The computer announces, "Valuable material found"
+122	HarvestingMessages=1	The computer announces, "Valuable material found"
+123	SalvagingMessages=1	The computer announces, "Valuable material found"
+124	-	The computer announces, "successfully grabbed"
+125	GrabbingMessages=1	The computer announces, "successfully grabbed"
+126	HarvestingMessages=1	The computer announces, "successfully grabbed"
+127	SalvagingMessages=1	The computer announces, "successfully grabbed"
+128	-	The computer announces, "Beam locked"
+129	GrabbingMessages=1	The computer announces, "Beam locked"
+130	HarvestingMessages=1	The computer announces, "Beam locked"
+131	SalvagingMessages=1	The computer announces, "Beam locked"
+132	-	The computer announces, "debris cloud"
+133	GrabbingMessages=1	The computer announces, "debris cloud"
+134	HarvestingMessages=1	The computer announces, "debris cloud"
+135	SalvagingMessages=1	The computer announces, "debris cloud"
+136	-	The computer announces, "partially salvaged"
+137	GrabbingMessages=1	The computer announces, "partially salvaged"
+138	HarvestingMessages=1	The computer announces, "partially salvaged"
+139	SalvagingMessages=1	The computer announces, "partially salvaged"
+140	-	The computer announces, "completely salvaged"
+141	GrabbingMessages=1	The computer announces, "completely salvaged"
+142	HarvestingMessages=1	The computer announces, "completely salvaged"
+143	SalvagingMessages=1	The computer announces, "completely salvaged"
+144	-	The computer announces, "has been salvaged"
+145	GrabbingMessages=1	The computer announces, "has been salvaged"
+146	HarvestingMessages=1	The computer announces, "has been salvaged"
+147	SalvagingMessages=1	The computer announces, "has been salvaged"
+148	-	The computer announces, "and prepared for future use"
+149	GrabbingMessages=1	The computer announces, "and prepared for future use"
+150	HarvestingMessages=1	The computer announces, "and prepared for future use"
+151	SalvagingMessages=1	The computer announces, "and prepared for future use"
+152	-	The computer announces, "A present disruption field prevents safe travel out of the sector"
+153	GrabbingMessages=1	The computer announces, "A present disruption field prevents safe travel out of the sector"
+154	HarvestingMessages=1	The computer announces, "A present disruption field prevents safe travel out of the sector"
+155	SalvagingMessages=1	The computer announces, "A present disruption field prevents safe travel out of the sector"
+156	-	The computer announces, "This weapon system is disabled"
+157	GrabbingMessages=1	The computer announces, "This weapon system is disabled"
+158	HarvestingMessages=1	The computer announces, "This weapon system is disabled"
+159	SalvagingMessages=1	The computer announces, "This weapon system is disabled"
+160	-	The computer announces, "Artifacts retrieved"
+161	GrabbingMessages=1	The computer announces, "Artifacts retrieved"
+162	HarvestingMessages=1	The computer announces, "Artifacts retrieved"
+163	SalvagingMessages=1	The computer announces, "Artifacts retrieved"
+164	-	The computer announces, "nothing"
+165	GrabbingMessages=1	The computer announces, "nothing"
+166	HarvestingMessages=1	The computer announces, "nothing"
+167	SalvagingMessages=1	The computer announces, "nothing"
+168	-	The computer announces, "Target has moved from the locked coordinates"
+169	GrabbingMessages=1	The computer announces, "Target has moved from the locked coordinates"
+170	HarvestingMessages=1	The computer announces, "Target has moved from the locked coordinates"
+171	SalvagingMessages=1	The computer announces, "Target has moved from the locked coordinates"
+172	-	The computer announces, "Miss."
+173	GrabbingMessages=1	The computer announces, "Miss."
+174	HarvestingMessages=1	The computer announces, "Miss."
+175	SalvagingMessages=1	The computer announces, "Miss."
+176	-	The computer announces, "Target moved"
+177	GrabbingMessages=1	The computer announces, "Target moved"
+178	HarvestingMessages=1	The computer announces, "Target moved"
+179	SalvagingMessages=1	The computer announces, "Target moved"
+180	-	The computer announces, "Firing incomplete due to target moving"
+181	GrabbingMessages=1	The computer announces, "Firing incomplete due to target moving"
+182	HarvestingMessages=1	The computer announces, "Firing incomplete due to target moving"
+183	SalvagingMessages=1	The computer announces, "Firing incomplete due to target moving"
+184	-	The computer announces, "There is no target at the locked coordinates"
+185	GrabbingMessages=1	The computer announces, "There is no target at the locked coordinates"
+186	HarvestingMessages=1	The computer announces, "There is no target at the locked coordinates"
+187	SalvagingMessages=1	The computer announces, "There is no target at the locked coordinates"
+188	-	The computer announces, "Firing aborted"
+189	GrabbingMessages=1	The computer announces, "Firing aborted"
+190	HarvestingMessages=1	The computer announces, "Firing aborted"
+191	SalvagingMessages=1	The computer announces, "Firing aborted"
+192	-	The computer announces, "This ship transmits"
+193	GrabbingMessages=1	The computer announces, "This ship transmits"
+194	HarvestingMessages=1	The computer announces, "This ship transmits"
+195	SalvagingMessages=1	The computer announces, "This ship transmits"
+196	-	The computer announces, "This starship is not equipped with the landing equipment needed to land on asteroids"
+197	GrabbingMessages=1	The computer announces, "This starship is not equipped with the landing equipment needed to land on asteroids"
+198	HarvestingMessages=1	The computer announces, "This starship is not equipped with the landing equipment needed to land on asteroids"
+199	SalvagingMessages=1	The computer announces, "This starship is not equipped with the landing equipment needed to land on asteroids"
+200	-	The computer announces, "that component is damaged beyond repair"
+201	GrabbingMessages=1	The computer announces, "that component is damaged beyond repair"
+202	HarvestingMessages=1	The computer announces, "that component is damaged beyond repair"
+203	SalvagingMessages=1	The computer announces, "that component is damaged beyond repair"
+204	-	The computer announces, "recharging"
+205	GrabbingMessages=1	The computer announces, "recharging"
+206	HarvestingMessages=1	The computer announces, "recharging"
+207	SalvagingMessages=1	The computer announces, "recharging"
+208	-	The computer announces, "recharge complete"
+209	GrabbingMessages=1	The computer announces, "recharge complete"
+210	HarvestingMessages=1	The computer announces, "recharge complete"
+211	SalvagingMessages=1	The computer announces, "recharge complete"
+212	-	The computer announces, "deployed for repair of"
+213	GrabbingMessages=1	The computer announces, "deployed for repair of"
+214	HarvestingMessages=1	The computer announces, "deployed for repair of"
+215	SalvagingMessages=1	The computer announces, "deployed for repair of"
+216	-	The computer announces, "completed repair of"
+217	GrabbingMessages=1	The computer announces, "completed repair of"
+218	HarvestingMessages=1	The computer announces, "completed repair of"
+219	SalvagingMessages=1	The computer announces, "completed repair of"
+220	-	The computer announces, "Current repair aborted"
+221	GrabbingMessages=1	The computer announces, "Current repair aborted"
+222	HarvestingMessages=1	The computer announces, "Current repair aborted"
+223	SalvagingMessages=1	The computer announces, "Current repair aborted"
+224	-	The computer announces, "banks empty"
+225	GrabbingMessages=1	The computer announces, "banks empty"
+226	HarvestingMessages=1	The computer announces, "banks empty"
+227	SalvagingMessages=1	The computer announces, "banks empty"
+228	-	The computer announces, "WARNING"
+229	GrabbingMessages=1	The computer announces, "WARNING"
+230	HarvestingMessages=1	The computer announces, "WARNING"
+231	SalvagingMessages=1	The computer announces, "WARNING"
+232	-	The computer announces, "cleared the solar storm"
+233	GrabbingMessages=1	The computer announces, "cleared the solar storm"
+234	HarvestingMessages=1	The computer announces, "cleared the solar storm"
+235	SalvagingMessages=1	The computer announces, "cleared the solar storm"
+236	-	The computer announces, "recharged"
+237	GrabbingMessages=1	The computer announces, "recharged"
+238	HarvestingMessages=1	The computer announces, "recharged"
+239	SalvagingMessages=1	The computer announces, "recharged"
+240	-	The computer announces, "Autopilot engaged"
+241	GrabbingMessages=1	The computer announces, "Autopilot engaged"
+242	HarvestingMessages=1	The computer announces, "Autopilot engaged"
+243	SalvagingMessages=1	The computer announces, "Autopilot engaged"
+244	-	The computer announces, "Autopilot disengaged"
+245	GrabbingMessages=1	The computer announces, "Autopilot disengaged"
+246	HarvestingMessages=1	The computer announces, "Autopilot disengaged"
+247	SalvagingMessages=1	The computer announces, "Autopilot disengaged"
+248	-	The computer announces, "deploying asteroid anchor complete"
+249	GrabbingMessages=1	The computer announces, "deploying asteroid anchor complete"
+250	HarvestingMessages=1	The computer announces, "deploying asteroid anchor complete"
+251	SalvagingMessages=1	The computer announces, "deploying asteroid anchor complete"
+252	-	The computer announces, "damage taken from an explosion on the surface"
+253	GrabbingMessages=1	The computer announces, "damage taken from an explosion on the surface"
+254	HarvestingMessages=1	The computer announces, "damage taken from an explosion on the surface"
+255	SalvagingMessages=1	The computer announces, "damage taken from an explosion on the surface"
+256	-	The computer announces, "no minerals detected"
+257	GrabbingMessages=1	The computer announces, "no minerals detected"
+258	HarvestingMessages=1	The computer announces, "no minerals detected"
+259	SalvagingMessages=1	The computer announces, "no minerals detected"
+260	-	The computer announces, "is not equipped for asteroid landing"
+261	GrabbingMessages=1	The computer announces, "is not equipped for asteroid landing"
+262	HarvestingMessages=1	The computer announces, "is not equipped for asteroid landing"
+263	SalvagingMessages=1	The computer announces, "is not equipped for asteroid landing"
+264	-	The computer announces, "landing impossible when"
+265	GrabbingMessages=1	The computer announces, "landing impossible when"
+266	HarvestingMessages=1	The computer announces, "landing impossible when"
+267	SalvagingMessages=1	The computer announces, "landing impossible when"
+268	-	The computer announces, "charge levels reaching critical"
+269	GrabbingMessages=1	The computer announces, "charge levels reaching critical"
+270	HarvestingMessages=1	The computer announces, "charge levels reaching critical"
+271	SalvagingMessages=1	The computer announces, "charge levels reaching critical"
+272	-	The computer announces, "storage full"
+273	GrabbingMessages=1	The computer announces, "storage full"
+274	HarvestingMessages=1	The computer announces, "storage full"
+275	SalvagingMessages=1	The computer announces, "storage full"
+276	-	The computer announces, "lack of storage space"
+277	GrabbingMessages=1	The computer announces, "lack of storage space"
+278	HarvestingMessages=1	The computer announces, "lack of storage space"
+279	SalvagingMessages=1	The computer announces, "lack of storage space"
+280	-	The computer announces, "Mission access code"
+281	GrabbingMessages=1	The computer announces, "Mission access code"
+282	HarvestingMessages=1	The computer announces, "Mission access code"
+283	SalvagingMessages=1	The computer announces, "Mission access code"
+284	-	The computer announces, "accepted"
+285	GrabbingMessages=1	The computer announces, "accepted"
+286	HarvestingMessages=1	The computer announces, "accepted"
+287	SalvagingMessages=1	The computer announces, "accepted"
+288	-	The computer announces, "Mission completed"
+289	GrabbingMessages=1	The computer announces, "Mission completed"
+290	HarvestingMessages=1	The computer announces, "Mission completed"
+291	SalvagingMessages=1	The computer announces, "Mission completed"
+292	-	The computer announces, "Not enough shells left to fire"
+293	GrabbingMessages=1	The computer announces, "Not enough shells left to fire"
+294	HarvestingMessages=1	The computer announces, "Not enough shells left to fire"
+295	SalvagingMessages=1	The computer announces, "Not enough shells left to fire"
+296	-	The computer announces, "cannot refine all the material in the storage compartment"
+297	GrabbingMessages=1	The computer announces, "cannot refine all the material in the storage compartment"
+298	HarvestingMessages=1	The computer announces, "cannot refine all the material in the storage compartment"
+299	SalvagingMessages=1	The computer announces, "cannot refine all the material in the storage compartment"
+300	-	The computer announces, "initiating asteroid haul to"
+301	GrabbingMessages=1	The computer announces, "initiating asteroid haul to"
+302	HarvestingMessages=1	The computer announces, "initiating asteroid haul to"
+303	SalvagingMessages=1	The computer announces, "initiating asteroid haul to"
+304	-	The computer announces, "on shipwreck"
+305	GrabbingMessages=1	The computer announces, "on shipwreck"
+306	HarvestingMessages=1	The computer announces, "on shipwreck"
+307	SalvagingMessages=1	The computer announces, "on shipwreck"
+308	-	The computer announces, "self-destruct sequence initiated"
+309	GrabbingMessages=1	The computer announces, "self-destruct sequence initiated"
+310	HarvestingMessages=1	The computer announces, "self-destruct sequence initiated"
+311	SalvagingMessages=1	The computer announces, "self-destruct sequence initiated"
+312	-	The computer announces, "Sixty."
+313	GrabbingMessages=1	The computer announces, "Sixty."
+314	HarvestingMessages=1	The computer announces, "Sixty."
+315	SalvagingMessages=1	The computer announces, "Sixty."
+316	-	The computer announces, "Thirty."
+317	GrabbingMessages=1	The computer announces, "Thirty."
+318	HarvestingMessages=1	The computer announces, "Thirty."
+319	SalvagingMessages=1	The computer announces, "Thirty."
+320	-	The computer announces, "Ten."
+321	GrabbingMessages=1	The computer announces, "Ten."
+322	HarvestingMessages=1	The computer announces, "Ten."
+323	SalvagingMessages=1	The computer announces, "Ten."
+324	-	The computer announces, "Five."
+325	GrabbingMessages=1	The computer announces, "Five."
+326	HarvestingMessages=1	The computer announces, "Five."
+327	SalvagingMessages=1	The computer announces, "Five."
+328	-	The computer announces, "Four."
+329	GrabbingMessages=1	The computer announces, "Four."
+330	HarvestingMessages=1	The computer announces, "Four."
+331	SalvagingMessages=1	The computer announces, "Four."
+332	-	The computer announces, "Three."
+333	GrabbingMessages=1	The computer announces, "Three."
+334	HarvestingMessages=1	The computer announces, "Three."
+335	SalvagingMessages=1	The computer announces, "Three."
+336	-	The computer announces, "Two."
+337	GrabbingMessages=1	The computer announces, "Two."
+338	HarvestingMessages=1	The computer announces, "Two."
+339	SalvagingMessages=1	The computer announces, "Two."
+340	-	The computer announces, "One."
+341	GrabbingMessages=1	The computer announces, "One."
+342	HarvestingMessages=1	The computer announces, "One."
+343	SalvagingMessages=1	The computer announces, "One."
+344	-	The computer announces, "beginning ground dock"
+345	GrabbingMessages=1	The computer announces, "beginning ground dock"
+346	HarvestingMessages=1	The computer announces, "beginning ground dock"
+347	SalvagingMessages=1	The computer announces, "beginning ground dock"
+348	-	The computer announces, "harvesting aborted"
+349	GrabbingMessages=1	The computer announces, "harvesting aborted"
+350	HarvestingMessages=1	The computer announces, "harvesting aborted"
+351	SalvagingMessages=1	The computer announces, "harvesting aborted"
+352	-	The computer announces, "damaged"
+353	GrabbingMessages=1	The computer announces, "damaged"
+354	HarvestingMessages=1	The computer announces, "damaged"
+355	SalvagingMessages=1	The computer announces, "damaged"
+356	-	The computer announces, "harvested"
+357	GrabbingMessages=1	The computer announces, "harvested"
+358	HarvestingMessages=1	The computer announces, "harvested"
+359	SalvagingMessages=1	The computer announces, "harvested"
+360	-	The computer announces, "spacepowerup mode engaged"
+361	GrabbingMessages=1	The computer announces, "spacepowerup mode engaged"
+362	HarvestingMessages=1	The computer announces, "spacepowerup mode engaged"
+363	SalvagingMessages=1	The computer announces, "spacepowerup mode engaged"
+364	-	The computer announces, "powering down due to lack of charge"
+365	GrabbingMessages=1	The computer announces, "powering down due to lack of charge"
+366	HarvestingMessages=1	The computer announces, "powering down due to lack of charge"
+367	SalvagingMessages=1	The computer announces, "powering down due to lack of charge"
+368	-	The computer announces, "charge running critical"
+369	GrabbingMessages=1	The computer announces, "charge running critical"
+370	HarvestingMessages=1	The computer announces, "charge running critical"
+371	SalvagingMessages=1	The computer announces, "charge running critical"
+372	-	The computer announces, "hit on"
+373	GrabbingMessages=1	The computer announces, "hit on"
+374	HarvestingMessages=1	The computer announces, "hit on"
+375	SalvagingMessages=1	The computer announces, "hit on"
+376	-	The computer announces, "Weapon fire blocked by shields"
+377	GrabbingMessages=1	The computer announces, "Weapon fire blocked by shields"
+378	HarvestingMessages=1	The computer announces, "Weapon fire blocked by shields"
+379	SalvagingMessages=1	The computer announces, "Weapon fire blocked by shields"
+380	-	The computer announces, "grenade firing complete"
+381	GrabbingMessages=1	The computer announces, "grenade firing complete"
+382	HarvestingMessages=1	The computer announces, "grenade firing complete"
+383	SalvagingMessages=1	The computer announces, "grenade firing complete"
+384	-	The computer announces, "computer piping"
+385	GrabbingMessages=1	The computer announces, "computer piping"
+386	HarvestingMessages=1	The computer announces, "computer piping"
+387	SalvagingMessages=1	The computer announces, "computer piping"
+388	-	The computer announces, "enabled"
+389	GrabbingMessages=1	The computer announces, "enabled"
+390	HarvestingMessages=1	The computer announces, "enabled"
+391	SalvagingMessages=1	The computer announces, "enabled"
+392	-	The computer announces, "disabled"
+393	GrabbingMessages=1	The computer announces, "disabled"
+394	HarvestingMessages=1	The computer announces, "disabled"
+395	SalvagingMessages=1	The computer announces, "disabled"
+396	-	The computer announces, "Locked onto"
+397	GrabbingMessages=1	The computer announces, "Locked onto"
+398	HarvestingMessages=1	The computer announces, "Locked onto"
+399	SalvagingMessages=1	The computer announces, "Locked onto"
+400	-	The computer announces, "Target out of"
+401	GrabbingMessages=1	The computer announces, "Target out of"
+402	HarvestingMessages=1	The computer announces, "Target out of"
+403	SalvagingMessages=1	The computer announces, "Target out of"
+404	-	The computer announces, "range"
+405	GrabbingMessages=1	The computer announces, "range"
+406	HarvestingMessages=1	The computer announces, "range"
+407	SalvagingMessages=1	The computer announces, "range"
+408	-	The computer announces, "Detected an attempt to launch the ship while drunk"
+409	GrabbingMessages=1	The computer announces, "Detected an attempt to launch the ship while drunk"
+410	HarvestingMessages=1	The computer announces, "Detected an attempt to launch the ship while drunk"
+411	SalvagingMessages=1	The computer announces, "Detected an attempt to launch the ship while drunk"
+412	-	The computer announces, "Firmware upgrade complete"
+413	GrabbingMessages=1	The computer announces, "Firmware upgrade complete"
+414	HarvestingMessages=1	The computer announces, "Firmware upgrade complete"
+415	SalvagingMessages=1	The computer announces, "Firmware upgrade complete"
+416	-	The computer announces, "Scanning"
+417	GrabbingMessages=1	The computer announces, "Scanning"
+418	HarvestingMessages=1	The computer announces, "Scanning"
+419	SalvagingMessages=1	The computer announces, "Scanning"
+420	-	The computer announces, "collided with"
+421	GrabbingMessages=1	The computer announces, "collided with"
+422	HarvestingMessages=1	The computer announces, "collided with"
+423	SalvagingMessages=1	The computer announces, "collided with"
+424	-	The computer announces, "Gathering data"
+425	GrabbingMessages=1	The computer announces, "Gathering data"
+426	HarvestingMessages=1	The computer announces, "Gathering data"
+427	SalvagingMessages=1	The computer announces, "Gathering data"
+428	-	The computer announces, "detected in the sector enemy starship artifact friendly  relic comet shipwreck planet spacestation  star  derelict starship asteroid debris spacebear generators have completed their charging cycle Valuable material found successfully grabbed Beam locked debris cloud partially salvaged completely salvaged has been salvaged and prepared for future use A present disruption field prevents safe travel out of the sector This weapon system is disabled Artifacts retrieved nothing Target has moved from the locked coordinates Miss. Target moved Firing incomplete due to target moving There is no target at the locked coordinates Firing aborted This ship transmits This starship is not equipped with the landing equipment needed to land on asteroids that component is damaged beyond repair recharging recharge complete deployed for repair of completed repair of Current repair aborted banks empty WARNING cleared the solar storm recharged Autopilot engaged Autopilot disengaged deploying asteroid anchor complete damage taken from an explosion on the surface no minerals detected is not equipped for asteroid landing landing impossible when charge levels reaching critical storage full lack of storage space Mission access code accepted Mission completed Not enough shells left to fire cannot refine all the material in the storage compartment initiating asteroid haul to on shipwreck self-destruct sequence initiated Sixty. Thirty. Ten. Five. Four. Three. Two. One. beginning ground dock harvesting aborted damaged harvested spacepowerup mode engaged powering down due to lack of charge charge running critical hit on Weapon fire blocked by shields grenade firing complete computer piping enabled disabled Locked onto Target out of range Detected an attempt to launch the ship while drunk Firmware upgrade complete Scanning collided with Gathering data"
+429	GrabbingMessages=1	The computer announces, "detected in the sector enemy starship artifact friendly  relic comet shipwreck planet spacestation  star  derelict starship asteroid debris spacebear generators have completed their charging cycle Valuable material found successfully grabbed Beam locked debris cloud partially salvaged completely salvaged has been salvaged and prepared for future use A present disruption field prevents safe travel out of the sector This weapon system is disabled Artifacts retrieved nothing Target has moved from the locked coordinates Miss. Target moved Firing incomplete due to target moving There is no target at the locked coordinates Firing aborted This ship transmits This starship is not equipped with the landing equipment needed to land on asteroids that component is damaged beyond repair recharging recharge complete deployed for repair of completed repair of Current repair aborted banks empty WARNING cleared the solar storm recharged Autopilot engaged Autopilot disengaged deploying asteroid anchor complete damage taken from an explosion on the surface no minerals detected is not equipped for asteroid landing landing impossible when charge levels reaching critical storage full lack of storage space Mission access code accepted Mission completed Not enough shells left to fire cannot refine all the material in the storage compartment initiating asteroid haul to on shipwreck self-destruct sequence initiated Sixty. Thirty. Ten. Five. Four. Three. Two. One. beginning ground dock harvesting aborted damaged harvested spacepowerup mode engaged powering down due to lack of charge charge running critical hit on Weapon fire blocked by shields grenade firing complete computer piping enabled disabled Locked onto Target out of range Detected an attempt to launch the ship while drunk Firmware upgrade complete Scanning collided with Gathering data"
+430	HarvestingMessages=1	The computer announces, "detected in the sector enemy starship artifact friendly  relic comet shipwreck planet spacestation  star  derelict starship asteroid debris spacebear generators have completed their charging cycle Valuable material found successfully grabbed Beam locked debris cloud partially salvaged completely salvaged has been salvaged and prepared for future use A present disruption field prevents safe travel out of the sector This weapon system is disabled Artifacts retrieved nothing Target has moved from the locked coordinates Miss. Target moved Firing incomplete due to target moving There is no target at the locked coordinates Firing aborted This ship transmits This starship is not equipped with the landing equipment needed to land on asteroids that component is damaged beyond repair recharging recharge complete deployed for repair of completed repair of Current repair aborted banks empty WARNING cleared the solar storm recharged Autopilot engaged Autopilot disengaged deploying asteroid anchor complete damage taken from an explosion on the surface no minerals detected is not equipped for asteroid landing landing impossible when charge levels reaching critical storage full lack of storage space Mission access code accepted Mission completed Not enough shells left to fire cannot refine all the material in the storage compartment initiating asteroid haul to on shipwreck self-destruct sequence initiated Sixty. Thirty. Ten. Five. Four. Three. Two. One. beginning ground dock harvesting aborted damaged harvested spacepowerup mode engaged powering down due to lack of charge charge running critical hit on Weapon fire blocked by shields grenade firing complete computer piping enabled disabled Locked onto Target out of range Detected an attempt to launch the ship while drunk Firmware upgrade complete Scanning collided with Gathering data"
+431	SalvagingMessages=1	The computer announces, "detected in the sector enemy starship artifact friendly  relic comet shipwreck planet spacestation  star  derelict starship asteroid debris spacebear generators have completed their charging cycle Valuable material found successfully grabbed Beam locked debris cloud partially salvaged completely salvaged has been salvaged and prepared for future use A present disruption field prevents safe travel out of the sector This weapon system is disabled Artifacts retrieved nothing Target has moved from the locked coordinates Miss. Target moved Firing incomplete due to target moving There is no target at the locked coordinates Firing aborted This ship transmits This starship is not equipped with the landing equipment needed to land on asteroids that component is damaged beyond repair recharging recharge complete deployed for repair of completed repair of Current repair aborted banks empty WARNING cleared the solar storm recharged Autopilot engaged Autopilot disengaged deploying asteroid anchor complete damage taken from an explosion on the surface no minerals detected is not equipped for asteroid landing landing impossible when charge levels reaching critical storage full lack of storage space Mission access code accepted Mission completed Not enough shells left to fire cannot refine all the material in the storage compartment initiating asteroid haul to on shipwreck self-destruct sequence initiated Sixty. Thirty. Ten. Five. Four. Three. Two. One. beginning ground dock harvesting aborted damaged harvested spacepowerup mode engaged powering down due to lack of charge charge running critical hit on Weapon fire blocked by shields grenade firing complete computer piping enabled disabled Locked onto Target out of range Detected an attempt to launch the ship while drunk Firmware upgrade complete Scanning collided with Gathering data"
+432	-	Computer in Someone, "Someone"
+433	-	No repair drones available.
+434	-	Only owners can do this.
+435	-	You can't Someone while Someone.
+436	-	You must wait another Someone while the Someone generator recharges.
+437	-	The low hum of the shields recharging abruptly ends.
+438	-	Repair the Someone first.
+439	-	The ship is already in the process of harvesting Someone.
+440	-	You cannot teleport Someone a ship with active shields.
+441	-	You cannot salvage while the ship is in motion.
+442	-	The ship is currently unable to move.
+443	-	You should stop the ship before attempting this.
+444	-	Unlock the beam first.
+445	-	The starship's NAVI drive is already engaged.
+446	-	Please do not attempt to salvage while your ship is in the midst of probing a derelict starship.
+447	-	Wait for the acceleration to hyperspace first.
+448	-	Please deactivate Someone first.
+449	-	The power controls of this ship are locked due to it being under construction.
+450	-	The weapons are not powered up.
+451	-	You cannot deploy probes while the starship is moving.
+452	-	You cannot salvage while landing.
+453	-	X-Loritan Someone has begun to generate a field of unrecorded type.
+454	-	Someone has begun a power buildup of some kind.
+455	-	There are no Someone left in the launchers.
+456	-	Someone damaged beyond repair.
+457	-	There is inadequate amount of ammunition left in the starship for a reload.
+458	-	Someone the starship's salvage scanners, which begin scanning the area for debris.
+459	-	you activate the starship's salvage scanners, which begin scanning the area for debris.
+460	-	Someone beginSomeoneto install Someone into the ships systems.
+461	-	Someone finishSomeoneinstalling Someone
+462	-	The computer reports that Someone
+463	-	The computer reports that completed repair of
+464	-	The computer reports that there is no debris
+465	-	The computer reports that starship probe
+466	-	The computer reports that destroyed by
+467	-	The computer reports that hacked into
+468	-	The computer reports that Attempting to retreat
+469	-	The computer reports that deployed
+470	-	The computer reports that discovered an artifact
+471	-	The computer reports that returned to the ship
+472	-	The computer reports that is 1 unit away
+473	-	The computer reports that destroyed
+474	-	The computer reports that X-Loritan
+475	-	The computer reports that no space for the debris
+476	-	The computer reports that Easter egg
+477	-	The computer reports that completed repair of there is no debris starship probe destroyed by hacked into Attempting to retreat deployed discovered an artifact returned to the ship is 1 unit away destroyed X-Loritan no space for the debris Easter egg
+478	-	The computer emits a piercing tone, alerting you that a starship has been detected in the sector's boundries.
+479	-	The hum of the recharge falls silent as the batteries of the vehicle become full.
+480	-	You hear an odd whoosh as the stored charge is discarded.
+481	-	The hum subsides and finally falls silent as the batteries finish recharging.
+482	-	You hear several loud thuds as a salvaging line is deployed into space.
+483	-	Someone in-ship recharging station beeps, indicating that it's low on charge.
+484	-	Someone pressSomeonea buttonSomeone.
+485	-	Someone pressSomeonea buttonto stop ongoing harvest.
+486	-	Someone pressSomeonea buttonon top of.
+487	-	Someone pressSomeonea buttonchair with.
+488	-	Someone pressSomeonea buttonleaning it back.
+489	-	Someone pressSomeonea buttonleaning it forward.
+490	-	Someone pressSomeonea buttoning it.
+491	-	Someone pressSomeonea buttonlaser power supplier.
+492	-	Someone pressSomeonea buttonunderwater scanner.
+493	-	Someone pressSomeonea buttoncapacity weapon safe.
+494	-	Someone pressSomeonea buttonopen.
+495	-	Someone pressSomeonea buttonclose.
+496	-	Someone pressSomeonea buttonon a nearby console and study the data displayed on its screen.
+497	-	Someone pressSomeonea buttonviewscreen.
+498	-	Someone pressSomeonea buttonenabling.
+499	-	Someone pressSomeonea buttondisabling.
+500	-	Someone pressSomeonea buttonwater begins to spray.
+501	-	Someone pressSomeonea buttoncausing the spray of water to stop.
+502	-	Someone pressSomeonea buttonpouring from a spout.
+503	-	Someone pressSomeonea buttonto stop ongoing harvest on top of chair with leaning it back leaning it forward ing it laser power supplier underwater scanner capacity weapon safe open close on a nearby console and study the data displayed on its screen viewscreen enabling disabling water begins to spray causing the spray of water to stop pouring from a spout.
+504	-	SomeoneclimbSomeoneintoSomeoneshower.
+505	-	SomeoneleaveSomeonethe shower.
+506	-	Someone pushSomeonea buttonSomeone.
+507	-	SomeoneuseSomeonetoiletSomeoneflushSomeone.
+508	-	The hum coming from aSomeonedrink mixer intensifies as it prepares a drink.
+509	-	TheSomeoneonSomeonedrink mixer starts to fill with liquid.
+510	-	Someonedrink mixer starts humming quietly.
+511	-	Someonedrink mixer beeps, indicating that the drink is ready.
+512	-	Someonecarefully insertSomeonedrink disk into a slot onSomeonedrink mixer.
+513	-	You fillSomeonecanteenSomeonesinkSomeone.
+514	-	SomeonepourSomeonesomeSomeonefromSomeoneintoSomeone.
+515	-	SomeoneturnSomeonesinkSomeoneonSomeonewashSomeonehands.
+516	-	Someone is carried into the room in the center of a flaming circle.
+517	-	Someone reforms into the legendary human wizard... And disappears in a circle of flames!
+518	-	Someone suddenly stepSomeonefrom the background.
+519	-	Someone suddenly seemSomeoneto disappear into the background.
+520	-	[SECTOR COMMUNICATION] Someone
+521	-	A speaker on the communication console crackles to life, and you hear Someone transmitting from Someone, Someone
+522	-	Someone saySomeoneinto a small microphone mounted on the console.
+523	-	Someone has restored you to full health!
+524	-	*** The server will be shut down by Someone in Someone
+525	-	Number of new announcements since last visit: Someone
+526	-	Please do not command stack.
+527	-	Checking to see if your Someone is broken...
+528	-	Checking movement...
+529	-	Movement fixed.
+530	Roundtime=0	Movement fixed.
+531	-	Fixed.
+532	Roundtime=0	Fixed.
+533	-	Roundtime fixed.
+534	Roundtime=0	Roundtime fixed.
+535	-	You raise your status to Someone!
+536	-	No shipwrecks found. Cannot continue grabbing process.
+537	-	Hyperspace drive could not be activated due to the vessle being in motion.
+538	-	The sublight drive is still recharging: Someone remaining.
+539	-	Can't find Someone.
+540	-	No matching objects to "Someone".
+541	-	That target is no longer here.
+542	-	The ship is already salvaging.
+543	-	The Someone is already firing.
+544	-	Someone WELCOME BACK TO PROMETHEUS! Someone
+545	-	Someone Redirecting connection to this port... Someone
+546	-	You ask Someone if Someone would like to establish a private communications link.
+547	-	Your Someone emits a confirmational tone as the private link with Someone is established.
+548	-	You deny Someone request for a communications link.
+549	-	Someone denies your request.
+550	-	Someone has deleted Someone communications link with you.
+551	-	You delete your communications link with Someone.
+552	-	Your Someone flashes a message, indicating that the remote link with its starship has been lost due to Someone.
+553	-	The screen of Someone with Someone screen and Someone switches flashes briefly, indicating that a new link to a starship has been established.
+554	-	Someone private communications are disabled.
+555	-	Sorry, but your command input has been blocked. We apologize for any inconvenience this may cause you.
+556	-	A new poll has been opened. Use vote to answer it.
+557	-	Your vote has been recorded. Thank you for voting!
+558	-	The polls are now closed.
+559	-	Someone pullSomeonea series of straps around Someone and securely buckleSomeone into Someone seat.
+560	-	Someone releaseSomeonethe buckle of Someone seatbelt, causing it to retract back into Someone seat.
+561	-	A small speaker on Someone suddenly emits a loud burst of static.
+562	-	Someone with Someone suddenly emits a painfully loud burst of static. After a few moments, it subsides a bit, and a synthesized voice breaks through the static, saying: Someone
+563	-	Someone quickly doubletapSomeonea button on top of Someone
+564	-	>> Command Aborted <<
+565	-	Buying less than one? Nice try!
+566	-	InvalidSomeone
+567	-	Oops, wrong amount!
+568	-	Someone trSomeoneto enter Someone, but Someone turned away by the locked hatch.
+569	-	You hear somebody trying to enter the ship.
+570	-	Someone flickSomeoneaSomeoneswitch on Someone.
+571	-	Someone flickSomeoneaSomeoneswitch on radio microphone.
+572	-	Someone flickSomeoneaSomeoneswitch on turning on.
+573	-	Someone flickSomeoneaSomeoneswitch on turning off.
+574	-	Someone flickSomeoneaSomeoneswitch on enabling.
+575	-	Someone flickSomeoneaSomeoneswitch on disabling.
+576	-	Someone flickSomeoneaSomeoneswitch on radio microphone turning on turning off enabling disabling.
+577	-	You connect to the Someone channel.
+578	-	You disconnect from the Someone channel.
+579	-	AFK notifications Someone
+580	-	AFK notifications enabled
+581	-	AFK notifications disabled
+582	-	AFK notifications enabled disabled
+583	-	Someone[Enter SomeoneyesSomeone or SomeonenoSomeone]
+584	-	[Type Someone, Someone]
+585	-	There are more than one matches to that argument in your links. Please be more specific.
+586	-	You exchange Someone credits for Someone
+587	-	You contribute Someone credits to the owner of this starship.
+588	-	You sell Someone for Someone credits.
+589	-	You deposit Someone credits into Someone
+590	-	You withdraw Someone credits from Someone
+591	-	CONGRATULATIONS! You won Someone credits!
+592	-	You receive a Someone of Someone credits.
+593	-	You have Someone credits on hand and Someone bank credits.
+594	-	You need Someone more points before you can raise your status.
+595	-	You are Someone credits in debt.
+596	-	You are given a loan of Someone credits. You are now Someone credits in debt. The loan increased your cash on hand by Someone
+597	-	You pay Someone credits Someone of your debt.
+598	-	Transaction complete.
+599	-	Your Someone informs you that Someone credits has been transfered to your account by Someone.
+600	-	I don't understand that.
+601	-	Someone typeSomeonea complicated series of codeSomeoneinto Someone translator.
+602	-	You take Someone in your Someone hand.
+603	-	You take laser in your Someone hand.
+604	-	Someone lockSomeonethe door leading Someone.
+605	-	Someone lockSomeonethe vehicle.
+606	-	SomeoneunlockSomeonethe door to Apartment Someone and headSomeoneinside.
+607	-	The door leading to The foyer swings Someone.
+608	-	The door leading to The foyer swings open.
+609	-	The door leading to The foyer swings shut.
+610	-	The door leading to The foyer swings open shut.
+611	-	SomeoneopenSomeonethe door leading out and exitSomeonethe apartment.
+612	-	Someone unlockSomeonethe door leading Someone.
+613	-	Someone unlockSomeonethe vehicle.
+614	-	Someone securely boltSomeone so it cannot be moved.
+615	-	Someone removeSomeonethe bolts from Someone and pickSomeoneit up.
+616	-	You notice a faint hum as the starship orients its asteroid anchor into place.
+617	-	You hear a whirring coming from beneath you, followed by a loud click as the ship's asteroid anchor is drilled securely into the asteroid.
+618	-	You hear a sharp scraping sound and look out to notice the asteroid anchor being removed from the solid rock.
+619	-	Someone beginSomeonemaneuvering the starship onto an asteroid.
+620	-	Someone tapSomeonea series of buttons, Someone the starship's power.
+621	-	Someone tapSomeonethe unlock button on the grabbing console, causing the locked cutting beam to begin moving again.
+622	-	The ship lurches as a powerful cutting beam is launched into space.
+623	-	A slight hum can be heard as an artifact retrieval tube is deployed into space.
+624	-	Someone pressSomeonesome buttons on Someone with Someone.
+625	-	You tap some buttons on Someone hypernet browser with Someone touchscreen and the screen flashes, 'Someone'
+626	-	Someone carefully slideSomeoneinto Someone
+627	-	You put Someone into Someone containerSomeone.
+628	-	You place Someone in Someone sifting bucketSomeone.
+629	-	Through the window, you watch a starship probe remove a section of hull with its industrial-strength drill and saw attachments, just large enough for it to enter the ship.
+630	-	Displaying docked starships:
+631	-	Debris scanner report for the current sector:
+632	-	Items in the storage compartment:
+633	-	There is no trash in the storage compartment. The size of the storage compartment is Someone units.
+634	-	Combat mission
+635	-	Record for Someone
+636	-	Available starship probes: Someone
+637	-	There is no debris to refine.
+638	-	A barely audible hum starts as the refiner begins its work.
+639	-	The hum stops as the refiner completes its work.
+640	-	Nothing is currently being constructed.
+641	-	Battery type: Someone
+642	-	Current charge: Someone
+643	-	Defense system information for Someone:
+644	-	The following items are in the cargo hold:
+645	-	There is nothing in the Someone hold. Someone
+646	-	Available units of refined material: Someone out of Someone
+647	-	The refinery tanks are Someone full Someone
+648	-	A drone loads Someone onto its platform and carries it away.
+649	-	The thuds coming from Someone.
+650	-	The clicks abruptly stop as the transfer finishes.
+651	-	A loud thud can be heard from the storage room as a piece of debris is deposited by the salvaging line.
+652	-	You retrieve a weapons status readout.
+653	-	Status for Someone
+654	-	Charge readout:
+655	-	Security status for Someone:
+656	-	Engine Speed: Someone
+657	-	Starship component Damage:
+658	-	Weapon Damage:
+659	-	A weapon is already being repaired.
+660	-	You can't teleport for Someone.
+661	-	Someone pressSomeonea few keys on a console, Someone the Someone alert.
+662	-	Someone pressSomeonea few keys on a console, enabling the Someone alert.
+663	-	Someone pressSomeonea few keys on a console, disabling the Someone alert.
+664	-	Someone pressSomeonea few keys on a console, enabling disabling the Someone alert.
+665	-	Someone pullSomeoneup an image of the starship's status report on a screen built-into the main control board.
+666	-	Someone furiously inputSomeoneinto a weapon locking console.
+667	-	You furiously inputSomeoneinto a weapon locking console.
+668	-	You feel a thrumming pulse through the deck beneath you as the shields activate.
+669	-	You feel a slight vibration from the ship as it strengthens the shields around the ship.
+670	-	The ship lurches abruptly as super-heated shrapnel penetrates the hull.
+671	-	A low whine emanates from the shields as they successfully repel incoming shrapnel.
+672	-	The plates around the hull orient themselves, deflecting the solar mass.
+673	-	The pulsing slowly fades away as the shields around the ship deactivate.
+674	-	You hear several sliding noises as the reflector plates Someone
+675	-	You hear several sliding noises as the reflector plates surround the hull
+676	-	You hear several sliding noises as the reflector plates around the hull are retracted
+677	-	You hear several sliding noises as the reflector plates surround the hull around the hull are retracted
+678	-	You hear a barely audible vibration followed by a Someone the ship.
+679	-	You hear a barely audible vibration followed by a around the ship.
+680	-	You hear a barely audible vibration followed by a retract the ship.
+681	-	You hear a barely audible vibration followed by a around retract the ship.
+682	-	You hear a vibration as the solar recharge completes and the solar receptors retract back into the ship with an audible click.
+683	-	The starship shakes slightly as rebounded weapons fire impacts the hull.
+684	-	The ship rocks slightly as planetary lasers impact the hull from Someone
+685	-	You hear some clangs and drilling sounds as the replacement Someone is installed.
+686	-	You're not in space!
+687	-	You should be in space.
+688	-	The Someone isn't in space.
+689	-	The Someone is not in space.
+690	-	You can only do that in space.
+691	-	The Someone is not in the required conditions to use this function.
+692	-	The Someone should be in space before Someone wormhole transport console may be activated.
+693	-	Someone to autopilot first.
+694	-	Someone to manual pilot first.
+695	-	The starship is already moving.
+696	-	Hyperspace jumps cannot be aborted.
+697	-	The Someone is already in that sector.
+698	-	The Someone is not moving.
+699	-	The Someone is already moving.
+700	-	You're already there.
+701	-	Hyperspace jump not possible while shielded.
+702	-	The launchers do not need reloading.
+703	-	There are still Someone left in the banks.
+704	-	Invalid coordinates. Range: Someone to Someone
+705	-	Someone has Someone the sector.
+706	-	Someone has entered the sector.
+707	-	Someone has jumped into the sector.
+708	-	Someone has left the sector.
+709	-	Someone has jumped out of the sector.
+710	-	Someone has entered jumped into left jumped out of the sector.
+711	-	Someone has Someone the sector through an unrecorded field.
+712	-	X-Loritan has Someone the sector through an unrecorded field.
+713	-	X-Loritan X-Loritan has Someone the sector through an unrecorded field.
+714	-	Someone has entered the sector through an unrecorded field.
+715	-	Someone has jumped into the sector through an unrecorded field.
+716	-	Someone has left the sector through an unrecorded field.
+717	-	Someone has jumped out of the sector through an unrecorded field.
+718	-	Someone has entered jumped into left jumped out of the sector through an unrecorded field.
+719	-	Someone has Someone hyperspace.
+720	-	Someone has entered hyperspace.
+721	-	Someone has exitted hyperspace.
+722	-	Someone has entered exitted hyperspace.
+723	-	Someone has Someone stargate.
+724	-	Someone has entered stargate.
+725	-	Someone has exitted stargate.
+726	-	Someone has entered exitted stargate.
+727	-	A chime sounds, indicating that somebody has entered an airlock.
+728	-	You feel a slight jolt as the ship begins to move through the open bay door, and into open space.
+729	-	You feel a slight jolt as the other ship begins to move through the open bay door, and into open space.
+730	-	You feel a faint vibration coming from the direction of the ships docking bay.
+731	-	You feel a slight pull as the ship is expeled from the docking bay.
+732	-	You feel a slight jolt as the ship sets down in a docking bay.
+733	-	Someone makeSomeonesome selections on the docking console. The red light turns to yellow.
+734	-	Choosing Someone (Status: powered Someone).
+735	-	A red light on the docking console turns on.
+736	-	The yellow light turns to green.
+737	-	The smooth hum of the engines builds up a bit as the ship begins moving.
+738	-	The hum of the engines settles down as the ship stops moving.
+739	-	You hear the sound of the ship's engine as you are propelled toward space.
+740	-	You feel the starship accelerate as it moves toward a Someone
+741	-	That space is occupied.
+742	-	Those coordinates are occupied by this ship.
+743	-	You hear a dull roar as the ship's sublight drive propels the ship toward its destination.
+744	-	Someone has initiated an intrasector sublight jump.
+745	-	The dull roar of the sublight drive fades away as the ship reaches a destination.
+746	-	From a large speaker on Someone, You hear Someone say, "Someone".
+747	-	You say "Someone" into an external PA microphone.
+748	-	Someone floatSomeoneout into space.
+749	-	Someone out of the ship's hatch.
+750	-	Someone snatchSomeonefrom the cold, cruel hands of space.
+751	-	Someone placeSomeonehand against a sensor on Someone and Someone.
+752	-	Someone out from the hatch of Someone.
+753	-	Someone boardSomeonethrough the unlocked hatch.
+754	-	Someone walkSomeoneout into space.
+755	-	Someone placeSomeone UTF-Issue hatch cracker against Someone, and press a few buttons. The device's AI immediately begins to hack  into the vehicle's security systems.
+756	-	Someone UTF-Issue hatch cracker displays, "Warning, a virus has been transmitted to this device!"
+757	-	Someone UTF-Issue hatch cracker begins to spray sparks and glow omenously, then explodes in your hand!
+758	-	In no time at all, Someone UTF-Issue hatch cracker's AI has totally overpowered Someone security system and unlocked the airlock.
+759	-	You put your hands around Someone hatch repair drone and squeeze.
+760	-	Someone hatch repair drone unfolds slowly, revealing a wide aray of tools. It begins its work with a loud racket.
+761	-	Someone hatch repair drone replaces a broken hatch component with a spare.
+762	-	Someone hatch repair drone connects to the computer and rewrites some infected code.
+763	-	Someone hatch repair drone welds some metal together.
+764	-	Someone hatch repair drone hammers some metal bits back into place.
+765	-	Someone hatch repair drone, its work complete, folds back up into a small ball.
+766	-	The hum in the background builds up a bit as the pressurizing systems prepare for shutdown.
+767	-	The hum dies down as the pressurizing system shutdown completes.
+768	-	A low, almost unnoticeable hum becomes audible in the background as the pressurizing systems are activated.
+769	-	A voice comes over the speaker and says, "Someone".
+770	-	A voice announces, "Someone"
+771	-	Primary frequency set to Someone.
+772	-	Someone passSomeonein front of Someone and lookSomeoneat the display.
+773	-	Someone indicateSomeoneto Someone that Someone wishSomeonefor Someone to follow Someone.
+774	-	You follow Someone.
+775	-	Someone followSomeoneyou into the area.
+776	-	Someone requestSomeonethat Someone no longer follow Someone.
+777	-	Someone haSomeone away from Someone group.
+778	-	Someone left you behind.
+779	-	Someone startSomeonefollowing Someone.
+780	-	Someone stopSomeonefollowing Someone.
+781	-	Someone disbandSomeonegroup.
+782	-	The defense shields strengthen for a moment to block weapon fire.
+783	-	The ship shakes violently as a powerful laser beam is reflected back at it!
+784	-	This starship has been hit by Someone.
+785	-	The ship shakes as if hit by something!
+786	-	The ship shakes violently as a projectile comes in contact with it and explodes!
+787	-	The starship is hit by a massive energy beam!
+788	-	The ship shudders as it begins to explode. You are thrown into the wall with force you could never believe possible, and then you find yourself somewhere else.
+789	-	The reflection plates around the ship orient themselves, successfully throwing the beam away.
+790	-	You hear a gentle hum as the weapons power up.
+791	AlarmSounds=0	You hear a gentle hum as the weapons power up.
+792	-	A loud klaxon sounds as red lights continue to flash overhead.
+793	AlarmSounds=0	A loud klaxon sounds as red lights continue to flash overhead.
+794	-	The walls and ceiling continue to pulse a crimson color as loud klaxons scream their warnings.
+795	AlarmSounds=0	The walls and ceiling continue to pulse a crimson color as loud klaxons scream their warnings.
+796	-	Red alert lights come to life as the starship is attacked by an opponent.
+797	AlarmSounds=0	Red alert lights come to life as the starship is attacked by an opponent.
+798	-	The walls and ceiling suddenly start glowing Someone
+799	-	The walls and ceiling suddenly start glowing blood
+800	-	The walls and ceiling suddenly start glowing blue
+801	-	The walls and ceiling suddenly start glowing blood blue
+802	-	Someone toggleSomeonethe starships alert status to a Someone state.
+803	-	The starship is already on Someone alert.
+804	-	The interior lighting turns to pulsating yellow.
+805	-	The overhead lights change to solid green.
+806	-	You hear the hum fade as the weapons power down.
+807	-	The ship shudders and the lights dim briefly as beam cannons are fired.
+808	-	The ship vibrates mildly as torpedoes are launched.
+809	-	Those coordinates are too far away to establish a lock.
+810	-	Those controls are already in use.
+811	-	Someone has launched Someone at Someone!
+812	-	Someone has launched missile at Someone!
+813	-	Someone has launched torpedo at Someone!
+814	-	Someone has launched missile torpedo at Someone!
+815	-	X-Loritan Assassin has launched Someone at Someone!
+816	-	The starship shakes and rattles as armor piercing shells are launched.
+817	-	You hear a thud as guided missiles are launched into space.
+818	-	The ship shudders as the lasers are fired.
+819	-	The ship starts to vibrate as the long-range laser begins to draw energy.
+820	-	The vibration ceases as the long-range laser powers down.
+821	-	The roar of the engine calms as the starship completes its launch.
+822	-	You notify flight control of your desire to Someone
+823	-	You hear the sound of the engines as the ship begins to move.
+824	-	The engine stops as the ship arrives at a destination.
+825	-	The thrusters of Someone begin to glow bright red, and the ship launches toward the sky with a roar, leaving behind a wave of heat and a trail of fire.
+826	-	You hear the distinctive roar of starship engines, and look up to see a starship quickly approaching from a distance, making careful maneuvers toward Someone in order to Someone.
+827	-	You hear the microdrones working in the background as they repair the damage.
+828	-	You hear a buzzing sound from the Someone as repairs continue.
+829	-	You hear a shrill screeching sound as repair drones drag replacement components across the Someone
+830	-	You hear a deafening booming sound as repairs to the ship proceed.
+831	-	You hear an electrical zapping sound as repairs to the ship continue.
+832	-	You hear several clinking sounds as the ship is repaired.
+833	-	Suddenly, you hear a massive crashing and booming sound as the repair drones go to super power! They're repairing Someone now!
+834	-	The equipment returns to the ship with a clang.
+835	-	The harvesting equipment begins drilling deep into the asteroid's surface.
+836	-	The ship shakes softly as the comet harvesting equipment reaches out and begins harvesting the top of Someone of gases.
+837	-	You watch the harvesting equipment unfold from underneath the vessel and begin moving toward the asteroid on your ship's viewscreen.
+838	-	You hear some clangs and whooshes as the harvesting equipment retracts back into the ship's bowels.
+839	-	There is no more room for trash in the storage compartment. Someone
+840	-	From where the equipment drilled in, a shower of rocks suddenly bursts out!
+841	-	Charge is too low for harvesting.
+842	-	There is nothing here to scan.
+843	-	You activate the trash collectors.
+844	-	A loud thud can be heard from the storage compartment as trash is deposited by the collectors.
+845	-	You hear a series of clicks from below as items are removed from the storage compartment.
+846	-	The clicks coming from below abruptly stop.
+847	-	You hear a series of clicks from below as the refinery is emptied into a starship.
+848	-	Someone has fired at Someone.
+849	-	X-Loritan has fired at Someone.
+850	-	There are no Someone to fire.
+851	-	Either the launchers do not need reloading, or the ship lacks the required ammunition.
+852	-	The vehicle shudders as Someone
+853	-	The vehicle shudders as it begins to explode
+854	-	The vehicle shudders as machine guns are fired
+855	-	The vehicle shudders as cannons are fired
+856	-	The vehicle shudders as missiles are launched
+857	-	The vehicle shudders as a grenade is launched toward a target
+858	-	The vehicle shudders as a grenade comes in contact with its armor and explodes
+859	-	The vehicle shudders as it begins to explode machine guns are fired cannons are fired missiles are launched a grenade is launched toward a target a grenade comes in contact with its armor and explodes
+860	-	Someone has fired Someone at Someone
+861	-	Someone has fired minicannons at Someone
+862	-	Someone has fired a greenade at Someone
+863	-	Someone has fired a massive energy beam at Someone
+864	-	Someone has fired minicannons a greenade a massive energy beam at Someone
+865	-	X-Loritan has fired Someone at Someone
+866	-	Someone has fired Someone at X-Loritan
+867	-	Someone has a lock on this starship.
+868	-	Self-destruct sequence initiated! Destruction in sixty seconds.
+869	-	The relic... EXPLODES!
+870	-	The ship lurches as a powerful cutting beam is launched to space.
+871	-	Grabbing is already in progress.
+872	-	The ship rumbles as the beam carefully cuts its way into the wreck.
+873	-	With a jolt, the beam returns to the ship.
+874	-	The ship lurches as the cutting beam destroys the shipwreck into millions of tiny pieces!
+875	-	You cannot grab any more.
+876	-	The ship suddenly lurches violently as something hits it!
+877	-	An alert flashes on a nearby power management console for your immediate attention: "Someone"
+878	-	An alert flashes on a nearby power management console for your immediate attention: "critical charge alert"
+879	-	A low hum starts in the background as the batteries begin recharging.
+880	-	A compacted mass of energy slams into Someone
+881	-	The viewscreenSomeoneswitches to a pictograph of Someone.
+882	-	The viewscreenSomeoneswitches to a pictograph of flying out of the circle.
+883	-	The viewscreenSomeoneswitches to a pictograph of with a red circle around it.
+884	-	The viewscreenSomeoneswitches to a pictograph of with a dagger through it.
+885	-	The viewscreenSomeoneswitches to a pictograph of flying out of the circle with a red circle around it with a dagger through it.
+886	-	Someone has harmlessly discharged a massive energy beam into space.
+887	-	A soft hum starts somewhere within the bowels of the ship as the Someone banks are refilled.
+888	-	The hum subsides as the Someone bank refilling completes.
+889	-	A low hum comes to life as the shields begin recharging.
+890	-	The low hum fades away as the shields finish recharging.
+891	-	The floor beneath your feet begins rumbling softly as the refinery is activated.
+892	-	The rumble beneath your feet eases off as the refinery powers down.
+893	-	The construction facility is powering up.
+894	-	A low hum starts up as the construction facility is activated.
+895	-	The barely noticeable hum of the construction facility dies as it is deactivated.
+896	-	The construction facility is shutting down.
+897	-	The hum stops as the refinery completes its work.
+898	-	A slowly rotating black rift appears in front of the ship.
+899	-	The ship shakes as it ripples the fabric of space, entering a rift of deep, pulsing blackness.
+900	-	The ship slows down as it comes closer to the final destination.
+901	-	The ship suddenly shoots out of the rift and into another sector. The rift rapidly shrinks and disappears.
+902	-	With a final jolt, the starship slows as it exits the Worldway.
+903	-	The starship shudders as it enters a Someone
+904	-	With a final jolt, the starship slows as it exits the Someone
+905	-	Would you like to drive out of the ship's vehicle hatchSomeone
+906	-	You detect a faint rumbling as the starship begins to orient toward another ship.
+907	-	The engines begin to vibrate mildly as the ship accelerates toward another starship.
+908	-	The starship rocks gently as the docking ring comes into contact with another starship.
+909	-	You hear a satisfying click as the ship's docking ring is retracted from the docked ship's hull.
+910	-	You feel a faint vibration as the ship begins to launch into open space.
+911	-	You hear a loud klang as robotic arms transport the ship from the garage to the Someone
+912	-	You hear a loud clang as robotic arms seize the ship and transport it to the Someone
+913	-	You hear a short hum as hydraulic arms smoothly haul the ship from the garage Someone
+914	-	You hear a short hum as hydraulic arms smoothly haul the ship from Someone into the garage.
+915	-	Someone is gently lifted up and smoothly hauled into the garage by a pair of hydraulic arms.
+916	-	Someone is transported into Someone.
+917	-	Someone is smoothly hauled into the area and placed on a large, metal platform.
+918	-	Someone is gently lifted from its platform and smoothly hauled out of the area by a pair of hydraulic arms.
+919	-	Someone is smoothly hauled onto the (.Someone) and gently set down, ready for launch.
+920	-	You hear a loud clang as robotic arms seize the ship and transport it to the garage.
+921	-	You hear a loud klang as robotic arms transport the ship from the Someone to the garage.
+922	-	A blinding electric blue beam of light appears. After a few seconds, it disappears, leaving nothing in its wake.
+923	-	Someone is surrounded by an electric blue light and vanishes.
+924	-	Someone appearSomeonein a beam ofSomeonelight!
+925	-	Someone appears in the room from a bright beam of light.
+926	-	A bright beam surrounds Someone. When it fades, Someone is no longer in the room.
+927	-	Someonesuddenly enveloped in a Someone beam of light.Someone
+928	-	Someonebeam of light surrounds you. When it fades, you notice that your surroundings have changed.
+929	-	A bright redbeam of light surrounds you. When it fades, you notice that your surroundings have changed.
+930	-	Someone encased in a beam of electric blue light!
+931	-	You are encased in a beam of electric blue light!
+932	-	Someone appears in a puff of smoke!
+933	-	You feel like you are about to go blind. The lights dance in front of your eyes, like a fireworks display.
+934	-	You see a glimpse of darkness ahead, and suddenly, you find yourself hitting the ground.
+935	-	Someonewormhole transport consoleSomeonehummingSomeone.
+936	-	You become aware of a thundering rumble very close to your ear.
+937	-	The hum from under the floor increases markedly.
+938	-	You hear the hum from beneath your feet increase markedly.
+939	-	Someone signalSomeonethe technician to begin the transport process.
+940	-	Someone encased in a fluctuating electric blue light and after a brief moment Someone disappearSomeoneinto the great unknown.
+941	-	you are encased in a fluctuating electric blue light and after a brief moment Someone disappearSomeoneinto the great unknown.
+942	-	Someone noticeSomeonea flash of light before Someone and after a brief second Someone appearSomeonein a slight daze.
+943	-	The electric blue beam fades, and you notice that your surroundings have changed.
+944	-	The electric blue beam fades, leaving nothing in its wake.
+945	-	The sparks multiply, until Someone are hidden from sight in an electric blue beam of light.
+946	-	The sparks continue multiplying, until you are encased in an electric blue beam of light.
+947	-	Sparks start issuing from the disc. As time passes, the sparks become more and more numerous.
+948	-	Sparks start shooting up from the disc you're standing on. As time passes, the sparks become more and more numerous.
+949	-	The pod begins to vibrate mildly as it activates its jump drive.
+950	-	The vibration calms as the pod completes its jump, and begins to accelerate through space.
+951	-	With a sharp jolt, the pod touches down on the planet's surface. It then begins breaking apart, and you wearily climb out.
+952	-	You hear some odd sounds as the harvesting equipment begins scanning for gas.
+953	-	A smooth hum builds up in the background, and the unmistakeable sounds of gas being cleaned up fills the area.
+954	-	Someone throwSomeoneonto Someone where it shatters into several thousand tiny pieces!
+955	-	You hear the death cry of Someone!
+956	-	The corpse of Someone falls onto Someone with a thud.
+957	-	A corpse ofSomeonerapidly decays into dust.
+958	-	The corpse of Someone slowly decays.
+959	-	Someone takeSomeoneaim at Someone with Someone!
+960	SpeakSniperTarget=0	Someone takeSomeoneaim at Someone with Someone!
+961	-	You takeSomeoneaim at Someone with Someone!
+962	SpeakSniperTarget=0	You takeSomeoneaim at Someone with Someone!
+963	-	Someone fireSomeone!
+964	-	You fireSomeone!
+965	-	breathe fireSomeone!
+966	-	breathes fireSomeone!
+967	-	You breathe breathes You fireSomeone!
+968	-	Someone fireat!
+969	-	Someone firelow-level!
+970	-	Someone fireat low-level!
+971	-	The beam dissolves into the air!
+972	-	You hear distant weapon fire!
+973	-	The beam hits Someone!
+974	-	Someone walks in from Someone.
+975	-	X-Loritan walks in from Someone.
+976	-	alien creature walks in from Someone.
+977	-	X-Loritan alien creature walks in from Someone.
+978	-	Someone falls to Someone with a sickening thud!
+979	-	X-Loritan falls to Someone with a sickening thud!
+980	-	alien creature falls to Someone with a sickening thud!
+981	-	X-Loritan alien creature falls to Someone with a sickening thud!
+982	-	The laser beam flies around, hitting everyone in its path!
+983	-	The beam flies Someone!
+984	-	You insert a laser energy pack into a laser supplier, pressing a button.
+985	-	The energy discharges with a whoosh, and Someone discardSomeone laser energy pack.
+986	-	Someone turnSomeoneoven on.
+987	-	Someone portable oven beeps, indicating that the food inside is ready.
+988	-	The display of Someone portable oven indicates, 'Recharging...'
+989	-	Someone portable oven indicates that the recharging process is complete.
+990	-	Someone examineSomeonethe menu of available items.
+991	-	The ship slows down and you feel the sharp jolt as the ship touches down on the landing pad.
+992	-	Someone exits Someone dropship.
+993	-	The scans indicate that there might be an artifact at Someone
+994	-	Someone thrustSomeoneshovel deep into the ground.
+995	-	Someone shovelSomeoneaside some freshly dug dirt, but all you find is a strange insect.
+996	-	Someone sighSomeoneas the digging reveals nothing but insects.
+997	-	Someone shovelSomeoneaside the dug dirt, but find nothing underneath.
+998	-	You shovel the dug dirt aside, revealing Someone!
+999	-	The shovel produces a clear clang sound as it hits something underground.
+1000	-	Someone shovel indicates that the area is empty of artifacts.
+1001	-	You think you might have found something... But when you shovel the dug dirt aside, nothing reveals.
+1002	-	A small computer screen announces, "Someone"
+1003	CollectingMessages=1	A small computer screen announces, "Someone"
+1004	-	A small computer screen announces, "collected"
+1005	CollectingMessages=1	A small computer screen announces, "collected"
+1006	-	A small computer screen announces, "confirmed hit on"
+1007	CollectingMessages=1	A small computer screen announces, "confirmed hit on"
+1008	-	A small computer screen announces, "weapons locked on"
+1009	CollectingMessages=1	A small computer screen announces, "weapons locked on"
+1010	-	A small computer screen announces, "beginning"
+1011	CollectingMessages=1	A small computer screen announces, "beginning"
+1012	-	A small computer screen announces, "repair"
+1013	CollectingMessages=1	A small computer screen announces, "repair"
+1014	-	A small computer screen announces, "repair complete"
+1015	CollectingMessages=1	A small computer screen announces, "repair complete"
+1016	-	A small computer screen announces, "aborting repair"
+1017	CollectingMessages=1	A small computer screen announces, "aborting repair"
+1018	-	A small computer screen announces, "recharging"
+1019	CollectingMessages=1	A small computer screen announces, "recharging"
+1020	-	A small computer screen announces, "recharged"
+1021	CollectingMessages=1	A small computer screen announces, "recharged"
+1022	-	A small computer screen announces, "charge running low"
+1023	CollectingMessages=1	A small computer screen announces, "charge running low"
+1024	-	A small computer screen announces, "Excavation cannot be started due to the vehicle running low on charge"
+1025	CollectingMessages=1	A small computer screen announces, "Excavation cannot be started due to the vehicle running low on charge"
+1026	-	A small computer screen announces, "stored minerals"
+1027	CollectingMessages=1	A small computer screen announces, "stored minerals"
+1028	-	A small computer screen announces, "storage full"
+1029	CollectingMessages=1	A small computer screen announces, "storage full"
+1030	-	A small computer screen announces, "storage capacity full"
+1031	CollectingMessages=1	A small computer screen announces, "storage capacity full"
+1032	-	A small computer screen announces, "current charge"
+1033	CollectingMessages=1	A small computer screen announces, "current charge"
+1034	-	A small computer screen announces, "items in the storage compartment"
+1035	CollectingMessages=1	A small computer screen announces, "items in the storage compartment"
+1036	-	A small computer screen announces, "destroyed"
+1037	CollectingMessages=1	A small computer screen announces, "destroyed"
+1038	-	A small computer screen announces, "Scanning"
+1039	CollectingMessages=1	A small computer screen announces, "Scanning"
+1040	-	A small computer screen announces, "collected confirmed hit on weapons locked on beginning repair repair complete aborting repair recharging recharged charge running low Excavation cannot be started due to the vehicle running low on charge stored minerals storage full storage capacity full current charge items in the storage compartment destroyed Scanning"
+1041	CollectingMessages=1	A small computer screen announces, "collected confirmed hit on weapons locked on beginning repair repair complete aborting repair recharging recharged charge running low Excavation cannot be started due to the vehicle running low on charge stored minerals storage full storage capacity full current charge items in the storage compartment destroyed Scanning"
+1042	-	Someone boardSomeonethe Someone "Someone".
+1043	-	Someone exitSomeonethe Someone "Someone".
+1044	-	Equipment Damage: Someone%.
+1045	-	You hear a barely audible hum as the engines activate, and the floor beneath your feet begins vibrating slightly.
+1046	-	You hear the muted click of a power cable attaching itself to the vehicle and a low hum as power is transferred into the vehicle's battery.
+1047	-	The low hum of the power transfer dies away, followed a split second later by a click as the power cable beneath the vehicle disconnects.
+1048	-	The hum decreases but doesn't stop completely, and the vibration eases out as the engine startup completes.
+1049	-	The floor beneath your feet begins to rumble as the engines begin shutting down.
+1050	-	The hum decreases and falls silent as the engines shut down, leaving you in complete silence.
+1051	-	The hum suddenly falls silent, leaving you in complete silence.
+1052	-	The pitch of the engines Someone ever so slightly as the vehicle Someone
+1053	-	The pitch of the engines decreases ever so slightly as the vehicle Someone
+1054	-	The pitch of the engines increases ever so slightly as the vehicle Someone
+1055	-	The pitch of the engines decreases increases ever so slightly as the vehicle Someone
+1056	-	The pitch of the engines Someone ever so slightly as the vehicle stops
+1057	-	The pitch of the engines Someone ever so slightly as the vehicle begins moving
+1058	-	The pitch of the engines Someone ever so slightly as the vehicle stops begins moving
+1059	-	You hear some clangs as the excavation equipment is retracted.
+1060	-	Excavation impossible due to damaged equipment.
+1061	-	You hear a loud clang as a chunk of minerals is deposited into the mineral area.
+1062	-	You hear some clangs as the excavation equipment is deployed.
+1063	-	You hear the microdrones working in the background as they repair the damaged equipment.
+1064	-	Someone tapSomeonesome buttons on the Someone console.
+1065	-	How many artifacts do you wish to retrieve? Maximum is Someone. Hit enter to retrieve all of them.
+1066	-	Someone beginSomeoneinputting a sequence of commands into a wormhole transport console.
+1067	-	There are no destinations to which you can teleport at present.
+1068	-	Someone checkSomeonethe starship's record console.
+1069	-	Someone checkSomeonea damage console.
+1070	-	Someone examineSomeonea Someone
+1071	-	Someone examineSomeonethe Someone
+1072	-	Someone inputSomeone.
+1073	-	You inputSomeone.
+1074	-	Someone beginSomeonetapping commands into Someone console.
+1075	-	Someone examineSomeonea Someone console.
+1076	-	You hear a loud clang as something under the vehicle snaps.
+1077	-	You tap a 'MINERAL' icon on a status console.
+1078	-	You press Someone button labeled Someone
+1079	-	The vehicle rumbles a bit as it moves towards the vehicle hatch of Someone
+1080	-	The vehicle comes to a stop inside the vehicle bay and the engines pitch down to an idle level. You hear several muted clangs as a set of clamps secure themselves to the body of the vehicle.
+1081	-	The vehicle rumbles a bit as it moves towards the vehicle hatch.
+1082	-	You can't go that way.
+1083	-	You pour some berries intoSomeoneand start makingSomeone.
+1084	-	You removeSomeonefrom the water!
+1085	-	You pullSomeonefrom the water and slip it intoSomeone!
+1086	-	You start searching for valuable items withSomeonesifting net.
+1087	-	You pullSomeonesifting net out of the water, empty.
+1088	-	Someone tapSomeonean icon on the console.
+1089	-	Someone shiftSomeonethe throttle into Someone
+1090	-	Someone divSomeoneinto the water.
+1091	-	SomeoneputSomeoneintoSomeoneoceanography container.
+1092	-	The scanner indicates that the current coordinates are empty of valuable items.
+1093	-	Someone beginSomeonemoving Someone underwater shovel through the water and deep into the ground.
+1094	-	You beginSomeonemoving Someone underwater shovel through the water and deep into the ground.
+1095	-	Someone stopSomeonedigging, nothing as a result.
+1096	-	You stopSomeonedigging, nothing as a result.
+1097	-	Valuable material found! Depth Someone.
+1098	-	You begin swimming toward the surface.
+1099	-	Someone swims onto the shore.
+1100	-	An alert is displayed across your suit's glasses: Someone
+1101	-	An alert is displayed across your suit's glasses: 20 minutes
+1102	-	An alert is displayed across your suit's glasses: 10 minutes
+1103	-	An alert is displayed across your suit's glasses: 5 minutes
+1104	-	An alert is displayed across your suit's glasses: 2 minutes
+1105	-	An alert is displayed across your suit's glasses: 1 minute
+1106	-	An alert is displayed across your suit's glasses: 20 minutes 10 minutes 5 minutes 2 minutes 1 minute
+1107	-	You clip Someone to Someone weapon belt with Someone clips.
+1108	-	You unclip Someone from Someone weapon belt with Someone clips.
+1109	-	Someone pressSomeone finger on the scanner next to the Someone.
+1110	-	The scanner flashes a Someone light.
+1111	-	The scanner flashes a green light.
+1112	-	The scanner flashes a red light.
+1113	-	The scanner flashes a green red light.
+1114	-	Sorry, that area is restricted to Someone only.
+1115	-	You are denied access to that information.
+1116	-	There Someone to transfer.
+1117	-	A small light near the hatch of Someone flashes Someone
+1118	-	A small light near the hatch of Someone flashes once
+1119	-	A small light near the hatch of Someone flashes twice
+1120	-	A small light near the hatch of Someone flashes once twice
+1121	-	The medical drones begin healing your wounds.
+1122	-	Someone instructSomeonethe medical drones to heal Someone
+1123	-	Someone feelSomeonerefreshed and full of energy as the healing finishes.
+1124	-	The drones stop healing Someone
+1125	-	You see several lights blink in rapid succession on the navigation console, informing you that the ship is being Someone by Someone.
+1126	-	Now viewing monitoring satellite Someone. This satellite is monitoring Someone.
+1127	-	Someone shoutSomeone, "Someone"
+1128	-	Thanks for playing!
+1129	-	Oooooooo, look! You get some extra points! Yaaaayy!
+1130	-	Thank you for assisting!
+1131	-	You receive Someone points!
+1132	-	You press a button.
+1133	-	The planetary damage of this planet is Someone units out of 100.0 units.
+1134	-	The planetary damage of this planet is 0.0 units out of 100.0 units.
+1135	-	You hear a soft knocking from the starship's hull.
+1136	-	You calmly knock on the hull of Someone
+1137	-	YouSomeoneopen Someone
+1138	-	YouSomeoneopen container
+1139	-	YouSomeoneopen food
+1140	-	YouSomeoneopen oven
+1141	-	YouSomeoneopen pot
+1142	-	YouSomeoneopen drink mixer
+1143	-	YouSomeoneopen container food oven pot drink mixer
+1144	-	YouSomeoneclose Someone
+1145	-	YouSomeoneclose container
+1146	-	YouSomeoneclose food
+1147	-	YouSomeoneclose oven
+1148	-	YouSomeoneclose pot
+1149	-	YouSomeoneclose drink mixer
+1150	-	YouSomeoneclose container food oven pot drink mixer
+1151	-	SomeonebumpSomeoneinto the locked door leading Someone.
+1152	-	Enter new security access code:
+1153	-	Confirm new security access code:
+1154	-	Enter old security access code for removal confirmation:
+1155	-	Enter the new username:
+1156	-	Enter your current password:
+1157	-	Enter your new password:
+1158	-	Re-enter your new password:
+1159	-	Username changed from Someone to Someone
+1160	-	Password changed successfully.
+1161	-	An escape pod lands nearby.
+1162	-	Someone floats into the room and comes to a stop in your hand.
+1163	-	Someone flies into the room and lands in your arms.
+1164	-	You press the 'RELOAD' button.
+1165	-	A soft hum starts in the background as the launchers begin reloading.
+1166	-	The hum subsides as Someone finish reloading.
+1167	-	Letter successfully sent to Someone
+1168	-	The Someone launchers are cooling down.
+1169	-	Someone are already being fired.
+1170	-	The LRL is recharging: Someone remaining.
+1171	-	The viewscreen is filled with brilliant white light as Someone explodes!
+1172	-	Someone keySomeonea few commands into Someone.
+1173	-	Someone beginSomeoneinputting commands into Someone console.
+1174	-	Someone examineSomeonea sector scan.
+1175	-	You activate a high-powered infrared laser beam.
+1176	-	Someone deftly hits a button on an infrared laser beam control board, activating the high-powered beam.
+1177	-	The room lights up with a beautiful red glow as the starship fires an infrared laser beam into space towards a star.
+1178	-	You notice the star begin to glow a blinding red.
+1179	-	The pulsating light radiates as it becomes steady.
+1180	-	The pulsating of the lights grows steady.
+1181	-	Rays of light pulsate as the starship continues to fire the infrared laser beam at the star.
+1182	-	Suddenly, the rays of light begin pulsating quickly, and it seems as if the star is disintegrating right before your eyes.
+1183	-	The rays of light dwindle down to nothing as the starship's infrared laser beam powers down.
+1184	-	The starship's computer prints Someone of the star research data.
+1185	-	The scanning console emits a series of beeps before printing Someone.
+1186	-	The computer beeps and prints out a Someone
+1187	-	Someone removeSomeonea small piece of paper containing strange symbols from the printer.
+1188	-	The military has shut down the application process for the time being. We appologize for the inconvenience!
+1189	-	You tap a few buttons, making a small screen flash with lights.
+1190	-	I see no "Someone" here.
+1191	-	There are no salvage lines available.
+1192	-	Things can only be transferred at a landing pad or when docked to another ship via the docking ring.
+1193	-	You'll need to land at a properly equipped landing pad to transfer.
+1194	-	This communication device is Someone
+1195	-	This communication device is now connected
+1196	-	This communication device is no longer trackable
+1197	-	This communication device is now connected no longer trackable
+1198	-	You have been added to the owners list of Someone.
+1199	-	You have been added to the recognized fingerprints to the exit Someone of Someone.
+1200	-	You have been authorized to Someone.
+1201	-	You have been added to the recognized fingerprints of Someone.
+1202	-	You can not use this drive for Someone
+1203	-	The ship was last moving Someone
+1204	-	Drive could not be activated due to the vessel being in motion.
+1205	-	Please drop your shields first.
+1206	-	Please power up your weapons first.
+1207	-	You reach under the control board, and open a small metal panel before installing Someone override chip.
+1208	-	You plug Someone Armor Piercing Weapon Chip into the weapons board, uploading its firmware to the computers.
+1209	-	Someone placeSomeonein-ship camera installation chip against a console.
+1210	-	Someone in-ship camera installation chip slides into the console and eventually out of view.
+1211	-	Something deep within the ship's bowels explodes!
+1212	-	Someone datapad prints a peace of paper titled Someone
+1213	-	Someone departSomeoneto modify the game.
+1214	-	Someone finishSomeonemodifying the game.
+1215	-	A tradesman certificate has been created for you and can be found in your inventory.
+1216	-	The vehicle begins shaking in place as it prepares for launching.
+1217	-	The engines kick in and the vehicle ascends sharply as it accelerates into the atmosphere.
+1218	-	The engines begin rumbling slightly as the vehicle begins descending through the atmosphere.
+1219	-	The engines calm slightly and gravity returns to normal as the vehicle steadies itself.
+1220	-	Black lightning rips through the sky in front of the vehicle as the quantum shift matrix is activated.
+1221	-	A black hole opens in front of the vehicle. Someone
+1222	-	There are no damages.
+1223	-	Damage: Someone%.
+1224	-	The storage area contains:
+1225	-	The storage hold contains:
+1226	-	Someone activateSomeonethe vehicle's material scoopers.
+1227	-	A loud thud can be heard as a piece of scoopable material is deposited into the storage area.
+1228	-	A sudden wind pummels the vehicle, making it spin out of control!
+1229	-	Finally, the wind releases the vehicle from it's grasp.
+1230	-	You can not scoop while the vehicle is moving.
+1231	-	You can not move while attempting to scoop.
+1232	-	Your scooper just took Someone percent damage.
+1233	-	A series of clicks is heard as a transfer process begins.
+1234	-	The clicks finally vanish as the transfer process completes.
+1235	-	There is not a star in the sector.
+1236	-	Someone should not be moving.
+1237	-	You cannot use that in hyperspace.
+1238	-	Finish your hyper jump first.
+1239	-	Hyperspace drive could not be activated due to the vessel being in motion.
+1240	-	Scans of Someone unfiltered.
+1241	-	Scans of Someone filtered.
+1242	-	Someone tapSomeonea button, Someone.
+1243	-	Someone tapSomeonea button, bringing up the mined mineral status.
+1244	-	Someone tapSomeonea button, viewscreen.
+1245	-	Someone tapSomeonea button, enabling.
+1246	-	Someone tapSomeonea button, disabling.
+1247	-	Someone tapSomeonea button, bringing up the mined mineral status viewscreen enabling disabling.
+1248	-	No mined minerals could be found.
+1249	-	A light next to the PA blinks off.
+1250	-	A light blinks on next to the PA.
+1251	-	Only Someone until Christmas!
+1252	-	Someone hitSomeonea few keys on a weapons board.
+1253	-	The ship rocks slightly as its hull is impacted by parts of an exploding starship!
+1254	-	The ship accelerates into hyperspace.
+1255	-	The ship decelerates into real space.
+1256	-	The ship suddenly shoots into realspace.
+1257	-	Someone turnSomeone UTF-Issue radio with Someone high-definition speaker Someone.
+1258	-	Someone turnSomeone UTF-Issue radio with Someone high-definition speaker on.
+1259	-	Someone turnSomeone UTF-Issue radio with Someone high-definition speaker off.
+1260	-	Someone turnSomeone UTF-Issue radio with Someone high-definition speaker on off.
+1261	-	There are no artifacts in the storage area.
+1262	-	The following artifacts are in the storage area:
+1263	-	Vehicle Bay Status:
+1264	-	The Someone should be in space before you attempt this.
+1265	-	You're no longer in that sector.
+1266	-	You are having a hard time using the controls do to your uncoordinated state.
+1267	-	You hear an odd noise coming from the direction of the ship's hatch.
+1268	-	You have just received Someone Easter eggs as a gift! Found in your inventory!
+1269	-	The scanning console emits a series of beeps before depositing Someone.
+1270	-	The scanning console emits a series of beeps before depositing Easter egg.
+1271	-	You open Someone Easter egg... And find Someone inside!
+1272	-	Someone Portable Military Computer with Someone touch screen flashes a message on its screen, telling you that a new report has been added to the network.
+1273	-	Someone enterSomeonea shiny lift.
+1274	-	Someone stepSomeoneout of the lift.
+1275	-	A smooth hum starts in the background and the lift begins moving.
+1276	-	The hum slowly stops as the lift arrives at its destination.
+1277	-	A computer screen flickers to life, displaying a pictograph transmission from Someone
+1278	-	You are dead!
+1279	-	Someone is dead!
+1280	-	You wrap aSomeonearound your waist and clip the ends together.
+1281	-	You unclip aSomeoneand remove it from around your waist.
+1282	-	The ship shakes slightly when something impacts the hull.
+1283	-	You feel a jolt as the ship crashes into a small, previously unseen asteroid.
+1284	-	The engines roar for a short moment, something blocking the ship's movement.
+1285	-	The ship clips a derelict as it moves through the sector.
+1286	-	You hear the screaming of metal as the ship flies straight into an unseen shipwreck.
+1287	-	The ship moves carefully in the vastness of hyperspace.
+1288	-	The smell of Someone wafts into the room.
+1289	-	Someone beginSomeonescribbling something on a PBS. Inc. lottery ticket...
+1290	-	You place Someone in Someone
+1291	-	The defense shields strengthen for a moment to mitigate damage.
+1292	-	Condensing of multiple debris clouds Someone.
+1293	-	Condensing of multiple debris clouds enabled.
+1294	-	Condensing of multiple debris clouds disabled.
+1295	-	Condensing of multiple debris clouds enabled disabled.
+1296	-	Someone clutchSomeonein Someone hand.
+1297	-	Someone tuckSomeoneaway Someone
+1298	-	Someone yankSomeonefrom Someone.
+1299	-	You yankSomeonefrom Someone.
+1300	-	Someone attemptSomeoneto disarm Someone but failSomeone
+1301	-	You attemptSomeoneto disarm Someone but failSomeone
+1302	-	Someone attemptSomeoneto disarm Someone but Someone holdSomeoneonto Someone weapon with a titan grip!
+1303	-	You slide a panel aside, and proceed to fit Someone partial vehicle replacement battery into a slot.
+1304	-	You close the panel, as Someone partial vehicle replacement battery locks into place with a SomeoneCLICKSomeone.
+1305	-	You are zapped by a forcefield as you try to move Someone.
+1306	-	You see Someone here.
+1307	-	You see of materials here.
+1308	-	You see Easter egg here.
+1309	-	You see pumpkin here.
+1310	-	You see Christmas bell here.
+1311	-	You see chocolate box here.
+1312	-	You see X-Loritan here.
+1313	-	You see alien creature here.
+1314	-	You see corpse here.
+1315	-	You see corpses here.
+1316	-	You see of materials Easter egg pumpkin Christmas bell chocolate box X-Loritan alien creature corpse corpses here.
+1317	-	Someone pullSomeonethe lever on Someone slot machine.
+1318	-	You win!
+1319	-	You lose!
+1320	-	It seems that your guess was right!
+1321	-	Sorry, but your guess was wrong. Someone
+1322	-	You feel the ship shudder slightly as something impacts the hull.
+1323	-	The shields strengthen, absorbing most of the impact.
+1324	-	The displays flicker and the ship's lights dim briefly as more power is diverted to the shields.
+1325	-	The ship shakes, pouring more power to the beam.
+1326	-	Your command could not be executed at this time. Someone
+1327	-	The ship rocks violently as something impacts the hull!
+1328	-	You feel the ship jolt suddenly as something impacts the hull.
+1329	-	Someone the main owner of this starship. Someone
+1330	-	You glance at the repair status panel.
+1331	-	The Someone banks are already full.
+1332	-	SomeoneYou were awarded Someone points for the resolution of report Someone
+1333	-	SomeoneYou have unread personal announcements, displaying them now.Someone
+1334	-	Someone personally wants to thank you for playing Prometheus! As a token of appreciation, have this!
+1335	-	You step into a brilliant beam of light which whisks you back to your home.
+1336	-	A voice comes from the speaker of Someone, "Someone"
+1337	-	You hear a slight hum as the ship Someone.
+1338	-	You hear a slight hum as the ship cloaks.
+1339	-	You hear a slight hum as the ship becomes visible.
+1340	-	You hear a slight hum as the ship cloaks becomes visible.
+1341	-	Due to the amount of energy drawn by the cloaking generator, you can not fire weapons while cloaked.
+1342	-	You already have that!
+1343	-	The ship accelerates, making the blackness around you shiver as it flies through hyperspace.
+1344	-	The beam returns with something in its grasp.
+1345	-	The ship shakes, pouring more power into Someone.
+1346	-	Some whooshes and clangs come from below.
+1347	-	The equipment is non-functional when damaged. Please repair it fully before proceeding.
+1348	-	A hum builds up for a second, but quickly subsides; apparently nothing was found.
+1349	-	The beam stops abruptly, seemingly unable to move.
+1350	-	There is nothing to be transfered.
+1351	-	All drones are busy repairing.
+1352	-	The viewscreen is filled with brilliant white light as Relic Someone explodes!
+1353	-	You instruct the microdrones to repair the damaged equipment.
+1354	-	Coordinates: (Someone)
+1355	-	Distance: Someone.
+1356	-	^\Someone\Someone\Someone(.Someone) has (arrived to answer (.Someone)\'s assist|resolved an assist from (.Someone))\.([\Someone\Someone\Someone]?)$
+1357	-	Someone tapSomeonea few commands into Someone.
+1358	-	Someone tapSomeonea few buttons on Someone.
+1359	-	Enter security access code:
+1360	-	The keypad beeps, allowing you to pass.
+1361	-	A small panel flashes 'Access denied' when you tap some keys on the keypad.
+1362	-	Verb programmed.
+1363	-	Verb not programmed.
+1364	-	The starship jolts to the side as armor piercing shells smack into it by Someone.
+1365	-	A nearby console beeps twice in rapid succession, indicating the occurrence of a naturally occuring spacial anomaly. A spacebear has just disappeared from sensors.
+1366	-	Event mode is now enabled, which means that OOC channel access is unavailable. We hope you enjoy the event!
+1367	-	Event mode has been disabled, the hosts hope you enjoyed. OOC channels will be restored.
+1368	-	Red lights on warning signs begin to flash, indicating that the ship is in the midst of a solar storm.
+1369	-	The red lights on the solar storm warning signs stop flashing.
+1370	-	Hyperscan results:
+1371	-	Invaded report:
+1372	-	The communication beacons are currently unreachable. Unable to start teleportation process...
+1373	-	Teleporting is not possible while the starship is unable to connect to the communication beacons.
+1374	-	That doesn't seem to be working.
+1375	-	Out of character channels are currently disabled. They will be back soon!
+1376	-	You begin your journey towards Someone.
+1377	-	You arrive at Someone.
+1378	-	Someone sanitation droid arrives.
+1379	-	Someone sanitation droid trundles around the area, collecting dropped items.
+1380	-	Someone sanitation droid heads Someone.
+1381	-	You can't lock on this ship!
+1382	-	You are having a hard time using the controls due to your uncoordinated state.
+1383	-	Someone activateSomeone the jetpack of Someone spacesuitSomeone
+1384	-	Someone jetpack of Someone spacesuit deactivates.
+1385	-	SomeoneType a destination name. Leave blank for a full menu, cancel with '@abort' or 'A'Someone
+1386	-	You hear a ghostly moan echoing through the vast reaches of space.Someone
+1387	-	You hear a ghostly moan echoing around you.
+1388	-	A long wailing cry shatters the silence.
+1389	-	LAG-TEST
+1390	-	#$#soundpack combat | ground | sniper | draw
+1391	-	#$#soundpack combat | ground | hunting | draw
+1392	-	#$#soundpack combat | ground | rifle | draw
+1393	-	#$#soundpack combat | ground | shotgun | draw
+1394	-	#$#soundpack combat | ground | pistol | draw
+1395	-	#$#soundpack medical | medkit | discard
+1396	-	#$#soundpack medical | medkit | end
+1397	-	#$#soundpack medical | medkit | begin
+1398	-	#$#soundpack combat | ground | sniper | holster
+1399	-	#$#soundpack combat | ground | hunting | holster
+1400	-	#$#soundpack combat | ground | rifle | holster
+1401	-	#$#soundpack combat | ground | shotgun | holster
+1402	-	#$#soundpack combat | ground | pistol | holster
+1403	-	#$#soundpack combat | ground | defense | armorOn
+1404	-	#$#soundpack combat | ground | defense | armorOff
+1405	-	#$#soundpack combat | ground | weapons | fire
+1406	-	#$#soundpack combat | ground | weapons | hit
+1407	-	#$#soundpack ambiance | starship | unpowered | bridge
+1408	-	#$#soundpack ambiance | starship | unpowered | control
+1409	-	#$#soundpack ambiance | starship | unpowered | airlock
+1410	-	#$#soundpack ambiance | starship | unpowered | misc
+1411	-	#$#soundpack ambiance | starship | unpowered | wr
+1412	-	#$#soundpack ambiance | starship | unpowered | docking
+1413	-	#$#soundpack ambiance | starship | unpowered | storage
+1414	-	#$#soundpack ambiance | starship | unpowered | vehicle
+1415	-	#$#soundpack ambiance | starship | unpowered | medical
+1416	-	#$#soundpack ambiance | starship | unpowered | engineering
+1417	-	#$#soundpack ambiance | starship | unpowered | corridor
+1418	-	#$#soundpack ambiance | starship | unpowered | stateroom
+1419	-	#$#soundpack ambiance | starship | powered | bridge
+1420	-	#$#soundpack ambiance | starship | powered | control
+1421	-	#$#soundpack ambiance | starship | powered | misc
+1422	-	#$#soundpack ambiance | starship | powered | wr
+1423	-	#$#soundpack ambiance | starship | powered | docking
+1424	-	#$#soundpack ambiance | starship | powered | storage
+1425	-	#$#soundpack ambiance | starship | powered | vehicle
+1426	-	#$#soundpack ambiance | starship | powered | airlock
+1427	-	#$#soundpack ambiance | starship | powered | medical
+1428	-	#$#soundpack ambiance | starship | powered | engineering
+1429	-	#$#soundpack ambiance | starship | powered | corridor
+1430	-	#$#soundpack ambiance | starship | powered | stateroom
+1431	-	#$#soundpack ambiance | planet | indoors | garage
+1432	-	#$#soundpack ambiance | planet | indoors | houseroom
+1433	-	#$#soundpack ambiance | planet | indoors | kitchen
+1434	-	#$#soundpack ambiance | planet | indoors | misc
+1435	-	#$#soundpack ambiance | planet | outside | houseroom
+1436	-	#$#soundpack ambiance | misc | outside | asteroid
+1437	-	#$#soundpack ambiance | planet | outside | landing
+1438	-	#$#soundpack ambiance | planet | outside | misc
+1439	-	#$#soundpack ambiance | planet | outside | shop
+1440	-	#$#soundpack ambiance | planet | outside | garage
+1441	-	#$#soundpack ambiance | spacestation | outside | landing
+1442	-	#$#soundpack ambiance | spacestation | outside | misc
+1443	-	#$#soundpack ambiance | spacestation | outside | shop
+1444	-	#$#soundpack ambiance | spacestation | outside | garage
+1445	-	#$#soundpack ambiance | misc | outside | space
+1446	-	#$#soundpack ambiance | misc | outside | landing
+1447	-	#$#soundpack ambiance | misc | outside | misc
+1448	-	#$#soundpack ambiance | misc | outside | relic
+1449	-	#$#soundpack ambiance | planet | outside | medical
+1450	-	#$#soundpack ambiance | planet | outside | miningTunnel
+1451	-	#$#soundpack ambiance | planet | outside | campsite
+1452	-	#$#soundpack ambiance | misc | outside | rescuePod
+1453	-	#$#soundpack ambiance | planet | outside | lake
+1454	-	#$#soundpack ambiance | planet | outside | river
+1455	-	#$#soundpack ambiance | spacestation | outside | medical
+1456	-	#$#soundpack ambiance | planet | outside | ocean
+1457	-	#$#soundpack ambiance | spacestation | outside | ocean
+1458	-	#$#soundpack footstep | starship | indoors | none
+1459	-	#$#soundpack footstep | planet | outside | none
+1460	-	#$#soundpack footstep | spacestation | outside | none
+1461	-	#$#soundpack footstep | planet | indoors | none
+1462	-	#$#soundpack door | planet | swing | open
+1463	-	#$#soundpack door | planet | swing | close
+1464	-	#$#soundpack door | planet | Glide | open
+1465	-	#$#soundpack door | planet | Glide | close
+1466	-	#$#soundpack door | spacestation | swing | open
+1467	-	#$#soundpack door | spacestation | swing | close
+1468	-	#$#soundpack door | spacestation | firmly slide | open
+1469	-	#$#soundpack door | spacestation | firmly slide | close
+1470	-	#$#soundpack door | planet | roll | open
+1471	-	#$#soundpack door | planet | roll | close
+1472	-	#$#soundpack door | planet | slide | open
+1473	-	#$#soundpack door | planet | slide | close
+1474	-	#$#soundpack door | planet | slowly lumber | open
+1475	-	#$#soundpack door | planet | slowly lumber | close
+1476	-	#$#soundpack door | planet | revolve | open
+1477	-	#$#soundpack door | planet | revolve | close
+1478	-	#$#soundpack door | planet | lift | open
+1479	-	#$#soundpack door | planet | lower | close
+1480	-	#$#soundpack door | planet | flutter | open
+1481	-	#$#soundpack door | planet | flutter | close
+1482	-	#$#soundpack door | planet | squelch | open
+1483	-	#$#soundpack door | planet | squelch | close
+1484	-	#$#soundpack door | starship | slide | close
+1485	-	#$#soundpack door | starship | slide | open
+1486	-	#$#soundpack door | house | swing | open
+1487	-	#$#soundpack door | house | swing | close
+1488	-	#$#soundpack misc | starship | power | poweron
+1489	-	#$#soundpack misc | starship | power | poweroff
+1490	-	#$#soundpack combat | starship | defense | shieldsOn
+1491	-	#$#soundpack combat | starship | defense | shieldsOff
+1492	-	#$#soundpack combat | starship | defense | reflect
+1493	-	#$#soundpack combat | starship | general | shrapnel
+1494	-	#$#soundpack combat | starship | weapons | shells
+1495	-	#$#soundpack combat | starship | weapons | cannons
+1496	-	#$#soundpack combat | starship | weapons | torps
+1497	-	#$#soundpack combat | starship | weapons | missiles
+1498	-	#$#soundpack combat | starship | weapons | lasers
+1499	-	#$#soundpack ambiance | vehicle | unpowered | mining
+1500	-	#$#soundpack ambiance | vehicle | unpowered | trash
+1501	-	#$#soundpack misc | vehicle | mining | poweroff
+1502	-	#$#soundpack misc | vehicle | trash | poweroff
+1503	-	#$#soundpack misc | vehicle | airspace | poweroff
+1504	-	#$#soundpack misc | vehicle | combat | poweroff
+1505	-	#$#soundpack misc | vehicle | transport | poweroff
+1506	-	#$#soundpack ambiance | vehicle | powered | trash
+1507	-	#$#soundpack ambiance | vehicle | powered | mining
+1508	-	#$#soundpack misc | vehicle | mining | poweron
+1509	-	#$#soundpack misc | vehicle | trash | poweron
+1510	-	#$#soundpack misc | vehicle | airspace | poweron
+1511	-	#$#soundpack misc | vehicle | combat | poweron
+1512	-	#$#soundpack misc | vehicle | transport | poweron
+1513	-	#$#soundpack misc | vehicle | mining | return_begin
+1514	-	#$#soundpack misc | vehicle | mining | return_complete
+1515	-	#$#soundpack misc | skills
+1516	-	#$#soundpack misc | improve
+1517	-	#$#soundpack social | room | female | pyrianSay
+1518	-	#$#soundpack social | room | male | pyrianSay
+1519	-	#$#soundpack social | channel | female | pyrianSay
+1520	-	#$#soundpack social | channel | male | pyrianSay
+1521	-	#$#soundpack social | room | female | belch
+1522	-	#$#soundpack social | room | male | belch
+1523	-	#$#soundpack social | channel | female | belch
+1524	-	#$#soundpack social | channel | male | belch
+1525	-	#$#soundpack social | room | female | burp
+1526	-	#$#soundpack social | room | male | burp
+1527	-	#$#soundpack social | channel | female | burp
+1528	-	#$#soundpack social | channel | male | burp
+1529	-	#$#soundpack social | room | female | cackle
+1530	-	#$#soundpack social | room | male | cackle
+1531	-	#$#soundpack social | channel | female | cackle
+1532	-	#$#soundpack social | channel | male | cackle
+1533	-	#$#soundpack social | room | female | cheer
+1534	-	#$#soundpack social | room | male | cheer
+1535	-	#$#soundpack social | channel | female | cheer
+1536	-	#$#soundpack social | channel | male | cheer
+1537	-	#$#soundpack social | room | female | collapse
+1538	-	#$#soundpack social | room | male | collapse
+1539	-	#$#soundpack social | channel | female | collapse
+1540	-	#$#soundpack social | channel | male | collapse
+1541	-	#$#soundpack social | room | female | cough
+1542	-	#$#soundpack social | room | male | cough
+1543	-	#$#soundpack social | channel | female | cough
+1544	-	#$#soundpack social | channel | male | cough
+1545	-	#$#soundpack social | room | female | cry
+1546	-	#$#soundpack social | room | male | cry
+1547	-	#$#soundpack social | channel | female | cry
+1548	-	#$#soundpack social | channel | male | cry
+1549	-	#$#soundpack social | room | female | fart
+1550	-	#$#soundpack social | room | male | fart
+1551	-	#$#soundpack social | channel | female | fart
+1552	-	#$#soundpack social | channel | male | fart
+1553	-	#$#soundpack social | room | female | gag
+1554	-	#$#soundpack social | room | male | gag
+1555	-	#$#soundpack social | channel | female | gag
+1556	-	#$#soundpack social | channel | male | gag
+1557	-	#$#soundpack social | room | female | giggle
+1558	-	#$#soundpack social | room | male | giggle
+1559	-	#$#soundpack social | channel | female | giggle
+1560	-	#$#soundpack social | channel | male | giggle
+1561	-	#$#soundpack social | room | female | hmm
+1562	-	#$#soundpack social | room | male | hmm
+1563	-	#$#soundpack social | channel | female | hmm
+1564	-	#$#soundpack social | channel | male | hmm
+1565	-	#$#soundpack social | room | female | kick
+1566	-	#$#soundpack social | room | male | kick
+1567	-	#$#soundpack social | channel | female | kick
+1568	-	#$#soundpack social | channel | male | kick
+1569	-	#$#soundpack social | room | female | kiss
+1570	-	#$#soundpack social | room | male | kiss
+1571	-	#$#soundpack social | channel | female | kiss
+1572	-	#$#soundpack social | channel | male | kiss
+1573	-	#$#soundpack social | room | female | laugh
+1574	-	#$#soundpack social | room | male | laugh
+1575	-	#$#soundpack social | channel | female | laugh
+1576	-	#$#soundpack social | channel | male | laugh
+1577	-	#$#soundpack social | room | female | lol
+1578	-	#$#soundpack social | room | male | lol
+1579	-	#$#soundpack social | channel | female | lol
+1580	-	#$#soundpack social | channel | male | lol
+1581	-	#$#soundpack social | room | female | moan
+1582	-	#$#soundpack social | room | male | moan
+1583	-	#$#soundpack social | channel | female | moan
+1584	-	#$#soundpack social | channel | male | moan
+1585	-	#$#soundpack social | room | female | punch
+1586	-	#$#soundpack social | room | male | punch
+1587	-	#$#soundpack social | channel | female | punch
+1588	-	#$#soundpack social | channel | male | punch
+1589	-	#$#soundpack social | room | female | rofl
+1590	-	#$#soundpack social | room | male | rofl
+1591	-	#$#soundpack social | channel | female | rofl
+1592	-	#$#soundpack social | channel | male | rofl
+1593	-	#$#soundpack social | room | female | scream
+1594	-	#$#soundpack social | room | male | scream
+1595	-	#$#soundpack social | channel | female | scream
+1596	-	#$#soundpack social | channel | male | scream
+1597	-	#$#soundpack social | room | female | sigh
+1598	-	#$#soundpack social | room | male | sigh
+1599	-	#$#soundpack social | channel | female | sigh
+1600	-	#$#soundpack social | channel | male | sigh
+1601	-	#$#soundpack social | room | female | slap
+1602	-	#$#soundpack social | room | male | slap
+1603	-	#$#soundpack social | channel | female | slap
+1604	-	#$#soundpack social | channel | male | slap
+1605	-	#$#soundpack social | room | female | snap
+1606	-	#$#soundpack social | room | male | snap
+1607	-	#$#soundpack social | channel | female | snap
+1608	-	#$#soundpack social | channel | male | snap
+1609	-	#$#soundpack social | room | female | tackle
+1610	-	#$#soundpack social | room | male | tackle
+1611	-	#$#soundpack social | channel | female | tackle
+1612	-	#$#soundpack social | channel | male | tackle
+1613	-	#$#soundpack social | room | female | whistle
+1614	-	#$#soundpack social | room | male | whistle
+1615	-	#$#soundpack social | channel | female | whistle
+1616	-	#$#soundpack social | channel | male | whistle
+1617	-	#$#soundpack social | room | female | yawn
+1618	-	#$#soundpack social | room | male | yawn
+1619	-	#$#soundpack social | channel | female | yawn
+1620	-	#$#soundpack social | channel | male | yawn
+1621	-	#$#soundpack social | room | female | wave
+1622	-	#$#soundpack social | room | male | wave
+1623	-	#$#soundpack social | channel | female | wave
+1624	-	#$#soundpack social | channel | male | wave
+1625	-	#$#soundpack social | room | female | nod
+1626	-	#$#soundpack social | room | male | nod
+1627	-	#$#soundpack social | channel | female | nod
+1628	-	#$#soundpack social | channel | male | nod
+1629	-	#$#soundpack social | room | female | cheekkiss
+1630	-	#$#soundpack social | room | male | cheekkiss
+1631	-	#$#soundpack social | channel | female | cheekkiss
+1632	-	#$#soundpack social | channel | male | cheekkiss
+1633	-	#$#soundpack social | room | female | scry
+1634	-	#$#soundpack social | room | male | scry
+1635	-	#$#soundpack social | channel | female | scry
+1636	-	#$#soundpack social | channel | male | scry
+1637	-	#$#soundpack social | room | female | stand
+1638	-	#$#soundpack social | room | male | stand
+1639	-	#$#soundpack social | channel | female | stand
+1640	-	#$#soundpack social | channel | male | stand
+1641	-	#$#soundpack social | room | female | sit
+1642	-	#$#soundpack social | room | male | sit
+1643	-	#$#soundpack social | channel | female | sit
+1644	-	#$#soundpack social | channel | male | sit
+1645	-	#$#soundpack social | room | female | standup
+1646	-	#$#soundpack social | room | male | standup
+1647	-	#$#soundpack social | channel | female | standup
+1648	-	#$#soundpack social | channel | male | standup
+1649	-	#$#soundpack social | room | female | situp
+1650	-	#$#soundpack social | room | male | situp
+1651	-	#$#soundpack social | channel | female | situp
+1652	-	#$#soundpack social | channel | male | situp
+1653	-	#$#soundpack social | room | female | chuckle
+1654	-	#$#soundpack social | room | male | chuckle
+1655	-	#$#soundpack social | channel | female | chuckle
+1656	-	#$#soundpack social | channel | male | chuckle
+1657	-	#$#soundpack social | room | female | hug
+1658	-	#$#soundpack social | room | male | hug
+1659	-	#$#soundpack social | channel | female | hug
+1660	-	#$#soundpack social | channel | male | hug
+1661	SocialSounds=0	#$#soundpack social | room | female | cheer
