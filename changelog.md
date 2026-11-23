@@ -46,6 +46,7 @@
 * upgrading the soundpack no longer replaces your settings (config.txt); they're kept, and a new install starts with the default settings. [#7](https://github.com/stickbear2015/prometheus/issues/7)
 * spdebug no longer reports a missing sound for channels that don't have their own channel sound, such as pa. nothing you hear changes. [#54](https://github.com/stickbear2015/prometheus/issues/54)
 * removes the spupdate command and the old updater, until a new one is designed. for now the soundpack won't tell you when a new version is out. [#14](https://github.com/stickbear2015/prometheus/issues/14)
+* the soundpack now shows Kendal Hamilton as its developer, with credit to Krinnzenn, who looked after it before, and Nyano Cooper, who created it. [#57](https://github.com/stickbear2015/prometheus/issues/57)
 
 ## Version 25.2.1
 * Hopefully fixed more broken stuff.
