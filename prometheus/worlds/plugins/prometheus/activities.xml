@@ -516,610 +516,479 @@
   script="Activities_AHumBuildsUpForA"
 ></trigger>
 
-<!-- Prospecting (issue #8): Kendal's triggers, exactly as written. -->
+<!-- Prospecting (issue #8): Kendal's triggers, as written except that they call the three
+     functions in activities.lua instead of carrying the same line in a send box (Kendal's
+     choice, so spdebug names them). -->
 <trigger
 enabled="y"
 match="You touch a small button on the handle of * prospecting pan, and carefully lower a * prospecting pan, skimming just above the surface of the stream water, while gently rotating a * prospecting pan in a wide circular pattern, before raising a * prospecting pan to examine a small holographic scanner projection, which suddenly emits into the air above a * prospecting pan."
-send_to="12"
 sequence="90"
+script="Activities_ProspectingScan"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/scan"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="You carefully tuck * inside of * gold prospecting container."
-send_to="12"
 sequence="100"
+script="Activities_ProspectingNugget"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/GetNugget.ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="You scoop up a pan full of sediment from the stream bed."
-send_to="12"
+ignore_case="y"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="You submerge the pan in the water, letting it fill and wash over the material with a gentle swirl."
+ignore_case="y"
 omit_from_output="y"
-send_to="12"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="You begin to separate the lighter material from the heavier sediment."
-send_to="12"
+ignore_case="y"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="The water in the pan turns murky as you agitate the contents."
-send_to="12"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="Small pebbles rise to the surface, carried by the water's motion."
-send_to="12"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="You carefully tilt the pan to let the water and lighter particles flow out."
-send_to="12"
+ignore_case="y"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="You give the pan a quick, side-to-side shake to concentrate the heavier particles."
-send_to="12"
+ignore_case="y"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="The process of swirling and shaking becomes rhythmic as you work."
-send_to="12"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="You watch the material shift and settle with each movement of the pan."
-send_to="12"
+ignore_case="y"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="You see the black sands concentrating at the bottom of the pan."
-send_to="12"
+ignore_case="y"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="With a steady hand, you tilt the pan forward to drain excess water."
-send_to="12"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="You carefully remove larger rocks, inspecting them for any missed signs of gold."
-send_to="12"
+ignore_case="y"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="As you move the pan in the water, the water flows over the pan's edge, carrying away lighter debris."
-send_to="12"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="You continue to agitate the pan, ensuring thorough separation."
-send_to="12"
+ignore_case="y"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="As you watch, the dark sands and fine gravel settle into a dense layer at the pan's base."
-send_to="12"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="As you adjust the pan, dip and swirl of the pan reveals new layers of sediment."
-send_to="12"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="You take a moment to readjust your grip on the pan, steadying the movements."
-send_to="12"
+ignore_case="y"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="As you shift the pan back and forth, the weight of the pan lessens as the lighter material is washed away."
-send_to="12"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 <trigger
 enabled="y"
 match="You notice the subtle changes in the pan's contents with each motion."
-send_to="12"
+ignore_case="y"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="You shift the pan, hands working methodically, maintaining a steady rhythm."
-send_to="12"
+ignore_case="y"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="As you shift the pan, the pan's ridges trap the heavier particles, preventing them from washing out."
-send_to="12"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="You glance at the swirling water, observing the sediment's behavior."
-send_to="12"
+ignore_case="y"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="While you move the pan back and forth, the black sands form a distinct layer, contrasting with the lighter material."
-send_to="12"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="You use the pan's edge to guide the water flow, enhancing the separation."
-send_to="12"
+ignore_case="y"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="You occasionally pause to let the sediment settle before continuing."
-send_to="12"
+ignore_case="y"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="You slowly pass your fingers over the pan's surface, feeling for any coarse particles."
-send_to="12"
+ignore_case="y"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="As you move the pan, the pan's contents slowly reduce, leaving only the densest material behind."
-send_to="12"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="You adjust the pan's angle to control the water's movement."
-send_to="12"
+ignore_case="y"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="As you move the pan in the water, the repeated actions of dipping, swirling, and shaking become second nature."
-send_to="12"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="You immerse the pan fully, allowing the current to aid in the separation."
-send_to="12"
+ignore_case="y"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="As you move the pan in the water, the swirling water creates a vortex, drawing lighter particles away."
-send_to="12"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="You observe the fine sediment moving in a circular pattern within the pan."
-send_to="12"
+ignore_case="y"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="You  gently tap the side of the pan, helping the heavier material settle."
-send_to="12"
+ignore_case="y"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="As you slide the pan back and forth in the water, the water's surface reflects the surrounding landscape, adding to the experience."
-send_to="12"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="You watch the pan's contents shift and settle, revealing new patterns."
-send_to="12"
+ignore_case="y"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="You take care to keep the pan level, ensuring an even distribution of material."
-send_to="12"
+ignore_case="y"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="As you move the pan back and forth, the light filters through the water, creating a play of shadows in the pan."
-send_to="12"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="You remain focused on the process, attentive to the subtle changes in the pan."
-send_to="12"
+ignore_case="y"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="As you continue to move the pan back and forth, the repetitive motions of panning create a meditative rhythm."
-send_to="12"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="You notice the texture of the material changing as the lighter particles wash away."
-send_to="12"
+ignore_case="y"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="As you continue moving the pan in the water, the concentration of black sands increases with each pass of the water."
-send_to="12"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="You use a gentle swirling motion to keep the sediment in motion."
-send_to="12"
+ignore_case="y"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="As you continue moving the pan back and forth in the water, the water's current assists in washing away the lighter particles."
-send_to="12"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="You concentrate on maintaining a consistent rhythm, ensuring thorough separation."
-send_to="12"
+ignore_case="y"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="The fine gravel and sand move smoothly within the pan, guided by your hands."
-send_to="12"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="As you continue moving the pan in the water, the pan's surface becomes more visible as the sediment is reduced."
-send_to="12"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="You carefully control the flow of water, preventing any valuable particles from escaping."
-send_to="12"
+ignore_case="y"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="You continue moving the pan in the water, black sands form a distinct layer, promising a concentrated result."
-send_to="12"
+ignore_case="y"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="You remain attentive to the pan's contents, ready for any signs of success."
-send_to="12"
+ignore_case="y"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="You take a moment to stretch your fingers, then continue the process."
-send_to="12"
+ignore_case="y"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="You immerse the pan one last time, ensuring a thorough rinse."
-send_to="12"
+ignore_case="y"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="You take a final look at the pan's contents, ready to examine the results."
-send_to="12"
+ignore_case="y"
 sequence="90"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 <trigger
 enabled="y"
 match="You carefully lift * out of the stream,, shaking the pan gently to reveal nothing but small gravel stones."
-send_to="12"
 sequence="100"
+script="Activities_ProspectingPanning"
 >
-<send>
-CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-</send>
 </trigger>
 
 </triggers>
