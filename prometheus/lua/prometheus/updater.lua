@@ -71,6 +71,10 @@ local function start_updater(command)
   return true
 end
 
+-- How often the updater's files are read while it works (Kendal, 2026-11-24: faster updates).
+-- MUSHclient's timers tick every 0.1 seconds by default, and reading a small file is cheap.
+local POLL_SECONDS = 0.1
+
 local function poll_every(seconds)
   AddTimer("UpdaterPoll", 0, 0, seconds, "", timer_flag.Enabled + timer_flag.Replace + timer_flag.Temporary, "Updater_Poll")
 end
@@ -89,7 +93,7 @@ function Updater_Check(quiet)
   if not start_updater("check") then return end
   Updater.waiting, Updater.quiet, Updater.started = "check", quiet, os.time()
   if not quiet then tell("Checking for soundpack updates.") end
-  poll_every(0.5)
+  poll_every(POLL_SECONDS)
 end
 
 local function checked(result)
@@ -139,7 +143,7 @@ function Updater_Appeal(attempt)
   os.remove(APPEAL_FILE)
   if not start_updater("appeal " .. attempt) then return end
   Updater.waiting, Updater.started = "appeal", os.time()
-  poll_every(0.5)
+  poll_every(POLL_SECONDS)
 end
 
 -- ---------- installing ----------
@@ -151,7 +155,7 @@ function Updater_Install(forced)
   if not start_updater("install") then return end
   Updater.waiting, Updater.progress_seen, Updater.started = "install", 0, os.time()
   if not Updater.forced then tell("Installing the soundpack update.") end
-  poll_every(0.5)
+  poll_every(POLL_SECONDS)
 end
 
 -- Reloads the pack's plugins after an update. Other plugins first; then this one, which
