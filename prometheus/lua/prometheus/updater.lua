@@ -96,8 +96,8 @@ local function checked(result)
   if result.status == "update" and result.repair then
     -- Files changed outside the soundpack (edited pack files, or a world file with the player's
     -- own aliases, triggers, timers or variables) are put back without asking, before anything
-    -- else, so nobody can keep them just by never typing spupdate (Shane, 2026-11-23).
-    -- The updater writes the words (Shane, 2026-11-23): edited files, with the reminder about the
+    -- else, so nobody can keep them just by never typing spupdate (Kendal, 2026-11-23).
+    -- The updater writes the words (Kendal, 2026-11-23): edited files, with the reminder about the
     -- game's policies, and missing files, never naming which; and whether MUSHclient will restart.
     -- There's no choice: the box only has OK, and the repair starts when it's closed.
     local what = result.say
@@ -115,7 +115,7 @@ local function checked(result)
       tell("Not installed. Type spupdate whenever you want it.")
     end
   elseif result.status == "blocked" then
-    -- This connection is blocked from updates (Shane, 2026-11-24). The check at login says
+    -- This connection is blocked from updates (Kendal, 2026-11-24). The check at login says
     -- nothing; spupdate says so and offers to tell Kendal, with no typing.
     if not Updater.quiet then
       tell(result.say)

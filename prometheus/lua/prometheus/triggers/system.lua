@@ -61,7 +61,7 @@ end
 --   room_sound   counts everywhere, but only makes a sound in the room
 -- A social with no entry plays Socials/<social name>.ogg, if that file exists.
 -- Bodily noises (belch, burp, cough, fart, gag, sneeze, vomit, yawn) are room_sound:
--- they make no sound when done over a channel or comms, only in the room (Shane, #44).
+-- they make no sound when done over a channel or comms, only in the room (Kendal, #44).
 SOCIAL_SOUNDS = {
   { word = "pyrianSay", sound = "Socials/PyrianChitter", versions = 10, room_sound = true },
   { word = "belch", sound = "Socials/Belch", versions = 3, room_sound = true },
