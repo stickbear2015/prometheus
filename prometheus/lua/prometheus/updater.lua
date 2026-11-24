@@ -80,12 +80,24 @@ function Updater_Check(quiet)
 end
 
 local function checked(result)
-  if result.status == "update" and result.world_reset then
-    -- The world file has the player's own aliases, triggers, timers or variables: it's reset
-    -- straight away, without asking (Shane, 2026-11-23). MUSHclient has to close for it.
-    tell("Your world file has aliases, triggers, timers or variables of your own, so it's being reset to the soundpack's own now. Your plugins and login details are kept. MUSHclient will close and start again by itself.")
-    Updater_Install(true)
-  elseif result.status == "update" then
+  if result.status == "update" and result.repair then
+    -- Files changed outside the soundpack (edited pack files, or a world file with the player's
+    -- own aliases, triggers, timers or variables) are put back without asking, before anything
+    -- else, so nobody can keep them just by never typing spupdate (Shane, 2026-11-23).
+    local what = "Some of the soundpack's own files were changed outside the soundpack, and they have to be put back before you can carry on."
+    if result.world_reset and #(result.edited or {}) == 0 then
+      what = "Your world file has aliases, triggers, timers or variables of your own, and it has to be reset to the soundpack's own before you can carry on. Your plugins and login details are kept."
+    elseif #(result.edited or {}) > 0 then
+      what = what .. " Changed: " .. table.concat(result.edited, ", ") .. "."
+    end
+    if result.needs_close then
+      what = what .. " MUSHclient will close and start again by itself."
+    else
+      what = what .. " They're being put back now."
+    end
+    tell(what)
+    utils.msgbox(what, "Prometheus soundpack", "ok", "!")
+    Updater_Install(result.needs_close)  elseif result.status == "update" then
     tell(result.say)
     local answer = utils.msgbox(result.say .. "\n\nInstall it now?", "Prometheus soundpack update", "yesno", "?")
     if answer == "yes" then
