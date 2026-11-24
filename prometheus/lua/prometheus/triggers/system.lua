@@ -29,9 +29,6 @@ end
 -- ^\#\$\#mcp version\: 2\.1 to\: 2\.1$
 function System_McpVersionTo(name, line, wildcards)
   Execute("#$#register_soundpack Mush Soundpack | "..GetVariable("version"))
-  -- Check for soundpack updates quietly once you're in (issue #14); it only speaks up if
-  -- there's something to install.
-  DoAfterSpecial(10, "Updater_Check(true)", sendto.script)
 end
 
 -- The game's reply to the pack registering: "registered", or "old_version" when a
