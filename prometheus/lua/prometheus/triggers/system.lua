@@ -29,12 +29,15 @@ end
 -- ^\#\$\#mcp version\: 2\.1 to\: 2\.1$
 function System_McpVersionTo(name, line, wildcards)
   Execute("#$#register_soundpack Mush Soundpack | "..GetVariable("version"))
+  -- Check for soundpack updates quietly once you're in (issue #14); it only speaks up if
+  -- there's something to install.
+  DoAfterSpecial(10, "Updater_Check(true)", sendto.script)
 end
 
 -- The game's reply to the pack registering: "registered", or "old_version" when a
--- newer pack exists. These used to play the outdated sound and start the old updater
--- (spupdate). The updater has been removed until it's redesigned (issue #14), so for
--- now they do nothing: the triggers stay only so the game's line stays hidden.
+-- newer pack exists. These used to play the outdated sound and start the old updater.
+-- The new updater asks the soundpack's website itself (Updater_Check, above), so these
+-- do nothing: the triggers stay only so the game's line stays hidden.
 -- ^\#\$\#register_soundpack (registered|old_version \| (.+))$
 function System_RegisterSoundpackRegisteredOldVersion(name, line, wildcards)
 end

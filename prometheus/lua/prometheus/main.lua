@@ -17,3 +17,4 @@ require("prometheus.sounds")
 
 -- Utils
 require("prometheus.util")
+require("prometheus.updater")
