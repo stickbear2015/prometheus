@@ -542,6 +542,7 @@ CurrentGlobalSound = PlayGlobalSound("General/Prospecting/GetNugget.ogg")
 <trigger
 enabled="y"
 match="You scoop up a pan full of sediment from the stream bed."
+ignore_case="y"
 send_to="12"
 sequence="100"
 >
@@ -553,6 +554,7 @@ CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(
 <trigger
 enabled="y"
 match="You submerge the pan in the water, letting it fill and wash over the material with a gentle swirl."
+ignore_case="y"
 omit_from_output="y"
 send_to="12"
 sequence="100"
@@ -565,6 +567,7 @@ CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(
 <trigger
 enabled="y"
 match="You begin to separate the lighter material from the heavier sediment."
+ignore_case="y"
 send_to="12"
 sequence="100"
 >
@@ -598,6 +601,7 @@ CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(
 <trigger
 enabled="y"
 match="You carefully tilt the pan to let the water and lighter particles flow out."
+ignore_case="y"
 send_to="12"
 sequence="100"
 >
@@ -609,6 +613,7 @@ CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(
 <trigger
 enabled="y"
 match="You give the pan a quick, side-to-side shake to concentrate the heavier particles."
+ignore_case="y"
 send_to="12"
 sequence="100"
 >
@@ -631,6 +636,7 @@ CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(
 <trigger
 enabled="y"
 match="You watch the material shift and settle with each movement of the pan."
+ignore_case="y"
 send_to="12"
 sequence="100"
 >
@@ -642,6 +648,7 @@ CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(
 <trigger
 enabled="y"
 match="You see the black sands concentrating at the bottom of the pan."
+ignore_case="y"
 send_to="12"
 sequence="100"
 >
@@ -664,6 +671,7 @@ CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(
 <trigger
 enabled="y"
 match="You carefully remove larger rocks, inspecting them for any missed signs of gold."
+ignore_case="y"
 send_to="12"
 sequence="100"
 >
@@ -686,6 +694,7 @@ CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(
 <trigger
 enabled="y"
 match="You continue to agitate the pan, ensuring thorough separation."
+ignore_case="y"
 send_to="12"
 sequence="100"
 >
@@ -719,6 +728,7 @@ CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(
 <trigger
 enabled="y"
 match="You take a moment to readjust your grip on the pan, steadying the movements."
+ignore_case="y"
 send_to="12"
 sequence="100"
 >
@@ -740,6 +750,7 @@ CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(
 <trigger
 enabled="y"
 match="You notice the subtle changes in the pan's contents with each motion."
+ignore_case="y"
 send_to="12"
 sequence="100"
 >
@@ -751,6 +762,7 @@ CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(
 <trigger
 enabled="y"
 match="You shift the pan, hands working methodically, maintaining a steady rhythm."
+ignore_case="y"
 send_to="12"
 sequence="100"
 >
@@ -773,6 +785,7 @@ CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(
 <trigger
 enabled="y"
 match="You glance at the swirling water, observing the sediment's behavior."
+ignore_case="y"
 send_to="12"
 sequence="100"
 >
@@ -795,6 +808,7 @@ CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(
 <trigger
 enabled="y"
 match="You use the pan's edge to guide the water flow, enhancing the separation."
+ignore_case="y"
 send_to="12"
 sequence="100"
 >
@@ -806,6 +820,7 @@ CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(
 <trigger
 enabled="y"
 match="You occasionally pause to let the sediment settle before continuing."
+ignore_case="y"
 send_to="12"
 sequence="100"
 >
@@ -817,6 +832,7 @@ CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(
 <trigger
 enabled="y"
 match="You slowly pass your fingers over the pan's surface, feeling for any coarse particles."
+ignore_case="y"
 send_to="12"
 sequence="100"
 >
@@ -839,6 +855,7 @@ CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(
 <trigger
 enabled="y"
 match="You adjust the pan's angle to control the water's movement."
+ignore_case="y"
 send_to="12"
 sequence="100"
 >
@@ -861,6 +878,7 @@ CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(
 <trigger
 enabled="y"
 match="You immerse the pan fully, allowing the current to aid in the separation."
+ignore_case="y"
 send_to="12"
 sequence="100"
 >
@@ -883,6 +901,7 @@ CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(
 <trigger
 enabled="y"
 match="You observe the fine sediment moving in a circular pattern within the pan."
+ignore_case="y"
 send_to="12"
 sequence="100"
 >
@@ -894,6 +913,7 @@ CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(
 <trigger
 enabled="y"
 match="You  gently tap the side of the pan, helping the heavier material settle."
+ignore_case="y"
 send_to="12"
 sequence="100"
 >
@@ -916,6 +936,7 @@ CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(
 <trigger
 enabled="y"
 match="You watch the pan's contents shift and settle, revealing new patterns."
+ignore_case="y"
 send_to="12"
 sequence="100"
 >
@@ -927,6 +948,7 @@ CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(
 <trigger
 enabled="y"
 match="You take care to keep the pan level, ensuring an even distribution of material."
+ignore_case="y"
 send_to="12"
 sequence="100"
 >
@@ -949,6 +971,7 @@ CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(
 <trigger
 enabled="y"
 match="You remain focused on the process, attentive to the subtle changes in the pan."
+ignore_case="y"
 send_to="12"
 sequence="100"
 >
@@ -971,6 +994,7 @@ CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(
 <trigger
 enabled="y"
 match="You notice the texture of the material changing as the lighter particles wash away."
+ignore_case="y"
 send_to="12"
 sequence="100"
 >
@@ -993,6 +1017,7 @@ CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(
 <trigger
 enabled="y"
 match="You use a gentle swirling motion to keep the sediment in motion."
+ignore_case="y"
 send_to="12"
 sequence="100"
 >
@@ -1015,6 +1040,7 @@ CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(
 <trigger
 enabled="y"
 match="You concentrate on maintaining a consistent rhythm, ensuring thorough separation."
+ignore_case="y"
 send_to="12"
 sequence="100"
 >
@@ -1048,6 +1074,7 @@ CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(
 <trigger
 enabled="y"
 match="You carefully control the flow of water, preventing any valuable particles from escaping."
+ignore_case="y"
 send_to="12"
 sequence="100"
 >
@@ -1059,6 +1086,7 @@ CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(
 <trigger
 enabled="y"
 match="You continue moving the pan in the water, black sands form a distinct layer, promising a concentrated result."
+ignore_case="y"
 send_to="12"
 sequence="100"
 >
@@ -1070,6 +1098,7 @@ CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(
 <trigger
 enabled="y"
 match="You remain attentive to the pan's contents, ready for any signs of success."
+ignore_case="y"
 send_to="12"
 sequence="100"
 >
@@ -1081,6 +1110,7 @@ CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(
 <trigger
 enabled="y"
 match="You take a moment to stretch your fingers, then continue the process."
+ignore_case="y"
 send_to="12"
 sequence="100"
 >
@@ -1092,6 +1122,7 @@ CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(
 <trigger
 enabled="y"
 match="You immerse the pan one last time, ensuring a thorough rinse."
+ignore_case="y"
 send_to="12"
 sequence="100"
 >
@@ -1103,6 +1134,7 @@ CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(
 <trigger
 enabled="y"
 match="You take a final look at the pan's contents, ready to examine the results."
+ignore_case="y"
 send_to="12"
 sequence="90"
 >
