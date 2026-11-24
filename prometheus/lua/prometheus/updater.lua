@@ -23,6 +23,7 @@ local CHECK_FILE = STATE .. "updater-check.json"
 local PROGRESS_FILE = STATE .. "updater-progress.txt"
 local PORT_FILE = STATE .. "updater-port.txt"
 local CODE_FILE = STATE .. "updater-tester.dat"
+local APPEAL_FILE = STATE .. "updater-appeal.json"
 
 local Updater = { waiting = nil, progress_seen = 0, started = 0, quiet = false, forced = false }
 
@@ -113,12 +114,32 @@ local function checked(result)
     else
       tell("Not installed. Type spupdate whenever you want it.")
     end
+  elseif result.status == "blocked" then
+    -- This connection is blocked from updates (Shane, 2026-11-24). The check at login says
+    -- nothing; spupdate says so and offers to tell Kendal, with no typing.
+    if not Updater.quiet then
+      tell(result.say)
+      local answer = utils.msgbox(result.say .. "\n\nTell Kendal you think this is a mistake?", "Prometheus soundpack", "yesno", "?")
+      if answer == "yes" then Updater_Appeal("update_check") end
+    end
   elseif result.status == "problem" then
     if not Updater.quiet then tell(result.say) end
   else
     -- Up to date. Still say so if a tester code was just dropped.
     if not Updater.quiet or result.code_dropped then tell(result.say) end
   end
+end
+
+-- ---------- telling Kendal a block is a mistake ----------
+
+-- attempt: what was blocked (update_check now; pack_report and pack_reply when the report
+-- commands come). The updater sends it, and the tester code if there is one, to the website.
+function Updater_Appeal(attempt)
+  if Updater.waiting then return end
+  os.remove(APPEAL_FILE)
+  if not start_updater("appeal " .. attempt) then return end
+  Updater.waiting, Updater.started = "appeal", os.time()
+  poll_every(0.5)
 end
 
 -- ---------- installing ----------
@@ -206,6 +227,22 @@ function Updater_Poll()
     elseif os.time() - Updater.started > 90 then
       stop_polling()
       if not Updater.quiet then tell("The update check didn't finish. Please try again later.") end
+    end
+  elseif Updater.waiting == "appeal" then
+    local text = read_all(APPEAL_FILE)
+    if text then
+      stop_polling()
+      os.remove(APPEAL_FILE)
+      local json = require("json")
+      local ok, result = pcall(json.decode, text)
+      if ok and type(result) == "table" and result.say and result.say ~= "" then
+        tell(result.say)
+      else
+        tell("Kendal couldn't be told just now. Please try again later.")
+      end
+    elseif os.time() - Updater.started > 60 then
+      stop_polling()
+      tell("Kendal couldn't be told just now. Please try again later.")
     end
   elseif Updater.waiting == "install" then
     progressed(read_progress())
