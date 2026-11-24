@@ -60,6 +60,10 @@ Other Commands:
   Displays all available keys in the soundpack.
 * spdebug:
  Turns debug mode on or off, to help track down sound problems. While it's on, each line from the game gets notes starting with [debug] saying which trigger caught it (with the line itself, even if it's normally hidden), each sound played (and whether the sound file is missing or that kind of sound is switched off), each history buffer the line went into, or "no trigger" if nothing in the soundpack caught it. It also shows the hidden soundpack messages the game sends. Copy these notes into a bug report. Debug mode is always off when you start MUSHclient.
+* spupdate:
+  Checks the soundpack's website for an update now, and asks whether to install it. The soundpack also checks by itself each time you connect, and only speaks up if there's something to install. Most updates install without closing MUSHclient; if one needs MUSHclient closed, it says so, finishes by itself, and starts MUSHclient again. Any of the soundpack's own files that were changed on your computer are put back. Your settings, your own plugins and your login details are always kept.
+* sptester:
+  For testers. Asks for the tester code Kendal gave you (or type sptester followed by the code), and from then on offers test versions. The code is kept encrypted, so it can't be read from your files. sptester status says whether a code is set, and sptester off stops testing and offers the stable version.
 
 ------------------------------------
 Channel History Buffers:
