@@ -60,6 +60,8 @@ Other Commands:
   Displays all available keys in the soundpack.
 * spdebug:
  Turns debug mode on or off, to help track down sound problems. While it's on, each line from the game gets notes starting with [debug] saying which trigger caught it (with the line itself, even if it's normally hidden), each sound played (and whether the sound file is missing or that kind of sound is switched off), each history buffer the line went into, or "no trigger" if nothing in the soundpack caught it. It also shows the hidden soundpack messages the game sends. Copy these notes into a bug report. Debug mode is always off when you start MUSHclient.
+* spupdate:
+  Checks for a soundpack update now, and asks whether to install it.
 
 ------------------------------------
 Channel History Buffers:
