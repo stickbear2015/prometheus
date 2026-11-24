@@ -84,20 +84,18 @@ local function checked(result)
     -- Files changed outside the soundpack (edited pack files, or a world file with the player's
     -- own aliases, triggers, timers or variables) are put back without asking, before anything
     -- else, so nobody can keep them just by never typing spupdate (Kendal, 2026-11-23).
-    local what = "Some of the soundpack's own files were changed outside the soundpack, and they have to be put back before you can carry on."
-    if result.world_reset and #(result.edited or {}) == 0 then
-      what = "Your world file has aliases, triggers, timers or variables of your own, and it has to be reset to the soundpack's own before you can carry on. Your plugins and login details are kept."
-    elseif #(result.edited or {}) > 0 then
-      what = what .. " Changed: " .. table.concat(result.edited, ", ") .. "."
-    end
-    if result.needs_close then
-      what = what .. " MUSHclient will close and start again by itself."
-    else
-      what = what .. " They're being put back now."
+    -- Kept general on purpose: it never names a file or says what was wrong (Kendal, 2026-11-23).
+    -- There's no choice: the box only has OK, and the repair starts when it's closed.
+    local what = "Some of the soundpack's files don't seem to be right. To protect the soundpack, they're being repaired now. Your own plugins and settings won't be touched."
+    if result.needs_close or result.world_reset then
+      what = what .. " MUSHclient has to close and start again to finish the repair. It will do that by itself after you press OK."
     end
     tell(what)
     utils.msgbox(what, "Prometheus soundpack", "ok", "!")
-    Updater_Install(result.needs_close)  elseif result.status == "update" then
+    -- A repair always closes MUSHclient by itself when it has to (a world file reset, or a program
+    -- file), rather than asking the player to.
+    Updater_Install(true)
+  elseif result.status == "update" then
     tell(result.say)
     local answer = utils.msgbox(result.say .. "\n\nInstall it now?", "Prometheus soundpack update", "yesno", "?")
     if answer == "yes" then
@@ -115,7 +113,7 @@ end
 
 -- ---------- installing ----------
 
--- forced: a world file reset, which closes MUSHclient by itself instead of asking the player to.
+-- forced: a repair, which closes MUSHclient by itself (when it has to) instead of asking the player to.
 function Updater_Install(forced)
   Updater.forced = forced and true or false
   os.remove(PROGRESS_FILE)
