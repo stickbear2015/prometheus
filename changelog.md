@@ -3,6 +3,7 @@
 
 * adds a new updater. the soundpack checks for updates when you connect, and you can type spupdate to check any time. [#14](https://github.com/stickbear2015/prometheus/issues/14)
 * makes updating the soundpack faster. [#14](https://github.com/stickbear2015/prometheus/issues/14)
+* adds sounds for prospecting. [#8](https://github.com/stickbear2015/prometheus/issues/8)
 
 ## Version 26.0.1, Kendal's first release.
 This release brings almost 50 changes since the last release in february of 2025, and is now maintained by Kendal Hamilton.
