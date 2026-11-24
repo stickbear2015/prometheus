@@ -24,7 +24,7 @@ local PROGRESS_FILE = STATE .. "updater-progress.txt"
 local PORT_FILE = STATE .. "updater-port.txt"
 local CODE_FILE = STATE .. "updater-tester.dat"
 
-local Updater = { waiting = nil, progress_seen = 0, started = 0, quiet = false }
+local Updater = { waiting = nil, progress_seen = 0, started = 0, quiet = false, forced = false }
 
 local function exists(path)
   local f = io.open(path, "rb")
@@ -80,7 +80,24 @@ function Updater_Check(quiet)
 end
 
 local function checked(result)
-  if result.status == "update" then
+  if result.status == "update" and result.repair then
+    -- Files changed outside the soundpack (edited pack files, or a world file with the player's
+    -- own aliases, triggers, timers or variables) are put back without asking, before anything
+    -- else, so nobody can keep them just by never typing spupdate (Kendal, 2026-11-23).
+    local what = "Some of the soundpack's own files were changed outside the soundpack, and they have to be put back before you can carry on."
+    if result.world_reset and #(result.edited or {}) == 0 then
+      what = "Your world file has aliases, triggers, timers or variables of your own, and it has to be reset to the soundpack's own before you can carry on. Your plugins and login details are kept."
+    elseif #(result.edited or {}) > 0 then
+      what = what .. " Changed: " .. table.concat(result.edited, ", ") .. "."
+    end
+    if result.needs_close then
+      what = what .. " MUSHclient will close and start again by itself."
+    else
+      what = what .. " They're being put back now."
+    end
+    tell(what)
+    utils.msgbox(what, "Prometheus soundpack", "ok", "!")
+    Updater_Install(result.needs_close)  elseif result.status == "update" then
     tell(result.say)
     local answer = utils.msgbox(result.say .. "\n\nInstall it now?", "Prometheus soundpack update", "yesno", "?")
     if answer == "yes" then
@@ -98,11 +115,13 @@ end
 
 -- ---------- installing ----------
 
-function Updater_Install()
+-- forced: a world file reset, which closes MUSHclient by itself instead of asking the player to.
+function Updater_Install(forced)
+  Updater.forced = forced and true or false
   os.remove(PROGRESS_FILE)
   if not start_updater("install") then return end
   Updater.waiting, Updater.progress_seen, Updater.started = "install", 0, os.time()
-  tell("Installing the soundpack update.")
+  if not Updater.forced then tell("Installing the soundpack update.") end
   poll_every(0.5)
 end
 
@@ -145,7 +164,13 @@ local function progressed(lines)
     end
   end
   if #spoken > 0 then Execute("tts_interrupt " .. string.gsub(table.concat(spoken, " "), '"', "'")) end
-  if close then
+  if close and Updater.forced then
+    -- A world file reset: save the world (so MUSHclient doesn't stop to ask), then close.
+    -- The updater waits for it, rebuilds the world file and starts MUSHclient again.
+    stop_polling()
+    tell("Closing MUSHclient now. It will start again by itself in a moment.")
+    DoAfterSpecial(3, 'DoCommand("Save") DoCommand("ExitClient")', sendto.script)
+  elseif close then
     -- The rest needs MUSHclient closed; the updater waits, finishes and starts it again.
     stop_polling()
     utils.msgbox(close, "Prometheus soundpack update", "ok", "i")
