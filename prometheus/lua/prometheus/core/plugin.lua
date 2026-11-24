@@ -24,6 +24,9 @@ function OnPluginInstall()
     utils.msgbox("The Mush soundpack version "..GetVariable("version").." for Prometheus is now ready. Thanks for using!", "Congratulations", "ok", "!", 1)
     SaveConfig()
   end
+  -- Every time the soundpack starts (or reloads), check that none of its files were changed
+  -- outside it, and whether there's an update (issue #14). Quiet unless there's something to do.
+  DoAfterSpecial(3, "Updater_Check(true)", sendto.script)
 end
 
 function OnPluginClose() SaveConfig() end
