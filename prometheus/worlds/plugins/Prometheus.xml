@@ -171,6 +171,14 @@ Note("MUSHClient Soundpack Version: "..GetVariable("version")..".")
   omit_from_command_history="y" omit_from_log="y" regexp="y" omit_from_output="y"
   ignore_case="y" send_to="12" sequence="100">
   <send>ToggleSoundpackDebug()</send></alias>
+<alias name="SoundpackUpdate" match="^spupdate$" enabled="y" group="updater"
+  omit_from_command_history="y" omit_from_output="y" regexp="y"
+  ignore_case="y" send_to="12" sequence="100">
+  <send>Updater_Check(false)</send></alias>
+<alias name="SoundpackTester" match="^sptester(?:\s+(.*))?$" enabled="y" group="updater"
+  omit_from_command_history="y" omit_from_log="y" omit_from_output="y" regexp="y"
+  ignore_case="y" script="Updater_TesterAlias" sequence="100">
+  </alias>
 </aliases>
 <script><![CDATA[
 -- Look for Lua modules in this copy of MUSHclient first, even if a separately
