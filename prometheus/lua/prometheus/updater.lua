@@ -121,14 +121,20 @@ function Updater_Install(forced)
   poll_every(0.5)
 end
 
--- Reloads the pack's plugins after an update. Other plugins first; this one last, a moment
--- later, because a plugin can't reload itself while its own code is running.
+-- Reloads the pack's plugins after an update. Other plugins first; then this one, which
+-- MUSHclient never lets a plugin do to itself (not even from its own timer), so LuaAudio does it
+-- a moment later. Until then, the connection to the reloaded LuaAudio is renewed, so sounds
+-- keep working even if the reload can't happen (an older LuaAudio without ReloadPluginSoon).
+local LUAAUDIO = "aedf0cb0be5bf045860d54b7"
 local function reload_plugins()
   local me = GetPluginID()
   for _, id in ipairs(GetPluginList() or {}) do
     if id ~= me then ReloadPlugin(id) end
   end
-  DoAfterSpecial(1, 'ReloadPlugin("' .. me .. '")', sendto.script)
+  Audio = PPI.Load(LUAAUDIO) or Audio
+  if CallPlugin(LUAAUDIO, "ReloadPluginSoon", me) ~= error_code.eOK then
+    tell("The soundpack's files were updated, but the soundpack couldn't reload itself. Please close MUSHclient and open it again.")
+  end
 end
 
 local function read_progress()

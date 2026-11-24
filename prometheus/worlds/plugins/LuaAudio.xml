@@ -326,6 +326,16 @@ function OnPluginClose()
   end
 end
 
+-- Reloads another plugin half a second from now. MUSHclient never lets a plugin reload itself,
+-- so after an update the Prometheus plugin asks this one to do it, with
+-- CallPlugin("aedf0cb0be5bf045860d54b7", "ReloadPluginSoon", GetPluginID()). The timer runs
+-- here, after the asking plugin's code has finished (pack issue #14).
+function ReloadPluginSoon(id)
+  id = tostring(id or "")
+  if not string.match(id, "^%x+$") or not IsPluginInstalled(id) then return end
+  DoAfterSpecial(0.5, 'ReloadPlugin("' .. id .. '")', sendto.script)
+end
+
 ppi.Expose("init", OnPluginInstall)
 ppi.Expose("unload", OnPluginClose)
 ppi.Expose("setPitch", setPitch)
