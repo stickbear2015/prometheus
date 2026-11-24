@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE muclient>
-<!-- Activities: archaeology, pearl diving, shipwrecks, comets and asteroids, harvesting, star research, hatch cracking, derelicts and sifting. -->
+<!-- Activities: archaeology, pearl diving, shipwrecks, comets and asteroids, harvesting, star research, hatch cracking, derelicts, sifting and prospecting. -->
 <!-- The Lua for these triggers is in lua/prometheus/triggers/activities.lua -->
 <muclient>
 <triggers>
@@ -514,6 +514,450 @@
   omit_from_output="y"
   sequence="100"
   script="Activities_AHumBuildsUpForA"
+></trigger>
+
+<!-- Prospecting (issue #8): Kendal's hand-written triggers, with their exact text. Panning lines and the
+     scanner button line are hidden and play their sound instead; tucking a nugget away is shown.
+     Sequence 90, so broader triggers such as the computer's "* examine*a *" can't take them first.
+     Chat channels (sequence 50) are still checked before them. -->
+
+<trigger
+  enabled="y"
+  match="You touch a small button on the handle of * prospecting pan, and carefully lower a * prospecting pan, skimming just above the surface of the stream water, while gently rotating a * prospecting pan in a wide circular pattern, before raising a * prospecting pan to examine a small holographic scanner projection, which suddenly emits into the air above a * prospecting pan."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingScan"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You carefully tuck * inside of * gold prospecting container."
+  sequence="90"
+  script="Activities_ProspectingNugget"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You scoop up a pan full of sediment from the stream bed."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You submerge the pan in the water, letting it fill and wash over the material with a gentle swirl."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You begin to separate the lighter material from the heavier sediment."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The water in the pan turns murky as you agitate the contents."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="Small pebbles rise to the surface, carried by the water's motion."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You carefully tilt the pan to let the water and lighter particles flow out."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You give the pan a quick, side-to-side shake to concentrate the heavier particles."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The process of swirling and shaking becomes rhythmic as you work."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You watch the material shift and settle with each movement of the pan."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You see the black sands concentrating at the bottom of the pan."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="With a steady hand, you tilt the pan forward to drain excess water."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You carefully remove larger rocks, inspecting them for any missed signs of gold."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="As you move the pan in the water, the water flows over the pan's edge, carrying away lighter debris."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You continue to agitate the pan, ensuring thorough separation."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="As you watch, the dark sands and fine gravel settle into a dense layer at the pan's base."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="As you adjust the pan, dip and swirl of the pan reveals new layers of sediment."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You take a moment to readjust your grip on the pan, steadying the movements."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="As you shift the pan back and forth, the weight of the pan lessens as the lighter material is washed away."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You notice the subtle changes in the pan's contents with each motion."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You shift the pan, hands working methodically, maintaining a steady rhythm."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="As you shift the pan, the pan's ridges trap the heavier particles, preventing them from washing out."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You glance at the swirling water, observing the sediment's behavior."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="While you move the pan back and forth, the black sands form a distinct layer, contrasting with the lighter material."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You use the pan's edge to guide the water flow, enhancing the separation."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You occasionally pause to let the sediment settle before continuing."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You slowly pass your fingers over the pan's surface, feeling for any coarse particles."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="As you move the pan, the pan's contents slowly reduce, leaving only the densest material behind."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You adjust the pan's angle to control the water's movement."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="As you move the pan in the water, the repeated actions of dipping, swirling, and shaking become second nature."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You immerse the pan fully, allowing the current to aid in the separation."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="As you move the pan in the water, the swirling water creates a vortex, drawing lighter particles away."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You observe the fine sediment moving in a circular pattern within the pan."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You  gently tap the side of the pan, helping the heavier material settle."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="As you slide the pan back and forth in the water, the water's surface reflects the surrounding landscape, adding to the experience."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You watch the pan's contents shift and settle, revealing new patterns."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You take care to keep the pan level, ensuring an even distribution of material."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="As you move the pan back and forth, the light filters through the water, creating a play of shadows in the pan."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You remain focused on the process, attentive to the subtle changes in the pan."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="As you continue to move the pan back and forth, the repetitive motions of panning create a meditative rhythm."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You notice the texture of the material changing as the lighter particles wash away."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="As you continue moving the pan in the water, the concentration of black sands increases with each pass of the water."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You use a gentle swirling motion to keep the sediment in motion."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="As you continue moving the pan back and forth in the water, the water's current assists in washing away the lighter particles."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You concentrate on maintaining a consistent rhythm, ensuring thorough separation."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="The fine gravel and sand move smoothly within the pan, guided by your hands."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="As you continue moving the pan in the water, the pan's surface becomes more visible as the sediment is reduced."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You carefully control the flow of water, preventing any valuable particles from escaping."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You continue moving the pan in the water, black sands form a distinct layer, promising a concentrated result."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You remain attentive to the pan's contents, ready for any signs of success."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You take a moment to stretch your fingers, then continue the process."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You immerse the pan one last time, ensuring a thorough rinse."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You take a final look at the pan's contents, ready to examine the results."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
+></trigger>
+
+<trigger
+  enabled="y"
+  match="You carefully lift * out of the stream,, shaking the pan gently to reveal nothing but small gravel stones."
+  omit_from_output="y"
+  sequence="90"
+  script="Activities_ProspectingPanning"
 ></trigger>
 
 </triggers>
