@@ -24,6 +24,9 @@ function OnPluginInstall()
     utils.msgbox("The Mush soundpack version "..GetVariable("version").." for Prometheus is now ready. Thanks for using!", "Congratulations", "ok", "!", 1)
     SaveConfig()
   end
+  -- If MUSHclient was just restarted by an update, say how it went (issue #14). A moment
+  -- later, so the speech plugin is loaded.
+  DoAfterSpecial(3, "Updater_StartupReport()", sendto.script)
 end
 
 function OnPluginClose() SaveConfig() end

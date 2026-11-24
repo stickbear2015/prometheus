@@ -10,6 +10,7 @@ function GetInfo() return dir .. "/" end
 function GetVariable() return "test" end
 function Execute() end function Note() end function Accelerator() end function AcceleratorTo() end
 function SetOption() end
+sendto = { script = 12 } function DoAfterSpecial(s, what) print("  later (" .. s .. " s):", what) return 0 end
 function PlayGlobalSound() return 1 end function StopSound() end
 utils = { msgbox = function(msg) print("  message box:", msg) return "ok" end }
 NumpadInit = function() end
