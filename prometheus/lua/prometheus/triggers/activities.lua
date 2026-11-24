@@ -376,20 +376,3 @@ end
 function Activities_AHumBuildsUpForA(name, line, wildcards)
   CurrentGlobalSound = PlayGlobalSound("Starship/Harvesting/NoMinerals.ogg")
 end
-
--- Prospecting (issue #8): Kendal's hand-written triggers share these three.
-
--- Every panning line (scooping, swirling, tilting, lifting the pan out and so on).
-function Activities_ProspectingPanning(name, line, wildcards)
-  CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
-end
-
--- You touch a small button on the handle of * prospecting pan, ... (the scanner)
-function Activities_ProspectingScan(name, line, wildcards)
-  CurrentGlobalSound = PlayGlobalSound("General/Prospecting/scan"..math.random(1, 6)..".ogg")
-end
-
--- You carefully tuck * inside of * gold prospecting container.
-function Activities_ProspectingNugget(name, line, wildcards)
-  CurrentGlobalSound = PlayGlobalSound("General/Prospecting/GetNugget.ogg")
-end
