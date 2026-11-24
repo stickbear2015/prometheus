@@ -84,12 +84,10 @@ local function checked(result)
     -- Files changed outside the soundpack (edited pack files, or a world file with the player's
     -- own aliases, triggers, timers or variables) are put back without asking, before anything
     -- else, so nobody can keep them just by never typing spupdate (Shane, 2026-11-23).
-    -- Kept general on purpose: it never names a file or says what was wrong (Shane, 2026-11-23).
+    -- The updater writes the words (Shane, 2026-11-23): edited files, with the reminder about the
+    -- game's policies, and missing files, never naming which; and whether MUSHclient will restart.
     -- There's no choice: the box only has OK, and the repair starts when it's closed.
-    local what = "Some of the soundpack's files don't seem to be right. To protect the soundpack, they're being repaired now. Your own plugins and settings won't be touched."
-    if result.needs_close or result.world_reset then
-      what = what .. " MUSHclient has to close and start again to finish the repair. It will do that by itself after you press OK."
-    end
+    local what = result.say
     tell(what)
     utils.msgbox(what, "Prometheus soundpack", "ok", "!")
     -- A repair always closes MUSHclient by itself when it has to (a world file reset, or a program
