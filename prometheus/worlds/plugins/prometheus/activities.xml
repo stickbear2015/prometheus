@@ -521,7 +521,7 @@
 enabled="y"
 match="You touch a small button on the handle of * prospecting pan, and carefully lower a * prospecting pan, skimming just above the surface of the stream water, while gently rotating a * prospecting pan in a wide circular pattern, before raising a * prospecting pan to examine a small holographic scanner projection, which suddenly emits into the air above a * prospecting pan."
 send_to="12"
-sequence="100"
+sequence="90"
 >
 <send>
 CurrentGlobalSound = PlayGlobalSound("General/Prospecting/scan"..math.random(1, 6)..".ogg")
@@ -1104,7 +1104,7 @@ CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(
 enabled="y"
 match="You take a final look at the pan's contents, ready to examine the results."
 send_to="12"
-sequence="100"
+sequence="90"
 >
 <send>
 CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
