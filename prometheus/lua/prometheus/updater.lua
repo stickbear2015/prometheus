@@ -47,6 +47,18 @@ local function tell(text)
   Execute("tts_interrupt " .. text)
 end
 
+-- When an update had to close MUSHclient, the updater finishes, starts MUSHclient again and
+-- leaves its result here; the pack reads it out once it has loaded, then deletes it.
+local RESULT_FILE = STATE .. "updater-result.txt"
+function Updater_StartupReport()
+  local f = io.open(RESULT_FILE, "rb")
+  if not f then return end
+  local text = f:read("*a") or ""
+  f:close()
+  os.remove(RESULT_FILE)
+  if text ~= "" then tell(text) end
+end
+
 local function start_updater(command)
   if not exists(UPDATER) then
     tell("The soundpack's updater is missing. Please download the full installer from https://stickbear.me/prometheus.")
