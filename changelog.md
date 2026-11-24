@@ -1,8 +1,9 @@
 # Prometheus Soundpack Changes:
 ## development release
 
+* adds a new updater. the soundpack checks for updates when you connect, and you can type spupdate to check any time. [#14](https://github.com/stickbear2015/prometheus/issues/14)
 
-## Version 26.0.1
+## Version 26.0.1, Kendal's first release.
 This release brings almost 50 changes since the last release in february of 2025, and is now maintained by Kendal Hamilton.
 
 * modernizes the installer. [#7](https://github.com/stickbear2015/prometheus/issues/7)
@@ -53,7 +54,9 @@ This release brings almost 50 changes since the last release in february of 2025
 * removes the spupdate command and the old updater, until a new one is designed. for now the soundpack won't tell you when a new version is out. [#14](https://github.com/stickbear2015/prometheus/issues/14)
 * the soundpack now shows Kendal Hamilton as its developer, with credit to Krinnzenn, who looked after it before, and Nyano Cooper, who created it. [#57](https://github.com/stickbear2015/prometheus/issues/57)
 
+# previous changes before Kendal took over.
 ## Version 25.2.1
+
 * Hopefully fixed more broken stuff.
   My thanks to Kira Andrews for all her help in tracking down bugs.
 * The repair sound should no longer play twice when you begin repairs on a mining vehicle.
