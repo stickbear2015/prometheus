@@ -56,9 +56,7 @@ Other Commands:
 * hotkeys:
   Displays all available keys in the soundpack.
 * spupdate:
-  Checks the soundpack's website for an update now, and asks whether to install it. The soundpack also checks by itself each time you connect, and only speaks up if there's something to install. Most updates install without closing MUSHclient; if one needs MUSHclient closed, it says so, finishes by itself, and starts MUSHclient again. Any of the soundpack's own files that were changed on your computer are put back. Your settings, your own plugins and your login details are always kept.
-* sptester:
-  For testers. Asks for the tester code Kendal gave you (or type sptester followed by the code), and from then on offers test versions. The code is kept encrypted, so it can't be read from your files. sptester status says whether a code is set, and sptester off stops testing and offers the stable version.
+  Checks for a soundpack update now, and asks whether to install it.
 
 ------------------------------------
 Channel History Buffers:
