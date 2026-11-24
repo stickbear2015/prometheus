@@ -5,3 +5,8 @@ config.txt
 
 # Game logs used for local testing only (contain other players' names and chat). Never commit.
 temp-logs/
+
+# MUSHclient's logs, written while playing from the repo. They can hold other players' details. Never commit.
+# The folder itself stays (MUSHclient writes its log there), kept by .gitkeep.
+prometheus/logs/*
+!prometheus/logs/.gitkeep
