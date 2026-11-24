@@ -1,4 +1,4 @@
--- Activities: archaeology, pearl diving, shipwrecks, comets and asteroids, harvesting, star research, hatch cracking, derelicts and sifting.
+-- Activities: archaeology, pearl diving, shipwrecks, comets and asteroids, harvesting, star research, hatch cracking, derelicts, sifting and prospecting.
 -- Trigger functions for worlds/plugins/prometheus/activities.xml.
 -- Each one receives the trigger's name, the whole line, and the wildcards
 -- (the parts of the line the trigger's * or (...) matched).
@@ -375,4 +375,21 @@ end
 -- A hum builds up for a second, but quickly subsides; apparently nothing was found.
 function Activities_AHumBuildsUpForA(name, line, wildcards)
   CurrentGlobalSound = PlayGlobalSound("Starship/Harvesting/NoMinerals.ogg")
+end
+
+-- Prospecting (issue #8): Kendal's hand-written triggers share these three.
+
+-- Every panning line (scooping, swirling, tilting, lifting the pan out and so on).
+function Activities_ProspectingPanning(name, line, wildcards)
+  CurrentGlobalSound = PlayGlobalSound("General/Prospecting/panning"..math.random(1, 6)..".ogg")
+end
+
+-- You touch a small button on the handle of * prospecting pan, ... (the scanner)
+function Activities_ProspectingScan(name, line, wildcards)
+  CurrentGlobalSound = PlayGlobalSound("General/Prospecting/scan"..math.random(1, 6)..".ogg")
+end
+
+-- You carefully tuck * inside of * gold prospecting container.
+function Activities_ProspectingNugget(name, line, wildcards)
+  CurrentGlobalSound = PlayGlobalSound("General/Prospecting/GetNugget.ogg")
 end
