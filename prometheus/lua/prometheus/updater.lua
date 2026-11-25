@@ -7,8 +7,11 @@
 --   spupdate             check now; if there's an update, ask whether to install it
 --   sptester             ask for a tester code (a dialog)
 --   sptester <code>      set the tester code
---   sptester off         stop being a tester, and offer the stable version
+--   sptester off         stop being a tester, and offer the stable version (after two warnings)
 --   sptester status      whether a code is set, and which channel (never the code itself)
+--
+-- What these commands say, and the warnings before taking a code off, are written by the
+-- updater; this file shows them.
 --
 -- The pack also checks quietly when you connect, and only speaks up if there's something to
 -- install. The tester code goes to the updater over a private connection on this PC only, and
@@ -24,6 +27,7 @@ local PROGRESS_FILE = STATE .. "updater-progress.txt"
 local PORT_FILE = STATE .. "updater-port.txt"
 local CODE_FILE = STATE .. "updater-tester.dat"
 local APPEAL_FILE = STATE .. "updater-appeal.json"
+local WORDS_FILE = STATE .. "updater-words.json"
 
 local Updater = { waiting = nil, progress_seen = 0, started = 0, quiet = false, forced = false }
 
@@ -110,6 +114,18 @@ local function checked(result)
     -- A repair always closes MUSHclient by itself when it has to (a world file reset, or a program
     -- file), rather than asking the player to.
     Updater_Install(true)
+  elseif result.status == "update" and type(result.choices) == "table" and #result.choices > 0 then
+    -- The updater can send a list of choices instead of Yes/No, with its own words. The chosen
+    -- key goes back to it; "later", or closing the list, installs nothing.
+    tell(result.say)
+    local list = {}
+    for _, c in ipairs(result.choices) do list[c.key] = c.text end
+    local key = utils.listbox(result.say, result.choices_title or "Prometheus soundpack update", list)
+    if key and key ~= "later" then
+      Updater_Install(false, key)
+    else
+      tell("Not installed. Type spupdate whenever you want it.")
+    end
   elseif result.status == "update" then
     tell(result.say)
     local answer = utils.msgbox(result.say .. "\n\nInstall it now?", "Prometheus soundpack update", "yesno", "?")
@@ -118,6 +134,10 @@ local function checked(result)
     else
       tell("Not installed. Type spupdate whenever you want it.")
     end
+  elseif result.status == "paused" then
+    -- Updates are paused until something is done (the updater says what). Said even at the
+    -- quiet check when connecting.
+    tell(result.say)
   elseif result.status == "blocked" then
     -- This connection is blocked from updates (Kendal, 2026-11-24). The check at login says
     -- nothing; spupdate says so and offers to tell Kendal, with no typing.
@@ -149,10 +169,13 @@ end
 -- ---------- installing ----------
 
 -- forced: a repair, which closes MUSHclient by itself (when it has to) instead of asking the player to.
-function Updater_Install(forced)
+-- mode: a choice the updater offered (passed back to it as it is), or nil.
+function Updater_Install(forced, mode)
   Updater.forced = forced and true or false
   os.remove(PROGRESS_FILE)
-  if not start_updater("install") then return end
+  local command = "install"
+  if mode and mode ~= "install" and string.match(mode, "^%a+$") then command = "install " .. mode end
+  if not start_updater(command) then return end
   Updater.waiting, Updater.progress_seen, Updater.started = "install", 0, os.time()
   if not Updater.forced then tell("Installing the soundpack update.") end
   poll_every(POLL_SECONDS)
@@ -248,6 +271,18 @@ function Updater_Poll()
       stop_polling()
       tell("Kendal couldn't be told just now. Please try again later.")
     end
+  elseif Updater.waiting == "words" then
+    local text = read_all(WORDS_FILE)
+    if text then
+      stop_polling()
+      os.remove(WORDS_FILE)
+      local json = require("json")
+      local ok, result = pcall(json.decode, text)
+      if ok and type(result) == "table" then Updater_Said(result) end
+    elseif os.time() - Updater.started > 30 then
+      stop_polling()
+      tell("The updater didn't answer. Please try again.")
+    end
   elseif Updater.waiting == "install" then
     progressed(read_progress())
     if Updater.waiting and os.time() - Updater.started > 1800 then
@@ -263,10 +298,45 @@ end
 
 -- Hands the code to the updater over a private connection on this PC (127.0.0.1): the updater
 -- writes the port it's listening on, and the code is sent there. It never goes on disk here.
-local function send_code(code)
+-- ---------- what the updater says about the codes ----------
+
+-- Asks the updater for its words on a topic (a status, or the warnings before taking a code off).
+-- clear: the updater command that takes the code off, run only after Yes in every warning box.
+function Updater_Words(topic, clear)
+  if Updater.waiting then return end
+  os.remove(WORDS_FILE)
+  if not start_updater("words " .. topic) then return end
+  Updater.waiting, Updater.started, Updater.clear = "words", os.time(), clear
+  poll_every(POLL_SECONDS)
+end
+
+-- Shows the updater's words: a sentence, or warning boxes (No is the default in each, so Enter
+-- does nothing by accident) and then what was done.
+function Updater_Said(result)
+  if type(result.boxes) ~= "table" then
+    if result.say and result.say ~= "" then tell(result.say) end
+    return
+  end
+  for _, box in ipairs(result.boxes) do
+    tell(box.text)
+    if utils.msgbox(box.text, box.title or "Prometheus soundpack", "yesno", "?", 2) ~= "yes" then
+      tell(result.no or "Nothing changed.")
+      return
+    end
+  end
+  if Updater.clear then
+    start_updater(Updater.clear)
+    tell(result.yes or "Done.")
+    DoAfterSpecial(2, "Updater_Check(false)", sendto.script)
+  end
+end
+
+-- second: the second code (spworkbench) instead of the tester code.
+local function send_code(code, second)
   local socket = require("socket")
+  local again = second and "spworkbench" or "sptester"
   os.remove(PORT_FILE)
-  if not start_updater("set-code") then return end
+  if not start_updater(second and "set-code workbench" or "set-code") then return end
   local port
   for _ = 1, 50 do
     local p = read_all(PORT_FILE)
@@ -274,7 +344,7 @@ local function send_code(code)
     socket.sleep(0.1)
   end
   if not port then
-    tell("The updater didn't start, so the tester code wasn't set. Type sptester again.")
+    tell("The updater didn't start, so the code wasn't set. Type " .. again .. " again.")
     return
   end
   local conn = socket.tcp()
@@ -282,7 +352,7 @@ local function send_code(code)
   local ok = conn:connect("127.0.0.1", port)
   if not ok then
     conn:close()
-    tell("Couldn't reach the updater, so the tester code wasn't set. Type sptester again.")
+    tell("Couldn't reach the updater, so the code wasn't set. Type " .. again .. " again.")
     return
   end
   conn:send(code .. "\n")
@@ -290,6 +360,10 @@ local function send_code(code)
   conn:close()
   if reply == "ok" then
     tell("Tester code saved. Checking for test versions.")
+    Updater_Check(false)
+  elseif string.match(reply, "^ok ") then
+    -- The updater's own words for this code.
+    tell(string.sub(reply, 4))
     Updater_Check(false)
   else
     tell((string.gsub(reply, "^error ", "")))
@@ -300,15 +374,9 @@ function Updater_Tester(arg)
   arg = string.match(arg or "", "^%s*(.-)%s*$")
   local lower = string.lower(arg)
   if lower == "status" then
-    if exists(CODE_FILE) then
-      tell("A tester code is set, so the soundpack checks for test versions.")
-    else
-      tell("No tester code is set, so the soundpack checks for stable versions. Type sptester to enter one.")
-    end
+    Updater_Words("tester-status")
   elseif lower == "off" then
-    start_updater("clear-code")
-    tell("Tester code removed. Checking for the stable version.")
-    DoAfterSpecial(2, "Updater_Check(false)", sendto.script)
+    Updater_Words("tester-off", "clear-code")
   elseif arg == "" then
     local code = utils.inputbox("Type the tester code Kendal gave you.", "Prometheus tester code", "")
     if code and string.match(code, "%S") then
@@ -323,6 +391,28 @@ end
 -- kept out of the command history, the log and the output).
 function Updater_TesterAlias(name, line, wildcards)
   Updater_Tester(wildcards[1] or "")
+end
+
+-- A second code, handled the same way: status and off through the updater's words.
+function Updater_Workbench(arg)
+  arg = string.match(arg or "", "^%s*(.-)%s*$")
+  local lower = string.lower(arg)
+  if lower == "status" then
+    Updater_Words("workbench-status")
+  elseif lower == "off" then
+    Updater_Words("workbench-off", "clear-code workbench")
+  elseif arg == "" then
+    local code = utils.inputbox("Type your code.", "Prometheus soundpack", "")
+    if code and string.match(code, "%S") then
+      send_code(string.match(code, "^%s*(.-)%s*$"), true)
+    end
+  else
+    send_code(arg, true)
+  end
+end
+
+function Updater_WorkbenchAlias(name, line, wildcards)
+  Updater_Workbench(wildcards[1] or "")
 end
 
 return Updater

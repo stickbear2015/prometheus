@@ -159,6 +159,26 @@
     end
   </send>
   </alias>
+  <!-- The same backup for the soundpack's spworkbench command. -->
+  <alias
+   enabled="y"
+   match="^spworkbench(?:\s+.*)?$"
+   regexp="y"
+   ignore_case="y"
+   keep_evaluating="y"
+   omit_from_log="y"
+   omit_from_output="y"
+   omit_from_command_history="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>
+    local prometheus = "ad8f25246eb08f268411d690"
+    if not IsPluginInstalled(prometheus) or not GetPluginInfo(prometheus, 17) then
+      Note("The soundpack isn't running right now, so your code wasn't saved or sent anywhere. Close MUSHclient, open it again, and type spworkbench once more.")
+    end
+  </send>
+  </alias>
 </aliases>
 
 <script>
