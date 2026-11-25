@@ -46,10 +46,15 @@ local function read_all(path)
 end
 
 -- Shows a message in the output and speaks it (the tts plugin's quotes can't hold " marks).
+-- Execute treats every line break as the end of a command, so speech is always one line: a
+-- message with line breaks would otherwise send its later lines to the game as typed commands.
+local function one_line(text)
+  return (string.gsub(string.gsub(text, '"', "'"), "%s*[\r\n]+%s*", " "))
+end
+
 local function tell(text)
-  text = string.gsub(text, '"', "'")
-  Note(text)
-  Execute("tts_interrupt " .. text)
+  Note((string.gsub(text, '"', "'")))
+  Execute("tts_interrupt " .. one_line(text))
 end
 
 -- When an update had to close MUSHclient, the updater finishes, starts MUSHclient again and
@@ -225,7 +230,7 @@ local function progressed(lines)
       if kind == "close" then close = text end
     end
   end
-  if #spoken > 0 then Execute("tts_interrupt " .. string.gsub(table.concat(spoken, " "), '"', "'")) end
+  if #spoken > 0 then Execute("tts_interrupt " .. one_line(table.concat(spoken, " "))) end
   if close and Updater.forced then
     -- A world file reset: save the world (so MUSHclient doesn't stop to ask), then close.
     -- The updater waits for it, rebuilds the world file and starts MUSHclient again.
