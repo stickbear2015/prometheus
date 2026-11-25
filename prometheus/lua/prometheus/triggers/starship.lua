@@ -192,6 +192,16 @@ function Starship_TheComputerAnnounces(name, line, wildcards)
   end
 end
 
+-- The computer announces, "Warning, sensors indicate incoming enemy hull configurations."
+-- Kendal's trigger (sequence 90, before the general announcement): shortened and buffered like
+-- every computer announcement, but plays the lore inbound sound instead.
+function Starship_LoreInbound(name, line, wildcards)
+  local text = "Warning, sensors indicate incoming enemy hull configurations."
+  Note(text)
+  AddToHistory("Computer Announcements", text, "Computer Announcement: " .. text)
+  CurrentGlobalSound = PlayGlobalSound("Starship/Misc/LoreInbound.ogg")
+end
+
 -- ^Computer in (.*)\, "(.*)"$
 function Starship_ComputerIn(name, line, wildcards)
   AddToHistory("Computer Announcements", wildcards[2] .. " (" .. wildcards[1] .. ")")
