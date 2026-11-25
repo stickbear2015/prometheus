@@ -6,6 +6,7 @@
 * adds sounds for prospecting. [#8](https://github.com/stickbear2015/prometheus/issues/8)
 * editing a plugin from mushclient now opens it in notepad, instead of failing. [#76](https://github.com/stickbear2015/prometheus/issues/76)
 * adds spreport, to send a bug report or suggestion from inside the game, and spreports, to read replies to your reports and add more details. [#83](https://github.com/stickbear2015/prometheus/issues/83)
+* incoming enemy hull configurations now play their own lore inbound sound. [#25](https://github.com/stickbear2015/prometheus/issues/25)
 
 ## Version 26.0.1, Kendal's first release.
 This release brings almost 50 changes since the last release in february of 2025, and is now maintained by Kendal Hamilton.

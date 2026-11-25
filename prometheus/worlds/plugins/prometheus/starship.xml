@@ -77,6 +77,14 @@
 
 <trigger
   enabled="y"
+  match='The computer announces, "Warning, sensors indicate incoming enemy hull configurations."'
+  omit_from_output="y"
+  sequence="90"
+  script="Starship_LoreInbound"
+></trigger>
+
+<trigger
+  enabled="y"
   match='The computer announces, "*"'
   omit_from_output="y"
   sequence="100"
