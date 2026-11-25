@@ -521,7 +521,7 @@
      choice, so spdebug names them). -->
 <trigger
 enabled="y"
-match="You touch a small button on the handle of * prospecting pan, and carefully lower a * prospecting pan, skimming just above the surface of the stream water, while gently rotating a * prospecting pan in a wide circular pattern, before raising a * prospecting pan to examine a small holographic scanner projection, which suddenly emits into the air above a * prospecting pan."
+match="You touch a small button on the handle of * prospecting pan, and carefully lower the prospecting pan, skimming just above the surface of the stream water, while gently rotating the prospecting pan in a wide circular pattern, before raising the prospecting pan to examine a small holographic scanner projection, which suddenly emits into the air above the pan."
 sequence="90"
 script="Activities_ProspectingScan"
 >
