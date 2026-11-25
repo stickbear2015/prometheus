@@ -38,9 +38,10 @@ local function write_all(path, text)
 end
 
 -- Shows a message in the output and speaks it (the tts plugin's quotes can't hold " marks).
+-- Speech is always one line: Execute would send any later lines to the game as typed commands.
 local function tell(text)
   Note(text)
-  Execute("tts_interrupt " .. string.gsub(text, '"', "'"))
+  Execute("tts_interrupt " .. (string.gsub(string.gsub(text, '"', "'"), "%s*[\r\n]+%s*", " ")))
 end
 
 local function trim(s)
