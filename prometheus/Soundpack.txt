@@ -55,6 +55,8 @@ Other Commands:
   Shows the changelog file in a Notepad window.
 * hotkeys:
   Displays all available keys in the soundpack.
+* spupdate:
+  Checks for a soundpack update now, and asks whether to install it.
 
 ------------------------------------
 Channel History Buffers:
