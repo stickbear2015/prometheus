@@ -991,5 +991,13 @@ script="Activities_ProspectingPanning"
 >
 </trigger>
 
+<trigger
+enabled="y"
+match="You carefully lower * prospecting pan in to the stream, gently sliding *"
+sequence="100"
+script="Activities_ProspectingPanning"
+>
+</trigger>
+
 </triggers>
 </muclient>
