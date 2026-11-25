@@ -179,6 +179,18 @@ Note("MUSHClient Soundpack Version: "..GetVariable("version")..".")
   omit_from_command_history="y" omit_from_log="y" omit_from_output="y" regexp="y"
   ignore_case="y" script="Updater_TesterAlias" sequence="100">
   </alias>
+<alias name="SoundpackReport" match="^spreport$" enabled="y" group="reports"
+  omit_from_output="y" regexp="y"
+  ignore_case="y" send_to="12" sequence="100">
+  <send>Reports_Send()</send></alias>
+<alias name="SoundpackReportAdd" match="^spreport add (\d+)$" enabled="y" group="reports"
+  omit_from_output="y" regexp="y"
+  ignore_case="y" script="Reports_AddAlias" sequence="100">
+  </alias>
+<alias name="SoundpackReports" match="^spreports$" enabled="y" group="reports"
+  omit_from_output="y" regexp="y"
+  ignore_case="y" send_to="12" sequence="100">
+  <send>Reports_List()</send></alias>
 </aliases>
 <script><![CDATA[
 -- Look for Lua modules in this copy of MUSHclient first, even if a separately
