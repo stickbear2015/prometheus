@@ -1,6 +1,15 @@
 # Prometheus Soundpack Changes:
+## development release
 
-## Version 26.0.1
+* adds a new updater. the soundpack checks for updates when you connect, and you can type spupdate to check any time. [#14](https://github.com/stickbear2015/prometheus/issues/14)
+* makes updating the soundpack faster. [#14](https://github.com/stickbear2015/prometheus/issues/14)
+* adds sounds for prospecting. [#8](https://github.com/stickbear2015/prometheus/issues/8)
+* editing a plugin from mushclient now opens it in notepad, instead of failing. [#76](https://github.com/stickbear2015/prometheus/issues/76)
+* adds spreport, to send a bug report or suggestion from inside the game, and spreports, to read replies to your reports and add more details. [#83](https://github.com/stickbear2015/prometheus/issues/83)
+* incoming enemy hull configurations now play their own lore inbound sound. [#25](https://github.com/stickbear2015/prometheus/issues/25)
+* testers now get the current stable release as a normal update when it's newer than their test version, with a note saying so. [#14](https://github.com/stickbear2015/prometheus/issues/14)
+
+## Version 26.0.1, Kendal's first release.
 This release brings almost 50 changes since the last release in february of 2025, and is now maintained by Kendal Hamilton.
 
 * modernizes the installer. [#7](https://github.com/stickbear2015/prometheus/issues/7)
@@ -51,7 +60,9 @@ This release brings almost 50 changes since the last release in february of 2025
 * removes the spupdate command and the old updater, until a new one is designed. for now the soundpack won't tell you when a new version is out. [#14](https://github.com/stickbear2015/prometheus/issues/14)
 * the soundpack now shows Kendal Hamilton as its developer, with credit to Krinnzenn, who looked after it before, and Nyano Cooper, who created it. [#57](https://github.com/stickbear2015/prometheus/issues/57)
 
+# previous changes before Kendal took over.
 ## Version 25.2.1
+
 * Hopefully fixed more broken stuff.
   My thanks to Kira Andrews for all her help in tracking down bugs.
 * The repair sound should no longer play twice when you begin repairs on a mining vehicle.

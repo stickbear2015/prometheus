@@ -135,6 +135,50 @@
     audio.free()
   </send>
  </alias>
+  <!-- A backup for the soundpack's sptester command (issue #14). If the Prometheus plugin
+       isn't running, nothing else catches the command, so the tester code would go to the
+       game and into the log. This keeps the typed line out of the log, the output and the
+       command history, and sends nothing. It keeps evaluating, so when Prometheus is running
+       its own alias still handles the command and this stays silent. -->
+  <alias
+   enabled="y"
+   match="^sptester(?:\s+.*)?$"
+   regexp="y"
+   ignore_case="y"
+   keep_evaluating="y"
+   omit_from_log="y"
+   omit_from_output="y"
+   omit_from_command_history="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>
+    local prometheus = "ad8f25246eb08f268411d690"
+    if not IsPluginInstalled(prometheus) or not GetPluginInfo(prometheus, 17) then
+      Note("The soundpack isn't running right now, so your tester code wasn't saved or sent anywhere. Close MUSHclient, open it again, and type sptester once more.")
+    end
+  </send>
+  </alias>
+  <!-- The same backup for the soundpack's spworkbench command. -->
+  <alias
+   enabled="y"
+   match="^spworkbench(?:\s+.*)?$"
+   regexp="y"
+   ignore_case="y"
+   keep_evaluating="y"
+   omit_from_log="y"
+   omit_from_output="y"
+   omit_from_command_history="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>
+    local prometheus = "ad8f25246eb08f268411d690"
+    if not IsPluginInstalled(prometheus) or not GetPluginInfo(prometheus, 17) then
+      Note("The soundpack isn't running right now, so your code wasn't saved or sent anywhere. Close MUSHclient, open it again, and type spworkbench once more.")
+    end
+  </send>
+  </alias>
 </aliases>
 
 <script>
@@ -324,6 +368,16 @@ function OnPluginClose()
   if (#GetWorldList() == 1) then
     audio.free()
   end
+end
+
+-- Reloads another plugin half a second from now. MUSHclient never lets a plugin reload itself,
+-- so after an update the Prometheus plugin asks this one to do it, with
+-- CallPlugin("aedf0cb0be5bf045860d54b7", "ReloadPluginSoon", GetPluginID()). The timer runs
+-- here, after the asking plugin's code has finished (pack issue #14).
+function ReloadPluginSoon(id)
+  id = tostring(id or "")
+  if not string.match(id, "^%x+$") or not IsPluginInstalled(id) then return end
+  DoAfterSpecial(0.5, 'ReloadPlugin("' .. id .. '")', sendto.script)
 end
 
 ppi.Expose("init", OnPluginInstall)
