@@ -402,7 +402,7 @@ function Updater_Workbench(arg)
   elseif lower == "off" then
     Updater_Words("workbench-off", "clear-code workbench")
   elseif arg == "" then
-    local code = utils.inputbox("Type your code.", "Prometheus soundpack", "")
+    local code = utils.inputbox("Type the developer code Kendal gave you.", "Prometheus developer code", "")
     if code and string.match(code, "%S") then
       send_code(string.match(code, "^%s*(.-)%s*$"), true)
     end
