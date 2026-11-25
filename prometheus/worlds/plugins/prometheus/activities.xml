@@ -529,7 +529,7 @@ script="Activities_ProspectingScan"
 
 <trigger
 enabled="y"
-match="You carefully tuck * inside of * gold prospecting container."
+match="You carefully tuck * inside of * gold prospecting container*"
 sequence="100"
 script="Activities_ProspectingNugget"
 >
