@@ -1,5 +1,6 @@
 # Prometheus Soundpack Changes:
-## development release
+## version 26.0.2
+this version Brings an updater, all things reports,  knew sounds and a few under the hood bug fixes found in 26.0.1!
 
 * adds a new updater. the soundpack checks for updates when you connect, and you can type spupdate to check any time. [#14](https://github.com/stickbear2015/prometheus/issues/14)
 * makes updating the soundpack faster. [#14](https://github.com/stickbear2015/prometheus/issues/14)
