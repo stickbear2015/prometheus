@@ -147,6 +147,13 @@ CurrentRoomSound = PlayRoomSound("Planet/Landing.ogg")
 elseif line == "#$#soundpack ambiance | planet | outside | misc" then
 StopSound(CurrentRoomSound)
 CurrentRoomSound = PlayRoomSound("Planet/MiscOut.ogg")
+-- Bigger rocky planets name their terrain instead (issue #100, Kendal's choice of sounds).
+elseif line == "#$#soundpack ambiance | planet | outside | rocky planet" then
+StopSound(CurrentRoomSound)
+CurrentRoomSound = PlayRoomSound("Planet/MiscOut.ogg")
+elseif line == "#$#soundpack ambiance | planet | outside | volcano" then
+StopSound(CurrentRoomSound)
+CurrentRoomSound = PlayRoomSound("Planet/Landing.ogg")
 elseif line == "#$#soundpack ambiance | planet | outside | shop" then
 StopSound(CurrentRoomSound)
 CurrentRoomSound = PlayRoomSound("Planet/MiscOut.ogg")
