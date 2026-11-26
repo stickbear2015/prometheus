@@ -167,10 +167,10 @@ Note("MUSHClient Soundpack Version: "..GetVariable("version")..".")
 </send></alias>
 <alias match="^dt$" regexp="y" enabled="y" ignore_case="y" send_to="12" sequence="100">
 <send>Execute("deliver-time")</send></alias>
-<alias name="ToggleSoundpackDebug" match="^spdebug$" enabled="y" group="debug"
+<alias name="ToggleSoundpackDebug" match="^spdebug(?:\s+(now))?$" enabled="y" group="debug"
   omit_from_command_history="y" omit_from_log="y" regexp="y" omit_from_output="y"
-  ignore_case="y" send_to="12" sequence="100">
-  <send>ToggleSoundpackDebug()</send></alias>
+  ignore_case="y" script="SoundpackDebug_Alias" sequence="100">
+  </alias>
 <alias name="SoundpackUpdate" match="^spupdate$" enabled="y" group="updater"
   omit_from_command_history="y" omit_from_output="y" regexp="y"
   ignore_case="y" send_to="12" sequence="100">
