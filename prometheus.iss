@@ -55,6 +55,13 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
+[InstallDelete]
+; The old updater (removed in 26.0.1, replaced by PrometheusUpdater.exe in 26.0.2).
+Type: files; Name: "{app}\mushclient\updater\Update.exe"
+Type: files; Name: "{app}\mushclient\updater\7za.exe"
+Type: files; Name: "{app}\mushclient\updater\Update.ini"
+Type: files; Name: "{app}\mushclient\updater\version.info"
+Type: dirifempty; Name: "{app}\mushclient\updater"
 
 [Files]
 	Source: "prometheus\*"; DestDir: "{app}\mushclient"; Excludes: "Config.txt"; Flags: ignoreversion recursesubdirs createallsubdirs
