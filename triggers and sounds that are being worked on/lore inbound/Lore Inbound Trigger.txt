@@ -1,0 +1,10 @@
+<trigger
+enabled="y"
+match="The computer announces, "Warning, sensors indicate incoming enemy hull configurations.""
+send_to="12"
+sequence="100"
+>
+<send>
+CurrentGlobalSound = PlayGlobalSound("Starship/Misc/LoreInbound.ogg")
+</send>
+</trigger>
