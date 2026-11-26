@@ -9,8 +9,7 @@
 --   [debug] game: #$#soundpack ...                 each soundpack line the game sends, with
 --                                                  "(not handled)" when the pack doesn't know it
 --   [debug] stop: Rooms/Vehicle/Mining.ogg         each sound stopped while it was playing
---   ... (volume 50)                                each sound's volume, and "(would not play)"
---                                                  when the file is there but didn't start
+--   ... (volume 50)                                each sound's volume
 --   [debug] timer: <what>                          each delayed sound or action, when it fires
 --   [debug] trigger X: <line> (hidden)             the trigger keeps the line out of the output
 -- and "spdebug now" says what room ambiance is playing, and which game line started it.
@@ -101,8 +100,10 @@ local function wrap_sound(function_name, setting, kind, subfolder, volume)
       shown = subfolder .. file
       full = SoundFolder .. shown
     end
+    -- The sound player's numbers for sounds can be negative, and it may give none for a sound
+    -- that plays once, so any number counts as a sound to track.
     local id = f(file, ...)
-    if type(id) == "number" and id > 0 then
+    if type(id) == "number" then
       playing[id] = shown
       if function_name == "PlayRoomSound" then
         room = { id = id, file = shown, line = last_game_line, at = os.date("%I:%M:%S %p") }
@@ -116,9 +117,6 @@ local function wrap_sound(function_name, setting, kind, subfolder, volume)
         why = " (file missing)"
       else
         why = " (volume " .. tostring(ConfigTable.Settings[volume]) .. ")"
-        if not (type(id) == "number" and id > 0) then
-          why = why .. " (would not play)"
-        end
       end
       report("sound: " .. tostring(shown) .. why)
     end
