@@ -15,6 +15,12 @@ MUSHclient soundpack for Prometheus: The Eternal Wars. Kendal's repo (`stickbear
 - `prometheus.iss`: the installer (Kendal's file: change it only when she asks). It copies `prometheus\*` from the folder on disk, so local files such as logs written while playing from the repo go into it too. Since 97f2c1b (2026-11-21) it excludes `Config.txt`, so upgrades keep players' settings and the builder's own settings aren't shipped; the pack creates `Config.txt` with defaults on first start.
 - `tools/test-build/make-test-zip.ps1`: makes a tester zip from the last commit (never from disk), named `Prometheus-<label>-test-<yyyyMMdd>-<commit>.zip`, with the installer's layout (`mushclient\` plus `changelog.html`) and `TESTING-README.txt`. It stops if the pack has uncommitted changes. Run it from PowerShell: `.	ools	est-build\make-test-zip.ps1` (optional `-Label word`).
 
+## Changing sounds (Kendal, 2026-11-27)
+
+- Before committing any bulk sound change, run `python tools/sound-check/check-sounds.py` (or with a commit to check one already made). It flags a changed sound that isn't the same sound as before (not a trim of it), a sound whose name was deleted or renamed earlier coming back, and any change of codec, sample rate or channels. Anything it flags must be meant and said in the commit.
+- A working copy of the sounds is only ever made from the CURRENT `prometheus/sounds` folder, never from an older copy. The November 2026 trim was made from an old copy and brought back old sounds (Asteroid, Accelerate, Decelerate, LockedOnYou) and three renamed files; fixed in pull requests #107 and #108.
+- Trimming: whole packets, no re-encoding; check each result against its original (middle matches exactly, nothing louder than -55 dB lost at either end).
+
 ## Sound functions
 
 `PlayGlobalSound(file, pan)`, `PlayRoomSound(file)` and `PlayCombatSound(file, pan)` in `lua/prometheus/core/Sound.lua`. Paths are relative to `sounds/` (Room and Combat add their subfolder). Each respects its on/off setting and volume in `ConfigTable.Settings`.
