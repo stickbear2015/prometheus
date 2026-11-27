@@ -18,6 +18,21 @@ local RESULT = STATE .. "updater-report.json"
 local TITLE = "Prometheus soundpack report"
 
 local KINDS = { bug = "A bug: something is wrong", suggestion = "A suggestion or idea", other = "Something else" }
+-- Short words for the kind in the spreports list (Kendal, 2026-11-26).
+local KIND_SHORT = { bug = "a bug", suggestion = "a suggestion", other = "something else" }
+
+-- When a report has no email address or character name (Kendal, 2026-11-26; wording approved).
+local NO_CONTACT_CHECK = "Without an email address or character name, you won't be told when someone replies, and we have no way to reach you if we need to ask you something or have you test a fix. You can still check for replies yourself: type spreports."
+local NO_CONTACT_SENT = " so you won't be told when someone replies, and we can't reach you to ask anything. Type spreports to check for replies yourself."
+
+-- A tester code is set: the website then takes the email address and character name from the
+-- tester's own details, so the pack can't tell before sending.
+local function tester_code_set()
+  local f = io.open(STATE .. "updater-tester.dat", "rb")
+  if not f then return false end
+  f:close()
+  return true
+end
 
 local Reports = { waiting = false, started = 0, after = nil }
 
@@ -138,6 +153,7 @@ function Reports_Send()
     .. "\r\n\r\nWhat happened, or your idea:\r\n" .. details
   if kind == "bug" then review = review .. "\r\n\r\nGame output:\r\n" .. output end
   review = review .. "\r\n\r\nEmail address: " .. (email ~= "" and email or "Not given")
+  if email == "" and not tester_code_set() then review = review .. "\r\n\r\n" .. NO_CONTACT_CHECK end
   if not utils.editbox("Check your report", "Check your report", string.gsub(review, "\r?\n", "\r\n"), nil, nil, { read_only = true }) then
     return tell("Report not sent.")
   end
@@ -147,8 +163,12 @@ function Reports_Send()
   ask({ op = "send", kind = kind, title = title, details = details, game_output = output, email = email }, function(r)
     if r.status == "sent" then
       local label = string.lower(r.label or "")
+      local no_contact = r.has_email == false and r.has_character == false
       if string.find(label, "^tester") then
-        tell("Your report is sent: " .. label .. ". You can also find it under Your reports on your testers page.")
+        tell("Your report is sent: " .. label .. ". You can also find it under Your reports on your testers page."
+          .. (no_contact and (" Your tester details have no email address or character name," .. NO_CONTACT_SENT) or ""))
+      elseif no_contact then
+        tell("Your report is sent: " .. label .. ". You didn't give an email address," .. NO_CONTACT_SENT)
       else
         tell("Your report is sent: " .. label .. ". Type spreports to see replies." .. (email ~= "" and " We've emailed you its private link." or ""))
       end
@@ -203,7 +223,7 @@ local function show(number)
   ask({ op = "read", number = number }, function(r)
     if r.status == "unknown" then return tell("You don't have a report with that number in this soundpack.") end
     if r.status ~= "ok" then return tell("Your reports couldn't be read just now. Please try again later.") end
-    local lines = { "Status: " .. (r.report_status_text or "") .. ". Sent " .. (r.sent_text or "") .. ".", "", r.details or "" }
+    local lines = { "Kind: " .. (r.kind_text or KINDS[r.kind] or ""), "Status: " .. (r.report_status_text or "") .. ". Sent " .. (r.sent_text or "") .. ".", "", r.details or "" }
     if r.game_output and r.game_output ~= "" then
       table.insert(lines, "")
       table.insert(lines, "Game output you sent:")
@@ -240,7 +260,8 @@ function Reports_List()
     if #r.reports == 0 then return tell("You haven't sent any reports from this soundpack yet.") end
     local choices = {}
     for i, x in ipairs(r.reports) do
-      choices[i] = (x.label or "") .. ": " .. (x.title or "") .. " (" .. (x.report_status_text or "") .. ")"
+      local kind = KIND_SHORT[x.kind]
+      choices[i] = (x.label or "") .. ": " .. (x.title or "") .. " (" .. (kind and (kind .. ", ") or "") .. (x.report_status_text or "") .. ")"
     end
     local i = utils.listbox("Your reports", "Your reports", choices)
     if i then show(r.reports[i].number) end
