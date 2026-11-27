@@ -1,4 +1,8 @@
 # Prometheus Soundpack Changes:
+## development release
+
+* testers who are already on the stable version no longer hear that their tester version is older when the stable version is updated. [#14](https://github.com/stickbear2015/prometheus/issues/14)
+
 ## version 26.0.2
 this version Brings an updater, all things reports,  knew sounds and a few under the hood bug fixes found in 26.0.1!
 
